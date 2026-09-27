@@ -853,7 +853,7 @@ local function scan_and_dump_labels(doc)
         -- example or exercise sits between the statement and the proof: crediting it to the
         -- example hid the fundamental theorem of algebra's citations from the dependency gate.
         -- Solutions, remarks, warnings and checks still belong to the block just before them.
-        local RESULT_ENVS = { theorem = true, lemma = true, corollary = true, proposition = true }
+        local RESULT_ENVS = { theorem = true, lemma = true, corollary = true, proposition = true, axiom = true }
         local PASS_OVER = { example = true, exercise = true }
         local PROOF_PARTS = { proof = true, proofofclaim = true, claim = true, idea = true }
         local current, current_kind, current_result = nil, nil, nil

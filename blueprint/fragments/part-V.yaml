@@ -1,0 +1,260 @@
+part: V
+title: "Complex Analysis"
+summary: "Complex differentiability turns out to be so rigid that one integral formula controls everything; the Part runs from Goursat to the Riemann mapping theorem and then through the qualifying-exam second layer (harmonic and subharmonic functions, normal families, products, continuation, Picard), with normal families as the complex spiral node of Arzelà–Ascoli."
+nodes:
+  # Stein & Shakarchi II (scaffolding)
+  SS2.1: {book: SS2, ch: "1", title: "Preliminaries to Complex Analysis", pages: 35, files: "003-009"}
+  SS2.2: {book: SS2, ch: "2", title: "Cauchy's Theorem and Its Applications", pages: 39, files: "010-016"}
+  SS2.3: {book: SS2, ch: "3", title: "Meromorphic Functions and the Logarithm", pages: 40, files: "017-024"}
+  SS2.5: {book: SS2, ch: "5", title: "Entire Functions", pages: 25, files: "028-033"}
+  SS2.6: {book: SS2, ch: "6", title: "The Gamma and Zeta Functions", pages: 23, files: "033-037"}
+  SS2.8: {book: SS2, ch: "8", title: "Conformal Mappings", pages: 56, files: "041-054"}
+  SS2.B: {book: SS2, ch: "B", title: "Appendix B: Simple Connectivity and Jordan Curve Theorem", pages: 20, files: "071-075"}
+  # Ahlfors (depth; second layer)
+  AHL.1: {book: AHL, ch: "1", title: "Complex Numbers", pages: 24, files: "002-006"}
+  AHL.2: {book: AHL, ch: "2", title: "Complex Functions", pages: 28, files: "006-011"}
+  AHL.3: {book: AHL, ch: "3", title: "Analytic Functions as Mappings", pages: 51, files: "011-022"}
+  AHL.4: {book: AHL, ch: "4", title: "Complex Integration", pages: 75, files: "022-034"}
+  AHL.5: {book: AHL, ch: "5", title: "Series and Product Developments", pages: 53, files: "034-042"}
+  AHL.6: {book: AHL, ch: "6", title: "Conformal Mapping. Dirichlet's Problem", pages: 34, files: "042-051"}
+  AHL.8: {book: AHL, ch: "8", title: "Global Analytic Functions", pages: 39, files: "055-060"}
+  # Conway (depth; rigorous global Cauchy, second layer)
+  CON.3: {book: CON, ch: "III", title: "Elementary Properties and Examples of Analytic Functions", pages: 28, files: "010-013"}
+  CON.4: {book: CON, ch: "IV", title: "Complex Integration", pages: 44, files: "014-021"}
+  CON.5: {book: CON, ch: "V", title: "Singularities", pages: 25, files: "021-025"}
+  CON.6: {book: CON, ch: "VI", title: "The Maximum Modulus Theorem", pages: 14, files: "025-029"}
+  CON.7: {book: CON, ch: "VII", title: "Compactness and Convergence in the Space of Analytic Functions", pages: 54, files: "029-036"}
+  CON.8: {book: CON, ch: "VIII", title: "Runge's Theorem", pages: 15, files: "037-039"}
+  CON.9: {book: CON, ch: "IX", title: "Analytic Continuation and Riemann Surfaces", pages: 40, files: "040-046"}
+  CON.10: {book: CON, ch: "X", title: "Harmonic Functions", pages: 28, files: "047-051"}
+  CON.11: {book: CON, ch: "XI", title: "Entire Functions", pages: 14, files: "052-054"}
+  CON.12: {book: CON, ch: "XII", title: "The Range of an Analytic Function", pages: 10, files: "055-058"}
+  # Needham (motivation)
+  NEE.2: {book: NEE, ch: "2", title: "Complex Functions as Transformations", pages: 76, files: "021-039"}
+  NEE.3: {book: NEE, ch: "3", title: "Möbius Transformations and Inversion", pages: 76, files: "040-060"}
+  NEE.4: {book: NEE, ch: "4", title: "Differentiation: The Amplitwist Concept", pages: 32, files: "061-068"}
+  NEE.5: {book: NEE, ch: "5", title: "Further Geometry of Differentiation", pages: 58, files: "069-082"}
+  NEE.7: {book: NEE, ch: "7", title: "Winding Numbers and Topology", pages: 44, files: "101-111"}
+  NEE.8: {book: NEE, ch: "8", title: "Complex Integration: Cauchy's Theorem", pages: 56, files: "112-125"}
+  NEE.9: {book: NEE, ch: "9", title: "Cauchy's Formula and Its Applications", pages: 26, files: "126-132"}
+  NEE.11: {book: NEE, ch: "11", title: "Vector Fields and Complex Integration", pages: 40, files: "139-149"}
+  NEE.12: {book: NEE, ch: "12", title: "Flows and Harmonic Functions", pages: 76, files: "150-166"}
+hard:
+  # Stein–Shakarchi II
+  - [SS2.1, SS2.2]
+  - [SS2.2, SS2.3]
+  - [SS2.2, SS2.B]
+  - [SS2.3, SS2.5]
+  - [SS2.5, SS2.6]
+  - [SS2.2, SS2.8]
+  - [SS2.3, SS2.8]
+  # Ahlfors
+  - [AHL.1, AHL.2]
+  - [AHL.2, AHL.3]
+  - [AHL.3, AHL.4]
+  - [AHL.4, AHL.5]
+  - [AHL.4, AHL.6]
+  - [AHL.5, AHL.6]
+  - [AHL.5, AHL.8]
+  - [AHL.6, AHL.8]
+  # Conway
+  - [CON.3, CON.4]
+  - [CON.4, CON.5]
+  - [CON.5, CON.6]
+  - [CON.4, CON.7]
+  - [CON.6, CON.7]
+  - [CON.7, CON.8]
+  - [CON.4, CON.9]
+  - [CON.4, CON.10]
+  - [CON.6, CON.10]
+  - [CON.7, CON.11]
+  - [CON.7, CON.12]
+  # Needham
+  - [NEE.2, NEE.4]
+  - [NEE.4, NEE.5]
+  - [NEE.8, NEE.9]
+  - [NEE.8, NEE.11]
+  - [NEE.11, NEE.12]
+soft:
+  - [NEE.4, SS2.2]
+  - [NEE.3, SS2.8]
+  - [CON.10, CON.12]
+alt:
+  - [SS2.2, AHL.4]
+  - [SS2.2, CON.4]
+  - [SS2.B, CON.4]
+  - [SS2.3, CON.5]
+  - [SS2.8, AHL.6]
+  - [SS2.8, CON.7]
+  - [AHL.6, CON.10]
+  - [SS2.5, CON.11]
+  - [AHL.5, CON.11]
+  - [AHL.8, CON.9]
+  - [AHL.8, CON.12]
+  - [NEE.8, SS2.2]
+  - [NEE.12, CON.10]
+external:
+  - {needs: "complex numbers, polar form, e^{iθ} (Part 0 / Part I)", for_chapter: holomorphic-functions}
+  - {needs: "power series, radius of convergence, termwise differentiation, uniform convergence and the Weierstrass M-test (Part I)", for_chapter: holomorphic-functions}
+  - {needs: "Fréchet derivative and the Jacobian of a map ℝ²→ℝ² (Part II)", for_chapter: holomorphic-functions}
+  - {needs: "open, closed, connected and path-connected sets; compactness in ℝ² (Part II)", for_chapter: holomorphic-functions}
+  - {needs: "Riemann integral of complex-valued functions on an interval, differentiation under the integral sign (Part I/II)", for_chapter: cauchy-theorem}
+  - {needs: "Green's theorem node, rectangle and disc (Part II) — used only as motivation; Goursat is proved without it", for_chapter: cauchy-theorem}
+  - {needs: "homotopy of paths and simple connectivity in the topological-spaces module (Part II)", for_chapter: global-cauchy-theory}
+  - {needs: "Arzelà–Ascoli and diagonal extraction (Part II)", for_chapter: conformal-riemann-mapping}
+  - {needs: "Poisson kernel, Abel summability and Fourier series of continuous functions (Part III)", for_chapter: harmonic-functions}
+  - {needs: "Green's theorem on the disc (Part II node) for Green's identities", for_chapter: harmonic-functions}
+  - {needs: "Γ-integral and Stirling-type estimates on ℝ (Part I); theta function and Poisson summation (Part III)", for_chapter: continuation-and-picard}
+chapters:
+  - slug: holomorphic-functions
+    title: "Holomorphic Functions and Power Series"
+    pages: 45
+    sources: [[SS2.1, "§1–3 (complex plane, holomorphic functions, power series, curves)"], [AHL.1, "§2 geometric representation, spherical representation"], [AHL.2, "§1–3 analytic functions, power series, exp and trig"], [AHL.3, "§2 conformality, arcs and angles"], [CON.3, "§1–2 power series, analytic functions, branches of log"], [NEE.4, "amplitwist, CR as geometry (motivation)"], [NEE.2, "§2.6–2.7 multifunctions, log and powers (motivation)"], [NEE.3, "§3.4 the Riemann sphere (motivation)"], [NEE.5, "§5.1–5.2 CR revealed, rigidity (motivation)"]]
+    outline:
+      - "The complex plane recalled: geometry of multiplication, the extended plane and the Riemann sphere"
+      - "Complex differentiability versus real differentiability: the Cauchy–Riemann equations and the Jacobian (spiral from Part II)"
+      - "Conformality: angle preservation where f′ ≠ 0, and what goes wrong at critical points"
+      - "Power series are holomorphic in their disc of convergence; termwise differentiation; the exponential and trigonometric functions"
+      - "Multifunctions: branches of log z and z^α on slit planes"
+      - "Curves and contour integrals: parametrization invariance, the ML-inequality, primitives and path-independence"
+    must_prove: ["Cauchy–Riemann equations are necessary, and sufficient when the partials are continuous", "a power series is holomorphic inside its disc of convergence with the termwise derivative", "∮_γ f′ = 0 for closed γ when f has a primitive", "the ML-inequality", "f holomorphic on a connected open set with f′ ≡ 0 is constant"]
+    key_examples: ["z̄ is nowhere complex-differentiable although smooth", "|z|² is complex-differentiable only at 0", "∮_{|z|=1} dz/z = 2πi, so 1/z has no primitive on ℂ∖{0}", "principal branch of log on ℂ∖(−∞,0]", "e^{1/z} near 0 (preview of an essential singularity)"]
+    exit_checks: ["If f is holomorphic on a region and |f| (or Re f) is constant, then f is constant", "Compute the radius of convergence of Σ z^{n!} and Σ nⁿ zⁿ/n! and justify termwise differentiation"]
+    optional: false
+    note: "Complex numbers themselves are assumed from earlier Parts; this chapter recalls, it does not re-teach. Möbius maps are postponed to conformal-riemann-mapping, where they are used."
+  - slug: cauchy-theorem
+    title: "Cauchy's Theorem and Its First Consequences"
+    pages: 50
+    sources: [[SS2.2, "§1–5.3 Goursat, primitives in a disc, integrals, integral formulas, Morera, sequences, integrals with parameter"], [AHL.4, "§1–3 fundamental theorems, integral formula, local properties, maximum principle"], [CON.4, "§2–3, §8 power series representation, zeros, Goursat"], [NEE.8, "complex integral as Riemann sum, deformation (motivation)"], [NEE.11, "§11.2 Pólya vector field: Cauchy's theorem as flux and work (motivation)"]]
+    outline:
+      - "Goursat's theorem for triangles, by subdivision and nested compact sets"
+      - "Primitives in a disc and Cauchy's theorem on a disc; contours deformed through keyholes and toy contours"
+      - "The Cauchy integral formula and infinite differentiability; holomorphic ⇒ analytic"
+      - "Cauchy estimates, Liouville's theorem, the fundamental theorem of algebra"
+      - "Morera's theorem; locally uniform limits of holomorphic functions (Weierstrass); functions defined by integrals"
+      - "Zeros and the identity theorem: local to global by connectedness"
+      - "Mean value property and the maximum modulus principle"
+    must_prove: ["Goursat's theorem", "Cauchy's theorem and integral formula on a disc", "Cauchy estimates", "Liouville's theorem", "the fundamental theorem of algebra", "Morera's theorem", "a locally uniform limit of holomorphic functions is holomorphic, with derivatives converging", "the identity theorem", "maximum modulus principle"]
+    key_examples: ["∫_ℝ e^{−πx²} e^{−2πixξ} dx by shifting the contour", "∫₀^∞ sin x / x dx via an indented contour", "a non-constant entire function has unbounded range", "the identity theorem fails for smooth real functions (e^{−1/x²})"]
+    exit_checks: ["An entire f with Re f ≤ C is constant; with |f(z)| ≤ C|z|ⁿ it is a polynomial of degree ≤ n", "Prove that the uniform limit on compacta of holomorphic functions is holomorphic, using Morera"]
+    optional: false
+    note: "Complex quantities first meet the spiral here: locally uniform convergence is the C(K) sup-metric on each compact set. Green's theorem is mentioned only to explain why Goursat avoids assuming f′ continuous."
+  - slug: singularities-residues
+    title: "Laurent Series, Singularities and Residues"
+    pages: 48
+    sources: [[SS2.3, "§1–3 zeros and poles, residue formula with examples, singularities and meromorphic functions, the Riemann sphere"], [CON.5, "§1–2 classification of singularities, Laurent series, residues"], [AHL.4, "§5 calculus of residues, evaluation of definite integrals"], [AHL.5, "§1.3 Laurent series"], [NEE.9, "§9.3–9.4 residues, annular Laurent series (motivation)"]]
+    outline:
+      - "Laurent series on annuli: existence, uniqueness, and the Cauchy formula on an annulus"
+      - "Isolated singularities: Riemann's removable-singularity theorem, poles and orders, essential singularities"
+      - "Casorati–Weierstrass, and the behaviour of e^{1/z}"
+      - "Meromorphic functions on ℂ and on the Riemann sphere; meromorphic on the sphere ⇔ rational"
+      - "The residue theorem on a disc with finitely many poles, and computing residues"
+      - "Real integrals: rational functions, trigonometric integrals, Jordan's lemma, keyhole contours with log and x^α"
+      - "Summing series with π cot πz"
+    must_prove: ["existence and uniqueness of the Laurent expansion", "Riemann's removable-singularity theorem", "Casorati–Weierstrass", "the residue theorem (disc/toy-contour version)", "Jordan's lemma", "a function meromorphic on the extended plane is rational"]
+    key_examples: ["e^{1/z}: essential singularity, every value except 0 attained infinitely often", "∫₀^∞ x^{α−1}/(1+x) dx = π/sin(πα)", "∫₀^{2π} dθ/(a+cos θ)", "Σ 1/n² = π²/6 from π cot πz", "1/sin(1/z): a non-isolated singularity at 0"]
+    exit_checks: ["Classify the singularities (including at ∞) of z/(e^z−1), sin(1/z), (z²−1)^{−1}e^{1/z}", "Evaluate ∫_{−∞}^{∞} cos x/(x²+1) dx with a full contour estimate"]
+    optional: false
+    note: "Only the local (disc and toy-contour) residue theorem is proved here; the homology version waits for global-cauchy-theory."
+  - slug: global-cauchy-theory
+    title: "Winding Numbers, the Global Cauchy Theorem and Counting Zeros"
+    pages: 52
+    sources: [[CON.4, "§4–7 index of a closed curve, Cauchy's theorem and formula (homology, Dixon), homotopic version and simple connectivity, counting zeros and open mapping"], [CON.5, "§3 argument principle"], [CON.6, "§3–4 three circles, Phragmén–Lindelöf"], [SS2.3, "§4–6 argument principle, Rouché, open mapping, homotopies, simply connected domains, log"], [SS2.B, "equivalent formulations of simple connectivity, winding numbers"], [AHL.4, "§4 general form of Cauchy's theorem"], [NEE.7, "winding number, argument principle, Rouché (motivation)"]]
+    outline:
+      - "The winding number: integer-valued, locally constant, zero on the unbounded component"
+      - "The global Cauchy theorem and integral formula for cycles homologous to zero (Dixon's proof)"
+      - "The homotopy version; simply connected regions; existence of log f and √f for non-vanishing f"
+      - "The general residue theorem"
+      - "The argument principle and Rouché's theorem; counting zeros in regions"
+      - "The local mapping theorem, the open mapping theorem, and Hurwitz's theorem"
+      - "Maximum principles on unbounded regions: Hadamard's three circles and Phragmén–Lindelöf"
+    must_prove: ["n(γ,a) is an integer, constant on components of ℂ∖γ*", "global Cauchy theorem (homology form)", "homotopy form of Cauchy's theorem", "on a simply connected region every non-vanishing holomorphic f has a holomorphic logarithm", "the argument principle", "Rouché's theorem", "the open mapping theorem", "Hurwitz's theorem", "Phragmén–Lindelöf in a sector or strip"]
+    key_examples: ["z⁵+15z+1 has all five zeros in |z|<2, exactly one in |z|<3/2", "a locally uniform limit of injective holomorphic maps is injective or constant", "exp(exp z) on the strip |Im z| < π/2: bounded on the boundary, unbounded inside, so the growth hypothesis in Phragmén–Lindelöf is sharp", "annuli: Cauchy fails for the circle |z|=1 in ℂ∖{0}"]
+    exit_checks: ["Count the zeros of z⁴ − 6z + 3 in |z|<1 and in 1<|z|<2", "Prove Hurwitz's theorem from the argument principle", "Prove that a non-constant holomorphic map is open, via the local mapping theorem"]
+    optional: false
+    note: "The Jordan curve theorem is cited, not proved (SS2 Appendix B is used only for simple connectivity equivalences). Hurwitz is placed here so that the Riemann mapping proof can use it."
+  - slug: conformal-riemann-mapping
+    title: "Conformal Maps, Normal Families and the Riemann Mapping Theorem"
+    pages: 58
+    sources: [[SS2.8, "§1–3 conformal equivalence and examples, Schwarz lemma, automorphisms of disc and half-plane, Montel, Riemann mapping theorem"], [AHL.3, "§3–4 linear (Möbius) transformations, cross ratio, elementary conformal maps"], [AHL.5, "§5 normal families"], [AHL.6, "§1 the Riemann mapping theorem"], [CON.6, "§2 Schwarz's lemma"], [CON.7, "§1–4 the metric space C(G,Ω), spaces of analytic and meromorphic functions, Riemann mapping theorem"], [NEE.3, "§3.5–3.9 Möbius maps, fixed points, automorphisms of the disc (motivation)"]]
+    outline:
+      - "Möbius transformations: circles to circles, cross ratio, symmetry principle"
+      - "A gallery of conformal maps: disc ↔ half-plane, sectors, strips, the slit plane; the Dirichlet problem in a strip by transplantation"
+      - "Schwarz's lemma, Schwarz–Pick, and the automorphism groups of the disc and the half-plane"
+      - "The space H(Ω) with the metric of locally uniform convergence; completeness"
+      - "Normal families and Montel's theorem (the complex spiral node of Arzelà–Ascoli)"
+      - "The Riemann mapping theorem: the extremal problem, compactness, Hurwitz for injectivity"
+      - "Consequences and limits: ℂ is not conformally equivalent to the disc; annuli with different moduli; boundary behaviour (statement)"
+    must_prove: ["Schwarz's lemma", "Aut(𝔻) consists of the maps e^{iθ}(z−a)/(1−āz)", "H(Ω) is complete under the metric of locally uniform convergence", "Montel's theorem", "the Riemann mapping theorem"]
+    key_examples: ["the Cayley map z ↦ (z−i)/(z+i)", "ℂ and 𝔻 are homeomorphic but not conformally equivalent (Liouville)", "{zⁿ} on 𝔻 is normal, on a neighbourhood of a boundary point is not", "annuli r<|z|<1 and s<|z|<1 are not equivalent for r≠s (statement; proof as exercise)"]
+    exit_checks: ["Prove the Riemann mapping theorem unaided (curriculum exit check)", "Find all conformal self-maps of the upper half-plane fixing i", "If f: 𝔻→𝔻 is holomorphic with f(0)=0 and f′(0)=1, show f is the identity"]
+    optional: false
+    note: "Normal families enter here with explicit recall of Arzelà–Ascoli from Part II (spiral: compact in metric/C(K)). Schwarz–Christoffel and elliptic integrals (SS2 §8.4) are cut."
+  - slug: harmonic-functions
+    title: "Harmonic and Subharmonic Functions"
+    pages: 58
+    sources: [[AHL.4, "§6 harmonic functions: mean value, Poisson formula, Schwarz's theorem, reflection principle"], [AHL.6, "§3–4 closer look at harmonic functions (mean value property, Harnack's principle), Dirichlet problem (subharmonic functions, Perron)"], [CON.10, "§1–5 basic properties, harmonic functions on a disc, subharmonic functions, Dirichlet problem, Green's function"], [CON.9, "§1 Schwarz reflection principle"], [SS2.2, "§5.4 Schwarz reflection"], [SS2.3, "§7 Fourier series and harmonic functions"], [SS2.8, "§1.3 remarks on the Dirichlet problem"], [NEE.12, "harmonic duals, conformal invariance, Dirichlet's problem physically (motivation)"]]
+    outline:
+      - "Harmonic functions as real parts: conjugates exist on simply connected regions; conformal invariance of harmonicity"
+      - "Mean value property and the maximum principle; uniqueness for the Dirichlet problem"
+      - "The Poisson kernel and the Dirichlet problem on the disc (link to Abel summability in Part III)"
+      - "Continuous functions with the mean value property are harmonic; locally uniform limits of harmonic functions"
+      - "Harnack's inequality and Harnack's principle"
+      - "The Schwarz reflection principle, harmonic then holomorphic"
+      - "Subharmonic functions: sub-mean value property, maximum principle, examples log|f|"
+      - "Perron's method and barriers: the Dirichlet problem on general regions (outline), Green's function (optional)"
+    must_prove: ["mean value property of harmonic functions", "maximum principle for harmonic functions", "the Poisson integral solves the Dirichlet problem on the disc with continuous data", "continuous + mean value property ⇒ harmonic", "Harnack's inequality", "Harnack's principle", "Schwarz reflection principle", "maximum principle for subharmonic functions"]
+    key_examples: ["log|z| harmonic on ℂ∖{0} with no harmonic conjugate", "the Poisson kernel as an approximate identity", "log|f| is subharmonic for holomorphic f", "the punctured disc: the Dirichlet problem with data 0 on |z|=1 and 1 at 0 has no solution (irregular point)"]
+    exit_checks: ["Solve the Dirichlet problem on the disc for continuous boundary data and prove continuity up to the boundary", "If u>0 is harmonic on 𝔻 with u(0)=1, bound u(1/2) above and below (Harnack)", "Prove that an entire function real on ℝ satisfies f(z̄)= conj f(z)"]
+    optional: false
+    note: "This chapter is the entry node for the PDE branch and for Part VI's capstone (harmonic functions, Dirichlet principle). Green's identities use the Green's theorem node from Part II. Perron's method is outline-level; the disc case is proved in full."
+  - slug: entire-functions-products
+    title: "Infinite Products and Entire Functions"
+    pages: 55
+    sources: [[SS2.5, "§1–5 Jensen's formula, finite order, infinite products, sine product, Weierstrass products, Hadamard"], [SS2.6, "§1 the gamma function"], [AHL.5, "§2–3 partial fractions and factorization, Mittag-Leffler, entire functions, genus and order"], [CON.7, "§5–6 Weierstrass factorization, factorization of the sine"], [CON.8, "§1, §3 Runge's theorem, Mittag-Leffler's theorem"], [CON.11, "§1–3 Jensen's formula, genus and order, Hadamard factorization"]]
+    outline:
+      - "Infinite products: convergence, absolute convergence, holomorphic products"
+      - "Weierstrass elementary factors and the Weierstrass factorization theorem in ℂ (and in a region, stated)"
+      - "The product for sin πz and the gamma function: Γ as a meromorphic function, 1/Γ entire, reflection formula"
+      - "Mittag-Leffler's theorem: prescribed principal parts; π² / sin² πz as an example"
+      - "Jensen's formula and counting zeros; order and genus of an entire function"
+      - "Hadamard's factorization theorem (outline of proof)"
+      - "Runge's theorem and the general Mittag-Leffler theorem (optional section)"
+    must_prove: ["convergence criterion for Π(1+aₙ)", "Weierstrass factorization theorem in ℂ", "sin πz = πz Π(1−z²/n²)", "Mittag-Leffler's theorem in ℂ", "Jensen's formula", "an entire function of finite order ρ has Σ|aₙ|^{−ρ−ε} < ∞"]
+    key_examples: ["an entire function with zeros exactly at √n", "Γ(z)Γ(1−z) = π/sin πz", "e^{z}, cos√z, 1/Γ and their orders", "π cot πz = 1/z + Σ 2z/(z²−n²)"]
+    exit_checks: ["Construct an entire function with simple zeros at the positive integers and nowhere else, and compute its order", "Use Hadamard to show an entire function of order < 1 with no zeros is constant"]
+    optional: false
+    note: "Hadamard is outline-only per curriculum. Runge is kept as an optional section because the general Mittag-Leffler theorem uses it; the main line proves Mittag-Leffler for ℂ only."
+  - slug: continuation-and-picard
+    title: "Analytic Continuation, Monodromy and Picard's Theorem"
+    pages: 48
+    sources: [[CON.9, "§2–3 analytic continuation along a path, monodromy theorem"], [AHL.8, "§1 analytic continuation (germs, continuation along arcs, monodromy); §3 Picard's theorem via the modular function"], [SS2.6, "§1.1, §2 analytic continuation of Γ and ζ, functional equation"], [CON.12, "§1–4 Bloch's theorem, little Picard, Schottky, great Picard"], [NEE.5, "§5.11 analytic continuation, reflections (motivation)"]]
+    outline:
+      - "Function elements and germs; direct continuation; the identity theorem as uniqueness of continuation"
+      - "Continuation along paths and the monodromy theorem"
+      - "Natural boundaries: Σ z^{2ⁿ} and lacunary series"
+      - "Continuation in practice: Γ to ℂ, ζ to ℂ∖{1}, the functional equation via theta (Part III)"
+      - "Bloch's theorem and Landau's constant"
+      - "The little Picard theorem"
+      - "Schottky's theorem and the great Picard theorem (outline); the modular-function proof (outline)"
+    must_prove: ["uniqueness of analytic continuation along a path", "the monodromy theorem", "Σ z^{2ⁿ} cannot be continued across any point of |z|=1", "Bloch's theorem (with some constant)", "the little Picard theorem"]
+    key_examples: ["√z and log z continued around 0: monodromy fails without simple connectivity", "Σ z^{2ⁿ}: natural boundary", "ζ(s) continued to ℂ∖{1} with the functional equation", "e^z omits exactly one value; an entire function omitting two values is constant"]
+    exit_checks: ["Prove little Picard via Bloch/Landau unaided", "Six UCLA complex-analysis qual problems in 3 hours, at least 3 essentially complete (Part V exit check)"]
+    optional: false
+    note: "Riemann surfaces, sheaves and covering spaces (CON §IX.4–7) are cut; monodromy is proved directly for paths in a region. The Part V exit exam sits at the end of this chapter."
+cut:
+  SS2.4: "Fourier transform class F and Paley–Wiener: Fourier transform is Part III/VI; contour shifting is already practised in cauchy-theorem"
+  SS2.7: "prime number theorem: number-theory branch, beyond the qual benchmark"
+  SS2.9: "elliptic functions: beyond the UCLA benchmark"
+  SS2.10: "theta-function applications to sums of squares: number-theory branch"
+  SS2.A: "asymptotics (Bessel, Airy, partitions): branch material"
+  AHL.7: "elliptic functions: beyond the UCLA benchmark"
+  CON.1: "complex number system: covered where ℂ is introduced in earlier Parts"
+  CON.2: "metric spaces and topology of ℂ: Part II"
+  NEE.1: "geometry and complex arithmetic: covered where ℂ is introduced in earlier Parts"
+  NEE.6: "non-Euclidean geometry: enrichment only"
+  NEE.10: "vector fields, Poincaré–Hopf: topology branch"
+exemptions: []
+coverage_gaps:
+  - "UCLA-style mixed qual problem sets (exit checks for continuation-and-picard) must be assembled and written originally."
+  - "Transplanting the disc Dirichlet problem to a simply connected Jordan region via the Riemann map needs Carathéodory boundary extension, which none of the sources proves at this level; it is stated, not proved."

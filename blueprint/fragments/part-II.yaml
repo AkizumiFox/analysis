@@ -1,0 +1,418 @@
+part: II
+title: "Metric Spaces and Several Variables"
+summary: "Lifts convergence, completeness, compactness and continuity from ℝ to metric spaces and C(K), forced by concrete problems (ODE existence and uniqueness, polynomial approximation, typical continuous functions), then does calculus in ℝⁿ (inverse and implicit functions, the Riemann integral on ℝⁿ) and ends by abstracting open sets into topological spaces."
+
+nodes:
+  # Pugh (scaffolding)
+  PUG.2:  {book: PUG, ch: "2", title: "A Taste of Topology", pages: 90, files: "011-028"}
+  PUG.4:  {book: PUG, ch: "4", title: "Function Spaces", pages: 66, files: "038-047"}
+  PUG.5:  {book: PUG, ch: "5", title: "Multivariable Calculus", pages: 106, files: "048-064"}
+  # Tao (depth)
+  TAO2.1: {book: TAO2, ch: "1", title: "Metric Spaces", pages: 22, files: "003-007"}
+  TAO2.2: {book: TAO2, ch: "2", title: "Continuous Functions on Metric Spaces", pages: 15, files: "008-011"}
+  TAO2.3: {book: TAO2, ch: "3", title: "Uniform Convergence", pages: 26, files: "012-018"}
+  TAO2.6: {book: TAO2, ch: "6", title: "Several Variable Differential Calculus", pages: 32, files: "029-035"}
+  # Sutherland (bridge)
+  SUT.5:  {book: SUT, ch: "5", title: "Metric spaces", pages: 24, files: "011-015"}
+  SUT.6:  {book: SUT, ch: "6", title: "More concepts in metric spaces", pages: 16, files: "016-019"}
+  SUT.7:  {book: SUT, ch: "7", title: "Topological spaces", pages: 6, files: "020"}
+  SUT.8:  {book: SUT, ch: "8", title: "Continuity in topological spaces; bases", pages: 6, files: "021"}
+  SUT.9:  {book: SUT, ch: "9", title: "Some concepts in topological spaces", pages: 8, files: "022"}
+  SUT.10: {book: SUT, ch: "10", title: "Subspaces and product spaces", pages: 12, files: "023-024"}
+  SUT.11: {book: SUT, ch: "11", title: "The Hausdorff condition", pages: 4, files: "025"}
+  SUT.12: {book: SUT, ch: "12", title: "Connected spaces", pages: 12, files: "026-028"}
+  SUT.13: {book: SUT, ch: "13", title: "Compact spaces", pages: 16, files: "029-032"}
+  SUT.14: {book: SUT, ch: "14", title: "Sequential compactness", pages: 10, files: "033"}
+  SUT.15: {book: SUT, ch: "15", title: "Quotient spaces and surfaces", pages: 22, files: "034-037"}
+  SUT.16: {book: SUT, ch: "16", title: "Uniform convergence", pages: 9, files: "038-040"}
+  SUT.17: {book: SUT, ch: "17", title: "Complete metric spaces", pages: 19, files: "040-043"}
+  # Munkres, Topology (depth; topological basics only)
+  MUN.2:  {book: MUN, ch: "2", title: "Topological Spaces and Continuous Functions", pages: 72, files: "020-034"}
+  MUN.3:  {book: MUN, ch: "3", title: "Connectedness and Compactness", pages: 42, files: "035-042"}
+  # Kolmogorov & Fomin (depth)
+  KF.2:   {book: KF, ch: "2", title: "Metric Spaces", pages: 41, files: "005-006"}
+  KF.3:   {book: KF, ch: "3", title: "Topological Spaces", pages: 40, files: "006-008"}
+  # Munkres, Analysis on Manifolds (scaffolding for ℝⁿ calculus and integration)
+  MOA.1:  {book: MOA, ch: "1", title: "The Algebra and Topology of ℝⁿ", pages: 47, files: "002-011"}
+  MOA.2:  {book: MOA, ch: "2", title: "Differentiation", pages: 39, files: "011-014"}
+  MOA.3:  {book: MOA, ch: "3", title: "Integration", pages: 54, files: "015-020"}
+  MOA.4:  {book: MOA, ch: "4", title: "Change of Variables", pages: 44, files: "021-026"}
+  # Teschl (depth, ODE)
+  TES.2:  {book: TES, ch: "2", title: "Initial value problems", pages: 26, files: "008-014"}
+  # Rudin PMA (depth)
+  PMA.7:  {book: PMA, ch: "7", title: "Sequences and Series of Functions", pages: 30, files: "029-034"}
+  PMA.9:  {book: PMA, ch: "9", title: "Functions of Several Variables", pages: 44, files: "042-051"}
+  # Gelbaum & Olmsted (problems)
+  GO.9:   {book: GO, ch: "9", title: "Functions of Two Variables", pages: 15, files: "037-039"}
+  GO.10:  {book: GO, ch: "10", title: "Plane Sets", pages: 19, files: "040-044"}
+  GO.11:  {book: GO, ch: "11", title: "Area", pages: 7, files: "045-046"}
+  GO.12:  {book: GO, ch: "12", title: "Metric and Topological Spaces", pages: 18, files: "047-051"}
+  GO.13:  {book: GO, ch: "13", title: "Function Spaces", pages: 8, files: "052-053"}
+  # Steen & Seebach (problems)
+  SSB.1:  {book: SSB, ch: "I.1", title: "General Introduction (basic definitions)", pages: 5, files: "003-006"}
+  SSB.2:  {book: SSB, ch: "I.2", title: "Separation Axioms", pages: 5, files: "006-007"}
+  SSB.3:  {book: SSB, ch: "I.3", title: "Compactness", pages: 6, files: "008-009"}
+  SSB.4:  {book: SSB, ch: "I.4", title: "Connectedness", pages: 2, files: "009-010"}
+  SSB.5:  {book: SSB, ch: "I.5", title: "Metric Spaces", pages: 6, files: "010-011"}
+  SSB.II: {book: SSB, ch: "II", title: "Counterexamples (selected: 1–4, 18–20, 30–32, 51, 116–118, 134, 137, 139–140)", pages: 60, files: "011-032"}
+
+hard:
+  # Pugh
+  - [PUG.2, PUG.4]
+  - [PUG.2, PUG.5]
+  - [PUG.4, PUG.5]
+  # Tao II
+  - [TAO2.1, TAO2.2]
+  - [TAO2.2, TAO2.3]
+  - [TAO2.1, TAO2.6]
+  - [TAO2.2, TAO2.6]
+  # Sutherland
+  - [SUT.5, SUT.6]
+  - [SUT.6, SUT.7]
+  - [SUT.7, SUT.8]
+  - [SUT.8, SUT.9]
+  - [SUT.9, SUT.10]
+  - [SUT.9, SUT.11]
+  - [SUT.9, SUT.12]
+  - [SUT.10, SUT.12]
+  - [SUT.10, SUT.13]
+  - [SUT.11, SUT.13]
+  - [SUT.13, SUT.14]
+  - [SUT.10, SUT.15]
+  - [SUT.6, SUT.16]
+  - [SUT.16, SUT.17]
+  # Munkres, Topology
+  - [MUN.2, MUN.3]
+  # Kolmogorov–Fomin
+  - [KF.2, KF.3]
+  # Munkres, Analysis on Manifolds
+  - [MOA.1, MOA.2]
+  - [MOA.1, MOA.3]
+  - [MOA.2, MOA.4]
+  - [MOA.3, MOA.4]
+  # Rudin (ch 9 uses the completeness/compactness of ch 2–4 only, which are outside this Part)
+
+soft:
+  - [PMA.7, PMA.9]
+  - [SUT.13, SUT.17]
+  - [SUT.17, TAO2.6]
+  - [KF.2, TES.2]
+  - [PUG.4, TES.2]
+  - [PUG.4, MOA.2]
+  - [PUG.2, MOA.1]
+  - [TAO2.3, PUG.4]
+  - [TAO2.2, MUN.2]
+  - [SSB.1, SSB.II]
+  - [SSB.5, SSB.II]
+  - [GO.10, GO.11]
+
+alt:
+  - [PUG.2, TAO2.1]
+  - [PUG.2, KF.2]
+  - [TAO2.1, SUT.5]
+  - [TAO2.2, SUT.6]
+  - [KF.2, SUT.17]
+  - [SUT.17, PUG.4]
+  - [TES.2, KF.2]
+  - [PUG.4, KF.3]
+  - [PMA.7, PUG.4]
+  - [PMA.7, TAO2.3]
+  - [TAO2.6, PMA.9]
+  - [TAO2.6, MOA.2]
+  - [PUG.5, MOA.2]
+  - [PUG.5, PMA.9]
+  - [PUG.5, MOA.3]
+  - [MUN.2, SUT.7]
+  - [MUN.2, KF.3]
+  - [MUN.3, SUT.13]
+  - [MUN.3, SUT.12]
+  - [MUN.2, SUT.15]
+
+external:
+  - {needs: "LUB axiom, sup/inf and the ε-characterization (Part I ch 1)", for_chapter: metric-spaces}
+  - {needs: "sequences, subsequences, Cauchy criterion and Bolzano–Weierstrass in ℝ (Part I)", for_chapter: metric-spaces}
+  - {needs: "ε-δ continuity and uniform continuity on ℝ (Part I)", for_chapter: metric-spaces}
+  - {needs: "equivalent forms of completeness, incl. the Archimedean caveat (end of Part I)", for_chapter: complete-metric-spaces}
+  - {needs: "equivalence relations and classes (Part 0)", for_chapter: complete-metric-spaces}
+  - {needs: "OPTIONAL comparison only, never cited in proofs: Dedekind-cut construction of ℝ and uniqueness of the complete ordered field (Part 0 constructions)", for_chapter: complete-metric-spaces}
+  - {needs: "pointwise vs uniform convergence, uniform limit of continuous functions is continuous, Weierstrass M-test (Part I)", for_chapter: complete-metric-spaces}
+  - {needs: "Heine–Borel in ℝ, open-cover compactness of [a,b], IVT, EVT, uniform continuity on [a,b] (Part I)", for_chapter: compactness-connectedness}
+  - {needs: "the Cantor set as an example (Part I)", for_chapter: compactness-connectedness}
+  - {needs: "Riemann integral on [a,b], FTC, integration commutes with uniform limits (Part I)", for_chapter: contraction-picard}
+  - {needs: "power series and the exponential function (Part I)", for_chapter: contraction-picard}
+  - {needs: "countability; ℝ is uncountable by diagonalization (Part 0)", for_chapter: stone-weierstrass-baire}
+  - {needs: "mean value theorem and Taylor's theorem with remainder on ℝ (Part I)", for_chapter: derivative-rn}
+  - {needs: "Darboux integral, Riemann's criterion, sets of measure zero / Lebesgue criterion if stated (Part I)", for_chapter: riemann-integral-rn}
+  - {needs: "companion linear-algebra book (cite by chapter in prose): vector spaces, bases, dimension, linear maps and matrices", for_chapter: compactness-connectedness}
+  - {needs: "companion linear-algebra book: inner products and Cauchy–Schwarz in ℝⁿ", for_chapter: metric-spaces}
+  - {needs: "companion linear-algebra book: rank, invertibility, determinants", for_chapter: derivative-rn}
+  - {needs: "companion linear-algebra book: symmetric matrices, definiteness of quadratic forms, spectral theorem", for_chapter: derivative-rn}
+  - {needs: "companion linear-algebra book: kernels, images, rank–nullity, direct-sum decompositions", for_chapter: inverse-implicit}
+  - {needs: "companion linear-algebra book: elementary matrices, factorization of invertible matrices, multiplicativity of det", for_chapter: riemann-integral-rn}
+  - {needs: "equivalence relations and quotient sets (Part 0)", for_chapter: compactness-quotients}
+
+chapters:
+  - slug: metric-spaces
+    title: "Metric Spaces, Open Sets and Continuity"
+    pages: 55
+    sources: [[PUG.2, "§2.1–2.3 (metric spaces, continuity, topology of a metric space, inheritance, product metrics)"], [TAO2.1, "§1.1–1.3"], [TAO2.2, "§2.1–2.2"], [SUT.5, "examples, open balls, open sets (bridge)"], [SUT.6, "closed sets, closure, interior, boundary, equivalent metrics"], [KF.2, "§5–6 (examples, dense and separable)"], [SSB.5, "metric definitions"], [SSB.II, "#1–3 discrete metrics, #134 bounded metrics, #139–140 post office/radial metric"]]
+    outline:
+      - "From |x−y| to a distance: the axioms, and why the triangle inequality is the one that does the work"
+      - "A gallery of metrics: ℝⁿ with d₁, d₂, d_∞; the discrete metric; C[a,b] with sup and L¹ distances; ℓ¹, ℓ², ℓ^∞; normed spaces as the main source of metrics; the post-office metric"
+      - "Open balls, open and closed sets; interior, closure, boundary, limit and isolated points"
+      - "Convergent sequences and the sequential description of closure; dense subsets and separability (ℚⁿ dense in ℝⁿ; ℓ^∞ not separable)"
+      - "Subspaces and relative openness; product metrics on X×Y"
+      - "Continuity: ε-δ, sequential, and preimages of open sets; homeomorphisms; Lipschitz and uniformly continuous maps"
+      - "Equivalent metrics: same open sets vs same Cauchy sequences, a preview of the topological abstraction"
+    must_prove: ["the metric axioms for d₁, d₂, d_∞ on ℝⁿ and for the sup metric on C[a,b]", "open balls are open; arbitrary unions / finite intersections of open sets are open", "F is closed iff it contains the limits of its convergent sequences", "closure = smallest closed superset = set of limits of sequences", "U ⊆ Y is open in the subspace Y iff U = V ∩ Y with V open in X", "equivalence of ε-δ, sequential and open-preimage continuity", "composition of continuous maps is continuous; Lipschitz ⇒ uniformly continuous ⇒ continuous", "d is continuous on X×X"]
+    key_examples: ["discrete metric: every set open and closed", "closure of an open ball need not be the closed ball (discrete metric)", "sup vs L¹ metric on C[0,1]: a sequence converging in one and not the other", "ℓ^∞ is not separable (uncountably many 0-1 sequences at mutual distance 1)", "(0,1) and ℝ are homeomorphic", "x ↦ x² continuous but not uniformly continuous on ℝ"]
+    exit_checks: ["prove that closure of A equals the set of limits of sequences in A, both inclusions", "negate 'f: X→Y is uniformly continuous' and exhibit a continuous non-uniformly-continuous map between metric spaces", "show two metrics generate the same open sets iff the identity is a homeomorphism"]
+    optional: false
+    note: "Opens Part II; recall the Part I definitions explicitly (spiral, decisions.md 6). Norms are defined here only as a source of metrics; norm equivalence is proved in compactness-connectedness and the operator norm in derivative-rn. Keep ℓ² here because the non-compact unit ball (ch 3) needs it."
+
+  - slug: complete-metric-spaces
+    title: "Completeness and the Completion of a Metric Space"
+    pages: 47
+    sources: [[PUG.2, "§2.3 completeness; §2.10* completion and a second construction of ℝ from ℚ"], [PUG.4, "§4.1 uniform convergence and C⁰, C_b complete"], [TAO2.1, "§1.4"], [TAO2.3, "§3.4 metric of uniform convergence"], [KF.2, "§7.1–7.2, 7.4 (completeness, nested spheres, completion)"], [SUT.16, "Cauchy's criterion, uniform limits (bridge)"], [SUT.17, "definition and examples"], [SSB.II, "#137 Cauchy completion"], [GO.12, "incomplete metric spaces, nested closed sets with empty intersection"]]
+    outline:
+      - "Cauchy sequences; complete spaces; ℝⁿ is complete; closed subsets of complete spaces are complete, complete subspaces are closed"
+      - "Completeness is not a topological property: ℝ ≅ (−1,1); the metric x ↦ arctan"
+      - "Nested closed sets with diameters → 0 (Cantor intersection theorem) and what fails without the diameter condition"
+      - "The sup metric: B(X) and C_b(X) are complete (uniform convergence revisited as convergence in a metric); ℓ¹, ℓ², ℓ^∞ are complete"
+      - "Incomplete spaces met in analysis: C[0,1] with the L¹ distance; polynomials with the sup distance"
+      - "Extending uniformly continuous maps from a dense subset into a complete space"
+      - "The completion theorem: existence via Cauchy sequences, universal property, uniqueness up to isometry"
+      - "ℝ as the completion of ℚ (spiral node): Cauchy sequences of rationals with rational ε, field operations and order, the LUB property; comparison with the axiom (Part I) and cuts (Part 0); preview of Lᵖ as a completion"
+    must_prove: ["convergent ⇒ Cauchy; a Cauchy sequence with a convergent subsequence converges", "ℝⁿ complete (from ℝ)", "closed subset of complete space is complete; complete subspace is closed", "Cantor intersection theorem", "C_b(X) is complete in the sup metric (3ε argument)", "ℓ² is complete", "the L¹ distance on C[0,1] is incomplete", "unique extension of uniformly continuous maps from a dense subset into a complete space", "every metric space has a completion, unique up to isometry fixing X", "the Cauchy-sequence model of ℚ's completion is a complete ordered field with the LUB property"]
+    key_examples: ["ℚ, (0,1) incomplete; ℤ and discrete spaces complete", "ℝ with d(x,y)=|arctan x − arctan y| is incomplete though homeomorphic to ℝ", "fₙ piecewise-linear steps: Cauchy in L¹ distance on C[0,1] with no continuous limit", "nested closed balls with empty intersection in a complete space when radii do not shrink (GO.12)", "polynomials are not complete under sup on [0,1]"]
+    exit_checks: ["prove C_b(X) complete from scratch, marking where each ε/3 goes", "prove directly that the L¹ distance on C[0,1] is incomplete", "construct the completion and verify the universal property"]
+    optional: false
+    note: "Completion lives here per decisions.md 5. Avoid circularity in the ℝ-from-ℚ section: the metric on ℚ is ℚ-valued and ε ranges over positive rationals; follow PUG §2.10's 'second construction' in spirit, not text. May cite Part 0 constructions only as optional commentary (they are .optional). Baire is placed in stone-weierstrass-baire so that its main application (C[0,1]) sits beside the density theorems."
+
+  - slug: compactness-connectedness
+    title: "Compactness and Connectedness in Metric Spaces"
+    pages: 55
+    sources: [[PUG.2, "§2.4 compactness, §2.5 connectedness, §2.7 coverings and total boundedness, §2.8 Cantor sets, §2.9* Peano curves"], [TAO2.1, "§1.5"], [TAO2.2, "§2.3–2.4"], [KF.3, "§11.1–11.3 total boundedness, compactness, relative compactness (metric parts only); §12.1–12.2"], [MOA.1, "§3–4 topology, compact and connected subspaces of ℝⁿ"], [GO.10, "plane sets: disjoint closed sets at distance 0; connected sets that are not arcs"], [SSB.II, "#116–118 topologist's sine curve"]]
+    outline:
+      - "Sequential compactness; compact ⇒ closed and bounded; Bolzano–Weierstrass and Heine–Borel in ℝⁿ"
+      - "Open covers, the Lebesgue number lemma, total boundedness; compact ⇔ sequentially compact ⇔ complete and totally bounded"
+      - "Continuous images of compact sets: extreme values, uniform continuity (the metric version, the gate to the rest of the Part), continuous bijections from compact spaces are homeomorphisms"
+      - "Finite versus infinite dimensions: all norms on a finite-dimensional space are equivalent; the unit ball of ℓ² is not compact; closed and bounded ≠ compact"
+      - "The Cantor set as a compact, perfect, totally disconnected, nowhere dense set; the Peano curve as a uniform limit"
+      - "Connectedness and path-connectedness; connected subsets of ℝ are intervals; continuous images; the general intermediate value theorem"
+      - "Local to global: open connected subsets of ℝⁿ are path-connected; a locally constant function on a connected space is constant; the topologist's sine curve"
+    must_prove: ["compact ⇔ sequentially compact ⇔ complete + totally bounded (metric spaces)", "Lebesgue number lemma", "Heine–Borel in ℝⁿ", "continuous image of compact is compact; EVT on compact metric spaces", "continuous on compact ⇒ uniformly continuous (metric), by sequences and by Lebesgue number", "continuous bijection from compact metric space to metric space is a homeomorphism", "all norms on ℝⁿ are equivalent", "unit ball of ℓ² is not compact", "path-connected ⇒ connected; connected subsets of ℝ are intervals", "open connected subsets of ℝⁿ are path-connected"]
+    key_examples: ["eₙ in ℓ²: bounded, no convergent subsequence", "closed bounded non-compact: ℕ with discrete metric, closed unit ball of C[0,1]", "Cantor set", "Peano curve [0,1] → [0,1]² (continuous surjection; cannot be a homeomorphism)", "topologist's sine curve: connected, not path-connected", "graphs y=0 and y=1/x: disjoint closed sets at distance 0"]
+    exit_checks: ["prove uniform continuity on compact metric spaces twice: by sequences and contradiction, and by the Lebesgue number", "unit ball of ℓ² is not compact; prove the finite-dimensional contrast via norm equivalence", "prove [0,1] and [0,1]² are not homeomorphic using connectedness"]
+    optional: false
+    note: "Cover-compactness is defined here directly for metric spaces; the topological version returns in compactness-quotients (spiral). KF §11 is written after its topological §9–10: use its metric content only. Norm equivalence uses compactness of the unit sphere in ℝⁿ and a basis (cite companion LA book for bases)."
+
+  - slug: contraction-picard
+    title: "Contraction Mappings and the Picard–Lindelöf Theorem"
+    pages: 50
+    sources: [[TES.2, "§2.1–2.4, 2.6 fixed points, existence and uniqueness, extensions, dependence on initial data, extensibility"], [KF.2, "§8 contraction mappings, Picard, integral equations"], [SUT.17, "Banach's fixed point theorem and its applications (bridge)"], [PUG.4, "§4.5 contractions and ODEs"], [TAO2.6, "§6.6 contraction mapping theorem"]]
+    outline:
+      - "The question: when does y' = f(t,y), y(t₀)=y₀ have exactly one solution? Integral-equation form; y' = y^{1/3} (non-uniqueness) and y' = y² (blow-up)"
+      - "Banach's contraction mapping theorem with a priori and a posteriori error bounds; the theorem for a contracting iterate Tᵐ"
+      - "Why each hypothesis is needed: d(Tx,Ty) < d(x,y) without a uniform constant; incomplete spaces"
+      - "Warm-up applications: equations in ℝⁿ, Fredholm integral equations with small kernel, Volterra equations for every λ (iterates or weighted sup norm)"
+      - "Picard–Lindelöf for systems in ℝⁿ with a locally Lipschitz right side; higher-order equations as systems; Picard iterates of y' = y rebuild the exponential series"
+      - "Gronwall's inequality; uniqueness and Lipschitz dependence on initial conditions"
+      - "Maximal solutions and the blow-up alternative; global existence for globally Lipschitz (e.g. linear) systems"
+    must_prove: ["Banach's contraction mapping theorem with error bound d(xₙ,x*) ≤ qⁿ/(1−q)·d(x₁,x₀)", "if some iterate Tᵐ is a contraction, T has a unique fixed point", "equivalence of the IVP and the integral equation for continuous f", "Picard–Lindelöf (local existence and uniqueness, Lipschitz in y)", "Gronwall's inequality", "continuous dependence on initial data", "existence of a maximal solution; if the maximal interval ends at T<∞ the solution leaves every compact set"]
+    key_examples: ["y' = y^{1/3}, y(0)=0: infinitely many solutions", "y' = y², y(0)=1: blow-up at t=1", "T(x) = x + 1/x on [1,∞): d(Tx,Ty) < d(x,y) and no fixed point", "Volterra equation solved for all λ via Tᵐ", "cos x = x solved by iteration with an explicit error bound"]
+    exit_checks: ["prove Picard–Lindelöf unaided, stating where completeness of C(I,ℝⁿ) is used", "for a given contraction, bound how many iterates guarantee accuracy 10⁻⁶", "explain precisely which hypothesis of Picard–Lindelöf fails for y' = y^{1/3}"]
+    optional: false
+    note: "Decisions.md 7: ODE existence forces contraction maps (this chapter) and Arzelà–Ascoli (next). The contraction theorem is reused by the inverse function theorem (inverse-implicit). Linear systems and the matrix exponential are not developed (companion LA book / ODE course)."
+
+  - slug: arzela-ascoli-peano
+    title: "Equicontinuity, the Arzelà–Ascoli Theorem and Peano's Theorem"
+    pages: 32
+    sources: [[PUG.4, "§4.3 compactness and equicontinuity in C⁰, propagation theorem, Heine–Borel in a function space"], [PMA.7, "§7.6 equicontinuous families"], [KF.3, "§11.4–11.5 Arzelà's theorem and Peano's theorem"], [TES.2, "§2.7 Euler's method and the Peano theorem"], [GO.13, "function-space counterexamples"]]
+    outline:
+      - "The question: does y' = f(t,y) have a solution when f is merely continuous? Euler polygons, and why we need compactness in C[a,b]"
+      - "Pointwise and uniform equicontinuity; Lipschitz families and families with bounded derivatives; swapping quantifiers (equicontinuity vs continuity of each member)"
+      - "The diagonal argument: extracting a subsequence converging on a countable dense set"
+      - "Arzelà–Ascoli on a compact metric space K; propagation from a dense set; compact subsets of C(K) are the closed, bounded, equicontinuous sets"
+      - "Each hypothesis is needed: sin(nx), xⁿ on [0,1], moving bumps, fₙ = n"
+      - "Peano's existence theorem via Euler polygons; non-uniqueness revisited; hooks forward to Montel (Part V) and Rellich/compact operators (Part VI)"
+    must_prove: ["diagonal extraction lemma", "Arzelà–Ascoli (sequential form): bounded equicontinuous sequence in C(K) has a uniformly convergent subsequence", "equicontinuous + pointwise convergent on dense set ⇒ uniformly convergent", "E ⊆ C(K) compact ⇔ closed, bounded, equicontinuous", "Peano's existence theorem"]
+    key_examples: ["sin(nx) on [0,π]: bounded, not equicontinuous", "xⁿ on [0,1]", "moving bump functions", "{f: |f(0)| ≤ 1, Lip(f) ≤ 1} is compact in C[0,1]", "y' = y^{1/3}: Peano gives existence, uniqueness fails"]
+    exit_checks: ["prove Peano's theorem via Arzelà–Ascoli", "show that the closed unit ball of C[0,1] is not compact by producing a non-equicontinuous sequence", "negate equicontinuity and compare with 'each fₙ is uniformly continuous'"]
+    optional: false
+    note: "Skill focus: diagonal extraction (decisions.md 14). Place the forward hooks (normal families, compact operators) as short remarks only."
+
+  - slug: stone-weierstrass-baire
+    title: "Density and Category in C(K): Stone–Weierstrass and Baire"
+    pages: 45
+    sources: [[PUG.4, "§4.4 uniform approximation, Weierstrass and Stone–Weierstrass; §4.7* nowhere differentiable functions and Baire"], [TAO2.3, "§3.8 uniform approximation by polynomials (approximate identities)"], [PMA.7, "§7.7 Stone–Weierstrass, complex version"], [KF.2, "§7.3 Baire's theorem"], [GO.13, "algebras that are not lattices, lattices that are not algebras"], [GO.12, "Baire-category counterexamples"]]
+    outline:
+      - "The question: are polynomials dense in C[a,b]? Weierstrass's theorem by Bernstein polynomials, and by convolution with an approximate identity"
+      - "The lattice form: a lattice of functions that interpolates at pairs of points is dense"
+      - "The algebra form of Stone–Weierstrass: closed subalgebras are lattices (approximate |t| by polynomials); separating points and vanishing nowhere"
+      - "Complex Stone–Weierstrass (self-adjoint algebras); trigonometric polynomials are dense in C(𝕋); separability of C(K) for compact K ⊂ ℝⁿ; necessity of each hypothesis"
+      - "Nowhere dense, meager and comeager sets; the Baire category theorem for complete metric spaces"
+      - "First Baire arguments: ℚ is not a G_δ; no function is continuous exactly on ℚ; complete metric spaces without isolated points are uncountable"
+      - "Nowhere-differentiable functions: an explicit Weierstrass-type example, and the comeager set of nowhere-differentiable functions in C[0,1]; preview of the uniform boundedness principle (Part VI)"
+    must_prove: ["Weierstrass approximation theorem (Bernstein or convolution)", "Stone–Weierstrass, lattice and algebra versions (real)", "complex Stone–Weierstrass for self-adjoint algebras", "trigonometric polynomials dense in C(𝕋)", "Baire category theorem", "no function ℝ→ℝ is continuous exactly at the rationals", "nowhere-differentiable functions form a comeager subset of C[0,1]"]
+    key_examples: ["even polynomials not dense in C[−1,1]; dense in C[0,1]", "polynomials in z not dense in C(closed unit disc) (hook to Part V)", "functions vanishing at a point: algebra that fails to vanish nowhere", "Thomae function: continuous exactly on the irrationals", "Weierstrass/van der Waerden nowhere-differentiable function", "a lattice that is not an algebra and an algebra that is not a lattice (GO.13)"]
+    exit_checks: ["prove that nowhere-differentiable functions form a comeager set in C[0,1]", "prove Weierstrass's theorem, then deduce density of trigonometric polynomials from Stone–Weierstrass", "decide which of several given subalgebras of C(K) are dense, citing the failing hypothesis"]
+    optional: false
+    note: "Pairs the two answers about C(K): what is dense (polynomials) and what is typical (nowhere differentiable). Decisions.md 7: polynomial approximation forces Stone–Weierstrass. Part III gives Fejér as a second proof of trig density; keep the approximate-identity proof here short so Part III can develop kernels. Baire skill named (decisions.md 14); UBP is Part VI."
+
+  - slug: derivative-rn
+    title: "The Derivative in ℝⁿ"
+    pages: 58
+    sources: [[PUG.5, "§5.1–5.3 derivatives, higher derivatives, smoothness classes (linear algebra §5.1 by citation only)"], [TAO2.6, "§6.1–6.5"], [MOA.2, "§5–7 derivative, C¹ functions, chain rule"], [PMA.9, "§9.1–9.2, 9.8 linear transformations, differentiation, higher derivatives"], [GO.9, "functions of two variables: separately continuous, directional derivatives, mixed partials"]]
+    outline:
+      - "Linear maps as a normed space: the operator norm; invertible maps form an open set and inversion is continuous (Neumann series); linear algebra cited from the companion book"
+      - "The derivative as the best linear approximation; uniqueness; differentiable ⇒ continuous"
+      - "Partial and directional derivatives; the Jacobian matrix; why their existence is not enough"
+      - "The chain rule and its consequences (product rule, gradients)"
+      - "The mean value inequality on convex sets; Df = 0 on a connected open set ⇒ f constant; continuous partials ⇒ differentiable (C¹)"
+      - "Higher derivatives and Cᵏ; symmetry of second derivatives (Schwarz/Clairaut) and its failure without continuity; Taylor's theorem in several variables"
+      - "Local extrema: critical points and the second-derivative test via definiteness of the Hessian"
+    must_prove: ["operator norm is a norm; ‖AB‖ ≤ ‖A‖‖B‖; GL(n) open and A ↦ A⁻¹ continuous", "uniqueness of the derivative; differentiable ⇒ continuous", "chain rule", "mean value inequality", "continuous partials ⇒ differentiable", "symmetry of mixed partials for C²", "Taylor's formula with remainder in several variables", "second-derivative test"]
+    key_examples: ["xy/(x²+y²): separately continuous, not continuous", "x²y/(x⁴+y²): all directional derivatives at 0, not continuous", "a differentiable function that is not C¹", "xy(x²−y²)/(x²+y²): unequal mixed partials", "the mean value equality fails for vector-valued maps: t ↦ (cos t, sin t)"]
+    exit_checks: ["prove the chain rule unaided", "prove continuous partials ⇒ differentiable", "decide differentiability at the origin for three given functions, justifying each"]
+    optional: false
+    note: "Linear algebra is not taught: cite the companion LA book by chapter in prose for matrices, rank, determinants, definiteness. The operator norm is the spiral's first appearance of 'bounded = continuous' for linear maps (Part VI)."
+
+  - slug: inverse-implicit
+    title: "Inverse and Implicit Functions, and Lagrange Multipliers"
+    pages: 55
+    sources: [[PUG.5, "§5.4 implicit and inverse functions, §5.5* rank theorem, §5.6* Lagrange multipliers"], [TAO2.6, "§6.7–6.8"], [MOA.2, "§8–9 inverse and implicit function theorems"], [PMA.9, "§9.3–9.6 contraction principle, inverse, implicit and rank theorems"]]
+    outline:
+      - "Local invertibility: statement of the inverse function theorem; why a nonzero derivative is not enough globally (the polar map) and why invertibility of Df is not necessary for injectivity (x³)"
+      - "Proof of the inverse function theorem by the contraction mapping theorem; C¹ and Cᵏ regularity of the inverse"
+      - "The implicit function theorem, deduced from the inverse function theorem; the derivative of the implicit function"
+      - "Level sets and graphs: regular values, tangent spaces, computing tangent planes and normal vectors"
+      - "The rank theorem, immersions and submersions (optional section)"
+      - "Lagrange multipliers for one and several constraints, proved via the implicit function theorem; applications: extrema on spheres, AM–GM, the spectral theorem for symmetric matrices revisited"
+    must_prove: ["inverse function theorem (via contraction)", "the inverse is Cᵏ when f is Cᵏ", "implicit function theorem", "tangent space to a regular level set is ker Dg", "Lagrange multiplier theorem (several constraints)"]
+    key_examples: ["polar coordinates: locally invertible everywhere off the origin, not globally injective", "x ↦ x³: bijective with non-invertible derivative at 0", "x ↦ x + x² sin(1/x): Df(0) invertible but f not injective near 0 (C¹ needed)", "x² + y² + z² = 1: tangent planes and a local graph", "maximize xyz on the sphere; min of a quadratic form on the sphere gives an eigenvector"]
+    exit_checks: ["derive the implicit function theorem from the inverse function theorem and compute a tangent plane", "prove the inverse function theorem unaided, marking where the contraction theorem enters", "solve a two-constraint Lagrange problem and justify the regularity hypothesis"]
+    optional: false
+    note: "Uses contraction-picard's theorem (decisions.md 7 spiral of contraction). Forms and manifolds are deferred (decisions.md 12): keep 'submanifold' to regular level sets and local graphs in ℝⁿ."
+
+  - slug: riemann-integral-rn
+    title: "The Riemann Integral on ℝⁿ"
+    pages: 52
+    sources: [[MOA.3, "§10–14 integral over a rectangle, existence, evaluation (Fubini), bounded sets, rectifiable (Jordan) sets"], [MOA.4, "§20 the meaning of the determinant (statement only; our proof avoids the general theorem)"], [PUG.5, "§5.7 multiple integrals, Fubini, Cavalieri; §5.9 Green's formula in the plane (statement and the FTC-based exercise)"], [PMA.9, "§9.9 differentiation of integrals"], [GO.11, "sets without area"], [GO.9, "iterated integrals that differ / exist without integrability"]]
+    outline:
+      - "Rectangles, partitions and Darboux sums in ℝⁿ; integrability criterion; continuous functions on rectangles are integrable"
+      - "Sets of content zero and measure zero; functions whose discontinuities have content zero are integrable (Lebesgue's criterion stated, spiral from Part I)"
+      - "Jordan content: Jordan-measurable sets (boundary of content zero), the integral over a bounded Jordan set, additivity; sets without content"
+      - "Fubini for continuous functions on rectangles and on regions between graphs; Cavalieri; iterated integrals can exist and disagree without integrability"
+      - "Differentiation under the integral sign (Leibniz rule)"
+      - "Linear change of variables: vol(T(A)) = |det T|·vol(A) and ∫f(Tx)|det T| dx = ∫f, proved via elementary matrices and Fubini; volume of a parallelepiped; statement of the C¹ formula with proof deferred to Part IV"
+      - "Curves and line integrals; Green's theorem on a rectangle and on a disc"
+    must_prove: ["continuous functions on a closed rectangle are integrable", "discontinuity set of content zero ⇒ integrable", "Jordan-measurable sets form an algebra; integral over a Jordan set is well defined", "Fubini for continuous functions on rectangles and on type-I regions", "differentiation under the integral sign for continuous ∂f/∂t", "vol(T(A)) = |det T| vol(A) for linear T and Jordan A", "linear change-of-variables formula", "Green's theorem on a rectangle and on a disc"]
+    key_examples: ["ℚ² ∩ [0,1]²: bounded, no content", "a compact set without content (fat Cantor square, GO.11)", "a function whose iterated integrals both exist and differ (GO.9)", "f(x,y) = (x²−y²)/(x²+y²)² on (0,1]²", "area of an ellipse by a linear change of variables", "Green's theorem computing the area of a disc via ∮x dy"]
+    exit_checks: ["prove Fubini for a continuous function on a rectangle", "prove vol(T(A)) = |det T| vol(A) for an elementary matrix, then in general", "verify Green's theorem on the unit disc for P = −y, Q = x and prove it on a rectangle"]
+    optional: false
+    note: "One-week module (decisions.md 10): the general C¹ change of variables and Fubini–Tonelli are proved in Part IV; here state the C¹ formula only as a forward reference and do not use it in proofs. Green's theorem (rectangle and disc) is a named theorem node (decisions.md 12; label e.g. thm-green) needed by harmonic functions in Part V and by PDE; prove it for regions that are both type I and type II using Fubini + FTC, no forms. Polar coordinates (hence ∫e^{−x²}) must wait for Part IV or use a one-variable argument."
+
+  - slug: topological-spaces
+    title: "Topological Spaces"
+    pages: 55
+    sources: [[MUN.2, "§12–13 topologies and bases, §16 subspace, §15/§19 product (finite only), §17 closed sets, limit points, Hausdorff, §18 continuity, §20–21 metric topology"], [SUT.7, "definition and examples (bridge)"], [SUT.8, "continuity, homeomorphisms, bases"], [SUT.9, "closure, interior, boundary in topological spaces"], [SUT.10, "subspaces and products"], [SUT.11, "the Hausdorff condition"], [KF.3, "§9 basic concepts"], [TAO2.2, "§2.5 topological spaces (optional)"], [SSB.1, "basic definitions"], [SSB.2, "T₂ only"], [SSB.II, "#1–4 discrete/indiscrete, #18–20 finite and countable complement, #51 right half-open (Sorgenfrey) topology"], [GO.12, "topological-space counterexamples"]]
+    outline:
+      - "Why forget the metric: equivalent metrics share every topological notion; the axioms for open sets"
+      - "Examples: metric topologies, discrete, indiscrete, cofinite, cocountable, the Sorgenfrey line; comparing topologies"
+      - "Bases and neighbourhoods; generating a topology; the metric topology as the one generated by balls"
+      - "Closed sets, closure, interior, boundary and limit points; sequences do not determine the topology (cocountable topology), first countability and when sequences suffice"
+      - "Continuous maps and homeomorphisms; topological properties"
+      - "Subspaces and finite products: the subspace and product topologies, their universal properties; the product topology on ℝⁿ equals the metric one"
+      - "Hausdorff spaces: uniqueness of limits, metrizable ⇒ Hausdorff, non-metrizable examples"
+    must_prove: ["a family of sets satisfying the basis axioms generates a topology", "closure = intersection of closed supersets = A ∪ (limit points of A); interior and closure are dual under complements", "in a first-countable space, closure is given by sequences; the counterexample without first countability", "continuity via open sets, closed sets, closure and neighbourhoods are equivalent", "universal property of subspace and finite product topologies", "limits are unique in a Hausdorff space; metric spaces are Hausdorff"]
+    key_examples: ["cofinite topology on an infinite set: not Hausdorff, every sequence of distinct points converges to every point", "cocountable topology on ℝ: convergent sequences are eventually constant, yet closure is not sequential", "Sorgenfrey line", "indiscrete topology: not metrizable", "identity from discrete to usual ℝ: continuous bijection, not a homeomorphism"]
+    exit_checks: ["show the cofinite topology on ℝ is not metrizable", "prove the product and metric topologies on ℝ² coincide", "find the error in a 'proof' that sequential closure equals closure in every topological space"]
+    optional: false
+    note: "First week of the 2-week topology module (decisions.md 8, end of Part II). Only finite products; infinite products and Tychonoff are Part VI. Countability and separation beyond T₂ (regular, normal, Urysohn) are Part IV. Recall each metric version explicitly (spiral)."
+
+  - slug: compactness-quotients
+    title: "Compactness, Connectedness and Quotient Spaces"
+    pages: 55
+    sources: [[MUN.3, "§23 connected spaces, §26 compact spaces (tube lemma, compact–Hausdorff), §27 compact subspaces of ℝ; §28 limit point compactness (remark)"], [MUN.2, "§22 quotient topology"], [SUT.12, "connectedness (topological)"], [SUT.13, "compact spaces, subspaces, products"], [SUT.14, "sequential compactness revisited"], [SUT.15, "quotient spaces and surfaces"], [KF.3, "§10 compactness in topological spaces"], [SSB.3, "compactness properties"], [SSB.4, "connectedness properties"], [GO.12, "compactness and continuity counterexamples (open/closed maps)"]]
+    outline:
+      - "Compactness by open covers in a topological space; closed subsets of compact sets; compact subsets of Hausdorff spaces are closed; continuous images"
+      - "The tube lemma and compactness of finite products (Tychonoff for infinite products deferred to Part VI)"
+      - "Compact to Hausdorff: continuous bijections are homeomorphisms, continuous maps are closed; embeddings"
+      - "Compactness vs sequential compactness: equal for metric spaces (recalled), different in general (informal examples)"
+      - "Connectedness revisited: unions, closures, finite products, components"
+      - "Quotient topology and its universal property; the circle, torus, Möbius band, projective plane and Klein bottle by gluing"
+      - "When is a quotient Hausdorff? Quotients of compact spaces; ℝ/ℚ and the line with two origins"
+    must_prove: ["closed subset of compact is compact; compact subset of Hausdorff is closed", "tube lemma; finite product of compact spaces is compact", "continuous bijection from compact to Hausdorff is a homeomorphism", "continuous image of compact (connected) is compact (connected)", "finite products of connected spaces are connected", "universal property of the quotient topology", "[0,1]/(0∼1) is homeomorphic to S¹"]
+    key_examples: ["cofinite ℝ: compact and non-Hausdorff, compact sets need not be closed", "line with two origins: locally Euclidean quotient that is not Hausdorff", "ℝ/ℚ: indiscrete quotient", "[0,1) → S¹, t ↦ e^{2πit}: continuous bijection, not a homeomorphism", "torus as [0,1]²/∼ and as S¹×S¹"]
+    exit_checks: ["prove that a continuous bijection from a compact space to a Hausdorff space is a homeomorphism, and show both hypotheses are needed", "prove the torus quotient is homeomorphic to S¹×S¹", "prove the tube lemma and use it for compactness of X×Y"]
+    optional: false
+    note: "Second week of the topology module (decisions.md 8). Local compactness and the one-point compactification go with Urysohn/Tietze at the start of Part IV; Tychonoff (Zorn) goes to Part VI before Alaoglu. Surfaces are illustrative only: no classification, no fundamental group."
+
+cut:
+  PUG.1: "real numbers and cardinality: Parts 0 and I"
+  PUG.3: "functions of a real variable: Part I"
+  PUG.6: "Lebesgue theory: Part IV"
+  TAO2.4: "power series: Part I"
+  TAO2.5: "Fourier series: Part III"
+  TAO2.7: "Lebesgue measure: Part IV"
+  TAO2.8: "Lebesgue integration: Part IV"
+  SUT.1: "introduction"
+  SUT.2: "notation and terminology: Part 0"
+  SUT.3: "sets and functions: Part 0"
+  SUT.4: "review of real analysis: Part I"
+  MUN.1: "set theory and logic: Part 0"
+  MUN.4: "countability and separation axioms, Urysohn: Part IV (decisions.md 8)"
+  MUN.5: "Tychonoff and Stone–Čech: Part VI (decisions.md 8)"
+  MUN.6: "metrization and paracompactness: out of scope"
+  MUN.7: "complete metric spaces and function spaces: content taken from PUG/TAO2/KF; MUN restricted to topological basics"
+  MUN.8: "Baire spaces and dimension theory: Baire taken from PUG/KF; dimension theory out of scope"
+  MUN.9: "algebraic topology: out of scope"
+  MUN.10: "algebraic topology: out of scope"
+  MUN.11: "algebraic topology: out of scope"
+  MUN.12: "algebraic topology: out of scope"
+  MUN.13: "algebraic topology: out of scope"
+  MUN.14: "algebraic topology: out of scope"
+  KF.1: "set theory: Part 0"
+  KF.4: "linear spaces: Part VI"
+  KF.5: "linear functionals: Part VI"
+  KF.6: "linear operators: Part VI"
+  KF.7: "measure: Part IV"
+  KF.8: "integration: Part IV"
+  KF.9: "differentiation (Lebesgue): Part IV"
+  MOA.5: "manifolds: forms and Stokes deferred (decisions.md 12)"
+  MOA.6: "differential forms: deferred (decisions.md 12)"
+  MOA.7: "Stokes' theorem: deferred (decisions.md 12); the Green node is written from Fubini + FTC instead of the manifold proof"
+  MOA.8: "closed and exact forms: deferred (decisions.md 12)"
+  MOA.9: "epilogue on manifolds: out of scope"
+  TES.1: "introduction and explicit solution methods: not part of the analysis curriculum"
+  TES.3: "linear equations, matrix exponential: not required by curriculum.md; linear algebra is the companion book's"
+  TES.4: "ODEs in the complex domain: out of scope"
+  TES.5: "boundary value problems / Sturm–Liouville: spectral content returns via compact operators in Part VI"
+  TES.6: "dynamical systems: out of scope"
+  TES.7: "planar dynamical systems: out of scope"
+  TES.8: "higher-dimensional dynamical systems: out of scope"
+  TES.9: "local behaviour near fixed points: out of scope"
+  TES.10: "discrete dynamical systems: out of scope"
+  TES.11: "one-dimensional discrete dynamics: out of scope"
+  TES.12: "periodic solutions: out of scope"
+  TES.13: "chaos in higher dimensions: out of scope"
+  PMA.10: "integration of differential forms: deferred (decisions.md 12); Riemann integral on ℝⁿ taken from MOA"
+  GO.1: "real number system: Parts 0/I"
+  GO.2: "functions and limits: Part I"
+  GO.3: "differentiation: Part I"
+  GO.4: "Riemann integration: Part I"
+  GO.5: "sequences: Part I"
+  GO.6: "infinite series: Part I"
+  GO.7: "uniform convergence: Part I"
+  GO.8: "sets and measure on the real axis: Part IV"
+  SSB.III: "reference charts and appendices: not needed"
+
+exemptions: []
+
+coverage_gaps:
+  - "Linear change of variables proved independently of the general C¹ theorem (elementary matrices + Fubini + translation invariance): MOA §20 derives it from the general theorem, so the proof is original writing"
+  - "Green's theorem on a disc by Fubini + FTC on type-I/type-II regions with elementary line integrals: sources give it via forms/manifolds (MOA §38, PUG §5.9) or only as an exercise; original writing"
+  - "All norms on a finite-dimensional space are equivalent: appears only as an exercise (PUG ch 5 exercises); write the proof"
+  - "Completeness is not a topological property (ℝ vs arctan metric) and the ℝ-from-ℚ construction without circular use of ℝ-valued metrics: PUG §2.10 gives the idea; the careful ℚ-valued treatment and the three-way comparison (axiom / cuts / Cauchy sequences) is original"
+  - "Cocountable topology as the standard example where sequences do not detect closure: only in SSB's catalogue; write it up"

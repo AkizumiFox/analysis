@@ -1,0 +1,5363 @@
+{
+ "books": {
+  "CH": {
+   "name": "Chiswell & Hodges - Mathematical Logic",
+   "role": "scaffolding"
+  },
+  "FX": {
+   "name": "Magnus et al - forall x",
+   "role": "bridge"
+  },
+  "VDL": {
+   "name": "van Dalen - Logic and Structure",
+   "role": "depth"
+  },
+  "VEL": {
+   "name": "Velleman - How to Prove It (3rd ed)",
+   "role": "scaffolding"
+  },
+  "HAM": {
+   "name": "Hammack - Book of Proof (3rd ed)",
+   "role": "problems"
+  },
+  "HAL": {
+   "name": "Halmos - Naive Set Theory",
+   "role": "scaffolding"
+  },
+  "EST": {
+   "name": "Enderton - Elements of Set Theory (1977)",
+   "role": "depth"
+  },
+  "TAO1": {
+   "name": "Tao - Analysis I (3rd ed)",
+   "role": "scaffolding"
+  },
+  "BLO": {
+   "name": "Bloch - The Real Numbers and Real Analysis",
+   "role": "depth"
+  },
+  "LAN": {
+   "name": "Landau - Foundations of Analysis",
+   "role": "depth"
+  },
+  "MEN": {
+   "name": "Mendelson - Number Systems and the Foundations of Analysis",
+   "role": "depth"
+  },
+  "ABB": {
+   "name": "Abbott - Understanding Analysis (2nd ed)",
+   "role": "scaffolding"
+  },
+  "PMA": {
+   "name": "Rudin - Principles of Mathematical Analysis (3rd ed)",
+   "role": "depth"
+  },
+  "SPI": {
+   "name": "Spivak - Calculus (4th ed)",
+   "role": "problems"
+  },
+  "BRR": {
+   "name": "Bressoud - A Radical Approach to Real Analysis (2nd ed)",
+   "role": "motivation"
+  },
+  "ZOR1": {
+   "name": "Zorich - Mathematical Analysis I",
+   "role": "depth"
+  },
+  "PUG": {
+   "name": "Pugh - Real Mathematical Analysis (2nd ed)",
+   "role": "scaffolding"
+  },
+  "TAO2": {
+   "name": "Tao - Analysis II (4th ed)",
+   "role": "depth"
+  },
+  "SUT": {
+   "name": "Sutherland - Introduction to Metric and Topological Spaces (2nd ed)",
+   "role": "bridge"
+  },
+  "MUN": {
+   "name": "Munkres - Topology (2nd ed)",
+   "role": "depth"
+  },
+  "KF": {
+   "name": "Kolmogorov & Fomin - Introductory Real Analysis",
+   "role": "depth"
+  },
+  "MOA": {
+   "name": "Munkres - Analysis on Manifolds",
+   "role": "scaffolding"
+  },
+  "TES": {
+   "name": "Teschl - Ordinary Differential Equations and Dynamical Systems",
+   "role": "depth"
+  },
+  "SS1": {
+   "name": "Stein & Shakarchi I - Fourier Analysis",
+   "role": "scaffolding"
+  },
+  "KOR": {
+   "name": "Korner - Fourier Analysis (1988)",
+   "role": "motivation"
+  },
+  "DM": {
+   "name": "Dym & McKean - Fourier Series and Integrals",
+   "role": "depth"
+  },
+  "SS3": {
+   "name": "Stein & Shakarchi III - Real Analysis",
+   "role": "scaffolding"
+  },
+  "FOL": {
+   "name": "Folland - Real Analysis (2nd ed)",
+   "role": "depth"
+  },
+  "MIRA": {
+   "name": "Axler - Measure, Integration & Real Analysis",
+   "role": "bridge"
+  },
+  "BRL": {
+   "name": "Bressoud - A Radical Approach to Lebesgue's Theory of Integration",
+   "role": "motivation"
+  },
+  "WZ": {
+   "name": "Wheeden & Zygmund - Measure and Integral (2nd ed)",
+   "role": "depth"
+  },
+  "SS2": {
+   "name": "Stein & Shakarchi II - Complex Analysis",
+   "role": "scaffolding"
+  },
+  "AHL": {
+   "name": "Ahlfors - Complex Analysis (3rd ed)",
+   "role": "depth"
+  },
+  "CON": {
+   "name": "Conway - Functions of One Complex Variable I (2nd ed)",
+   "role": "depth"
+  },
+  "NEE": {
+   "name": "Needham - Visual Complex Analysis (25th anniv ed)",
+   "role": "motivation"
+  },
+  "BRZ": {
+   "name": "Brezis - Functional Analysis, Sobolev Spaces and PDE",
+   "role": "scaffolding"
+  },
+  "SS4": {
+   "name": "Stein & Shakarchi IV - Functional Analysis",
+   "role": "depth"
+  },
+  "KRE": {
+   "name": "Kreyszig - Introductory Functional Analysis with Applications",
+   "role": "bridge"
+  },
+  "LAX": {
+   "name": "Lax - Functional Analysis",
+   "role": "depth"
+  },
+  "FJ": {
+   "name": "Friedlander & Joshi - Introduction to the Theory of Distributions (2nd ed)",
+   "role": "depth"
+  },
+  "EVA": {
+   "name": "Evans - Partial Differential Equations",
+   "role": "depth"
+  },
+  "GO": {
+   "name": "Gelbaum & Olmsted - Counterexamples in Analysis",
+   "role": "problems"
+  },
+  "SSB": {
+   "name": "Steen & Seebach - Counterexamples in Topology",
+   "role": "problems"
+  }
+ },
+ "nodes": {
+  "CH.2": {
+   "id": "CH.2",
+   "book": "CH",
+   "ch": "2",
+   "title": "Informal natural deduction",
+   "pages": 28,
+   "files": "002-007"
+  },
+  "CH.3": {
+   "id": "CH.3",
+   "book": "CH",
+   "ch": "3",
+   "title": "Propositional logic",
+   "pages": 65,
+   "files": "008-022"
+  },
+  "CH.4": {
+   "id": "CH.4",
+   "book": "CH",
+   "ch": "4",
+   "title": "First interlude: Wason's selection task",
+   "pages": 3,
+   "files": "023"
+  },
+  "CH.5": {
+   "id": "CH.5",
+   "book": "CH",
+   "ch": "5",
+   "title": "Quantifier-free logic",
+   "pages": 56,
+   "files": "023-037"
+  },
+  "CH.7": {
+   "id": "CH.7",
+   "book": "CH",
+   "ch": "7",
+   "title": "First-order logic",
+   "pages": 60,
+   "files": "037-050"
+  },
+  "CH.A": {
+   "id": "CH.A",
+   "book": "CH",
+   "ch": "A",
+   "title": "Appendix A: The natural deduction rules",
+   "pages": 6,
+   "files": "051"
+  },
+  "FX.4": {
+   "id": "FX.4",
+   "book": "FX",
+   "ch": "4",
+   "title": "Quantified logic",
+   "pages": 33,
+   "files": "013-020"
+  },
+  "FX.6": {
+   "id": "FX.6",
+   "book": "FX",
+   "ch": "6",
+   "title": "Proofs",
+   "pages": 33,
+   "files": "029-036"
+  },
+  "VDL.1": {
+   "id": "VDL.1",
+   "book": "VDL",
+   "ch": "1",
+   "title": "Propositional Logic",
+   "pages": 49,
+   "files": "003-010"
+  },
+  "VDL.2": {
+   "id": "VDL.2",
+   "book": "VDL",
+   "ch": "2",
+   "title": "Predicate Logic",
+   "pages": 49,
+   "files": "011-019"
+  },
+  "VDL.5": {
+   "id": "VDL.5",
+   "book": "VDL",
+   "ch": "5",
+   "title": "Intuitionistic Logic",
+   "pages": 36,
+   "files": "029-032"
+  },
+  "VEL.1": {
+   "id": "VEL.1",
+   "book": "VEL",
+   "ch": "1",
+   "title": "Sentential Logic",
+   "pages": 52,
+   "files": "004-017"
+  },
+  "VEL.2": {
+   "id": "VEL.2",
+   "book": "VEL",
+   "ch": "2",
+   "title": "Quantificational Logic",
+   "pages": 31,
+   "files": "018-025"
+  },
+  "VEL.3": {
+   "id": "VEL.3",
+   "book": "VEL",
+   "ch": "3",
+   "title": "Proofs",
+   "pages": 81,
+   "files": "026-048"
+  },
+  "VEL.4": {
+   "id": "VEL.4",
+   "book": "VEL",
+   "ch": "4",
+   "title": "Relations",
+   "pages": 59,
+   "files": "049-060"
+  },
+  "VEL.5": {
+   "id": "VEL.5",
+   "book": "VEL",
+   "ch": "5",
+   "title": "Functions",
+   "pages": 44,
+   "files": "061-069"
+  },
+  "VEL.6": {
+   "id": "VEL.6",
+   "book": "VEL",
+   "ch": "6",
+   "title": "Mathematical Induction",
+   "pages": 51,
+   "files": "070-081"
+  },
+  "VEL.8": {
+   "id": "VEL.8",
+   "book": "VEL",
+   "ch": "8",
+   "title": "Infinite Sets",
+   "pages": 22,
+   "files": "092-097"
+  },
+  "HAM.1": {
+   "id": "HAM.1",
+   "book": "HAM",
+   "ch": "1",
+   "title": "Sets",
+   "pages": 37,
+   "files": "003-011"
+  },
+  "HAM.2": {
+   "id": "HAM.2",
+   "book": "HAM",
+   "ch": "2",
+   "title": "Logic",
+   "pages": 31,
+   "files": "011-019"
+  },
+  "HAM.4": {
+   "id": "HAM.4",
+   "book": "HAM",
+   "ch": "4",
+   "title": "Direct Proof",
+   "pages": 18,
+   "files": "030-032"
+  },
+  "HAM.5": {
+   "id": "HAM.5",
+   "book": "HAM",
+   "ch": "5",
+   "title": "Contrapositive Proof",
+   "pages": 9,
+   "files": "033-035"
+  },
+  "HAM.6": {
+   "id": "HAM.6",
+   "book": "HAM",
+   "ch": "6",
+   "title": "Proof by Contradiction",
+   "pages": 7,
+   "files": "036-038"
+  },
+  "HAM.7": {
+   "id": "HAM.7",
+   "book": "HAM",
+   "ch": "7",
+   "title": "Proving Non-Conditional Statements",
+   "pages": 13,
+   "files": "038-040"
+  },
+  "HAM.8": {
+   "id": "HAM.8",
+   "book": "HAM",
+   "ch": "8",
+   "title": "Proofs Involving Sets",
+   "pages": 17,
+   "files": "041-045"
+  },
+  "HAM.9": {
+   "id": "HAM.9",
+   "book": "HAM",
+   "ch": "9",
+   "title": "Disproof",
+   "pages": 8,
+   "files": "045-047"
+  },
+  "HAM.10": {
+   "id": "HAM.10",
+   "book": "HAM",
+   "ch": "10",
+   "title": "Mathematical Induction",
+   "pages": 17,
+   "files": "047-051"
+  },
+  "HAM.11": {
+   "id": "HAM.11",
+   "book": "HAM",
+   "ch": "11",
+   "title": "Relations",
+   "pages": 27,
+   "files": "052-057"
+  },
+  "HAM.12": {
+   "id": "HAM.12",
+   "book": "HAM",
+   "ch": "12",
+   "title": "Functions",
+   "pages": 18,
+   "files": "057-062"
+  },
+  "HAM.13": {
+   "id": "HAM.13",
+   "book": "HAM",
+   "ch": "13",
+   "title": "Proofs in Calculus",
+   "pages": 27,
+   "files": "063-071"
+  },
+  "HAM.14": {
+   "id": "HAM.14",
+   "book": "HAM",
+   "ch": "14",
+   "title": "Cardinality of Sets",
+   "pages": 23,
+   "files": "071-076"
+  },
+  "HAL.1": {
+   "id": "HAL.1",
+   "book": "HAL",
+   "ch": "1",
+   "title": "The Axiom of Extension",
+   "pages": 5,
+   "files": "002"
+  },
+  "HAL.2": {
+   "id": "HAL.2",
+   "book": "HAL",
+   "ch": "2",
+   "title": "The Axiom of Specification",
+   "pages": 4,
+   "files": "003"
+  },
+  "HAL.3": {
+   "id": "HAL.3",
+   "book": "HAL",
+   "ch": "3",
+   "title": "Unordered Pairs",
+   "pages": 4,
+   "files": "004"
+  },
+  "HAL.4": {
+   "id": "HAL.4",
+   "book": "HAL",
+   "ch": "4",
+   "title": "Unions and Intersections",
+   "pages": 5,
+   "files": "005"
+  },
+  "HAL.5": {
+   "id": "HAL.5",
+   "book": "HAL",
+   "ch": "5",
+   "title": "Complements and Powers",
+   "pages": 5,
+   "files": "006"
+  },
+  "HAL.6": {
+   "id": "HAL.6",
+   "book": "HAL",
+   "ch": "6",
+   "title": "Ordered Pairs",
+   "pages": 4,
+   "files": "007"
+  },
+  "HAL.7": {
+   "id": "HAL.7",
+   "book": "HAL",
+   "ch": "7",
+   "title": "Relations",
+   "pages": 4,
+   "files": "008"
+  },
+  "HAL.8": {
+   "id": "HAL.8",
+   "book": "HAL",
+   "ch": "8",
+   "title": "Functions",
+   "pages": 4,
+   "files": "009"
+  },
+  "HAL.9": {
+   "id": "HAL.9",
+   "book": "HAL",
+   "ch": "9",
+   "title": "Families",
+   "pages": 4,
+   "files": "010"
+  },
+  "HAL.10": {
+   "id": "HAL.10",
+   "book": "HAL",
+   "ch": "10",
+   "title": "Inverses and Composites",
+   "pages": 4,
+   "files": "011"
+  },
+  "HAL.11": {
+   "id": "HAL.11",
+   "book": "HAL",
+   "ch": "11",
+   "title": "Numbers",
+   "pages": 4,
+   "files": "012"
+  },
+  "HAL.12": {
+   "id": "HAL.12",
+   "book": "HAL",
+   "ch": "12",
+   "title": "The Peano Axioms",
+   "pages": 4,
+   "files": "013"
+  },
+  "HAL.13": {
+   "id": "HAL.13",
+   "book": "HAL",
+   "ch": "13",
+   "title": "Arithmetic",
+   "pages": 4,
+   "files": "014"
+  },
+  "HAL.14": {
+   "id": "HAL.14",
+   "book": "HAL",
+   "ch": "14",
+   "title": "Order",
+   "pages": 5,
+   "files": "015"
+  },
+  "HAL.15": {
+   "id": "HAL.15",
+   "book": "HAL",
+   "ch": "15",
+   "title": "The Axiom of Choice",
+   "pages": 3,
+   "files": "016"
+  },
+  "HAL.16": {
+   "id": "HAL.16",
+   "book": "HAL",
+   "ch": "16",
+   "title": "Zorn's Lemma",
+   "pages": 4,
+   "files": "017"
+  },
+  "HAL.17": {
+   "id": "HAL.17",
+   "book": "HAL",
+   "ch": "17",
+   "title": "Well Ordering",
+   "pages": 4,
+   "files": "018"
+  },
+  "HAL.22": {
+   "id": "HAL.22",
+   "book": "HAL",
+   "ch": "22",
+   "title": "The Schröder–Bernstein Theorem",
+   "pages": 4,
+   "files": "023"
+  },
+  "EST.2": {
+   "id": "EST.2",
+   "book": "EST",
+   "ch": "2",
+   "title": "Axioms and Operations",
+   "pages": 16,
+   "files": "007-010"
+  },
+  "EST.3": {
+   "id": "EST.3",
+   "book": "EST",
+   "ch": "3",
+   "title": "Relations and Functions",
+   "pages": 34,
+   "files": "011-017"
+  },
+  "EST.4": {
+   "id": "EST.4",
+   "book": "EST",
+   "ch": "4",
+   "title": "Natural Numbers",
+   "pages": 21,
+   "files": "017-021"
+  },
+  "EST.5": {
+   "id": "EST.5",
+   "book": "EST",
+   "ch": "5",
+   "title": "Construction of the Real Numbers",
+   "pages": 35,
+   "files": "022-025"
+  },
+  "EST.6": {
+   "id": "EST.6",
+   "book": "EST",
+   "ch": "6",
+   "title": "Cardinal Numbers and the Axiom of Choice",
+   "pages": 44,
+   "files": "027-034"
+  },
+  "TAO1.2": {
+   "id": "TAO1.2",
+   "book": "TAO1",
+   "ch": "2",
+   "title": "Starting at the beginning: the natural numbers",
+   "pages": 19,
+   "files": "004-007"
+  },
+  "TAO1.3": {
+   "id": "TAO1.3",
+   "book": "TAO1",
+   "ch": "3",
+   "title": "Set theory",
+   "pages": 40,
+   "files": "008-014"
+  },
+  "TAO1.4": {
+   "id": "TAO1.4",
+   "book": "TAO1",
+   "ch": "4",
+   "title": "Integers and rationals",
+   "pages": 21,
+   "files": "015-018"
+  },
+  "TAO1.5": {
+   "id": "TAO1.5",
+   "book": "TAO1",
+   "ch": "5",
+   "title": "The real numbers",
+   "pages": 32,
+   "files": "019-025"
+  },
+  "BLO.1": {
+   "id": "BLO.1",
+   "book": "BLO",
+   "ch": "1",
+   "title": "Construction of the Real Numbers",
+   "pages": 61,
+   "files": "008-019"
+  },
+  "BLO.2": {
+   "id": "BLO.2",
+   "book": "BLO",
+   "ch": "2",
+   "title": "Properties of the Real Numbers",
+   "pages": 68,
+   "files": "020-029",
+   "files_alt": [
+    "020-030"
+   ]
+  },
+  "LAN.1": {
+   "id": "LAN.1",
+   "book": "LAN",
+   "ch": "I",
+   "title": "Natural Numbers",
+   "pages": 13,
+   "files": "002-003"
+  },
+  "LAN.2": {
+   "id": "LAN.2",
+   "book": "LAN",
+   "ch": "II",
+   "title": "Fractions",
+   "pages": 22,
+   "files": "003-005"
+  },
+  "LAN.3": {
+   "id": "LAN.3",
+   "book": "LAN",
+   "ch": "III",
+   "title": "Cuts",
+   "pages": 28,
+   "files": "005-007"
+  },
+  "LAN.4": {
+   "id": "LAN.4",
+   "book": "LAN",
+   "ch": "IV",
+   "title": "Real Numbers",
+   "pages": 23,
+   "files": "008-009"
+  },
+  "MEN.2": {
+   "id": "MEN.2",
+   "book": "MEN",
+   "ch": "2",
+   "title": "The Natural Numbers",
+   "pages": 35,
+   "files": "016-023"
+  },
+  "MEN.3": {
+   "id": "MEN.3",
+   "book": "MEN",
+   "ch": "3",
+   "title": "The Integers",
+   "pages": 70,
+   "files": "024-036"
+  },
+  "MEN.4": {
+   "id": "MEN.4",
+   "book": "MEN",
+   "ch": "4",
+   "title": "Rational Numbers and Ordered Fields",
+   "pages": 29,
+   "files": "037-043"
+  },
+  "MEN.5": {
+   "id": "MEN.5",
+   "book": "MEN",
+   "ch": "5",
+   "title": "The Real Number System",
+   "pages": 92,
+   "files": "044-063"
+  },
+  "MEN.E": {
+   "id": "MEN.E",
+   "book": "MEN",
+   "ch": "E",
+   "title": "Appendix E: Axiomatic Set Theory and the Existence of a Peano System",
+   "pages": 8,
+   "files": "069-070"
+  },
+  "MEN.F": {
+   "id": "MEN.F",
+   "book": "MEN",
+   "ch": "F",
+   "title": "Appendix F: Construction of the Real Numbers via Dedekind Cuts",
+   "pages": 15,
+   "files": "070-071"
+  },
+  "ABB.1": {
+   "id": "ABB.1",
+   "book": "ABB",
+   "ch": "1",
+   "title": "The Real Numbers",
+   "pages": 37,
+   "files": "005-016"
+  },
+  "ABB.2": {
+   "id": "ABB.2",
+   "book": "ABB",
+   "ch": "2",
+   "title": "Sequences and Series",
+   "pages": 47,
+   "files": "017-029"
+  },
+  "ABB.3": {
+   "id": "ABB.3",
+   "book": "ABB",
+   "ch": "3",
+   "title": "Basic Topology of R",
+   "pages": 26,
+   "files": "029-036"
+  },
+  "ABB.4": {
+   "id": "ABB.4",
+   "book": "ABB",
+   "ch": "4",
+   "title": "Functional Limits and Continuity",
+   "pages": 31,
+   "files": "036-044"
+  },
+  "ABB.5": {
+   "id": "ABB.5",
+   "book": "ABB",
+   "ch": "5",
+   "title": "The Derivative",
+   "pages": 26,
+   "files": "044-050"
+  },
+  "ABB.6": {
+   "id": "ABB.6",
+   "book": "ABB",
+   "ch": "6",
+   "title": "Sequences and Series of Functions",
+   "pages": 43,
+   "files": "050-060"
+  },
+  "ABB.7": {
+   "id": "ABB.7",
+   "book": "ABB",
+   "ch": "7",
+   "title": "The Riemann Integral",
+   "pages": 33,
+   "files": "061-069"
+  },
+  "ABB.8": {
+   "id": "ABB.8",
+   "book": "ABB",
+   "ch": "8",
+   "title": "Additional Topics",
+   "pages": 56,
+   "files": "069-084"
+  },
+  "PMA.1": {
+   "id": "PMA.1",
+   "book": "PMA",
+   "ch": "1",
+   "title": "The Real and Complex Number Systems",
+   "pages": 24,
+   "files": "002-006"
+  },
+  "PMA.2": {
+   "id": "PMA.2",
+   "book": "PMA",
+   "ch": "2",
+   "title": "Basic Topology",
+   "pages": 25,
+   "files": "006-008"
+  },
+  "PMA.3": {
+   "id": "PMA.3",
+   "book": "PMA",
+   "ch": "3",
+   "title": "Numerical Sequences and Series",
+   "pages": 38,
+   "files": "009-016"
+  },
+  "PMA.4": {
+   "id": "PMA.4",
+   "book": "PMA",
+   "ch": "4",
+   "title": "Continuity",
+   "pages": 22,
+   "files": "017-020"
+  },
+  "PMA.5": {
+   "id": "PMA.5",
+   "book": "PMA",
+   "ch": "5",
+   "title": "Differentiation",
+   "pages": 18,
+   "files": "021-024"
+  },
+  "PMA.6": {
+   "id": "PMA.6",
+   "book": "PMA",
+   "ch": "6",
+   "title": "The Riemann-Stieltjes Integral",
+   "pages": 26,
+   "files": "025-028"
+  },
+  "PMA.7": {
+   "id": "PMA.7",
+   "book": "PMA",
+   "ch": "7",
+   "title": "Sequences and Series of Functions",
+   "pages": 30,
+   "files": "029-034"
+  },
+  "SPI.1": {
+   "id": "SPI.1",
+   "book": "SPI",
+   "ch": "1",
+   "title": "Basic Properties of Numbers",
+   "pages": 18,
+   "files": "003-004"
+  },
+  "SPI.2": {
+   "id": "SPI.2",
+   "book": "SPI",
+   "ch": "2",
+   "title": "Numbers of Various Sorts",
+   "pages": 18,
+   "files": "005"
+  },
+  "SPI.3": {
+   "id": "SPI.3",
+   "book": "SPI",
+   "ch": "3",
+   "title": "Functions",
+   "pages": 17,
+   "files": "006-007"
+  },
+  "SPI.4": {
+   "id": "SPI.4",
+   "book": "SPI",
+   "ch": "4",
+   "title": "Graphs",
+   "pages": 34,
+   "files": "007-009"
+  },
+  "SPI.5": {
+   "id": "SPI.5",
+   "book": "SPI",
+   "ch": "5",
+   "title": "Limits",
+   "pages": 25,
+   "files": "010-011"
+  },
+  "SPI.6": {
+   "id": "SPI.6",
+   "book": "SPI",
+   "ch": "6",
+   "title": "Continuous Functions",
+   "pages": 7,
+   "files": "011-012"
+  },
+  "SPI.7": {
+   "id": "SPI.7",
+   "book": "SPI",
+   "ch": "7",
+   "title": "Three Hard Theorems",
+   "pages": 11,
+   "files": "013-014"
+  },
+  "SPI.8": {
+   "id": "SPI.8",
+   "book": "SPI",
+   "ch": "8",
+   "title": "Least Upper Bounds (with Appendix: Uniform Continuity)",
+   "pages": 16,
+   "files": "014-016"
+  },
+  "SPI.9": {
+   "id": "SPI.9",
+   "book": "SPI",
+   "ch": "9",
+   "title": "Derivatives",
+   "pages": 19,
+   "files": "017-018"
+  },
+  "SPI.10": {
+   "id": "SPI.10",
+   "book": "SPI",
+   "ch": "10",
+   "title": "Differentiation",
+   "pages": 20,
+   "files": "019-020"
+  },
+  "SPI.11": {
+   "id": "SPI.11",
+   "book": "SPI",
+   "ch": "11",
+   "title": "Significance of the Derivative (with Appendix: Convexity)",
+   "pages": 42,
+   "files": "021-022"
+  },
+  "SPI.12": {
+   "id": "SPI.12",
+   "book": "SPI",
+   "ch": "12",
+   "title": "Inverse Functions",
+   "pages": 23,
+   "files": "023-026"
+  },
+  "SPI.13": {
+   "id": "SPI.13",
+   "book": "SPI",
+   "ch": "13",
+   "title": "Integrals (with Appendix: Riemann Sums)",
+   "pages": 32,
+   "files": "027-028"
+  },
+  "SPI.14": {
+   "id": "SPI.14",
+   "book": "SPI",
+   "ch": "14",
+   "title": "The Fundamental Theorem of Calculus",
+   "pages": 18,
+   "files": "028-029"
+  },
+  "SPI.15": {
+   "id": "SPI.15",
+   "book": "SPI",
+   "ch": "15",
+   "title": "The Trigonometric Functions",
+   "pages": 21,
+   "files": "030-032"
+  },
+  "SPI.16": {
+   "id": "SPI.16",
+   "book": "SPI",
+   "ch": "16",
+   "title": "π is Irrational",
+   "pages": 6,
+   "files": "032-033"
+  },
+  "SPI.17": {
+   "id": "SPI.17",
+   "book": "SPI",
+   "ch": "17",
+   "title": "Planetary Motion",
+   "pages": 9,
+   "files": "033"
+  },
+  "SPI.18": {
+   "id": "SPI.18",
+   "book": "SPI",
+   "ch": "18",
+   "title": "The Logarithm and Exponential Functions",
+   "pages": 24,
+   "files": "034-035"
+  },
+  "SPI.19": {
+   "id": "SPI.19",
+   "book": "SPI",
+   "ch": "19",
+   "title": "Integration in Elementary Terms",
+   "pages": 48,
+   "files": "035-038"
+  },
+  "SPI.20": {
+   "id": "SPI.20",
+   "book": "SPI",
+   "ch": "20",
+   "title": "Approximation by Polynomial Functions",
+   "pages": 31,
+   "files": "038-039"
+  },
+  "SPI.21": {
+   "id": "SPI.21",
+   "book": "SPI",
+   "ch": "21",
+   "title": "e is Transcendental",
+   "pages": 10,
+   "files": "039-040"
+  },
+  "SPI.22": {
+   "id": "SPI.22",
+   "book": "SPI",
+   "ch": "22",
+   "title": "Infinite Sequences",
+   "pages": 19,
+   "files": "040-041"
+  },
+  "SPI.23": {
+   "id": "SPI.23",
+   "book": "SPI",
+   "ch": "23",
+   "title": "Infinite Series",
+   "pages": 28,
+   "files": "042-043"
+  },
+  "SPI.24": {
+   "id": "SPI.24",
+   "book": "SPI",
+   "ch": "24",
+   "title": "Uniform Convergence and Power Series",
+   "pages": 27,
+   "files": "044-045"
+  },
+  "SPI.25": {
+   "id": "SPI.25",
+   "book": "SPI",
+   "ch": "25",
+   "title": "Complex Numbers",
+   "pages": 15,
+   "files": "045-046"
+  },
+  "SPI.26": {
+   "id": "SPI.26",
+   "book": "SPI",
+   "ch": "26",
+   "title": "Complex Functions",
+   "pages": 14,
+   "files": "046-047"
+  },
+  "SPI.27": {
+   "id": "SPI.27",
+   "book": "SPI",
+   "ch": "27",
+   "title": "Complex Power Series",
+   "pages": 26,
+   "files": "047-049"
+  },
+  "SPI.28": {
+   "id": "SPI.28",
+   "book": "SPI",
+   "ch": "28",
+   "title": "Fields",
+   "pages": 7,
+   "files": "049"
+  },
+  "SPI.29": {
+   "id": "SPI.29",
+   "book": "SPI",
+   "ch": "29",
+   "title": "Construction of the Real Numbers",
+   "pages": 13,
+   "files": "049-050"
+  },
+  "SPI.30": {
+   "id": "SPI.30",
+   "book": "SPI",
+   "ch": "30",
+   "title": "Uniqueness of the Real Numbers",
+   "pages": 8,
+   "files": "050-051"
+  },
+  "BRR.1": {
+   "id": "BRR.1",
+   "book": "BRR",
+   "ch": "1",
+   "title": "Crisis in Mathematics: Fourier's Series",
+   "pages": 8,
+   "files": "003-005"
+  },
+  "BRR.2": {
+   "id": "BRR.2",
+   "book": "BRR",
+   "ch": "2",
+   "title": "Infinite Summations",
+   "pages": 48,
+   "files": "005-021"
+  },
+  "BRR.3": {
+   "id": "BRR.3",
+   "book": "BRR",
+   "ch": "3",
+   "title": "Differentiability and Continuity",
+   "pages": 60,
+   "files": "021-033"
+  },
+  "BRR.4": {
+   "id": "BRR.4",
+   "book": "BRR",
+   "ch": "4",
+   "title": "The Convergence of Infinite Series",
+   "pages": 54,
+   "files": "034-045"
+  },
+  "BRR.5": {
+   "id": "BRR.5",
+   "book": "BRR",
+   "ch": "5",
+   "title": "Understanding Infinite Series",
+   "pages": 46,
+   "files": "045-055"
+  },
+  "BRR.6": {
+   "id": "BRR.6",
+   "book": "BRR",
+   "ch": "6",
+   "title": "Return to Fourier Series",
+   "pages": 50,
+   "files": "056-068"
+  },
+  "BRR.7": {
+   "id": "BRR.7",
+   "book": "BRR",
+   "ch": "7",
+   "title": "Epilogue",
+   "pages": 4,
+   "files": "068-069"
+  },
+  "BRR.A": {
+   "id": "BRR.A",
+   "book": "BRR",
+   "ch": "A",
+   "title": "Explorations of the Infinite",
+   "pages": 32,
+   "files": "070-076"
+  },
+  "ZOR1.1": {
+   "id": "ZOR1.1",
+   "book": "ZOR1",
+   "ch": "1",
+   "title": "Some General Mathematical Concepts and Notation",
+   "pages": 34,
+   "files": "004-012"
+  },
+  "ZOR1.2": {
+   "id": "ZOR1.2",
+   "book": "ZOR1",
+   "ch": "2",
+   "title": "The Real Numbers",
+   "pages": 43,
+   "files": "013-022"
+  },
+  "ZOR1.3": {
+   "id": "ZOR1.3",
+   "book": "ZOR1",
+   "ch": "3",
+   "title": "Limits",
+   "pages": 73,
+   "files": "022-033"
+  },
+  "ZOR1.4": {
+   "id": "ZOR1.4",
+   "book": "ZOR1",
+   "ch": "4",
+   "title": "Continuous Functions",
+   "pages": 22,
+   "files": "034-037"
+  },
+  "ZOR1.5": {
+   "id": "ZOR1.5",
+   "book": "ZOR1",
+   "ch": "5",
+   "title": "Differential Calculus",
+   "pages": 156,
+   "files": "038-066"
+  },
+  "ZOR1.6": {
+   "id": "ZOR1.6",
+   "book": "ZOR1",
+   "ch": "6",
+   "title": "Integration",
+   "pages": 80,
+   "files": "067-080"
+  },
+  "ZOR1.7": {
+   "id": "ZOR1.7",
+   "book": "ZOR1",
+   "ch": "7",
+   "title": "Functions of Several Variables: their Limits and Continuity",
+   "pages": 20,
+   "files": "080-085"
+  },
+  "ZOR1.8": {
+   "id": "ZOR1.8",
+   "book": "ZOR1",
+   "ch": "8",
+   "title": "The Differential Calculus of Functions of Several Variables",
+   "pages": 116,
+   "files": "085-108"
+  },
+  "TAO1.6": {
+   "id": "TAO1.6",
+   "book": "TAO1",
+   "ch": "6",
+   "title": "Limits of Sequences",
+   "pages": 30,
+   "files": "026-031"
+  },
+  "TAO1.7": {
+   "id": "TAO1.7",
+   "book": "TAO1",
+   "ch": "7",
+   "title": "Series",
+   "pages": 25,
+   "files": "032-036"
+  },
+  "TAO1.8": {
+   "id": "TAO1.8",
+   "book": "TAO1",
+   "ch": "8",
+   "title": "Infinite Sets",
+   "pages": 31,
+   "files": "037-042"
+  },
+  "TAO1.9": {
+   "id": "TAO1.9",
+   "book": "TAO1",
+   "ch": "9",
+   "title": "Continuous Functions on R",
+   "pages": 40,
+   "files": "043-052"
+  },
+  "TAO1.10": {
+   "id": "TAO1.10",
+   "book": "TAO1",
+   "ch": "10",
+   "title": "Differentiation of Functions",
+   "pages": 15,
+   "files": "052-055"
+  },
+  "TAO1.11": {
+   "id": "TAO1.11",
+   "book": "TAO1",
+   "ch": "11",
+   "title": "The Riemann Integral",
+   "pages": 39,
+   "files": "055-063"
+  },
+  "TAO1.B": {
+   "id": "TAO1.B",
+   "book": "TAO1",
+   "ch": "B",
+   "title": "Appendix: The Decimal System",
+   "pages": 7,
+   "files": "070-071"
+  },
+  "BLO.3": {
+   "id": "BLO.3",
+   "book": "BLO",
+   "ch": "3",
+   "title": "Limits and Continuity",
+   "pages": 43,
+   "files": "030-037"
+  },
+  "BLO.4": {
+   "id": "BLO.4",
+   "book": "BLO",
+   "ch": "4",
+   "title": "Differentiation",
+   "pages": 50,
+   "files": "040-052"
+  },
+  "BLO.5": {
+   "id": "BLO.5",
+   "book": "BLO",
+   "ch": "5",
+   "title": "Integration",
+   "pages": 89,
+   "files": "052-071"
+  },
+  "BLO.6": {
+   "id": "BLO.6",
+   "book": "BLO",
+   "ch": "6",
+   "title": "Limits to Infinity",
+   "pages": 36,
+   "files": "071-079"
+  },
+  "BLO.7": {
+   "id": "BLO.7",
+   "book": "BLO",
+   "ch": "7",
+   "title": "Transcendental Functions",
+   "pages": 41,
+   "files": "079-090"
+  },
+  "BLO.8": {
+   "id": "BLO.8",
+   "book": "BLO",
+   "ch": "8",
+   "title": "Sequences",
+   "pages": 44,
+   "files": "090-097"
+  },
+  "BLO.9": {
+   "id": "BLO.9",
+   "book": "BLO",
+   "ch": "9",
+   "title": "Series",
+   "pages": 45,
+   "files": "098-105"
+  },
+  "BLO.10": {
+   "id": "BLO.10",
+   "book": "BLO",
+   "ch": "10",
+   "title": "Sequences and Series of Functions",
+   "pages": 50,
+   "files": "106-116"
+  },
+  "GO.1": {
+   "id": "GO.1",
+   "book": "GO",
+   "ch": "1",
+   "title": "The Real Number System",
+   "pages": 21,
+   "files": "008-013"
+  },
+  "GO.2": {
+   "id": "GO.2",
+   "book": "GO",
+   "ch": "2",
+   "title": "Functions and Limits",
+   "pages": 12,
+   "files": "013-016"
+  },
+  "GO.3": {
+   "id": "GO.3",
+   "book": "GO",
+   "ch": "3",
+   "title": "Differentiation",
+   "pages": 7,
+   "files": "016-018"
+  },
+  "GO.4": {
+   "id": "GO.4",
+   "book": "GO",
+   "ch": "4",
+   "title": "Riemann Integration",
+   "pages": 6,
+   "files": "018-019",
+   "files_alt": [
+    "019"
+   ]
+  },
+  "GO.5": {
+   "id": "GO.5",
+   "book": "GO",
+   "ch": "5",
+   "title": "Sequences",
+   "pages": 8,
+   "files": "020-021"
+  },
+  "GO.6": {
+   "id": "GO.6",
+   "book": "GO",
+   "ch": "6",
+   "title": "Infinite Series",
+   "pages": 21,
+   "files": "021-026"
+  },
+  "GO.7": {
+   "id": "GO.7",
+   "book": "GO",
+   "ch": "7",
+   "title": "Uniform Convergence",
+   "pages": 7,
+   "files": "027"
+  },
+  "GO.8": {
+   "id": "GO.8",
+   "book": "GO",
+   "ch": "8",
+   "title": "Sets and Measure on the Real Axis",
+   "pages": 30,
+   "files": "028-036",
+   "files_alt": [
+    "029-036"
+   ]
+  },
+  "PUG.2": {
+   "id": "PUG.2",
+   "book": "PUG",
+   "ch": "2",
+   "title": "A Taste of Topology",
+   "pages": 90,
+   "files": "011-028"
+  },
+  "PUG.4": {
+   "id": "PUG.4",
+   "book": "PUG",
+   "ch": "4",
+   "title": "Function Spaces",
+   "pages": 66,
+   "files": "038-047"
+  },
+  "PUG.5": {
+   "id": "PUG.5",
+   "book": "PUG",
+   "ch": "5",
+   "title": "Multivariable Calculus",
+   "pages": 106,
+   "files": "048-064"
+  },
+  "TAO2.1": {
+   "id": "TAO2.1",
+   "book": "TAO2",
+   "ch": "1",
+   "title": "Metric Spaces",
+   "pages": 22,
+   "files": "003-007"
+  },
+  "TAO2.2": {
+   "id": "TAO2.2",
+   "book": "TAO2",
+   "ch": "2",
+   "title": "Continuous Functions on Metric Spaces",
+   "pages": 15,
+   "files": "008-011"
+  },
+  "TAO2.3": {
+   "id": "TAO2.3",
+   "book": "TAO2",
+   "ch": "3",
+   "title": "Uniform Convergence",
+   "pages": 26,
+   "files": "012-018"
+  },
+  "TAO2.6": {
+   "id": "TAO2.6",
+   "book": "TAO2",
+   "ch": "6",
+   "title": "Several Variable Differential Calculus",
+   "pages": 32,
+   "files": "029-035"
+  },
+  "SUT.5": {
+   "id": "SUT.5",
+   "book": "SUT",
+   "ch": "5",
+   "title": "Metric spaces",
+   "pages": 24,
+   "files": "011-015"
+  },
+  "SUT.6": {
+   "id": "SUT.6",
+   "book": "SUT",
+   "ch": "6",
+   "title": "More concepts in metric spaces",
+   "pages": 16,
+   "files": "016-019"
+  },
+  "SUT.7": {
+   "id": "SUT.7",
+   "book": "SUT",
+   "ch": "7",
+   "title": "Topological spaces",
+   "pages": 6,
+   "files": "020"
+  },
+  "SUT.8": {
+   "id": "SUT.8",
+   "book": "SUT",
+   "ch": "8",
+   "title": "Continuity in topological spaces; bases",
+   "pages": 6,
+   "files": "021"
+  },
+  "SUT.9": {
+   "id": "SUT.9",
+   "book": "SUT",
+   "ch": "9",
+   "title": "Some concepts in topological spaces",
+   "pages": 8,
+   "files": "022"
+  },
+  "SUT.10": {
+   "id": "SUT.10",
+   "book": "SUT",
+   "ch": "10",
+   "title": "Subspaces and product spaces",
+   "pages": 12,
+   "files": "023-024"
+  },
+  "SUT.11": {
+   "id": "SUT.11",
+   "book": "SUT",
+   "ch": "11",
+   "title": "The Hausdorff condition",
+   "pages": 4,
+   "files": "025"
+  },
+  "SUT.12": {
+   "id": "SUT.12",
+   "book": "SUT",
+   "ch": "12",
+   "title": "Connected spaces",
+   "pages": 12,
+   "files": "026-028"
+  },
+  "SUT.13": {
+   "id": "SUT.13",
+   "book": "SUT",
+   "ch": "13",
+   "title": "Compact spaces",
+   "pages": 16,
+   "files": "029-032"
+  },
+  "SUT.14": {
+   "id": "SUT.14",
+   "book": "SUT",
+   "ch": "14",
+   "title": "Sequential compactness",
+   "pages": 10,
+   "files": "033"
+  },
+  "SUT.15": {
+   "id": "SUT.15",
+   "book": "SUT",
+   "ch": "15",
+   "title": "Quotient spaces and surfaces",
+   "pages": 22,
+   "files": "034-037"
+  },
+  "SUT.16": {
+   "id": "SUT.16",
+   "book": "SUT",
+   "ch": "16",
+   "title": "Uniform convergence",
+   "pages": 9,
+   "files": "038-040"
+  },
+  "SUT.17": {
+   "id": "SUT.17",
+   "book": "SUT",
+   "ch": "17",
+   "title": "Complete metric spaces",
+   "pages": 19,
+   "files": "040-043"
+  },
+  "MUN.2": {
+   "id": "MUN.2",
+   "book": "MUN",
+   "ch": "2",
+   "title": "Topological Spaces and Continuous Functions",
+   "pages": 72,
+   "files": "020-034"
+  },
+  "MUN.3": {
+   "id": "MUN.3",
+   "book": "MUN",
+   "ch": "3",
+   "title": "Connectedness and Compactness",
+   "pages": 42,
+   "files": "035-042"
+  },
+  "KF.2": {
+   "id": "KF.2",
+   "book": "KF",
+   "ch": "2",
+   "title": "Metric Spaces",
+   "pages": 41,
+   "files": "005-006"
+  },
+  "KF.3": {
+   "id": "KF.3",
+   "book": "KF",
+   "ch": "3",
+   "title": "Topological Spaces",
+   "pages": 40,
+   "files": "006-008"
+  },
+  "MOA.1": {
+   "id": "MOA.1",
+   "book": "MOA",
+   "ch": "1",
+   "title": "The Algebra and Topology of ℝⁿ",
+   "pages": 47,
+   "files": "002-011"
+  },
+  "MOA.2": {
+   "id": "MOA.2",
+   "book": "MOA",
+   "ch": "2",
+   "title": "Differentiation",
+   "pages": 39,
+   "files": "011-014"
+  },
+  "MOA.3": {
+   "id": "MOA.3",
+   "book": "MOA",
+   "ch": "3",
+   "title": "Integration",
+   "pages": 54,
+   "files": "015-020"
+  },
+  "MOA.4": {
+   "id": "MOA.4",
+   "book": "MOA",
+   "ch": "4",
+   "title": "Change of Variables",
+   "pages": 44,
+   "files": "021-026"
+  },
+  "TES.2": {
+   "id": "TES.2",
+   "book": "TES",
+   "ch": "2",
+   "title": "Initial value problems",
+   "pages": 26,
+   "files": "008-014"
+  },
+  "PMA.9": {
+   "id": "PMA.9",
+   "book": "PMA",
+   "ch": "9",
+   "title": "Functions of Several Variables",
+   "pages": 44,
+   "files": "042-051"
+  },
+  "GO.9": {
+   "id": "GO.9",
+   "book": "GO",
+   "ch": "9",
+   "title": "Functions of Two Variables",
+   "pages": 15,
+   "files": "037-039",
+   "files_alt": [
+    "037-040"
+   ]
+  },
+  "GO.10": {
+   "id": "GO.10",
+   "book": "GO",
+   "ch": "10",
+   "title": "Plane Sets",
+   "pages": 19,
+   "files": "040-044",
+   "files_alt": [
+    "040-045"
+   ]
+  },
+  "GO.11": {
+   "id": "GO.11",
+   "book": "GO",
+   "ch": "11",
+   "title": "Area",
+   "pages": 8,
+   "files": "045-046"
+  },
+  "GO.12": {
+   "id": "GO.12",
+   "book": "GO",
+   "ch": "12",
+   "title": "Metric and Topological Spaces",
+   "pages": 18,
+   "files": "047-051"
+  },
+  "GO.13": {
+   "id": "GO.13",
+   "book": "GO",
+   "ch": "13",
+   "title": "Function Spaces",
+   "pages": 8,
+   "files": "052-053"
+  },
+  "SSB.1": {
+   "id": "SSB.1",
+   "book": "SSB",
+   "ch": "I.1",
+   "title": "General Introduction (basic definitions)",
+   "pages": 5,
+   "files": "003-006"
+  },
+  "SSB.2": {
+   "id": "SSB.2",
+   "book": "SSB",
+   "ch": "I.2",
+   "title": "Separation Axioms",
+   "pages": 5,
+   "files": "006-007"
+  },
+  "SSB.3": {
+   "id": "SSB.3",
+   "book": "SSB",
+   "ch": "I.3",
+   "title": "Compactness",
+   "pages": 6,
+   "files": "008-009"
+  },
+  "SSB.4": {
+   "id": "SSB.4",
+   "book": "SSB",
+   "ch": "I.4",
+   "title": "Connectedness",
+   "pages": 2,
+   "files": "009-010"
+  },
+  "SSB.5": {
+   "id": "SSB.5",
+   "book": "SSB",
+   "ch": "I.5",
+   "title": "Metric Spaces",
+   "pages": 6,
+   "files": "010-011"
+  },
+  "SSB.II": {
+   "id": "SSB.II",
+   "book": "SSB",
+   "ch": "II",
+   "title": "Counterexamples (selected: 1–4, 18–20, 30–32, 51, 116–118, 134, 137, 139–140)",
+   "pages": 60,
+   "files": "011-032"
+  },
+  "SS1.1": {
+   "id": "SS1.1",
+   "book": "SS1",
+   "ch": "1",
+   "title": "The Genesis of Fourier Analysis",
+   "pages": 26,
+   "files": "003-010"
+  },
+  "SS1.2": {
+   "id": "SS1.2",
+   "book": "SS1",
+   "ch": "2",
+   "title": "Basic Properties of Fourier Series",
+   "pages": 39,
+   "files": "010-018"
+  },
+  "SS1.3": {
+   "id": "SS1.3",
+   "book": "SS1",
+   "ch": "3",
+   "title": "Convergence of Fourier Series",
+   "pages": 32,
+   "files": "018-025"
+  },
+  "SS1.4": {
+   "id": "SS1.4",
+   "book": "SS1",
+   "ch": "4",
+   "title": "Some Applications of Fourier Series",
+   "pages": 29,
+   "files": "026-031"
+  },
+  "SS1.5": {
+   "id": "SS1.5",
+   "book": "SS1",
+   "ch": "5",
+   "title": "The Fourier Transform on ℝ",
+   "pages": 44,
+   "files": "031-040"
+  },
+  "SS1.6": {
+   "id": "SS1.6",
+   "book": "SS1",
+   "ch": "6",
+   "title": "The Fourier Transform on ℝᵈ",
+   "pages": 44,
+   "files": "041-050"
+  },
+  "SS1.7": {
+   "id": "SS1.7",
+   "book": "SS1",
+   "ch": "7",
+   "title": "Finite Fourier Analysis",
+   "pages": 22,
+   "files": "050-056"
+  },
+  "SS1.8": {
+   "id": "SS1.8",
+   "book": "SS1",
+   "ch": "8",
+   "title": "Dirichlet's Theorem",
+   "pages": 39,
+   "files": "056-065"
+  },
+  "SS1.A": {
+   "id": "SS1.A",
+   "book": "SS1",
+   "ch": "A",
+   "title": "Appendix: Integration (Riemann on ℝ and ℝᵈ, improper integrals, polar coordinates)",
+   "pages": 19,
+   "files": "065-070"
+  },
+  "KOR.1": {
+   "id": "KOR.1",
+   "book": "KOR",
+   "ch": "1",
+   "title": "Introduction",
+   "pages": 3,
+   "files": "002-003"
+  },
+  "KOR.2": {
+   "id": "KOR.2",
+   "book": "KOR",
+   "ch": "2",
+   "title": "Proof of Fejér's theorem",
+   "pages": 5,
+   "files": "003"
+  },
+  "KOR.3": {
+   "id": "KOR.3",
+   "book": "KOR",
+   "ch": "3",
+   "title": "Weyl's equidistribution theorem",
+   "pages": 4,
+   "files": "004"
+  },
+  "KOR.4": {
+   "id": "KOR.4",
+   "book": "KOR",
+   "ch": "4",
+   "title": "The Weierstrass polynomial approximation theorem",
+   "pages": 4,
+   "files": "005"
+  },
+  "KOR.9": {
+   "id": "KOR.9",
+   "book": "KOR",
+   "ch": "9",
+   "title": "The simplest convergence theorem",
+   "pages": 3,
+   "files": "009"
+  },
+  "KOR.10": {
+   "id": "KOR.10",
+   "book": "KOR",
+   "ch": "10",
+   "title": "The rate of convergence",
+   "pages": 3,
+   "files": "010"
+  },
+  "KOR.11": {
+   "id": "KOR.11",
+   "book": "KOR",
+   "ch": "11",
+   "title": "A nowhere differentiable function",
+   "pages": 4,
+   "files": "010-011"
+  },
+  "KOR.15": {
+   "id": "KOR.15",
+   "book": "KOR",
+   "ch": "15",
+   "title": "Pointwise convergence",
+   "pages": 3,
+   "files": "014"
+  },
+  "KOR.16": {
+   "id": "KOR.16",
+   "book": "KOR",
+   "ch": "16",
+   "title": "Behaviour at points of discontinuity I",
+   "pages": 3,
+   "files": "014"
+  },
+  "KOR.17": {
+   "id": "KOR.17",
+   "book": "KOR",
+   "ch": "17",
+   "title": "Behaviour at points of discontinuity II (Gibbs)",
+   "pages": 5,
+   "files": "015"
+  },
+  "KOR.18": {
+   "id": "KOR.18",
+   "book": "KOR",
+   "ch": "18",
+   "title": "A Fourier series divergent at a point",
+   "pages": 7,
+   "files": "016"
+  },
+  "KOR.19": {
+   "id": "KOR.19",
+   "book": "KOR",
+   "ch": "19",
+   "title": "Pointwise convergence, the answer",
+   "pages": 3,
+   "files": "017"
+  },
+  "KOR.27": {
+   "id": "KOR.27",
+   "book": "KOR",
+   "ch": "27",
+   "title": "Poisson summation",
+   "pages": 5,
+   "files": "022"
+  },
+  "KOR.28": {
+   "id": "KOR.28",
+   "book": "KOR",
+   "ch": "28",
+   "title": "Dirichlet's problem for the disc",
+   "pages": 3,
+   "files": "023"
+  },
+  "KOR.32": {
+   "id": "KOR.32",
+   "book": "KOR",
+   "ch": "32",
+   "title": "Mean square approximation I",
+   "pages": 5,
+   "files": "027"
+  },
+  "KOR.33": {
+   "id": "KOR.33",
+   "book": "KOR",
+   "ch": "33",
+   "title": "Mean square approximation II",
+   "pages": 5,
+   "files": "028"
+  },
+  "KOR.34": {
+   "id": "KOR.34",
+   "book": "KOR",
+   "ch": "34",
+   "title": "Mean square convergence",
+   "pages": 4,
+   "files": "029"
+  },
+  "KOR.35": {
+   "id": "KOR.35",
+   "book": "KOR",
+   "ch": "35",
+   "title": "The isoperimetric problem I",
+   "pages": 7,
+   "files": "030"
+  },
+  "KOR.36": {
+   "id": "KOR.36",
+   "book": "KOR",
+   "ch": "36",
+   "title": "The isoperimetric problem II",
+   "pages": 4,
+   "files": "031"
+  },
+  "KOR.46": {
+   "id": "KOR.46",
+   "book": "KOR",
+   "ch": "46",
+   "title": "Fourier transforms: introduction",
+   "pages": 5,
+   "files": "041"
+  },
+  "KOR.47": {
+   "id": "KOR.47",
+   "book": "KOR",
+   "ch": "47",
+   "title": "Change in the order of integration I",
+   "pages": 4,
+   "files": "042"
+  },
+  "KOR.48": {
+   "id": "KOR.48",
+   "book": "KOR",
+   "ch": "48",
+   "title": "Change in the order of integration II",
+   "pages": 10,
+   "files": "043"
+  },
+  "KOR.49": {
+   "id": "KOR.49",
+   "book": "KOR",
+   "ch": "49",
+   "title": "Fejér's theorem for Fourier transforms",
+   "pages": 5,
+   "files": "044"
+  },
+  "KOR.51": {
+   "id": "KOR.51",
+   "book": "KOR",
+   "ch": "51",
+   "title": "Convolution",
+   "pages": 6,
+   "files": "046"
+  },
+  "KOR.52": {
+   "id": "KOR.52",
+   "book": "KOR",
+   "ch": "52",
+   "title": "Convolution on 𝕋",
+   "pages": 6,
+   "files": "047"
+  },
+  "KOR.53": {
+   "id": "KOR.53",
+   "book": "KOR",
+   "ch": "53",
+   "title": "Differentiation under the integral",
+   "pages": 5,
+   "files": "048"
+  },
+  "KOR.55": {
+   "id": "KOR.55",
+   "book": "KOR",
+   "ch": "55",
+   "title": "The heat equation",
+   "pages": 8,
+   "files": "050"
+  },
+  "KOR.60": {
+   "id": "KOR.60",
+   "book": "KOR",
+   "ch": "60",
+   "title": "The inversion formula",
+   "pages": 5,
+   "files": "052"
+  },
+  "KOR.64": {
+   "id": "KOR.64",
+   "book": "KOR",
+   "ch": "64",
+   "title": "The wave equation",
+   "pages": 8,
+   "files": "056"
+  },
+  "KOR.97": {
+   "id": "KOR.97",
+   "book": "KOR",
+   "ch": "97",
+   "title": "Fourier analysis on the roots of unity",
+   "pages": 6,
+   "files": "080"
+  },
+  "KOR.101": {
+   "id": "KOR.101",
+   "book": "KOR",
+   "ch": "101",
+   "title": "A little group theory",
+   "pages": 3,
+   "files": "084"
+  },
+  "KOR.103": {
+   "id": "KOR.103",
+   "book": "KOR",
+   "ch": "103",
+   "title": "A little more group theory",
+   "pages": 6,
+   "files": "086"
+  },
+  "KOR.104": {
+   "id": "KOR.104",
+   "book": "KOR",
+   "ch": "104",
+   "title": "Fourier analysis on finite Abelian groups",
+   "pages": 6,
+   "files": "087"
+  },
+  "KOR.105": {
+   "id": "KOR.105",
+   "book": "KOR",
+   "ch": "105",
+   "title": "A formula of Euler",
+   "pages": 7,
+   "files": "088"
+  },
+  "KOR.106": {
+   "id": "KOR.106",
+   "book": "KOR",
+   "ch": "106",
+   "title": "An idea of Dirichlet",
+   "pages": 7,
+   "files": "089"
+  },
+  "KOR.107": {
+   "id": "KOR.107",
+   "book": "KOR",
+   "ch": "107",
+   "title": "Primes in some arithmetical progressions",
+   "pages": 7,
+   "files": "090"
+  },
+  "KOR.108": {
+   "id": "KOR.108",
+   "book": "KOR",
+   "ch": "108",
+   "title": "Extension from real to complex variable",
+   "pages": 6,
+   "files": "091"
+  },
+  "KOR.109": {
+   "id": "KOR.109",
+   "book": "KOR",
+   "ch": "109",
+   "title": "Primes in general arithmetical progressions",
+   "pages": 6,
+   "files": "092-093"
+  },
+  "KOR.C": {
+   "id": "KOR.C",
+   "book": "KOR",
+   "ch": "App. C",
+   "title": "Weakening hypotheses",
+   "pages": 10,
+   "files": "095"
+  },
+  "DM.1": {
+   "id": "DM.1",
+   "book": "DM",
+   "ch": "1",
+   "title": "Fourier Series",
+   "pages": 84,
+   "files": "003-017"
+  },
+  "DM.2": {
+   "id": "DM.2",
+   "book": "DM",
+   "ch": "2",
+   "title": "Fourier Integrals",
+   "pages": 57,
+   "files": "017-028"
+  },
+  "DM.4": {
+   "id": "DM.4",
+   "book": "DM",
+   "ch": "4",
+   "title": "Fourier Series and Integrals on Groups",
+   "pages": 79,
+   "files": "039-056"
+  },
+  "SS3.0": {
+   "id": "SS3.0",
+   "book": "SS3",
+   "ch": "Intro",
+   "title": "Introduction (Fourier series completion, limits of continuous functions, length of curves, differentiation and integration, the problem of measure)",
+   "pages": 6,
+   "files": "003-004"
+  },
+  "MIRA.1": {
+   "id": "MIRA.1",
+   "book": "MIRA",
+   "ch": "1",
+   "title": "Riemann Integration (1A review; 1B Riemann integral is not good enough)",
+   "pages": 14,
+   "files": "004-007"
+  },
+  "BRL.1": {
+   "id": "BRL.1",
+   "book": "BRL",
+   "ch": "1",
+   "title": "Introduction (the five big questions)",
+   "pages": 22,
+   "files": "003-008"
+  },
+  "BRL.2": {
+   "id": "BRL.2",
+   "book": "BRL",
+   "ch": "2",
+   "title": "The Riemann Integral",
+   "pages": 28,
+   "files": "009-015"
+  },
+  "BRL.4": {
+   "id": "BRL.4",
+   "book": "BRL",
+   "ch": "4",
+   "title": "Nowhere Dense Sets and the Problem with the Fundamental Theorem of Calculus",
+   "pages": 43,
+   "files": "024-034"
+  },
+  "MUN.4": {
+   "id": "MUN.4",
+   "book": "MUN",
+   "ch": "4",
+   "title": "Countability and Separation Axioms (§31–33, §35)",
+   "pages": 38,
+   "files": "043-049"
+  },
+  "FOL.0": {
+   "id": "FOL.0",
+   "book": "FOL",
+   "ch": "0",
+   "title": "Prologue (set theory, extended reals, metric spaces)",
+   "pages": 17,
+   "files": "003-007"
+  },
+  "FOL.1": {
+   "id": "FOL.1",
+   "book": "FOL",
+   "ch": "1",
+   "title": "Measures",
+   "pages": 26,
+   "files": "007-012"
+  },
+  "FOL.2": {
+   "id": "FOL.2",
+   "book": "FOL",
+   "ch": "2",
+   "title": "Integration",
+   "pages": 42,
+   "files": "013-020"
+  },
+  "FOL.3": {
+   "id": "FOL.3",
+   "book": "FOL",
+   "ch": "3",
+   "title": "Signed Measures and Differentiation",
+   "pages": 28,
+   "files": "021-027"
+  },
+  "FOL.4": {
+   "id": "FOL.4",
+   "book": "FOL",
+   "ch": "4",
+   "title": "Point Set Topology (§4.5 locally compact Hausdorff spaces only)",
+   "pages": 38,
+   "files": "028-035"
+  },
+  "FOL.6": {
+   "id": "FOL.6",
+   "book": "FOL",
+   "ch": "6",
+   "title": "Lᵖ Spaces (§6.1, 6.3, 6.4 only)",
+   "pages": 32,
+   "files": "044-050"
+  },
+  "SS3.1": {
+   "id": "SS3.1",
+   "book": "SS3",
+   "ch": "1",
+   "title": "Measure Theory",
+   "pages": 51,
+   "files": "004-014"
+  },
+  "SS3.2": {
+   "id": "SS3.2",
+   "book": "SS3",
+   "ch": "2",
+   "title": "Integration Theory",
+   "pages": 51,
+   "files": "014-025"
+  },
+  "SS3.3": {
+   "id": "SS3.3",
+   "book": "SS3",
+   "ch": "3",
+   "title": "Differentiation and Integration",
+   "pages": 56,
+   "files": "025-034"
+  },
+  "SS3.4": {
+   "id": "SS3.4",
+   "book": "SS3",
+   "ch": "4",
+   "title": "Hilbert Spaces: An Introduction (§1 the space L² only)",
+   "pages": 48,
+   "files": "035-044"
+  },
+  "SS3.6": {
+   "id": "SS3.6",
+   "book": "SS3",
+   "ch": "6",
+   "title": "Abstract Measure and Integration Theory",
+   "pages": 60,
+   "files": "055-070"
+  },
+  "MIRA.2": {
+   "id": "MIRA.2",
+   "book": "MIRA",
+   "ch": "2",
+   "title": "Measures",
+   "pages": 60,
+   "files": "008-028"
+  },
+  "MIRA.3": {
+   "id": "MIRA.3",
+   "book": "MIRA",
+   "ch": "3",
+   "title": "Integration",
+   "pages": 28,
+   "files": "029-037"
+  },
+  "MIRA.4": {
+   "id": "MIRA.4",
+   "book": "MIRA",
+   "ch": "4",
+   "title": "Differentiation",
+   "pages": 14,
+   "files": "038-041"
+  },
+  "MIRA.5": {
+   "id": "MIRA.5",
+   "book": "MIRA",
+   "ch": "5",
+   "title": "Product Measures",
+   "pages": 31,
+   "files": "042-052"
+  },
+  "MIRA.7": {
+   "id": "MIRA.7",
+   "book": "MIRA",
+   "ch": "7",
+   "title": "Lᵖ Spaces",
+   "pages": 19,
+   "files": "069-074"
+  },
+  "MIRA.8": {
+   "id": "MIRA.8",
+   "book": "MIRA",
+   "ch": "8",
+   "title": "Hilbert Spaces (8.34–8.47 projection and representation, specialized to L²)",
+   "pages": 43,
+   "files": "075-088"
+  },
+  "MIRA.9": {
+   "id": "MIRA.9",
+   "book": "MIRA",
+   "ch": "9",
+   "title": "Real and Complex Measures",
+   "pages": 26,
+   "files": "089-096"
+  },
+  "BRL.5": {
+   "id": "BRL.5",
+   "book": "BRL",
+   "ch": "5",
+   "title": "The Development of Measure Theory",
+   "pages": 39,
+   "files": "034-044"
+  },
+  "BRL.6": {
+   "id": "BRL.6",
+   "book": "BRL",
+   "ch": "6",
+   "title": "The Lebesgue Integral",
+   "pages": 42,
+   "files": "044-054"
+  },
+  "BRL.7": {
+   "id": "BRL.7",
+   "book": "BRL",
+   "ch": "7",
+   "title": "The Fundamental Theorem of Calculus",
+   "pages": 39,
+   "files": "055-064"
+  },
+  "BRL.8": {
+   "id": "BRL.8",
+   "book": "BRL",
+   "ch": "8",
+   "title": "Fourier Series",
+   "pages": 45,
+   "files": "064-075"
+  },
+  "WZ.2": {
+   "id": "WZ.2",
+   "book": "WZ",
+   "ch": "2",
+   "title": "Functions of Bounded Variation; Riemann–Stieltjes Integral",
+   "pages": 24,
+   "files": "010-014"
+  },
+  "WZ.3": {
+   "id": "WZ.3",
+   "book": "WZ",
+   "ch": "3",
+   "title": "Lebesgue Measure and Outer Measure",
+   "pages": 22,
+   "files": "015-019"
+  },
+  "WZ.4": {
+   "id": "WZ.4",
+   "book": "WZ",
+   "ch": "4",
+   "title": "Lebesgue Measurable Functions",
+   "pages": 18,
+   "files": "020-024"
+  },
+  "WZ.5": {
+   "id": "WZ.5",
+   "book": "WZ",
+   "ch": "5",
+   "title": "The Lebesgue Integral",
+   "pages": 32,
+   "files": "025-030"
+  },
+  "WZ.6": {
+   "id": "WZ.6",
+   "book": "WZ",
+   "ch": "6",
+   "title": "Repeated Integration",
+   "pages": 18,
+   "files": "031-033"
+  },
+  "WZ.7": {
+   "id": "WZ.7",
+   "book": "WZ",
+   "ch": "7",
+   "title": "Differentiation",
+   "pages": 52,
+   "files": "034-039"
+  },
+  "WZ.8": {
+   "id": "WZ.8",
+   "book": "WZ",
+   "ch": "8",
+   "title": "Lᵖ Classes",
+   "pages": 30,
+   "files": "040-045"
+  },
+  "WZ.9": {
+   "id": "WZ.9",
+   "book": "WZ",
+   "ch": "9",
+   "title": "Approximations of the Identity; Maximal Functions",
+   "pages": 24,
+   "files": "046-050"
+  },
+  "WZ.10": {
+   "id": "WZ.10",
+   "book": "WZ",
+   "ch": "10",
+   "title": "Abstract Integration",
+   "pages": 42,
+   "files": "051-058"
+  },
+  "WZ.11": {
+   "id": "WZ.11",
+   "book": "WZ",
+   "ch": "11",
+   "title": "Outer Measure; Measure",
+   "pages": 22,
+   "files": "059-064"
+  },
+  "SS2.1": {
+   "id": "SS2.1",
+   "book": "SS2",
+   "ch": "1",
+   "title": "Preliminaries to Complex Analysis",
+   "pages": 35,
+   "files": "003-009"
+  },
+  "SS2.2": {
+   "id": "SS2.2",
+   "book": "SS2",
+   "ch": "2",
+   "title": "Cauchy's Theorem and Its Applications",
+   "pages": 39,
+   "files": "010-016"
+  },
+  "SS2.3": {
+   "id": "SS2.3",
+   "book": "SS2",
+   "ch": "3",
+   "title": "Meromorphic Functions and the Logarithm",
+   "pages": 40,
+   "files": "017-024"
+  },
+  "SS2.5": {
+   "id": "SS2.5",
+   "book": "SS2",
+   "ch": "5",
+   "title": "Entire Functions",
+   "pages": 25,
+   "files": "028-033"
+  },
+  "SS2.6": {
+   "id": "SS2.6",
+   "book": "SS2",
+   "ch": "6",
+   "title": "The Gamma and Zeta Functions",
+   "pages": 23,
+   "files": "033-037"
+  },
+  "SS2.8": {
+   "id": "SS2.8",
+   "book": "SS2",
+   "ch": "8",
+   "title": "Conformal Mappings",
+   "pages": 56,
+   "files": "041-054"
+  },
+  "SS2.B": {
+   "id": "SS2.B",
+   "book": "SS2",
+   "ch": "B",
+   "title": "Appendix B: Simple Connectivity and Jordan Curve Theorem",
+   "pages": 20,
+   "files": "071-075"
+  },
+  "AHL.1": {
+   "id": "AHL.1",
+   "book": "AHL",
+   "ch": "1",
+   "title": "Complex Numbers",
+   "pages": 24,
+   "files": "002-006"
+  },
+  "AHL.2": {
+   "id": "AHL.2",
+   "book": "AHL",
+   "ch": "2",
+   "title": "Complex Functions",
+   "pages": 28,
+   "files": "006-011"
+  },
+  "AHL.3": {
+   "id": "AHL.3",
+   "book": "AHL",
+   "ch": "3",
+   "title": "Analytic Functions as Mappings",
+   "pages": 51,
+   "files": "011-022"
+  },
+  "AHL.4": {
+   "id": "AHL.4",
+   "book": "AHL",
+   "ch": "4",
+   "title": "Complex Integration",
+   "pages": 75,
+   "files": "022-034"
+  },
+  "AHL.5": {
+   "id": "AHL.5",
+   "book": "AHL",
+   "ch": "5",
+   "title": "Series and Product Developments",
+   "pages": 53,
+   "files": "034-042"
+  },
+  "AHL.6": {
+   "id": "AHL.6",
+   "book": "AHL",
+   "ch": "6",
+   "title": "Conformal Mapping. Dirichlet's Problem",
+   "pages": 34,
+   "files": "042-051"
+  },
+  "AHL.8": {
+   "id": "AHL.8",
+   "book": "AHL",
+   "ch": "8",
+   "title": "Global Analytic Functions",
+   "pages": 39,
+   "files": "055-060"
+  },
+  "CON.3": {
+   "id": "CON.3",
+   "book": "CON",
+   "ch": "III",
+   "title": "Elementary Properties and Examples of Analytic Functions",
+   "pages": 28,
+   "files": "010-013"
+  },
+  "CON.4": {
+   "id": "CON.4",
+   "book": "CON",
+   "ch": "IV",
+   "title": "Complex Integration",
+   "pages": 44,
+   "files": "014-021"
+  },
+  "CON.5": {
+   "id": "CON.5",
+   "book": "CON",
+   "ch": "V",
+   "title": "Singularities",
+   "pages": 25,
+   "files": "021-025"
+  },
+  "CON.6": {
+   "id": "CON.6",
+   "book": "CON",
+   "ch": "VI",
+   "title": "The Maximum Modulus Theorem",
+   "pages": 14,
+   "files": "025-029"
+  },
+  "CON.7": {
+   "id": "CON.7",
+   "book": "CON",
+   "ch": "VII",
+   "title": "Compactness and Convergence in the Space of Analytic Functions",
+   "pages": 54,
+   "files": "029-036"
+  },
+  "CON.8": {
+   "id": "CON.8",
+   "book": "CON",
+   "ch": "VIII",
+   "title": "Runge's Theorem",
+   "pages": 15,
+   "files": "037-039"
+  },
+  "CON.9": {
+   "id": "CON.9",
+   "book": "CON",
+   "ch": "IX",
+   "title": "Analytic Continuation and Riemann Surfaces",
+   "pages": 40,
+   "files": "040-046"
+  },
+  "CON.10": {
+   "id": "CON.10",
+   "book": "CON",
+   "ch": "X",
+   "title": "Harmonic Functions",
+   "pages": 28,
+   "files": "047-051"
+  },
+  "CON.11": {
+   "id": "CON.11",
+   "book": "CON",
+   "ch": "XI",
+   "title": "Entire Functions",
+   "pages": 14,
+   "files": "052-054"
+  },
+  "CON.12": {
+   "id": "CON.12",
+   "book": "CON",
+   "ch": "XII",
+   "title": "The Range of an Analytic Function",
+   "pages": 10,
+   "files": "055-058"
+  },
+  "NEE.2": {
+   "id": "NEE.2",
+   "book": "NEE",
+   "ch": "2",
+   "title": "Complex Functions as Transformations",
+   "pages": 76,
+   "files": "021-039"
+  },
+  "NEE.3": {
+   "id": "NEE.3",
+   "book": "NEE",
+   "ch": "3",
+   "title": "Möbius Transformations and Inversion",
+   "pages": 76,
+   "files": "040-060"
+  },
+  "NEE.4": {
+   "id": "NEE.4",
+   "book": "NEE",
+   "ch": "4",
+   "title": "Differentiation: The Amplitwist Concept",
+   "pages": 32,
+   "files": "061-068"
+  },
+  "NEE.5": {
+   "id": "NEE.5",
+   "book": "NEE",
+   "ch": "5",
+   "title": "Further Geometry of Differentiation",
+   "pages": 58,
+   "files": "069-082"
+  },
+  "NEE.7": {
+   "id": "NEE.7",
+   "book": "NEE",
+   "ch": "7",
+   "title": "Winding Numbers and Topology",
+   "pages": 44,
+   "files": "101-111"
+  },
+  "NEE.8": {
+   "id": "NEE.8",
+   "book": "NEE",
+   "ch": "8",
+   "title": "Complex Integration: Cauchy's Theorem",
+   "pages": 56,
+   "files": "112-125"
+  },
+  "NEE.9": {
+   "id": "NEE.9",
+   "book": "NEE",
+   "ch": "9",
+   "title": "Cauchy's Formula and Its Applications",
+   "pages": 26,
+   "files": "126-132"
+  },
+  "NEE.11": {
+   "id": "NEE.11",
+   "book": "NEE",
+   "ch": "11",
+   "title": "Vector Fields and Complex Integration",
+   "pages": 40,
+   "files": "139-149"
+  },
+  "NEE.12": {
+   "id": "NEE.12",
+   "book": "NEE",
+   "ch": "12",
+   "title": "Flows and Harmonic Functions",
+   "pages": 76,
+   "files": "150-166"
+  },
+  "BRZ.1": {
+   "id": "BRZ.1",
+   "book": "BRZ",
+   "ch": "1",
+   "title": "The Hahn–Banach Theorems. Conjugate Convex Functions",
+   "pages": 28,
+   "files": "003-010"
+  },
+  "BRZ.2": {
+   "id": "BRZ.2",
+   "book": "BRZ",
+   "ch": "2",
+   "title": "The Uniform Boundedness Principle and the Closed Graph Theorem",
+   "pages": 26,
+   "files": "010-015"
+  },
+  "BRZ.3": {
+   "id": "BRZ.3",
+   "book": "BRZ",
+   "ch": "3",
+   "title": "Weak Topologies. Reflexive Spaces. Separable Spaces. Uniform Convexity",
+   "pages": 34,
+   "files": "015-023"
+  },
+  "BRZ.4": {
+   "id": "BRZ.4",
+   "book": "BRZ",
+   "ch": "4",
+   "title": "Lp Spaces",
+   "pages": 42,
+   "files": "024-034"
+  },
+  "BRZ.5": {
+   "id": "BRZ.5",
+   "book": "BRZ",
+   "ch": "5",
+   "title": "Hilbert Spaces",
+   "pages": 26,
+   "files": "035-041"
+  },
+  "BRZ.6": {
+   "id": "BRZ.6",
+   "book": "BRZ",
+   "ch": "6",
+   "title": "Compact Operators. Spectral Decomposition of Self-Adjoint Compact Operators",
+   "pages": 23,
+   "files": "041-048"
+  },
+  "BRZ.8": {
+   "id": "BRZ.8",
+   "book": "BRZ",
+   "ch": "8",
+   "title": "Sobolev Spaces and the Variational Formulation of Boundary Value Problems in One Dimension",
+   "pages": 64,
+   "files": "051-062"
+  },
+  "BRZ.9": {
+   "id": "BRZ.9",
+   "book": "BRZ",
+   "ch": "9",
+   "title": "Sobolev Spaces and the Variational Formulation of Elliptic Boundary Value Problems in N Dimensions",
+   "pages": 61,
+   "files": "062-076"
+  },
+  "BRZ.11": {
+   "id": "BRZ.11",
+   "book": "BRZ",
+   "ch": "11",
+   "title": "Miscellaneous Complements",
+   "pages": 23,
+   "files": "081-084"
+  },
+  "SS4.1": {
+   "id": "SS4.1",
+   "book": "SS4",
+   "ch": "1",
+   "title": "Lp Spaces and Banach Spaces",
+   "pages": 50,
+   "files": "003-013"
+  },
+  "SS4.3": {
+   "id": "SS4.3",
+   "book": "SS4",
+   "ch": "3",
+   "title": "Distributions: Generalized Functions",
+   "pages": 59,
+   "files": "025-035"
+  },
+  "SS4.4": {
+   "id": "SS4.4",
+   "book": "SS4",
+   "ch": "4",
+   "title": "Applications of the Baire Category Theorem",
+   "pages": 30,
+   "files": "036-043"
+  },
+  "KRE.2": {
+   "id": "KRE.2",
+   "book": "KRE",
+   "ch": "2",
+   "title": "Normed Spaces. Banach Spaces",
+   "pages": 80,
+   "files": "012-026"
+  },
+  "KRE.3": {
+   "id": "KRE.3",
+   "book": "KRE",
+   "ch": "3",
+   "title": "Inner Product Spaces. Hilbert Spaces",
+   "pages": 82,
+   "files": "026-038"
+  },
+  "KRE.4": {
+   "id": "KRE.4",
+   "book": "KRE",
+   "ch": "4",
+   "title": "Fundamental Theorems for Normed and Banach Spaces",
+   "pages": 88,
+   "files": "038-054"
+  },
+  "KRE.7": {
+   "id": "KRE.7",
+   "book": "KRE",
+   "ch": "7",
+   "title": "Spectral Theory of Linear Operators in Normed Spaces",
+   "pages": 43,
+   "files": "065-072"
+  },
+  "KRE.8": {
+   "id": "KRE.8",
+   "book": "KRE",
+   "ch": "8",
+   "title": "Compact Linear Operators on Normed Spaces and Their Spectrum",
+   "pages": 52,
+   "files": "072-079"
+  },
+  "KRE.9": {
+   "id": "KRE.9",
+   "book": "KRE",
+   "ch": "9",
+   "title": "Spectral Theory of Bounded Self-Adjoint Linear Operators",
+   "pages": 65,
+   "files": "079-091"
+  },
+  "LAX.3": {
+   "id": "LAX.3",
+   "book": "LAX",
+   "ch": "3",
+   "title": "The Hahn–Banach Theorem",
+   "pages": 7,
+   "files": "006-008"
+  },
+  "LAX.4": {
+   "id": "LAX.4",
+   "book": "LAX",
+   "ch": "4",
+   "title": "Applications of the Hahn–Banach Theorem",
+   "pages": 6,
+   "files": "008-009"
+  },
+  "LAX.5": {
+   "id": "LAX.5",
+   "book": "LAX",
+   "ch": "5",
+   "title": "Normed Linear Spaces",
+   "pages": 11,
+   "files": "009-012"
+  },
+  "LAX.6": {
+   "id": "LAX.6",
+   "book": "LAX",
+   "ch": "6",
+   "title": "Hilbert Space",
+   "pages": 8,
+   "files": "012-014"
+  },
+  "LAX.7": {
+   "id": "LAX.7",
+   "book": "LAX",
+   "ch": "7",
+   "title": "Applications of Hilbert Space Results",
+   "pages": 7,
+   "files": "014-015"
+  },
+  "LAX.8": {
+   "id": "LAX.8",
+   "book": "LAX",
+   "ch": "8",
+   "title": "Duals of Normed Linear Spaces",
+   "pages": 11,
+   "files": "015-017"
+  },
+  "LAX.10": {
+   "id": "LAX.10",
+   "book": "LAX",
+   "ch": "10",
+   "title": "Weak Convergence",
+   "pages": 7,
+   "files": "021-023"
+  },
+  "LAX.11": {
+   "id": "LAX.11",
+   "book": "LAX",
+   "ch": "11",
+   "title": "Applications of Weak Convergence",
+   "pages": 9,
+   "files": "023-025"
+  },
+  "LAX.12": {
+   "id": "LAX.12",
+   "book": "LAX",
+   "ch": "12",
+   "title": "The Weak and Weak* Topologies",
+   "pages": 4,
+   "files": "025-026"
+  },
+  "LAX.13": {
+   "id": "LAX.13",
+   "book": "LAX",
+   "ch": "13",
+   "title": "Locally Convex Topologies and the Krein–Milman Theorem",
+   "pages": 8,
+   "files": "026-029"
+  },
+  "LAX.15": {
+   "id": "LAX.15",
+   "book": "LAX",
+   "ch": "15",
+   "title": "Bounded Linear Maps",
+   "pages": 10,
+   "files": "035-038"
+  },
+  "LAX.17": {
+   "id": "LAX.17",
+   "book": "LAX",
+   "ch": "17",
+   "title": "Banach Algebras and Their Elementary Spectral Theory",
+   "pages": 8,
+   "files": "042-044"
+  },
+  "LAX.18": {
+   "id": "LAX.18",
+   "book": "LAX",
+   "ch": "18",
+   "title": "Gelfand's Theory of Commutative Banach Algebras",
+   "pages": 5,
+   "files": "044-045"
+  },
+  "LAX.19": {
+   "id": "LAX.19",
+   "book": "LAX",
+   "ch": "19",
+   "title": "Applications of Gelfand's Theory of Commutative Banach Algebras",
+   "pages": 12,
+   "files": "045-048"
+  },
+  "LAX.20": {
+   "id": "LAX.20",
+   "book": "LAX",
+   "ch": "20",
+   "title": "Examples of Operators and Their Spectra",
+   "pages": 4,
+   "files": "048-049"
+  },
+  "LAX.21": {
+   "id": "LAX.21",
+   "book": "LAX",
+   "ch": "21",
+   "title": "Compact Maps",
+   "pages": 11,
+   "files": "049-052"
+  },
+  "LAX.22": {
+   "id": "LAX.22",
+   "book": "LAX",
+   "ch": "22",
+   "title": "Examples of Compact Operators",
+   "pages": 6,
+   "files": "052-054"
+  },
+  "LAX.27": {
+   "id": "LAX.27",
+   "book": "LAX",
+   "ch": "27",
+   "title": "Index Theory",
+   "pages": 12,
+   "files": "062-065"
+  },
+  "LAX.28": {
+   "id": "LAX.28",
+   "book": "LAX",
+   "ch": "28",
+   "title": "Compact Symmetric Operators in Hilbert Space",
+   "pages": 6,
+   "files": "065-066"
+  },
+  "LAX.29": {
+   "id": "LAX.29",
+   "book": "LAX",
+   "ch": "29",
+   "title": "Examples of Compact Symmetric Operators",
+   "pages": 4,
+   "files": "066-067"
+  },
+  "LAX.A": {
+   "id": "LAX.A",
+   "book": "LAX",
+   "ch": "A",
+   "title": "Appendix A: Riesz–Kakutani Representation Theorem",
+   "pages": 11,
+   "files": "105-108"
+  },
+  "LAX.B": {
+   "id": "LAX.B",
+   "book": "LAX",
+   "ch": "B",
+   "title": "Appendix B: Theory of Distributions",
+   "pages": 21,
+   "files": "108-112"
+  },
+  "LAX.C": {
+   "id": "LAX.C",
+   "book": "LAX",
+   "ch": "C",
+   "title": "Appendix C: Zorn's Lemma",
+   "pages": 2,
+   "files": "112"
+  },
+  "FJ.1": {
+   "id": "FJ.1",
+   "book": "FJ",
+   "ch": "1",
+   "title": "Test Functions and Distributions",
+   "pages": 13,
+   "files": "003-006"
+  },
+  "FJ.2": {
+   "id": "FJ.2",
+   "book": "FJ",
+   "ch": "2",
+   "title": "Differentiation, and Multiplication by Smooth Functions",
+   "pages": 17,
+   "files": "007-010"
+  },
+  "FJ.3": {
+   "id": "FJ.3",
+   "book": "FJ",
+   "ch": "3",
+   "title": "Distributions with Compact Support",
+   "pages": 7,
+   "files": "011-013"
+  },
+  "FJ.5": {
+   "id": "FJ.5",
+   "book": "FJ",
+   "ch": "5",
+   "title": "Convolution",
+   "pages": 19,
+   "files": "016-019"
+  },
+  "FJ.8": {
+   "id": "FJ.8",
+   "book": "FJ",
+   "ch": "8",
+   "title": "Tempered Distributions and Fourier Transforms",
+   "pages": 25,
+   "files": "025-030"
+  },
+  "FJ.9": {
+   "id": "FJ.9",
+   "book": "FJ",
+   "ch": "9",
+   "title": "Plancherel's Theorem, and Sobolev Spaces",
+   "pages": 13,
+   "files": "031-034"
+  },
+  "FJ.A": {
+   "id": "FJ.A",
+   "book": "FJ",
+   "ch": "A",
+   "title": "Appendix: Topological Vector Spaces",
+   "pages": 8,
+   "files": "042"
+  },
+  "EVA.5": {
+   "id": "EVA.5",
+   "book": "EVA",
+   "ch": "5",
+   "title": "Sobolev Spaces",
+   "pages": 54,
+   "files": "049-061"
+  },
+  "EVA.6": {
+   "id": "EVA.6",
+   "book": "EVA",
+   "ch": "6",
+   "title": "Second-Order Elliptic Equations (6.1–6.3, 6.5 only)",
+   "pages": 45,
+   "files": "061-070"
+  },
+  "FOL.5": {
+   "id": "FOL.5",
+   "book": "FOL",
+   "ch": "5",
+   "title": "Elements of Functional Analysis",
+   "pages": 30,
+   "files": "036-044"
+  },
+  "FOL.7": {
+   "id": "FOL.7",
+   "book": "FOL",
+   "ch": "7",
+   "title": "Radon Measures",
+   "pages": 24,
+   "files": "051-056"
+  },
+  "FOL.8": {
+   "id": "FOL.8",
+   "book": "FOL",
+   "ch": "8",
+   "title": "Elements of Fourier Analysis",
+   "pages": 46,
+   "files": "057-065"
+  },
+  "FOL.9": {
+   "id": "FOL.9",
+   "book": "FOL",
+   "ch": "9",
+   "title": "Elements of Distribution Theory",
+   "pages": 31,
+   "files": "066-072"
+  },
+  "MUN.5": {
+   "id": "MUN.5",
+   "book": "MUN",
+   "ch": "5",
+   "title": "The Tychonoff Theorem (§37 only)",
+   "pages": 8,
+   "files": "050"
+  }
+ },
+ "hard": [
+  [
+   "CH.2",
+   "CH.3"
+  ],
+  [
+   "CH.3",
+   "CH.5"
+  ],
+  [
+   "CH.5",
+   "CH.7"
+  ],
+  [
+   "FX.4",
+   "FX.6"
+  ],
+  [
+   "VDL.1",
+   "VDL.2"
+  ],
+  [
+   "VDL.1",
+   "VDL.5"
+  ],
+  [
+   "VDL.2",
+   "VDL.5"
+  ],
+  [
+   "VEL.1",
+   "VEL.2"
+  ],
+  [
+   "VEL.2",
+   "VEL.3"
+  ],
+  [
+   "VEL.3",
+   "VEL.4"
+  ],
+  [
+   "VEL.4",
+   "VEL.5"
+  ],
+  [
+   "VEL.3",
+   "VEL.6"
+  ],
+  [
+   "VEL.5",
+   "VEL.8"
+  ],
+  [
+   "VEL.6",
+   "VEL.8"
+  ],
+  [
+   "HAM.2",
+   "HAM.4"
+  ],
+  [
+   "HAM.4",
+   "HAM.5"
+  ],
+  [
+   "HAM.5",
+   "HAM.6"
+  ],
+  [
+   "HAM.6",
+   "HAM.7"
+  ],
+  [
+   "HAM.1",
+   "HAM.8"
+  ],
+  [
+   "HAM.4",
+   "HAM.8"
+  ],
+  [
+   "HAM.2",
+   "HAM.9"
+  ],
+  [
+   "HAM.4",
+   "HAM.10"
+  ],
+  [
+   "HAM.1",
+   "HAM.11"
+  ],
+  [
+   "HAM.11",
+   "HAM.12"
+  ],
+  [
+   "HAM.2",
+   "HAM.13"
+  ],
+  [
+   "HAM.12",
+   "HAM.14"
+  ],
+  [
+   "HAL.1",
+   "HAL.2"
+  ],
+  [
+   "HAL.2",
+   "HAL.3"
+  ],
+  [
+   "HAL.3",
+   "HAL.4"
+  ],
+  [
+   "HAL.4",
+   "HAL.5"
+  ],
+  [
+   "HAL.5",
+   "HAL.6"
+  ],
+  [
+   "HAL.6",
+   "HAL.7"
+  ],
+  [
+   "HAL.7",
+   "HAL.8"
+  ],
+  [
+   "HAL.8",
+   "HAL.9"
+  ],
+  [
+   "HAL.9",
+   "HAL.10"
+  ],
+  [
+   "HAL.10",
+   "HAL.11"
+  ],
+  [
+   "HAL.11",
+   "HAL.12"
+  ],
+  [
+   "HAL.12",
+   "HAL.13"
+  ],
+  [
+   "HAL.13",
+   "HAL.14"
+  ],
+  [
+   "HAL.9",
+   "HAL.15"
+  ],
+  [
+   "HAL.15",
+   "HAL.16"
+  ],
+  [
+   "HAL.16",
+   "HAL.17"
+  ],
+  [
+   "HAL.10",
+   "HAL.22"
+  ],
+  [
+   "EST.2",
+   "EST.3"
+  ],
+  [
+   "EST.3",
+   "EST.4"
+  ],
+  [
+   "EST.4",
+   "EST.5"
+  ],
+  [
+   "EST.3",
+   "EST.6"
+  ],
+  [
+   "EST.4",
+   "EST.6"
+  ],
+  [
+   "TAO1.2",
+   "TAO1.3"
+  ],
+  [
+   "TAO1.3",
+   "TAO1.4"
+  ],
+  [
+   "TAO1.4",
+   "TAO1.5"
+  ],
+  [
+   "BLO.1",
+   "BLO.2"
+  ],
+  [
+   "LAN.1",
+   "LAN.2"
+  ],
+  [
+   "LAN.2",
+   "LAN.3"
+  ],
+  [
+   "LAN.3",
+   "LAN.4"
+  ],
+  [
+   "MEN.2",
+   "MEN.3"
+  ],
+  [
+   "MEN.3",
+   "MEN.4"
+  ],
+  [
+   "MEN.4",
+   "MEN.5"
+  ],
+  [
+   "MEN.4",
+   "MEN.F"
+  ],
+  [
+   "ABB.1",
+   "ABB.2"
+  ],
+  [
+   "ABB.2",
+   "ABB.3"
+  ],
+  [
+   "ABB.3",
+   "ABB.4"
+  ],
+  [
+   "ABB.4",
+   "ABB.5"
+  ],
+  [
+   "ABB.5",
+   "ABB.6"
+  ],
+  [
+   "ABB.4",
+   "ABB.7"
+  ],
+  [
+   "ABB.5",
+   "ABB.7"
+  ],
+  [
+   "ABB.6",
+   "ABB.7"
+  ],
+  [
+   "PMA.1",
+   "PMA.2"
+  ],
+  [
+   "PMA.2",
+   "PMA.3"
+  ],
+  [
+   "PMA.3",
+   "PMA.4"
+  ],
+  [
+   "PMA.2",
+   "PMA.4"
+  ],
+  [
+   "PMA.4",
+   "PMA.5"
+  ],
+  [
+   "PMA.4",
+   "PMA.6"
+  ],
+  [
+   "PMA.5",
+   "PMA.6"
+  ],
+  [
+   "PMA.3",
+   "PMA.7"
+  ],
+  [
+   "PMA.6",
+   "PMA.7"
+  ],
+  [
+   "SPI.1",
+   "SPI.5"
+  ],
+  [
+   "SPI.5",
+   "SPI.6"
+  ],
+  [
+   "SPI.6",
+   "SPI.7"
+  ],
+  [
+   "SPI.7",
+   "SPI.8"
+  ],
+  [
+   "SPI.5",
+   "SPI.9"
+  ],
+  [
+   "SPI.9",
+   "SPI.10"
+  ],
+  [
+   "SPI.10",
+   "SPI.11"
+  ],
+  [
+   "SPI.7",
+   "SPI.11"
+  ],
+  [
+   "SPI.11",
+   "SPI.12"
+  ],
+  [
+   "SPI.8",
+   "SPI.13"
+  ],
+  [
+   "SPI.13",
+   "SPI.14"
+  ],
+  [
+   "SPI.11",
+   "SPI.14"
+  ],
+  [
+   "SPI.14",
+   "SPI.15"
+  ],
+  [
+   "SPI.14",
+   "SPI.18"
+  ],
+  [
+   "SPI.11",
+   "SPI.20"
+  ],
+  [
+   "SPI.18",
+   "SPI.20"
+  ],
+  [
+   "SPI.8",
+   "SPI.22"
+  ],
+  [
+   "SPI.22",
+   "SPI.23"
+  ],
+  [
+   "SPI.23",
+   "SPI.24"
+  ],
+  [
+   "SPI.14",
+   "SPI.24"
+  ],
+  [
+   "BRR.2",
+   "BRR.4"
+  ],
+  [
+   "BRR.4",
+   "BRR.5"
+  ],
+  [
+   "BRR.5",
+   "BRR.6"
+  ],
+  [
+   "BRR.3",
+   "BRR.6"
+  ],
+  [
+   "ZOR1.2",
+   "ZOR1.3"
+  ],
+  [
+   "ZOR1.3",
+   "ZOR1.4"
+  ],
+  [
+   "ZOR1.4",
+   "ZOR1.5"
+  ],
+  [
+   "ZOR1.5",
+   "ZOR1.6"
+  ],
+  [
+   "TAO1.5",
+   "TAO1.6"
+  ],
+  [
+   "TAO1.6",
+   "TAO1.7"
+  ],
+  [
+   "TAO1.7",
+   "TAO1.8"
+  ],
+  [
+   "TAO1.6",
+   "TAO1.9"
+  ],
+  [
+   "TAO1.9",
+   "TAO1.10"
+  ],
+  [
+   "TAO1.9",
+   "TAO1.11"
+  ],
+  [
+   "TAO1.10",
+   "TAO1.11"
+  ],
+  [
+   "TAO1.5",
+   "TAO1.B"
+  ],
+  [
+   "BLO.2",
+   "BLO.3"
+  ],
+  [
+   "BLO.3",
+   "BLO.4"
+  ],
+  [
+   "BLO.4",
+   "BLO.5"
+  ],
+  [
+   "BLO.5",
+   "BLO.6"
+  ],
+  [
+   "BLO.5",
+   "BLO.7"
+  ],
+  [
+   "BLO.6",
+   "BLO.7"
+  ],
+  [
+   "BLO.2",
+   "BLO.8"
+  ],
+  [
+   "BLO.8",
+   "BLO.9"
+  ],
+  [
+   "BLO.9",
+   "BLO.10"
+  ],
+  [
+   "PUG.2",
+   "PUG.4"
+  ],
+  [
+   "PUG.2",
+   "PUG.5"
+  ],
+  [
+   "PUG.4",
+   "PUG.5"
+  ],
+  [
+   "TAO2.1",
+   "TAO2.2"
+  ],
+  [
+   "TAO2.2",
+   "TAO2.3"
+  ],
+  [
+   "TAO2.1",
+   "TAO2.6"
+  ],
+  [
+   "TAO2.2",
+   "TAO2.6"
+  ],
+  [
+   "SUT.5",
+   "SUT.6"
+  ],
+  [
+   "SUT.6",
+   "SUT.7"
+  ],
+  [
+   "SUT.7",
+   "SUT.8"
+  ],
+  [
+   "SUT.8",
+   "SUT.9"
+  ],
+  [
+   "SUT.9",
+   "SUT.10"
+  ],
+  [
+   "SUT.9",
+   "SUT.11"
+  ],
+  [
+   "SUT.9",
+   "SUT.12"
+  ],
+  [
+   "SUT.10",
+   "SUT.12"
+  ],
+  [
+   "SUT.10",
+   "SUT.13"
+  ],
+  [
+   "SUT.11",
+   "SUT.13"
+  ],
+  [
+   "SUT.13",
+   "SUT.14"
+  ],
+  [
+   "SUT.10",
+   "SUT.15"
+  ],
+  [
+   "SUT.6",
+   "SUT.16"
+  ],
+  [
+   "SUT.16",
+   "SUT.17"
+  ],
+  [
+   "MUN.2",
+   "MUN.3"
+  ],
+  [
+   "KF.2",
+   "KF.3"
+  ],
+  [
+   "MOA.1",
+   "MOA.2"
+  ],
+  [
+   "MOA.1",
+   "MOA.3"
+  ],
+  [
+   "MOA.2",
+   "MOA.4"
+  ],
+  [
+   "MOA.3",
+   "MOA.4"
+  ],
+  [
+   "SS1.1",
+   "SS1.2"
+  ],
+  [
+   "SS1.2",
+   "SS1.3"
+  ],
+  [
+   "SS1.3",
+   "SS1.4"
+  ],
+  [
+   "SS1.2",
+   "SS1.4"
+  ],
+  [
+   "SS1.2",
+   "SS1.5"
+  ],
+  [
+   "SS1.A",
+   "SS1.5"
+  ],
+  [
+   "SS1.5",
+   "SS1.6"
+  ],
+  [
+   "SS1.A",
+   "SS1.6"
+  ],
+  [
+   "SS1.7",
+   "SS1.8"
+  ],
+  [
+   "KOR.2",
+   "KOR.3"
+  ],
+  [
+   "KOR.2",
+   "KOR.4"
+  ],
+  [
+   "KOR.9",
+   "KOR.10"
+  ],
+  [
+   "KOR.15",
+   "KOR.16"
+  ],
+  [
+   "KOR.16",
+   "KOR.17"
+  ],
+  [
+   "KOR.15",
+   "KOR.18"
+  ],
+  [
+   "KOR.18",
+   "KOR.19"
+  ],
+  [
+   "KOR.32",
+   "KOR.33"
+  ],
+  [
+   "KOR.33",
+   "KOR.34"
+  ],
+  [
+   "KOR.34",
+   "KOR.35"
+  ],
+  [
+   "KOR.35",
+   "KOR.36"
+  ],
+  [
+   "KOR.46",
+   "KOR.47"
+  ],
+  [
+   "KOR.47",
+   "KOR.48"
+  ],
+  [
+   "KOR.48",
+   "KOR.49"
+  ],
+  [
+   "KOR.49",
+   "KOR.60"
+  ],
+  [
+   "KOR.51",
+   "KOR.52"
+  ],
+  [
+   "KOR.53",
+   "KOR.55"
+  ],
+  [
+   "KOR.48",
+   "KOR.55"
+  ],
+  [
+   "KOR.101",
+   "KOR.103"
+  ],
+  [
+   "KOR.103",
+   "KOR.104"
+  ],
+  [
+   "KOR.104",
+   "KOR.105"
+  ],
+  [
+   "KOR.105",
+   "KOR.106"
+  ],
+  [
+   "KOR.106",
+   "KOR.107"
+  ],
+  [
+   "KOR.107",
+   "KOR.108"
+  ],
+  [
+   "KOR.108",
+   "KOR.109"
+  ],
+  [
+   "DM.1",
+   "DM.2"
+  ],
+  [
+   "DM.1",
+   "DM.4"
+  ],
+  [
+   "DM.2",
+   "DM.4"
+  ],
+  [
+   "BRL.1",
+   "BRL.2"
+  ],
+  [
+   "BRL.2",
+   "BRL.4"
+  ],
+  [
+   "MUN.3",
+   "MUN.4"
+  ],
+  [
+   "FOL.1",
+   "FOL.2"
+  ],
+  [
+   "FOL.2",
+   "FOL.3"
+  ],
+  [
+   "FOL.2",
+   "FOL.6"
+  ],
+  [
+   "SS3.1",
+   "SS3.2"
+  ],
+  [
+   "SS3.2",
+   "SS3.3"
+  ],
+  [
+   "SS3.2",
+   "SS3.4"
+  ],
+  [
+   "SS3.1",
+   "SS3.6"
+  ],
+  [
+   "SS3.2",
+   "SS3.6"
+  ],
+  [
+   "SS3.4",
+   "SS3.6"
+  ],
+  [
+   "MIRA.2",
+   "MIRA.3"
+  ],
+  [
+   "MIRA.3",
+   "MIRA.4"
+  ],
+  [
+   "MIRA.3",
+   "MIRA.5"
+  ],
+  [
+   "MIRA.3",
+   "MIRA.7"
+  ],
+  [
+   "MIRA.7",
+   "MIRA.8"
+  ],
+  [
+   "MIRA.8",
+   "MIRA.9"
+  ],
+  [
+   "MIRA.3",
+   "MIRA.9"
+  ],
+  [
+   "BRL.5",
+   "BRL.6"
+  ],
+  [
+   "BRL.6",
+   "BRL.7"
+  ],
+  [
+   "BRL.6",
+   "BRL.8"
+  ],
+  [
+   "WZ.3",
+   "WZ.4"
+  ],
+  [
+   "WZ.4",
+   "WZ.5"
+  ],
+  [
+   "WZ.5",
+   "WZ.6"
+  ],
+  [
+   "WZ.6",
+   "WZ.7"
+  ],
+  [
+   "WZ.2",
+   "WZ.7"
+  ],
+  [
+   "WZ.5",
+   "WZ.8"
+  ],
+  [
+   "WZ.8",
+   "WZ.9"
+  ],
+  [
+   "WZ.7",
+   "WZ.9"
+  ],
+  [
+   "WZ.5",
+   "WZ.10"
+  ],
+  [
+   "WZ.7",
+   "WZ.10"
+  ],
+  [
+   "WZ.3",
+   "WZ.11"
+  ],
+  [
+   "WZ.10",
+   "WZ.11"
+  ],
+  [
+   "SS2.1",
+   "SS2.2"
+  ],
+  [
+   "SS2.2",
+   "SS2.3"
+  ],
+  [
+   "SS2.2",
+   "SS2.B"
+  ],
+  [
+   "SS2.3",
+   "SS2.5"
+  ],
+  [
+   "SS2.5",
+   "SS2.6"
+  ],
+  [
+   "SS2.2",
+   "SS2.8"
+  ],
+  [
+   "SS2.3",
+   "SS2.8"
+  ],
+  [
+   "AHL.1",
+   "AHL.2"
+  ],
+  [
+   "AHL.2",
+   "AHL.3"
+  ],
+  [
+   "AHL.3",
+   "AHL.4"
+  ],
+  [
+   "AHL.4",
+   "AHL.5"
+  ],
+  [
+   "AHL.4",
+   "AHL.6"
+  ],
+  [
+   "AHL.5",
+   "AHL.6"
+  ],
+  [
+   "AHL.5",
+   "AHL.8"
+  ],
+  [
+   "AHL.6",
+   "AHL.8"
+  ],
+  [
+   "CON.3",
+   "CON.4"
+  ],
+  [
+   "CON.4",
+   "CON.5"
+  ],
+  [
+   "CON.5",
+   "CON.6"
+  ],
+  [
+   "CON.4",
+   "CON.7"
+  ],
+  [
+   "CON.6",
+   "CON.7"
+  ],
+  [
+   "CON.7",
+   "CON.8"
+  ],
+  [
+   "CON.4",
+   "CON.9"
+  ],
+  [
+   "CON.4",
+   "CON.10"
+  ],
+  [
+   "CON.6",
+   "CON.10"
+  ],
+  [
+   "CON.7",
+   "CON.11"
+  ],
+  [
+   "CON.7",
+   "CON.12"
+  ],
+  [
+   "NEE.2",
+   "NEE.4"
+  ],
+  [
+   "NEE.4",
+   "NEE.5"
+  ],
+  [
+   "NEE.8",
+   "NEE.9"
+  ],
+  [
+   "NEE.8",
+   "NEE.11"
+  ],
+  [
+   "NEE.11",
+   "NEE.12"
+  ],
+  [
+   "BRZ.1",
+   "BRZ.2"
+  ],
+  [
+   "BRZ.1",
+   "BRZ.3"
+  ],
+  [
+   "BRZ.2",
+   "BRZ.3"
+  ],
+  [
+   "BRZ.3",
+   "BRZ.4"
+  ],
+  [
+   "BRZ.3",
+   "BRZ.11"
+  ],
+  [
+   "BRZ.5",
+   "BRZ.6"
+  ],
+  [
+   "BRZ.2",
+   "BRZ.6"
+  ],
+  [
+   "BRZ.4",
+   "BRZ.8"
+  ],
+  [
+   "BRZ.5",
+   "BRZ.8"
+  ],
+  [
+   "BRZ.6",
+   "BRZ.8"
+  ],
+  [
+   "BRZ.8",
+   "BRZ.9"
+  ],
+  [
+   "SS4.1",
+   "SS4.4"
+  ],
+  [
+   "SS4.1",
+   "SS4.3"
+  ],
+  [
+   "KRE.2",
+   "KRE.3"
+  ],
+  [
+   "KRE.2",
+   "KRE.4"
+  ],
+  [
+   "KRE.4",
+   "KRE.7"
+  ],
+  [
+   "KRE.7",
+   "KRE.8"
+  ],
+  [
+   "KRE.3",
+   "KRE.9"
+  ],
+  [
+   "KRE.7",
+   "KRE.9"
+  ],
+  [
+   "LAX.C",
+   "LAX.3"
+  ],
+  [
+   "LAX.3",
+   "LAX.4"
+  ],
+  [
+   "LAX.3",
+   "LAX.8"
+  ],
+  [
+   "LAX.5",
+   "LAX.8"
+  ],
+  [
+   "LAX.8",
+   "LAX.10"
+  ],
+  [
+   "LAX.10",
+   "LAX.11"
+  ],
+  [
+   "LAX.10",
+   "LAX.12"
+  ],
+  [
+   "LAX.12",
+   "LAX.13"
+  ],
+  [
+   "LAX.5",
+   "LAX.6"
+  ],
+  [
+   "LAX.6",
+   "LAX.7"
+  ],
+  [
+   "LAX.17",
+   "LAX.18"
+  ],
+  [
+   "LAX.18",
+   "LAX.19"
+  ],
+  [
+   "LAX.17",
+   "LAX.20"
+  ],
+  [
+   "LAX.15",
+   "LAX.21"
+  ],
+  [
+   "LAX.21",
+   "LAX.22"
+  ],
+  [
+   "LAX.21",
+   "LAX.27"
+  ],
+  [
+   "LAX.6",
+   "LAX.28"
+  ],
+  [
+   "LAX.21",
+   "LAX.28"
+  ],
+  [
+   "LAX.28",
+   "LAX.29"
+  ],
+  [
+   "FJ.1",
+   "FJ.2"
+  ],
+  [
+   "FJ.2",
+   "FJ.3"
+  ],
+  [
+   "FJ.2",
+   "FJ.5"
+  ],
+  [
+   "FJ.3",
+   "FJ.5"
+  ],
+  [
+   "FJ.5",
+   "FJ.8"
+  ],
+  [
+   "FJ.8",
+   "FJ.9"
+  ],
+  [
+   "EVA.5",
+   "EVA.6"
+  ],
+  [
+   "FOL.5",
+   "FOL.7"
+  ],
+  [
+   "FOL.8",
+   "FOL.9"
+  ],
+  [
+   "FOL.5",
+   "FOL.9"
+  ],
+  [
+   "MUN.5",
+   "BRZ.3"
+  ],
+  [
+   "BRZ.5",
+   "EVA.6"
+  ],
+  [
+   "BRZ.6",
+   "EVA.6"
+  ],
+  [
+   "FJ.9",
+   "EVA.5"
+  ]
+ ],
+ "soft": [
+  [
+   "CH.4",
+   "CH.3"
+  ],
+  [
+   "CH.7",
+   "VDL.5"
+  ],
+  [
+   "CH.A",
+   "CH.7"
+  ],
+  [
+   "HAM.7",
+   "VDL.5"
+  ],
+  [
+   "HAM.13",
+   "CH.7"
+  ],
+  [
+   "MEN.E",
+   "MEN.2"
+  ],
+  [
+   "HAL.2",
+   "TAO1.3"
+  ],
+  [
+   "HAL.15",
+   "VEL.8"
+  ],
+  [
+   "HAL.17",
+   "VEL.6"
+  ],
+  [
+   "TAO1.4",
+   "BLO.1"
+  ],
+  [
+   "MEN.4",
+   "BLO.1"
+  ],
+  [
+   "MEN.5",
+   "BLO.2"
+  ],
+  [
+   "BRR.1",
+   "BRR.2"
+  ],
+  [
+   "BRR.2",
+   "BRR.3"
+  ],
+  [
+   "BRR.3",
+   "BRR.4"
+  ],
+  [
+   "BRR.3",
+   "BRR.5"
+  ],
+  [
+   "SPI.14",
+   "SPI.23"
+  ],
+  [
+   "SPI.20",
+   "SPI.24"
+  ],
+  [
+   "SPI.1",
+   "SPI.28"
+  ],
+  [
+   "BLO.3",
+   "BLO.8"
+  ],
+  [
+   "BLO.7",
+   "BLO.10"
+  ],
+  [
+   "BRR.1",
+   "ABB.6"
+  ],
+  [
+   "BRR.2",
+   "ABB.2"
+  ],
+  [
+   "BRR.3",
+   "ABB.5"
+  ],
+  [
+   "BRR.5",
+   "ABB.6"
+  ],
+  [
+   "BRR.6",
+   "ABB.7"
+  ],
+  [
+   "SPI.1",
+   "ABB.1"
+  ],
+  [
+   "GO.1",
+   "ABB.1"
+  ],
+  [
+   "GO.5",
+   "ABB.2"
+  ],
+  [
+   "GO.6",
+   "ABB.2"
+  ],
+  [
+   "GO.8",
+   "ABB.3"
+  ],
+  [
+   "GO.2",
+   "ABB.4"
+  ],
+  [
+   "GO.3",
+   "ABB.5"
+  ],
+  [
+   "GO.7",
+   "ABB.6"
+  ],
+  [
+   "GO.4",
+   "ABB.7"
+  ],
+  [
+   "PMA.7",
+   "PMA.9"
+  ],
+  [
+   "SUT.13",
+   "SUT.17"
+  ],
+  [
+   "SUT.17",
+   "TAO2.6"
+  ],
+  [
+   "KF.2",
+   "TES.2"
+  ],
+  [
+   "PUG.4",
+   "TES.2"
+  ],
+  [
+   "PUG.4",
+   "MOA.2"
+  ],
+  [
+   "PUG.2",
+   "MOA.1"
+  ],
+  [
+   "TAO2.3",
+   "PUG.4"
+  ],
+  [
+   "TAO2.2",
+   "MUN.2"
+  ],
+  [
+   "SSB.1",
+   "SSB.II"
+  ],
+  [
+   "SSB.5",
+   "SSB.II"
+  ],
+  [
+   "GO.10",
+   "GO.11"
+  ],
+  [
+   "KOR.1",
+   "SS1.2"
+  ],
+  [
+   "KOR.28",
+   "SS1.2"
+  ],
+  [
+   "SS1.3",
+   "SS1.7"
+  ],
+  [
+   "SS1.2",
+   "SS1.8"
+  ],
+  [
+   "KOR.97",
+   "KOR.104"
+  ],
+  [
+   "KOR.52",
+   "SS1.5"
+  ],
+  [
+   "KOR.27",
+   "SS1.5"
+  ],
+  [
+   "DM.1",
+   "SS1.4"
+  ],
+  [
+   "SS1.3",
+   "SS3.0"
+  ],
+  [
+   "SS1.A",
+   "MIRA.1"
+  ],
+  [
+   "KOR.19",
+   "SS3.0"
+  ],
+  [
+   "KOR.C",
+   "SS3.0"
+  ],
+  [
+   "GO.4",
+   "MIRA.1"
+  ],
+  [
+   "GO.7",
+   "BRL.4"
+  ],
+  [
+   "KOR.64",
+   "SS1.6"
+  ],
+  [
+   "SS3.0",
+   "SS3.1"
+  ],
+  [
+   "FOL.0",
+   "FOL.1"
+  ],
+  [
+   "SS3.3",
+   "SS3.6"
+  ],
+  [
+   "BRL.7",
+   "BRL.8"
+  ],
+  [
+   "FOL.3",
+   "FOL.6"
+  ],
+  [
+   "MUN.4",
+   "SS3.1"
+  ],
+  [
+   "MUN.4",
+   "MIRA.2"
+  ],
+  [
+   "FOL.4",
+   "FOL.6"
+  ],
+  [
+   "GO.11",
+   "SS3.1"
+  ],
+  [
+   "GO.8",
+   "SS3.1"
+  ],
+  [
+   "GO.9",
+   "WZ.6"
+  ],
+  [
+   "GO.10",
+   "WZ.6"
+  ],
+  [
+   "WZ.2",
+   "SS3.3"
+  ],
+  [
+   "NEE.4",
+   "SS2.2"
+  ],
+  [
+   "NEE.3",
+   "SS2.8"
+  ],
+  [
+   "CON.10",
+   "CON.12"
+  ],
+  [
+   "FJ.A",
+   "FJ.1"
+  ],
+  [
+   "KRE.8",
+   "KRE.9"
+  ],
+  [
+   "LAX.A",
+   "FOL.7"
+  ],
+  [
+   "FOL.7",
+   "BRZ.3"
+  ],
+  [
+   "SS4.4",
+   "BRZ.3"
+  ],
+  [
+   "LAX.7",
+   "EVA.6"
+  ],
+  [
+   "BRZ.4",
+   "EVA.5"
+  ]
+ ],
+ "alt": [
+  [
+   "CH.2",
+   "FX.6"
+  ],
+  [
+   "CH.7",
+   "FX.6"
+  ],
+  [
+   "CH.3",
+   "VDL.1"
+  ],
+  [
+   "CH.7",
+   "VDL.2"
+  ],
+  [
+   "VEL.3",
+   "HAM.4"
+  ],
+  [
+   "VEL.3",
+   "HAM.6"
+  ],
+  [
+   "VEL.2",
+   "HAM.2"
+  ],
+  [
+   "VEL.4",
+   "HAM.11"
+  ],
+  [
+   "VEL.5",
+   "HAM.12"
+  ],
+  [
+   "VEL.6",
+   "HAM.10"
+  ],
+  [
+   "VEL.8",
+   "HAM.14"
+  ],
+  [
+   "HAL.22",
+   "VEL.8"
+  ],
+  [
+   "TAO1.3",
+   "HAL.8"
+  ],
+  [
+   "TAO1.2",
+   "EST.4"
+  ],
+  [
+   "TAO1.2",
+   "MEN.2"
+  ],
+  [
+   "TAO1.2",
+   "HAL.12"
+  ],
+  [
+   "TAO1.2",
+   "LAN.1"
+  ],
+  [
+   "TAO1.4",
+   "EST.5"
+  ],
+  [
+   "TAO1.4",
+   "MEN.3"
+  ],
+  [
+   "TAO1.4",
+   "LAN.2"
+  ],
+  [
+   "BLO.1",
+   "MEN.F"
+  ],
+  [
+   "BLO.1",
+   "EST.5"
+  ],
+  [
+   "BLO.1",
+   "LAN.3"
+  ],
+  [
+   "TAO1.5",
+   "BLO.1"
+  ],
+  [
+   "MEN.5",
+   "BLO.2"
+  ],
+  [
+   "HAL.15",
+   "EST.6"
+  ],
+  [
+   "ABB.1",
+   "PMA.1"
+  ],
+  [
+   "ABB.1",
+   "ZOR1.2"
+  ],
+  [
+   "ABB.1",
+   "TAO1.5"
+  ],
+  [
+   "ABB.1",
+   "BLO.2"
+  ],
+  [
+   "ABB.2",
+   "PMA.3"
+  ],
+  [
+   "ABB.2",
+   "TAO1.6"
+  ],
+  [
+   "ABB.2",
+   "TAO1.7"
+  ],
+  [
+   "ABB.2",
+   "ZOR1.3"
+  ],
+  [
+   "ABB.2",
+   "SPI.22"
+  ],
+  [
+   "ABB.2",
+   "SPI.23"
+  ],
+  [
+   "ABB.2",
+   "BLO.8"
+  ],
+  [
+   "ABB.2",
+   "BLO.9"
+  ],
+  [
+   "ABB.3",
+   "PMA.2"
+  ],
+  [
+   "ABB.4",
+   "PMA.4"
+  ],
+  [
+   "ABB.4",
+   "TAO1.9"
+  ],
+  [
+   "ABB.4",
+   "ZOR1.4"
+  ],
+  [
+   "ABB.4",
+   "BLO.3"
+  ],
+  [
+   "ABB.4",
+   "SPI.7"
+  ],
+  [
+   "ABB.5",
+   "PMA.5"
+  ],
+  [
+   "ABB.5",
+   "TAO1.10"
+  ],
+  [
+   "ABB.5",
+   "SPI.11"
+  ],
+  [
+   "ABB.5",
+   "BLO.4"
+  ],
+  [
+   "ABB.7",
+   "PMA.6"
+  ],
+  [
+   "ABB.7",
+   "TAO1.11"
+  ],
+  [
+   "ABB.7",
+   "ZOR1.6"
+  ],
+  [
+   "ABB.7",
+   "SPI.13"
+  ],
+  [
+   "ABB.7",
+   "BLO.5"
+  ],
+  [
+   "ABB.6",
+   "PMA.7"
+  ],
+  [
+   "ABB.6",
+   "SPI.24"
+  ],
+  [
+   "ABB.6",
+   "BLO.10"
+  ],
+  [
+   "SPI.18",
+   "BLO.7"
+  ],
+  [
+   "SPI.15",
+   "BLO.7"
+  ],
+  [
+   "PUG.2",
+   "TAO2.1"
+  ],
+  [
+   "PUG.2",
+   "KF.2"
+  ],
+  [
+   "TAO2.1",
+   "SUT.5"
+  ],
+  [
+   "TAO2.2",
+   "SUT.6"
+  ],
+  [
+   "KF.2",
+   "SUT.17"
+  ],
+  [
+   "SUT.17",
+   "PUG.4"
+  ],
+  [
+   "TES.2",
+   "KF.2"
+  ],
+  [
+   "PUG.4",
+   "KF.3"
+  ],
+  [
+   "PMA.7",
+   "PUG.4"
+  ],
+  [
+   "PMA.7",
+   "TAO2.3"
+  ],
+  [
+   "TAO2.6",
+   "PMA.9"
+  ],
+  [
+   "TAO2.6",
+   "MOA.2"
+  ],
+  [
+   "PUG.5",
+   "MOA.2"
+  ],
+  [
+   "PUG.5",
+   "PMA.9"
+  ],
+  [
+   "PUG.5",
+   "MOA.3"
+  ],
+  [
+   "MUN.2",
+   "SUT.7"
+  ],
+  [
+   "MUN.2",
+   "KF.3"
+  ],
+  [
+   "MUN.3",
+   "SUT.13"
+  ],
+  [
+   "MUN.3",
+   "SUT.12"
+  ],
+  [
+   "MUN.2",
+   "SUT.15"
+  ],
+  [
+   "SS1.2",
+   "KOR.2",
+   "Fejér's theorem"
+  ],
+  [
+   "SS1.4",
+   "KOR.3",
+   "Weyl equidistribution"
+  ],
+  [
+   "SS1.4",
+   "KOR.35",
+   "isoperimetric inequality (Hurwitz)"
+  ],
+  [
+   "SS1.4",
+   "KOR.11",
+   "continuous nowhere differentiable function"
+  ],
+  [
+   "SS1.3",
+   "KOR.18",
+   "continuous function with divergent Fourier series"
+  ],
+  [
+   "SS1.3",
+   "KOR.34",
+   "mean-square convergence"
+  ],
+  [
+   "SS1.3",
+   "DM.1",
+   "Gibbs phenomenon (DM §1.6) and mean-square theory"
+  ],
+  [
+   "SS1.5",
+   "KOR.60",
+   "Fourier inversion on ℝ"
+  ],
+  [
+   "SS1.5",
+   "DM.2",
+   "Fourier integrals"
+  ],
+  [
+   "SS1.5",
+   "KOR.27",
+   "Poisson summation"
+  ],
+  [
+   "SS1.7",
+   "KOR.104",
+   "Fourier analysis on finite abelian groups"
+  ],
+  [
+   "SS1.7",
+   "DM.4",
+   "finite commutative groups (DM §4.4–4.5)"
+  ],
+  [
+   "SS1.8",
+   "KOR.109",
+   "Dirichlet's theorem"
+  ],
+  [
+   "SS3.0",
+   "MIRA.1",
+   "what the Riemann integral cannot do"
+  ],
+  [
+   "SS3.0",
+   "BRL.1",
+   "the questions that forced Lebesgue's theory"
+  ],
+  [
+   "MUN.4",
+   "FOL.4",
+   "Urysohn lemma (normal vs locally compact Hausdorff)"
+  ],
+  [
+   "SS3.1",
+   "WZ.3",
+   "Lebesgue measure on ℝⁿ"
+  ],
+  [
+   "SS3.1",
+   "MIRA.2",
+   "outer measure and Lebesgue measure"
+  ],
+  [
+   "SS3.1",
+   "BRL.5",
+   "Lebesgue measure, history and Carathéodory"
+  ],
+  [
+   "SS3.1",
+   "WZ.4",
+   "measurable functions, Egorov, Lusin"
+  ],
+  [
+   "SS3.2",
+   "WZ.5",
+   "Lebesgue integral and convergence theorems"
+  ],
+  [
+   "SS3.2",
+   "MIRA.3",
+   "Lebesgue integral"
+  ],
+  [
+   "SS3.2",
+   "FOL.2",
+   "Lebesgue integral"
+  ],
+  [
+   "SS3.2",
+   "BRL.6",
+   "Lebesgue integral"
+  ],
+  [
+   "SS3.6",
+   "FOL.1",
+   "Carathéodory, premeasures, Lebesgue–Stieltjes"
+  ],
+  [
+   "SS3.6",
+   "WZ.11",
+   "outer measures and Carathéodory"
+  ],
+  [
+   "SS3.6",
+   "WZ.10",
+   "abstract measure and integral"
+  ],
+  [
+   "FOL.2",
+   "MIRA.5",
+   "product measures and Fubini–Tonelli"
+  ],
+  [
+   "FOL.2",
+   "WZ.6",
+   "Fubini–Tonelli"
+  ],
+  [
+   "SS3.2",
+   "WZ.6",
+   "Fubini on ℝᵈ"
+  ],
+  [
+   "FOL.6",
+   "MIRA.7",
+   "Lᵖ spaces"
+  ],
+  [
+   "FOL.6",
+   "WZ.8",
+   "Lᵖ spaces"
+  ],
+  [
+   "BRL.8",
+   "WZ.8",
+   "Riesz–Fischer"
+  ],
+  [
+   "SS3.3",
+   "MIRA.4",
+   "maximal function and Lebesgue differentiation"
+  ],
+  [
+   "SS3.3",
+   "WZ.7",
+   "Vitali covering and differentiation"
+  ],
+  [
+   "SS3.3",
+   "FOL.3",
+   "differentiation on Euclidean space; BV"
+  ],
+  [
+   "SS3.3",
+   "BRL.7",
+   "monotone differentiability, AC, FTC"
+  ],
+  [
+   "FOL.3",
+   "MIRA.9",
+   "signed measures, Hahn/Jordan, Radon–Nikodym"
+  ],
+  [
+   "FOL.3",
+   "WZ.10",
+   "signed measures and absolute continuity"
+  ],
+  [
+   "SS3.6",
+   "MIRA.9",
+   "Radon–Nikodym via L² (von Neumann)"
+  ],
+  [
+   "SS2.2",
+   "AHL.4"
+  ],
+  [
+   "SS2.2",
+   "CON.4"
+  ],
+  [
+   "SS2.B",
+   "CON.4"
+  ],
+  [
+   "SS2.3",
+   "CON.5"
+  ],
+  [
+   "SS2.8",
+   "AHL.6"
+  ],
+  [
+   "SS2.8",
+   "CON.7"
+  ],
+  [
+   "AHL.6",
+   "CON.10"
+  ],
+  [
+   "SS2.5",
+   "CON.11"
+  ],
+  [
+   "AHL.5",
+   "CON.11"
+  ],
+  [
+   "AHL.8",
+   "CON.9"
+  ],
+  [
+   "AHL.8",
+   "CON.12"
+  ],
+  [
+   "NEE.8",
+   "SS2.2"
+  ],
+  [
+   "NEE.12",
+   "CON.10"
+  ],
+  [
+   "BRZ.1",
+   "SS4.1"
+  ],
+  [
+   "BRZ.1",
+   "KRE.4"
+  ],
+  [
+   "BRZ.1",
+   "LAX.3"
+  ],
+  [
+   "BRZ.2",
+   "SS4.4"
+  ],
+  [
+   "BRZ.2",
+   "LAX.15"
+  ],
+  [
+   "BRZ.3",
+   "LAX.12"
+  ],
+  [
+   "BRZ.5",
+   "KRE.3"
+  ],
+  [
+   "BRZ.5",
+   "LAX.6"
+  ],
+  [
+   "BRZ.6",
+   "KRE.8"
+  ],
+  [
+   "BRZ.6",
+   "LAX.21"
+  ],
+  [
+   "FOL.7",
+   "LAX.A"
+  ],
+  [
+   "FOL.7",
+   "SS4.1"
+  ],
+  [
+   "FJ.1",
+   "FOL.9"
+  ],
+  [
+   "FJ.1",
+   "SS4.3"
+  ],
+  [
+   "FJ.1",
+   "LAX.B"
+  ],
+  [
+   "FJ.8",
+   "FOL.9"
+  ],
+  [
+   "BRZ.9",
+   "EVA.5"
+  ],
+  [
+   "BRZ.9",
+   "EVA.6"
+  ],
+  [
+   "LAX.18",
+   "KRE.7"
+  ]
+ ]
+}

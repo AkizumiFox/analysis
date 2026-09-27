@@ -1,0 +1,453 @@
+part: VI
+title: "Functional Analysis and Distributions"
+summary: "The Dirichlet problem forces the move from function spaces to abstract ones: the Part first settles what was moved out of measure theory (Lᵖ duality, Riesz–Markov, weak and weak* topologies, with Tychonoff just before Banach–Alaoglu), builds Hahn–Banach, Baire, Hilbert and compact-operator theory, then distributions, 𝒮′ and Sobolev spaces, and ends with the Lax–Milgram solution of the Dirichlet problem and the Dirichlet-Laplacian eigenbasis."
+nodes:
+  # Brezis (scaffolding)
+  BRZ.1: {book: BRZ, ch: "1", title: "The Hahn–Banach Theorems. Conjugate Convex Functions", pages: 28, files: "003-010"}
+  BRZ.2: {book: BRZ, ch: "2", title: "The Uniform Boundedness Principle and the Closed Graph Theorem", pages: 26, files: "010-015"}
+  BRZ.3: {book: BRZ, ch: "3", title: "Weak Topologies. Reflexive Spaces. Separable Spaces. Uniform Convexity", pages: 34, files: "015-023"}
+  BRZ.4: {book: BRZ, ch: "4", title: "Lp Spaces", pages: 42, files: "024-034"}
+  BRZ.5: {book: BRZ, ch: "5", title: "Hilbert Spaces", pages: 26, files: "035-041"}
+  BRZ.6: {book: BRZ, ch: "6", title: "Compact Operators. Spectral Decomposition of Self-Adjoint Compact Operators", pages: 23, files: "041-048"}
+  BRZ.8: {book: BRZ, ch: "8", title: "Sobolev Spaces and the Variational Formulation of Boundary Value Problems in One Dimension", pages: 64, files: "051-062"}
+  BRZ.9: {book: BRZ, ch: "9", title: "Sobolev Spaces and the Variational Formulation of Elliptic Boundary Value Problems in N Dimensions", pages: 61, files: "062-076"}
+  BRZ.11: {book: BRZ, ch: "11", title: "Miscellaneous Complements", pages: 23, files: "081-084"}
+  # Stein & Shakarchi IV (depth)
+  SS4.1: {book: SS4, ch: "1", title: "Lp Spaces and Banach Spaces", pages: 50, files: "003-013"}
+  SS4.3: {book: SS4, ch: "3", title: "Distributions: Generalized Functions", pages: 59, files: "025-035"}
+  SS4.4: {book: SS4, ch: "4", title: "Applications of the Baire Category Theorem", pages: 30, files: "036-043"}
+  # Kreyszig (bridge)
+  KRE.2: {book: KRE, ch: "2", title: "Normed Spaces. Banach Spaces", pages: 80, files: "012-026"}
+  KRE.3: {book: KRE, ch: "3", title: "Inner Product Spaces. Hilbert Spaces", pages: 82, files: "026-038"}
+  KRE.4: {book: KRE, ch: "4", title: "Fundamental Theorems for Normed and Banach Spaces", pages: 88, files: "038-054"}
+  KRE.7: {book: KRE, ch: "7", title: "Spectral Theory of Linear Operators in Normed Spaces", pages: 43, files: "065-072"}
+  KRE.8: {book: KRE, ch: "8", title: "Compact Linear Operators on Normed Spaces and Their Spectrum", pages: 52, files: "072-079"}
+  KRE.9: {book: KRE, ch: "9", title: "Spectral Theory of Bounded Self-Adjoint Linear Operators", pages: 65, files: "079-091"}
+  # Lax (depth; short chapters)
+  LAX.3: {book: LAX, ch: "3", title: "The Hahn–Banach Theorem", pages: 7, files: "006-008"}
+  LAX.4: {book: LAX, ch: "4", title: "Applications of the Hahn–Banach Theorem", pages: 6, files: "008-009"}
+  LAX.5: {book: LAX, ch: "5", title: "Normed Linear Spaces", pages: 11, files: "009-012"}
+  LAX.6: {book: LAX, ch: "6", title: "Hilbert Space", pages: 8, files: "012-014"}
+  LAX.7: {book: LAX, ch: "7", title: "Applications of Hilbert Space Results", pages: 7, files: "014-015"}
+  LAX.8: {book: LAX, ch: "8", title: "Duals of Normed Linear Spaces", pages: 11, files: "015-017"}
+  LAX.10: {book: LAX, ch: "10", title: "Weak Convergence", pages: 7, files: "021-023"}
+  LAX.11: {book: LAX, ch: "11", title: "Applications of Weak Convergence", pages: 9, files: "023-025"}
+  LAX.12: {book: LAX, ch: "12", title: "The Weak and Weak* Topologies", pages: 4, files: "025-026"}
+  LAX.13: {book: LAX, ch: "13", title: "Locally Convex Topologies and the Krein–Milman Theorem", pages: 8, files: "026-029"}
+  LAX.15: {book: LAX, ch: "15", title: "Bounded Linear Maps", pages: 10, files: "035-038"}
+  LAX.17: {book: LAX, ch: "17", title: "Banach Algebras and Their Elementary Spectral Theory", pages: 8, files: "042-044"}
+  LAX.18: {book: LAX, ch: "18", title: "Gelfand's Theory of Commutative Banach Algebras", pages: 5, files: "044-045"}
+  LAX.19: {book: LAX, ch: "19", title: "Applications of Gelfand's Theory of Commutative Banach Algebras", pages: 12, files: "045-048"}
+  LAX.20: {book: LAX, ch: "20", title: "Examples of Operators and Their Spectra", pages: 4, files: "048-049"}
+  LAX.21: {book: LAX, ch: "21", title: "Compact Maps", pages: 11, files: "049-052"}
+  LAX.22: {book: LAX, ch: "22", title: "Examples of Compact Operators", pages: 6, files: "052-054"}
+  LAX.27: {book: LAX, ch: "27", title: "Index Theory", pages: 12, files: "062-065"}
+  LAX.28: {book: LAX, ch: "28", title: "Compact Symmetric Operators in Hilbert Space", pages: 6, files: "065-066"}
+  LAX.29: {book: LAX, ch: "29", title: "Examples of Compact Symmetric Operators", pages: 4, files: "066-067"}
+  LAX.A: {book: LAX, ch: "A", title: "Appendix A: Riesz–Kakutani Representation Theorem", pages: 11, files: "105-108"}
+  LAX.B: {book: LAX, ch: "B", title: "Appendix B: Theory of Distributions", pages: 21, files: "108-112"}
+  LAX.C: {book: LAX, ch: "C", title: "Appendix C: Zorn's Lemma", pages: 2, files: "112"}
+  # Friedlander & Joshi (depth; distributions)
+  FJ.1: {book: FJ, ch: "1", title: "Test Functions and Distributions", pages: 13, files: "003-006"}
+  FJ.2: {book: FJ, ch: "2", title: "Differentiation, and Multiplication by Smooth Functions", pages: 17, files: "007-010"}
+  FJ.3: {book: FJ, ch: "3", title: "Distributions with Compact Support", pages: 7, files: "011-013"}
+  FJ.5: {book: FJ, ch: "5", title: "Convolution", pages: 19, files: "016-019"}
+  FJ.8: {book: FJ, ch: "8", title: "Tempered Distributions and Fourier Transforms", pages: 25, files: "025-030"}
+  FJ.9: {book: FJ, ch: "9", title: "Plancherel's Theorem, and Sobolev Spaces", pages: 13, files: "031-034"}
+  FJ.A: {book: FJ, ch: "A", title: "Appendix: Topological Vector Spaces", pages: 8, files: "042"}
+  # Evans (depth; ch. 5 and 6.1–6.3, 6.5 only)
+  EVA.5: {book: EVA, ch: "5", title: "Sobolev Spaces", pages: 54, files: "049-061"}
+  EVA.6: {book: EVA, ch: "6", title: "Second-Order Elliptic Equations (6.1–6.3, 6.5 only)", pages: 45, files: "061-070"}
+  # Folland (depth; chapters 5, 7, 8, 9)
+  FOL.5: {book: FOL, ch: "5", title: "Elements of Functional Analysis", pages: 30, files: "036-044"}
+  FOL.7: {book: FOL, ch: "7", title: "Radon Measures", pages: 24, files: "051-056"}
+  FOL.8: {book: FOL, ch: "8", title: "Elements of Fourier Analysis", pages: 46, files: "057-065"}
+  FOL.9: {book: FOL, ch: "9", title: "Elements of Distribution Theory", pages: 31, files: "066-072"}
+  # Munkres (Tychonoff only)
+  MUN.5: {book: MUN, ch: "5", title: "The Tychonoff Theorem (§37 only)", pages: 8, files: "050"}
+hard:
+  # Brezis
+  - [BRZ.1, BRZ.2]
+  - [BRZ.1, BRZ.3]
+  - [BRZ.2, BRZ.3]
+  - [BRZ.3, BRZ.4]
+  - [BRZ.3, BRZ.11]
+  - [BRZ.5, BRZ.6]
+  - [BRZ.2, BRZ.6]
+  - [BRZ.4, BRZ.8]
+  - [BRZ.5, BRZ.8]
+  - [BRZ.6, BRZ.8]
+  - [BRZ.8, BRZ.9]
+  # Stein–Shakarchi IV
+  - [SS4.1, SS4.4]
+  - [SS4.1, SS4.3]
+  # Kreyszig
+  - [KRE.2, KRE.3]
+  - [KRE.2, KRE.4]
+  - [KRE.4, KRE.7]
+  - [KRE.7, KRE.8]
+  - [KRE.3, KRE.9]
+  - [KRE.7, KRE.9]
+  # Lax
+  - [LAX.C, LAX.3]
+  - [LAX.3, LAX.4]
+  - [LAX.3, LAX.8]
+  - [LAX.5, LAX.8]
+  - [LAX.8, LAX.10]
+  - [LAX.10, LAX.11]
+  - [LAX.10, LAX.12]
+  - [LAX.12, LAX.13]
+  - [LAX.5, LAX.6]
+  - [LAX.6, LAX.7]
+  - [LAX.17, LAX.18]
+  - [LAX.18, LAX.19]
+  - [LAX.17, LAX.20]
+  - [LAX.15, LAX.21]
+  - [LAX.21, LAX.22]
+  - [LAX.21, LAX.27]
+  - [LAX.6, LAX.28]
+  - [LAX.21, LAX.28]
+  - [LAX.28, LAX.29]
+  # Friedlander–Joshi
+  - [FJ.1, FJ.2]
+  - [FJ.2, FJ.3]
+  - [FJ.2, FJ.5]
+  - [FJ.3, FJ.5]
+  - [FJ.5, FJ.8]
+  - [FJ.8, FJ.9]
+  # Evans
+  - [EVA.5, EVA.6]
+  # Folland
+  - [FOL.5, FOL.7]
+  - [FOL.8, FOL.9]
+  - [FOL.5, FOL.9]
+  # across books
+  - [MUN.5, BRZ.3]
+  - [BRZ.5, EVA.6]
+  - [BRZ.6, EVA.6]
+  - [FJ.9, EVA.5]
+soft:
+  - [FJ.A, FJ.1]
+  - [KRE.8, KRE.9]
+  - [LAX.A, FOL.7]
+  - [FOL.7, BRZ.3]
+  - [SS4.4, BRZ.3]
+  - [LAX.7, EVA.6]
+  - [BRZ.4, EVA.5]
+alt:
+  - [BRZ.1, SS4.1]
+  - [BRZ.1, KRE.4]
+  - [BRZ.1, LAX.3]
+  - [BRZ.2, SS4.4]
+  - [BRZ.2, LAX.15]
+  - [BRZ.3, LAX.12]
+  - [BRZ.5, KRE.3]
+  - [BRZ.5, LAX.6]
+  - [BRZ.6, KRE.8]
+  - [BRZ.6, LAX.21]
+  - [FOL.7, LAX.A]
+  - [FOL.7, SS4.1]
+  - [FJ.1, FOL.9]
+  - [FJ.1, SS4.3]
+  - [FJ.1, LAX.B]
+  - [FJ.8, FOL.9]
+  - [BRZ.9, EVA.5]
+  - [BRZ.9, EVA.6]
+  - [LAX.18, KRE.7]
+external:
+  - {needs: "normed spaces, operator norm, equivalence of norms in finite dimension, non-compactness of the ℓ² ball (Part II)", for_chapter: banach-spaces-lp-duality}
+  - {needs: "Lᵖ spaces, Hölder, Minkowski, Riesz–Fischer (Lᵖ complete), σ-finiteness, signed measures, Radon–Nikodym (Part IV)", for_chapter: banach-spaces-lp-duality}
+  - {needs: "locally compact Hausdorff spaces, Urysohn's lemma and partitions of unity, outer measure and Carathéodory (Part IV)", for_chapter: riesz-markov}
+  - {needs: "Zorn's lemma / axiom of choice (Part 0, sets)", for_chapter: hahn-banach}
+  - {needs: "Baire category theorem, meagre sets, Baire arguments (Part II)", for_chapter: baire-category-operators}
+  - {needs: "Dirichlet kernel and ‖D_N‖₁ ~ log N (Part III)", for_chapter: baire-category-operators}
+  - {needs: "topological spaces, bases, finite products, Hausdorff, compactness (Part II topology module)", for_chapter: weak-topologies-alaoglu}
+  - {needs: "L² projection used for von Neumann's Radon–Nikodym proof (Part IV) — recalled as the first Hilbert-space argument", for_chapter: hilbert-spaces}
+  - {needs: "Fejér's theorem and completeness of the trigonometric system in L²(𝕋) (Part III, Part IV)", for_chapter: hilbert-spaces}
+  - {needs: "spectral theorem for symmetric matrices (companion linear-algebra book, cited in prose)", for_chapter: compact-operators-spectral}
+  - {needs: "Liouville's theorem and vector-valued Cauchy estimates (Part V)", for_chapter: compact-operators-spectral}
+  - {needs: "Arzelà–Ascoli (Part II) for compactness of integral operators with continuous kernels", for_chapter: compact-operators-spectral}
+  - {needs: "ideals and quotients: taught just in time inside the chapter (decisions.md 13); Liouville (Part V)", for_chapter: gelfand-theory}
+  - {needs: "convolution, approximate identities, mollifiers (Part III, Part IV)", for_chapter: distributions}
+  - {needs: "harmonic functions, mean value property (Part V) for the fundamental solution of Δ", for_chapter: distributions}
+  - {needs: "Schwartz space, Fourier transform, inversion and Plancherel on 𝒮, Poisson summation (Part III)", for_chapter: tempered-distributions-fourier}
+  - {needs: "Fubini–Tonelli, polar coordinates, dominated convergence (Part IV)", for_chapter: tempered-distributions-fourier}
+  - {needs: "absolutely continuous functions and the FTC for AC functions (Part IV)", for_chapter: sobolev-spaces}
+  - {needs: "Arzelà–Ascoli (Part II) and translation continuity in Lᵖ (Part IV), for Kolmogorov–Riesz", for_chapter: poincare-rellich}
+  - {needs: "Green's theorem node / divergence theorem for smooth compactly supported fields (Part II), Dirichlet principle history and harmonic functions (Part V)", for_chapter: dirichlet-capstone}
+chapters:
+  - slug: banach-spaces-lp-duality
+    title: "Banach Spaces, Dual Spaces and the Dual of Lᵖ"
+    pages: 50
+    sources: [[SS4.1, "§3–4, §6 Banach spaces, linear functionals and the dual, dual of Lᵖ for 1≤p<∞, complex spaces"], [FOL.5, "§5.1–5.2 normed vector spaces, bounded linear maps, linear functionals"], [KRE.2, "§2.4–2.10 finite dimension, compactness, bounded operators, dual spaces of ℝⁿ, ℓ¹, ℓᵖ (bridge)"], [LAX.5, "§5.1–5.2 norms, non-compactness of the unit ball"]]
+    outline:
+      - "Normed and Banach spaces again (spiral from Part II and Part IV): ℓᵖ, c₀, C(K), Lᵖ; completeness via absolutely convergent series"
+      - "Bounded linear maps: bounded ⇔ continuous, B(X,Y) is a Banach space, the BLT extension principle"
+      - "Finite dimension: Riesz's lemma and 'the closed unit ball is compact iff dim X < ∞'"
+      - "Subspaces and quotients: the quotient norm and completeness of X/M"
+      - "Dual spaces of sequence spaces: (ℓᵖ)* = ℓ^q, c₀* = ℓ¹, (ℓ¹)* = ℓ^∞"
+      - "The dual of Lᵖ for 1<p<∞ by Radon–Nikodym, and (L¹)* = L^∞ for σ-finite μ"
+      - "What is still missing: (L^∞)* and the need for Hahn–Banach (forward pointer)"
+    must_prove: ["B(X,Y) is complete when Y is", "BLT: a bounded operator on a dense subspace extends uniquely with the same norm", "Riesz's lemma; unit ball compact ⇔ finite dimension", "X/M is Banach when M is closed", "(ℓᵖ)* ≅ ℓ^q and c₀* ≅ ℓ¹", "Lᵖ duality for 1<p<∞", "(L¹)* = L^∞ for σ-finite measures"]
+    key_examples: ["the L¹ norm on C[0,1] is incomplete (recalled)", "differentiation on C¹ ⊂ C[0,1] is unbounded", "duals of c₀ and ℓ¹", "(L¹)* ≠ L^∞ for a non-σ-finite measure (counting-type example, exercise)"]
+    exit_checks: ["Prove the dual of Lᵖ (1<p<∞) is L^q, including the isometry", "Show c₀* = ℓ¹ isometrically and identify the canonical map c₀ → c₀**"]
+    optional: false
+    note: "Opens the Part with Lᵖ duality as decided (decisions.md 9). Proof via Radon–Nikodym ties directly to Part IV; Brezis's uniform-convexity proof appears later in weak-topologies-alaoglu as a second proof. Folland §6.2 is the natural extra reference, but FOL.6 is a Part IV node."
+  - slug: riesz-markov
+    title: "Radon Measures and the Dual of C₀(X)"
+    pages: 38
+    sources: [[FOL.7, "§7.1–7.3 positive functionals on C_c(X), regularity and approximation, dual of C₀(X)"], [SS4.1, "§7 appendix: the dual of C(X)"], [LAX.A, "Riesz–Kakutani representation via Daniell-type construction (alternative)"]]
+    outline:
+      - "Why functionals on continuous functions are measures: Riemann–Stieltjes on [a,b] as the prototype"
+      - "Positive linear functionals on C_c(X) are automatically bounded on each C(K)"
+      - "Construction of the measure from open sets; Urysohn partitions of unity; the Riesz–Markov theorem"
+      - "Regularity of Radon measures; density of C_c in Lᵖ(μ) revisited"
+      - "Complex Radon measures, total variation norm, the Banach space M(X)"
+      - "The dual of C₀(X) is M(X); decomposition of a real functional into positive parts"
+      - "First look at weak* convergence: δ_{x_n} → δ_x, Riemann sums as measures converging to Lebesgue"
+    must_prove: ["Riesz–Markov for positive linear functionals on C_c(X), X locally compact Hausdorff", "outer and inner regularity of the constructed measure", "a bounded real functional on C₀(X) is a difference of positive ones", "C₀(X)* ≅ M(X) isometrically"]
+    key_examples: ["δ_x as a functional on C(K)", "Lebesgue measure recovered from the Riemann integral on C_c(ℝ)", "a positive functional on C_c(ℝ) not extendable boundedly to C₀(ℝ)"]
+    exit_checks: ["Prove Riesz–Markov for C(K), K compact metric (outline allowed for general LCH)", "Show the unit ball of M([0,1]) contains δ-measures at distance 2 from each other, so M([0,1]) is not separable"]
+    optional: false
+    note: "Riesz–Markov is placed in Part VI per decisions.md 9. It uses only Part IV measure construction and Urysohn, not Hahn–Banach, so it can precede hahn-banach; outline-level proof is allowed by the curriculum but the C(K), K compact metric case should be complete."
+  - slug: hahn-banach
+    title: "The Hahn–Banach Theorems"
+    pages: 50
+    sources: [[BRZ.1, "§1.1–1.3 analytic and geometric forms, bidual, orthogonality relations"], [SS4.1, "§5 separation of convex sets, Hahn–Banach, consequences, problem of measure"], [KRE.4, "§4.1–4.6 Zorn, Hahn–Banach (real, complex, normed), Riesz on C[a,b], adjoint operator, reflexive spaces (bridge)"], [LAX.3, "extension and geometric Hahn–Banach"], [LAX.4, "positive extensions, Banach limits, invariant set functions"], [LAX.8, "§8.1–8.3 bounded functionals, extension, reflexive spaces"], [LAX.C, "Zorn's lemma"], [FOL.5, "§5.2 Hahn–Banach and consequences"]]
+    outline:
+      - "Zorn's lemma recalled; sublinear functionals and the analytic Hahn–Banach theorem"
+      - "Complex and normed versions; norming functionals; X* separates points"
+      - "The bidual: the canonical embedding J: X → X** is an isometry; annihilators and duals of subspaces and quotients"
+      - "The Minkowski gauge and the geometric forms: separating an open convex set from a point, strict separation"
+      - "Density criterion: a subspace is dense iff every functional vanishing on it is zero"
+      - "Adjoint operators between Banach spaces; ‖T*‖ = ‖T‖"
+      - "Banach limits; (ℓ^∞)* ≠ ℓ¹ and (L^∞)* ≠ L¹; Riesz's original theorem on C[a,b] via Hahn–Banach"
+    must_prove: ["analytic Hahn–Banach (sublinear domination)", "complex Hahn–Banach", "existence of norming functionals", "J: X → X** is an isometry", "first and second geometric forms (separation)", "density criterion via annihilators", "existence of Banach limits"]
+    key_examples: ["Banach limit on ℓ^∞: a functional not given by any ℓ¹ sequence", "separation fails without openness/compactness (two closed convex sets at distance 0)", "finitely additive translation-invariant 'measure' on all subsets of ℝ (problem of measure)"]
+    exit_checks: ["Prove Hahn–Banach (analytic and first geometric form) from Zorn's lemma", "Show (ℓ^∞)* is strictly larger than ℓ¹ using a Banach limit"]
+    optional: false
+    note: "Duality arguments (decisions.md 14) are named here: test against functionals. Uses Zorn from Part 0."
+  - slug: baire-category-operators
+    title: "Baire Category and the Fundamental Theorems for Operators"
+    pages: 45
+    sources: [[SS4.4, "§1–4 Baire, uniform boundedness, divergence of Fourier series, open mapping, decay of Fourier coefficients, closed graph, Grothendieck"], [BRZ.2, "§2.1–2.4 Baire, UBP, open mapping, closed graph, complementary subspaces"], [KRE.4, "§4.7, §4.12–4.13 category theorem, uniform boundedness, open mapping, closed graph (bridge)"], [LAX.15, "boundedness and continuity, uniform boundedness, open mapping principle"], [FOL.5, "§5.3 Baire category theorem and consequences"]]
+    outline:
+      - "The Baire category theorem recalled (Part II) and the shape of a Baire argument"
+      - "The uniform boundedness principle (Banach–Steinhaus); pointwise limits of operators are bounded"
+      - "A continuous function whose Fourier series diverges at a point"
+      - "The open mapping theorem and the bounded inverse theorem; comparing complete norms"
+      - "The closed graph theorem; Hellinger–Toeplitz"
+      - "Fourier coefficients of L¹ functions do not exhaust c₀"
+      - "Complemented subspaces and Grothendieck's theorem on closed subspaces of Lᵖ (optional section)"
+    must_prove: ["uniform boundedness principle", "existence of a continuous function with divergent Fourier series at 0 (via UBP)", "open mapping theorem", "bounded inverse theorem", "closed graph theorem", "the map f ↦ (f̂(n)) from L¹(𝕋) to c₀ is not onto"]
+    key_examples: ["the Dirichlet partial-sum functionals with norms ~ log N", "two comparable complete norms are equivalent", "an everywhere-defined symmetric operator on a Hilbert space is bounded (Hellinger–Toeplitz)", "UBP fails on an incomplete space (c₀₀ with sup norm)"]
+    exit_checks: ["Prove, via the UBP, that there is a continuous function whose Fourier series diverges at 0", "Prove the closed graph theorem from the open mapping theorem"]
+    optional: false
+    note: "Second appearance of Baire (first in Part II with nowhere-differentiable functions); the text explicitly recalls it. Placed before weak topologies because weakly convergent sequences are bounded only by the UBP."
+  - slug: weak-topologies-alaoglu
+    title: "Weak Topologies, Tychonoff and Banach–Alaoglu"
+    pages: 60
+    sources: [[BRZ.3, "§3.1–3.6 coarsest topologies, weak topology, convex sets, weak* topology, Banach–Alaoglu, reflexive and separable spaces"], [BRZ.4, "§4.3 reflexivity, separability, dual of Lᵖ via uniform convexity; L¹ and L^∞"], [BRZ.11, "§11.3 classical sequence spaces"], [MUN.5, "§37 the Tychonoff theorem"], [LAX.10, "uniform boundedness of weakly convergent sequences, weak sequential compactness, weak* convergence"], [LAX.11, "§11.1–11.2 approximation of δ, divergence of Fourier series revisited"], [LAX.12, "weak and weak* topologies"], [LAX.13, "§13.1–13.2 separation by functionals, Krein–Milman"], [KRE.4, "§4.8–4.9 strong and weak convergence (bridge)"], [FOL.5, "§5.4 topological vector spaces, weak topologies"]]
+    outline:
+      - "Initial topologies; the weak topology σ(X,X*); weak neighbourhoods are unbounded in infinite dimension"
+      - "Weak convergence of sequences: eₙ ⇀ 0 in ℓ², sin(nx) ⇀ 0 in L²; weakly convergent sequences are bounded; weak lower semicontinuity of the norm"
+      - "Mazur's theorem: closed convex sets are weakly closed; convex combinations converge strongly"
+      - "The weak* topology; weak* convergence of measures and approximation of δ"
+      - "Tychonoff's theorem (via Zorn), and the diagonal proof for countable products of compact metric spaces"
+      - "Banach–Alaoglu: the general proof by Tychonoff; the separable case by a diagonal argument; metrizability of the dual ball"
+      - "Reflexivity and separability: bounded sequences in reflexive spaces have weakly convergent subsequences; Lᵖ reflexive (1<p<∞); X* separable ⇒ X separable; c₀, ℓ¹, L¹, L^∞ not reflexive"
+      - "Extreme points and Krein–Milman; why L¹[0,1] is not a dual space"
+    must_prove: ["weakly convergent sequences are bounded, and ‖x‖ ≤ liminf ‖xₙ‖", "Mazur's theorem", "Tychonoff's theorem", "Banach–Alaoglu (general, and separable case by diagonal extraction)", "in a reflexive space every bounded sequence has a weakly convergent subsequence", "X* separable ⇒ X separable", "Lᵖ is reflexive for 1<p<∞"]
+    key_examples: ["eₙ ⇀ 0 weakly but not strongly", "c₀ is not reflexive", "in ℓ¹ weak and norm convergence of sequences coincide (Schur, exercise)", "L¹[0,1] is not isometric to any dual space (unit ball has no extreme points)", "δ_{1/n} → δ_0 weak* in C[0,1]* but not in norm"]
+    exit_checks: ["Prove Banach–Alaoglu for separable X by a diagonal argument, then generally via Tychonoff", "Show that c₀ is not reflexive and that L¹ is not a dual space"]
+    optional: false
+    note: "Third and last piece of point-set topology (decisions.md 8): Tychonoff sits immediately before Banach–Alaoglu, with the diagonal proof for the separable case. Closes the 'moved out of measure theory' block (Lᵖ duality, Riesz–Markov, weak/weak*). Spiral: compactness row, Lᵖ/weak* column."
+  - slug: hilbert-spaces
+    title: "Hilbert Spaces"
+    pages: 55
+    sources: [[BRZ.5, "§5.1–5.4 projection on closed convex sets, dual of a Hilbert space, Stampacchia and Lax–Milgram, orthonormal bases"], [KRE.3, "§3.1–3.6, §3.8–3.10 inner product spaces, orthogonal complements, orthonormal sets, total sets, Riesz representation, Hilbert adjoint, self-adjoint/unitary/normal (bridge)"], [LAX.6, "scalar product, closest point, linear functionals, linear span"], [LAX.7, "§7.1–7.2 Radon–Nikodym and Dirichlet's problem via Hilbert space"], [FOL.5, "§5.5 Hilbert spaces"]]
+    outline:
+      - "Inner products, Cauchy–Schwarz, the parallelogram law; L², ℓ², and H¹ as a preview"
+      - "Projection onto closed convex sets; orthogonal complements and H = M ⊕ M^⊥"
+      - "The Riesz representation theorem; Hilbert adjoints; self-adjoint, unitary, normal operators; direct weak compactness of the ball"
+      - "Orthonormal systems: Bessel, Parseval, Riesz–Fischer; orthonormal bases via Zorn; separable Hilbert spaces ≅ ℓ²"
+      - "Examples of bases: the trigonometric system in L²(𝕋) (Part III revisited), Legendre and Hermite polynomials"
+      - "Stampacchia's theorem and the Lax–Milgram theorem"
+      - "Hilbert-space proofs revisited: von Neumann's Radon–Nikodym, and the Dirichlet principle as a minimization problem"
+    must_prove: ["projection theorem onto a closed convex set", "Riesz representation theorem", "Bessel's inequality, Parseval's identity, Riesz–Fischer for orthonormal systems", "every Hilbert space has an orthonormal basis; separable ones are isometric to ℓ² or ℂⁿ", "Lax–Milgram theorem"]
+    key_examples: ["projection fails in a non-closed subspace and in non-Hilbert norms (non-uniqueness in ℓ^∞)", "an uncountable orthonormal basis: almost-periodic functions (exercise)", "Legendre polynomials as Gram–Schmidt of 1, x, x², …", "a coercive non-symmetric form: Lax–Milgram without a minimization principle"]
+    exit_checks: ["Prove the projection theorem and the Riesz representation theorem unaided", "Prove Lax–Milgram and explain why symmetry reduces it to Riesz"]
+    optional: false
+    note: "Abstract Hilbert space theory lives here (decisions.md 9); Part IV used only the L² projection. Lax–Milgram is proved here and applied in the capstone. Placed after the Banach-space chapters so Hilbert spaces are seen as the reflexive, self-dual special case (spiral: Hilbert column)."
+  - slug: compact-operators-spectral
+    title: "Compact Operators, the Fredholm Alternative and the Spectral Theorem"
+    pages: 60
+    sources: [[BRZ.6, "§6.1–6.4 compact operators, Riesz–Fredholm theory, spectrum of compact operators, spectral decomposition of self-adjoint compact operators"], [KRE.7, "§7.1–7.4 spectrum, resolvent, spectral properties of bounded operators (bridge)"], [KRE.8, "§8.1–8.7 compact operators, their spectrum, operator equations, Fredholm alternative (bridge)"], [KRE.9, "§9.1–9.2 spectral properties of bounded self-adjoint operators"], [LAX.17, "§17.1 spectrum in a normed algebra (resolvent, nonempty spectrum)"], [LAX.20, "shifts, Volterra integral operators"], [LAX.21, "basic properties and spectral theory of compact maps"], [LAX.22, "§22.1–22.2 compactness criteria, integral operators"], [LAX.27, "§27.1 the Noether index"], [LAX.28, "compact symmetric operators"], [LAX.29, "§29.1–29.2 convolution and inverse of a differential operator"]]
+    outline:
+      - "Spectrum and resolvent: Neumann series, the spectrum is non-empty and compact (Liouville), spectral radius; the right shift and the Volterra operator"
+      - "Compact operators: closed ideal, limits of finite-rank operators in Hilbert space, Schauder's theorem on adjoints"
+      - "Integral operators: continuous kernels (Arzelà–Ascoli) and Hilbert–Schmidt kernels"
+      - "Riesz–Fredholm theory for I − K: finite-dimensional kernel, closed range, the Fredholm alternative; integral equations u − Ku = f"
+      - "The spectrum of a compact operator: non-zero points are eigenvalues of finite multiplicity accumulating only at 0"
+      - "Fredholm operators and the index; stability under compact perturbations (statement-level)"
+      - "Self-adjoint operators: ‖T‖ = sup|⟨Tx,x⟩|; the spectral theorem for compact self-adjoint operators; min–max"
+      - "The vibrating string: the Green's operator of −u″ on [0,π] and the sine eigenbasis"
+    must_prove: ["the spectrum of a bounded operator on a complex Banach space is non-empty and compact", "compact operators form a closed two-sided ideal; in Hilbert space they are norm limits of finite-rank operators", "Hilbert–Schmidt integral operators are compact", "the Fredholm alternative for I − K", "the spectrum of a compact operator is countable with 0 the only possible accumulation point", "spectral theorem for compact self-adjoint operators"]
+    key_examples: ["right shift on ℓ²: no eigenvalues, spectrum the closed disc", "Volterra operator: compact, quasinilpotent, spectrum {0}", "multiplication by x on L²[0,1]: self-adjoint, not compact, no eigenvalues", "identity on an infinite-dimensional space is not compact", "Green's kernel of −d²/dx² with Dirichlet conditions"]
+    exit_checks: ["State and prove the Fredholm alternative for compact K on a Hilbert space", "Prove the spectral theorem for compact self-adjoint operators and apply it to the Green's operator of −u″ on [0,π]"]
+    optional: false
+    note: "Merges compact operators and the compact spectral theorem to keep the Part near the chapter budget. Unbounded operators, Hille–Yosida and the general spectral theorem are out of scope (see cut). The vibrating-string example is the one-dimensional rehearsal of the capstone."
+  - slug: gelfand-theory
+    title: "Banach Algebras and Gelfand Theory"
+    pages: 38
+    sources: [[LAX.17, "§17.1–17.2 normed algebras, functional calculus"], [LAX.18, "Gelfand's theory of commutative Banach algebras"], [LAX.19, "§19.1, §19.3, §19.6–19.7 C(S), absolutely convergent Fourier series, Wiener's Tauberian theorem, commutative B*-algebras"], [KRE.7, "§7.5–7.7 use of complex analysis in spectral theory, Banach algebras (bridge)"]]
+    outline:
+      - "Banach algebras; the group of invertibles is open; Gelfand–Mazur"
+      - "The spectral radius formula; holomorphic functional calculus (outline)"
+      - "Ideals and quotient algebras, just in time: maximal ideals are closed, A/M is a field"
+      - "Characters ↔ maximal ideals; the Gelfand transform; the Gelfand topology via Banach–Alaoglu"
+      - "Wiener's 1/f theorem for absolutely convergent Fourier series"
+      - "Commutative C*-algebras: C(S) and the Gelfand–Naimark theorem (outline)"
+    must_prove: ["the invertible group is open and inversion is continuous", "Gelfand–Mazur", "spectral radius formula", "maximal ideals ↔ characters in a commutative unital Banach algebra", "Wiener's 1/f theorem"]
+    key_examples: ["ℓ¹(ℤ) under convolution and its maximal-ideal space 𝕋", "the disc algebra and its maximal-ideal space the closed disc", "C(K) with maximal ideals {f : f(x)=0}"]
+    exit_checks: ["Prove Wiener's theorem: if f has absolutely convergent Fourier series and no zeros, so does 1/f"]
+    optional: true
+    note: "Optional chapter (decisions.md 13): ideals and quotients are introduced here just in time. Placed after compact-operators-spectral (spectrum, resolvent) so the main line from there to the capstone is uninterrupted; nothing later depends on it."
+  - slug: distributions
+    title: "Distributions"
+    pages: 60
+    sources: [[FJ.1, "test functions, distributions, localization, convergence"], [FJ.2, "derivatives, examples, primitives in 𝒟′(ℝ), linear differential operators, division, duality"], [FJ.3, "distributions with compact support, distributions supported at the origin"], [FJ.5, "§5.1–5.2, §5.4 convolution, regularization, fundamental solutions"], [FJ.A, "topological vector spaces (as much as 𝒟 needs)"], [FOL.8, "§8.1–8.2 preliminaries, convolutions and approximate identities"], [FOL.9, "§9.1 distributions"], [SS4.3, "§1.1–1.3, §1.6, §2.3 definitions, operations, supports, point supports, fundamental solutions"], [LAX.B, "§B.1–B.4 definitions, operations, local properties, applications to PDE"]]
+    outline:
+      - "Why generalized functions: |x|′, the Heaviside function, δ; test functions, bump functions and smooth partitions of unity"
+      - "The space 𝒟(Ω): convergence, seminorms and just enough locally convex topology; distributions and their order"
+      - "Examples: locally integrable functions, δ and its derivatives, p.v. 1/x, finite parts"
+      - "Operations: differentiation, multiplication by smooth functions; weak derivatives; u′ = 0 in 𝒟′ ⇒ u constant"
+      - "Convergence in 𝒟′ and sequential completeness (UBP again); approximations of δ"
+      - "Support; ℰ′ as the dual of C^∞; distributions supported at a point"
+      - "Convolution with test functions; regularization and density of C_c^∞ in 𝒟′"
+      - "Fundamental solutions: Δ in ℝⁿ and the heat operator"
+    must_prove: ["a distribution is determined locally (sheaf property via partitions of unity)", "p.v. 1/x is a distribution of order 1", "u′ = 0 in 𝒟′(ℝ) implies u is constant", "𝒟′ is sequentially complete", "a distribution supported at {0} is a finite combination of derivatives of δ", "u*φ is smooth with ∂(u*φ) = (∂u)*φ", "ΔE = δ for the Newtonian/logarithmic potential E"]
+    key_examples: ["δ and δ′", "p.v. 1/x and its derivative", "d/dx log|x| = p.v. 1/x", "n sin(nx) → 0 in 𝒟′", "Σ δ_n is a distribution of infinite support but order 0", "log|x| as fundamental solution in ℝ²"]
+    exit_checks: ["Show p.v. 1/x is a distribution and compute its derivative in 𝒟′", "Prove that distributions supported at a point are finite sums of derivatives of δ"]
+    optional: false
+    note: "Locally convex spaces are used for 𝒟 and 𝒮 only (curriculum b); the inductive-limit topology is handled through sequential convergence plus a short appendix-style section. Tensor products and convolution of two general distributions (FJ ch. 4, 5.3) are cut."
+  - slug: tempered-distributions-fourier
+    title: "Tempered Distributions, the Fourier Transform and Plancherel"
+    pages: 55
+    sources: [[FOL.8, "§8.3 the Fourier transform on L¹ and L²"], [FJ.8, "rapidly decreasing functions, tempered distributions, convolution theorem, Poisson summation and periodic distributions"], [FJ.9, "§9.1–9.2 Fourier transform on L²(ℝⁿ)"], [SS4.3, "§1.4–1.5, §2.1 tempered distributions, Fourier transform, Hilbert transform and p.v. 1/x"], [FOL.9, "§9.2 compactly supported, tempered and periodic distributions"]]
+    outline:
+      - "The Schwartz space as a Fréchet space (Part III recalled); density of C_c^∞"
+      - "The Fourier transform on L¹ in the Lebesgue setting: Riemann–Lebesgue and inversion"
+      - "Plancherel's theorem on L²(ℝⁿ): extension from 𝒮 by the BLT principle; unitarity"
+      - "Tempered distributions 𝒮′: polynomially bounded functions, Lᵖ, δ, p.v. 1/x"
+      - "The Fourier transform on 𝒮′: 𝔉δ = 1, derivatives ↔ multiplication, 𝔉(p.v. 1/x)"
+      - "Convolution theorem; periodic distributions and Poisson summation"
+      - "Solving constant-coefficient equations: heat equation and the Paley–Wiener theorem (statement)"
+    must_prove: ["𝔉 is a continuous isomorphism of 𝒮 and of 𝒮′", "Plancherel's theorem on L²(ℝⁿ)", "Riemann–Lebesgue for L¹", "𝔉(p.v. 1/x) = −iπ sgn ξ", "𝔉(u*φ) = û φ̂ for u ∈ 𝒮′, φ ∈ 𝒮"]
+    key_examples: ["𝔉δ = 1 and 𝔉1 = δ", "e^{x} is a distribution but not tempered", "Fourier transform of the Heaviside function", "the Dirac comb Σδ_n and Poisson summation", "the Hilbert transform as convolution with p.v. 1/(πx)"]
+    exit_checks: ["Prove Plancherel on L²(ℝⁿ) from inversion on 𝒮 and density", "Compute the Fourier transform of p.v. 1/x and of the Heaviside function"]
+    optional: false
+    note: "Spiral from Part III: Fourier on 𝒮 is recalled, not redone; the new content is L¹/L² in the Lebesgue setting and the extension to 𝒮′."
+  - slug: sobolev-spaces
+    title: "Sobolev Spaces"
+    pages: 58
+    sources: [[EVA.5, "§5.1–5.3, §5.6 (statements and ideas), §5.8.4 Hölder spaces, weak derivatives, W^{k,p}, approximation, Sobolev inequalities, Fourier methods"], [BRZ.8, "§8.1–8.2 motivation, W^{1,p}(I), W^{m,p}(I)"], [BRZ.9, "§9.1–9.3 W^{1,p}(Ω), extension operators, Sobolev inequalities"], [FJ.9, "§9.3 Sobolev spaces Hˢ"], [FOL.9, "§9.3 Sobolev spaces"]]
+    outline:
+      - "Weak derivatives and the spaces W^{k,p}(Ω); completeness; comparison with Hölder spaces"
+      - "One dimension: elements of W^{1,p}(I) are absolutely continuous; embedding into C(Ī) and C^{0,1−1/p}"
+      - "Approximation: mollification, local approximation, Meyers–Serrin (H = W)"
+      - "Hˢ(ℝⁿ) through the Fourier transform; Hᵏ = W^{k,2}; negative s and duality with H^{−s}"
+      - "The embedding Hˢ(ℝⁿ) ⊂ C_b for s > n/2; failure at s = n/2 in ℝ² via log log"
+      - "Gagliardo–Nirenberg–Sobolev and Morrey inequalities; extension operators (statements and proof ideas)"
+    must_prove: ["W^{k,p}(Ω) is a Banach space", "W^{1,p}(I) functions have absolutely continuous representatives with u(x)−u(y)=∫u′", "interior approximation by smooth functions", "Hᵏ(ℝⁿ) = W^{k,2}(ℝⁿ) with equivalent norms", "Hˢ(ℝⁿ) ↪ C_b(ℝⁿ) for s > n/2"]
+    key_examples: ["|x| ∈ W^{1,∞}(−1,1), Heaviside ∉ W^{1,1}", "H¹(I) ⊂ C(Ī) in dimension 1", "log log(1 + 1/|x|) ∈ H¹ near 0 in ℝ² but unbounded", "|x|^{−α} ∈ W^{1,p}(B) iff α < (n−p)/p"]
+    exit_checks: ["Show H¹ embeds in C in dimension 1 but not in dimension 2", "Prove Hˢ(ℝⁿ) ⊂ C_b for s > n/2 by Fourier inversion"]
+    optional: false
+    note: "Traces, Poincaré, H¹₀ and compactness are the next chapter. Brezis's one-dimensional chapter is the gentle entry; Evans supplies the n-dimensional statements."
+  - slug: poincare-rellich
+    title: "H¹₀, the Poincaré Inequality and Rellich Compactness"
+    pages: 45
+    sources: [[BRZ.4, "§4.4–4.5 convolution and regularization, Kolmogorov–Riesz–Fréchet compactness criterion"], [BRZ.8, "§8.3 W^{1,p}_0(I)"], [BRZ.9, "§9.4 W^{1,p}_0(Ω), Poincaré, dual of W^{1,p}_0"], [EVA.5, "§5.5 traces, §5.7 compactness, §5.8.1 Poincaré, §5.9.1 H^{−1}"]]
+    outline:
+      - "H¹₀(Ω) and W^{1,p}_0(Ω) as closures of C_c^∞; extension by zero"
+      - "The Poincaré inequality on bounded domains; ‖∇u‖₂ is an equivalent norm on H¹₀"
+      - "Compactness in Lᵖ: the Kolmogorov–Riesz criterion (spiral with Arzelà–Ascoli)"
+      - "Rellich on the torus via Fourier coefficients, and on an interval"
+      - "Rellich–Kondrachov for H¹₀(Ω), Ω bounded; the general W^{1,p}(Ω) statement with extension"
+      - "Traces on C¹ domains (outline) and H¹₀ as the kernel of the trace"
+      - "The dual space H^{−1} and −Δ: H¹₀ → H^{−1} as a preview of the capstone"
+    must_prove: ["Poincaré inequality on H¹₀(Ω) for bounded Ω", "Kolmogorov–Riesz compactness criterion in Lᵖ(ℝⁿ)", "Rellich: H¹(𝕋ⁿ) ↪ L²(𝕋ⁿ) and H¹(I) ↪ L²(I) are compact", "Rellich–Kondrachov: H¹₀(Ω) ↪ L²(Ω) is compact for bounded Ω"]
+    key_examples: ["Poincaré fails on H¹(Ω) (constants) and on unbounded Ω (ℝⁿ)", "sin(nx)/n: bounded in H¹(0,π), no H¹-convergent subsequence, L²-convergent", "translates of a bump: bounded in H¹(ℝ) with no L²-convergent subsequence (why boundedness of Ω matters)"]
+    exit_checks: ["Prove Rellich's theorem on an interval or the torus unaided", "Prove the Poincaré inequality on H¹₀ of a bounded domain"]
+    optional: false
+    note: "The capstone needs only H¹₀(Ω), for which Rellich follows from extension by zero and Kolmogorov–Riesz with no boundary regularity; the W^{1,p}(Ω) version with extension operators is stated. Spiral table: compactness row, Lᵖ column (Alaoglu; Kolmogorov–Riesz; Rellich)."
+  - slug: dirichlet-capstone
+    title: "Capstone: The Dirichlet Problem and the Dirichlet-Laplacian Eigenbasis"
+    pages: 50
+    sources: [[EVA.6, "§6.1–6.2 weak solutions, Lax–Milgram, energy estimates, Fredholm alternative; §6.3.1 interior regularity (outline); §6.5.1 eigenvalues of symmetric elliptic operators"], [BRZ.9, "§9.5 variational formulation, §9.8 eigenfunctions and spectral decomposition"], [BRZ.8, "§8.4, §8.6 one-dimensional boundary value problems and eigenfunctions (rehearsal)"], [LAX.7, "§7.2 Dirichlet's problem"], [LAX.29, "§29.3 inverse of partial differential operators"]]
+    outline:
+      - "The Dirichlet principle from Riemann to Hilbert: why Weierstrass's objection forces completeness"
+      - "Weak formulation of −Δu = f, u = 0 on ∂Ω, and why the right space is H¹₀(Ω)"
+      - "Existence and uniqueness by Lax–Milgram; uniformly elliptic divergence-form operators and energy estimates"
+      - "Lower-order terms and the Fredholm alternative for L + μ"
+      - "The solution operator is compact and self-adjoint on L²(Ω) (Rellich)"
+      - "The Dirichlet-Laplacian eigenbasis: 0 < λ₁ ≤ λ₂ ≤ … → ∞, eigenfunctions an orthonormal basis of L²(Ω); Rayleigh quotient for λ₁"
+      - "Back to classical solutions: interior regularity (outline) and Weyl's lemma"
+      - "A mixed qualifying exam across Parts IV–VI"
+    must_prove: ["existence and uniqueness of a weak solution u ∈ H¹₀(Ω) of −Δu = f for f ∈ L²(Ω) (or H^{−1})", "energy estimate ‖u‖_{H¹₀} ≤ C‖f‖", "the Dirichlet solution operator is compact self-adjoint positive on L²(Ω)", "the Dirichlet eigenfunctions form an orthonormal basis of L²(Ω) with eigenvalues tending to ∞", "λ₁ = min of the Rayleigh quotient over H¹₀∖{0}"]
+    key_examples: ["the interval (0,π): eigenfunctions sin(kx), λ_k = k²", "the square (0,π)²: products of sines, multiplicities", "the disc: Bessel-function eigenfunctions (statement)", "Weierstrass's example of an energy whose infimum is not attained among smooth functions"]
+    exit_checks: ["Capstone 1: Lax–Milgram gives a unique weak solution in H¹₀(Ω)", "Capstone 2: Rellich and the compact self-adjoint spectral theorem show the Dirichlet-Laplacian eigenfunctions form an orthonormal basis of L²(Ω)", "Capstone 3: a mixed qualifying exam (UCLA real/complex level plus Cambridge Part II functional analysis)"]
+    optional: false
+    note: "Final chapter of the book. Everything is assembled: Hilbert spaces (Lax–Milgram), Sobolev (H¹₀, Poincaré), compactness (Rellich), spectral theory (compact self-adjoint). Evans 6.3 boundary regularity and 6.4 maximum principles are out of scope; interior regularity is outlined only."
+cut:
+  BRZ.7: "Hille–Yosida and evolution problems: PDE branch after Part VI"
+  BRZ.10: "heat and wave equations by semigroup methods: PDE branch"
+  SS4.2: "Lᵖ in harmonic analysis (Riesz–Thorin, Hilbert transform, H¹, BMO): harmonic-analysis branch"
+  SS4.5: "probability: probability branch"
+  SS4.6: "Brownian motion: probability branch"
+  SS4.7: "several complex variables: out of scope"
+  SS4.8: "oscillatory integrals: harmonic-analysis branch"
+  KRE.1: "metric spaces: Part II"
+  KRE.5: "Banach fixed point theorem: Part II"
+  KRE.6: "approximation theory: optional enrichment, not required"
+  KRE.10: "unbounded operators: beyond the S4 benchmark"
+  KRE.11: "quantum mechanics applications: out of scope"
+  LAX.1: "linear spaces: companion linear-algebra book"
+  LAX.2: "linear maps and index in finite dimension: companion linear-algebra book"
+  LAX.9: "applications of duality (Müntz, Runge, Green's function): enrichment; exercises only"
+  LAX.14: "convex sets and extreme points (Choquet, Bochner, de Finetti): beyond scope"
+  LAX.16: "Riesz convexity theorem and singular integrals: harmonic-analysis branch"
+  LAX.23: "positive compact operators (Krein–Rutman): beyond scope"
+  LAX.24: "Fredholm determinants: beyond scope"
+  LAX.25: "invariant subspaces: beyond scope"
+  LAX.26: "harmonic analysis on a half-line: beyond scope"
+  LAX.30: "trace class: beyond scope"
+  LAX.31: "spectral theory of normal/unitary bounded operators: beyond the S4 benchmark"
+  LAX.32: "unbounded self-adjoint spectral theory: beyond scope"
+  LAX.33: "extensions of symmetric operators: beyond scope"
+  LAX.34: "semigroups: PDE branch"
+  LAX.35: "unitary groups, Stone's theorem: beyond scope"
+  LAX.36: "strongly continuous semigroups examples: PDE branch"
+  LAX.37: "scattering theory: beyond scope"
+  LAX.38: "Beurling's theorem: beyond scope"
+  FJ.4: "tensor products of distributions: only convolution with test functions is needed"
+  FJ.6: "Schwartz kernels: beyond scope"
+  FJ.7: "pullbacks of distributions: beyond scope"
+  FJ.10: "Fourier–Laplace transform, Malgrange–Ehrenpreis: PDE branch"
+  FJ.11: "wavefront sets: beyond scope"
+  EVA.1: "introduction: PDE branch"
+  EVA.2: "four linear PDE by representation formulas: PDE branch"
+  EVA.3: "nonlinear first-order PDE: PDE branch"
+  EVA.4: "other representations of solutions: PDE branch"
+  EVA.7: "linear evolution equations: PDE branch"
+  EVA.8: "calculus of variations: PDE branch"
+  EVA.9: "nonvariational techniques: PDE branch"
+  EVA.10: "Hamilton–Jacobi equations: PDE branch"
+  EVA.11: "systems of conservation laws: PDE branch"
+exemptions: []
+coverage_gaps:
+  - "Rellich on the torus via Fourier coefficients is not written out in any assigned source (Brezis and Evans treat domains); original writing, short."
+  - "'L¹ is not a dual space' via Krein–Milman and the absence of extreme points is only an exercise-level remark in the sources; original writing."
+  - "The just-enough locally convex topology for 𝒟 (inductive limit) and 𝒮 (Fréchet) must be written at a lighter level than FJ's appendix."
+  - "Weierstrass's objection to the Dirichlet principle (historical motivation of the capstone) is not in any Part VI source; original writing, with a hook back to Part V harmonic-functions."
+  - "The mixed qualifying exam must be assembled originally."

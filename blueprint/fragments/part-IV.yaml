@@ -1,0 +1,382 @@
+part: IV
+title: "Measure and Integration"
+summary: "Starting from Part III's list of what the Riemann integral lacks, build Lebesgue measure and the Lebesgue integral on ℝᵈ, then abstract measures, products (Fubini–Tonelli and change of variables in full), Lᵖ, modes of convergence, differentiation, and signed measures up to Radon–Nikodym, preceded by the Urysohn and Tietze theorems that Lusin and the density of C_c need."
+
+nodes:
+  # Munkres (Urysohn/Tietze only)
+  MUN.3: {book: MUN, ch: "3", title: "Connectedness and Compactness (§29 local compactness only)", pages: 42, files: "035-042"}
+  MUN.4: {book: MUN, ch: "4", title: "Countability and Separation Axioms (§31–33, §35)", pages: 38, files: "043-049"}
+  # Folland (depth)
+  FOL.0: {book: FOL, ch: "0", title: "Prologue (set theory, extended reals, metric spaces)", pages: 17, files: "003-007"}
+  FOL.1: {book: FOL, ch: "1", title: "Measures", pages: 26, files: "007-012"}
+  FOL.2: {book: FOL, ch: "2", title: "Integration", pages: 42, files: "013-020"}
+  FOL.3: {book: FOL, ch: "3", title: "Signed Measures and Differentiation", pages: 28, files: "021-027"}
+  FOL.4: {book: FOL, ch: "4", title: "Point Set Topology (§4.5 locally compact Hausdorff spaces only)", pages: 38, files: "028-035"}
+  FOL.6: {book: FOL, ch: "6", title: "Lᵖ Spaces (§6.1, 6.3, 6.4 only)", pages: 32, files: "044-050"}
+  # Stein & Shakarchi III (scaffolding)
+  SS3.0: {book: SS3, ch: "Intro", title: "Introduction (Fourier series completion, limits of continuous functions, length of curves, differentiation and integration, the problem of measure)", pages: 6, files: "003-004"}
+  SS3.1: {book: SS3, ch: "1", title: "Measure Theory", pages: 51, files: "004-014"}
+  SS3.2: {book: SS3, ch: "2", title: "Integration Theory", pages: 51, files: "014-025"}
+  SS3.3: {book: SS3, ch: "3", title: "Differentiation and Integration", pages: 56, files: "025-034"}
+  SS3.4: {book: SS3, ch: "4", title: "Hilbert Spaces: An Introduction (§1 the space L² only)", pages: 48, files: "035-044"}
+  SS3.6: {book: SS3, ch: "6", title: "Abstract Measure and Integration Theory", pages: 60, files: "055-070"}
+  # Axler MIRA (bridge)
+  MIRA.2: {book: MIRA, ch: "2", title: "Measures", pages: 60, files: "008-028"}
+  MIRA.3: {book: MIRA, ch: "3", title: "Integration", pages: 28, files: "029-037"}
+  MIRA.4: {book: MIRA, ch: "4", title: "Differentiation", pages: 14, files: "038-041"}
+  MIRA.5: {book: MIRA, ch: "5", title: "Product Measures", pages: 31, files: "042-052"}
+  MIRA.7: {book: MIRA, ch: "7", title: "Lᵖ Spaces", pages: 19, files: "069-074"}
+  MIRA.8: {book: MIRA, ch: "8", title: "Hilbert Spaces (8.34–8.47 projection and representation, specialized to L²)", pages: 43, files: "075-088"}
+  MIRA.9: {book: MIRA, ch: "9", title: "Real and Complex Measures", pages: 26, files: "089-096"}
+  # Bressoud BRL (motivation)
+  BRL.5: {book: BRL, ch: "5", title: "The Development of Measure Theory", pages: 39, files: "034-044"}
+  BRL.6: {book: BRL, ch: "6", title: "The Lebesgue Integral", pages: 42, files: "044-054"}
+  BRL.7: {book: BRL, ch: "7", title: "The Fundamental Theorem of Calculus", pages: 39, files: "055-064"}
+  BRL.8: {book: BRL, ch: "8", title: "Fourier Series", pages: 45, files: "064-075"}
+  # Wheeden & Zygmund (depth)
+  WZ.2: {book: WZ, ch: "2", title: "Functions of Bounded Variation; Riemann–Stieltjes Integral", pages: 24, files: "010-014"}
+  WZ.3: {book: WZ, ch: "3", title: "Lebesgue Measure and Outer Measure", pages: 22, files: "015-019"}
+  WZ.4: {book: WZ, ch: "4", title: "Lebesgue Measurable Functions", pages: 18, files: "020-024"}
+  WZ.5: {book: WZ, ch: "5", title: "The Lebesgue Integral", pages: 32, files: "025-030"}
+  WZ.6: {book: WZ, ch: "6", title: "Repeated Integration", pages: 18, files: "031-033"}
+  WZ.7: {book: WZ, ch: "7", title: "Differentiation", pages: 52, files: "034-039"}
+  WZ.8: {book: WZ, ch: "8", title: "Lᵖ Classes", pages: 30, files: "040-045"}
+  WZ.9: {book: WZ, ch: "9", title: "Approximations of the Identity; Maximal Functions", pages: 24, files: "046-050"}
+  WZ.10: {book: WZ, ch: "10", title: "Abstract Integration", pages: 42, files: "051-058"}
+  WZ.11: {book: WZ, ch: "11", title: "Outer Measure; Measure", pages: 22, files: "059-064"}
+  # Gelbaum & Olmsted (counterexamples)
+  GO.8: {book: GO, ch: "8", title: "Sets and Measure on the Real Axis", pages: 29, files: "029-036"}
+  GO.9: {book: GO, ch: "9", title: "Functions of Two Variables (iterated integrals and double series)", pages: 12, files: "037-040"}
+  GO.10: {book: GO, ch: "10", title: "Plane Sets (nonmeasurable plane sets, Fubini failures)", pages: 19, files: "040-045"}
+  GO.11: {book: GO, ch: "11", title: "Area (sets without Jordan area)", pages: 8, files: "045-046"}
+
+hard:
+  - [MUN.3, MUN.4]
+  - [FOL.1, FOL.2]
+  - [FOL.2, FOL.3]
+  - [FOL.2, FOL.6]
+  - [SS3.1, SS3.2]
+  - [SS3.2, SS3.3]
+  - [SS3.2, SS3.4]
+  - [SS3.1, SS3.6]
+  - [SS3.2, SS3.6]
+  - [SS3.4, SS3.6]
+  - [MIRA.2, MIRA.3]
+  - [MIRA.3, MIRA.4]
+  - [MIRA.3, MIRA.5]
+  - [MIRA.3, MIRA.7]
+  - [MIRA.7, MIRA.8]
+  - [MIRA.8, MIRA.9]
+  - [MIRA.3, MIRA.9]
+  - [BRL.5, BRL.6]
+  - [BRL.6, BRL.7]
+  - [BRL.6, BRL.8]
+  - [WZ.3, WZ.4]
+  - [WZ.4, WZ.5]
+  - [WZ.5, WZ.6]
+  - [WZ.6, WZ.7]
+  - [WZ.2, WZ.7]
+  - [WZ.5, WZ.8]
+  - [WZ.8, WZ.9]
+  - [WZ.7, WZ.9]
+  - [WZ.5, WZ.10]
+  - [WZ.7, WZ.10]
+  - [WZ.3, WZ.11]
+  - [WZ.10, WZ.11]
+
+soft:
+  - [SS3.0, SS3.1]
+  - [FOL.0, FOL.1]
+  - [SS3.3, SS3.6]
+  - [BRL.7, BRL.8]
+  - [FOL.3, FOL.6]
+  - [MUN.4, SS3.1]
+  - [MUN.4, MIRA.2]
+  - [FOL.4, FOL.6]
+  - [GO.11, SS3.1]
+  - [GO.8, SS3.1]
+  - [GO.9, WZ.6]
+  - [GO.10, WZ.6]
+  - [WZ.2, SS3.3]
+
+alt:
+  - [MUN.4, FOL.4, "Urysohn lemma (normal vs locally compact Hausdorff)"]
+  - [SS3.1, WZ.3, "Lebesgue measure on ℝⁿ"]
+  - [SS3.1, MIRA.2, "outer measure and Lebesgue measure"]
+  - [SS3.1, BRL.5, "Lebesgue measure, history and Carathéodory"]
+  - [SS3.1, WZ.4, "measurable functions, Egorov, Lusin"]
+  - [SS3.2, WZ.5, "Lebesgue integral and convergence theorems"]
+  - [SS3.2, MIRA.3, "Lebesgue integral"]
+  - [SS3.2, FOL.2, "Lebesgue integral"]
+  - [SS3.2, BRL.6, "Lebesgue integral"]
+  - [SS3.6, FOL.1, "Carathéodory, premeasures, Lebesgue–Stieltjes"]
+  - [SS3.6, WZ.11, "outer measures and Carathéodory"]
+  - [SS3.6, WZ.10, "abstract measure and integral"]
+  - [FOL.2, MIRA.5, "product measures and Fubini–Tonelli"]
+  - [FOL.2, WZ.6, "Fubini–Tonelli"]
+  - [SS3.2, WZ.6, "Fubini on ℝᵈ"]
+  - [FOL.6, MIRA.7, "Lᵖ spaces"]
+  - [FOL.6, WZ.8, "Lᵖ spaces"]
+  - [BRL.8, WZ.8, "Riesz–Fischer"]
+  - [SS3.3, MIRA.4, "maximal function and Lebesgue differentiation"]
+  - [SS3.3, WZ.7, "Vitali covering and differentiation"]
+  - [SS3.3, FOL.3, "differentiation on Euclidean space; BV"]
+  - [SS3.3, BRL.7, "monotone differentiability, AC, FTC"]
+  - [FOL.3, MIRA.9, "signed measures, Hahn/Jordan, Radon–Nikodym"]
+  - [FOL.3, WZ.10, "signed measures and absolute continuity"]
+  - [SS3.6, MIRA.9, "Radon–Nikodym via L² (von Neumann)"]
+
+external:
+  - {needs: "topological spaces, bases, subspaces, Hausdorff, compactness, closed subsets of compact sets, continuous bijection compact→Hausdorff (Part II, end)", for_chapter: urysohn-tietze}
+  - {needs: "metric spaces, distance to a set, uniform limits of continuous functions, C(K) complete (Part II)", for_chapter: urysohn-tietze}
+  - {needs: "the 'what the Riemann integral lacks' list (Part III, riemann-limits)", for_chapter: lebesgue-measure}
+  - {needs: "Jordan content and the Riemann integral on ℝⁿ (Part II)", for_chapter: lebesgue-measure}
+  - {needs: "Cantor set, limsup/liminf, sup ∅ = −∞ conventions, extended reals (Part I)", for_chapter: lebesgue-measure}
+  - {needs: "axiom of choice as stated in Part 0, countable unions (Part 0)", for_chapter: lebesgue-measure}
+  - {needs: "Heine–Borel in ℝⁿ, open sets of ℝ as countable unions of intervals (Parts I–II)", for_chapter: lebesgue-measure}
+  - {needs: "Riemann integral on [a,b] and Lebesgue's criterion if Part I has it; improper integrals (Part I)", for_chapter: lebesgue-integral}
+  - {needs: "normed spaces, completeness, Cauchy criterion for series in normed spaces (Part II)", for_chapter: lebesgue-integral}
+  - {needs: "Fubini for continuous functions on rectangles (Part II)", for_chapter: fubini-tonelli}
+  - {needs: "Fourier transform on 𝒮 and the Gaussian kernel (Part III, fourier-transform-line)", for_chapter: fubini-tonelli}
+  - {needs: "determinants, elementary matrices (linear-algebra companion); C¹ maps, inverse function theorem, mean value inequality (Part II)", for_chapter: change-of-variables}
+  - {needs: "linear change of variables for Riemann integrals (Part II)", for_chapter: change-of-variables}
+  - {needs: "Parseval, Fejér, good kernels, ℛ(𝕋) incomplete (Part III)", for_chapter: lp-spaces}
+  - {needs: "inner products and Cauchy–Schwarz (linear-algebra companion)", for_chapter: lp-spaces}
+  - {needs: "good kernels / approximate identities, Poisson and Fejér kernels (Part III)", for_chapter: lebesgue-differentiation}
+  - {needs: "rectifiable curves and arc length as a sup (Part II if covered; otherwise defined here)", for_chapter: bv-and-absolute-continuity}
+  - {needs: "Hurwitz isoperimetric inequality (Part III, fourier-series-applications) for the optional rectifiable version", for_chapter: bv-and-absolute-continuity}
+
+chapters:
+  - slug: urysohn-tietze
+    title: "Urysohn, Tietze and Locally Compact Spaces"
+    pages: 32
+    sources: [[MUN.4, "§31 (separation axioms), §32 (normal spaces), §33 (Urysohn lemma), §35 (Tietze extension)"], [MUN.3, "§29 (local compactness, one-point compactification)"], [FOL.4, "§4.5 (LCH Urysohn, C_c, C_0, partitions of unity)"]]
+    outline:
+      - "The problem ahead: Lusin's theorem and the density of C_c in Lᵖ both need continuous functions with prescribed values on closed sets; the separation question"
+      - "Separation axioms: regular and normal spaces; metric spaces and compact Hausdorff spaces are normal"
+      - "In metric spaces Urysohn is free: f = d(x,A)/(d(x,A)+d(x,B))"
+      - "Urysohn's lemma for normal spaces (dyadic-rational construction)"
+      - "The Tietze extension theorem: bounded version by uniform approximation, then unbounded values"
+      - "Locally compact Hausdorff spaces; one-point compactification; supports, C_c(X) and C_0(X)"
+      - "LCH Urysohn (K ≺ f ≺ U) and finite partitions of unity subordinate to an open cover of a compact set"
+    must_prove: ["metric spaces and compact Hausdorff spaces are normal", "Urysohn's lemma", "Tietze extension theorem (real-valued, closed subset of a normal space)", "one-point compactification of an LCH space is compact Hausdorff", "LCH Urysohn lemma", "partitions of unity on a compact subset of an LCH space"]
+    key_examples: ["distance-function Urysohn functions in ℝᵈ", "Tietze fails for non-closed subsets (sin(1/x) on (0,1])", "ℕ and ℝⁿ one-point compactifications", "an infinite-dimensional normed space is not locally compact (pointer to Part II's ℓ²)"]
+    exit_checks: ["Prove Urysohn's lemma for normal spaces", "Derive Tietze from Urysohn with the uniform-approximation argument"]
+    optional: false
+    note: "decisions.md 8 (second of the three topology placements). Keep it lean: no metrization theorem, no Tychonoff (Part VI). Announce the two uses up front: Lusin (lebesgue-measure) and C_c density (lp-spaces). Riesz–Markov (Part VI) will reuse the LCH Urysohn and partitions of unity."
+
+  - slug: lebesgue-measure
+    title: "Lebesgue Measure on ℝᵈ and Measurable Functions"
+    pages: 58
+    sources: [[SS3.0, "all (the problems that force the theory)"], [SS3.1, "§1–4 (preliminaries, exterior measure, measurable sets, invariance, Borel sets, non-measurable set, measurable functions, simple and step approximation, Littlewood's three principles)"], [BRL.5, "§5.1–5.4 (Peano–Jordan–Borel, Lebesgue measure, Carathéodory condition, nonmeasurable sets and choice)"], [BRL.6, "§6.1, 6.4 (measurable functions, Egorov, Luzin)"], [MIRA.2, "§2A, 2D, 2E (outer measure on ℝ, Lebesgue measure, Cantor set, Egorov, Luzin)"], [WZ.3, "§3.1–3.6 (outer measure, measurable sets, characterizations, Lipschitz images, nonmeasurable set)"], [WZ.4, "§4.1–4.3 (measurable functions, Egorov, Lusin)"], [FOL.1, "§1.1 (why not all sets)"], [GO.8, "Examples 1–6, 11, 17"], [GO.11, "Examples 1–4 (sets without Jordan area)"]]
+    outline:
+      - "From Part III's list: Jordan content is not countably additive; what a length/volume on all 'reasonable' sets must satisfy"
+      - "Exterior (outer) measure via countable covers by cubes; monotonicity, countable subadditivity, approximation by open sets; m*(interval) = volume"
+      - "Measurable sets (open-set approximation definition), the σ-algebra they form, countable additivity, continuity from above and below; equivalence with Carathéodory's criterion"
+      - "Borel sets, G_δ and F_σ regularity; invariance under translations, dilations and reflections"
+      - "Non-measurable sets: the Vitali set, with the use of choice flagged; no translation-invariant measure on all subsets"
+      - "Cantor sets: the ternary set (uncountable, null) and fat Cantor sets (nowhere dense, positive measure)"
+      - "Measurable functions: closure under limits, simple and step-function approximation, a.e. conventions"
+      - "Littlewood's three principles: Egorov's theorem and Lusin's theorem (via Tietze)"
+    must_prove: ["m* is countably subadditive and m*(Q) = |Q| for closed cubes", "measurable sets form a σ-algebra; m is countably additive", "continuity from above and below", "E measurable ⇔ E = G_δ minus null ⇔ F_σ plus null", "translation and dilation invariance", "Vitali set is not measurable", "every measurable f ≥ 0 is an increasing limit of simple functions; every measurable f is an a.e. limit of step functions", "Egorov's theorem", "Lusin's theorem"]
+    key_examples: ["Vitali set", "Cantor set", "fat Cantor set", "a Lebesgue-measurable non-Borel set (Cantor function preimage; proved after bv-and-absolute-continuity or given as a cardinality argument)", "a compact plane set without Jordan area"]
+    exit_checks: ["Prove that the Vitali set is not measurable and say exactly where choice is used", "Prove Egorov's theorem and show it fails on ℝ with 1_[n,n+1]"]
+    optional: false
+    note: "Opens by quoting the riemann-limits list (decisions.md 7). SS3's concrete route on ℝᵈ is the scaffold; the abstract Carathéodory theory comes in abstract-measure (spiral). Lusin cites Tietze from urysohn-tietze."
+
+  - slug: lebesgue-integral
+    title: "The Lebesgue Integral and the Convergence Theorems"
+    pages: 58
+    sources: [[SS3.2, "§1–2 (four-stage construction, convergence theorems, Riemann vs Lebesgue, L¹, invariance, translation continuity)"], [MIRA.3, "all (integration w.r.t. a measure, limits of integrals, Riemann vs Lebesgue, L¹)"], [WZ.5, "§5.1–5.5 (integral, properties, arbitrary f, Riemann–Stieltjes vs Lebesgue, Riemann vs Lebesgue)"], [BRL.6, "§6.2–6.3 (integration, MCT, DCT, Fatou, farewell to Riemann)"], [FOL.2, "§2.2–2.3 (nonnegative and complex functions)"], [GO.8, "Examples 31–36"]]
+    outline:
+      - "Integral of simple functions; bounded functions on sets of finite measure; the bounded convergence theorem (Arzelà's theorem from riemann-limits as a corollary)"
+      - "Nonnegative functions: the integral as a sup; Fatou's lemma; the monotone convergence theorem; term-by-term integration of series"
+      - "Integrable functions, linearity, absolute continuity of the integral; the dominated convergence theorem"
+      - "Riemann versus Lebesgue: a Riemann-integrable function is Lebesgue integrable with the same integral; Riemann integrable ⇔ bounded and continuous a.e.; improper integrals that are not Lebesgue integrals"
+      - "L¹ as a normed space of classes; completeness (Riesz–Fischer for L¹); every L¹-convergent sequence has an a.e.-convergent subsequence"
+      - "Dense families in L¹(ℝᵈ): simple, step, and continuous compactly supported functions; continuity of translation in L¹"
+      - "Complex-valued functions; the limit-exchange checklist revisited: which Part III ad hoc hypotheses are now theorems"
+    must_prove: ["bounded convergence theorem", "Fatou's lemma", "monotone convergence theorem", "dominated convergence theorem", "Riemann-integrable ⇒ Lebesgue-integrable with equal integral", "Lebesgue's criterion for Riemann integrability", "L¹ is complete", "L¹ convergence ⇒ a.e. convergent subsequence", "step functions and C_c are dense in L¹(ℝᵈ)", "‖f(·+h) − f‖₁ → 0"]
+    key_examples: ["n·1_(0,1/n) (Fatou strict)", "sin x / x: improper Riemann but not Lebesgue", "a bounded measurable function not a.e. equal to any Riemann-integrable function (GO 8.32)", "Σ integrals of a series of nonnegative functions"]
+    exit_checks: ["Prove MCT, Fatou and DCT in that order, from the definition", "Prove that L¹(ℝᵈ) is complete", "Prove Lebesgue's criterion for Riemann integrability"]
+    optional: false
+    note: "Write the convergence-theorem proofs using only countable additivity and the definition as a sup, so abstract-measure can transfer them verbatim. Ticks off items 'limits' and 'L¹ completeness' from the Part III list."
+
+  - slug: abstract-measure
+    title: "Abstract Measure Spaces and Carathéodory's Construction"
+    pages: 48
+    sources: [[FOL.1, "§1.2–1.5 (σ-algebras, measures, outer measures, Borel measures on ℝ)"], [SS3.6, "§1–3.1, 3.3 (Carathéodory, metric outer measures, extension theorem, integration on a measure space, Lebesgue–Stieltjes)"], [MIRA.2, "§2B–2C (measurable spaces and functions, measures and their properties)"], [WZ.11, "§11.1–11.3 (outer measure, metric outer measure, Lebesgue–Stieltjes)"], [WZ.10, "§10.1–10.2 (additive set functions, measurable functions and integration)"], [FOL.0, "§0.5 (extended reals)"], [MIRA.5, "5.15–5.17 (monotone class theorem)"]]
+    outline:
+      - "σ-algebras, generated σ-algebras, Borel σ-algebras; measurable maps between measurable spaces"
+      - "Measures, continuity properties, null sets, completion"
+      - "Outer measures and Carathéodory's theorem; Lebesgue measure recovered"
+      - "Metric outer measures: Borel sets are Carathéodory-measurable"
+      - "Premeasures on algebras and the Carathéodory–Hahn extension; the π-λ (Dynkin) theorem and uniqueness of extensions; monotone class theorem"
+      - "Lebesgue–Stieltjes measures on ℝ: increasing right-continuous F ↔ locally finite Borel μ_F; regularity"
+      - "Integration on an abstract measure space: the convergence theorems and L¹(μ) transferred; counting measure and series"
+    must_prove: ["Carathéodory's theorem", "Borel sets are measurable for a metric outer measure", "extension of a premeasure; uniqueness for σ-finite premeasures via π-λ", "π-λ theorem", "correspondence F ↔ μ_F for Lebesgue–Stieltjes measures", "outer and inner regularity of Lebesgue–Stieltjes measures", "MCT, Fatou, DCT on an abstract measure space (by pointing to the transferred proofs)"]
+    key_examples: ["counting measure, Dirac measure", "μ_F for the Cantor function F (singular continuous)", "a non-σ-finite measure where uniqueness fails", "completion: Lebesgue σ-algebra is the completion of the Borel σ-algebra"]
+    exit_checks: ["Prove Carathéodory's theorem", "Prove uniqueness of measures agreeing on a π-system via the π-λ theorem"]
+    optional: false
+    note: "Spiral return (decisions.md 6): the ℝᵈ construction of lebesgue-measure is recalled and reframed. π-λ is written originally (FOL and MIRA use the monotone class theorem; include both, π-λ as the main tool)."
+
+  - slug: fubini-tonelli
+    title: "Product Measures and the Fubini–Tonelli Theorem"
+    pages: 50
+    sources: [[FOL.2, "§2.5 (product measures, Tonelli, Fubini) and §2.6 first part (n-dimensional Lebesgue measure as completed product)"], [MIRA.5, "§5A–5B (products, monotone class, iterated integrals, σ-finiteness counterexample, area under graph)"], [SS3.2, "§3 (Fubini on ℝᵈ, applications) and §4* (a Fourier inversion formula)"], [WZ.6, "§6.1–6.3 (Fubini, Tonelli, applications)"], [SS3.6, "§3.1 (product measures and a general Fubini theorem)"], [GO.9, "Examples 16–17"], [GO.10, "Examples 21–22"]]
+    outline:
+      - "Product σ-algebras; measurability of sections of sets and functions (monotone class / π-λ)"
+      - "Product measure of two σ-finite measures: existence and uniqueness"
+      - "Tonelli's theorem and Fubini's theorem, full proofs"
+      - "Lebesgue measure on ℝ^{d₁+d₂} as the completion of the product; the Fubini theorem for complete measures"
+      - "Where the hypotheses bite: counting × Lebesgue on the diagonal, a double series with unequal iterated sums, a non-integrable f with unequal iterated integrals"
+      - "Applications: measure of a set as the integral of its sections, area under a graph, convolution is defined a.e., integrability of |x|^{−α}, exchanging sums and integrals"
+      - "Payoff for Part III: Fourier inversion for f ∈ L¹(ℝᵈ) with f̂ ∈ L¹, via Gaussians and Fubini"
+    must_prove: ["sections of product-measurable sets and functions are measurable", "existence and uniqueness of μ × ν for σ-finite μ, ν", "Tonelli's theorem", "Fubini's theorem", "Fubini–Tonelli for Lebesgue measure on ℝᵈ (completed version)", "m(E) = ∫ m(E_x) dx", "Fourier inversion for f, f̂ ∈ L¹"]
+    key_examples: ["counting measure × Lebesgue on [0,1]², diagonal set", "a_{mn} = 1 if m=n, −1 if m=n+1: unequal iterated sums", "(x²−y²)/(x²+y²)² on (0,1]²", "Sierpiński's set under CH (optional remark)"]
+    exit_checks: ["Prove Tonelli's theorem for σ-finite measures", "Show Fubini fails without σ-finiteness and without integrability, with an example for each"]
+    optional: false
+    note: "decisions.md 10: full proofs. Part II supplied Fubini for continuous functions on rectangles; recall it explicitly and show it is a special case. KOR 47–48 examples from Part III are resolved here."
+
+  - slug: change-of-variables
+    title: "Linear Maps, Change of Variables and Polar Coordinates"
+    pages: 38
+    sources: [[FOL.2, "§2.6 (linear maps, Theorem 2.44; C¹ change of variables, Theorem 2.47) and §2.7 (polar coordinates)"], [MIRA.5, "§5C (Lebesgue measure on ℝⁿ, volume of the unit ball)"], [WZ.3, "§3.5 (Lipschitz and linear transformations)"], [SS3.6, "§3.2 (integration formula for polar coordinates)"], [SS3.1, "§5* (Brunn–Minkowski, optional)"]]
+    outline:
+      - "Uniqueness of translation-invariant Radon measures on ℝᵈ; m(TE) = |det T| m(E) for linear T"
+      - "Lipschitz and C¹ maps send null sets to null sets and measurable sets to measurable sets"
+      - "The C¹ change-of-variables theorem: full proof (local linearization on small cubes, then monotone convergence)"
+      - "Polar coordinates: the surface measure σ on S^{d−1} with m = ρ × σ; volume of the unit ball; the Gaussian integral"
+      - "Applications: integrability of |x|^{−α} near 0 and at ∞, radial functions, recovering Part II's Riemann change of variables"
+      - "(Optional) The Brunn–Minkowski inequality"
+    must_prove: ["m(T(E)) = |det T| m(E)", "Lipschitz images of null sets are null", "change-of-variables formula for a C¹ diffeomorphism between open sets", "polar-coordinate formula ∫ f = ∫₀^∞∫_{S^{d−1}} f(rω) r^{d−1} dσ dr", "∫_{ℝᵈ} e^{−π|x|²} dx = 1", "|B₁| = π^{d/2}/Γ(d/2+1)"]
+    key_examples: ["|x|^{−α} ∈ L¹(B₁) iff α < d", "a continuous injective image of a null set with positive measure (Cantor function variant) showing C¹/Lipschitz is needed", "spherical coordinates in ℝ³"]
+    exit_checks: ["Prove the C¹ change-of-variables theorem from the linear case", "Compute ∫_{ℝᵈ} (1+|x|)^{−p} and decide for which p it is finite"]
+    optional: false
+    note: "decisions.md 10 requires a full proof (curriculum S3-A says 'outline'; decisions.md governs). Uses the inverse function theorem from Part II. Rademacher (WZ §7.7) is not in the main line."
+
+  - slug: lp-spaces
+    title: "Lᵖ Spaces, Convolution and Mollifiers"
+    pages: 58
+    sources: [[FOL.6, "§6.1 (basic theory) and §6.3 (Minkowski's integral inequality, Young's inequality)"], [MIRA.7, "all (Hölder, Minkowski, completeness, a.e.-convergent subsequences)"], [WZ.8, "§8.1–8.6 (Lᵖ, Hölder, Minkowski, ℓᵖ, completeness, density, Fourier series and Parseval)"], [WZ.9, "§9.1 and the Lᵖ-norm part of §9.2 (convolution, approximations of the identity)"], [BRL.8, "§8.2–8.4 (Lᵖ spaces, Riesz–Fischer, complete orthonormal sets)"], [SS3.2, "§2 (translation continuity)"], [SS3.4, "§1 (the space L² and its completeness)"]]
+    outline:
+      - "Lᵖ norms; Young's inequality for products, Hölder, Minkowski; L^∞ and the essential supremum"
+      - "Completeness (Riesz–Fischer); Lᵖ convergence gives an a.e.-convergent subsequence; inclusions on finite measure spaces and for ℓᵖ"
+      - "Density in Lᵖ, p < ∞: simple, step, and C_c functions (via Lusin/Urysohn); failure for p = ∞"
+      - "Continuity of translation in Lᵖ, p < ∞"
+      - "Convolution: Minkowski's integral inequality, Young's inequality ‖f*g‖_p ≤ ‖f‖_p‖g‖₁, smoothing properties"
+      - "Approximate identities in Lᵖ norm; mollifiers; C_c^∞(ℝᵈ) is dense in Lᵖ; smooth Urysohn functions"
+      - "L²(𝕋) completes ℛ(𝕋): Riesz–Fischer for Fourier series, Parseval for all f ∈ L²(𝕋), Fejér in L¹ norm and uniqueness for L¹(𝕋) — the Part III list closed"
+    must_prove: ["Hölder's inequality", "Minkowski's inequality", "Lᵖ(μ) is complete for 1 ≤ p ≤ ∞", "C_c(ℝᵈ) dense in Lᵖ for 1 ≤ p < ∞", "‖τ_h f − f‖_p → 0 for p < ∞", "Young's inequality ‖f*g‖_p ≤ ‖f‖_p‖g‖₁", "mollification f*φ_ε ∈ C^∞ and → f in Lᵖ", "L²(𝕋) ↔ ℓ²(ℤ) via Fourier coefficients is an isometric isomorphism"]
+    key_examples: ["x^{−a} on (0,1) and (1,∞): which Lᵖ", "L^∞ is not separable and C_c is not dense in L^∞", "the standard bump e^{−1/(1−|x|²)}", "Lᵖ(0,1) ⊃ L^q(0,1) for p<q but no inclusion on ℝ"]
+    exit_checks: ["Prove that Lᵖ is complete", "Prove C_c^∞ is dense in Lᵖ(ℝᵈ), p < ∞", "Show that every (c_n) ∈ ℓ²(ℤ) is the coefficient sequence of some f ∈ L²(𝕋)"]
+    optional: false
+    note: "Only concrete L² (completeness, Parseval on 𝕋) appears; abstract Hilbert space theory is Part VI (decisions.md 9). Lᵖ duality is Part VI; state no duality theorem here. Pointwise convergence of approximate identities at Lebesgue points waits for lebesgue-differentiation."
+
+  - slug: modes-of-convergence
+    title: "Modes of Convergence, Uniform Integrability and Weak Lᵖ"
+    pages: 36
+    sources: [[FOL.2, "§2.4 (modes of convergence)"], [FOL.6, "§6.4 (distribution functions and weak Lᵖ)"], [WZ.4, "§4.4 (convergence in measure)"], [BRL.6, "§6.4 (convergence in measure)"], [MIRA.2, "§2E (pointwise and uniform convergence)"], [GO.8, "Example 40 (sequences converging in different senses)"]]
+    outline:
+      - "The modes: a.e., uniform, almost uniform, in measure, in Lᵖ; Egorov revisited as 'a.e. ⇒ almost uniform on finite measure'"
+      - "The four sequences (typewriter, n·1_(0,1/n), 1_[n,n+1], n^{−1/p}·1_[0,n]) and the full implication diagram; Riesz: in measure ⇒ a.e.-convergent subsequence"
+      - "Uniform integrability; the Vitali convergence theorem (finite measure, then with tightness); de la Vallée-Poussin criterion"
+      - "Choosing a tool: MCT, DCT, Fatou or Vitali (the limit-exchange checklist, final form)"
+      - "The distribution function; Chebyshev–Markov; the layer-cake formula ∫|f|ᵖ = p∫₀^∞ λ^{p−1} μ(|f|>λ) dλ"
+      - "Weak Lᵖ: the quasi-norm, Lᵖ ⊂ weak Lᵖ, |x|^{−d/p} ∈ weak Lᵖ \\ Lᵖ"
+    must_prove: ["convergence in measure ⇒ a.e.-convergent subsequence", "Lᵖ convergence ⇒ convergence in measure", "a.e. ⇒ in measure on finite measure spaces", "Vitali convergence theorem: fₙ → f a.e., (fₙ) uniformly integrable, μ(X) < ∞ ⇒ fₙ → f in L¹", "on finite measure, fₙ → f in L¹ ⇔ UI + in measure", "layer-cake formula (by Tonelli)", "Chebyshev inequality; ‖f‖_{p,∞} ≤ ‖f‖_p"]
+    key_examples: ["typewriter sequence", "n·1_(0,1/n)", "1_[n,n+1]", "n^{−1/p}·1_[0,n]", "|x|^{−d/p} in weak Lᵖ but not Lᵖ", "1/x on (0,1) in weak L¹"]
+    exit_checks: ["Draw the implication diagram of the four modes of convergence with a counterexample for every non-implication", "Prove the Vitali convergence theorem"]
+    optional: false
+    note: "Uniform integrability and the Vitali convergence theorem are original writing (no assigned source treats them beyond exercises). Weak L¹ is set up here because lebesgue-differentiation's maximal inequality is a weak-(1,1) statement."
+
+  - slug: lebesgue-differentiation
+    title: "The Maximal Function and Lebesgue Differentiation"
+    pages: 50
+    sources: [[SS3.3, "§1–2 (Hardy–Littlewood maximal function, Lebesgue differentiation, good kernels and approximations to the identity)"], [WZ.7, "§7.1–7.3 (indefinite integral, Lebesgue's differentiation theorem, Vitali covering lemma)"], [WZ.9, "§9.2 (a.e. convergence at Lebesgue points), §9.3 (Hardy–Littlewood maximal function)"], [MIRA.4, "all (maximal function, derivatives, Lebesgue density theorem)"], [FOL.3, "§3.4 up to Theorem 3.20 (differentiation on Euclidean space)"]]
+    outline:
+      - "The question: is d/dx ∫ₐˣ f = f a.e.? Averages over balls and the obstruction"
+      - "The Vitali covering lemma (finite, 3ᵈ version) and the Vitali covering theorem for fine covers"
+      - "The Hardy–Littlewood maximal function; the weak (1,1) inequality; the Lᵖ bound for p > 1 via the layer-cake formula"
+      - "The Lebesgue differentiation theorem: the template 'prove it on a dense class, extend with the maximal inequality'"
+      - "Lebesgue points and density points; the Lebesgue density theorem"
+      - "Approximations to the identity converge at every Lebesgue point; Fejér and Poisson means of L¹(𝕋) functions converge a.e. (closing Part III)"
+    must_prove: ["Vitali covering lemma", "Vitali covering theorem (fine covers)", "weak (1,1) maximal inequality", "‖Mf‖_p ≤ C_p‖f‖_p for 1 < p ≤ ∞", "Lebesgue differentiation theorem", "a.e. point is a Lebesgue point", "Lebesgue density theorem", "f*K_ε → f at Lebesgue points for approximate identities with radially decreasing integrable majorant"]
+    key_examples: ["Mf ∉ L¹ for f = 1_[0,1] (Mf ~ 1/|x|)", "density of a fat Cantor set at its points", "a set with density ½ everywhere cannot exist (exercise)"]
+    exit_checks: ["Prove Lebesgue differentiation from the covering lemma up", "Show Fejér means of f ∈ L¹(𝕋) converge a.e. to f"]
+    optional: false
+    note: "Name and drill the maximal-function argument skill. Uses weak L¹ and the layer-cake formula from modes-of-convergence. The last part of FOL §3.4 (differentiating regular measures) is deferred to signed-measures-radon-nikodym."
+
+  - slug: bv-and-absolute-continuity
+    title: "Bounded Variation, Absolute Continuity and the Fundamental Theorem"
+    pages: 58
+    sources: [[SS3.3, "§3–4 (BV, Cantor–Lebesgue function, AC, jump functions, rectifiable curves; §4.2* isoperimetric optional)"], [FOL.3, "§3.5 (functions of bounded variation)"], [WZ.2, "§2.1–2.2 (BV, rectifiable curves)"], [WZ.7, "§7.4–7.6 (differentiation of monotone functions, AC and singular functions, integration by parts)"], [BRL.7, "all (Dini derivatives, monotone ⇒ differentiable a.e., AC, Lebesgue's FTC)"], [GO.8, "Examples 15, 18, 30"]]
+    outline:
+      - "Functions of bounded variation: total variation, Jordan decomposition into increasing functions; rectifiable curves"
+      - "Monotone functions are differentiable a.e.: Dini derivatives and the Vitali covering theorem (Riesz's rising-sun lemma as an alternative); ∫ₐᵇ f' ≤ f(b) − f(a)"
+      - "The Cantor–Lebesgue function and strictly increasing singular functions; jump functions are differentiable a.e. with derivative 0"
+      - "Absolutely continuous functions; the fundamental theorem of calculus for the Lebesgue integral, both directions"
+      - "Decomposition of a BV function: absolutely continuous + jump + singular continuous"
+      - "Integration by parts and substitution for AC functions; arc length of a rectifiable curve is ∫|γ'| iff γ is AC"
+      - "(Optional) The isoperimetric inequality for rectifiable curves, returning to Part III's Hurwitz proof"
+    must_prove: ["Jordan decomposition of BV functions", "monotone functions are differentiable a.e. and ∫f' ≤ f(b)−f(a)", "BV ⇒ differentiable a.e.", "F(x) = ∫ₐˣ f is AC and F' = f a.e.", "f AC ⇒ f' ∈ L¹ and f(x) − f(a) = ∫ₐˣ f'", "AC with f' = 0 a.e. ⇒ constant", "decomposition BV = AC + jump + singular", "L(γ) = ∫|γ'| for AC curves"]
+    key_examples: ["Cantor–Lebesgue function", "a strictly increasing function with f' = 0 a.e.", "x² sin(1/x²) differentiable but not BV", "√x AC on [0,1] but not Lipschitz", "a jump function with jumps at the rationals"]
+    exit_checks: ["Prove the fundamental theorem of calculus for AC functions", "Show the Cantor function is continuous, increasing, not AC, with f' = 0 a.e."]
+    optional: false
+    note: "Answers the Part III item 'the FTC fails' (Volterra). WZ ch 7 is split: §7.1–7.3 went to lebesgue-differentiation, §7.4–7.6 are here with WZ ch 2 (see exemptions)."
+
+  - slug: signed-measures-radon-nikodym
+    title: "Signed Measures, Radon–Nikodym and Lebesgue Decomposition"
+    pages: 56
+    sources: [[FOL.3, "§3.1–3.3 (signed measures, Lebesgue–Radon–Nikodym, complex measures), end of §3.4 (Theorem 3.22), §3.5 Theorems 3.29–3.36 (NBV ↔ measures)"], [SS3.6, "§4 (signed measures, absolute continuity; von Neumann's L² proof)"], [MIRA.9, "§9A, §9B up to the Lebesgue decomposition (not 'Dual space of Lᵖ')"], [MIRA.8, "8.34–8.47 and the Riesz representation 8.47 (specialized to L²(μ))"], [WZ.10, "§10.3 (absolutely continuous and singular set functions), §10.5 (relative differentiation)"], [GO.8, "Example 41"]]
+    outline:
+      - "Signed measures; positive, negative and null sets; the Hahn decomposition; the Jordan decomposition; total variation |ν|"
+      - "Complex measures and their total variation (brief)"
+      - "Absolute continuity and mutual singularity; the ε-δ characterization for finite ν"
+      - "An L² toolkit proved for L²(μ) only: parallelogram law, nearest point in a closed subspace, every bounded linear functional on L²(μ) is integration against some g"
+      - "Radon–Nikodym and Lebesgue decomposition by von Neumann's proof: finite measures, then σ-finite; the chain rule for dν/dμ"
+      - "Where it fails: Lebesgue measure ≪ counting measure on [0,1] with no density"
+      - "Measures on ℝᵈ and ℝ: differentiation of measures dν/dm = lim ν(B)/m(B) a.e.; NBV functions ↔ finite Borel measures, F AC ⇔ μ_F ≪ m, and the BV decomposition as a Lebesgue decomposition"
+    must_prove: ["Hahn decomposition theorem", "Jordan decomposition theorem", "ν ≪ μ ⇔ ε-δ condition (ν finite)", "L²(μ) projection onto a closed subspace and representation of bounded functionals on L²(μ)", "Radon–Nikodym theorem (σ-finite) via von Neumann", "Lebesgue decomposition theorem, with uniqueness", "dν/dm(x) = lim ν(B(x,r))/m(B(x,r)) a.e. for regular ν on ℝᵈ", "F ∈ NBV is AC ⇔ μ_F ≪ m"]
+    key_examples: ["ν(E) = ∫_E f dμ with f of both signs; its Hahn sets", "Dirac δ₀ ⊥ m", "Cantor measure ⊥ m", "counting vs Lebesgue on [0,1]: RN fails without σ-finiteness"]
+    exit_checks: ["Prove Radon–Nikodym by von Neumann's L² argument", "Prove the Hahn decomposition", "Six UCLA real-analysis qual problems in 3 hours, at least 3 essentially complete (Part IV capstone)"]
+    optional: false
+    note: "decisions.md 9: L² is used only for von Neumann's proof, and the L² facts it needs (nearest point, Riesz representation) are proved here for L²(μ) concretely; the abstract Hilbert-space chapter in Part VI will recall this as its first instance (spiral). No Lᵖ duality here even though RN makes it one step away — flag it as the Part VI forward hook."
+
+cut:
+  "SS3.4 §2–8": "abstract Hilbert space, operators, compact operators → Part VI (decisions.md 9)"
+  SS3.5: "Hilbert-space examples (L² Fourier transform, Hardy space, Dirichlet principle) → Part VI"
+  "SS3.6 §5–6": "ergodic theorems, spectral theorem → branch / Part VI"
+  SS3.7: "Hausdorff measure and fractals: beyond the stage (branch)"
+  "SS3.1 §5*": "Brunn–Minkowski kept only as an optional section of change-of-variables"
+  "FOL.6 §6.2": "dual of Lᵖ → Part VI (decisions.md 9)"
+  "FOL.6 §6.5": "Riesz–Thorin/Marcinkiewicz interpolation → Part VI / harmonic-analysis branch"
+  "FOL.4 (except §4.5)": "general topology (nets, Tychonoff, metrization) → Parts II and VI"
+  "MIRA.6": "metric/normed/Banach spaces and Baire → Parts II and VI"
+  "MIRA.9 §9B dual of Lᵖ": "→ Part VI"
+  "MIRA.10–12": "operators, Fourier analysis on Lᵖ, probability → Part VI / branches"
+  WZ.1: "ℝⁿ as a metric space → Part II"
+  "WZ.8 §8.7": "Hilbert spaces → Part VI"
+  "WZ.9 §9.4": "Marcinkiewicz integral → harmonic-analysis branch"
+  "WZ.10 §10.4": "dual of Lᵖ → Part VI"
+  "WZ.11 §11.4": "Hausdorff measure → branch"
+  "WZ.7 §7.7": "differential in ℝⁿ, Rademacher: beyond main line (could be an optional pointer in change-of-variables)"
+  "WZ.12–15": "harmonic analysis, fractional integration, Sobolev → Part VI / branches"
+  "MUN (other chapters)": "topology placed in Parts II and VI"
+
+exemptions:
+  - edge: [WZ.7, WZ.9]
+    why: "WZ ch 9 is split. §9.1 and the Lᵖ-norm convergence of approximations of the identity (§9.2, first half) need only Lᵖ (WZ ch 8) and are used in lp-spaces; the a.e. convergence at Lebesgue points (§9.2, second half) and §9.3 need WZ §7.2–7.3 and are placed in lebesgue-differentiation, after WZ ch 7."
+  - edge: [WZ.7, WZ.10]
+    why: "WZ ch 10 is split. §10.1–10.2 (abstract measures and integration) need only WZ ch 5 and are used in abstract-measure; §10.3 and §10.5 (absolute continuity, relative differentiation) use WZ ch 7 and are placed in signed-measures-radon-nikodym, after it."
+  - edge: [WZ.2, WZ.7]
+    why: "WZ ch 7 is split. §7.1–7.3 (indefinite integrals, Lebesgue differentiation, Vitali covering) use no BV theory and go to lebesgue-differentiation; §7.4–7.6 (monotone and AC functions), which need WZ ch 2, go to bv-and-absolute-continuity together with WZ ch 2."
+  - edge: [SS3.4, SS3.6]
+    why: "SS3 ch 6 §1–3 (Carathéodory, extension, products, Lebesgue–Stieltjes) need no Hilbert space and are used in abstract-measure and fubini-tonelli. Only §4 (Radon–Nikodym via von Neumann) uses SS3 ch 4, and that section is placed in signed-measures-radon-nikodym, after lp-spaces where SS3 ch 4 §1 (L²) is used; the rest of SS3 ch 4 goes to Part VI."
+
+coverage_gaps:
+  - "Uniform integrability and the Vitali convergence theorem: only exercises in FOL and remarks in BRL; original writing (modes-of-convergence)."
+  - "The π-λ (Dynkin) theorem: assigned sources use the monotone class theorem; write π-λ originally (abstract-measure)."
+  - "Mollifiers and density of C_c^∞ in Lᵖ(ℝᵈ): WZ §9.2 and SS3 §3.2 give approximations of the identity but the smooth-bump construction and C_c^∞ density live in FOL ch 8 (not assigned to Part IV); write originally (lp-spaces)."
+  - "The L²(μ) toolkit for von Neumann's proof (nearest point, representation of functionals) must be written for L²(μ) specifically, not abstract Hilbert space (signed-measures-radon-nikodym)."
+  - "The full C¹ change-of-variables proof exists in FOL Theorem 2.47 only, tersely; expand it (change-of-variables)."

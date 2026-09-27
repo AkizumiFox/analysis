@@ -214,3 +214,19 @@
 % A fallback only: the PDF has the real \bm from the bm package, and
 % build/macros.py's WEB_OVERRIDES gives the website \boldsymbol to match it.
 \providecommand{\bm}[1]{\mathbf{#1}}
+
+% ======================================================================================
+% ANALYSIS
+% ======================================================================================
+% Added for this book; each is listed in authoring/NOTATION.md.
+\providecommand{\diam}{\operatorname{diam}}
+\providecommand{\dist}{\operatorname{dist}}
+\providecommand{\supp}{\operatorname{supp}}
+\providecommand{\esssup}{\operatorname*{ess\,sup}}
+\providecommand{\osc}{\operatorname{osc}}
+% Indicator (characteristic) function of a set: \ind_{A}
+\providecommand{\ind}{\mathbf{1}}
+\providecommand{\floor}[1]{\left\lfloor #1 \right\rfloor}
+\providecommand{\ceil}[1]{\left\lceil #1 \right\rceil}
+% Natural numbers with zero, used on the construction route of Part 0
+\providecommand{\nNz}{\ensuremath{\mathbb{N}_{0}}}

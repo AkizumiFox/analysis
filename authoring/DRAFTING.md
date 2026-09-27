@@ -5,8 +5,8 @@ You are drafting sections of a comprehensive, reader-caring textbook (Pandoc Mar
 ## Read before writing
 1. `authoring/STYLE.md` — the writing standard. Follow it exactly (explain template, Idea/Proof registers, Quick checks, warnings, A/B/C exercises with complete solutions, syntax).
 2. `authoring/NOTATION.md` — fixed notation; `latex/macros.tex` for available macros.
-3. `src/ch00-demo/01-every-environment.md` — the markup of every environment, with the source next to the built page. Delete this chapter once the book has real content.
-4. The chapter blueprint, if the book keeps one — your sections' entries are the spec (content, labels to keep, labels to create, proof routes, examples, exercises) and the cross-section label use list.
+3. `~/coding/book-template/src/ch00-demo/01-every-environment.md` — the markup of every environment. The approved exemplar chapters named in `authoring/STATUS.md` show it in use in this book.
+4. `authoring/blueprints/chNN.md` — your chapter's blueprint is the spec (content, labels to create, proof routes, examples, exercises, exit checks). `authoring/design/decisions.md` and `curriculum.md` explain why the book is shaped as it is; read the parts about your chapter.
 5. The earlier chapters' label lists: `grep -rho "{#[a-z]*-[^} ]*" src/chNN-*/` for each earlier chapter, and read the specific earlier results you cite so your recall of them is accurate.
 6. Old versions of your files (if any), to preserve labels.
 
@@ -17,12 +17,12 @@ You are drafting sections of a comprehensive, reader-caring textbook (Pandoc Mar
 - Math: `\( \)` and `\[ \]` only. Relation symbols are typeset, never unicode characters: proof-direction tags are `\( (\Rightarrow) \)`, `\( (\Leftarrow) \)`, `\( (\subseteq) \)`, `\( (\supseteq) \)`, and a chain reads `(a) \( \Rightarrow \) (b)`. Pandoc fenced divs must be closed, with blank lines around them.
 - Labels globally unique: grep `src/` before creating one. Keep every "keep label" exactly.
 - `@label` refs only to earlier material (earlier chapters, earlier sections of this chapter, or earlier in your file). Forward pointers in prose say "in Chapter N" without an `@ref`. No proof may rest on an exercise, and every result is either proved or plainly marked as not proved here.
-- Verify every non-trivial computation with a computer algebra system. Never mention it, or any software, in the book text itself (runnable `{.python .run}` cells are the only exception).
+- Verify every non-trivial computation with a computer algebra system, and every chosen constant (N, δ, r) numerically on a few values. Never mention it, or any software, in the book text itself (runnable `{.python .run}` cells are the only exception).
 - American spelling. Add genuine new words to `spelling.txt` (append only).
 - Do not delete or rename files other than those assigned; do not edit other sections, the config, or `authoring/STATUS.md` (report forward promises instead).
 
 ## When done
-Run `./build.py html 2>&1 | grep -i "warn\|error" | head -30` and fix warnings originating in YOUR files (other agents may build concurrently; ignore issues from files that aren't yours). Reply with: files written, prose word counts, labels created, blueprint deviations and why, forward promises made (for `STATUS.md`), claims you were unsure about.
+Run `./build.py html 2>&1 | grep -i "warn\|error" | head -30` and fix warnings originating in YOUR files (other agents may build concurrently; ignore issues from files that aren't yours). Run `.venv/bin/python blueprint/originality.py <chapter>` and rewrite any flagged prose. Reply with: files written, prose word counts, labels created, blueprint deviations and why, forward promises made (for `STATUS.md`), claims you were unsure about.
 
 ## Building while other agents work
 

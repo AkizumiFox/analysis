@@ -86,7 +86,7 @@ def from_file(path):
     return int(m.group(1)), m.group(2), section
 
 
-RESULT_TYPES = {"theorem", "proposition", "corollary", "lemma"}
+RESULT_TYPES = {"theorem", "proposition", "corollary", "lemma", "axiom"}
 
 
 # The blocks whose citations are load-bearing: remove the cited result and the

@@ -1,0 +1,574 @@
+part: I
+title: "Analysis on the Real Line"
+summary: "Starting from the least upper bound axiom alone, Part I builds ε-N and ε-δ fluency on ℝ through sequences, series, the topology of the line, continuity, the derivative, the Riemann–Darboux integral, uniform convergence and power series, because each classical theorem of calculus (IVT, EVT, MVT, FTC, term-by-term differentiation) fails or is unprovable without completeness; it closes by proving that the forms of completeness are equivalent."
+
+nodes:
+  # Abbott (scaffolding)
+  ABB.1: {book: ABB, ch: "1", title: "The Real Numbers", pages: 37, files: "005-016"}
+  ABB.2: {book: ABB, ch: "2", title: "Sequences and Series", pages: 47, files: "017-029"}
+  ABB.3: {book: ABB, ch: "3", title: "Basic Topology of R", pages: 26, files: "029-036"}
+  ABB.4: {book: ABB, ch: "4", title: "Functional Limits and Continuity", pages: 31, files: "036-044"}
+  ABB.5: {book: ABB, ch: "5", title: "The Derivative", pages: 26, files: "044-050"}
+  ABB.6: {book: ABB, ch: "6", title: "Sequences and Series of Functions", pages: 43, files: "050-060"}
+  ABB.7: {book: ABB, ch: "7", title: "The Riemann Integral", pages: 33, files: "061-069"}
+  ABB.8: {book: ABB, ch: "8", title: "Additional Topics", pages: 56, files: "069-084"}
+  # Rudin PMA (depth; chapters 1-7 only)
+  PMA.1: {book: PMA, ch: "1", title: "The Real and Complex Number Systems", pages: 24, files: "002-006"}
+  PMA.2: {book: PMA, ch: "2", title: "Basic Topology", pages: 25, files: "006-008"}
+  PMA.3: {book: PMA, ch: "3", title: "Numerical Sequences and Series", pages: 38, files: "009-016"}
+  PMA.4: {book: PMA, ch: "4", title: "Continuity", pages: 22, files: "017-020"}
+  PMA.5: {book: PMA, ch: "5", title: "Differentiation", pages: 18, files: "021-024"}
+  PMA.6: {book: PMA, ch: "6", title: "The Riemann-Stieltjes Integral", pages: 26, files: "025-028"}
+  PMA.7: {book: PMA, ch: "7", title: "Sequences and Series of Functions", pages: 30, files: "029-034"}
+  # Spivak (problems)
+  SPI.1: {book: SPI, ch: "1", title: "Basic Properties of Numbers", pages: 18, files: "003-004"}
+  SPI.2: {book: SPI, ch: "2", title: "Numbers of Various Sorts", pages: 18, files: "005"}
+  SPI.3: {book: SPI, ch: "3", title: "Functions", pages: 17, files: "006-007"}
+  SPI.4: {book: SPI, ch: "4", title: "Graphs", pages: 34, files: "007-009"}
+  SPI.5: {book: SPI, ch: "5", title: "Limits", pages: 25, files: "010-011"}
+  SPI.6: {book: SPI, ch: "6", title: "Continuous Functions", pages: 7, files: "011-012"}
+  SPI.7: {book: SPI, ch: "7", title: "Three Hard Theorems", pages: 11, files: "013-014"}
+  SPI.8: {book: SPI, ch: "8", title: "Least Upper Bounds (with Appendix: Uniform Continuity)", pages: 16, files: "014-016"}
+  SPI.9: {book: SPI, ch: "9", title: "Derivatives", pages: 19, files: "017-018"}
+  SPI.10: {book: SPI, ch: "10", title: "Differentiation", pages: 20, files: "019-020"}
+  SPI.11: {book: SPI, ch: "11", title: "Significance of the Derivative (with Appendix: Convexity)", pages: 42, files: "021-022"}
+  SPI.12: {book: SPI, ch: "12", title: "Inverse Functions", pages: 23, files: "023-026"}
+  SPI.13: {book: SPI, ch: "13", title: "Integrals (with Appendix: Riemann Sums)", pages: 32, files: "027-028"}
+  SPI.14: {book: SPI, ch: "14", title: "The Fundamental Theorem of Calculus", pages: 18, files: "028-029"}
+  SPI.15: {book: SPI, ch: "15", title: "The Trigonometric Functions", pages: 21, files: "030-032"}
+  SPI.16: {book: SPI, ch: "16", title: "π is Irrational", pages: 6, files: "032-033"}
+  SPI.17: {book: SPI, ch: "17", title: "Planetary Motion", pages: 9, files: "033"}
+  SPI.18: {book: SPI, ch: "18", title: "The Logarithm and Exponential Functions", pages: 24, files: "034-035"}
+  SPI.19: {book: SPI, ch: "19", title: "Integration in Elementary Terms", pages: 48, files: "035-038"}
+  SPI.20: {book: SPI, ch: "20", title: "Approximation by Polynomial Functions", pages: 31, files: "038-039"}
+  SPI.21: {book: SPI, ch: "21", title: "e is Transcendental", pages: 10, files: "039-040"}
+  SPI.22: {book: SPI, ch: "22", title: "Infinite Sequences", pages: 19, files: "040-041"}
+  SPI.23: {book: SPI, ch: "23", title: "Infinite Series", pages: 28, files: "042-043"}
+  SPI.24: {book: SPI, ch: "24", title: "Uniform Convergence and Power Series", pages: 27, files: "044-045"}
+  SPI.25: {book: SPI, ch: "25", title: "Complex Numbers", pages: 15, files: "045-046"}
+  SPI.26: {book: SPI, ch: "26", title: "Complex Functions", pages: 14, files: "046-047"}
+  SPI.27: {book: SPI, ch: "27", title: "Complex Power Series", pages: 26, files: "047-049"}
+  SPI.28: {book: SPI, ch: "28", title: "Fields", pages: 7, files: "049"}
+  SPI.29: {book: SPI, ch: "29", title: "Construction of the Real Numbers", pages: 13, files: "049-050"}
+  SPI.30: {book: SPI, ch: "30", title: "Uniqueness of the Real Numbers", pages: 8, files: "050-051"}
+  # Bressoud (motivation)
+  BRR.1: {book: BRR, ch: "1", title: "Crisis in Mathematics: Fourier's Series", pages: 8, files: "003-005"}
+  BRR.2: {book: BRR, ch: "2", title: "Infinite Summations", pages: 48, files: "005-021"}
+  BRR.3: {book: BRR, ch: "3", title: "Differentiability and Continuity", pages: 60, files: "021-033"}
+  BRR.4: {book: BRR, ch: "4", title: "The Convergence of Infinite Series", pages: 54, files: "034-045"}
+  BRR.5: {book: BRR, ch: "5", title: "Understanding Infinite Series", pages: 46, files: "045-055"}
+  BRR.6: {book: BRR, ch: "6", title: "Return to Fourier Series", pages: 50, files: "056-068"}
+  BRR.7: {book: BRR, ch: "7", title: "Epilogue", pages: 4, files: "068-069"}
+  BRR.A: {book: BRR, ch: "A", title: "Explorations of the Infinite", pages: 32, files: "070-076"}
+  # Zorich I (depth)
+  ZOR1.1: {book: ZOR1, ch: "1", title: "Some General Mathematical Concepts and Notation", pages: 34, files: "004-012"}
+  ZOR1.2: {book: ZOR1, ch: "2", title: "The Real Numbers", pages: 43, files: "013-022"}
+  ZOR1.3: {book: ZOR1, ch: "3", title: "Limits", pages: 73, files: "022-033"}
+  ZOR1.4: {book: ZOR1, ch: "4", title: "Continuous Functions", pages: 22, files: "034-037"}
+  ZOR1.5: {book: ZOR1, ch: "5", title: "Differential Calculus", pages: 156, files: "038-066"}
+  ZOR1.6: {book: ZOR1, ch: "6", title: "Integration", pages: 80, files: "067-080"}
+  ZOR1.7: {book: ZOR1, ch: "7", title: "Functions of Several Variables: their Limits and Continuity", pages: 20, files: "080-085"}
+  ZOR1.8: {book: ZOR1, ch: "8", title: "The Differential Calculus of Functions of Several Variables", pages: 116, files: "085-108"}
+  # Tao Analysis I (chapters 5 onward)
+  TAO1.5: {book: TAO1, ch: "5", title: "The Real Numbers", pages: 32, files: "019-025"}
+  TAO1.6: {book: TAO1, ch: "6", title: "Limits of Sequences", pages: 30, files: "026-031"}
+  TAO1.7: {book: TAO1, ch: "7", title: "Series", pages: 25, files: "032-036"}
+  TAO1.8: {book: TAO1, ch: "8", title: "Infinite Sets", pages: 31, files: "037-042"}
+  TAO1.9: {book: TAO1, ch: "9", title: "Continuous Functions on R", pages: 40, files: "043-052"}
+  TAO1.10: {book: TAO1, ch: "10", title: "Differentiation of Functions", pages: 15, files: "052-055"}
+  TAO1.11: {book: TAO1, ch: "11", title: "The Riemann Integral", pages: 39, files: "055-063"}
+  TAO1.B: {book: TAO1, ch: "B", title: "Appendix: The Decimal System", pages: 7, files: "070-071"}
+  # Bloch (analysis chapters)
+  BLO.2: {book: BLO, ch: "2", title: "Properties of the Real Numbers", pages: 68, files: "020-030"}
+  BLO.3: {book: BLO, ch: "3", title: "Limits and Continuity", pages: 43, files: "030-037"}
+  BLO.4: {book: BLO, ch: "4", title: "Differentiation", pages: 50, files: "040-052"}
+  BLO.5: {book: BLO, ch: "5", title: "Integration", pages: 89, files: "052-071"}
+  BLO.6: {book: BLO, ch: "6", title: "Limits to Infinity", pages: 36, files: "071-079"}
+  BLO.7: {book: BLO, ch: "7", title: "Transcendental Functions", pages: 41, files: "079-090"}
+  BLO.8: {book: BLO, ch: "8", title: "Sequences", pages: 44, files: "090-097"}
+  BLO.9: {book: BLO, ch: "9", title: "Series", pages: 45, files: "098-105"}
+  BLO.10: {book: BLO, ch: "10", title: "Sequences and Series of Functions", pages: 50, files: "106-116"}
+  # Gelbaum & Olmsted (Part I chapters)
+  GO.1: {book: GO, ch: "1", title: "The Real Number System", pages: 21, files: "008-013"}
+  GO.2: {book: GO, ch: "2", title: "Functions and Limits", pages: 12, files: "013-016"}
+  GO.3: {book: GO, ch: "3", title: "Differentiation", pages: 7, files: "016-018"}
+  GO.4: {book: GO, ch: "4", title: "Riemann Integration", pages: 6, files: "018-019"}
+  GO.5: {book: GO, ch: "5", title: "Sequences", pages: 8, files: "020-021"}
+  GO.6: {book: GO, ch: "6", title: "Infinite Series", pages: 21, files: "021-026"}
+  GO.7: {book: GO, ch: "7", title: "Uniform Convergence", pages: 7, files: "027"}
+  GO.8: {book: GO, ch: "8", title: "Sets and Measure on the Real Axis", pages: 30, files: "028-036"}
+
+hard:
+  # Abbott
+  - [ABB.1, ABB.2]
+  - [ABB.2, ABB.3]
+  - [ABB.3, ABB.4]
+  - [ABB.4, ABB.5]
+  - [ABB.5, ABB.6]
+  - [ABB.4, ABB.7]
+  - [ABB.5, ABB.7]
+  - [ABB.6, ABB.7]          # only via §7.4 "Uniform Convergence and Integration"
+  # Rudin
+  - [PMA.1, PMA.2]
+  - [PMA.2, PMA.3]
+  - [PMA.3, PMA.4]
+  - [PMA.2, PMA.4]
+  - [PMA.4, PMA.5]
+  - [PMA.4, PMA.6]
+  - [PMA.5, PMA.6]
+  - [PMA.3, PMA.7]
+  - [PMA.6, PMA.7]
+  # Spivak
+  - [SPI.1, SPI.5]
+  - [SPI.5, SPI.6]
+  - [SPI.6, SPI.7]
+  - [SPI.7, SPI.8]
+  - [SPI.5, SPI.9]
+  - [SPI.9, SPI.10]
+  - [SPI.10, SPI.11]
+  - [SPI.7, SPI.11]
+  - [SPI.11, SPI.12]
+  - [SPI.8, SPI.13]
+  - [SPI.13, SPI.14]
+  - [SPI.11, SPI.14]
+  - [SPI.14, SPI.15]
+  - [SPI.14, SPI.18]
+  - [SPI.11, SPI.20]
+  - [SPI.18, SPI.20]
+  - [SPI.8, SPI.22]
+  - [SPI.22, SPI.23]
+  - [SPI.23, SPI.24]
+  - [SPI.14, SPI.24]
+  # Bressoud
+  - [BRR.2, BRR.4]
+  - [BRR.4, BRR.5]
+  - [BRR.5, BRR.6]
+  - [BRR.3, BRR.6]
+  # Zorich
+  - [ZOR1.2, ZOR1.3]
+  - [ZOR1.3, ZOR1.4]
+  - [ZOR1.4, ZOR1.5]
+  - [ZOR1.5, ZOR1.6]
+  # Tao
+  - [TAO1.5, TAO1.6]
+  - [TAO1.6, TAO1.7]
+  - [TAO1.7, TAO1.8]
+  - [TAO1.6, TAO1.9]
+  - [TAO1.9, TAO1.10]
+  - [TAO1.9, TAO1.11]
+  - [TAO1.10, TAO1.11]
+  - [TAO1.5, TAO1.B]
+  # Bloch
+  - [BLO.2, BLO.3]
+  - [BLO.3, BLO.4]
+  - [BLO.4, BLO.5]
+  - [BLO.5, BLO.6]
+  - [BLO.5, BLO.7]
+  - [BLO.6, BLO.7]
+  - [BLO.2, BLO.8]
+  - [BLO.8, BLO.9]
+  - [BLO.9, BLO.10]
+
+soft:
+  - [BRR.1, BRR.2]
+  - [BRR.2, BRR.3]
+  - [BRR.3, BRR.4]
+  - [BRR.3, BRR.5]
+  - [SPI.14, SPI.23]        # integral test only
+  - [SPI.20, SPI.24]        # Taylor-series examples in the power-series half
+  - [SPI.1, SPI.28]
+  - [BLO.3, BLO.8]
+  - [BLO.7, BLO.10]
+  - [BRR.1, ABB.6]
+  - [BRR.2, ABB.2]
+  - [BRR.3, ABB.5]
+  - [BRR.5, ABB.6]
+  - [BRR.6, ABB.7]
+  - [SPI.1, ABB.1]
+  - [GO.1, ABB.1]
+  - [GO.5, ABB.2]
+  - [GO.6, ABB.2]
+  - [GO.8, ABB.3]
+  - [GO.2, ABB.4]
+  - [GO.3, ABB.5]
+  - [GO.7, ABB.6]
+  - [GO.4, ABB.7]
+
+alt:
+  - [ABB.1, PMA.1]
+  - [ABB.1, ZOR1.2]
+  - [ABB.1, TAO1.5]
+  - [ABB.1, BLO.2]
+  - [ABB.2, PMA.3]
+  - [ABB.2, TAO1.6]
+  - [ABB.2, TAO1.7]
+  - [ABB.2, ZOR1.3]
+  - [ABB.2, SPI.22]
+  - [ABB.2, SPI.23]
+  - [ABB.2, BLO.8]
+  - [ABB.2, BLO.9]
+  - [ABB.3, PMA.2]
+  - [ABB.4, PMA.4]
+  - [ABB.4, TAO1.9]
+  - [ABB.4, ZOR1.4]
+  - [ABB.4, BLO.3]
+  - [ABB.4, SPI.7]
+  - [ABB.5, PMA.5]
+  - [ABB.5, TAO1.10]
+  - [ABB.5, SPI.11]
+  - [ABB.5, BLO.4]
+  - [ABB.7, PMA.6]
+  - [ABB.7, TAO1.11]
+  - [ABB.7, ZOR1.6]
+  - [ABB.7, SPI.13]
+  - [ABB.7, BLO.5]
+  - [ABB.6, PMA.7]
+  - [ABB.6, SPI.24]
+  - [ABB.6, BLO.10]
+  - [SPI.18, BLO.7]
+  - [SPI.15, BLO.7]
+
+external:
+  - {needs: "quantifiers, their order and negation; proof skeletons (direct, contrapositive, contradiction); natural-deduction reading of ∀/∃ (Part 0 logic chapter, main line)", for_chapter: least-upper-bound}
+  - {needs: "sets, functions, images and preimages; the sets −A, A+B, cA as images (Part 0 sets chapter, main line)", for_chapter: least-upper-bound}
+  - {needs: "induction, strong induction and well-ordering as proof principles (Part 0, main line). Part I ch 1 re-locates ℕ inside ℝ as the smallest inductive set, so it needs the principles, not the Peano construction", for_chapter: least-upper-bound}
+  - {needs: "the ordered-field axioms as their own def node: if the Part 0 main line (not the optional constructions) already states them, Part I ch 1 cites that node; otherwise Part I ch 1 §1 is their home and the Part 0 constructions verify them against it", for_chapter: least-upper-bound}
+  - {needs: "countable sets, ℚ countable, countable union of countable sets (Part 0, main line)", for_chapter: infinite-series}
+  - {needs: "countable sets and ℚ countable (Part 0): open sets as countable unions of intervals; enumeration of ℚ", for_chapter: topology-of-the-real-line}
+  - {needs: "ℝ uncountable (Part 0 diagonal argument), compared with the Cantor-set/perfect-set proof given here", for_chapter: topology-of-the-real-line}
+  - {needs: "countable sets (Part 0): a monotone function has countably many discontinuities; Thomae's function uses an enumeration of ℚ", for_chapter: limits-and-continuity}
+  - {needs: "the negation drills 'f is uniformly continuous on A' and 'fₙ → f uniformly' (Part 0 exit checks) are recalled, not re-taught", for_chapter: continuity-on-intervals}
+  - {needs: "the axiom of choice as stated in Part 0 (flagged use: ultrafilter for the hyperreals, countable choice in sequential arguments)", for_chapter: forms-of-completeness}
+
+chapters:
+  - slug: least-upper-bound
+    title: "Ordered Fields and the Least Upper Bound Axiom"
+    pages: 58
+    sources:
+      - [ABB.1, "§1.3–1.4 (axiom of completeness, density of Q, nested intervals, √2)"]
+      - [PMA.1, "1.1–1.21 (ordered sets, fields, the real field, n-th roots), 1.23 extended reals"]
+      - [SPI.1, "properties P1–P12 and problems on inequalities, absolute value"]
+      - [ZOR1.2, "§2.1–2.2.3 (axiom system, sup existence, ℕ/ℤ/ℚ in ℝ, Archimedes)"]
+      - [BLO.2, "§2.2–2.4, 2.6 (axioms for ℝ, finding ℕ, ℤ, ℚ in ℝ, LUB consequences)"]
+      - [TAO1.5, "§5.4–5.6 (ordering, LUB property, real exponentiation I) — depth only"]
+      - [GO.1, "ex. 3, 4, 6 (ordered field not complete; non-Archimedean ordered field; ℚ not dense)"]
+    outline:
+      - "Gaps in ℚ: {x∈ℚ : x²<2} has no rational sup; the ordered-field axioms (own def node), absolute value and the triangle inequality"
+      - "Upper bounds, sup, inf and maximum as separate def nodes; sup A need not lie in A; conventions sup ∅ = −∞, sup of unbounded = +∞ (flagged for measure theory)"
+      - "The least upper bound axiom (ax-least-upper-bound); uniqueness of sup; the greatest-lower-bound form and inf A = −sup(−A)"
+      - "The ε-characterization of sup, both directions, and sup approximation (aₙ > sup A − 1/n)"
+      - "ℕ, ℤ, ℚ inside ℝ (ℕ as smallest inductive subset); the Archimedean property via sup ℕ; why ℝ(x) with x infinite fails it"
+      - "Density of ℚ and of the irrationals; existence of √2 (and of n-th roots) by the sup construction — the IVT template"
+      - "Nested interval property via the sup of the left endpoints"
+      - "Algebra of sup: monotone under inclusion, sup(cA), sup(A+B) by two inequalities"
+    must_prove: ["uniqueness of sup", "ε-characterization of sup (both directions)", "inf A = −sup(−A) and the GLB property", "Archimedean property (by contradiction via sup ℕ) and 1/n < ε", "density of ℚ in ℝ (integer step by well-ordering)", "existence of √2 (ruling out s²<2 and s²>2)", "existence of positive n-th roots", "nested interval property", "sup(A+B) = sup A + sup B", "sup(cA) = c·sup A for c > 0"]
+    key_examples: ["(0,1): sup not attained", "{1 − 1/n}: sup = 1 proved with ε", "finite sets: sup = max", "{x∈ℚ : x²<2} has no sup in ℚ", "ℝ(x) with x infinite: ℕ bounded without sup, Archimedes fails"]
+    exit_checks: ["the ε-characterization, both directions", "sup(A+B) = sup A + sup B, both inequalities", "existence of √2 in ℝ, and that {x∈ℚ : x²<2} has no sup in ℚ", "Archimedes from the axiom, and the line where the proof fails in ℝ(x)", "verification: find the wrong line in a proof that silently assumes sup A ∈ A"]
+    optional: false
+    note: "Opens Part I from the axiom (environment ax, label ax-least-upper-bound) and cites no Part 0 construction. The axiom is a theorem on the Dedekind route of Part 0; say so in a remark without an @ref into the optional chapter. Do NOT prove any equivalence of completeness forms here (that is the last chapter, to avoid a cycle). Misconceptions to address explicitly: sup = max; every bounded set has a maximum; forgetting 'nonempty'; forgetting that the a in the ε-characterization depends on ε; proving one inequality only. Introduces the skills 'sup approximation', 'equality by two inequalities', 'constructing a point as a sup' (reused in IVT and Heine–Borel). Rational exponents only here; real exponents a^x wait for the power-series chapter."
+
+  - slug: sequences-and-limits
+    title: "Sequences, Subsequences and Cauchy Sequences"
+    pages: 65
+    sources:
+      - [ABB.2, "§2.1–2.6 (limits, algebraic and order limit theorems, MCT, BW, Cauchy criterion)"]
+      - [PMA.3, "3.1–3.20 restricted to ℝ (convergence, subsequences, Cauchy, upper and lower limits, special sequences)"]
+      - [TAO1.6, "§6.1–6.6 (limit laws, extended reals, sup/inf of sequences, limsup/liminf, standard limits, subsequences)"]
+      - [ZOR1.3, "§3.1.1–3.1.3 (limit of a sequence, Cauchy criterion, monotone criterion, partial limits)"]
+      - [SPI.22, "problems"]
+      - [GO.5, "ex. 1–2 (bounded divergent sequences; prescribed set of limit points)"]
+    outline:
+      - "Convergence of a sequence: the ε-N definition as a quantifier string; uniqueness; convergent ⇒ bounded"
+      - "Algebraic and order limit theorems; the squeeze theorem"
+      - "Monotone convergence theorem; recursively defined sequences (√2 iteration); e as lim (1+1/n)ⁿ"
+      - "Divergence to ±∞ and the extended real line"
+      - "Subsequences; every sequence has a monotone subsequence; Bolzano–Weierstrass"
+      - "limsup and liminf: as limits of tail suprema and as extreme subsequential limits; the two definitions agree; convergence iff limsup = liminf"
+      - "Cauchy sequences and the Cauchy criterion"
+      - "Standard limits: aⁿ, n^{1/n}, a^{1/n}, n^k/aⁿ"
+    must_prove: ["uniqueness of limits", "convergent ⇒ bounded", "algebraic limit theorem", "order limit theorem and squeeze", "monotone convergence theorem", "subsequences of a convergent sequence converge to the same limit", "monotone subsequence lemma", "Bolzano–Weierstrass", "the two definitions of limsup agree", "aₙ → a iff limsup = liminf = a", "Cauchy criterion (both directions)"]
+    key_examples: ["(−1)ⁿ: bounded, divergent, two subsequential limits", "√2 iteration x_{n+1} = (x_n + 2/x_n)/2", "(1+1/n)ⁿ increasing and bounded", "a sequence whose subsequential limits are all of [0,1] (enumeration of ℚ∩[0,1])", "Cauchy in ℚ with no rational limit"]
+    exit_checks: ["show that the two definitions of limsup agree", "negate 'aₙ → a' and 'aₙ is Cauchy' and prove a given sequence is not Cauchy", "prove BW by the monotone-subsequence route and by nested intervals"]
+    optional: false
+    note: "Proves MCT, BW and Cauchy completeness FROM the LUB axiom only; their converses belong to forms-of-completeness. Skills named here: ε allocation (ε/2), extracting subsequences (trigger: bounded sequence → extract), sup approximation. Rudin's chapter 3 works in metric spaces; specialize to ℝ (see exemption for PMA.2 → PMA.3)."
+
+  - slug: infinite-series
+    title: "Infinite Series"
+    pages: 67
+    sources:
+      - [ABB.2, "§2.4 (first look at series, Cauchy condensation), §2.7–2.8 (properties, rearrangements, double sums, products)"]
+      - [PMA.3, "3.21–3.55 except 3.38–3.40 (series, nonnegative series, e, root and ratio, summation by parts, absolute convergence, products, rearrangements)"]
+      - [TAO1.7, "§7.1–7.5"]
+      - [TAO1.8, "§8.2 only (summation on infinite sets, absolutely summable double series)"]
+      - [TAO1.B, "§B.2 (decimal representation of real numbers)"]
+      - [BRR.2, "§2.1–2.4 (Archimedean understanding, geometric series, harmonic series) — motivation"]
+      - [BRR.4, "§4.1–4.2 (basic tests, comparison tests) — motivation and examples"]
+      - [BRR.5, "§5.1 (groupings and rearrangements)"]
+      - [SPI.23, "problems"]
+      - [GO.6, "ex. on ratio and root test failures; Cauchy product divergence; rearrangement examples"]
+    outline:
+      - "Series as limits of partial sums; geometric series; Cauchy criterion for series; terms → 0 is necessary; the harmonic series"
+      - "Nonnegative series: comparison, Cauchy condensation, p-series; the number e as a series and its irrationality"
+      - "Root and ratio tests via limsup; where each fails"
+      - "Absolute and conditional convergence; alternating series test; summation by parts, Dirichlet and Abel tests; Σ sin(nx)/n"
+      - "Rearrangements: invariance under absolute convergence; the Riemann rearrangement theorem (outline); rearranging the alternating harmonic series"
+      - "Double series and products: absolutely convergent double sums, the Cauchy product and Mertens' theorem"
+      - "Decimal expansions: existence, non-uniqueness, 0.999… = 1"
+    must_prove: ["Cauchy criterion for series", "comparison test", "Cauchy condensation test and p-series", "root test and ratio test (limsup form)", "absolute convergence ⇒ convergence", "alternating series test", "Dirichlet test via summation by parts", "rearrangements of an absolutely convergent series have the same sum", "Riemann rearrangement theorem (outline)", "e is irrational"]
+    key_examples: ["Σ 1/n diverges, Σ (−1)^{n+1}/n converges conditionally", "rearrangement of the alternating harmonic series summing to (3/2)·ln 2 and to any prescribed value", "Σ sin(nx)/n converges for every x (Dirichlet test)", "Σ 1/(n log n) diverges by condensation", "Cauchy square of Σ (−1)ⁿ/√(n+1) diverges", "series where the ratio test fails and the root test succeeds"]
+    exit_checks: ["prove the Riemann rearrangement theorem in outline, naming where conditional convergence is used", "show absolute convergence makes rearrangement harmless", "decide convergence of five series, citing the test and checking its hypotheses"]
+    optional: false
+    note: "Needs limsup from sequences-and-limits for the root and ratio tests. sin and log appear in examples before they are defined; flag them as 'provisional, defined in power-series' and prove Σ sin(nx)/n only from the identity for Σ sin(kx) (which uses nothing but trig addition formulas, stated as provisional). ln 2 values of alternating-harmonic rearrangements are identified later by Abel's theorem. Skills: telescoping and comparison. Integral test waits for the Riemann integral chapter."
+
+  - slug: topology-of-the-real-line
+    title: "Open, Closed and Compact Subsets of ℝ"
+    pages: 53
+    sources:
+      - [ABB.3, "§3.1–3.5 (Cantor set, open and closed sets, compact sets, perfect sets, connected sets, Baire)"]
+      - [PMA.2, "2.18–2.47 specialized to ℝ (limit points, open/closed, compactness, Heine–Borel, perfect sets, connected sets)"]
+      - [ZOR1.2, "§2.3 (nested intervals, finite covering lemma, limit point lemma)"]
+      - [BLO.2, "§2.6 (Heine–Borel from LUB)"]
+      - [TAO1.9, "§9.1 (subsets of the real line: adherent and limit points, closure)"]
+      - [GO.8, "ex. 1, 5, 6 only (perfect nowhere-dense set, dense open set with complement of positive length)"]
+    outline:
+      - "The Cantor set as the guiding question: how large is a set that is 'mostly gaps'?"
+      - "ε-neighbourhoods and open sets; unions and intersections; every open set is a countable disjoint union of open intervals"
+      - "Limit points, isolated points, closed sets and closure; the sequential characterization; complements"
+      - "Compactness defined sequentially; compact ⇔ closed and bounded"
+      - "Open covers and Heine–Borel in ℝ (proof by the sup construction and by bisection); nested compact sets; the Lebesgue number lemma"
+      - "Perfect sets are uncountable; the Cantor set (perfect, uncountable, length zero, nowhere dense) and a fat Cantor set"
+      - "Connected subsets of ℝ are exactly the intervals"
+      - "Baire's theorem on ℝ (short preview of Part II)"
+    must_prove: ["sequential characterization of closed sets and of closure", "arbitrary unions / finite intersections of open sets are open", "open subsets of ℝ are countable disjoint unions of open intervals", "compact ⇔ closed and bounded (sequential version, via BW)", "Heine–Borel in ℝ: closed bounded ⇒ every open cover has a finite subcover, and conversely", "nested nonempty compact sets have nonempty intersection", "Lebesgue number lemma for a compact subset of ℝ", "a nonempty perfect set is uncountable", "a subset of ℝ is connected iff it is an interval"]
+    key_examples: ["the Cantor set", "a fat Cantor set", "ℚ: neither open nor closed, closure ℝ", "(0,1) covered by (1/n,1) with no finite subcover", "{1/n} ∪ {0} compact, {1/n} not"]
+    exit_checks: ["prove Heine–Borel in ℝ from the LUB axiom by constructing the point as a sup", "prove the Cantor set is uncountable and has no isolated points", "from an open cover to a finite subcover: work three examples, and exhibit a cover of (0,1] with no finite subcover"]
+    optional: false
+    note: "Placed per decisions.md 8: point-set topology on ℝ belongs in Part I; metric and general topology come at the end of Part II and later. Keep everything on ℝ; mention the metric-space version only as a forward pointer. The Baire section is a preview (no successor in Part I depends on it except the optional remark in limits-and-continuity). Skill: 'from a cover to a finite subcover'. The Lebesgue number lemma is needed for the second Heine–Cantor proof in continuity-on-intervals."
+
+  - slug: limits-and-continuity
+    title: "Limits of Functions and Continuity"
+    pages: 54
+    sources:
+      - [ABB.4, "§4.1–4.3, 4.6 (Dirichlet and Thomae, functional limits, continuity, sets of discontinuity)"]
+      - [PMA.4, "4.1–4.12, 4.25–4.34 (limits, continuity, discontinuities, monotone functions, infinite limits)"]
+      - [TAO1.9, "§9.2–9.5, 9.10 (limiting values, continuity, left and right limits, limits at infinity)"]
+      - [SPI.5, "limits: definition and problems"]
+      - [SPI.6, "continuous functions: problems"]
+      - [BRR.3, "§3.3 (continuity: Cauchy's definition and its history)"]
+      - [GO.2, "ex. 1–2, 18–22 (nowhere-continuous |f| continuous; continuous at one point only; monotone function discontinuous on a prescribed countable set)"]
+    outline:
+      - "Why continuity needs a definition: Dirichlet's and Thomae's functions"
+      - "Limits of functions at a limit point: ε-δ definition, sequential criterion, divergence criterion, algebra of limits"
+      - "One-sided limits, limits at infinity and infinite limits"
+      - "Continuity at a point: ε-δ, sequential and neighbourhood forms; algebra and composition; the topological characterization by preimages of open sets"
+      - "Classifying discontinuities; monotone functions have only jump discontinuities, and countably many"
+      - "Thomae's function is continuous exactly at the irrationals; the set of discontinuities is an F_σ (optional); no function is continuous exactly on ℚ (optional, via Baire)"
+    must_prove: ["sequential criterion for functional limits", "algebraic limit theorem for functions", "composition of continuous functions is continuous", "f continuous on ℝ iff preimages of open sets are open", "a monotone function has one-sided limits everywhere and at most countably many discontinuities", "Thomae's function is continuous at each irrational and discontinuous at each rational"]
+    key_examples: ["Dirichlet function: nowhere continuous", "Thomae function", "x·sin(1/x) and sin(1/x) at 0", "x times the Dirichlet function: continuous only at 0", "a monotone function whose discontinuities are exactly ℚ"]
+    exit_checks: ["prove Thomae's function is continuous exactly at the irrationals", "prove that a monotone function has countably many discontinuities", "negate 'f is continuous at c' and use the negation to show the Dirichlet function is nowhere continuous"]
+    optional: false
+    note: "sin, cos, exp appear as provisional examples (flag them; they are constructed in power-series). Quantifier-order drill: continuity at every point vs uniform continuity is set up here and resolved in the next chapter."
+
+  - slug: continuity-on-intervals
+    title: "Continuous Functions on Compact Sets and Intervals"
+    pages: 59
+    sources:
+      - [ABB.4, "§4.4–4.5 (continuous functions on compact sets, uniform continuity, IVT, connected sets)"]
+      - [PMA.4, "4.13–4.24 (continuity and compactness, uniform continuity, continuity and connectedness)"]
+      - [SPI.7, "three hard theorems: statements and problems"]
+      - [SPI.8, "proofs from least upper bounds; Appendix: uniform continuity"]
+      - [TAO1.9, "§9.6–9.9 (maximum principle, IVT, monotone functions, uniform continuity)"]
+      - [ZOR1.4, "§4.2 (local and global properties of continuous functions)"]
+      - [BLO.3, "§3.4–3.5 (uniform continuity; EVT and IVT)"]
+      - [BRR.3, "§3.4 (consequences of continuity, Bolzano's proof)"]
+      - [GO.1, "ex. 11 (continuous functions on a closed interval of an incomplete field)"]
+    outline:
+      - "Continuous images of compact sets are compact; the extreme value theorem"
+      - "Uniform continuity: the quantifier swap; x² on ℝ, 1/x on (0,1), sin(1/x); Lipschitz ⇒ uniformly continuous"
+      - "Heine–Cantor: continuous on a compact set ⇒ uniformly continuous, proved twice (BW and contradiction; Lebesgue number)"
+      - "Uniformly continuous functions preserve Cauchy sequences and extend continuously from a dense set"
+      - "The intermediate value theorem: via sup (the √2 template), via connectedness, via bisection; its failure over ℚ"
+      - "Monotone and inverse functions: continuous injective on an interval ⇒ strictly monotone; the inverse is continuous"
+    must_prove: ["continuous image of a compact set is compact", "extreme value theorem", "Heine–Cantor (compact ⇒ uniformly continuous), by BW and by the Lebesgue number", "uniformly continuous functions map Cauchy sequences to Cauchy sequences", "intermediate value theorem", "continuous image of an interval is an interval", "a continuous injection on an interval is strictly monotone with continuous inverse"]
+    key_examples: ["x² continuous, not uniformly continuous on ℝ", "1/x and sin(1/x) on (0,1)", "√x uniformly continuous but not Lipschitz on [0,1]", "f(x) = x² − 2 on ℚ ∩ [0,2]: no zero", "a bounded continuous function on (0,1) with no maximum"]
+    exit_checks: ["prove, without the book, that a continuous function on [a,b] is uniformly continuous, twice: once by BW and contradiction, once by the Lebesgue number", "explain why the IVT fails over ℚ, pointing to the line of the proof that uses the axiom", "find the error: a 'proof' of uniform continuity in which δ depends on x"]
+    optional: false
+    note: "The Stage S1 exit check on uniform continuity lives here. Recall the Part 0 natural-deduction worked example 'uniformly continuous ⇒ continuous' and the ∃-intro witness failure. Skills: ε/3 allocation, from a cover to a finite subcover. Spiral hook: the metric version of Heine–Cantor (Part II) and the BLT principle (Part VI) generalize the extension section."
+
+  - slug: derivative-and-mean-value
+    title: "The Derivative and the Mean Value Theorem"
+    pages: 68
+    sources:
+      - [ABB.5, "§5.1–5.3 (are derivatives continuous?, derivatives and the IVP, MVT, L'Hospital)"]
+      - [PMA.5, "5.1–5.15 (derivative, MVTs, continuity of derivatives, L'Hospital, higher derivatives, Taylor)"]
+      - [SPI.9, "problems"]
+      - [SPI.10, "problems (chain rule)"]
+      - [SPI.11, "significance of the derivative; Appendix: convexity"]
+      - [SPI.12, "inverse functions and their derivatives"]
+      - [TAO1.10, "§10.1–10.5"]
+      - [ZOR1.5, "§5.3.3 (Taylor's formula, remainder forms)"]
+      - [BRR.3, "§3.1–3.2, 3.5 (differentiability, Cauchy and the MVT, consequences)"]
+      - [GO.3, "ex. 1–7, 9 (functions that are not derivatives; derivative not continuous; differentiable, f'(0)>0, not monotone near 0)"]
+    outline:
+      - "The derivative as a limit; differentiable ⇒ continuous; algebra of derivatives; the chain rule with a careful proof"
+      - "Derivative of an inverse function"
+      - "Interior extrema (Fermat) and Darboux's theorem: derivatives have the intermediate value property"
+      - "Rolle, the mean value theorem and Cauchy's mean value theorem; consequences: monotonicity, f' = 0 ⇒ constant, Lipschitz bounds"
+      - "L'Hospital's rules (0/0 and ∞/∞)"
+      - "Higher derivatives and Taylor's theorem with Lagrange remainder"
+      - "Convex functions and the second derivative (optional)"
+    must_prove: ["differentiable ⇒ continuous", "chain rule", "derivative of the inverse function", "Fermat's interior extremum theorem", "Darboux's theorem", "Rolle's theorem", "mean value theorem", "Cauchy's mean value theorem", "f' ≥ 0 ⇒ f increasing; f' = 0 ⇒ f constant", "L'Hospital's rule (0/0 case)", "Taylor's theorem with Lagrange remainder"]
+    key_examples: ["x² sin(1/x): differentiable everywhere, derivative discontinuous at 0", "x² sin(1/x) + x/2: f'(0) > 0 but not increasing near 0", "|x| and x^{1/3} at 0", "a function with a jump cannot be a derivative (Darboux)", "g_n(x) = x^n sin(1/x) and how many derivatives exist"]
+    exit_checks: ["prove MVT from Rolle and Rolle from EVT, citing where completeness enters", "prove Darboux's theorem and deduce that sgn has no antiderivative", "state and prove Taylor's theorem with Lagrange remainder; bound the error of a degree-3 approximation"]
+    optional: false
+    note: "Taylor with Lagrange remainder is proved here (Stage S1 (c)); the integral remainder and Taylor series come later. Elementary functions remain provisional examples. The continuous nowhere-differentiable function is deferred to sequences-of-functions, where the M-test is available."
+
+  - slug: riemann-darboux-integral
+    title: "The Riemann–Darboux Integral"
+    pages: 67
+    sources:
+      - [ABB.7, "§7.1–7.6 except the uniform-convergence part of §7.4 (definition, discontinuities, properties, FTC, Lebesgue's criterion)"]
+      - [PMA.6, "6.1–6.22 with α(x) = x (upper and lower sums, refinement, integrability criterion, properties, FTC, integration by parts)"]
+      - [TAO1.11, "§11.1–11.7, 11.9–11.10 (partitions, piecewise constant functions, integrability of continuous and monotone functions, a non-integrable function, FTC)"]
+      - [SPI.13, "integrals; Appendix: Riemann sums"]
+      - [SPI.14, "fundamental theorem: problems"]
+      - [ZOR1.6, "§6.1.2–6.1.3 (Riemann sums and integrability), §6.3.3 (integral form of Taylor), §6.5 (improper integrals)"]
+      - [BLO.5, "§5.8 (Lebesgue's theorem)"]
+      - [BRR.6, "§6.2–6.3 (the Cauchy integral, Riemann's integral and his criterion) — motivation"]
+      - [GO.4, "ex. 1–6 (bounded non-integrable; integrable with dense discontinuities; ∫₀ˣ f differentiable with derivative ≠ f on a dense set)"]
+    outline:
+      - "Partitions, upper and lower sums, the refinement lemma; upper and lower integrals (the integral as a sup of lower sums)"
+      - "The integrability criterion; Riemann sums and the equivalence of the Darboux and Riemann definitions"
+      - "What is integrable: continuous functions, monotone functions, finitely many discontinuities; the Dirichlet function is not, Thomae's function is"
+      - "Properties: linearity, additivity over intervals, monotonicity, |∫f| ≤ ∫|f|, products and compositions φ∘f"
+      - "The fundamental theorem of calculus, both parts; integration by parts; substitution; the integral form of the Taylor remainder"
+      - "Lebesgue's criterion: sets of measure zero and integrability (outline; hook to Part IV)"
+      - "Improper integrals; absolute and conditional convergence; the integral test for series"
+    must_prove: ["refinement lemma (L(f,P) ≤ L(f,P′) ≤ U(f,P′) ≤ U(f,P) for P ⊂ P′)", "integrability criterion (∀ε ∃P: U − L < ε)", "continuous ⇒ integrable (via Heine–Cantor)", "monotone ⇒ integrable", "linearity, additivity and monotonicity of the integral", "if f is integrable and φ continuous then φ∘f is integrable", "FTC part 1: F(x) = ∫ₐˣ f is continuous, and differentiable at points where f is continuous", "FTC part 2: ∫ₐᵇ F' = F(b) − F(a) for integrable F'", "integration by parts and substitution", "integral test"]
+    key_examples: ["Dirichlet function: not integrable", "Thomae function: integrable with integral 0", "indicator of the Cantor set: integrable (discontinuities of measure zero)", "a bounded derivative that is not Riemann integrable (Volterra; statement only)", "∫₁^∞ sin x / x converges but not absolutely"]
+    exit_checks: ["prove that a continuous function is integrable, naming where uniform continuity enters", "prove Thomae's function is integrable with integral 0, and the Dirichlet function is not", "prove both parts of the FTC and explain why a differentiable F with non-integrable F' (Volterra) falls outside part 2"]
+    optional: false
+    note: "Placed before sequences-of-functions (Rudin's order), so 'integration commutes with uniform limits' is proved in the next chapter; this crosses Abbott's ABB.6 → ABB.7 edge only through §7.4, see exemptions. Stage S1's 'full Riemann theory'. The Riemann integral on ℝⁿ stays in Part II (decisions.md 10). Lebesgue's criterion is stated and proved in outline; it seeds the 'what the Riemann integral lacks' list that Part III completes. The sup/inf description of the integral is a long-range descendant of the least-upper-bound chapter: recall it."
+
+  - slug: sequences-of-functions
+    title: "Sequences and Series of Functions"
+    pages: 67
+    sources:
+      - [ABB.6, "§6.1–6.4 (branching processes, uniform convergence, differentiation, series of functions)"]
+      - [ABB.7, "§7.4 uniform-convergence-and-integration part only"]
+      - [ABB.5, "§5.4 (a continuous nowhere-differentiable function)"]
+      - [PMA.7, "7.1–7.17 (the main problem, uniform convergence, continuity, integration, differentiation)"]
+      - [BRR.1, "Fourier's series of a constant — motivation"]
+      - [BRR.2, "§2.6 (emerging doubts)"]
+      - [BRR.5, "§5.2–5.4 (Cauchy and continuity, differentiation and integration, verifying uniform convergence)"]
+      - [BRR.6, "§6.4 (continuity without differentiability)"]
+      - [SPI.24, "uniform convergence half: problems"]
+      - [BLO.10, "§10.2–10.3, 10.5 (sequences and series of functions, nowhere-differentiable function)"]
+      - [GO.7, "ex. 1–7 (nonuniform limits that are unbounded, discontinuous, non-integrable, with limit of integrals ≠ integral of limit)"]
+    outline:
+      - "The crisis: Fourier's series of a constant and Cauchy's flawed 'continuous sum' theorem"
+      - "Pointwise convergence and what it fails to preserve: xⁿ on [0,1], nx(1−x²)ⁿ, sin(nx)/√n"
+      - "Uniform convergence: the quantifier swap, the sup distance, the Cauchy criterion for uniform convergence"
+      - "Uniform limits of continuous functions are continuous (the 3ε argument); integration commutes with uniform limits"
+      - "Differentiation: the theorem with f_n′ uniformly convergent and f_n convergent at one point"
+      - "Series of functions: the Weierstrass M-test and term-by-term theorems; Dini's theorem"
+      - "A continuous nowhere-differentiable function"
+      - "The checklist for exchanging limits; can continuous functions converge pointwise to a non-integrable function?"
+    must_prove: ["uniform limit of continuous functions is continuous", "Cauchy criterion for uniform convergence", "∫ lim fₙ = lim ∫ fₙ under uniform convergence (and the limit is integrable)", "term-by-term differentiation theorem", "Weierstrass M-test", "Dini's theorem", "Σ 2⁻ⁿ-type construction of a continuous nowhere-differentiable function (at least continuity by M-test, nondifferentiability sketched)"]
+    key_examples: ["xⁿ on [0,1]: continuous functions, discontinuous limit", "n²x(1−x)ⁿ: ∫ lim ≠ lim ∫", "sin(nx)/√n: uniform limit 0 but derivatives diverge", "Σ sin(nx)/n: pointwise but not uniformly convergent near 0", "Weierstrass or Takagi nowhere-differentiable function"]
+    exit_checks: ["a sequence of continuous functions converging pointwise to a non-integrable function: construct one or explain why none exists", "prove the uniform limit theorem and identify exactly where uniformity is used", "state the limit-exchange checklist and apply it to three examples"]
+    optional: false
+    note: "Stage S1 exit check on pointwise limits lives here. Drafter: the answer is 'yes, such a sequence exists' for bounded limits, e.g. continuous fₙ decreasing to the indicator of a fat Cantor set (discontinuous on a set of positive length, so not Riemann integrable by Lebesgue's criterion); contrast with the Dirichlet function, which is not a pointwise limit of continuous functions (Baire class 2, mention only). The Weierstrass approximation theorem (ABB §6.7) is NOT here: it goes to Part II with Stone–Weierstrass (curriculum S2). Arzelà–Ascoli and equicontinuity (PMA 7.19–7.25) are Part II. Named skill: the checklist for exchanging limits."
+
+  - slug: power-series
+    title: "Power Series, Taylor Series and the Elementary Functions"
+    pages: 57
+    sources:
+      - [ABB.6, "§6.5–6.6 (power series, Abel's theorem, Taylor series, Lagrange remainder)"]
+      - [PMA.3, "3.38–3.40 (power series, radius of convergence)"]
+      - [SPI.24, "power-series half"]
+      - [SPI.20, "Taylor polynomials, remainder forms, examples"]
+      - [SPI.18, "logarithm as ∫1/t and exponential as its inverse"]
+      - [BLO.7, "§7.2–7.4 (log, exp, trigonometric functions, π)"]
+      - [BLO.10, "§10.4 (functions as power series)"]
+      - [BRR.2, "§2.5 (Taylor series, d'Alembert and convergence)"]
+      - [BRR.4, "§4.3 (convergence of power series, limsup)"]
+      - [ZOR1.5, "§5.5.4 (power series representation, analyticity)"]
+    outline:
+      - "Radius of convergence: Cauchy–Hadamard via limsup; the ratio formula; behaviour at the endpoints"
+      - "Uniform convergence on [−r, r] for r < R; continuity; Abel's theorem and ln 2 = 1 − 1/2 + 1/3 − ⋯"
+      - "Term-by-term differentiation and integration; power series are C^∞ and their coefficients are Taylor coefficients"
+      - "Taylor series versus Taylor polynomials: Lagrange and integral remainders; e^{−1/x²} is smooth but not analytic; the binomial series"
+      - "exp from its power series; exp(x+y) = exp x · exp y; log as its inverse and as ∫₁ˣ dt/t; real powers aˣ"
+      - "sin and cos from power series; the definition of π; periodicity; addition formulas (retiring the 'provisional' flags)"
+    must_prove: ["Cauchy–Hadamard formula for the radius of convergence", "a power series converges uniformly on [−r, r] for every r < R", "term-by-term differentiation of power series (radius unchanged)", "Abel's theorem", "uniqueness of power-series coefficients", "e^{−1/x²} (extended by 0) has all derivatives 0 at 0", "exp(x+y) = exp(x)exp(y)", "existence of a smallest positive zero of cos (definition of π)"]
+    key_examples: ["Σ xⁿ/n: converges at −1, diverges at 1", "Σ xⁿ/n²: converges on [−1,1]", "e^{−1/x²}: Taylor series converges but not to f", "1/(1+x²) on ℝ: radius 1 though smooth everywhere (complex-analysis hook)", "ln(1+x) and arctan x series at the endpoint via Abel"]
+    exit_checks: ["when may a power series be differentiated term by term? Prove the theorem and apply it to Σ xⁿ/n", "prove Abel's theorem and use it to evaluate Σ (−1)^{n+1}/n", "show e^{−1/x²} is not analytic at 0"]
+    optional: false
+    note: "Answers Stage S1 motivation (f): term-by-term differentiation. Here the elementary functions flagged as 'provisional' since limits-and-continuity get their official definitions; the drafter should list every earlier provisional use in a closing remark. Power series are real here; complex power series and radius-1 obstruction of 1/(1+x²) are a hook to Part V."
+
+  - slug: forms-of-completeness
+    title: "The Forms of Completeness"
+    pages: 44
+    sources:
+      - [ABB.1, "§1.4 (nested interval property), §1.7 (epilogue)"]
+      - [ABB.2, "§2.9 (epilogue: equivalent forms of completeness)"]
+      - [BLO.2, "§2.6–2.7 (LUB consequences; uniqueness of ℝ — statement only)"]
+      - [BLO.3, "§3.5 (IVT, EVT, Heine–Borel equivalent to LUB)"]
+      - [BLO.8, "§8.3 (MCT and BW equivalent to LUB; Cauchy completeness needs Archimedes)"]
+      - [ZOR1.2, "§2.3 (the completeness lemmas side by side)"]
+      - [TAO1.5, "§5.5 (LUB property) — depth"]
+      - [SPI.28, "fields and ordered fields"]
+      - [GO.1, "ex. 3–7 (ordered field not complete; non-Archimedean; cannot be completed; Cauchy-complete but not complete)"]
+    outline:
+      - "Five candidate axioms for 'no gaps': LUB, monotone convergence, Bolzano–Weierstrass, Cauchy completeness + Archimedes, nested intervals + Archimedes"
+      - "The equivalence theorem, proved in an arbitrary ordered field: the cycle of implications"
+      - "Archimedes cannot be dropped: a Cauchy-complete non-Archimedean ordered field; the Levi-Civita field; the hyperreals in sketch (ultrafilter, flagged use of choice)"
+      - "Other theorems equivalent to the axiom — IVT, EVT, Heine–Borel — and one that is not (Archimedes)"
+      - "Uniqueness of the complete ordered field (statement; proof on the optional Part 0 route) and the completion of ℚ ahead in Part II"
+      - "Part I review: the Stage S1 exit checks revisited as one problem set"
+    must_prove: ["LUB ⇒ MCT ⇒ BW ⇒ (Cauchy complete + Archimedean) ⇒ (nested intervals + Archimedean) ⇒ LUB, all in an arbitrary ordered field", "Archimedes follows from LUB but not from Cauchy completeness", "IVT (for all continuous f on intervals of the field) ⇒ LUB", "Heine–Borel ⇒ LUB"]
+    key_examples: ["ℚ: Archimedean, not complete", "ℝ(x): non-Archimedean ordered field", "a Cauchy-complete non-Archimedean field (Levi-Civita / GO 1.7)", "the hyperreals: every Cauchy sequence eventually constant, yet no LUB"]
+    exit_checks: ["prove BW ⇒ LUB in an arbitrary ordered field", "show that Cauchy completeness alone does not give LUB, and say exactly where Archimedes is used in the converse", "the Stage S1 capstone set: uniform continuity twice, limsup two ways, the pointwise-limit question"]
+    optional: false
+    note: "decisions.md 4 and curriculum.md: a SEPARATE node at the end of Part I so no cycle with ax-least-upper-bound. Every proof here must work inside an arbitrary ordered field F and must not cite chapter-1 results that used the axiom; re-prove what is needed (e.g. BW in F from MCT in F). The uniqueness theorem is only stated with a pointer to Part 0 (optional), never @ref'd as a dependency. Forward pointer: completion (Part II, decisions.md 5)."
+
+cut:
+  ABB.8: "§8.1 gauge integral: beyond Stage S1; §8.2 metric spaces and Baire → Part II; §8.3 Euler's sum and §8.4 Gamma: excursions (Part III may take them); §8.5 Fourier series → Part III; §8.6 construction of ℝ → Part 0 (optional route)"
+  SPI.2: "induction and irrationality of √2 are Stage 0 (Part 0)"
+  SPI.3: "functions as sets of pairs: Part 0"
+  SPI.4: "graphs, vectors, conics, polar coordinates: precalculus, not needed"
+  SPI.15: "trig defined via area/arc length; the book defines sin, cos by power series (power-series chapter)"
+  SPI.16: "π irrational: starred excursion, not required (may be an exercise source)"
+  SPI.17: "planetary motion: physics application, out of scope"
+  SPI.19: "integration in elementary terms: computational technique, not a proof skill"
+  SPI.21: "e transcendental: starred excursion"
+  SPI.25: "complex numbers → Part V"
+  SPI.26: "complex functions → Part V"
+  SPI.27: "complex power series → Part V"
+  SPI.29: "construction of ℝ → Part 0 (optional route; Dedekind cuts there)"
+  SPI.30: "uniqueness of ℝ → Part 0 closing theorem (optional route); stated only in forms-of-completeness"
+  BRR.7: "epilogue pointing to Lebesgue → Part IV motivation"
+  BRR.A: "Wallis, Bernoulli numbers, ζ(2k), Stirling: excursions (Part III may use A.3)"
+  ZOR1.1: "logic, sets, functions, cardinality → Part 0"
+  ZOR1.7: "several variables: limits and continuity → Part II"
+  ZOR1.8: "differential calculus in several variables → Part II"
+  BLO.4: "differentiation fully covered by ABB.5, PMA.5, TAO1.10, SPI.9–11"
+  BLO.6: "limits at infinity and improper integrals covered by PMA.4, TAO1.9 §9.10 and ZOR1.6 §6.5"
+  BLO.9: "series fully covered by ABB.2, PMA.3, TAO1.7"
+
+exemptions:
+  - edge: [PMA.2, PMA.3]
+    why: "Rudin's chapter 3 works in metric spaces and uses chapter 2 compactness only for 3.6 (BW via compactness) and for general metric spaces. Specialized to ℝ, sequences-and-limits proves BW by the monotone-subsequence and nested-interval routes from the LUB axiom, so PMA.3 §3.1–3.20 on ℝ needs only PMA.1. PMA.2 is then used in topology-of-the-real-line, after sequences, in Abbott's order (ABB.2 before ABB.3)."
+  - edge: [ABB.6, ABB.7]
+    why: "Abbott 7 is split. §7.1–7.3, 7.5–7.6 (definition, integrability, FTC, Lebesgue's criterion) need only ABB.4–5; only the 'Uniform Convergence and Integration' part of §7.4 uses ABB.6, and it goes to sequences-of-functions, after ABB.6. This is Rudin's order (PMA.6 before PMA.7) and lets the integral remainder and log = ∫dt/t be available for power series."
+  - edge: [SPI.8, SPI.22]
+    why: "Spivak's chapter 22 needs chapter 8 only for the least upper bound property, which our least-upper-bound chapter supplies from the axiom. SPI.8's own content (proofs of the three hard theorems, uniform continuity) is used later, in continuity-on-intervals; SPI.22 is a problems source for sequences-and-limits."
+  - edge: [BRR.5, BRR.6]
+    why: "Bressoud 6 is split. §6.2–6.3 (Cauchy's and Riemann's integral, Riemann's criterion) are used as motivation in riemann-darboux-integral and need only continuity; §6.4 (continuity without differentiability) goes to sequences-of-functions together with BRR.5 §5.2–5.4. BRR.5 §5.1 is already used in infinite-series, so BRR.5 is first read before BRR.6."
+
+coverage_gaps:
+  - "The Levi-Civita field and the hyperreals (curriculum S1 (c)): no Part I source treats them; GO 1.7 supplies a different Cauchy-complete non-Archimedean field. The Levi-Civita construction and the ultrafilter sketch of the hyperreals are original writing."
+  - "The Lebesgue number lemma on ℝ and the Lebesgue-number proof of Heine–Cantor (Stage S1 exit check): not stated as such in ABB, PMA (4.19 argues with covers directly) or TAO1; write it from scratch."
+  - "The ℝ(x) example (x infinite, ℕ bounded without sup): GO 1.4 gives the ordered field of rational functions but not the curriculum's framing 'where the proof of Archimedes fails'; the framing is original."
+  - "Existence of a pointwise limit of continuous functions that is not Riemann integrable (Stage S1 exit check): the fat-Cantor-set construction is assembled from ABB §3.1 exercises, GO 8.6 and ABB §7.6; the exposition is original."

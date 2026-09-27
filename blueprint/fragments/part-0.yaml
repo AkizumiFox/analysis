@@ -1,0 +1,597 @@
+part: "0"
+title: "Foundations: Logic, Sets, Numbers"
+summary: "Teaches the grammar of proof (natural deduction for connectives, quantifiers and equality), then sets, functions, relations, induction and cardinality as the main-line bridge, and, beside the main line, builds ℕ, ℤ, ℚ and ℝ and proves the complete ordered field unique; forced by a reader who has never written a proof and by Part I's decision to start from the least upper bound axiom."
+
+nodes:
+  # Chiswell & Hodges (scaffolding for natural deduction)
+  CH.2:   {book: CH, ch: "2", title: "Informal natural deduction", pages: 28, files: "002-007"}
+  CH.3:   {book: CH, ch: "3", title: "Propositional logic", pages: 65, files: "008-022"}
+  CH.4:   {book: CH, ch: "4", title: "First interlude: Wason's selection task", pages: 3, files: "023"}
+  CH.5:   {book: CH, ch: "5", title: "Quantifier-free logic", pages: 56, files: "023-037"}
+  CH.7:   {book: CH, ch: "7", title: "First-order logic", pages: 60, files: "037-050"}
+  CH.A:   {book: CH, ch: "A", title: "Appendix A: The natural deduction rules", pages: 6, files: "051"}
+  # forall x (bridge: Fitch-style proofs, translation)
+  FX.4:   {book: FX, ch: "4", title: "Quantified logic", pages: 33, files: "013-020"}
+  FX.6:   {book: FX, ch: "6", title: "Proofs", pages: 33, files: "029-036"}
+  # van Dalen (depth: ND, intuitionistic logic)
+  VDL.1:  {book: VDL, ch: "1", title: "Propositional Logic", pages: 49, files: "003-010"}
+  VDL.2:  {book: VDL, ch: "2", title: "Predicate Logic", pages: 49, files: "011-019"}
+  VDL.5:  {book: VDL, ch: "5", title: "Intuitionistic Logic", pages: 36, files: "029-032"}
+  # Velleman (scaffolding for proof strategies, sets, relations, functions, induction, infinite sets)
+  VEL.1:  {book: VEL, ch: "1", title: "Sentential Logic", pages: 52, files: "004-017"}
+  VEL.2:  {book: VEL, ch: "2", title: "Quantificational Logic", pages: 31, files: "018-025"}
+  VEL.3:  {book: VEL, ch: "3", title: "Proofs", pages: 81, files: "026-048"}
+  VEL.4:  {book: VEL, ch: "4", title: "Relations", pages: 59, files: "049-060"}
+  VEL.5:  {book: VEL, ch: "5", title: "Functions", pages: 44, files: "061-069"}
+  VEL.6:  {book: VEL, ch: "6", title: "Mathematical Induction", pages: 51, files: "070-081"}
+  VEL.8:  {book: VEL, ch: "8", title: "Infinite Sets", pages: 22, files: "092-097"}
+  # Hammack (problems)
+  HAM.1:  {book: HAM, ch: "1", title: "Sets", pages: 37, files: "003-011"}
+  HAM.2:  {book: HAM, ch: "2", title: "Logic", pages: 31, files: "011-019"}
+  HAM.4:  {book: HAM, ch: "4", title: "Direct Proof", pages: 18, files: "030-032"}
+  HAM.5:  {book: HAM, ch: "5", title: "Contrapositive Proof", pages: 9, files: "033-035"}
+  HAM.6:  {book: HAM, ch: "6", title: "Proof by Contradiction", pages: 7, files: "036-038"}
+  HAM.7:  {book: HAM, ch: "7", title: "Proving Non-Conditional Statements", pages: 13, files: "038-040"}
+  HAM.8:  {book: HAM, ch: "8", title: "Proofs Involving Sets", pages: 17, files: "041-045"}
+  HAM.9:  {book: HAM, ch: "9", title: "Disproof", pages: 8, files: "045-047"}
+  HAM.10: {book: HAM, ch: "10", title: "Mathematical Induction", pages: 17, files: "047-051"}
+  HAM.11: {book: HAM, ch: "11", title: "Relations", pages: 27, files: "052-057"}
+  HAM.12: {book: HAM, ch: "12", title: "Functions", pages: 18, files: "057-062"}
+  HAM.13: {book: HAM, ch: "13", title: "Proofs in Calculus", pages: 27, files: "063-071"}
+  HAM.14: {book: HAM, ch: "14", title: "Cardinality of Sets", pages: 23, files: "071-076"}
+  # Halmos (scaffolding for naive set theory; its sections are its chapters)
+  HAL.1:  {book: HAL, ch: "1", title: "The Axiom of Extension", pages: 5, files: "002"}
+  HAL.2:  {book: HAL, ch: "2", title: "The Axiom of Specification", pages: 4, files: "003"}
+  HAL.3:  {book: HAL, ch: "3", title: "Unordered Pairs", pages: 4, files: "004"}
+  HAL.4:  {book: HAL, ch: "4", title: "Unions and Intersections", pages: 5, files: "005"}
+  HAL.5:  {book: HAL, ch: "5", title: "Complements and Powers", pages: 5, files: "006"}
+  HAL.6:  {book: HAL, ch: "6", title: "Ordered Pairs", pages: 4, files: "007"}
+  HAL.7:  {book: HAL, ch: "7", title: "Relations", pages: 4, files: "008"}
+  HAL.8:  {book: HAL, ch: "8", title: "Functions", pages: 4, files: "009"}
+  HAL.9:  {book: HAL, ch: "9", title: "Families", pages: 4, files: "010"}
+  HAL.10: {book: HAL, ch: "10", title: "Inverses and Composites", pages: 4, files: "011"}
+  HAL.11: {book: HAL, ch: "11", title: "Numbers", pages: 4, files: "012"}
+  HAL.12: {book: HAL, ch: "12", title: "The Peano Axioms", pages: 4, files: "013"}
+  HAL.13: {book: HAL, ch: "13", title: "Arithmetic", pages: 4, files: "014"}
+  HAL.14: {book: HAL, ch: "14", title: "Order", pages: 5, files: "015"}
+  HAL.15: {book: HAL, ch: "15", title: "The Axiom of Choice", pages: 3, files: "016"}
+  HAL.16: {book: HAL, ch: "16", title: "Zorn's Lemma", pages: 4, files: "017"}
+  HAL.17: {book: HAL, ch: "17", title: "Well Ordering", pages: 4, files: "018"}
+  HAL.22: {book: HAL, ch: "22", title: "The Schröder–Bernstein Theorem", pages: 4, files: "023"}
+  # Enderton (depth: axiomatic set theory, ω, constructions, choice)
+  EST.2:  {book: EST, ch: "2", title: "Axioms and Operations", pages: 16, files: "007-010"}
+  EST.3:  {book: EST, ch: "3", title: "Relations and Functions", pages: 34, files: "011-017"}
+  EST.4:  {book: EST, ch: "4", title: "Natural Numbers", pages: 21, files: "017-021"}
+  EST.5:  {book: EST, ch: "5", title: "Construction of the Real Numbers", pages: 35, files: "022-025"}
+  EST.6:  {book: EST, ch: "6", title: "Cardinal Numbers and the Axiom of Choice", pages: 44, files: "027-034"}
+  # Tao, Analysis I (chapters 2–5 only)
+  TAO1.2: {book: TAO1, ch: "2", title: "Starting at the beginning: the natural numbers", pages: 19, files: "004-007"}
+  TAO1.3: {book: TAO1, ch: "3", title: "Set theory", pages: 40, files: "008-014"}
+  TAO1.4: {book: TAO1, ch: "4", title: "Integers and rationals", pages: 21, files: "015-018"}
+  TAO1.5: {book: TAO1, ch: "5", title: "The real numbers", pages: 32, files: "019-025"}
+  # Bloch (construction chapters)
+  BLO.1:  {book: BLO, ch: "1", title: "Construction of the Real Numbers", pages: 61, files: "008-019"}
+  BLO.2:  {book: BLO, ch: "2", title: "Properties of the Real Numbers", pages: 67, files: "020-029"}
+  # Landau (verification reference only)
+  LAN.1:  {book: LAN, ch: "I", title: "Natural Numbers", pages: 13, files: "002-003"}
+  LAN.2:  {book: LAN, ch: "II", title: "Fractions", pages: 22, files: "003-005"}
+  LAN.3:  {book: LAN, ch: "III", title: "Cuts", pages: 28, files: "005-007"}
+  LAN.4:  {book: LAN, ch: "IV", title: "Real Numbers", pages: 23, files: "008-009"}
+  # Mendelson (depth: Peano systems, ordered fields, categoricity)
+  MEN.2:  {book: MEN, ch: "2", title: "The Natural Numbers", pages: 35, files: "016-023"}
+  MEN.3:  {book: MEN, ch: "3", title: "The Integers", pages: 70, files: "024-036"}
+  MEN.4:  {book: MEN, ch: "4", title: "Rational Numbers and Ordered Fields", pages: 29, files: "037-043"}
+  MEN.5:  {book: MEN, ch: "5", title: "The Real Number System", pages: 92, files: "044-063"}
+  MEN.E:  {book: MEN, ch: "E", title: "Appendix E: Axiomatic Set Theory and the Existence of a Peano System", pages: 8, files: "069-070"}
+  MEN.F:  {book: MEN, ch: "F", title: "Appendix F: Construction of the Real Numbers via Dedekind Cuts", pages: 15, files: "070-071"}
+
+hard:
+  # Chiswell & Hodges
+  - [CH.2, CH.3]
+  - [CH.3, CH.5]
+  - [CH.5, CH.7]
+  # forall x: §6.4 quantifier rules need ch. 4 (see exemptions: ch. 6 is split)
+  - [FX.4, FX.6]
+  # van Dalen
+  - [VDL.1, VDL.2]
+  - [VDL.1, VDL.5]
+  - [VDL.2, VDL.5]
+  # Velleman
+  - [VEL.1, VEL.2]
+  - [VEL.2, VEL.3]
+  - [VEL.3, VEL.4]
+  - [VEL.4, VEL.5]
+  - [VEL.3, VEL.6]
+  - [VEL.5, VEL.8]
+  - [VEL.6, VEL.8]
+  # Hammack
+  - [HAM.2, HAM.4]
+  - [HAM.4, HAM.5]
+  - [HAM.5, HAM.6]
+  - [HAM.6, HAM.7]
+  - [HAM.1, HAM.8]
+  - [HAM.4, HAM.8]
+  - [HAM.2, HAM.9]
+  - [HAM.4, HAM.10]
+  - [HAM.1, HAM.11]
+  - [HAM.11, HAM.12]
+  - [HAM.2, HAM.13]
+  - [HAM.12, HAM.14]
+  # Halmos
+  - [HAL.1, HAL.2]
+  - [HAL.2, HAL.3]
+  - [HAL.3, HAL.4]
+  - [HAL.4, HAL.5]
+  - [HAL.5, HAL.6]
+  - [HAL.6, HAL.7]
+  - [HAL.7, HAL.8]
+  - [HAL.8, HAL.9]
+  - [HAL.9, HAL.10]
+  - [HAL.10, HAL.11]
+  - [HAL.11, HAL.12]
+  - [HAL.12, HAL.13]
+  - [HAL.13, HAL.14]
+  - [HAL.9, HAL.15]
+  - [HAL.15, HAL.16]
+  - [HAL.16, HAL.17]
+  - [HAL.10, HAL.22]
+  # Enderton
+  - [EST.2, EST.3]
+  - [EST.3, EST.4]
+  - [EST.4, EST.5]
+  - [EST.3, EST.6]
+  - [EST.4, EST.6]
+  # Tao
+  - [TAO1.2, TAO1.3]
+  - [TAO1.3, TAO1.4]
+  - [TAO1.4, TAO1.5]
+  # Bloch
+  - [BLO.1, BLO.2]
+  # Landau
+  - [LAN.1, LAN.2]
+  - [LAN.2, LAN.3]
+  - [LAN.3, LAN.4]
+  # Mendelson
+  - [MEN.2, MEN.3]
+  - [MEN.3, MEN.4]
+  - [MEN.4, MEN.5]
+  - [MEN.4, MEN.F]
+
+soft:
+  - [CH.4, CH.3]          # Wason task motivates the rules for 'if'
+  - [CH.7, VDL.5]         # first-order ND before its intuitionistic restriction
+  - [CH.A, CH.7]          # the rule summary is the model for the book's rule table
+  - [HAM.7, VDL.5]        # constructive vs non-constructive existence as the on-ramp to BHK
+  - [HAM.13, CH.7]        # ε–δ statements as quantifier practice
+  - [MEN.E, MEN.2]        # existence of a Peano system inside ZF
+  - [HAL.2, TAO1.3]       # axiomatic specification behind Tao's set axioms
+  - [HAL.15, VEL.8]       # choice is used silently in countable unions
+  - [HAL.17, VEL.6]       # well-ordering vs induction
+  - [TAO1.4, BLO.1]
+  - [MEN.4, BLO.1]
+  - [MEN.5, BLO.2]        # uniqueness section reuses Archimedean-field facts
+
+alt:
+  - [CH.2, FX.6]
+  - [CH.7, FX.6]
+  - [CH.3, VDL.1]
+  - [CH.7, VDL.2]
+  - [VEL.3, HAM.4]
+  - [VEL.3, HAM.6]
+  - [VEL.2, HAM.2]
+  - [VEL.4, HAM.11]
+  - [VEL.5, HAM.12]
+  - [VEL.6, HAM.10]
+  - [VEL.8, HAM.14]
+  - [HAL.22, VEL.8]
+  - [TAO1.3, HAL.8]
+  - [TAO1.2, EST.4]
+  - [TAO1.2, MEN.2]
+  - [TAO1.2, HAL.12]
+  - [TAO1.2, LAN.1]
+  - [TAO1.4, EST.5]
+  - [TAO1.4, MEN.3]
+  - [TAO1.4, LAN.2]
+  - [BLO.1, MEN.F]
+  - [BLO.1, EST.5]
+  - [BLO.1, LAN.3]
+  - [TAO1.5, BLO.1]       # Cauchy-sequence construction vs Dedekind cuts
+  - [MEN.5, BLO.2]
+  - [HAL.15, EST.6]
+
+external:
+  - {needs: "statement of the ordered-field axioms and the least upper bound axiom (Part I ch 1, ax-least-upper-bound); the recommended route reads Part I ch 1–3 before this optional chapter", for_chapter: reals-dedekind-cuts}
+  - {needs: "the least upper bound axiom and its first consequences, Archimedean property and density of ℚ (Part I ch 1)", for_chapter: complete-ordered-field}
+  - {needs: "forward hook only, not a prerequisite: Part I (sup of a located set, IVT, Bolzano–Weierstrass) and Part II (Cauchy completion) are previewed, and later Parts flag uses of choice (Vitali set, Hahn–Banach, Tychonoff)", for_chapter: quantifiers-and-proof}
+
+chapters:
+  # ---------------- main line (two-year route: 3–4 week bridge) ----------------
+  - slug: logic-connectives
+    title: "The Grammar of Proof I: Connectives and Natural Deduction"
+    pages: 52
+    sources:
+      - [CH.2, "§2.1–2.7 (scaffolding: each connective by its introduction and elimination rules)"]
+      - [CH.4, "Wason task (motivation for the conditional)"]
+      - [CH.3, "§3.4 propositional ND, §3.5–3.6 truth tables and equivalence, §3.9 soundness (informal only)"]
+      - [VDL.1, "§1.4 natural deduction (depth: rule forms, RAA vs ¬I)"]
+      - [FX.6, "§6.1–6.3 Fitch-style proofs for sentential rules"]
+      - [VEL.1, "§1.1–1.2, §1.5 (conditional and biconditional laws; alt)"]
+      - [HAM.2, "§2.1–2.6 (problems)"]
+      - [HAM.4, "§4.3–4.5 direct proof and cases (problems)"]
+      - [HAM.5, "contrapositive outline (problems)"]
+      - [HAM.6, "contradiction outline (problems)"]
+    outline:
+      - "Why proofs have a grammar: statements, connectives, and a proof as a chain of licensed steps (mathematical English beside symbols)"
+      - "∧ and →: introduction and elimination; assumptions opened and discharged; Fitch boxes and the scope of an assumption"
+      - "∨, ¬ and ⊥: proof by cases, ¬I (assume and reach ⊥), ⊥-elimination, and vacuous truth derived from ⊥E"
+      - "↔ and definitions: the 'if' of a definition means 'iff' (a convention of language, not a rule of logic)"
+      - "RAA as a separate rule: why ¬I is not proof by contradiction, and where RAA is needed (¬¬P ⊢ P, contrapositive in reverse)"
+      - "Truth tables as a summary of the rules; tautologies, standard equivalences, soundness explained informally"
+      - "Proof skeletons read off the rules: direct, contrapositive, contradiction, cases; the propositional half of the rule / phrase / Lean table"
+    must_prove:
+      - "P→Q ⊢ ¬Q→¬P by →I and ¬I; the converse ¬Q→¬P ⊢ P→Q needs RAA"
+      - "⊥ ⊢ P and ¬P ⊢ P→Q (vacuous truth from ⊥E)"
+      - "De Morgan laws by natural deduction, flagging that ¬(P∧Q) ⊢ ¬P∨¬Q uses RAA"
+      - "P∨Q, ¬P ⊢ Q (disjunctive syllogism) and distributivity of ∧ over ∨"
+      - "for integers n: n² even ⇒ n even (via contrapositive), with each step labelled by its rule"
+    key_examples:
+      - "Wason selection task: the conditional is not the biconditional"
+      - "'x² < 0 ⇒ x = 7' is true for every real x (vacuous truth)"
+      - "definition 'f is increasing if …' used in both directions"
+      - "a truth table row read as a failed attempt to build a derivation"
+    exit_checks:
+      - "Write a Fitch derivation of (P→Q)∧(Q→R) ⊢ P→R and then the same argument as fluent prose"
+      - "Label each line of a short proof (n² odd ⇒ n odd) with the rule it uses"
+    optional: false
+    note: "Follow curriculum Stage 0 ND chapter order items 1–3 (connectives by rules, Fitch boxes, truth tables as summary). Truth tables come AFTER the rules (decisions 2). Every rule gets at least one analysis-flavoured example (decisions 1). The full rule / phrase / Lean table is started here (propositional rows: constructor, .1/.2, intro, apply/exact, left/right, rcases, intro…False, exfalso, by_contra) and completed in the next chapter. Lean is shown, never required."
+
+  - slug: quantifiers-and-proof
+    title: "The Grammar of Proof II: Quantifiers, Equality, and What Is Not Allowed"
+    pages: 60
+    sources:
+      - [CH.7, "§7.1–7.2 quantifiers and scope, §7.4 natural deduction for first-order logic"]
+      - [CH.5, "§5.4 proof rules for equality"]
+      - [CH.A, "rule summary (model for the book's table)"]
+      - [FX.4, "§4.4 translating multiple quantifiers (problems)"]
+      - [FX.6, "§6.4–6.6 quantifier and identity rules, proof strategy"]
+      - [VDL.2, "§2.8–2.10 ND with ∃ and = (depth: eigenvariable conditions)"]
+      - [VEL.2, "§2.1–2.2 quantifiers and their negation laws"]
+      - [VEL.3, "§3.3 proofs involving quantifiers, §3.6 existence and uniqueness"]
+      - [HAM.2, "§2.7–2.10 quantifiers, translation, negation (problems)"]
+      - [HAM.9, "disproof by counterexample (problems)"]
+      - [HAM.13, "§13.2–13.3 ε–δ limits and their negation (problems)"]
+      - [HAM.7, "§7.4 constructive vs non-constructive proofs"]
+      - [VDL.5, "§5.1–5.2 constructive reasoning, BHK, intuitionistic ND (depth for the final section)"]
+    outline:
+      - "∀-introduction and elimination: 'let x be arbitrary' and the eigenvariable condition; ∃-introduction and elimination: 'choose x with …' and the fresh-name condition"
+      - "Nested quantifiers: order matters (∀x∃y vs ∃y∀x), negating by pushing ¬ inward, formalizing statements with three nested quantifiers from analysis; existence and uniqueness"
+      - "Equality: reflexivity and substitution; calculation chains; the complete rule / phrase / Lean table (use, obtain, intro x, specialize, rw, calc)"
+      - "Worked example: 'uniformly continuous ⇒ continuous' annotated rule by rule; the converse fails because the ∃I witness δ would depend on an x introduced later"
+      - "The 'what is not allowed' catalogue: one instance for ∀; δ depending on x; the ∃E name treated as arbitrary; proving the converse; a missing case; circularity; using an assumption after its box closes"
+      - "Reading and writing proofs: annotate informal proofs with rules, turn a rule skeleton into prose, and find the error in student proofs"
+      - "The dispute over excluded middle: LEM ≡ DNE ≡ RAA as one extra rule; ¬¬(P∨¬P) is intuitionistically provable; BHK reading; aᵇ rational with a, b irrational, with and without a witness"
+      - "…continued: Brouwer 1908, Hilbert 1927 and the Grundlagenstreit, Heyting 1930, Gödel–Gentzen translation, Bishop 1967; consequences for analysis (located sup, Specker sequence, approximate IVT, the non-constructive step in Bolzano–Weierstrass); Curry–Howard, Lean's Classical.em via Diaconescu and `noncomputable`; the main line stays classical"
+    must_prove:
+      - "quantifier negation laws ¬∀x P ↔ ∃x ¬P and ¬∃x P ↔ ∀x ¬P, flagging that ¬∀ ⊢ ∃¬ needs RAA"
+      - "∃y∀x R(x,y) ⊢ ∀x∃y R(x,y), and a counterexample to the converse"
+      - "√2 is irrational (an instance of ¬I, valid intuitionistically)"
+      - "if |a − b| < ε for every ε > 0 then a = b"
+      - "uniformly continuous ⇒ continuous, annotated with every rule"
+      - "LEM, double-negation elimination and RAA are interderivable over the intuitionistic rules"
+      - "⊢ ¬¬(P ∨ ¬P) without LEM"
+      - "there are irrational a, b with aᵇ rational: non-constructively via √2^√2, and with a witness √2^(log₂9) = 3"
+    key_examples:
+      - "∀x∃y (x + y = 0) true on ℝ, ∃y∀x (x + y = 0) false"
+      - "f(x) = x² on ℝ (or 1/x on (0,1)) is continuous but not uniformly continuous: the δ must depend on x"
+      - "a 'proof' that checks n = 1, 2, 3 and concludes ∀n"
+      - "the ∃E name reused as if arbitrary"
+    exit_checks:
+      - "Negate 'f is uniformly continuous on A' and 'fₙ → f uniformly on A'"
+      - "Judge four student proofs and locate the error in each, naming the rule each one breaks (Selden & Selden style)"
+      - "Formalize and negate a three-quantifier statement, then prove or refute it"
+    optional: false
+    note: "Curriculum Stage 0 ND order items 4–8. The excluded-middle dispute MUST be the last section (decisions 3), here split over the final two outline lines as one section with two halves; the drafter may merge them. The analysis consequences (located sup, Specker, approximate IVT, Bolzano–Weierstrass) are previews stated informally, since Part I has not yet been read; Part I should point back here where those theorems are proved. Uniform continuity is introduced here only as a quantifier pattern (definition stated, no theory). Keep the chapter usable in the two-year bridge: the final section can be read quickly."
+
+  - slug: sets-and-functions
+    title: "Sets, Functions, Images and Preimages"
+    pages: 50
+    sources:
+      - [TAO1.3, "§3.1–3.5 sets, Russell's paradox, functions, images and inverse images, products (scaffolding)"]
+      - [VEL.1, "§1.3–1.4 sets and set operations"]
+      - [VEL.2, "§2.3 families, power sets"]
+      - [VEL.4, "§4.1–4.2 ordered pairs, Cartesian products, relations (only what functions need)"]
+      - [VEL.5, "§5.1–5.3, §5.5 functions, one-to-one and onto, inverses, images and inverse images"]
+      - [HAL.1, "extension (depth)"]
+      - [HAL.2, "specification and Russell (depth)"]
+      - [HAL.3, "unordered pairs (depth)"]
+      - [HAL.4, "unions and intersections (depth)"]
+      - [HAL.5, "complements, power sets, De Morgan (depth)"]
+      - [HAL.6, "ordered pairs (depth)"]
+      - [HAL.7, "relations as sets (depth)"]
+      - [HAL.8, "functions as sets (depth)"]
+      - [HAL.9, "families (depth)"]
+      - [HAL.10, "inverses and composites, images of unions/intersections (depth)"]
+      - [HAM.1, "§1.1–1.8, 1.10 (problems)"]
+      - [HAM.8, "proving a ∈ A, A ⊆ B, A = B (problems)"]
+      - [HAM.11, "§11.1 relations (only what functions need)"]
+      - [HAM.12, "§12.1–12.6 (problems)"]
+    outline:
+      - "Sets, membership, extensionality; proving A ⊆ B and A = B as ∀ and ↔ proofs; Russell's paradox as the reason set formation is restricted"
+      - "Operations: union, intersection, difference, complement, power set; indexed families and De Morgan's laws"
+      - "Ordered pairs, Cartesian products, relations as subsets of a product"
+      - "Functions as relations with the ∀∃! property; composition; injective, surjective, bijective"
+      - "Inverses: left inverses and injectivity, right inverses and surjectivity (choice flagged), two-sided inverses and bijections"
+      - "Images and preimages: preimages respect all set operations, images only unions"
+    must_prove:
+      - "De Morgan's laws for arbitrary families"
+      - "f⁻¹ preserves arbitrary unions, intersections and complements"
+      - "f(⋃Aᵢ) = ⋃f(Aᵢ), f(A∩B) ⊆ f(A)∩f(B), with equality for all A, B iff f is injective"
+      - "A ⊆ f⁻¹(f(A)) and f(f⁻¹(B)) ⊆ B, with equality conditions"
+      - "composites of injections (surjections) are injections (surjections)"
+      - "f has a left inverse iff injective (nonempty domain); f has a right inverse iff surjective (flag the use of choice)"
+      - "Russell's paradox: there is no set of all sets"
+    key_examples:
+      - "f(x) = x², A = [−1,0], B = [0,1]: f(A∩B) = {0} ⊊ [0,1] = f(A)∩f(B)"
+      - "the empty function; P(∅) and P({∅})"
+      - "x ↦ x² on ℝ, [0,∞) → ℝ, [0,∞) → [0,∞): same rule, different injectivity/surjectivity"
+    exit_checks:
+      - "Prove f⁻¹(⋂Aᵢ) = ⋂f⁻¹(Aᵢ), and give a function for which f(A∩B) ≠ f(A)∩f(B)"
+      - "Prove that g∘f injective implies f injective, and find an example where g is not"
+    optional: false
+    note: "Naive but careful set theory; the ZF axioms themselves are in the optional chapter zf-and-natural-numbers. Relations are introduced only as far as functions need (Velleman §4.1–4.2, Hammack §11.1); equivalence relations and orders come next chapter. ℕ, ℤ, ℚ, ℝ are used as familiar sets in examples; no main-line proof depends on their construction (decisions 4)."
+
+  - slug: relations-and-induction
+    title: "Equivalence Relations, Orders, and Induction"
+    pages: 48
+    sources:
+      - [VEL.4, "§4.3–4.5 properties of relations, orders, equivalence relations"]
+      - [HAM.11, "§11.2–11.5 properties, equivalence classes, partitions, ℤ/n (problems)"]
+      - [VEL.6, "§6.1–6.4 induction, recursion, strong induction"]
+      - [HAM.10, "§10.1–10.3 induction, strong induction, smallest counterexample (problems)"]
+      - [HAL.7, "relations, equivalence classes and partitions (depth)"]
+    outline:
+      - "Properties of relations: reflexive, symmetric, antisymmetric, transitive"
+      - "Equivalence relations, equivalence classes, partitions, and the correspondence between them; quotient sets (ℤ/n)"
+      - "Partial and total orders; upper bounds, maximal and greatest elements (a first look at sup)"
+      - "The well-ordering principle of ℕ, induction and strong induction, and why they are equivalent"
+      - "Recursive definitions: sequences, finite sums and products, n!"
+      - "Induction as a proof skeleton, including smallest counterexample, and how induction proofs go wrong"
+    must_prove:
+      - "the equivalence classes of an equivalence relation partition the set, and every partition comes from exactly one equivalence relation"
+      - "well-ordering ⇒ induction ⇒ strong induction (and back)"
+      - "Bernoulli's inequality (1 + x)ⁿ ≥ 1 + nx for x ≥ −1"
+      - "every integer n ≥ 2 has a prime factor (strong induction)"
+      - "1 + 2 + ⋯ + n = n(n+1)/2 and the geometric sum formula"
+    key_examples:
+      - "congruence mod n and ℤ/n"
+      - "⊆ on P(X) is a partial but not total order; a set with a maximal element that is not greatest"
+      - "the 'all horses are the same colour' induction, error located at n = 1 → 2"
+    exit_checks:
+      - "Prove that equivalence classes partition the set"
+      - "Find the error in a flawed induction proof and name the step that fails"
+    optional: false
+    note: "ℕ with induction and the well-ordering principle is taken as given here; its construction is optional (zf-and-natural-numbers). The orders section plants upper bounds and greatest elements so that Part I ch 1 (sup, LUB axiom) can recall them."
+
+  - slug: countable-and-uncountable
+    title: "Cardinality: Countable and Uncountable Sets"
+    pages: 48
+    sources:
+      - [VEL.8, "§8.1–8.3 equinumerous, countable and uncountable, Cantor–Schröder–Bernstein (scaffolding)"]
+      - [TAO1.3, "§3.6 cardinality of finite sets"]
+      - [HAL.22, "Schröder–Bernstein (depth)"]
+      - [HAM.14, "§14.1–14.4 (problems)"]
+    outline:
+      - "Equinumerosity; finite sets and the pigeonhole principle; a finite set is not equinumerous with a proper subset"
+      - "Countable sets: ℕ×ℕ, ℤ, ℚ; subsets and images of countable sets"
+      - "A countable union of countable sets is countable, and the hidden use of the axiom of choice (stated, flagged, not developed)"
+      - "Diagonalization: {0,1}^ℕ and ℝ are uncountable; Cantor's theorem, no surjection X → P(X)"
+      - "Comparing cardinalities: injections, the Schröder–Bernstein theorem, examples ℝ ~ (0,1) ~ [0,1]"
+      - "Infinite sets: every infinite set has a countably infinite subset (choice again), hence is equinumerous with a proper subset"
+    must_prove:
+      - "ℕ×ℕ and ℚ are countable"
+      - "a countable union of countable sets is countable (flag choice)"
+      - "ℝ is uncountable (diagonal argument)"
+      - "Cantor: there is no surjection X → P(X)"
+      - "Schröder–Bernstein theorem"
+      - "an infinite set is equinumerous with a proper subset of itself"
+    key_examples:
+      - "ℕ ~ 2ℕ (Hilbert's hotel)"
+      - "[0,1] ~ (0,1) via Schröder–Bernstein and by an explicit shift map"
+      - "algebraic numbers are countable, so transcendental numbers exist"
+    exit_checks:
+      - "Prove that a countable union of countable sets is countable and point to the step that uses choice"
+      - "Prove Cantor's theorem and deduce that P(ℕ) is uncountable"
+    optional: false
+    note: "The diagonal proof that ℝ is uncountable uses decimal (or binary) expansions taken from school as a stated fact, with the rigour issue flagged (non-uniqueness 0.4999… = 0.5 handled by avoiding 9s/0s); Part I can give the nested-interval proof and should point back. Do not cite the optional constructions. The formal statement of choice and its equivalents lives in the optional chapter zf-and-natural-numbers; here choice is named and flagged only (curriculum Stage 0 (c))."
+
+  # ---------------- optional route: constructing the number systems ----------------
+  - slug: zf-and-natural-numbers
+    title: "The ZF Axioms, Choice, and the Natural Numbers"
+    pages: 55
+    sources:
+      - [EST.2, "axioms and operations (list of ZF axioms)"]
+      - [EST.3, "ordered pairs as sets (Kuratowski), relations and functions as sets"]
+      - [EST.4, "inductive sets, ω, Peano's postulates, recursion on ω, arithmetic and order (scaffolding)"]
+      - [EST.6, "axiom of choice section only"]
+      - [HAL.3, "pairing (depth)"]
+      - [HAL.6, "ordered pairs (depth)"]
+      - [HAL.11, "numbers as sets (depth)"]
+      - [HAL.12, "Peano axioms (depth)"]
+      - [HAL.13, "arithmetic (depth)"]
+      - [HAL.14, "order (depth)"]
+      - [HAL.15, "the axiom of choice"]
+      - [HAL.16, "Zorn's lemma (statement only)"]
+      - [HAL.17, "well ordering (statement only)"]
+      - [TAO1.2, "§2.1–2.3 the 'assume Peano' route: axioms, addition, multiplication"]
+      - [MEN.2, "§2.1–2.2 Peano systems and the iteration theorem, §2.7 categoricity"]
+      - [MEN.E, "existence of a Peano system in axiomatic set theory"]
+      - [LAN.1, "verification reference only (do not imitate)"]
+    outline:
+      - "Why axioms: Russell's paradox and restricted comprehension; the ZF axioms listed with what each one licenses (no metamathematics)"
+      - "Sets that do the work: Kuratowski pairs, relations and functions as sets"
+      - "Inductive sets and ω: von Neumann naturals 0 = ∅, n⁺ = n ∪ {n}"
+      - "The Peano axioms, as theorems about ω or (Tao's route) as axioms assumed outright"
+      - "The recursion theorem, then addition, multiplication and order: representative proofs, the rest as exercises"
+      - "Categoricity: any two Peano systems are isomorphic"
+      - "The axiom of choice: statement, the equivalent forms (Zorn, well-ordering) stated, and where the book uses it: right inverses, countable unions, the Vitali set, Hahn–Banach, Tychonoff"
+    must_prove:
+      - "(a,b) = (c,d) ⇒ a = c and b = d for Kuratowski pairs"
+      - "ω satisfies the Peano axioms"
+      - "the recursion theorem on ω"
+      - "commutativity and associativity of addition (representative cases)"
+      - "any two Peano systems are isomorphic"
+    key_examples:
+      - "0 = ∅, 1 = {∅}, 2 = {∅,{∅}}, and n = {0, …, n−1}"
+      - "a structure satisfying every Peano axiom except induction (ℕ plus a copy of ℤ)"
+    exit_checks:
+      - "Prove the characteristic property of Kuratowski pairs"
+      - "From the recursive definition of addition, prove a + b = b + a by induction"
+    optional: true
+    note: "Optional (decisions 4); no main-line proof may cite it. Routine verifications left to exercises, to avoid becoming Landau. Zorn's lemma is only stated here; Part VI restates it before Tychonoff and Hahn–Banach (decisions 8). This chapter also collects the choice flags that later Parts point back to."
+
+  - slug: integers-and-rationals
+    title: "Building ℤ and ℚ from Equivalence Classes"
+    pages: 55
+    sources:
+      - [TAO1.4, "§4.1–4.4 integers, rationals, absolute value, gaps in ℚ (scaffolding)"]
+      - [EST.5, "integers and rational numbers sections (depth)"]
+      - [MEN.3, "§3.1–3.4 definition of ℤ, rings, ordered integral domains"]
+      - [MEN.4, "§4.1–4.5 ℚ, fields, ordered fields"]
+      - [BLO.1, "§1.3–1.5 constructing ℤ and ℚ (alt)"]
+      - [LAN.2, "verification reference only"]
+    outline:
+      - "ℤ as classes of pairs (a,b) with (a,b) ~ (c,d) iff a + d = b + c; ℕ embedded"
+      - "Well-definedness: the central lemma of every quotient construction"
+      - "ℤ as an ordered integral domain: representative verifications, the rest as exercises"
+      - "ℚ as classes of pairs (p,q), q ≠ 0; field operations and order"
+      - "Ordered fields in general; absolute value and the triangle inequality; the Archimedean property of ℚ"
+      - "The gaps in ℚ: no rational square root of 2, and {x ∈ ℚ : x² < 2} has no supremum in ℚ"
+    must_prove:
+      - "~ on ℕ×ℕ is an equivalence relation, and addition and multiplication of ℤ are well defined"
+      - "multiplication on ℚ is well defined and ℚ is a field (representative axioms)"
+      - "ℚ is an ordered field and is Archimedean"
+      - "{x ∈ ℚ : x² < 2} is bounded above but has no least upper bound in ℚ"
+    key_examples:
+      - "an ill-defined 'operation' [p/q] ↦ p + q"
+      - "the order on ℤ/n cannot make it an ordered ring"
+    exit_checks:
+      - "Show that (a,b) ~ (c,d) ⟺ a + d = b + c is an equivalence relation and that addition respects it"
+      - "Prove that no rational number squares to 2 and that the set {x ∈ ℚ : x² < 2} has no sup in ℚ"
+    optional: true
+    note: "Optional (decisions 4). Most field and order axioms are left as exercises. The gaps section is the motivation for the next two chapters and mirrors Part I ch 1's example, which Part I proves independently."
+
+  - slug: reals-dedekind-cuts
+    title: "Constructing ℝ by Dedekind Cuts"
+    pages: 55
+    sources:
+      - [BLO.1, "§1.6–1.8 Dedekind cuts, constructing the reals, history (scaffolding)"]
+      - [EST.5, "real numbers section (depth)"]
+      - [MEN.F, "Dedekind cuts appendix"]
+      - [LAN.3, "verification reference only"]
+      - [LAN.4, "verification reference only"]
+      - [TAO1.5, "§5.1–5.3 Cauchy-sequence construction (the other road, for comparison)"]
+    outline:
+      - "Cuts: definition and the cut of √2; ℚ as rational cuts"
+      - "Order by inclusion, and the least upper bound property by taking unions"
+      - "Addition and the additive inverse (the rational-cut subtlety)"
+      - "Multiplication via positive cuts and sign cases; the field axioms, mostly as exercises"
+      - "ℚ embeds as an ordered subfield and is dense"
+      - "The other road: equivalence classes of Cauchy sequences (Tao), and a preview of Part II's completion of a metric space"
+      - "History: Dedekind 1872, Cantor and Méray, and why the gap needed filling"
+    must_prove:
+      - "the union of a nonempty bounded-above set of cuts is a cut and is its least upper bound"
+      - "the sum of two cuts is a cut, and α + (−α) = 0*"
+      - "q ↦ q* is an order-preserving injective ring homomorphism ℚ → cuts"
+      - "the cut of √2 squares to 2*"
+    key_examples:
+      - "the naive negative {−q : q ∈ α} is not a cut"
+      - "why a cut is required to have no largest element (two cuts for the same rational otherwise)"
+    exit_checks:
+      - "Prove the least upper bound property for cuts"
+      - "Prove that α + (−α) = 0* for an irrational cut and for a rational cut"
+    optional: true
+    note: "Optional (decisions 4); recommended after Part I ch 1–3. Dedekind cuts are chosen because they give the LUB property directly; the Cauchy construction appears only as a comparison (it returns in Part II as completion, decisions 5)."
+
+  - slug: complete-ordered-field
+    title: "The Complete Ordered Field Is Unique"
+    pages: 45
+    sources:
+      - [MEN.5, "§5.1–5.4 inadequacy of ℚ, Archimedean ordered fields, least upper bounds, categoricity (scaffolding); §5.6 Cauchy completion (comparison)"]
+      - [BLO.2, "§2.7 uniqueness of the real numbers"]
+      - [TAO1.5, "§5.4–5.5 ordering the reals and the least upper bound property"]
+    outline:
+      - "Ordered fields compared: ℚ, ℚ(√2), ℝ, and the non-Archimedean field ℝ(x)"
+      - "Completeness implies the Archimedean property and density of ℚ"
+      - "The uniqueness theorem: an isomorphism between complete ordered fields built from sups of rationals"
+      - "The isomorphism is unique: the only order-preserving automorphism of ℝ is the identity"
+      - "Decimals as sups: why 0.999… = 1 needs a definition, and then has a one-line proof"
+      - "Assume the axiom or build a model: how Part I's LUB axiom and this Part's construction fit together"
+    must_prove:
+      - "a complete ordered field is Archimedean and ℚ is dense in it"
+      - "any two complete ordered fields are isomorphic, by a unique isomorphism"
+      - "ℝ(x) with the 'eventually positive' order is an ordered field that is not Archimedean, so not complete"
+      - "0.999… = 1 once a decimal is defined as the sup of its truncations"
+    key_examples:
+      - "ℝ(x): x is an infinitely large element"
+      - "ℚ(√2) is Archimedean but not complete"
+    exit_checks:
+      - "Prove that an order-preserving field isomorphism between complete ordered fields is determined by its values on ℚ"
+      - "Show directly that ℝ(x) fails the least upper bound property"
+    optional: true
+    note: "Optional closing theorem of Part 0 (decisions 4): the bridge between 'assume the axiom' (Part I opens from ax-least-upper-bound) and 'build a model' (reals-dedekind-cuts). Equivalent forms of completeness are NOT proved here: they belong at the end of Part I; point forward to them."
+
+cut:
+  CH.1: "prelude; the book's own chapter introduction replaces it"
+  CH.6: "psychology interlude (Linda problem), off-topic"
+  CH.8: "postlude on classification of sentences about ℕ; metamathematics excluded (curriculum: no metamathematics)"
+  CH.B: "denotational semantics, beyond scope"
+  FX.1: "informal notions of validity; covered by the book's own intro"
+  FX.2: "symbolization of SL; subsumed by CH.2"
+  FX.3: "truth tables; subsumed by CH.3 §3.5 (tables come after the rules, decisions 2)"
+  FX.5: "formal semantics and models; beyond scope"
+  VDL.3: "completeness, compactness, model theory; beyond scope"
+  VDL.4: "second-order logic; beyond scope"
+  VDL.6: "normalisation; the Curry–Howard remark is written originally instead"
+  VDL.7: "Gödel's theorem; metamathematics excluded"
+  VEL.7: "number theory and cryptography; not needed for analysis"
+  HAM.3: "counting; not needed for analysis"
+  HAL.18: "transfinite recursion; beyond scope"
+  HAL.19: "ordinal numbers; beyond scope (von Neumann naturals suffice)"
+  HAL.20: "sets of ordinals; beyond scope"
+  HAL.21: "ordinal arithmetic; beyond scope"
+  HAL.23: "countable sets via Halmos's ω; subsumed by VEL.8 §8.2 without depending on the construction of ω"
+  HAL.24: "cardinal arithmetic; beyond scope"
+  HAL.25: "cardinal numbers; beyond scope"
+  EST.1: "baby set theory; subsumed by TAO1.3 and HAL.1–10"
+  EST.7: "orderings and ordinals; beyond scope"
+  EST.8: "ordinals and order types; beyond scope"
+  EST.9: "special topics; beyond scope"
+  EST.A: "appendix on notation and logic; subsumed by the logic chapters"
+  MEN.1: "logic and set theory basics; subsumed by VEL, CH, TAO1.3"
+  MEN.A: "equality appendix; covered by CH.5 §5.4"
+  MEN.B: "finite sums; covered in relations-and-induction via VEL.6"
+  MEN.C: "polynomials; not needed"
+  MEN.D: "finite and denumerable sets; subsumed by VEL.8 and HAM.14"
+  MEN.G: "complex numbers; Part I or Part V introduces ℂ"
+  LAN.5: "complex numbers; Part I or Part V introduces ℂ"
+
+exemptions:
+  - edge: [TAO1.2, TAO1.3]
+    why: "Tao ch 3 uses the natural numbers of ch 2 only in examples and in §3.6 (finite cardinality). The main line takes ℕ, induction and well-ordering as given (relations-and-induction precedes countable-and-uncountable); Tao ch 2 is used only in the optional zf-and-natural-numbers, which decisions.md item 4 puts beside the main line."
+  - edge: [VEL.4, VEL.5]
+    why: "Velleman ch 4 is split. §4.1–4.2 (ordered pairs, products, relations), which is all that ch 5 (functions) uses, is drawn on in sets-and-functions together with ch 5; §4.3–4.5 (orders, equivalence relations) goes to relations-and-induction."
+  - edge: [HAM.11, HAM.12]
+    why: "Hammack ch 11 is split in the same way: §11.1 (relations as subsets of a product) is used in sets-and-functions; §11.2–11.5 goes to relations-and-induction."
+  - edge: [FX.4, FX.6]
+    why: "forall x ch 6 is split. §6.1–6.3 (sentential rules, derived rules) needs only the sentential material and is used in logic-connectives; §6.4–6.6 (quantifier and identity rules) is used in quantifiers-and-proof together with ch 4."
+
+coverage_gaps:
+  - "Lean tactic column of the rule / phrase / Lean table (no source; original, following curriculum.md's table)"
+  - "Worked example 'uniformly continuous ⇒ continuous' annotated rule by rule, and the rule-level reason the converse fails (no logic source uses analysis examples)"
+  - "'What is not allowed' catalogue tied rule by rule to common errors (CH and VEL cover the rules; the catalogue itself is original)"
+  - "Selden & Selden style proof-verification tasks (four flawed student proofs)"
+  - "Negating uniform continuity and uniform convergence (HAM.13 covers only ε–δ limits)"
+  - "Excluded-middle history: Brouwer 1908, Hilbert 1927 and the Grundlagenstreit, Heyting 1930, Gödel–Gentzen translation, Bishop 1967 (VDL.5 §5.1 is brief)"
+  - "Constructive consequences for analysis: located sup, Specker's sequence, approximate IVT, non-constructive step in Bolzano–Weierstrass (no assigned source)"
+  - "Curry–Howard, Lean's Classical.em via Diaconescu, and noncomputable (no assigned source)"
+  - "Cross-Part list of where choice is used (Vitali, Hahn–Banach, Tychonoff)"

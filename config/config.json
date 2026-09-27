@@ -7,16 +7,14 @@
     "reading-paths declares this book's readers; see README.md ('Reading paths')."
   ],
   "_TODO": [
-    "title",
-    "author",
     "repo-url",
     "issues-url",
     "deploy-repo",
     "deploy-domain",
     "deploy-push-url"
   ],
-  "title": "TODO: Book Title",
-  "author": "TODO: Author Name",
+  "title": "Analysis: From First Proofs to Modern Analysis",
+  "author": "Akizumi",
   "output": {
     "html": "_build/html",
     "pdf": "_build/pdf",
@@ -48,6 +46,13 @@
       {
         "prefix": "prp",
         "name": "Proposition",
+        "numbered": true,
+        "counter_group": "main",
+        "color": "#2f62b5"
+      },
+      {
+        "prefix": "ax",
+        "name": "Axiom",
         "numbered": true,
         "counter_group": "main",
         "color": "#2f62b5"
@@ -90,19 +95,8 @@
       "check"
     ]
   },
-  "reading-paths": [
-    {
-      "slug": "example",
-      "name": "The worked section",
-      "description": "Everything the proofs of the demonstration section rest on. One profile, aimed at the one section this template ships, so the machinery has something real to compute; replace it with this book's readers.",
-      "targets": [
-        "ch00-demo/01"
-      ]
-    }
-  ],
-  "chapters": [
-    "src/ch00-demo"
-  ],
+  "reading-paths": [],
+  "chapters": [],
   "macros": "latex/macros.tex",
   "templates": {
     "html": "templates/html/template.html",
@@ -120,8 +114,8 @@
   "issues-url": "",
   "redirects": {},
   "license": {
-    "name": "",
-    "url": ""
+    "name": "CC BY-NC-SA 4.0",
+    "url": "https://creativecommons.org/licenses/by-nc-sa/4.0/"
   },
   "mention-exempt-titles": []
 }

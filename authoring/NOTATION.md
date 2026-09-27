@@ -3,18 +3,18 @@
 This list is fixed. A chapter that needs a new symbol adds it **here**, and a new macro in
 `latex/macros.tex`, before using it. The left column is what to type.
 
-It is a template. The conventions in "Standing conventions" are the ones the existing books
-settled on and are worth keeping whatever the subject; the tables below are empty and are
-filled in as the book grows. Fill a row the first time a symbol is used, not later.
+The conventions in "Standing conventions" are shared with the linear-algebra companion; the
+tables below are the analysis book's. Fill a row the first time a symbol is used, not later.
 
 ## Standing conventions
 
 These are book-independent. Keep them.
 
-- **Bold for the concrete, italic for the abstract.** Matrices are bold uppercase
-  (`\A`, `\B`), vectors bold lowercase (`\v`, `\x`), and the maps and spaces they represent
-  stay plain italic (\( T \), \( V \)). Entries of a matrix stay plain: \( a_{ij} \).
-  The zero vector is `\0`, bold, and the scalar zero is `0`.
+- **Points and vectors are plain italic** (\( x \in \nR^n \), \( f \in C[a,b] \)), unlike
+  the linear-algebra companion's bold vectors: in analysis the same letter moves between ℝ,
+  ℝⁿ and function spaces, and bold would have to switch on and off. The bold one-letter
+  macros (`\v`, `\A`, …) exist in `latex/macros.tex` for the engine; this book does not use
+  them.
 - **Ordered things go in parentheses, unordered in braces.** An ordered basis is
   `\sB = (\v_1, \dots, \v_n)`; a set is `\{ \v_1, \dots, \v_n \}`. The distinction is load
   bearing the first time order matters, and a reader who has seen it kept everywhere trusts
@@ -40,31 +40,55 @@ These are book-independent. Keep them.
 
 | Type | Renders / meaning |
 |---|---|
-| `\nN, \nZ, \nQ, \nR, \nC` | ℕ, ℤ, ℚ, ℝ, ℂ. **Say here whether ℕ contains 0.** |
+| `\nN, \nZ, \nQ, \nR, \nC` | ℕ, ℤ, ℚ, ℝ, ℂ. **ℕ = {1, 2, 3, …} does not contain 0.** |
+| `\nNz` | ℕ₀ = {0, 1, 2, …}, used on Part 0's construction route (Peano's axioms start at 0) |
+| `\varepsilon` | ε, always the variant (never `\epsilon`) |
 | `\coloneqq` | "is defined to be" |
 | `\{ x \in S : P(x) \}` | set-builder notation, with a colon |
 | `S \setminus T`, `\card{S}` | difference, cardinality |
 | `f \colon X \to Y`, `x \mapsto f(x)` | functions |
 | `\id_X` | identity function |
-| | |
+| `\powerset{X}` | power set 𝒫(X) |
+| `\card{S}` | cardinality |
+| `\ind_{A}` | indicator function 𝟏_A of a set A |
+| `\sup A`, `\inf A`, `\max`, `\min` | supremum and infimum (sup ∅ = −∞ and sup of an unbounded set = +∞ only from Part IV on, where it is announced) |
+| `\limsup_{n \to \infty} a_n`, `\liminf` | upper and lower limits |
+| `\floor{x}`, `\ceil{x}` | floor and ceiling |
+| `(a_n)_{n \ge 1}` or `(a_n)` | a sequence (parentheses: ordered); `\{a_n : n \in \nN\}` is its set of values |
+| `(a, b)`, `[a, b]`, `(a, b]` | intervals; an ordered pair is written `(a, b)` too and context decides, stated once in Part 0 |
 
 ## The book's objects
 
-The main characters: what letter each kind of object gets, and what stays plain.
+The main characters: what letter each kind of object gets.
 
-| Type | Meaning |
+| Letter | Meaning |
 |---|---|
-| | |
-| | |
-| | |
+| \( x, y, z, a, b \) | points or real numbers |
+| \( (x_n), (a_n) \) | sequences; subsequences \( (x_{n_k}) \) |
+| \( f, g, h \) | functions; \( (f_n) \) sequences of functions |
+| \( A, B, S, E \) | subsets; \( K \) compact; \( U, V, W \) open; \( F \) closed |
+| \( (X, d), (Y, \rho) \) | metric spaces; \( B(x, r) \) open ball, \( \overline{B}(x, r) \) closed ball |
+| \( (X, \norm{\cdot}) \), \( H \) | normed spaces; Hilbert spaces |
+| \( \varepsilon, \delta, r \) | small positive numbers; \( N, M \) thresholds (positive integers) |
+| \( (X, \sM, \mu) \) | a measure space: σ-algebra \( \sM \), measure \( \mu \); Lebesgue measure \( m \) |
+| \( z, w \); \( \Omega \) | complex numbers; an open set in ℂ or ℝⁿ |
+| \( T, S \) | operators between normed spaces |
 
 ## Operators and named maps
 
 | Type | Meaning |
 |---|---|
-| | |
-| | |
-| | |
+| `\diam A`, `\dist(x, A)` | diameter, distance to a set |
+| `\closure{A}`, `\interior{A}`, `\boundary{A}` | closure, interior, boundary |
+| `\supp f` | support |
+| `\esssup` | essential supremum |
+| `\osc` | oscillation |
+| `Df(a)`, `f'(a)` | Fréchet derivative at a; the derivative on ℝ |
+| `\pd{f}{x_i}` | partial derivative |
+| `C[a,b]`, `C(K)`, `C^k`, `C_c` | continuous, k-times continuously differentiable, compactly supported functions |
+| `\hat{f}(n)`, `\hat{f}(\xi)` | Fourier coefficient; Fourier transform |
+| `f * g` | convolution |
+| `L^p`, `\ell^p`, `\norm{f}_p` | Lebesgue spaces, sequence spaces, their norms |
 
 ## Relations
 
@@ -90,4 +114,4 @@ reintroducing it, and it explains an old label that cannot be renamed.
 The notions that get the full eleven-step explain template (`authoring/STYLE.md` §3),
 listed once so the judgement is not remade per section.
 
-- 
+- The list in `authoring/STYLE.md` §3; add a notion here when a blueprint promotes one. 

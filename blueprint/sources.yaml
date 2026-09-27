@@ -1,0 +1,59 @@
+# The reference books a chapter's coverage is checked against. Codes are used as the
+# prefix of DAG node ids (blueprint/dag.json): <CODE>.<chapter>, e.g. ABB.1, SS3.6.
+# `dir` is relative to the converted library (env ANALYSIS_SOURCES, default
+# ~/coding/analysis/converted). Converted text is never committed to this repository.
+# role: scaffolding = the book whose chapter sequence a Part follows most closely;
+#       depth = fuller or more general treatment; motivation = the "why" and history;
+#       problems = exercise and counterexample reservoirs; bridge = gentler on-ramp.
+books:
+  # Part 0 — logic, sets, number systems
+  CH:   {dir: "00 Logic & Proofs/Chiswell & Hodges - Mathematical Logic", role: scaffolding, part: "0"}
+  FX:   {dir: "00 Logic & Proofs/Magnus et al - forall x", role: bridge, part: "0"}
+  VDL:  {dir: "00 Logic & Proofs/van Dalen - Logic and Structure", role: depth, part: "0"}
+  VEL:  {dir: "00 Logic & Proofs/Velleman - How to Prove It (3rd ed)", role: scaffolding, part: "0"}
+  HAM:  {dir: "00 Logic & Proofs/Hammack - Book of Proof (3rd ed)", role: problems, part: "0"}
+  HAL:  {dir: "01 Set Theory/Halmos - Naive Set Theory", role: scaffolding, part: "0"}
+  EST:  {dir: "01 Set Theory/Enderton - Elements of Set Theory (1977)", role: depth, part: "0"}
+  TAO1: {dir: "02 Number Systems/Tao - Analysis I (3rd ed)", role: scaffolding, part: "0,I"}
+  BLO:  {dir: "02 Number Systems/Bloch - The Real Numbers and Real Analysis", role: depth, part: "0,I"}
+  LAN:  {dir: "02 Number Systems/Landau - Foundations of Analysis", role: depth, part: "0"}
+  MEN:  {dir: "02 Number Systems/Mendelson - Number Systems and the Foundations of Analysis", role: depth, part: "0"}
+  # Part I — analysis on R
+  ABB:  {dir: "05 Single-Variable Analysis/Abbott - Understanding Analysis (2nd ed)", role: scaffolding, part: "I"}
+  PMA:  {dir: "05 Single-Variable Analysis/Rudin - Principles of Mathematical Analysis (3rd ed)", role: depth, part: "I,II"}
+  SPI:  {dir: "05 Single-Variable Analysis/Spivak - Calculus (4th ed)", role: problems, part: "I"}
+  BRR:  {dir: "05 Single-Variable Analysis/Bressoud - A Radical Approach to Real Analysis (2nd ed)", role: motivation, part: "I"}
+  ZOR1: {dir: "05 Single-Variable Analysis/Zorich - Mathematical Analysis I", role: depth, part: "I"}
+  # Part II — metric spaces, topology, several variables, ODE
+  PUG:  {dir: "06 Metric Spaces & Topology/Pugh - Real Mathematical Analysis (2nd ed)", role: scaffolding, part: "II"}
+  TAO2: {dir: "06 Metric Spaces & Topology/Tao - Analysis II (4th ed)", role: depth, part: "II"}
+  SUT:  {dir: "06 Metric Spaces & Topology/Sutherland - Introduction to Metric and Topological Spaces (2nd ed)", role: bridge, part: "II"}
+  MUN:  {dir: "06 Metric Spaces & Topology/Munkres - Topology (2nd ed)", role: depth, part: "II,IV,VI"}
+  KF:   {dir: "06 Metric Spaces & Topology/Kolmogorov & Fomin - Introductory Real Analysis", role: depth, part: "II"}
+  MOA:  {dir: "07 Multivariable, Manifolds & Forms/Munkres - Analysis on Manifolds", role: scaffolding, part: "II"}
+  TES:  {dir: "08 ODE/Teschl - Ordinary Differential Equations and Dynamical Systems", role: depth, part: "II"}
+  # Part III — Fourier analysis
+  SS1:  {dir: "09 Fourier Analysis (Intro)/Stein & Shakarchi I - Fourier Analysis", role: scaffolding, part: "III"}
+  KOR:  {dir: "09 Fourier Analysis (Intro)/Korner - Fourier Analysis (1988)", role: motivation, part: "III"}
+  DM:   {dir: "09 Fourier Analysis (Intro)/Dym & McKean - Fourier Series and Integrals", role: depth, part: "III"}
+  # Part IV — measure and integration
+  SS3:  {dir: "11 Measure & Integration/Stein & Shakarchi III - Real Analysis", role: scaffolding, part: "IV"}
+  FOL:  {dir: "11 Measure & Integration/Folland - Real Analysis (2nd ed)", role: depth, part: "IV,VI"}
+  MIRA: {dir: "11 Measure & Integration/Axler - Measure, Integration & Real Analysis", role: bridge, part: "IV"}
+  BRL:  {dir: "11 Measure & Integration/Bressoud - A Radical Approach to Lebesgue's Theory of Integration", role: motivation, part: "IV"}
+  WZ:   {dir: "11 Measure & Integration/Wheeden & Zygmund - Measure and Integral (2nd ed)", role: depth, part: "IV"}
+  # Part V — complex analysis
+  SS2:  {dir: "10 Complex Analysis/Stein & Shakarchi II - Complex Analysis", role: scaffolding, part: "V"}
+  AHL:  {dir: "10 Complex Analysis/Ahlfors - Complex Analysis (3rd ed)", role: depth, part: "V"}
+  CON:  {dir: "10 Complex Analysis/Conway - Functions of One Complex Variable I (2nd ed)", role: depth, part: "V"}
+  NEE:  {dir: "10 Complex Analysis/Needham - Visual Complex Analysis (25th anniv ed)", role: motivation, part: "V"}
+  # Part VI — functional analysis, distributions, Sobolev
+  BRZ:  {dir: "12 Functional Analysis/Brezis - Functional Analysis, Sobolev Spaces and PDE", role: scaffolding, part: "VI"}
+  SS4:  {dir: "12 Functional Analysis/Stein & Shakarchi IV - Functional Analysis", role: depth, part: "VI"}
+  KRE:  {dir: "12 Functional Analysis/Kreyszig - Introductory Functional Analysis with Applications", role: bridge, part: "VI"}
+  LAX:  {dir: "12 Functional Analysis/Lax - Functional Analysis", role: depth, part: "VI"}
+  FJ:   {dir: "13 Distributions, Sobolev & PDE/Friedlander & Joshi - Introduction to the Theory of Distributions (2nd ed)", role: depth, part: "VI"}
+  EVA:  {dir: "13 Distributions, Sobolev & PDE/Evans - Partial Differential Equations", role: depth, part: "VI"}
+  # Across Parts
+  GO:   {dir: "18 Problems & Counterexamples/Gelbaum & Olmsted - Counterexamples in Analysis", role: problems, part: "I,II,IV"}
+  SSB:  {dir: "18 Problems & Counterexamples/Steen & Seebach - Counterexamples in Topology", role: problems, part: "II"}
