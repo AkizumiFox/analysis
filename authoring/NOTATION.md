@@ -74,6 +74,16 @@ The main characters: what letter each kind of object gets.
 | \( z, w \); \( \Omega \) | complex numbers; an open set in ℂ or ℝⁿ |
 | \( T, S \) | operators between normed spaces |
 
+## Logic (Part 0)
+
+| Type | Meaning |
+|---|---|
+| `\wedge, \vee, \to, \leftrightarrow, \neg, \bot` | and, or, implies, iff, not, contradiction (in derivations; prose says "implies", and theorems use `\Rightarrow`, `\iff`) |
+| `\forall, \exists` | quantifiers |
+| `\Gamma \vdash P` | P is derivable from the assumptions Γ |
+| `\fsc`, `\fhyp{P}` | one open assumption box in a Fitch derivation; the assumption that opens it (see `latex/macros.tex`) |
+| `\rulename{\wedge I}` | a rule name: ∧I, ∧E, →I, →E, ∨I, ∨E, ¬I, ¬E, ⊥E, RAA, ∀I, ∀E, ∃I, ∃E, =I, =E |
+
 ## Operators and named maps
 
 | Type | Meaning |

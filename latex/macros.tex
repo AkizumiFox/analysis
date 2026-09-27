@@ -230,3 +230,13 @@
 \providecommand{\ceil}[1]{\left\lceil #1 \right\rceil}
 % Natural numbers with zero, used on the construction route of Part 0
 \providecommand{\nNz}{\ensuremath{\mathbb{N}_{0}}}
+% Natural deduction (Part 0). A Fitch derivation is a display array, one row per line:
+%   \begin{array}{r l l}
+%   1 & \fsc \fhyp{P \wedge Q} & \text{assumption} \\
+%   2 & \fsc P & \wedge\mathrm{E}\ 1 \\
+%   \end{array}
+% \fsc marks one open assumption box (repeat it for nested boxes); \fhyp underlines the
+% assumption that opens a box. \rulename{\to I} typesets a rule name in the justification column.
+\providecommand{\fsc}{\mid\;}
+\providecommand{\fhyp}[1]{\underline{#1}}
+\providecommand{\rulename}[1]{\mathrm{#1}}

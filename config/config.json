@@ -96,7 +96,16 @@
     ]
   },
   "reading-paths": [],
-  "chapters": [],
+  "chapters": [
+    {
+      "dir": "src/ch01-logic-connectives",
+      "part": "Part 0 · Foundations"
+    },
+    {
+      "dir": "src/ch08-least-upper-bound",
+      "part": "Part I · Analysis on the Real Line"
+    }
+  ],
   "macros": "latex/macros.tex",
   "templates": {
     "html": "templates/html/template.html",
