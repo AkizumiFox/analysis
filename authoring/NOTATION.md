@@ -52,6 +52,10 @@ These are book-independent. Keep them.
 | `\card{S}` | cardinality |
 | `\ind_{A}` | indicator function 𝟏_A of a set A |
 | `\sup A`, `\inf A`, `\max`, `\min` | supremum and infimum (sup ∅ = −∞ and sup of an unbounded set = +∞ only from Part IV on, where it is announced) |
+| `\abs{x}` | absolute value of a number (Ch 8, `def-absolute-value`); \( \abs{x - y} \) is the distance from \( x \) to \( y \) |
+| `-A \coloneqq \{ -a : a \in A \}` | reflection of a set of numbers (Ch 8); \( \inf A = -\sup(-A) \) |
+| `cA \coloneqq \{ ca : a \in A \}` | scaling of a set of numbers by \( c \in \nR \) (Ch 8) |
+| `A + B \coloneqq \{ a + b : a \in A, \ b \in B \}` | sum of two sets of numbers (Ch 8); later also for subsets of a vector space |
 | `\limsup_{n \to \infty} a_n`, `\liminf` | upper and lower limits |
 | `\floor{x}`, `\ceil{x}` | floor and ceiling |
 | `(a_n)_{n \ge 1}` or `(a_n)` | a sequence (parentheses: ordered); `\{a_n : n \in \nN\}` is its set of values |
@@ -83,6 +87,13 @@ The main characters: what letter each kind of object gets.
 | `\Gamma \vdash P` | P is derivable from the assumptions Γ |
 | `\fsc`, `\fhyp{P}` | one open assumption box in a Fitch derivation; the assumption that opens it (see `latex/macros.tex`) |
 | `\rulename{\wedge I}` | a rule name: ∧I, ∧E, →I, →E, ∨I, ∨E, ¬I, ¬E, ⊥E, RAA, ∀I, ∀E, ∃I, ∃E, =I, =E |
+
+Typesetting rules for logic (learned in the Chapter 1 pilot):
+- A rule name whose symbol is a relation gets braces: `\rulename{{\to}I}`, `\rulename{{\leftrightarrow}E}`; otherwise the arrow's relation spacing prints "→ I".
+- Rule names and connectives in prose are always math: `\( \rulename{\neg I} \)`. A bare Unicode ¬, ∧, → in prose stops pdflatex.
+- A range of cited lines is `2\text{–}5` (Unicode en dash inside `\text`); `\text{--}` prints "--" on the web.
+- Truth tables, and any table whose headers are formulas, are display arrays (`\begin{array}{cc|c} … \hline …`), not pipe tables, which wrap formulas in the PDF.
+- In a derivation a line may cite any earlier line not inside a closed box (no reiteration rule), and a result already derived may be used as one line.
 
 ## Operators and named maps
 

@@ -22,6 +22,18 @@ COMMON = {"the", "of", "a", "is", "and", "to", "in", "that", "for", "be", "by", 
           "on", "as", "an", "are", "this", "it", "we", "let", "there", "exists", "every", "all", "such"}
 
 
+# The vocabulary every analysis text shares: an n-gram made only of these words, the common
+# words above and "math" (a formula) is stock phrasing ("math is not an upper bound of math",
+# "every non-empty subset that is bounded above has a least upper bound") and is not reported.
+# A flagged n-gram has at least three words outside this list: that is prose, not vocabulary.
+STOCK = {"upper", "lower", "bound", "bounds", "bounded", "above", "below", "least", "greatest",
+         "non", "empty", "subset", "set", "element", "property", "hence", "since", "so", "which",
+         "has", "have", "not", "cannot", "prove", "show", "suppose", "assume", "then", "therefore",
+         "thus", "even", "odd", "integer", "integers", "number", "real", "rational", "if", "only",
+         "or", "at", "from", "both", "sides", "gives", "some", "any", "each", "is", "are", "no",
+         "sequence", "function", "continuous", "converges", "limit", "point", "interval"}
+
+
 def words(text: str):
     return re.findall(r"[a-z]+(?:'[a-z]+)?", text.lower())
 
@@ -78,7 +90,7 @@ def main():
             print(f"  {nid}: UNCHECKED ({len(paths)} files, {len(src)} words)")
             continue
         shared = [g for g in mine_ng & ngrams(src, a.n)
-                  if sum(w not in COMMON and w != "math" for w in g) >= 3]
+                  if sum(w not in COMMON and w not in STOCK and w != "math" for w in g) >= 3]
         total += len(shared)
         print(f"  {nid}: {len(src)} source words, {len(shared)} shared {a.n}-grams")
         for g in sorted(shared)[:40]:

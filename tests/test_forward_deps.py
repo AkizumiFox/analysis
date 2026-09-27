@@ -241,11 +241,12 @@ class TestAgainstTheRealBook(unittest.TestCase):
         violations = self.tool.find_violations(self.labels)
         self.assertEqual(violations, [], self.tool.report(violations))
 
-    def test_the_signposts_are_still_there_and_are_all_soft(self):
-        """The eighty are policy, not an oversight: the test fails if they vanish."""
+    def test_the_signposts_are_all_soft(self):
+        """Forward pointers are allowed as signposts (examples, remarks, exercises), never
+        as steps of a proof. (The regression book also pinned their count; this book is too
+        young to have a count worth pinning.)"""
         order = self.tool.place(self.labels)
         rows = self.tool.forward_citations(self.labels, order)
-        self.assertGreater(len(rows), 50)
         self.assertTrue(all(not row[3] for row in rows))
 
 

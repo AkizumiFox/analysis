@@ -4,7 +4,7 @@ This book takes a reader who has never written a proof and brings them, in one c
 
 Three convictions shape it.
 
-**Proof is learned inside mathematics.** The book opens with logic, but logic taught as the grammar of proof: each rule of inference is introduced beside the sentence a mathematician writes when using it, and every rule is exercised on real analysis within a few pages. After that, proof technique is learned where it is needed, in ε–N and ε–δ arguments about real numbers.
+**Proof is learned inside mathematics.** The book opens with logic, but logic taught as the grammar of proof: each rule of inference is introduced beside the sentence a mathematician writes when using it, and every rule is exercised on real analysis within a few pages. After that, proof technique is learned where it is needed, in \( \varepsilon \)–\( N \) and \( \varepsilon \)–\( \delta \) arguments about real numbers.
 
 **The same few ideas return at higher altitude.** Convergence, completeness, compactness and continuity appear first on the real line, then in \( \nR^n \), in metric spaces and spaces of functions, in Banach and Hilbert spaces, and finally in the weak topologies. Each return recalls the earlier version and says what changes. By the fourth visit the reader recognizes an old friend in new clothes.
 

@@ -236,7 +236,19 @@
 %   2 & \fsc P & \wedge\mathrm{E}\ 1 \\
 %   \end{array}
 % \fsc marks one open assumption box (repeat it for nested boxes); \fhyp underlines the
-% assumption that opens a box. \rulename{\to I} typesets a rule name in the justification column.
-\providecommand{\fsc}{\mid\;}
+% assumption that opens a box. \rulename{\wedge I} typesets a rule name in the justification
+% column; brace a relation symbol, \rulename{{\to}I}, \rulename{{\leftrightarrow}E}, or it
+% prints with relation spacing as "-> I". Line ranges are written 3\text{–}5.
+% Each \fsc draws a bar a little taller than a row (smashed, so rows keep their height), so
+% the bars of consecutive rows overlap into one continuous line in both the PDF and MathJax.
+% Consequently two boxes at the same depth that follow each other directly (the two cases of
+% an or-elimination, the two directions of an iff-introduction) would merge into one bar:
+% separate them with a spacer row carrying only the enclosing boxes' bars,
+%   & & \\[-1.5ex]          (boxes at the outermost level)
+%   & \fsc & \\[-1.5ex]     (boxes inside one enclosing box), and so on.
+\providecommand{\fsc}{\smash{\rule[-1.5ex]{0.05em}{4.1ex}}\;\;}
 \providecommand{\fhyp}[1]{\underline{#1}}
 \providecommand{\rulename}[1]{\mathrm{#1}}
+% A range of cited lines in a derivation's justification column: \lines{2}{5} prints 2–5.
+% (Kept here so that no source file carries a non-ASCII character inside math.)
+\providecommand{\lines}[2]{#1\text{–}#2}
