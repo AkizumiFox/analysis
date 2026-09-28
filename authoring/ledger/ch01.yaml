@@ -1,0 +1,2365 @@
+chapter: 1
+dir: ch01-propositional-natural-deduction
+items:
+- key: def-statement
+  kind: def
+  file: 01-statements-and-connectives.md
+  line: 27
+  hash: a853efe81303
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: a853efe81303
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: 01-statements-and-connectives.md:27 definition consistent with fitch-book.sty rules and
+      later uses
+- key: exm-statements
+  kind: exm
+  file: 01-statements-and-connectives.md
+  line: 35
+  hash: bfd0bd34dc57
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: bfd0bd34dc57
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: 01-statements-and-connectives.md:35 checked line by line
+- key: def-main-connective
+  kind: def
+  file: 01-statements-and-connectives.md
+  line: 117
+  hash: 57d4d82709f5
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 57d4d82709f5
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: 01-statements-and-connectives.md:117 definition consistent with fitch-book.sty rules and
+      later uses
+- key: check:01-statements-and-connectives:1
+  kind: check
+  file: 01-statements-and-connectives.md
+  line: 146
+  hash: 7476e432c878
+  verdicts:
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: 7476e432c878
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: S6 review authoring/reviews/ch01-S6.md; 01:156-162
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 7476e432c878
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: 01-statements-and-connectives.md:146 answer checked
+- key: def-sequent
+  kind: def
+  file: 01-statements-and-connectives.md
+  line: 178
+  hash: 12561241cf8e
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 12561241cf8e
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: 01-statements-and-connectives.md:178 definition consistent with fitch-book.sty rules and
+      later uses
+- key: check:01-statements-and-connectives:2
+  kind: check
+  file: 01-statements-and-connectives.md
+  line: 196
+  hash: 10f359807e78
+  verdicts:
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: 10f359807e78
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: S6 review authoring/reviews/ch01-S6.md; 01:205-211
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 10f359807e78
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: 01-statements-and-connectives.md:196 answer checked
+- key: exr-statements-and-connectives-a1
+  kind: exr
+  file: 01-statements-and-connectives.md
+  line: 245
+  hash: d47144501746
+  verdicts:
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: d47144501746
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: S6 review authoring/reviews/ch01-S6.md; 01:258-270
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: d47144501746
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: 01-statements-and-connectives.md:245 solution derivations/arguments checked line by line;
+      check_fitch 0 errors; number facts verified
+- key: exr-statements-and-connectives-b1
+  kind: exr
+  file: 01-statements-and-connectives.md
+  line: 274
+  hash: 838fa06c50dc
+  verdicts:
+  - stage: S6
+    verdict: minor
+    by: verifier
+    hash: 838fa06c50dc
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: S6 review authoring/reviews/ch01-S6.md; 01:287-295 answers correct. But item (a) is quoted
+      and solved verbatim in the prose at 01:88 ("'f is continuous at a but not differentiable there'
+      is a conjunction"), so (a) is answered before it is asked. Swap the example or the item
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 838fa06c50dc
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: 01-statements-and-connectives.md:274 solution derivations/arguments checked line by line;
+      check_fitch 0 errors; number facts verified
+- key: exr-statements-and-connectives-b2
+  kind: exr
+  file: 01-statements-and-connectives.md
+  line: 297
+  hash: 03bc19fdfd99
+  verdicts:
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: 03bc19fdfd99
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: S6 review authoring/reviews/ch01-S6.md; 01:312-322; worked example of parsing at 01:123-142
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 03bc19fdfd99
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: 01-statements-and-connectives.md:297 solution derivations/arguments checked line by line;
+      check_fitch 0 errors; number facts verified
+- key: exr-statements-and-connectives-c1
+  kind: exr
+  file: 01-statements-and-connectives.md
+  line: 326
+  hash: c1c022d3cf3f
+  verdicts:
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: c1c022d3cf3f
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: S6 review authoring/reviews/ch01-S6.md; 01:341-353; sidecar c1 passes; own check (-2)^2=4
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: c1c022d3cf3f
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: 01-statements-and-connectives.md:326 solution derivations/arguments checked line by line;
+      check_fitch 0 errors; number facts verified
+- key: exr-statements-and-connectives-c2
+  kind: exr
+  file: 01-statements-and-connectives.md
+  line: 355
+  hash: abb4c5fe961f
+  verdicts:
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: abb4c5fe961f
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: S6 review authoring/reviews/ch01-S6.md; 01:367-373; sidecar c2 passes; own grid check of
+      x^2>1 iff x>1 or x<-1 on [-5,5] step 1/4
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: abb4c5fe961f
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: 01-statements-and-connectives.md:355 solution derivations/arguments checked line by line;
+      check_fitch 0 errors; number facts verified
+- key: def-rules-conjunction
+  kind: def
+  file: 02-conjunction-implication-derivations.md
+  line: 9
+  hash: adb97b1f5995
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: adb97b1f5995
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: 02-conjunction-implication-derivations.md:9 definition consistent with fitch-book.sty rules
+      and later uses
+- key: exm-product-in-unit-interval
+  kind: exm
+  file: 02-conjunction-implication-derivations.md
+  line: 18
+  hash: c2d2b3226b49
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: c2d2b3226b49
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: 02-conjunction-implication-derivations.md:18 checked line by line
+- key: def-rules-implication
+  kind: def
+  file: 02-conjunction-implication-derivations.md
+  line: 63
+  hash: b39cf0290cff
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: b39cf0290cff
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: 02-conjunction-implication-derivations.md:63 definition consistent with fitch-book.sty rules
+      and later uses
+- key: def-derivation
+  kind: def
+  file: 02-conjunction-implication-derivations.md
+  line: 116
+  hash: 79f00dc2c23a
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 79f00dc2c23a
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: 02-conjunction-implication-derivations.md:116 definition consistent with fitch-book.sty
+      rules and later uses
+- key: def-derivable
+  kind: def
+  file: 02-conjunction-implication-derivations.md
+  line: 141
+  hash: 711e76faf082
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 711e76faf082
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: 02-conjunction-implication-derivations.md:141 definition consistent with fitch-book.sty
+      rules and later uses
+- key: exm-derivations
+  kind: exm
+  file: 02-conjunction-implication-derivations.md
+  line: 153
+  hash: 41d9e8ac2bca
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 41d9e8ac2bca
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: 02-conjunction-implication-derivations.md:153 (a) one-line premise, (b) 1-1 box legal, (c)
+      ok; flawed block 02:188 fails at line 7 as stated; instance x>3,x>2,x>1 at x=0 correct
+- key: check:02-conjunction-implication-derivations:1
+  kind: check
+  file: 02-conjunction-implication-derivations.md
+  line: 211
+  hash: e1cb50088bb0
+  verdicts:
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: e1cb50088bb0
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: S6 review authoring/reviews/ch01-S6.md; 02:231-233
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: e1cb50088bb0
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: 02-conjunction-implication-derivations.md:211 answer checked
+- key: prp-and-commutes
+  kind: prp
+  file: 02-conjunction-implication-derivations.md
+  line: 259
+  hash: d1ea8434c568
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: d1ea8434c568
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: '02-conjunction-implication-derivations.md:259 statement ok; proof cites exm-derivations
+      (c): derivation 02:36 checked'
+- key: proof:prp-and-commutes
+  kind: proof
+  file: 02-conjunction-implication-derivations.md
+  line: 265
+  hash: e5d2ad15ae8f
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: e5d2ad15ae8f
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: '02-conjunction-implication-derivations.md:265 check_fitch rerun: 104 blocks, 0 errors;
+      every cited line/box availability re-checked by hand'
+- key: prp-implication-transitive
+  kind: prp
+  file: 02-conjunction-implication-derivations.md
+  line: 269
+  hash: 999c59619e91
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 999c59619e91
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: '02-conjunction-implication-derivations.md:269 drop Q→R: P→Q ⊬ P→R (P true, R false)'
+- key: proof:prp-implication-transitive
+  kind: proof
+  file: 02-conjunction-implication-derivations.md
+  line: 275
+  hash: b87d8eb2a226
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: b87d8eb2a226
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: 02-conjunction-implication-derivations.md:275 02:74 derivation + check table 02:245 verified
+      line by line
+- key: prp-curry
+  kind: prp
+  file: 02-conjunction-implication-derivations.md
+  line: 281
+  hash: 06fddab7b77e
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 06fddab7b77e
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: 02-conjunction-implication-derivations.md:281 checked line by line
+- key: proof:prp-curry
+  kind: proof
+  file: 02-conjunction-implication-derivations.md
+  line: 291
+  hash: 498c9c782293
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 498c9c782293
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: 02-conjunction-implication-derivations.md:291 both derivations 02:294, 02:316 checked; scope
+      remarks 02:312 correct
+- key: check:02-conjunction-implication-derivations:2
+  kind: check
+  file: 02-conjunction-implication-derivations.md
+  line: 379
+  hash: fca071392fa0
+  verdicts:
+  - stage: S6
+    verdict: minor
+    by: verifier
+    hash: fca071392fa0
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: S6 review authoring/reviews/ch01-S6.md; 02:379-385 correct, but the solution spells out
+      the full derivation of B3(a) (02:536) before the exercise; B3(a) becomes copy work. Consider a different
+      sequent in the check or in B3(a)
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: fca071392fa0
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: 02-conjunction-implication-derivations.md:379 answer checked
+- key: exr-conjunction-implication-derivations-a1
+  kind: exr
+  file: 02-conjunction-implication-derivations.md
+  line: 406
+  hash: 833ac377a8be
+  verdicts:
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: 833ac377a8be
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: S6 review authoring/reviews/ch01-S6.md; 02:436-448
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 833ac377a8be
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: 02-conjunction-implication-derivations.md:406 solution derivations/arguments checked line
+      by line; check_fitch 0 errors; number facts verified
+- key: exr-conjunction-implication-derivations-b1
+  kind: exr
+  file: 02-conjunction-implication-derivations.md
+  line: 452
+  hash: acd0f54efbc3
+  verdicts:
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: acd0f54efbc3
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: 'S6 review authoring/reviews/ch01-S6.md; 02:458-478; my derivation checks (scratch sec1-2-mine.md);
+      worked example type: 02:74-102 (derivation + line-by-line prose)'
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: acd0f54efbc3
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: 02-conjunction-implication-derivations.md:452 solution derivations/arguments checked line
+      by line; check_fitch 0 errors; number facts verified
+- key: exr-conjunction-implication-derivations-b2
+  kind: exr
+  file: 02-conjunction-implication-derivations.md
+  line: 480
+  hash: 9905cf21e7fb
+  verdicts:
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: 9905cf21e7fb
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: S6 review authoring/reviews/ch01-S6.md; 02:490-530; worked example of repetition 02:359-377
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 9905cf21e7fb
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: 02-conjunction-implication-derivations.md:480 solution derivations/arguments checked line
+      by line; check_fitch 0 errors; number facts verified
+- key: exr-conjunction-implication-derivations-b3
+  kind: exr
+  file: 02-conjunction-implication-derivations.md
+  line: 532
+  hash: 663ada16651b
+  verdicts:
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: 663ada16651b
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: S6 review authoring/reviews/ch01-S6.md; 02:541-563; own grid check that
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 663ada16651b
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: 02-conjunction-implication-derivations.md:532 solution derivations/arguments checked line
+      by line; check_fitch 0 errors; number facts verified
+- key: exr-conjunction-implication-derivations-c1
+  kind: exr
+  file: 02-conjunction-implication-derivations.md
+  line: 567
+  hash: ceaf1533ab06
+  verdicts:
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: ceaf1533ab06
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: 'S6 review authoring/reviews/ch01-S6.md; 02:620-666. Flaw is exactly line 10 (lines 1-9
+      fine, 11-13 fine given 10); conclusion true (derivable). Counterexample defeats the move: premise
+      true for all x, x=0 falsifies R (own grid check + sidecar). Scheme (3/3/1/3) awards my derivation
+      in full. Note: Hint 2 (02:617) points very directly at the repair, but (b) is not the item''s key
+      idea'
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: ceaf1533ab06
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: 02-conjunction-implication-derivations.md:567 solution derivations/arguments checked line
+      by line; check_fitch 0 errors; number facts verified
+- key: exr-conjunction-implication-derivations-c2
+  kind: exr
+  file: 02-conjunction-implication-derivations.md
+  line: 668
+  hash: bc62067b9339
+  verdicts:
+  - stage: S6
+    verdict: minor
+    by: verifier
+    hash: bc62067b9339
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: 'S6 review authoring/reviews/ch01-S6.md; 02:686-725 correct; my derivation identical and
+      checks; scheme (2/3/2/2/1) grades it fully and fairly. Minor: Hint 2 (02:683) "open a box with P
+      once more; its last line must be Q" executes the key idea (the third box) rather than naming a tool
+      or first line; together with the statement''s own "until a third box is opened", the hint ladder
+      leaves nothing to find. Suggest Hint 2: "Q -> ... needs P -> Q as a line; which rule produces an
+      implication?"'
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: bc62067b9339
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: 02-conjunction-implication-derivations.md:668 solution derivations/arguments checked line
+      by line; check_fitch 0 errors; number facts verified
+- key: def-rules-disjunction
+  kind: def
+  file: 03-disjunction-and-cases.md
+  line: 23
+  hash: a22d0df57850
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: a22d0df57850
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: 03-disjunction-and-cases.md:23 definition consistent with fitch-book.sty rules and later
+      uses
+- key: exm-disjunction-first-derivations
+  kind: exm
+  file: 03-disjunction-and-cases.md
+  line: 60
+  hash: 8a3ce0a0bc30
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 8a3ce0a0bc30
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: 03-disjunction-and-cases.md:60 checked line by line
+- key: check:03-disjunction-and-cases:1
+  kind: check
+  file: 03-disjunction-and-cases.md
+  line: 125
+  hash: f7d9fc4d0628
+  verdicts:
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: f7d9fc4d0628
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: S6 review authoring/reviews/ch01-S6.md; 03:125-131
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: f7d9fc4d0628
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: 03-disjunction-and-cases.md:125 answer checked
+- key: exm-abs-product-cases
+  kind: exm
+  file: 03-disjunction-and-cases.md
+  line: 139
+  hash: a72a54db92ff
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: a72a54db92ff
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: 03-disjunction-and-cases.md:139 checked line by line
+- key: exm-triangle-inequality-cases
+  kind: exm
+  file: 03-disjunction-and-cases.md
+  line: 165
+  hash: b6884e1ac5f4
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: b6884e1ac5f4
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: 03-disjunction-and-cases.md:165 checked line by line
+- key: check:03-disjunction-and-cases:2
+  kind: check
+  file: 03-disjunction-and-cases.md
+  line: 197
+  hash: a57f989ea58f
+  verdicts:
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: a57f989ea58f
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: S6 review authoring/reviews/ch01-S6.md; 03:197-209
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: a57f989ea58f
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: 03-disjunction-and-cases.md:197 answer checked
+- key: prp-distributivity
+  kind: prp
+  file: 03-disjunction-and-cases.md
+  line: 215
+  hash: f3b66ff5310e
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: f3b66ff5310e
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: 03-disjunction-and-cases.md:215 checked line by line
+- key: proof:prp-distributivity
+  kind: proof
+  file: 03-disjunction-and-cases.md
+  line: 225
+  hash: c329818570bb
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: c329818570bb
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: 03-disjunction-and-cases.md:225 checked line by line
+- key: exm-disjunction-regroup
+  kind: exm
+  file: 03-disjunction-and-cases.md
+  line: 281
+  hash: 1eee1029915b
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 1eee1029915b
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: 03-disjunction-and-cases.md:281 checked line by line
+- key: exm-cases-on-hypothesis
+  kind: exm
+  file: 03-disjunction-and-cases.md
+  line: 320
+  hash: f2300422a82d
+  verdicts:
+  - stage: S5a
+    verdict: minor
+    by: refereeA
+    hash: f2300422a82d
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: '03-disjunction-and-cases.md:320 03:373 ''the one place in this section where ∨I is used
+      for something other than finishing a case'' is false: prp-distributivity 2nd derivation lines 5,10
+      (Q∨R fed to ∧I), exm-disjunction-regroup lines 3,7 (P∨Q fed to ∨I), and 03:50 (x=0 to x≤0). Derivations
+      themselves correct.'
+- key: exr-disjunction-and-cases-a1
+  kind: exr
+  file: 03-disjunction-and-cases.md
+  line: 390
+  hash: 00bdc0f9465c
+  verdicts:
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: 00bdc0f9465c
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: S6 review authoring/reviews/ch01-S6.md; 03:419-427; sidecar ok; my truth table confirms
+      sequent invalid
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 00bdc0f9465c
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: 03-disjunction-and-cases.md:390 solution derivations/arguments checked line by line; check_fitch
+      0 errors; number facts verified
+- key: exr-disjunction-and-cases-b1
+  kind: exr
+  file: 03-disjunction-and-cases.md
+  line: 431
+  hash: 604b1e3bf75e
+  verdicts:
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: 604b1e3bf75e
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: S6 review authoring/reviews/ch01-S6.md; 03:439-469; worked nested-vE example prp-distributivity/exm-disjunction-regroup
+      03:281-320
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 604b1e3bf75e
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: 03-disjunction-and-cases.md:431 solution derivations/arguments checked line by line; check_fitch
+      0 errors; number facts verified
+- key: exr-disjunction-and-cases-b2
+  kind: exr
+  file: 03-disjunction-and-cases.md
+  line: 471
+  hash: bb12ab5226b3
+  verdicts:
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: bb12ab5226b3
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: S6 review authoring/reviews/ch01-S6.md; 03:477-487; checked 1e5 random pairs
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: bb12ab5226b3
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: 03-disjunction-and-cases.md:471 solution derivations/arguments checked line by line; check_fitch
+      0 errors; number facts verified
+- key: exr-disjunction-and-cases-b3
+  kind: exr
+  file: 03-disjunction-and-cases.md
+  line: 489
+  hash: fc28e0cacbc0
+  verdicts:
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: fc28e0cacbc0
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: S6 review authoring/reviews/ch01-S6.md; 03:498-522; n^2 mod 4 in {0,1} checked
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: fc28e0cacbc0
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: 03-disjunction-and-cases.md:489 solution derivations/arguments checked line by line; check_fitch
+      0 errors; number facts verified
+- key: exr-disjunction-and-cases-c1
+  kind: exr
+  file: 03-disjunction-and-cases.md
+  line: 526
+  hash: f3d49fc4a363
+  verdicts:
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: f3d49fc4a363
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: S6 review authoring/reviews/ch01-S6.md; 03:548-578; hint 2 gives the first line (allowed)
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: f3d49fc4a363
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: 03-disjunction-and-cases.md:526 solution derivations/arguments checked line by line; check_fitch
+      0 errors; number facts verified
+- key: exr-disjunction-and-cases-c2
+  kind: exr
+  file: 03-disjunction-and-cases.md
+  line: 580
+  hash: 049bdf957496
+  verdicts:
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: 049bdf957496
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: S6 review authoring/reviews/ch01-S6.md; 03:607-615; my checks of cases 1a,1b,2a and repair
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 049bdf957496
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: 03-disjunction-and-cases.md:580 solution derivations/arguments checked line by line; check_fitch
+      0 errors; number facts verified
+- key: def-rules-negation
+  kind: def
+  file: 04-negation-and-contradiction.md
+  line: 13
+  hash: c66538d5ce54
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: c66538d5ce54
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: 04-negation-and-contradiction.md:13 definition consistent with fitch-book.sty rules and
+      later uses
+- key: exm-square-plus-one
+  kind: exm
+  file: 04-negation-and-contradiction.md
+  line: 25
+  hash: aab49dcfd9e5
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: aab49dcfd9e5
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: 04-negation-and-contradiction.md:25 checked line by line
+- key: exm-double-negation-introduction
+  kind: exm
+  file: 04-negation-and-contradiction.md
+  line: 54
+  hash: 14081497a2a4
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 14081497a2a4
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: 04-negation-and-contradiction.md:54 both derivations checked; 04:92 'no rule so far removes
+      a negation' is motivation, Ch.2 pointer at 06:27
+- key: check:04-negation-and-contradiction:1
+  kind: check
+  file: 04-negation-and-contradiction.md
+  line: 94
+  hash: 5196f85cc0a9
+  verdicts:
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: 5196f85cc0a9
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: S6 review authoring/reviews/ch01-S6.md; 04:94-110
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 5196f85cc0a9
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: 04-negation-and-contradiction.md:94 answer checked
+- key: prp-contrapositive
+  kind: prp
+  file: 04-negation-and-contradiction.md
+  line: 120
+  hash: be9fcca878be
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: be9fcca878be
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: '04-negation-and-contradiction.md:120 no RAA: derivation uses only →I,→E,¬I,¬E (04:152 true)'
+- key: proof:prp-contrapositive
+  kind: proof
+  file: 04-negation-and-contradiction.md
+  line: 130
+  hash: c9157cc5c2c1
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: c9157cc5c2c1
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: '04-negation-and-contradiction.md:130 check_fitch rerun: 104 blocks, 0 errors; every cited
+      line/box availability re-checked by hand'
+- key: prp-modus-tollens
+  kind: prp
+  file: 04-negation-and-contradiction.md
+  line: 156
+  hash: 187e181dc947
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 187e181dc947
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: '04-negation-and-contradiction.md:156 drop ¬Q: P→Q ⊬ ¬P (P,Q true); 04:183 ''lines 3–6 line
+      for line'' verified; CP route 04:196 shape checked by hand (CP i gives ¬Q→¬P); ''lines 2–7 of CP''
+      correct'
+- key: proof:prp-modus-tollens
+  kind: proof
+  file: 04-negation-and-contradiction.md
+  line: 162
+  hash: 00c19a8ead50
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 00c19a8ead50
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: '04-negation-and-contradiction.md:162 check_fitch rerun: 104 blocks, 0 errors; every cited
+      line/box availability re-checked by hand'
+- key: def-derived-rule
+  kind: def
+  file: 04-negation-and-contradiction.md
+  line: 185
+  hash: a3cb3a7a8687
+  verdicts:
+  - stage: S5a
+    verdict: minor
+    by: refereeA
+    hash: a3cb3a7a8687
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: '04-negation-and-contradiction.md:185 04:193 pasting argument is correct for one level (repetitions
+      are available; copy''s citations stay inside the copy; copy''s boxes close before its last line;
+      checked against def-derivation scope rule). But the copied derivation may itself contain derived-rule
+      lines (e.g. MT via CP, DS in 07 postpone-or), so ''derivable with derived rules => with primitive
+      rules alone'' needs one clause: repeat the expansion, which terminates because each derivation cites
+      only earlier results.'
+- key: exm-modus-tollens-instance
+  kind: exm
+  file: 04-negation-and-contradiction.md
+  line: 208
+  hash: d2614347d04a
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: d2614347d04a
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: 04-negation-and-contradiction.md:208 checked line by line
+- key: prp-disjunctive-syllogism
+  kind: prp
+  file: 04-negation-and-contradiction.md
+  line: 224
+  hash: a25df75c2bdb
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: a25df75c2bdb
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: '04-negation-and-contradiction.md:224 drop ¬P: P∨Q ⊬ Q (P true, Q false)'
+- key: proof:prp-disjunctive-syllogism
+  kind: proof
+  file: 04-negation-and-contradiction.md
+  line: 230
+  hash: 7accfd2d8321
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 7accfd2d8321
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: '04-negation-and-contradiction.md:230 check_fitch rerun: 104 blocks, 0 errors; every cited
+      line/box availability re-checked by hand; 6-6 one-line box legal'
+- key: thm-square-even-implies-even
+  kind: thm
+  file: 04-negation-and-contradiction.md
+  line: 270
+  hash: 37b96aa0d5bf
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 37b96aa0d5bf
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: '04-negation-and-contradiction.md:270 hypothesis n integer needed (n=√2: n²=2 even, n not
+      an integer); no RAA claim verified: CP, DS on (E1) in the order odd∨even, ¬I, ¬E, →I only'
+- key: proof:thm-square-even-implies-even
+  kind: proof
+  file: 04-negation-and-contradiction.md
+  line: 280
+  hash: fe2b5ba49c89
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: fe2b5ba49c89
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: 04-negation-and-contradiction.md:280 each step's rule named; DS instance P=n odd, Q=n even
+      matches (E1) order; (E2) supplies the clash (∧I implicit)
+- key: thm-sqrt2-irrational
+  kind: thm
+  file: 04-negation-and-contradiction.md
+  line: 292
+  hash: 084e1d4b32c9
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 084e1d4b32c9
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: 04-negation-and-contradiction.md:292 (L) 'not both even' is essential (A1(d)); with 4 for
+      2 the proof stalls at q²=k² (A1(e)) — both verified
+- key: proof:thm-sqrt2-irrational
+  kind: proof
+  file: 04-negation-and-contradiction.md
+  line: 302
+  hash: 5c475096dfdb
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 5c475096dfdb
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: 04-negation-and-contradiction.md:302 p²=r²q²=2q², p=2m, q²=2m² verified; skeleton 04:317
+      lines 8,10 →E, 11 ∧I, 12 ¬E 11,2, 13 ¬I 5-12 correct; Before-reading-on answer (lines 6,8) consistent
+- key: check:04-negation-and-contradiction:2
+  kind: check
+  file: 04-negation-and-contradiction.md
+  line: 308
+  hash: ee859ee9ea50
+  verdicts:
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: ee859ee9ea50
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: S6 review authoring/reviews/ch01-S6.md; 04:308-313 vs skeleton 04:317-336
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: ee859ee9ea50
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: 04-negation-and-contradiction.md:308 answer checked
+- key: prp-ex-falso
+  kind: prp
+  file: 04-negation-and-contradiction.md
+  line: 350
+  hash: 38e9b3a36430
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 38e9b3a36430
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: '04-negation-and-contradiction.md:350 drop ¬P: P ⊬ Q'
+- key: proof:prp-ex-falso
+  kind: proof
+  file: 04-negation-and-contradiction.md
+  line: 356
+  hash: 22ef5b90682c
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 22ef5b90682c
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: '04-negation-and-contradiction.md:356 check_fitch rerun: 104 blocks, 0 errors; every cited
+      line/box availability re-checked by hand'
+- key: prp-vacuous-implication
+  kind: prp
+  file: 04-negation-and-contradiction.md
+  line: 371
+  hash: 93aeb134eb69
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 93aeb134eb69
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: '04-negation-and-contradiction.md:371 drop ¬P: ⊬ P→Q'
+- key: proof:prp-vacuous-implication
+  kind: proof
+  file: 04-negation-and-contradiction.md
+  line: 377
+  hash: 7780486e4b3d
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 7780486e4b3d
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: '04-negation-and-contradiction.md:377 check_fitch rerun: 104 blocks, 0 errors; every cited
+      line/box availability re-checked by hand'
+- key: exr-negation-and-contradiction-a1
+  kind: exr
+  file: 04-negation-and-contradiction.md
+  line: 422
+  hash: 6fa9b6d7d8c2
+  verdicts:
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: 6fa9b6d7d8c2
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: S6 review authoring/reviews/ch01-S6.md; 04:436-447
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 6fa9b6d7d8c2
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: 04-negation-and-contradiction.md:422 solution derivations/arguments checked line by line;
+      check_fitch 0 errors; number facts verified
+- key: exr-negation-and-contradiction-b1
+  kind: exr
+  file: 04-negation-and-contradiction.md
+  line: 451
+  hash: f0af07d11417
+  verdicts:
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: f0af07d11417
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: S6 review authoring/reviews/ch01-S6.md; 04:459-481; worked example prp-disjunctive-syllogism
+      04:224
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: f0af07d11417
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: 04-negation-and-contradiction.md:451 solution derivations/arguments checked line by line;
+      check_fitch 0 errors; number facts verified
+- key: exr-negation-and-contradiction-b2
+  kind: exr
+  file: 04-negation-and-contradiction.md
+  line: 483
+  hash: 30d475e29226
+  verdicts:
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: 30d475e29226
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: S6 review authoring/reviews/ch01-S6.md; 04:500-505; same derivation worked as prp-contrapositive
+      04:120 (no worked ordering item, but the type is covered)
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 30d475e29226
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: 04-negation-and-contradiction.md:483 solution derivations/arguments checked line by line;
+      check_fitch 0 errors; number facts verified
+- key: exr-negation-and-contradiction-b3
+  kind: exr
+  file: 04-negation-and-contradiction.md
+  line: 507
+  hash: 7ed22c15ad93
+  verdicts:
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: 7ed22c15ad93
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: S6 review authoring/reviews/ch01-S6.md; 04:517-535; n mod 3 vs n^2 mod 3 checked
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 7ed22c15ad93
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: 04-negation-and-contradiction.md:507 solution derivations/arguments checked line by line;
+      check_fitch 0 errors; number facts verified
+- key: exr-negation-and-contradiction-b4
+  kind: exr
+  file: 04-negation-and-contradiction.md
+  line: 537
+  hash: c959b8b23cb6
+  verdicts:
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: c959b8b23cb6
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: S6 review authoring/reviews/ch01-S6.md; 04:542-561
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: c959b8b23cb6
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: 04-negation-and-contradiction.md:537 solution derivations/arguments checked line by line;
+      check_fitch 0 errors; number facts verified
+- key: exr-negation-and-contradiction-c1
+  kind: exr
+  file: 04-negation-and-contradiction.md
+  line: 565
+  hash: 1fc027457caf
+  verdicts:
+  - stage: S6
+    verdict: minor
+    by: verifier
+    hash: 1fc027457caf
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: S6 review authoring/reviews/ch01-S6.md; 04:570-598. Hint 2 (04:576-581) states the key idea
+      (assume q odd, compute parity of 3q^2) rather than only a tool/first line; consider softening
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 1fc027457caf
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: 04-negation-and-contradiction.md:565 solution derivations/arguments checked line by line;
+      check_fitch 0 errors; number facts verified
+- key: exr-negation-and-contradiction-c2
+  kind: exr
+  file: 04-negation-and-contradiction.md
+  line: 600
+  hash: 925594c8a45a
+  verdicts:
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: 925594c8a45a
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: S6 review authoring/reviews/ch01-S6.md; 04:613-620; the "not both divisible by 4" normal
+      form is true, so the flaw is exactly where stated; conclusion false (the true-conclusion item is
+      03 C2)
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 925594c8a45a
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: 04-negation-and-contradiction.md:600 solution derivations/arguments checked line by line;
+      check_fitch 0 errors; number facts verified
+- key: def-rules-biconditional
+  kind: def
+  file: 05-biconditional-and-definitions.md
+  line: 11
+  hash: 6443c3b21184
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 6443c3b21184
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: 05-biconditional-and-definitions.md:11 definition consistent with fitch-book.sty rules and
+      later uses
+- key: prp-iff-two-implications
+  kind: prp
+  file: 05-biconditional-and-definitions.md
+  line: 22
+  hash: ab42db6afd78
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: ab42db6afd78
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: '05-biconditional-and-definitions.md:22 check_fitch rerun: 104 blocks, 0 errors; every cited
+      line/box availability re-checked by hand'
+- key: proof:prp-iff-two-implications
+  kind: proof
+  file: 05-biconditional-and-definitions.md
+  line: 32
+  hash: 82e1da84ebc7
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 82e1da84ebc7
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: '05-biconditional-and-definitions.md:32 check_fitch rerun: 104 blocks, 0 errors; every cited
+      line/box availability re-checked by hand'
+- key: def-provable-equivalence
+  kind: def
+  file: 05-biconditional-and-definitions.md
+  line: 82
+  hash: 7f492f9f05be
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 7f492f9f05be
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: 05-biconditional-and-definitions.md:82 definition consistent with fitch-book.sty rules and
+      later uses
+- key: prp-provable-equivalence-basics
+  kind: prp
+  file: 05-biconditional-and-definitions.md
+  line: 96
+  hash: 258ef389fe78
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 258ef389fe78
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: 05-biconditional-and-definitions.md:96 (a),(b) true
+- key: proof:prp-provable-equivalence-basics
+  kind: proof
+  file: 05-biconditional-and-definitions.md
+  line: 111
+  hash: 6aa4fc7cdaab
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 6aa4fc7cdaab
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: 05-biconditional-and-definitions.md:111 pasting observation 05:112 correct (added enclosing
+      boxes contain both citing and cited lines; box availability preserved); premise lines -> repetitions
+      of an available line; last line of D lies in no box of D so it is a line of the new box; transitivity
+      reverse direction by swapping P,R correct
+- key: exm-iff-negations
+  kind: exm
+  file: 05-biconditional-and-definitions.md
+  line: 140
+  hash: fe831e9c5e32
+  verdicts:
+  - stage: S5a
+    verdict: minor
+    by: refereeA
+    hash: fe831e9c5e32
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: 05-biconditional-and-definitions.md:140 Derivation correct, no RAA (checked). 05:177 'its
+      converse … needs the rule of Section 1.6 … nothing met so far produces a positive statement from
+      negated ones' is offered as a reason but is not a proof and is imprecise (⊥E, DS produce positive
+      statements); unlike 05:92 it is not marked 'stated without proof'. Claim itself true (2-world Kripke
+      model); not relied on.
+- key: thm-odd-iff-square-odd
+  kind: thm
+  file: 05-biconditional-and-definitions.md
+  line: 185
+  hash: ab052b9fb619
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: ab052b9fb619
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: 05-biconditional-and-definitions.md:185 n=2k gives n²=2(2k²); ∨E on (E1) with impossible
+      case closed by ¬E,⊥E
+- key: proof:thm-odd-iff-square-odd
+  kind: proof
+  file: 05-biconditional-and-definitions.md
+  line: 191
+  hash: a7c714c6e741
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: a7c714c6e741
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: 05-biconditional-and-definitions.md:191 every step named; (E1),(E2),(E3) used
+- key: thm-squares-order
+  kind: thm
+  file: 05-biconditional-and-definitions.md
+  line: 203
+  hash: 8dcde642927a
+  verdicts:
+  - stage: S5a
+    verdict: minor
+    by: refereeA
+    hash: 8dcde642927a
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: 05-biconditional-and-definitions.md:203 Statement and both counterexamples correct (x=-2,y=1
+      kills (⇒) without x≥0; x=1,y=-2 kills (⇐) without y≥0). But remark 05:225 / lead-in 05:201 ('each
+      hypothesis used by one direction each', '(⇒) used x≥0') misdescribes the printed (⇒) proof, which
+      also multiplies by y≥0 (05:217). True that (⇒) needs only x≥0 (y≥0 follows from x≤y), but the proof
+      as written uses both.
+- key: proof:thm-squares-order
+  kind: proof
+  file: 05-biconditional-and-definitions.md
+  line: 216
+  hash: 6b49452d36fe
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 6b49452d36fe
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: 05-biconditional-and-definitions.md:216 (⇒) x²≤xy≤y²; (⇐) y<x ⇒ x>0, xy<x², y²≤xy ⇒ y²<x²
+      clash — all valid
+- key: check:05-biconditional-and-definitions:1
+  kind: check
+  file: 05-biconditional-and-definitions.md
+  line: 230
+  hash: c1bc28257930
+  verdicts:
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: c1bc28257930
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: S6 review authoring/reviews/ch01-S6.md; 05:230-243
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: c1bc28257930
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: 05-biconditional-and-definitions.md:230 answer checked
+- key: exm-strictly-increasing-both-ways
+  kind: exm
+  file: 05-biconditional-and-definitions.md
+  line: 260
+  hash: 0b1e61ee2169
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 0b1e61ee2169
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: 05-biconditional-and-definitions.md:260 checked line by line
+- key: prp-equivalence-cycle
+  kind: prp
+  file: 05-biconditional-and-definitions.md
+  line: 292
+  hash: dc2a87f9ee1f
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: dc2a87f9ee1f
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: '05-biconditional-and-definitions.md:292 drop R→P: P→Q,Q→R ⊬ P↔Q (P false, Q,R true)'
+- key: proof:prp-equivalence-cycle
+  kind: proof
+  file: 05-biconditional-and-definitions.md
+  line: 302
+  hash: 6b16494f78c3
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 6b16494f78c3
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: '05-biconditional-and-definitions.md:302 check_fitch rerun: 104 blocks, 0 errors; every
+      cited line/box availability re-checked by hand; rotation P,Q,R->Q,R,P permutes the premise set,
+      verified'
+- key: exm-unit-interval-tfae
+  kind: exm
+  file: 05-biconditional-and-definitions.md
+  line: 332
+  hash: '703518858034'
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: '703518858034'
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: '05-biconditional-and-definitions.md:332 (b)⇒(c): x≤0 ⇒ x≤0≤x² clash; divisions by x>0 justified'
+- key: exr-biconditional-and-definitions-a1
+  kind: exr
+  file: 05-biconditional-and-definitions.md
+  line: 369
+  hash: d50c629c2014
+  verdicts:
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: d50c629c2014
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: S6 review authoring/reviews/ch01-S6.md; 05:380-389
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: d50c629c2014
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: 05-biconditional-and-definitions.md:369 solution derivations/arguments checked line by line;
+      check_fitch 0 errors; number facts verified
+- key: exr-biconditional-and-definitions-b1
+  kind: exr
+  file: 05-biconditional-and-definitions.md
+  line: 392
+  hash: 8541b9305e88
+  verdicts:
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: 8541b9305e88
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: S6 review authoring/reviews/ch01-S6.md; 05:397-420; worked model prp-equivalence-cycle,
+      exm-iff-negations
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 8541b9305e88
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: 05-biconditional-and-definitions.md:392 solution derivations/arguments checked line by line;
+      check_fitch 0 errors; number facts verified
+- key: exr-biconditional-and-definitions-b2
+  kind: exr
+  file: 05-biconditional-and-definitions.md
+  line: 422
+  hash: a2a6c38c5684
+  verdicts:
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: a2a6c38c5684
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: S6 review authoring/reviews/ch01-S6.md; 05:427-434; worked model thm-odd-iff-square-odd
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: a2a6c38c5684
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: 05-biconditional-and-definitions.md:422 solution derivations/arguments checked line by line;
+      check_fitch 0 errors; number facts verified
+- key: exr-biconditional-and-definitions-b3
+  kind: exr
+  file: 05-biconditional-and-definitions.md
+  line: 436
+  hash: 112d6c9c6c40
+  verdicts:
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: 112d6c9c6c40
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: 'S6 review authoring/reviews/ch01-S6.md; 05:441-444; model: sqrt payoff paragraph (theorem
+      applied to other numbers) + exm-iff-negations'
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 112d6c9c6c40
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: 05-biconditional-and-definitions.md:436 solution derivations/arguments checked line by line;
+      check_fitch 0 errors; number facts verified
+- key: exr-biconditional-and-definitions-c1
+  kind: exr
+  file: 05-biconditional-and-definitions.md
+  line: 448
+  hash: 8db1a6eaf2af
+  verdicts:
+  - stage: S6
+    verdict: minor
+    by: verifier
+    hash: 8db1a6eaf2af
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: 'S6 review authoring/reviews/ch01-S6.md; 05:473-492. Math correct and complete. Marking
+      scheme line 488 says "the result of B3" for the factor 3: in Section 1.5 "B3" reads as exr-biconditional-and-definitions-b3
+      (strict inequalities), not exr-negation-and-contradiction-b3; use @ref. Scheme''s "any other cycle
+      earns full marks" clause fairly covers my cycle, though its per-arrow points (2/3/4) are tied to
+      the book''s arrows and give no allocation for an alternative. Hint 2 (05:467-472) names the order
+      and the n=3b/parity idea, close to executing the key step of (ii)=>(i) (acceptable as last rung).'
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 8db1a6eaf2af
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: 05-biconditional-and-definitions.md:448 solution derivations/arguments checked line by line;
+      check_fitch 0 errors; number facts verified
+- key: exr-biconditional-and-definitions-c2
+  kind: exr
+  file: 05-biconditional-and-definitions.md
+  line: 494
+  hash: f2656c961beb
+  verdicts:
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: f2656c961beb
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: S6 review authoring/reviews/ch01-S6.md; 05:505-509
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: f2656c961beb
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: 05-biconditional-and-definitions.md:494 solution derivations/arguments checked line by line;
+      check_fitch 0 errors; number facts verified
+- key: exm-raa-zero
+  kind: exm
+  file: 06-reductio-and-classical-rules.md
+  line: 13
+  hash: 9610cb326f7f
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 9610cb326f7f
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: '06-reductio-and-classical-rules.md:13 hypothesis x≥0 used (drop it: x=-1 satisfies x≤ε
+      ∀ε>0, x≠0); ε=x/2>0 justified'
+- key: def-rule-raa
+  kind: def
+  file: 06-reductio-and-classical-rules.md
+  line: 33
+  hash: 3db32d0a942e
+  verdicts:
+  - stage: S5a
+    verdict: gap
+    by: refereeA
+    hash: 78b5c5938605
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: '06-reductio-and-classical-rules.md:33 06:66 ''So RAA is never needed to prove a negation''.
+      The argument given only replaces the LAST RAA step (box on ¬¬Q -> ¬I box on Q + ¬¬I); RAA steps
+      inside the box may remain, so the global sentence does not follow. It is true propositionally only
+      by Glivenko''s theorem (not in the book) and FALSE in first-order logic (⊢ ¬¬∀x(Px∨¬Px) needs a
+      classical rule), so it will mislead once Ch.3 adds quantifiers. Local use at 06:198 is fine. Fix:
+      ''the last step of a derivation of a negation never needs RAA''.'
+- key: prp-double-negation
+  kind: prp
+  file: 06-reductio-and-classical-rules.md
+  line: 93
+  hash: d384aca53860
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: d384aca53860
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: 06-reductio-and-classical-rules.md:93 (a) no RAA, (b) RAA; 'no derivation of P from ¬¬P
+      without RAA' stated with Ch.2 pointer, not relied on
+- key: proof:prp-double-negation
+  kind: proof
+  file: 06-reductio-and-classical-rules.md
+  line: 108
+  hash: ca7235eaf249
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: ca7235eaf249
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: '06-reductio-and-classical-rules.md:108 check_fitch rerun: 104 blocks, 0 errors; every cited
+      line/box availability re-checked by hand'
+- key: check:06-reductio-and-classical-rules:1
+  kind: check
+  file: 06-reductio-and-classical-rules.md
+  line: 148
+  hash: 058bd5c34edc
+  verdicts:
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: 058bd5c34edc
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: S6 review authoring/reviews/ch01-S6.md; 06:148-158
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 058bd5c34edc
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: 06-reductio-and-classical-rules.md:148 answer checked
+- key: prp-contrapositive-converse
+  kind: prp
+  file: 06-reductio-and-classical-rules.md
+  line: 164
+  hash: 8938cfd5dff7
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 8938cfd5dff7
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: 06-reductio-and-classical-rules.md:164 RAA at line 6; 06:198 local RAA-avoidance when Q=¬S
+      verified
+- key: proof:prp-contrapositive-converse
+  kind: proof
+  file: 06-reductio-and-classical-rules.md
+  line: 174
+  hash: 198168fcf5be
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 198168fcf5be
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: '06-reductio-and-classical-rules.md:174 check_fitch rerun: 104 blocks, 0 errors; every cited
+      line/box availability re-checked by hand'
+- key: prp-excluded-middle
+  kind: prp
+  file: 06-reductio-and-classical-rules.md
+  line: 204
+  hash: c3957f3c8cc6
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: c3957f3c8cc6
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: 06-reductio-and-classical-rules.md:204 one RAA at line 8; 8-line count correct
+- key: proof:prp-excluded-middle
+  kind: proof
+  file: 06-reductio-and-classical-rules.md
+  line: 214
+  hash: a9f560f316de
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: a9f560f316de
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: '06-reductio-and-classical-rules.md:214 check_fitch rerun: 104 blocks, 0 errors; every cited
+      line/box availability re-checked by hand'
+- key: prp-de-morgan
+  kind: prp
+  file: 06-reductio-and-classical-rules.md
+  line: 245
+  hash: 7c7fc47b6206
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 7c7fc47b6206
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: 06-reductio-and-classical-rules.md:245 (a)-(c) no RAA (derivations close boxes by ¬I/∨E
+      only); (d) RAA at 6,10,13; 'no derivation of (d) avoids RAA' marked without proof, not relied on;
+      LEM route 06:371 checked
+- key: proof:prp-de-morgan
+  kind: proof
+  file: 06-reductio-and-classical-rules.md
+  line: 266
+  hash: 722f1e2fa7fd
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 722f1e2fa7fd
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: '06-reductio-and-classical-rules.md:266 check_fitch rerun: 104 blocks, 0 errors; every cited
+      line/box availability re-checked by hand; A1(f) lines 5,9 cite line 2 — correct'
+- key: check:06-reductio-and-classical-rules:2
+  kind: check
+  file: 06-reductio-and-classical-rules.md
+  line: 373
+  hash: ccddf2cfd19b
+  verdicts:
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: ccddf2cfd19b
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: S6 review authoring/reviews/ch01-S6.md; 06:373-380
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: ccddf2cfd19b
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: 06-reductio-and-classical-rules.md:373 answer checked
+- key: prp-implication-as-disjunction
+  kind: prp
+  file: 06-reductio-and-classical-rules.md
+  line: 385
+  hash: 6abff0da295e
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 6abff0da295e
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: 06-reductio-and-classical-rules.md:385 (a) no RAA, (b) LEM only
+- key: proof:prp-implication-as-disjunction
+  kind: proof
+  file: 06-reductio-and-classical-rules.md
+  line: 400
+  hash: 8bf92b579cb9
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 8bf92b579cb9
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: '06-reductio-and-classical-rules.md:400 check_fitch rerun: 104 blocks, 0 errors; every cited
+      line/box availability re-checked by hand'
+- key: thm-classical-rules-interderivable
+  kind: thm
+  file: 06-reductio-and-classical-rules.md
+  line: 461
+  hash: 95a3e9a23079
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 95a3e9a23079
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: '06-reductio-and-classical-rules.md:461 hypothesis-drop: without ⊥E in the base list, LEM
+      does not derive ¬¬E (read ⊥ as true: all remaining rules + LEM sound, ¬¬E not), and ⊥E is used at
+      ③ line k+4'
+- key: proof:thm-classical-rules-interderivable
+  kind: proof
+  file: 06-reductio-and-classical-rules.md
+  line: 473
+  hash: f82aedc0c9f9
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: b301fe1eff51
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: 06-reductio-and-classical-rules.md:473 ① 3-line and 8-line replacements valid; ② ¬I then
+      ¬¬E, box needs no change; ③ 6 lines, line m available at k+3 since every box containing m contains
+      old k; ∨E boxes available at k+5; later citations of k -> fragment's last line (same boxes); chaining
+      terminates (fragments introduce no new Y)
+- key: exr-reductio-and-classical-rules-a1
+  kind: exr
+  file: 06-reductio-and-classical-rules.md
+  line: 554
+  hash: cf10fb185e10
+  verdicts:
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: cf10fb185e10
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: S6 review authoring/reviews/ch01-S6.md; 06:566-579
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: cf10fb185e10
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: 06-reductio-and-classical-rules.md:554 solution derivations/arguments checked line by line;
+      check_fitch 0 errors; number facts verified
+- key: exr-reductio-and-classical-rules-b1
+  kind: exr
+  file: 06-reductio-and-classical-rules.md
+  line: 583
+  hash: 2ecc8b8821d3
+  verdicts:
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: 2ecc8b8821d3
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: S6 review authoring/reviews/ch01-S6.md; 06:593-636; models prp-double-negation (a),(b)
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 2ecc8b8821d3
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: 06-reductio-and-classical-rules.md:583 solution derivations/arguments checked line by line;
+      check_fitch 0 errors; number facts verified
+- key: exr-reductio-and-classical-rules-b2
+  kind: exr
+  file: 06-reductio-and-classical-rules.md
+  line: 638
+  hash: 7cd220d1a4b6
+  verdicts:
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: 7cd220d1a4b6
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: S6 review authoring/reviews/ch01-S6.md; 06:643-675; model prp-contrapositive-converse (inner
+      RAA)
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 7cd220d1a4b6
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: 06-reductio-and-classical-rules.md:638 solution derivations/arguments checked line by line;
+      check_fitch 0 errors; number facts verified
+- key: exr-reductio-and-classical-rules-b3
+  kind: exr
+  file: 06-reductio-and-classical-rules.md
+  line: 677
+  hash: 0906f12eac01
+  verdicts:
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: 0906f12eac01
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: 'S6 review authoring/reviews/ch01-S6.md; 06:682-700; model: degenerate RAA example 06:~200
+      and fragments of thm proof'
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 0906f12eac01
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: 06-reductio-and-classical-rules.md:677 solution derivations/arguments checked line by line;
+      check_fitch 0 errors; number facts verified
+- key: exr-reductio-and-classical-rules-b4
+  kind: exr
+  file: 06-reductio-and-classical-rules.md
+  line: 702
+  hash: 26bd93741a00
+  verdicts:
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: 26bd93741a00
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: S6 review authoring/reviews/ch01-S6.md; 06:718-727. No worked example applies ② to a prose
+      proof, but ② itself (06:~470-490) is the model and B4 is fully scaffolded
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 26bd93741a00
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: 06-reductio-and-classical-rules.md:702 solution derivations/arguments checked line by line;
+      check_fitch 0 errors; number facts verified
+- key: exr-reductio-and-classical-rules-c1
+  kind: exr
+  file: 06-reductio-and-classical-rules.md
+  line: 731
+  hash: da1d2ca2130d
+  verdicts:
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: 5b7a951be215
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: S6 review authoring/reviews/ch01-S6.md; 06:741-767
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 5b7a951be215
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: 06-reductio-and-classical-rules.md:731 solution derivations/arguments checked line by line;
+      check_fitch 0 errors; number facts verified
+- key: exr-reductio-and-classical-rules-c2
+  kind: exr
+  file: 06-reductio-and-classical-rules.md
+  line: 769
+  hash: 93366be7ff61
+  verdicts:
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: 93366be7ff61
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: S6 review authoring/reviews/ch01-S6.md; 06:803-837. Flaw is exactly at line 6 and nowhere
+      else (lines 7-9 are shape-correct given 6); conclusion true as blueprint requires; counterexample
+      row defeats the illegal move. Book's (d) checked by check_fitch in src
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 93366be7ff61
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: 06-reductio-and-classical-rules.md:769 solution derivations/arguments checked line by line;
+      check_fitch 0 errors; number facts verified
+- key: check:07-finding-derivations:1
+  kind: check
+  file: 07-finding-derivations.md
+  line: 42
+  hash: fac66d65a339
+  verdicts:
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: fac66d65a339
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: S6 review authoring/reviews/ch01-S6.md; 07:42–59; each first rule matches the method's step
+      2
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: fac66d65a339
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: '07-finding-derivations.md:42 07:36-40 ''goal-directed steps / RAA lose nothing'' verified:
+      A→B, A∧B, ¬A, A↔B each recovered by one →E/∧E/¬E/↔E; RAA: G derivable ⇒ ⊥ from Γ,¬G. (d) needs step
+      5 — correct'
+- key: exm-search-distribute
+  kind: exm
+  file: 07-finding-derivations.md
+  line: 61
+  hash: edcfc2952ba4
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 1f550fdfbf1f
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: '07-finding-derivations.md:61 ''nine of the fourteen lines'' verified: goal-directed wrote
+      2,6,7,8,9,11,12,13,14; premise-directed 3,4,5,10; premise line 1; ''only steps 2,3,4'' true; partial
+      blocks 07:73,89 consistent with final numbering'
+- key: exm-search-cases
+  kind: exm
+  file: 07-finding-derivations.md
+  line: 148
+  hash: 43fbe91fdcc7
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: b045a9b42694
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: 07-finding-derivations.md:148 partial 07:160 and final derivation checked
+- key: exm-search-postpone-or
+  kind: exm
+  file: 07-finding-derivations.md
+  line: 207
+  hash: fd35c5fddea6
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 91024138ecfa
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: 07-finding-derivations.md:207 dead end partial 07:219 correct; rows for neither side verified;
+      final 14-line derivation, DS 10,8 instance P:=Q,Q:=R correct
+- key: prp-peirce
+  kind: prp
+  file: 07-finding-derivations.md
+  line: 307
+  hash: 81e0a4d292b9
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 81e0a4d292b9
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: 07-finding-derivations.md:307 RAA at line 9; 'every derivation must use RAA' marked without
+      proof
+- key: proof:prp-peirce
+  kind: proof
+  file: 07-finding-derivations.md
+  line: 319
+  hash: 96bd2dd35703
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 96bd2dd35703
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: '07-finding-derivations.md:319 check_fitch rerun: 104 blocks, 0 errors; every cited line/box
+      availability re-checked by hand; ¬P used at lines 4 and 8 as stated'
+- key: exm-skeleton-odd-product
+  kind: exm
+  file: 07-finding-derivations.md
+  line: 381
+  hash: df85f2bcf512
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: df85f2bcf512
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: '07-finding-derivations.md:381 no RAA claim true: CP, (E2), DS on ''even or odd'''
+- key: exr-finding-derivations-a1
+  kind: exr
+  file: 07-finding-derivations.md
+  line: 578
+  hash: 4e57a4701d6b
+  verdicts:
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: 4e57a4701d6b
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: S6 review authoring/reviews/ch01-S6.md; 07:593–605
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 4e57a4701d6b
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: 07-finding-derivations.md:578 solution derivations/arguments checked line by line; check_fitch
+      0 errors; number facts verified
+- key: exr-finding-derivations-b1
+  kind: exr
+  file: 07-finding-derivations.md
+  line: 609
+  hash: 9f9ae17536d4
+  verdicts:
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: 9f9ae17536d4
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: S6 review authoring/reviews/ch01-S6.md; 07:623–696. Hint "(c) use LEM on P" names the tool
+      and first line — acceptable rung
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 9f9ae17536d4
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: 07-finding-derivations.md:609 solution derivations/arguments checked line by line; check_fitch
+      0 errors; number facts verified
+- key: exr-finding-derivations-b2
+  kind: exr
+  file: 07-finding-derivations.md
+  line: 698
+  hash: 8d33febe28a7
+  verdicts:
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: 8d33febe28a7
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: S6 review authoring/reviews/ch01-S6.md; 07:724–748
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 8d33febe28a7
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: 07-finding-derivations.md:698 solution derivations/arguments checked line by line; check_fitch
+      0 errors; number facts verified
+- key: exr-finding-derivations-c1
+  kind: exr
+  file: 07-finding-derivations.md
+  line: 752
+  hash: ebe5d578a787
+  verdicts:
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: b0b1ba761e71
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: S6 review authoring/reviews/ch01-S6.md; 07:779–818; hints name a tool / first line only
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: b0b1ba761e71
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: 07-finding-derivations.md:752 solution derivations/arguments checked line by line; check_fitch
+      0 errors; number facts verified
+- key: exr-finding-derivations-c2
+  kind: exr
+  file: 07-finding-derivations.md
+  line: 820
+  hash: d3cb31b3f654
+  verdicts:
+  - stage: S6
+    verdict: minor
+    by: verifier
+    hash: d3cb31b3f654
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: 'S6 review authoring/reviews/ch01-S6.md; 07:841–884. Answer correct and complete. Marking
+      scheme (07:866–874) awards 3+2 pts only for "a correct split by LEM" and "names the LEM line"; part
+      (b) itself says "RAA or LEM", and a correct RAA-on-¬goal derivation (checked: scratch sec7-c2-raa.md,
+      15 lines, clean) would score ≈5–7/10. Add "or RAA on the negated goal" to the first and last bullets'
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: d3cb31b3f654
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: 07-finding-derivations.md:820 solution derivations/arguments checked line by line; check_fitch
+      0 errors; number facts verified
+- key: exr-finding-derivations-c3
+  kind: exr
+  file: 07-finding-derivations.md
+  line: 886
+  hash: 0fc6bc08c171
+  verdicts:
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: 0fc6bc08c171
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: S6 review authoring/reviews/ch01-S6.md; 07:898–961; my solution scores 10/10
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 0fc6bc08c171
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: 07-finding-derivations.md:886 solution derivations/arguments checked line by line; check_fitch
+      0 errors; number facts verified
+- key: exr-finding-derivations-c4
+  kind: exr
+  file: 07-finding-derivations.md
+  line: 963
+  hash: 8cf978f23b6c
+  verdicts:
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: 8cf978f23b6c
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: S6 review authoring/reviews/ch01-S6.md; 07:969–999; scheme explicitly accepts reordered
+      steps, my version scores 10/10
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 8cf978f23b6c
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: 07-finding-derivations.md:963 solution derivations/arguments checked line by line; check_fitch
+      0 errors; number facts verified
+- key: exr-finding-derivations-r1
+  kind: exr
+  file: 07-finding-derivations.md
+  line: 1003
+  hash: e5e555e41542
+  verdicts:
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: e5e555e41542
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: S6 review authoring/reviews/ch01-S6.md; 07:1011–1041; S deliberately irrelevant, vacuous-truth
+      point made
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: e5e555e41542
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: 07-finding-derivations.md:1003 solution derivations/arguments checked line by line; check_fitch
+      0 errors; number facts verified
+- key: exr-finding-derivations-r2
+  kind: exr
+  file: 07-finding-derivations.md
+  line: 1043
+  hash: bb6d077059f8
+  verdicts:
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: bb6d077059f8
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: S6 review authoring/reviews/ch01-S6.md; 07:1049–1057
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: bb6d077059f8
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: 07-finding-derivations.md:1043 solution derivations/arguments checked line by line; check_fitch
+      0 errors; number facts verified
+- key: exr-finding-derivations-r3
+  kind: exr
+  file: 07-finding-derivations.md
+  line: 1059
+  hash: 8d89fe6b479d
+  verdicts:
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: 8d89fe6b479d
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: S6 review authoring/reviews/ch01-S6.md; 07:1065–1093; @prp-curry named as look-alike source
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 8d89fe6b479d
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: 07-finding-derivations.md:1059 solution derivations/arguments checked line by line; check_fitch
+      0 errors; number facts verified

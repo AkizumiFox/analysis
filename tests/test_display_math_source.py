@@ -24,7 +24,8 @@ from pathlib import Path
 
 SRC = Path(__file__).resolve().parent.parent / "src"
 LIST_MARKER = re.compile(r'^\s{0,3}([-+*]|\d+[.)]|\(\w{1,4}\)|[a-zA-Z][.)]|#\.)\s')
-MATH_SPAN = re.compile(r'\\\((.*?)\\\)|\\\[(.*?)\\\]', re.S)
+# (?<!\\) so a LaTeX line break with spacing, \\\\[3ex], is not read as the start of a display
+MATH_SPAN = re.compile(r'(?<!\\)\\\((.*?)\\\)|(?<!\\)\\\[(.*?)\\\]', re.S)
 
 
 def display_lines():

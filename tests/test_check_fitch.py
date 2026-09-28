@@ -13,8 +13,12 @@ fitch = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(fitch)
 
 
-def block(body, marker=False):
-    head = "```{=latex}\n" + ("% expect-invalid\n" if marker else "") + "\\begin{center}\n$\\begin{nd}\n"
+def block(body, marker=False, options=""):
+    """A raw LaTeX block around one nd; marker True means expect-invalid, or a marker name."""
+    if marker is True:
+        marker = "expect-invalid"
+    head = ("```{=latex}\n" + (f"% {marker} (a comment)\n" if marker else "")
+            + "\\begin{center}\n$\\begin{nd}" + options + "\n")
     return "Some prose.\n\n" + head + body.strip("\n") + "\n\\end{nd}$\n\\end{center}\n```\n"
 
 
@@ -154,7 +158,7 @@ class DerivationTests(unittest.TestCase):
         self.assertTrue(any("cites a line, a line" in m for m in
                             errors(r"\hypo {1} {P} \have {2} {P \wedge P} \ai{1}")))
 
-    def test_schematic_and_vdots_are_notes(self):
+    def test_unmarked_schematic_labels_are_an_error(self):
         body = r"""
   \open
   \hypo {i} {\neg P}
@@ -163,20 +167,27 @@ class DerivationTests(unittest.TestCase):
   \close
   \have {k} {P} \raa{i-j}
 """
-        e, notes, _ = fitch.check_text(block(body))
-        self.assertEqual(e, [])
-        self.assertTrue(any("schematic" in m for _, m in notes))
+        msgs = errors(body)
+        self.assertEqual(len(msgs), 1)
+        self.assertIn("non-numeric line labels", msgs[0])
+        e, notes, counts = fitch.check_text(block(body, marker="schema"))
+        self.assertEqual((e, counts["schema"]), ([], 1))
+
+    def test_vdots_are_notes(self):
         body2 = r"""
   \have {1} {P \vee \neg P} \by{excluded middle}{}
   \open
   \hypo {2} {\neg P}
-  \have {} {\quad \vdots}
-  \have {3} {\bot}
+  \have[\ ][0] {} {\quad \vdots}
+  \have[][3] {3} {\bot}
   \close
   \have {4} {P} \raa{2-3}
 """
         e, notes, _ = fitch.check_text(block(body2))
         self.assertEqual(e, [])
+        # without the optional arguments fitch.sty numbers the \vdots row itself
+        plain = body2.replace(r"\have[\ ][0]", r"\have").replace(r"\have[][3]", r"\have")
+        self.assertIn("line label 3 prints as 4", errors(plain))
         self.assertTrue(any("follows \\vdots" in m for _, m in notes))
         self.assertTrue(any("justified by text" in m for _, m in notes))
 
@@ -187,6 +198,131 @@ class DerivationTests(unittest.TestCase):
         self.assertEqual(counts["expected_invalid"], 1)
         e, _, _ = fitch.check_text(block(TRANSITIVE, marker=True))
         self.assertEqual([m for _, m in e], ["marked % expect-invalid but checks clean"])
+
+
+RAA_SCHEMA = r"""
+  \open
+  \hypo[i][0] {i} {\neg P}
+  \have[\ ][0] {} {\vdots}
+  \have[j][0] {j} {\bot}
+  \close
+  \have[k][0] {k} {P} \raa{i-j}
+  \have {k1} {P \vee Q} \oi{k}
+"""
+
+
+def schema_result(body, options=""):
+    e, notes, counts = fitch.check_text(block(body, marker="schema", options=options))
+    return [m for _, m in e], [m for _, m in notes], counts
+
+
+class OptionalArgumentTests(unittest.TestCase):
+    def test_printed_numbers(self):
+        lines, _, errs = fitch.parse_nd(r"""
+  \hypo {1} {P}
+  \have[\ ][0] {} {\vdots}
+  \have[][7] {7} {Q}
+  \have[n][-1] {a} {Q}
+  \have {b} {Q}
+  \have[m] {c} {Q}
+  \have {d} {Q}
+""", 1)
+        self.assertEqual(errs, [])
+        self.assertEqual([ln.display for ln in lines], ["1", "\\ ", "7", "n-1", "n", "m", "m+1"])
+        self.assertEqual([ln.label for ln in lines], ["1", "", "7", "a", "b", "c", "d"])
+        self.assertTrue(lines[1].gap and not lines[2].gap)
+
+    def test_guards_and_open_options_are_skipped(self):
+        lines, boxes, errs = fitch.parse_nd(r"\open[x] \hypo {1}[x] {P} \close", 1)
+        self.assertEqual((errs, len(boxes), lines[0].text), ([], 1, "P"))
+
+    def test_schema_key_prints_labels(self):
+        lines, _, _ = fitch.parse_nd(r"\hypo {i} {P} \have {j} {P} \r{i}", 1, schema_key=True)
+        self.assertEqual([ln.display for ln in lines], ["i", "j"])
+
+    def test_stray_number_after_blank_base(self):
+        msgs = errors(r"""
+  \hypo {1} {P}
+  \have[\ ][0] {} {\vdots}
+  \have {7} {P} \r{1}
+""")
+        self.assertTrue(any("stray number +1" in m for m in msgs), msgs)
+
+    def test_jump_only_across_a_gap(self):
+        partial = r"""
+  \hypo {1} {P \to \neg Q}
+  \have[\ ][0] {} {\vdots}
+  \have[][7] {7} {P}
+  \have {8} {P \wedge (P \to \neg Q)} \ai{7,1}
+"""
+        self.assertEqual(schema_result(partial)[0], [])
+        no_gap = r"""
+  \hypo {1} {P}
+  \have[][7] {7} {P} \r{1}
+"""
+        self.assertTrue(any("not numbered 1, 2, 3" in m for m in errors(no_gap)))
+        mismatch = r"""
+  \hypo {1} {P}
+  \have[\ ][0] {} {\vdots}
+  \have[][7] {6} {P}
+"""
+        self.assertIn("line label 6 prints as 7", schema_result(mismatch)[0])
+
+
+class SchemaTests(unittest.TestCase):
+    def test_schema_is_clean_and_counted(self):
+        msgs, notes, counts = schema_result(RAA_SCHEMA)
+        self.assertEqual(msgs, [])
+        self.assertEqual((counts["schema"], counts["expected_invalid"]), (1, 0))
+        self.assertTrue(any("follows \\vdots" in m for m in notes))
+
+    def test_nd_schema_option_implies_schema(self):
+        body = RAA_SCHEMA.replace("[i][0] ", "").replace("[j][0] ", "").replace("[k][0] ", "") \
+                         .replace(r"\have[\ ][0]", r"\have")
+        e, _, counts = fitch.check_text(block(body, options="[schema]"))
+        self.assertEqual((e, counts["schema"]), ([], 1))
+
+    def test_rule_shapes_still_checked(self):
+        msgs, _, _ = schema_result(RAA_SCHEMA.replace(r"{P} \raa", r"{\neg P} \raa"))
+        self.assertTrue(any(m.startswith("line k: RAA") for m in msgs), msgs)
+        msgs, _, _ = schema_result(RAA_SCHEMA.replace(r"{P \vee Q}", r"{Q \wedge P}"))
+        self.assertTrue(any(m.startswith("line k1: ∨I") for m in msgs), msgs)
+
+    def test_scope_still_checked(self):
+        msgs, _, _ = schema_result(RAA_SCHEMA + r"  \have {k2} {\bot} \r{j}" + "\n")
+        self.assertIn("line k2 cites line j, inside a box that has closed", msgs)
+        msgs, _, _ = schema_result(RAA_SCHEMA.replace(r"\raa{i-j}", r"\raa{i-z}"))
+        self.assertTrue(any("does not exist" in m for m in msgs), msgs)
+        msgs, _, _ = schema_result(RAA_SCHEMA.replace(r"\close", "").replace(r"\raa{i-j}", r"\raa{i-j}"))
+        self.assertTrue(msgs)                       # unclosed box
+
+    def test_given_lines_gaps_and_metavariables_are_notes(self):
+        body = r"""
+  \have[i][0] {i} {\varphi}
+  \have[j][0] {j} {P}
+  \have[k][0] {k} {\varphi \wedge P} \ai{i,j}
+  \open
+  \hypo[l][0] {l} {Q}
+  \close
+  \have[m][0] {m} {Q} \oe{}
+"""
+        msgs, notes, _ = schema_result(body)
+        self.assertEqual(msgs, [])
+        self.assertTrue(any("line i unjustified" in m for m in notes), notes)
+        self.assertTrue(any("line k: formula of line k not propositional" in m for m in notes), notes)
+        self.assertTrue(any("line m cites nothing yet" in m for m in notes), notes)
+        self.assertTrue(errors(body.replace(r"\have[i][0] {i} {\varphi}", r"\hypo {1} {P}")))
+
+    def test_markers_are_per_nd_and_nearest_wins(self):
+        text = ("```{=latex}\n% schema (outer comment)\n\\begin{center}\n% schema\n$\\begin{nd}\n"
+                + RAA_SCHEMA + "\\end{nd}$\n\\qquad\n% expect-invalid\n$\\begin{nd}\n"
+                + TRANSITIVE + "  \\have {7} {R} \\r{5}\n\\end{nd}$\n\\qquad\n$\\begin{nd}\n"
+                + TRANSITIVE + "\\end{nd}$\n\\end{center}\n```\n")
+        e, _, counts = fitch.check_text(text)
+        self.assertEqual((e, counts["schema"], counts["expected_invalid"]), ([], 1, 1))
+        starts = [m.start() for m in fitch.ND.finditer(text)]
+        self.assertEqual([fitch.block_marker(text, s) for s in starts],
+                         ["schema", "expect-invalid", None])
 
 
 class TruthTableTests(unittest.TestCase):

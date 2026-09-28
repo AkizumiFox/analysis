@@ -271,6 +271,26 @@ def check(book: Book, quiet: bool = False) -> bool:
                                              for p, n, m in fitch_errors]).splitlines()]
         (errors if FITCH_FATAL else warnings).extend(fitch_lines)
 
+    # Numeric sidecars (verify/chNN/<label>.py, authoring/DRAFTING.md): each must pass, and
+    # each value in its QUOTED dict must appear in the section that holds <label>.
+    # ADVISORY for now: on 2026-09-28 two Chapter 1 sidecars (prp-peirce,
+    # exr-finding-derivations-b1) QUOTE three-valued countermodel values the text does
+    # not print. Once `tools/check_numbers.py` is clean, set this True. Its advisories
+    # (blocks with numbers but no sidecar) are summarized in one line.
+    NUMBERS_FATAL = False
+    if has_style and (book.root / "verify").is_dir():
+        numbers_checker = _tool("check_numbers")
+        num_fatal, num_advisory = numbers_checker.find_violations(
+            book.root / "verify", book.src_dir, root=book.root,
+            crossref=book.build_dir / "crossref_labels.json")
+        num_lines = [f"numbers: {line}" for line in numbers_checker.report(
+            [(Path(p).resolve().relative_to(book.root.resolve()), n, m)
+             for p, n, m in num_fatal]).splitlines()]
+        (errors if NUMBERS_FATAL else warnings).extend(num_lines)
+        if num_advisory:
+            warnings.append(f"{len(num_advisory)} numeric-sidecar advisory note(s); "
+                            f"run `python3 tools/check_numbers.py --advisory` to list them")
+
     # Web vs PDF numbering
     book_aux = book.build_dir / "tmp" / "latex-book" / "book.aux"
     newest_source = _newest_source_mtime(book)

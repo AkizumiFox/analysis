@@ -68,7 +68,7 @@ Find a derivation of \( P \to \neg Q \vdash \neg(P \wedge Q) \wedge (Q \to \neg 
 *Goal-directed.* The goal's main connective is \( \wedge \), so step 2 splits it into two gaps, with goals \( \neg(P \wedge Q) \) and \( Q \to \neg P \), joined at the end by \( \rulename{\wedge I} \):
 
 ```{=latex}
-% expect-invalid (a partial derivation: gaps are unnumbered, lines carry their final numbers)
+% schema (a partial derivation: gaps are unnumbered, lines carry their final numbers)
 \begin{center}
 $\begin{nd}
   \hypo {1} {P \to \neg Q}
@@ -84,7 +84,7 @@ $\begin{nd}
 Both new goals have a connective, so step 2 applies again. The goal \( \neg(P \wedge Q) \) asks for a \( \rulename{\neg I} \) box opened with \( P \wedge Q \) and ending in \( \bot \). The goal \( Q \to \neg P \) asks for a \( \rulename{{\to}I} \) box opened with \( Q \); inside it the goal \( \neg P \) asks for a \( \rulename{\neg I} \) box opened with \( P \). Every gap now has the goal \( \bot \):
 
 ```{=latex}
-% expect-invalid (a partial derivation: gaps are unnumbered, lines carry their final numbers)
+% schema (a partial derivation: gaps are unnumbered, lines carry their final numbers)
 \begin{center}
 $\begin{nd}
   \hypo {1} {P \to \neg Q}
@@ -155,7 +155,7 @@ Find a derivation of \( P \vee Q, \ P \to R, \ Q \to R \vdash R \).
 The goal \( R \) is a letter, so step 2 has nothing to do. Step 3 looks at the resources. \( \rulename{{\to}E} \) on \( P \to R \) needs \( P \), and making \( P \) a new goal is hopeless: from \( P \vee Q \) we know that one of \( P \), \( Q \) holds, not which. The disjunction itself is the resource to use, by \( \rulename{\vee E} \), with two boxes that each end in the current goal \( R \):
 
 ```{=latex}
-% expect-invalid (a partial derivation: gaps are unnumbered, lines carry their final numbers)
+% schema (a partial derivation: gaps are unnumbered, lines carry their final numbers)
 \begin{center}
 $\begin{nd}
   \hypo {1} {P \vee Q}
@@ -214,7 +214,7 @@ Find a derivation of \( P \to (Q \vee R) \vdash (P \to Q) \vee (P \to R) \).
 *The tempting start.* The goal is a disjunction, and it is tempting to choose a side at once, say \( P \to Q \), and finish with \( \rulename{\vee I} \). The new goal is an implication, so we open a box on \( P \); then \( \rulename{{\to}E} \) gives \( Q \vee R \), and \( \rulename{\vee E} \) splits into the cases \( Q \) and \( R \), each to end in the current goal \( Q \). The first case ends at once. The second is a dead end:
 
 ```{=latex}
-% expect-invalid (a partial derivation with a gap that cannot be filled)
+% schema (a partial derivation with a gap that cannot be filled)
 \begin{center}
 $\begin{nd}
   \hypo {1} {P \to (Q \vee R)}
@@ -242,7 +242,7 @@ In the case \( R \) the resources are \( P \to (Q \vee R) \), \( P \), \( Q \vee
 *The diagnosis.* Each case of the dead end knew which side it wanted: the case \( Q \) wanted \( P \to Q \), and the case \( R \) wanted \( P \to R \). But those cases were opened inside the box of \( P \), too late to choose the side of a disjunction that stands outside it. The side must be decided **before** any box is opened, and the premise does not decide it: that is step 5. The dead end also names the statement to split on. If \( Q \) holds, the left side is easy; if \( Q \) fails, then from \( P \) the premise gives \( Q \vee R \) with its left side excluded. So we use LEM on \( Q \):
 
 ```{=latex}
-% expect-invalid (a partial derivation: gaps are unnumbered, lines carry their final numbers)
+% schema (a partial derivation: gaps are unnumbered, lines carry their final numbers)
 \begin{center}
 $\begin{nd}
   \hypo {1} {P \to (Q \vee R)}
@@ -354,7 +354,7 @@ The method is not a machine that always succeeds. Here it fails, and the failure
 Try \( P \to Q \vdash Q \to P \). Step 2 opens a box on \( Q \) with the goal \( P \):
 
 ```{=latex}
-% expect-invalid (a partial derivation that the method cannot complete)
+% schema (a partial derivation that the method cannot complete)
 \begin{center}
 $\begin{nd}
   \hypo {1} {P \to Q}
@@ -407,23 +407,23 @@ This is the reference sheet for the chapter. Letters in the number column stand 
 **Conjunction and implication** (@def-rules-conjunction, @def-rules-implication).
 
 ```{=latex}
-% expect-invalid (rule schemata: placeholder line numbers set with fitch.sty's numbering options)
+% schema (rule schemata: placeholder line numbers set with fitch.sty's numbering options)
 \begin{center}
-% expect-invalid
+% schema
 $\begin{nd}
   \have[i][0] {i} {P}
   \have[j][0] {j} {Q}
   \have[k][0] {k} {P \wedge Q} \ai{i,j}
 \end{nd}$
 \qquad
-% expect-invalid
+% schema
 $\begin{nd}
   \have[i][0] {i} {P \wedge Q}
   \have[k][0] {k} {P} \ae{i}
   \have[l][0] {l} {Q} \ae{i}
 \end{nd}$
 \\[3ex]
-% expect-invalid
+% schema
 $\begin{nd}
   \open
   \hypo[i][0] {i} {P}
@@ -433,7 +433,7 @@ $\begin{nd}
   \have[k][0] {k} {P \to Q} \ii{i-j}
 \end{nd}$
 \qquad
-% expect-invalid
+% schema
 $\begin{nd}
   \have[i][0] {i} {P \to Q}
   \have[j][0] {j} {P}
@@ -445,16 +445,16 @@ $\begin{nd}
 **Disjunction** (@def-rules-disjunction). The two boxes of \( \rulename{\vee E} \) end in the same statement \( R \).
 
 ```{=latex}
-% expect-invalid (rule schemata: placeholder line numbers set with fitch.sty's numbering options)
+% schema (rule schemata: placeholder line numbers set with fitch.sty's numbering options)
 \begin{center}
-% expect-invalid
+% schema
 $\begin{nd}
   \have[i][0] {i} {P}
   \have[k][0] {k} {P \vee Q} \oi{i}
   \have[l][0] {l} {Q \vee P} \oi{i}
 \end{nd}$
 \qquad
-% expect-invalid
+% schema
 $\begin{nd}
   \have[h][0] {h} {P \vee Q}
   \open
@@ -475,9 +475,9 @@ $\begin{nd}
 **Negation and contradiction** (@def-rules-negation), **and RAA** (@def-rule-raa). \( \rulename{\bot E} \) may write **any** statement \( Q \).
 
 ```{=latex}
-% expect-invalid (rule schemata: placeholder line numbers set with fitch.sty's numbering options)
+% schema (rule schemata: placeholder line numbers set with fitch.sty's numbering options)
 \begin{center}
-% expect-invalid
+% schema
 $\begin{nd}
   \open
   \hypo[i][0] {i} {P}
@@ -487,20 +487,20 @@ $\begin{nd}
   \have[k][0] {k} {\neg P} \ni{i-j}
 \end{nd}$
 \qquad
-% expect-invalid
+% schema
 $\begin{nd}
   \have[i][0] {i} {P}
   \have[j][0] {j} {\neg P}
   \have[k][0] {k} {\bot} \ne{i,j}
 \end{nd}$
 \qquad
-% expect-invalid
+% schema
 $\begin{nd}
   \have[i][0] {i} {\bot}
   \have[k][0] {k} {Q} \be{i}
 \end{nd}$
 \\[3ex]
-% expect-invalid
+% schema
 $\begin{nd}
   \open
   \hypo[i][0] {i} {\neg P}
@@ -515,9 +515,9 @@ $\begin{nd}
 **Biconditional** (@def-rules-biconditional), **and repetition**, clause (D3) of @def-derivation.
 
 ```{=latex}
-% expect-invalid (rule schemata: placeholder line numbers set with fitch.sty's numbering options)
+% schema (rule schemata: placeholder line numbers set with fitch.sty's numbering options)
 \begin{center}
-% expect-invalid
+% schema
 $\begin{nd}
   \open
   \hypo[i][0] {i} {P}
@@ -532,14 +532,14 @@ $\begin{nd}
   \have[m][0] {m} {P \leftrightarrow Q} \bi{i-j,k-l}
 \end{nd}$
 \\[3ex]
-% expect-invalid
+% schema
 $\begin{nd}
   \have[i][0] {i} {P \leftrightarrow Q}
   \have[j][0] {j} {P}
   \have[k][0] {k} {Q} \bie{i,j}
 \end{nd}$
 \qquad
-% expect-invalid
+% schema
 $\begin{nd}
   \have[i][0] {i} {P}
   \have[\ ][0] {} {\vdots}
@@ -755,7 +755,7 @@ The box runs from its assumption \( P \), line 3, to its last line \( \neg R \),
 A search for \( P \vee (Q \wedge R) \vdash (P \vee Q) \wedge (P \vee R) \) has used the premise by \( \rulename{\vee E} \) and finished the first case; the second case is blank. *Name the move, then complete it.*
 
 ```{=latex}
-% expect-invalid (a partial derivation: the gap is unnumbered, lines carry their final numbers)
+% schema (a partial derivation: the gap is unnumbered, lines carry their final numbers)
 \begin{center}
 $\begin{nd}
   \hypo {1} {P \vee (Q \wedge R)}

@@ -36,7 +36,7 @@ Can the rules we have take it out? Try the smallest case, \( P \) from \( \neg\n
 **RAA** (**reductio ad absurdum**). Open a box with the assumption \( \neg P \). If \( \bot \) is reached as a line of that box, not inside a further box, we may close the box and write \( P \). Schematically:
 
 ```{=latex}
-% expect-invalid (a schema: lines i, j, k are placeholders, set with fitch.sty's numbering options)
+% schema (a schema: lines i, j, k are placeholders, set with fitch.sty's numbering options)
 \begin{center}
 $\begin{nd}
   \open
@@ -476,7 +476,7 @@ Replacements can be chained, so it is enough to go once round a cycle. ① RAA d
 ② Suppose a derivation uses RAA at line \( k \), closing a box, lines \( i \) to \( j \), that opens with \( \neg P \) and ends with \( \bot \). Keep the box and replace line \( k \) by two lines:
 
 ```{=latex}
-% expect-invalid (a schema: placeholder line numbers set with fitch.sty's numbering options)
+% schema (a schema: placeholder line numbers set with fitch.sty's numbering options)
 \begin{center}
 $\begin{nd}
   \open
@@ -495,7 +495,7 @@ Line \( k \) is correct by \( \rulename{\neg I} \), since the box opens with \( 
 ③ Suppose a derivation uses \( \neg\neg \)E at line \( k \), writing \( P \) and citing a line \( m \) that holds \( \neg\neg P \). Replace line \( k \) by six lines:
 
 ```{=latex}
-% expect-invalid (a schema: placeholder line numbers set with fitch.sty's numbering options)
+% schema (a schema: placeholder line numbers set with fitch.sty's numbering options)
 \begin{center}
 $\begin{nd}
   \have[m][0] {m} {\neg\neg P}
@@ -743,7 +743,7 @@ Suppose that, instead of RAA, we had LEM as a rule: \( P \vee \neg P \) may be w
 (a) Write excluded middle for \( P \) just before the given box, and use the box as the second case of \( \rulename{\vee E} \), extended by one line:
 
 ```{=latex}
-% expect-invalid (a schema: placeholder line numbers set with fitch.sty's numbering options)
+% schema (a schema: placeholder line numbers set with fitch.sty's numbering options)
 \begin{center}
 $\begin{nd}
   \have[h][0] {h} {P \vee \neg P} \lem{}

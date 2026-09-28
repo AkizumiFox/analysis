@@ -26,15 +26,37 @@ A derivation is mechanical, so it is checked mechanically. For each `nd` block:
   letters (any capital), `\\neg \\wedge \\vee \\to \\leftrightarrow \\bot` and
   parentheses.
 
-Skipped, with a note (shown by `--notes`): a schematic block (non-numeric labels
-such as i, j, k), a `\\vdots` row and a justification-free line after it, a
-`\\by{text}{refs}` justification (its refs are still checked for availability), a
-quantifier or equality rule, and any formula the parser cannot read.
+fitch.sty's optional arguments are read (fitchdoc.pdf, section 3.6):
+`\\have[n][k]{label}{...}` prints the line as n+k (then n+k+1, ...); `\\have[n]` is
+`[n][0]`; `\\have[][7]` jumps the count to 7; `\\have[\\ ][0]{}{\\vdots}` prints no
+number (a gap row). A guard `\\have{l}[g]{...}` and `\\open[g]` are skipped.
+`\\begin{nd}[schema]` (latex/fitch-book.sty's key) prints each label as given. Lines
+are cited by their {label}; the numbering check reads the printed numbers, which
+must run 1, 2, 3, ..., jumping forward only across a gap row (an unlabelled row or
+a `\\vdots` row). A row that would print a stray "+n" (a blank base left by a gap
+row, e.g. `\\have[\\ ][0]` followed by a plain `\\have`) is an error.
 
-A deliberately flawed derivation -- a non-example, a "find the error" exercise --
-carries `% expect-invalid` on a line of its raw LaTeX block before `\\begin{nd}`
-(or on the line just before the block). Its errors are then expected: they are not
-reported, and the block is an error only if it checks *clean*.
+Skipped, with a note (shown by `--notes`): a `\\vdots` or unlabelled row and a
+justification-free line after it, a `\\by{text}{refs}` justification (its refs are
+still checked for availability), a quantifier or equality rule, and any formula
+the parser cannot read (a metavariable such as `\\varphi`: shape not checked).
+
+**Markers**, on a line of the raw LaTeX block before `\\begin{nd}` (or on the line
+just before the block; with several `nd`s in one block, between the previous
+`\\end{nd}` and this one; the nearest marker wins):
+
+* `% expect-invalid` -- a deliberately flawed derivation (a non-example, a "find
+  the error" exercise). Its errors are expected: they are not reported, and the
+  block is an error only if it checks *clean*.
+* `% schema` -- a rule schema or a partial derivation with gap rows, whose lines
+  may carry letters (i, j, k) for numbers. Only what is checkable is checked: box
+  structure, that cited lines exist and are available, cited ranges, and the rule
+  shape of every line whose own formula and cited formulas parse. Lines without a
+  justification (given lines, the far end of a gap) and justifications citing
+  nothing (a gap still to fill, `\\oe{}`) are notes, not errors. Errors in a
+  schema block are reported as usual. `\\begin{nd}[schema]` implies `% schema`.
+
+A block with non-numeric labels and neither marker is an error (mark it).
 
 **Truth tables.** A display `array` whose header row is statement letters and
 formulas, and whose rows below `\\hline` are T/F (`\\mathrm{T}`, `\\text{F}`, `T`),
@@ -207,6 +229,8 @@ class Line:
     boxes: tuple = ()       # ids of the boxes containing this line, outermost first
     formula: object = None
     parse_error: str = ""
+    display: str = ""       # the number fitch.sty prints for the line
+    gap: bool = False       # an unlabelled row or a \vdots row
 
 
 @dataclass
@@ -235,14 +259,55 @@ def read_group(s: str, i: int):
     raise ParseError("unbalanced braces")
 
 
+def read_opt(s: str, i: int):
+    """Read an optional [...] argument at or after i; return (content or None, end)."""
+    j = i
+    while j < len(s) and s[j].isspace():
+        j += 1
+    if j >= len(s) or s[j] != "[":
+        return None, i
+    depth, k = 0, j + 1
+    while k < len(s):
+        c = s[k]
+        if c == "\\":
+            k += 2
+            continue
+        if c == "{":
+            depth += 1
+        elif c == "}":
+            depth -= 1
+        elif c == "]" and depth == 0:
+            return s[j + 1:k], k + 1
+        k += 1
+    raise ParseError("unbalanced [ in an optional argument")
+
+
+def blank_base(base: str) -> bool:
+    """A base that prints nothing, such as the \\  of \\have[\\ ][0]."""
+    return re.sub(r"\\[ ,;:!]|~|\s", "", base) == ""
+
+
+def render_number(base: str, ctr: int) -> str:
+    """fitch.sty's \\nd@render: the counter alone, or the base followed by +k / -k."""
+    if base == "":
+        return str(ctr)
+    return base + ("" if ctr == 0 else f"+{ctr}" if ctr > 0 else str(ctr))
+
+
 COMMAND = re.compile(r"\\(hypo|have|open|close)\b")
 
 
-def parse_nd(body: str, first_lineno: int):
-    """Turn an nd body into (lines, boxes, structural errors)."""
+def parse_nd(body: str, first_lineno: int, schema_key: bool = False):
+    """Turn an nd body into (lines, boxes, structural errors).
+
+    Reads fitch.sty's optional arguments \\have[base][offset]{label}[guard]{formula}
+    and sets each line's printed number (`display`); with `schema_key`
+    (\\begin{nd}[schema]) a line prints its own label.
+    """
     lines, boxes, errors = [], [], []
     stack = []
     pos = 0
+    base, ctr = "", 1
     while True:
         m = COMMAND.search(body, pos)
         if not m:
@@ -251,6 +316,7 @@ def parse_nd(body: str, first_lineno: int):
         cmd = m.group(1)
         pos = m.end()
         if cmd == "open":
+            _, pos = read_opt(body, pos)          # guard
             box = Box(id=len(boxes), parent=stack[-1] if stack else None)
             boxes.append(box)
             stack.append(box.id)
@@ -264,13 +330,36 @@ def parse_nd(body: str, first_lineno: int):
             if not box.lines:
                 errors.append((lineno, "empty box"))
             continue
+        opt1, pos = read_opt(body, pos)
+        opt2 = None
+        if opt1 is not None:
+            opt2, pos = read_opt(body, pos)
         label, pos = read_group(body, pos)
+        _, pos = read_opt(body, pos)              # guard
         text, pos = read_group(body, pos)
         if label is None or text is None:
             errors.append((lineno, f"\\{cmd} needs {{label}} {{formula}}"))
             continue
         line = Line(label=label.strip(), text=text.strip(), hypo=(cmd == "hypo"),
                     lineno=lineno, boxes=tuple(stack))
+        line.gap = not line.label or "\\vdots" in line.text
+        if opt1 is not None:                      # fitch.sty: [n] means [n][0]
+            base = opt1
+            ctr = 0
+        if opt2 is not None and opt2.strip():
+            try:
+                ctr = int(opt2.strip())
+            except ValueError:
+                errors.append((lineno, f"\\{cmd}[{opt1}][{opt2}]: the offset is not a number"))
+        if schema_key:
+            line.display = line.label
+        else:
+            line.display = render_number(base, ctr)
+            if base and blank_base(base) and ctr != 0:
+                errors.append((lineno, f"line {line.label or '(unlabelled)'} prints a stray "
+                                       f"number {ctr:+d}: an earlier row left the base blank; "
+                                       f"give this line its own [base][offset] or [][n]"))
+            ctr += 1
         # justification: the rest up to the next command
         nxt = COMMAND.search(body, pos)
         rest = body[pos:nxt.start() if nxt else len(body)]
@@ -306,12 +395,43 @@ def parse_refs(refs: str):
     return out
 
 
-def check_derivation(lines, boxes):
-    """Return (errors, notes) for one parsed derivation: lists of (lineno, message)."""
+def check_numbering(lines):
+    """Printed numbers run 1, 2, 3, ..., jumping forward only across a gap row."""
+    errors = []
+    shown, prev, gap_since, bad = [], None, False, False
+    for ln in lines:
+        if ln.gap:
+            gap_since = True
+            continue
+        if not re.fullmatch(r"-?\d+", ln.display):
+            prev, gap_since = None, False          # symbolic (n, n+1): not checked
+            continue
+        d = int(ln.display)
+        if re.fullmatch(r"\d+", ln.label) and int(ln.label) != d:
+            errors.append((ln.lineno, f"line label {ln.label} prints as {d}"))
+        shown.append(d)
+        if prev is None:
+            ok = d == 1 or gap_since or len(shown) > 1   # after a symbolic run: free
+        else:
+            ok = d > prev if gap_since else d == prev + 1
+        bad |= not ok
+        prev, gap_since = d, False
+    if bad:
+        errors.append((lines[0].lineno, f"lines are not numbered 1, 2, 3, ...: {shown}"))
+    return errors
+
+
+def check_derivation(lines, boxes, schema=False):
+    """Return (errors, notes) for one parsed derivation: lists of (lineno, message).
+
+    With `schema` (a rule schema or a partial derivation), unjustified lines and
+    justifications citing nothing are notes instead of errors.
+    """
     errors, notes = [], []
-    if any(not re.fullmatch(r"\d+", ln.label) for ln in lines if ln.label):
-        notes.append((lines[0].lineno if lines else 0,
-                      "schematic derivation (non-numeric labels): skipped"))
+    if not schema and any(not re.fullmatch(r"\d+", ln.label) for ln in lines if ln.label):
+        errors.append((lines[0].lineno if lines else 0,
+                       "non-numeric line labels: mark a rule schema or partial derivation "
+                       "'% schema', a deliberately flawed one '% expect-invalid'"))
         return errors, notes
 
     index = {}
@@ -322,9 +442,8 @@ def check_derivation(lines, boxes):
             errors.append((ln.lineno, f"line label {ln.label} used twice"))
         else:
             index[ln.label] = k
-    numbered = [int(ln.label) for ln in lines if ln.label]
-    if numbered != list(range(1, len(numbered) + 1)) and len(set(numbered)) == len(numbered):
-        errors.append((lines[0].lineno, f"lines are not numbered 1, 2, 3, ...: {numbered}"))
+    if len(index) == sum(1 for ln in lines if ln.label):
+        errors += check_numbering(lines)
 
     # boxes begin with their assumption; no assumption in mid-box
     for box in boxes:
@@ -363,9 +482,9 @@ def check_derivation(lines, boxes):
 
     after_vdots = False
     for k, ln in enumerate(lines):
-        if not ln.label:
+        if ln.gap:
             after_vdots = True
-            notes.append((ln.lineno, "\\vdots row: skipped"))
+            notes.append((ln.lineno, "\\vdots or unlabelled row: skipped"))
             continue
         try:
             ln.formula = parse_formula(ln.text)
@@ -378,12 +497,17 @@ def check_derivation(lines, boxes):
         if not ln.rule:
             if after_vdots:
                 notes.append((ln.lineno, f"line {ln.label} follows \\vdots, unjustified: skipped"))
+            elif schema:
+                notes.append((ln.lineno, f"line {ln.label} unjustified (a given line of the schema): skipped"))
             else:
                 errors.append((ln.lineno, f"line {ln.label} has no justification"))
             continue
         after_vdots = False
 
         cites = parse_refs(ln.refs)
+        if schema and not cites and ln.rule in RULES and RULES[ln.rule][1]:
+            notes.append((ln.lineno, f"line {ln.label} cites nothing yet (a gap in the schema): skipped"))
+            continue
         cited_ok = True
         resolved = []
         for shape, ref in cites:
@@ -619,39 +743,66 @@ def check_truth_table(body: str, first_lineno: int):
 
 ND = re.compile(r"\\begin\{nd\}(.*?)\\end\{nd\}", re.S)
 ARRAY = re.compile(r"\\begin\{array\}\{[^}]*\}(.*?)\\end\{array\}", re.S)
-EXPECT = "% expect-invalid"
+MARKER = re.compile(r"%\s*(expect-invalid|schema)\b")
+ND_OPTIONS = re.compile(r"\A\s*\[([^\]]*)\]")
+
+
+def block_marker(text: str, start: int):
+    """The marker for the nd starting at `start`: 'expect-invalid', 'schema' or None.
+
+    Looks back from \\begin{nd} to the fence that opens the raw block (plus the
+    line before it), or to the previous \\end{nd} in the same block; the nearest
+    marker wins.
+    """
+    lines = text[:start].split("\n")
+    for n, ln in enumerate(reversed(lines[-15:])):
+        if n and "\\end{nd}" in ln:
+            return None
+        m = MARKER.search(ln)
+        if m:
+            return m.group(1)
+        if ln.strip().startswith("```"):
+            idx = len(lines) - n - 2
+            m = MARKER.search(lines[idx]) if idx >= 0 else None
+            return m.group(1) if m else None
+    return None
 
 
 def expects_invalid(text: str, start: int) -> bool:
-    """`% expect-invalid` inside the raw block before \\begin{nd}, or just before the block."""
-    before = text[:start]
-    lines = before.split("\n")
-    # walk back to the fence that opens the raw block, plus one line more
-    window = []
-    for ln in reversed(lines[-8:]):
-        window.append(ln)
-        if ln.strip().startswith("```"):
-            break
-    idx = len(lines) - len(window) - 1
-    if idx >= 0:
-        window.append(lines[idx])
-    return any(EXPECT in ln for ln in window)
+    return block_marker(text, start) == "expect-invalid"
+
+
+def nd_options(body: str):
+    """(set of keys in \\begin{nd}[...], body without the options)."""
+    m = ND_OPTIONS.match(body)
+    if not m:
+        return set(), body
+    keys = {kv.split("=")[0].strip() for kv in m.group(1).split(",")}
+    for kv in m.group(1).split(","):
+        if kv.split("=")[0].strip() == "schema" and "=" in kv and kv.split("=", 1)[1].strip() == "false":
+            keys.discard("schema")
+    return keys, " " * m.end() + body[m.end():]
 
 
 def check_text(text: str):
     """(errors, notes, counts) for one file: errors/notes are (lineno, message)."""
     errors, notes = [], []
-    counts = {"derivations": 0, "expected_invalid": 0, "tables": 0}
+    counts = {"derivations": 0, "expected_invalid": 0, "schema": 0, "tables": 0}
     for m in ND.finditer(text):
         lineno = text.count("\n", 0, m.start(1)) + 1
         counts["derivations"] += 1
+        marker = block_marker(text, m.start())
+        keys, body = nd_options(m.group(1))
+        schema = marker == "schema" or "schema" in keys
+        if schema and marker != "expect-invalid":
+            counts["schema"] += 1
         try:
-            lines, boxes, struct = parse_nd(m.group(1), lineno)
-            errs, nts = check_derivation(lines, boxes) if lines else ([], [])
+            lines, boxes, struct = parse_nd(body, lineno, schema_key="schema" in keys)
+            errs, nts = check_derivation(lines, boxes, schema=schema) if lines else ([], [])
             errs = struct + errs
         except ParseError as e:
             errs, nts = [(lineno, f"cannot read derivation: {e}")], []
-        if expects_invalid(text, m.start()):
+        if marker == "expect-invalid":
             counts["expected_invalid"] += 1
             if errs:
                 nts = nts + [(lineno, f"expected invalid, and is: {errs[0][1]}"
@@ -680,7 +831,7 @@ def find_violations(root: Path):
     root = Path(root)
     files = [root] if root.is_file() else sorted(root.rglob("*.md"))
     errors, notes = [], []
-    total = {"derivations": 0, "expected_invalid": 0, "tables": 0}
+    total = {"derivations": 0, "expected_invalid": 0, "schema": 0, "tables": 0}
     for f in files:
         e, n, c = check_text(f.read_text(encoding="utf-8"))
         errors += [(f, ln, msg) for ln, msg in e]
@@ -697,11 +848,12 @@ def report(items) -> str:
 def main(argv=None) -> int:
     ap = argparse.ArgumentParser(
         description="Check Fitch derivations (nd blocks) and truth tables in the book's source.",
-        epilog="Mark a deliberately flawed derivation with '% expect-invalid' before \\begin{nd}.")
+        epilog="Mark a deliberately flawed derivation with '% expect-invalid' before \\begin{nd}, "
+               "a rule schema or partial derivation with '% schema'.")
     ap.add_argument("paths", nargs="*", default=["src"], help="files or directories (default: src)")
     ap.add_argument("--notes", action="store_true", help="also list what was skipped and why")
     args = ap.parse_args(argv)
-    errors, notes, total = [], [], {"derivations": 0, "expected_invalid": 0, "tables": 0}
+    errors, notes, total = [], [], {"derivations": 0, "expected_invalid": 0, "schema": 0, "tables": 0}
     for p in args.paths:
         e, n, c = find_violations(Path(p))
         errors += e
@@ -714,7 +866,7 @@ def main(argv=None) -> int:
     if errors:
         print(report(errors))
     print(f"\n{total['derivations']} derivation(s) ({total['expected_invalid']} marked "
-          f"expect-invalid), {total['tables']} truth table(s): {len(errors)} error(s), "
+          f"expect-invalid, {total['schema']} schema), {total['tables']} truth table(s): {len(errors)} error(s), "
           f"{len(notes)} note(s){'' if args.notes else ' (--notes to list)'}.")
     return 1 if errors else 0
 
