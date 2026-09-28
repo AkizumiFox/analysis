@@ -203,6 +203,13 @@ items:
     date: '2026-09-28'
     evidence: 'fixed (S6 minor): 01:88 prose example changed to ''2 is prime but not odd'', so B1(a) is
       no longer answered in advance'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 838fa06c50dc
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: 01:88 example now '2 is prime but not odd'; B1(a) no longer pre-answered; see authoring/reviews/ch01-S7-recheck.md
 - key: exr-statements-and-connectives-b2
   kind: exr
   file: 01-statements-and-connectives.md
@@ -600,6 +607,13 @@ items:
     date: '2026-09-28'
     evidence: 'fixed (S6 minor): check now asks about P->(Q&R) |- (P->Q)&(P->R) (answer: two boxes), no
       longer B3(a)'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: e20d55d9a4ec
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: 02:380 new sequent, answer 'two' correct; no duplicate in chapter; see authoring/reviews/ch01-S7-recheck.md
 - key: exr-conjunction-implication-derivations-a1
   kind: exr
   file: 02-conjunction-implication-derivations.md
@@ -785,6 +799,13 @@ items:
     date: '2026-09-28'
     evidence: 'fixed (S6 minor): Hint 2 now names the tool (P->Q is an implication: which rule proves
       it?) instead of opening the third box'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: bc62067b9339
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: 02:683 Hint 2 names →I, does not execute third box; see authoring/reviews/ch01-S7-recheck.md
 - key: def-rules-disjunction
   kind: def
   file: 03-disjunction-and-cases.md
@@ -1011,6 +1032,14 @@ items:
     date: '2026-09-28'
     evidence: 'fixed (S5a+S5b minor): 03:373 now ''the one place in this section where vI manufactures
       the hypothesis of a premise'''
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: f2300422a82d
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: '03:373 ''manufactures the hypothesis of a premise'' true: only ∨I->→E in §03 (all \oi scanned);
+      see authoring/reviews/ch01-S7-recheck.md'
 - key: exr-disjunction-and-cases-a1
   kind: exr
   file: 03-disjunction-and-cases.md
@@ -1047,6 +1076,13 @@ items:
     date: '2026-09-28'
     evidence: 'fixed (S5b minor, s03 dependency ledger): removed ''even prime'', added ab=0, even/odd,
       t^2>=0 and the ch02 soundness pointer for (d)'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 00bdc0f9465c
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: 03:620 ledger entries match A1(b),(d); see authoring/reviews/ch01-S7-recheck.md
 - key: exr-disjunction-and-cases-b1
   kind: exr
   file: 03-disjunction-and-cases.md
@@ -1393,6 +1429,13 @@ items:
     date: '2026-09-28'
     evidence: 'fixed (S5a minor): 04:193 adds ''If the copy itself uses derived rules, expand those lines
       in the same way; this stops, because each derivation cites only results proved before it'''
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: a3cb3a7a8687
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: 04:193 iteration clause, terminates by order of proof; see authoring/reviews/ch01-S7-recheck.md
 - key: exm-modus-tollens-instance
   kind: exm
   file: 04-negation-and-contradiction.md
@@ -1825,6 +1868,14 @@ items:
     date: '2026-09-28'
     evidence: 'fixed (S6 minor): Hint 2 now points to imitating thm-square-even-implies-even for 3q^2
       and q'
+  - stage: S7r
+    verdict: minor
+    by: rereferee
+    hash: 1fc027457caf
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: 'Hint 2 fix accepted. New: 04:596 uses ''6 \mid n^2'' before d|n is defined (05:451), contradicting
+      new NOTATION row ''first used Ch 1 §05, C1''; see authoring/reviews/ch01-S7-recheck.md'
 - key: exr-negation-and-contradiction-c2
   kind: exr
   file: 04-negation-and-contradiction.md
@@ -1946,6 +1997,14 @@ items:
     date: '2026-09-28'
     evidence: 'fixed (S5b minor): 05:92 now ''Chapter 2 proves it'', matching 06:27; soundness pointer
       and RAA claim ledgered in s05 dependency ledger'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 7f492f9f05be
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: 05:92 'Chapter 2 proves it' matches 06:27 and ch02 blueprint thm-raa-independent (optional);
+      ledgered; see authoring/reviews/ch01-S7-recheck.md
 - key: prp-provable-equivalence-basics
   kind: prp
   file: 05-biconditional-and-definitions.md
@@ -2020,6 +2079,13 @@ items:
     date: '2026-09-28'
     evidence: 'fixed (S5a minor): 05:177 reason made precise (box on notQ ends in notnotQ) and marked
       ''stated without proof, nothing depends on it''; ledgered'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: fe831e9c5e32
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: 05:177 marked without proof, ledgered; claim true (2-world Kripke); see authoring/reviews/ch01-S7-recheck.md
 - key: thm-odd-iff-square-odd
   kind: thm
   file: 05-biconditional-and-definitions.md
@@ -2093,6 +2159,13 @@ items:
     evidence: 'fixed (S5a+S5b minor): lead-in 05:201 ''each hypothesis is needed: dropping either breaks
       one direction''; remark says (=>) needs x>=0, notes its proof''s use of y>=0 follows from y>=x>=0;
       (<=) used only y>=0'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 8dcde642927a
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: 05:201/225 needs/used-only claims match proof 05:217; consistent with C2(a); see authoring/reviews/ch01-S7-recheck.md
 - key: proof:thm-squares-order
   kind: proof
   file: 05-biconditional-and-definitions.md
@@ -2378,6 +2451,13 @@ items:
     date: '2026-09-28'
     evidence: 'fixed (S5b+S6 minor): scheme cites part (a) of @exr-negation-and-contradiction-b3; other
       cycles 1 + 3+3+3; Hint 2 no longer carries out (ii)=>(i)'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 8db1a6eaf2af
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: scheme @ref to B3(a) (04:512); alt-cycle 1+3*3=10; Hint 2 no longer executes step; see authoring/reviews/ch01-S7-recheck.md
 - key: exr-biconditional-and-definitions-c2
   kind: exr
   file: 05-biconditional-and-definitions.md
@@ -2459,6 +2539,13 @@ items:
     date: '2026-09-28'
     evidence: 'fixed (S5a gap): 06:66 now ''the last step of a derivation of a negation never needs RAA,
       though steps inside its box still may'''
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 78b5c5938605
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: 06:66 now claims only the last step; 06:198 still covered; see authoring/reviews/ch01-S7-recheck.md
 - key: prp-double-negation
   kind: prp
   file: 06-reductio-and-classical-rules.md
@@ -2598,6 +2685,13 @@ items:
     date: '2026-09-28'
     evidence: 'fixed (S5b minor): 06:239 now ''The paragraph after the next result uses it that way, and
       so does part (b) of the result after that'''
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: c3957f3c8cc6
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: '06:239 pointers true: 06:371 paragraph, prp-implication-as-disjunction (b); see authoring/reviews/ch01-S7-recheck.md'
 - key: proof:prp-excluded-middle
   kind: proof
   file: 06-reductio-and-classical-rules.md
@@ -2810,6 +2904,13 @@ items:
     date: '2026-09-28'
     evidence: 'fixed (S5b R9 minor): new part (g) on fragment 2 of thm-classical-rules-interderivable
       (rule at line k, why the box needs no change), with solution'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 6204d6cacd6f
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: A1(g) answer ¬I matches schema 06:480-495; fair A part; see authoring/reviews/ch01-S7-recheck.md
 - key: exr-reductio-and-classical-rules-b1
   kind: exr
   file: 06-reductio-and-classical-rules.md
@@ -2989,6 +3090,13 @@ items:
     hash: 92b1dcf7118b
     date: '2026-09-28'
     evidence: 'fixed (S5b minor): solution (a) ''part (d) below'''
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 92b1dcf7118b
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: 06:807 'part (d) below'; see authoring/reviews/ch01-S7-recheck.md
 - key: check:07-finding-derivations:1
   kind: check
   file: 07-finding-derivations.md
@@ -3110,6 +3218,14 @@ items:
     date: '2026-09-28'
     evidence: 'check_numbers: G3 witness moved out of QUOTED in verify/ch01/prp-peirce.py (text states
       the claim without proof, quotes no value)'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 81e0a4d292b9
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: sidecar witness moved out of QUOTED, asserts unchanged, passes; check_numbers 0 fatal; see
+      authoring/reviews/ch01-S7-recheck.md
 - key: proof:prp-peirce
   kind: proof
   file: 07-finding-derivations.md
@@ -3186,6 +3302,13 @@ items:
     date: '2026-09-28'
     evidence: 'fixed (S5b minor): (a) now says ''Suppose x>=0'' inside the frame is RAA on the goal; contrapositive
       replaces the frame and applies CP'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: c277ce9122b1
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: 07:594 RAA-box vs CP route both correct; see authoring/reviews/ch01-S7-recheck.md
 - key: exr-finding-derivations-b1
   kind: exr
   file: 07-finding-derivations.md
@@ -3222,6 +3345,13 @@ items:
     date: '2026-09-28'
     evidence: 'check_numbers: G3 countermodel moved out of QUOTED in verify/ch01/exr-finding-derivations-b1.py
       (text quotes no value)'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 9f9ae17536d4
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: sidecar witness moved out of QUOTED, passes; see authoring/reviews/ch01-S7-recheck.md
 - key: exr-finding-derivations-b2
   kind: exr
   file: 07-finding-derivations.md
@@ -3316,6 +3446,13 @@ items:
     date: '2026-09-28'
     evidence: 'fixed (S6 minor): scheme first bullet accepts a correct RAA box on the negated goal; last
       bullet ''LEM line (or the RAA line)''; RAA derivation earns full marks with the 2+2+1 mapped'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: d3cb31b3f654
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: RAA route (15 lines) maps onto scheme, sums to 10; see authoring/reviews/ch01-S7-recheck.md
 - key: exr-finding-derivations-c3
   kind: exr
   file: 07-finding-derivations.md

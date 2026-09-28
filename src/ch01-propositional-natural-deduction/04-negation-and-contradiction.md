@@ -593,7 +593,7 @@ So \( p \) and \( q \) are both even \( [\rulename{\wedge I}] \), contradicting 
 - 3: derives \( q \) even from \( 3q^2 = 2m^2 \), with the odd case ruled out by a correct parity computation and (E2).
 - 2: reaches \( \bot \) by clashing "both even" with (L), and concludes \( r^2 \ne 6 \) by \( \rulename{\neg I} \).
 - 1: rules named at the logical steps, and the passage from the arbitrary \( r \) to every rational number.
-Fatal errors (0 for the step): applying @thm-square-even-implies-even to \( q \) with only \( 3q^2 \) known to be even; using "\( 6 \mid n^2 \Rightarrow 6 \mid n \)" without proof.
+Fatal errors (0 for the step): applying @thm-square-even-implies-even to \( q \) with only \( 3q^2 \) known to be even; using "if \( n^2 \) is divisible by 6, then \( n \) is divisible by 6" without proof.
 A proof that works with divisibility by \( 3 \) instead (using the facts of B3) earns full marks if every step is justified from facts it states.
 :::
 
