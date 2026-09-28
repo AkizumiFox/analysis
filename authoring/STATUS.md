@@ -83,7 +83,6 @@ Chapter 1 rows use the rewritten chapter's section numbers (2026-09-28, S7); its
 
 ## Open engineering items
 
-- `tools/check_fitch.py` rejects ∀I boxes (a box opened with a guard `\open[x_0]` and no assumption line). Fix before Chapter 4 is drafted; quantifier rules are currently only noted, not checked.
 - `tools/seed_errors.py` does not skip `% schema` blocks yet.
 - `tools/check_numbers.py` is advisory (`NUMBERS_FATAL = False`) until Chapter 1's three unprinted QUOTED values (the three-valued 1/2 in prp-peirce and exr-finding-derivations-b1) are resolved in S7.
 - The PDF running head overflows for long section titles (e.g. Chapter 1 §01); needs a short-title mechanism in the engine.

@@ -49,7 +49,7 @@ class FormulaTests(unittest.TestCase):
         self.assertEqual(fitch.parse_formula(r"P \leftrightarrow Q")[0], "iff")
 
     def test_non_propositional_text_is_rejected(self):
-        for text in (r"x > 2", r"\quad \vdots", r"\forall x P(x)"):
+        for text in (r"x > 2", r"\quad \vdots", r"\forall x P(x)"):   # first-order: parse_fo
             with self.assertRaises(fitch.ParseError):
                 fitch.parse_formula(text)
 
@@ -323,6 +323,384 @@ class SchemaTests(unittest.TestCase):
         starts = [m.start() for m in fitch.ND.finditer(text)]
         self.assertEqual([fitch.block_marker(text, s) for s in starts],
                          ["schema", "expect-invalid", None])
+
+
+class FirstOrderFormulaTests(unittest.TestCase):
+    def test_terms_predicates_and_binders(self):
+        f = fitch.parse_fo(r"\forall x\, P(x) \to \exists y\, R(f(x), y_0)")
+        self.assertEqual(f, ("imp", ("forall", "x", ("pred", "P", (("v", "x"),)), None),
+                             ("exists", "y", ("pred", "R", (("app", "f", (("v", "x"),)),
+                                                             ("v", "y_0"))), None)))
+        self.assertEqual(fitch.parse_fo(r"x_{0} \ne 0"),
+                         ("not", ("rel", "=", ("v", "x_0"), ("v", "0"))))
+        b = fitch.parse_fo(r"\forall \varepsilon > 0\, \exists N \forall n \ge N\, \abs{a_n - L} < \varepsilon")
+        self.assertEqual((b[0], b[1], b[3]), ("forall", r"\varepsilon",
+                                              ("rel", ">", ("v", r"\varepsilon"), ("v", "0"))))
+        self.assertEqual(fitch.parse_fo(r"(a + b)^2 \ge 0")[0], "rel")
+        self.assertEqual(fitch.read_formula(r"P \wedge Q"), ("and", ("var", "P"), ("var", "Q")))
+
+    def test_metavariables_and_prose_are_rejected(self):
+        for text in (r"\forall x\, \varphi", r"\varphi[t/x]", r"p \text{ even}", r"a < b < c"):
+            with self.assertRaises(fitch.ParseError):
+                fitch.parse_fo(text)
+
+    def test_substitution_and_free_for(self):
+        phi = fitch.parse_fo(r"\exists y\, (y > x) \wedge P(x)")
+        t = fitch.parse_fo(r"y + 1 = 0")[2]            # the term y + 1
+        self.assertEqual(fitch.subst(phi, "x", ("v", "c")),
+                         fitch.parse_fo(r"\exists y\, (y > c) \wedge P(c)"))
+        self.assertFalse(fitch.free_for(t, "x", phi))
+        self.assertTrue(fitch.free_for(t, "x", fitch.parse_fo(r"\forall z\, (x < z)")))
+        self.assertEqual(fitch.subst(fitch.parse_fo(r"\forall x\, P(x)"), "x", ("v", "c")),
+                         fitch.parse_fo(r"\forall x\, P(x)"))
+
+
+def has(msgs, *parts):
+    return any(all(p in m for p in parts) for m in msgs)
+
+
+class UniversalEliminationTests(unittest.TestCase):
+    def test_valid(self):
+        self.assertEqual(errors(r"""
+  \hypo {1} {\forall x (P(x) \to P(f(x)))}
+  \hypo {2} {P(c)}
+  \have {3} {P(c) \to P(f(c))} \Ae{1}
+  \have {4} {P(f(c))} \ie{3,2}
+  \have {5} {P(f(c)) \to P(f(f(c)))} \Ae{1}
+  \have {6} {P(f(f(c)))} \ie{5,4}
+"""), [])
+
+    def test_capture(self):
+        msgs = errors(r"""
+  \hypo {1} {\forall x \exists y\, (y \ne x)}
+  \have {2} {\exists y\, (y \ne y)} \Ae{1}
+""")
+        self.assertTrue(has(msgs, "line 2: ∀E", "not free for x"), msgs)
+
+    def test_not_an_instance(self):
+        partial = errors(r"\hypo {1} {\forall x\, R(x, x)} \have {2} {R(c, d)} \Ae{1}")
+        self.assertTrue(has(partial, "line 2: ∀E", "instance"), partial)
+        buried = errors(r"\hypo {1} {\forall x\, P(x) \to Q} \have {2} {P(c) \to Q} \Ae{1}")
+        self.assertTrue(has(buried, "line 2: ∀E", "no ∀ line"), buried)
+
+
+class UniversalIntroductionTests(unittest.TestCase):
+    NESTED = r"""
+  \hypo {1} {\forall x \forall y\, R(x, y)}
+  \open[y_0]
+  \open[x_0]
+  \have {2} {\forall y\, R(x_0, y)} \Ae{1}
+  \have {3} {R(x_0, y_0)} \Ae{2}
+  \close
+  \have {4} {\forall x\, R(x, y_0)} \Ai{2-3}
+  \close
+  \have {5} {\forall y \forall x\, R(x, y)} \Ai{2-4}
+"""
+
+    def test_flagged_box_without_assumption(self):
+        self.assertEqual(errors(r"""
+  \hypo {1} {\forall x \forall y\, R(x, y)}
+  \open[x_0]
+  \have {2} {\forall y\, R(x_0, y)} \Ae{1}
+  \have {3} {R(x_0, x_0)} \Ae{2}
+  \close
+  \have {4} {\forall x\, R(x, x)} \Ai{2-3}
+"""), [])
+        self.assertEqual(errors(self.NESTED), [])
+
+    def test_unflagged_box(self):
+        msgs = errors(r"""
+  \hypo {1} {\forall x\, P(x)}
+  \open
+  \have {2} {P(x_0)} \Ae{1}
+  \close
+  \have {3} {\forall x\, P(x)} \Ai{2-2}
+""")
+        self.assertTrue(has(msgs, "does not begin with an assumption"), msgs)
+        self.assertTrue(has(msgs, "line 3: ∀I", "flagged box"), msgs)
+
+    def test_wrong_last_line_and_assumption(self):
+        msgs = errors(r"""
+  \hypo {1} {\forall x\, P(x)}
+  \open[x_0]
+  \have {2} {P(x_0)} \Ae{1}
+  \close
+  \have {3} {\forall x\, Q(x)} \Ai{2-2}
+""")
+        self.assertTrue(has(msgs, "line 3: ∀I", "ending in Q(x_0)"), msgs)
+        msgs = errors(r"""
+  \open[x_0]
+  \hypo {1} {P(x_0)}
+  \close
+  \have {2} {\forall x\, P(x)} \Ai{1-1}
+""")
+        self.assertTrue(has(msgs, "line 2: ∀I", "no assumption"), msgs)
+
+    def test_name_in_premise(self):
+        msgs = errors(r"""
+  \hypo {1} {P(x_0)}
+  \open[x_0]
+  \have {2} {P(x_0)} \r{1}
+  \close
+  \have {3} {\forall x\, P(x)} \Ai{2-2}
+""")
+        self.assertTrue(has(msgs, "line 3: ∀I", "x_0 occurs in the premise 1"), msgs)
+
+    def test_name_in_open_assumption(self):
+        msgs = errors(r"""
+  \open
+  \hypo {1} {x_0 > 0}
+  \open[x_0]
+  \have {2} {x_0 > 0} \r{1}
+  \close
+  \have {3} {\forall x\, (x > 0)} \Ai{2-2}
+  \close
+  \have {4} {x_0 > 0 \to \forall x\, (x > 0)} \ii{1-3}
+""")
+        self.assertTrue(has(msgs, "line 3: ∀I", "open assumption 1"), msgs)
+        self.assertEqual(len(msgs), 1, msgs)
+
+    def test_name_in_conclusion(self):
+        msgs = errors(r"""
+  \hypo {1} {\forall x \forall y\, R(x, y)}
+  \open[x_0]
+  \have {2} {\forall y\, R(x_0, y)} \Ae{1}
+  \have {3} {R(x_0, x_0)} \Ae{2}
+  \close
+  \have {4} {\forall x\, R(x, x_0)} \Ai{2-3}
+""")
+        self.assertTrue(has(msgs, "line 4: ∀I", "occurs in the conclusion"), msgs)
+
+    def test_last_line_inside_an_inner_box(self):
+        msgs = errors(r"""
+  \hypo {1} {\forall x\, P(x)}
+  \open[x_0]
+  \open
+  \hypo {2} {Q}
+  \have {3} {P(x_0)} \Ae{1}
+  \close
+  \close
+  \have {4} {\forall x\, P(x)} \Ai{2-3}
+""")
+        self.assertTrue(has(msgs, "line 4: ∀I", "a line of the box itself"), msgs)
+
+
+class ExistentialIntroductionTests(unittest.TestCase):
+    def test_valid(self):
+        self.assertEqual(errors(r"""
+  \hypo {1} {R(c, c)}
+  \have {2} {\exists x\, R(x, c)} \Ei{1}
+  \have {3} {\exists x\, R(c, x)} \Ei{1}
+  \have {4} {\exists x\, R(x, x)} \Ei{1}
+  \have {5} {\exists y\, (P(y) \vee \exists x\, R(x, x))} \by{not this rule}{}
+"""), [])
+        self.assertEqual(errors(r"""
+  \hypo {1} {\forall x\, P(x)}
+  \have {2} {P(x)} \Ae{1}
+  \have {3} {\exists x\, P(x)} \Ei{2}
+"""), [])
+
+    def test_capture(self):
+        msgs = errors(r"\hypo {1} {\forall y\, R(y, y)} \have {2} {\exists x \forall y\, R(x, y)} \Ei{1}")
+        self.assertTrue(has(msgs, "line 2: ∃I", "not free for x"), msgs)
+
+    def test_not_an_instance(self):
+        msgs = errors(r"\hypo {1} {\exists x\, R(x, x)} \have {2} {\exists x\, R(x, c)} \Ei{1}")
+        self.assertTrue(has(msgs, "line 2: ∃I", "instance"), msgs)
+
+
+EXISTS_AND = r"""
+  \hypo {1} {\exists x (P(x) \wedge Q(x))}
+  \open[x_0]
+  \hypo {2} {P(x_0) \wedge Q(x_0)}
+  \have {3} {P(x_0)} \ae{2}
+  \have {4} {\exists x\, P(x)} \Ei{3}
+  \have {5} {Q(x_0)} \ae{2}
+  \have {6} {\exists x\, Q(x)} \Ei{5}
+  \have {7} {\exists x\, P(x) \wedge \exists x\, Q(x)} \ai{4,6}
+  \close
+  \have {8} {\exists x\, P(x) \wedge \exists x\, Q(x)} \Ee{1,2-7}
+"""
+
+
+class ExistentialEliminationTests(unittest.TestCase):
+    def test_valid(self):
+        self.assertEqual(errors(EXISTS_AND), [])
+        guard_on_hypo = EXISTS_AND.replace(r"\open[x_0]", r"\open").replace(r"\hypo {2}", r"\hypo {2}[x_0]")
+        self.assertEqual(errors(guard_on_hypo), [])
+        self.assertEqual(errors(r"""
+  \hypo {1} {\exists x\, P(x)}
+  \hypo {2} {\forall x (P(x) \to \neg Q(x))}
+  \open
+  \hypo {3} {\forall x\, Q(x)}
+  \open[x_0]
+  \hypo {4} {P(x_0)}
+  \have {5} {P(x_0) \to \neg Q(x_0)} \Ae{2}
+  \have {6} {\neg Q(x_0)} \ie{5,4}
+  \have {7} {Q(x_0)} \Ae{3}
+  \have {8} {\bot} \ne{7,6}
+  \close
+  \have {9} {\bot} \Ee{1,4-8}
+  \close
+  \have {10} {\neg \forall x\, Q(x)} \ni{3-9}
+"""), [])
+
+    def test_unflagged_box_and_wrong_assumption(self):
+        msgs = errors(EXISTS_AND.replace(r"\open[x_0]", r"\open"))
+        self.assertTrue(has(msgs, "line 8: ∃E", "flagged box"), msgs)
+        msgs = errors(r"""
+  \hypo {1} {\exists x\, P(x)}
+  \open[x_0]
+  \hypo {2} {Q(x_0)}
+  \have {3} {\exists x\, Q(x)} \Ei{2}
+  \close
+  \have {4} {\exists x\, Q(x)} \Ee{1,2-3}
+""")
+        self.assertTrue(has(msgs, "line 4: ∃E", "must assume P(x_0)"), msgs)
+
+    def test_name_in_conclusion(self):
+        msgs = errors(r"""
+  \hypo {1} {\exists x (P(x) \wedge Q(x))}
+  \open[x_0]
+  \hypo {2} {P(x_0) \wedge Q(x_0)}
+  \have {3} {P(x_0)} \ae{2}
+  \close
+  \have {4} {P(x_0)} \Ee{1,2-3}
+  \have {5} {\exists x\, P(x)} \Ei{4}
+""")
+        self.assertEqual(len(msgs), 1, msgs)
+        self.assertTrue(has(msgs, "line 4: ∃E", "occurs in the conclusion"), msgs)
+
+    def test_name_in_the_exists_line(self):
+        msgs = errors(r"""
+  \hypo {1} {\forall y \exists x\, R(x, y)}
+  \have {2} {\exists x\, R(x, x_0)} \Ae{1}
+  \open[x_0]
+  \hypo {3} {R(x_0, x_0)}
+  \have {4} {\exists z\, R(z, z)} \Ei{3}
+  \close
+  \have {5} {\exists z\, R(z, z)} \Ee{2,3-4}
+""")
+        self.assertEqual(len(msgs), 1, msgs)
+        self.assertTrue(has(msgs, "line 5: ∃E", "occurs in the ∃ line"), msgs)
+
+    WITH_Q = r"""
+  \hypo {1} {\exists x\, P(x)}
+  %s
+  \open[x_0]
+  \hypo {3} {P(x_0)}
+  \have {4} {P(x_0) \wedge Q(x_0)} \ai{3,2}
+  \have {5} {\exists x (P(x) \wedge Q(x))} \Ei{4}
+  \close
+  \have {6} {\exists x (P(x) \wedge Q(x))} \Ee{1,3-5}
+"""
+
+    def test_name_in_premise(self):
+        msgs = errors(self.WITH_Q % r"\hypo {2} {Q(x_0)}")
+        self.assertEqual(len(msgs), 1, msgs)
+        self.assertTrue(has(msgs, "line 6: ∃E", "x_0 occurs in the premise 2"), msgs)
+
+    def test_name_in_open_assumption(self):
+        body = (self.WITH_Q % "\\open\n  \\hypo {2} {Q(x_0)}") + \
+            "  \\close\n  \\have {7} {Q(x_0) \\to \\exists x (P(x) \\wedge Q(x))} \\ii{2-6}\n"
+        msgs = errors(body)
+        self.assertEqual(len(msgs), 1, msgs)
+        self.assertTrue(has(msgs, "line 6: ∃E", "open assumption 2"), msgs)
+
+
+class EqualityTests(unittest.TestCase):
+    def test_valid(self):
+        self.assertEqual(errors(r"""
+  \hypo {1} {a = b}
+  \have {2} {a = a} \eqi{}
+  \have {3} {b = a} \eqe{1,2}
+  \have {4} {f(a) = f(a)} \eqi{}
+  \have {5} {f(a) = f(b)} \eqe{1,4}
+  \have {6} {a + a = 2a} \by{arith}{}
+  \have {7} {b + a = 2a} \eqe{1,6}
+  \have {8} {b + b = 2b} \eqe{1,6}
+"""), [])
+
+    def test_reflexivity_shape(self):
+        msgs = errors(r"\have {1} {a = b} \eqi{}")
+        self.assertTrue(has(msgs, "line 1: =I"), msgs)
+
+    def test_wrong_direction_and_no_equation(self):
+        msgs = errors(r"\hypo {1} {a = b} \hypo {2} {P(b)} \have {3} {P(a)} \eqe{1,2}")
+        self.assertTrue(has(msgs, "line 3: =E", "needs an equation"), msgs)
+        msgs = errors(r"\hypo {1} {a < b} \hypo {2} {P(a)} \have {3} {P(b)} \eqe{1,2}")
+        self.assertTrue(has(msgs, "line 3: =E", "no equation"), msgs)
+
+    def test_capture(self):
+        msgs = errors(r"""
+  \hypo {1} {x = 0}
+  \hypo {2} {\forall x\, (x = x)}
+  \have {3} {\forall x\, (0 = x)} \eqe{1,2}
+""")
+        self.assertTrue(has(msgs, "line 3: =E", "not free for x"), msgs)
+
+
+class BoundedQuantifierTests(unittest.TestCase):
+    def test_bounded_rules(self):
+        self.assertEqual(errors(r"""
+  \hypo {1} {\forall x \in A\, P(x)}
+  \hypo {2} {c \in A}
+  \have {3} {P(c)} \Ae{1,2}
+  \have {4} {\exists x \in A\, P(x)} \Ei{2,3}
+  \open[x_0]
+  \hypo {5} {x_0 \in A}
+  \have {6} {P(x_0)} \Ae{1,5}
+  \have {7} {P(x_0) \vee Q(x_0)} \oi{6}
+  \close
+  \have {8} {\forall x \in A\, (P(x) \vee Q(x))} \Ai{5-7}
+  \open[y_0]
+  \hypo {9} {y_0 \in A}
+  \hypo {10} {P(y_0)}
+  \have {11} {\exists y\, P(y)} \Ei{10}
+  \close
+  \have {12} {\exists y\, P(y)} \Ee{4,9-11}
+"""), [])
+
+    def test_bound_must_match(self):
+        msgs = errors(r"""
+  \hypo {1} {\forall x \in A\, P(x)}
+  \hypo {2} {c \in B}
+  \have {3} {P(c)} \Ae{1,2}
+""")
+        self.assertTrue(has(msgs, "line 3: ∀E"), msgs)
+
+
+class QuantifierSchemaTests(unittest.TestCase):
+    def test_blueprint_schemas_are_clean_with_notes(self):
+        schemas = [r"""
+  \have {i} {\forall x\, \varphi}
+  \have {k} {\varphi[t/x]} \Ae{i}
+""", r"""
+  \open[x_0]
+  \have {i} {\vdots}
+  \have {j} {\varphi[x_0/x]}
+  \close
+  \have {k} {\forall x\, \varphi} \Ai{i-j}
+""", r"""
+  \have {h} {\exists x\, \varphi}
+  \open[x_0]
+  \hypo {i} {\varphi[x_0/x]}
+  \have {} {\vdots}
+  \have {j} {\chi}
+  \close
+  \have {k} {\chi} \Ee{h,i-j}
+""", r"""
+  \have {k} {t = t} \eqi{}
+""", r"""
+  \have {i} {t_1 = t_2}
+  \have {j} {\varphi[t_1/x]}
+  \have {k} {\varphi[t_2/x]} \eqe{i,j}
+"""]
+        for body in schemas:
+            e, notes, _ = fitch.check_text(block(body, options="[schema]"))
+            self.assertEqual(e, [], body)
+        self.assertTrue(any("not propositional or first-order" in m for m in
+                            schema_result(schemas[0])[1]))
 
 
 class TruthTableTests(unittest.TestCase):

@@ -14,8 +14,9 @@ Part 0 prints derivations as fitch.sty `nd` environments inside raw LaTeX blocks
 A derivation is mechanical, so it is checked mechanically. For each `nd` block:
 
 * **labels** are unique and number the lines 1, 2, 3, ... in order;
-* **boxes** balance, and each box begins with an assumption (`\\hypo`); an
-  assumption in the middle of a box is an error;
+* **boxes** balance, and each box begins with an assumption (`\\hypo`), except a
+  flagged box (`\\open[x_0]`, the eigenvariable box of forall-I, which has none);
+  an assumption in the middle of a box is an error;
 * **cited lines exist and are available**: earlier, and not inside a box that has
   closed (NOTATION.md: "a line may cite any earlier line not inside a closed box");
 * **cited ranges** (`i-j`, for ->I, not-I, RAA, or-E, iff-I) are exactly a closed
@@ -24,12 +25,28 @@ A derivation is mechanical, so it is checked mechanically. For each `nd` block:
 * **rule shapes** for the propositional rules (and-I/E, ->I/E, or-I/E, not-I/E,
   bot-E, RAA, iff-I/E, R), at the level of formulas, with a small parser for
   letters (any capital), `\\neg \\wedge \\vee \\to \\leftrightarrow \\bot` and
-  parentheses.
+  parentheses;
+* **quantifier and equality rules** (`\\Ae \\Ai \\Ei \\Ee \\eqi \\eqe`), shape and side
+  conditions, with a small first-order parser (predicates P(x, y), function symbols
+  f(x), + - \\cdot ^, names x, x_0, c, 0, \\varepsilon_0, relations = < \\le \\in ...,
+  `\\forall x` / `\\exists x`, binding like \\neg, and bounded `\\forall x \\in A`):
+  - forall-E: phi[t/x] from forall x phi, t free for x (no capture);
+  - forall-I: a flagged box [x_0] with no assumption ending in phi[x_0/x] gives
+    forall x phi; x_0 not in forall x phi, a premise or an open assumption;
+  - exists-I: exists x phi from phi[t/x], t free for x;
+  - exists-E: from exists x phi (line h) and a flagged box [x_0] assuming phi[x_0/x]
+    and ending in chi (a line of the box itself), chi; x_0 not in chi, in
+    exists x phi, in a premise or in an open assumption;
+  - =I: t = t; =E: from t = s and phi[t/x], phi[s/x] (some occurrences of t
+    replaced by s, none under a quantifier on a variable of t or s).
+  Bounded forms (Chapter 4 §08) reuse the tags: forall-E and exists-I then cite the
+  bound's instance as a second line, and the forall-I / exists-E box assumes it.
 
 fitch.sty's optional arguments are read (fitchdoc.pdf, section 3.6):
 `\\have[n][k]{label}{...}` prints the line as n+k (then n+k+1, ...); `\\have[n]` is
 `[n][0]`; `\\have[][7]` jumps the count to 7; `\\have[\\ ][0]{}{\\vdots}` prints no
-number (a gap row). A guard `\\have{l}[g]{...}` and `\\open[g]` are skipped.
+number (a gap row). A guard `\\open[x_0]` (or `\\hypo{l}[x_0]{...}`, `\\guard{x_0}`)
+flags the box with the name x_0.
 `\\begin{nd}[schema]` (latex/fitch-book.sty's key) prints each label as given. Lines
 are cited by their {label}; the numbering check reads the printed numbers, which
 must run 1, 2, 3, ..., jumping forward only across a gap row (an unlabelled row or
@@ -38,8 +55,8 @@ row, e.g. `\\have[\\ ][0]` followed by a plain `\\have`) is an error.
 
 Skipped, with a note (shown by `--notes`): a `\\vdots` or unlabelled row and a
 justification-free line after it, a `\\by{text}{refs}` justification (its refs are
-still checked for availability), a quantifier or equality rule, and any formula
-the parser cannot read (a metavariable such as `\\varphi`: shape not checked).
+still checked for availability), and any line whose formula (or a cited one)
+neither parser can read (a metavariable such as `\\varphi`: shape not checked).
 
 **Markers**, on a line of the raw LaTeX block before `\\begin{nd}` (or on the line
 just before the block; with several `nd`s in one block, between the previous
@@ -195,10 +212,490 @@ def show(f) -> str:
         return f[1]
     if k == "bot":
         return "⊥"
+    if k == "top":
+        return "⊤"
+    if k == "pred":
+        return f"{f[1]}({', '.join(show_term(a) for a in f[2])})"
+    if k == "rel":
+        return f"{show_term(f[2])} {REL_SYM.get(f[1], f[1])} {show_term(f[3])}"
+    if k in ("forall", "exists"):
+        q = "∀" if k == "forall" else "∃"
+        if f[3] is not None:
+            b = f[3]
+            if b[0] == "rel" and b[2] == ("v", f[1]):
+                return f"{q}{f[1]} {REL_SYM.get(b[1], b[1])} {show_term(b[3])} {show(f[2])}"
+            return f"{q}{f[1]} [{show(b)}] {show(f[2])}"
+        return f"{q}{f[1]} {show(f[2])}"
     if k == "not":
-        return "¬" + show(f[1])
+        return "¬" + (f"({show(f[1])})" if f[1][0] == "rel" else show(f[1]))
     sym = {"and": "∧", "or": "∨", "imp": "→", "iff": "↔"}[k]
     return f"({show(f[1])} {sym} {show(f[2])})"
+
+
+# ---------------------------------------------------------------------------
+# First-order formulas (Chapter 4): terms, predicates, =, quantifiers
+# ---------------------------------------------------------------------------
+#
+# Terms:    ("v", name)                a variable or constant (x, x_0, c, 0, \varepsilon_0)
+#           ("app", head, (args...))   f(x), x + y (head "+"), a_n (head "_"), \abs{t}
+# Formulas: the propositional trees above, plus
+#           ("var", P)                 a statement letter (a 0-ary predicate)
+#           ("pred", P, (terms...))    P(x), R(x, y)
+#           ("rel", op, s, t)          s = t, s < t, x \in A (op "=", "<", "le", "in", ...)
+#           ("forall" | "exists", x, body, bound)
+#                                      bound is None, or the formula of a bounded
+#                                      quantifier (\forall x \in A, \exists n \ge N)
+# `s \ne t` reads as \neg(s = t) and `x \notin A` as \neg(x \in A).
+
+FO_MACROS = {
+    r"\neg": ("op", "not"), r"\lnot": ("op", "not"), r"\wedge": ("op", "and"),
+    r"\land": ("op", "and"), r"\vee": ("op", "or"), r"\lor": ("op", "or"),
+    r"\to": ("op", "imp"), r"\rightarrow": ("op", "imp"), r"\leftrightarrow": ("op", "iff"),
+    r"\iff": ("op", "iff"), r"\bot": ("op", "bot"), r"\top": ("op", "top"),
+    r"\forall": ("q", "forall"), r"\exists": ("q", "exists"),
+    r"\le": ("rel", "le"), r"\leq": ("rel", "le"), r"\leqslant": ("rel", "le"),
+    r"\ge": ("rel", "ge"), r"\geq": ("rel", "ge"), r"\geqslant": ("rel", "ge"),
+    r"\lt": ("rel", "<"), r"\gt": ("rel", ">"), r"\ne": ("rel", "ne"), r"\neq": ("rel", "ne"),
+    r"\in": ("rel", "in"), r"\notin": ("rel", "notin"), r"\subseteq": ("rel", "subseteq"),
+    r"\subset": ("rel", "subset"), r"\mid": ("rel", "mid"),
+    r"\cdot": ("aop", "*"), r"\times": ("aop", "*"),
+    r"\lvert": ("bar",), r"\rvert": ("bar",), r"\vert": ("bar",),
+    r"\abs": ("fn", "abs", 1), r"\frac": ("fn", "/", 2), r"\sqrt": ("fn", "sqrt", 1),
+}
+GREEK = {"alpha", "beta", "gamma", "delta", "epsilon", "varepsilon", "zeta", "eta",
+         "iota", "kappa", "lambda", "mu", "nu", "xi", "pi", "rho", "sigma", "tau",
+         "omega"}  # not \varphi, \psi, \chi, \theta: formula metavariables
+REL_SYM = {"=": "=", "<": "<", ">": ">", "le": "≤", "ge": "≥", "in": "∈",
+           "subseteq": "⊆", "subset": "⊂", "mid": "∣"}
+
+
+def fo_tokenize(text: str) -> list:
+    """Tokens of a first-order formula. Never fails: what it cannot read becomes an
+    ("unknown", ...) token, which the parser rejects (so names can still be listed)."""
+    s = SPACING.sub(" ", text)
+    s = re.sub(r"\{(\\[A-Za-z]+)\}", r" \1 ", s)
+    s = re.sub(r"\\mathbb\s*\{\s*([A-Z])\s*\}", r"\\n\1", s)
+    tokens = []
+    i = 0
+
+    def subscript(j):
+        """Digits after '_' at j (x_0, x_{12}) -> (suffix, end), else (None, j)."""
+        m = re.match(r"_(?:(\d)|\{\s*(\d+)\s*\})", s[j:])
+        if m:
+            return "_" + (m.group(1) or m.group(2)), j + len(m.group(0))
+        return None, j
+
+    while i < len(s):
+        c = s[i]
+        if c.isspace() or c == ".":
+            i += 1
+        elif c in "({[":
+            tokens.append("(" if c != "[" else ("unknown", "["))
+            i += 1
+        elif c in ")}":
+            tokens.append(")")
+            i += 1
+        elif c == ",":
+            tokens.append(",")
+            i += 1
+        elif c == "|":
+            tokens.append(("bar",))
+            i += 1
+        elif c in "=<>":
+            tokens.append(("rel", c))
+            i += 1
+        elif c in "+-*/^_":
+            tokens.append(("aop", c))
+            i += 1
+        elif c.isdigit():
+            m = re.match(r"\d+", s[i:])
+            tokens.append(("name", m.group(0), False))
+            i += len(m.group(0))
+            if i < len(s) and s[i].isalpha():          # 2a: implicit product
+                tokens.append(("aop", "*"))
+        elif c == "\\":
+            m = re.match(r"\\[A-Za-z]+", s[i:])
+            if not m:
+                tokens.append(("unknown", s[i:i + 2]))
+                i += 2
+                continue
+            mac = m.group(0)
+            i += len(mac)
+            if mac in FO_MACROS:
+                tokens.append(FO_MACROS[mac])
+            elif mac[1:] in GREEK or re.fullmatch(r"\\n[A-Z]z?", mac):
+                suf, i = subscript(i)
+                while i < len(s) and s[i] == "'":
+                    suf, i = (suf or "") + "'", i + 1
+                tokens.append(("name", mac + (suf or ""), False))
+            else:
+                tokens.append(("unknown", mac))
+        elif c.isalpha() and c.isascii():
+            i += 1
+            suf, i = subscript(i)
+            while i < len(s) and s[i] == "'":
+                suf, i = (suf or "") + "'", i + 1
+            tokens.append(("name", c + (suf or ""), c.isupper()))
+        else:
+            tokens.append(("unknown", c))
+            i += 1
+    return tokens
+
+
+def parse_fo(text: str):
+    """Parse a first-order formula into a tuple tree; raise ParseError."""
+    tokens = fo_tokenize(text)
+    if not tokens:
+        raise ParseError("empty formula")
+    pos = 0
+
+    def peek(k=0):
+        return tokens[pos + k] if pos + k < len(tokens) else None
+
+    def kind(t):
+        return t[0] if isinstance(t, tuple) else t
+
+    def expect(tok):
+        nonlocal pos
+        if peek() != tok:
+            raise ParseError(f"expected {tok!r}, got {peek()!r}")
+        pos += 1
+
+    def binary(min_prec):
+        nonlocal pos
+        left = unary()
+        while kind(peek()) == "op" and peek()[1] in OPS and OPS[peek()[1]][0] >= min_prec:
+            op = peek()[1]
+            prec, right_assoc = OPS[op]
+            pos += 1
+            right = binary(prec if right_assoc else prec + 1)
+            left = (op, left, right)
+        return left
+
+    def unary():
+        nonlocal pos
+        t = peek()
+        if t == ("op", "not"):
+            pos += 1
+            return ("not", unary())
+        if t in (("op", "bot"), ("op", "top")):
+            pos += 1
+            return (t[1],)
+        if kind(t) == "q":
+            pos += 1
+            v = peek()
+            if kind(v) != "name" or v[1][0].isdigit():
+                raise ParseError(f"{t[1]} needs a variable, got {v!r}")
+            pos += 1
+            bound = None
+            if kind(peek()) == "rel":
+                op = peek()[1]
+                pos += 1
+                bound = make_rel(op, ("v", v[1]), term())
+            return (t[1], v[1], unary(), bound)
+        if t == "(":
+            save = pos
+            try:
+                pos += 1
+                inner = binary(0)
+                expect(")")
+                if kind(peek()) not in ("rel", "aop"):
+                    return inner
+            except ParseError:
+                pass
+            pos = save
+        return atom()
+
+    def atom():
+        nonlocal pos
+        t = peek()
+        if kind(t) == "name" and t[2]:                   # a capital: predicate or letter
+            nxt = peek(1)
+            if nxt == "(":
+                pos += 2
+                args = [term()]
+                while peek() == ",":
+                    pos += 1
+                    args.append(term())
+                expect(")")
+                return ("pred", t[1], tuple(args))
+            if kind(nxt) not in ("rel", "aop"):
+                pos += 1
+                return ("var", t[1])
+        left = term()
+        if kind(peek()) != "rel":
+            raise ParseError(f"expected a relation after a term, got {peek()!r}")
+        op = peek()[1]
+        pos += 1
+        right = term()
+        if kind(peek()) == "rel":
+            raise ParseError("chained relations")
+        return make_rel(op, left, right)
+
+    def make_rel(op, a, b):
+        if op == "ne":
+            return ("not", ("rel", "=", a, b))
+        if op == "notin":
+            return ("not", ("rel", "in", a, b))
+        return ("rel", op, a, b)
+
+    def term():
+        nonlocal pos
+        left = product()
+        while peek() in (("aop", "+"), ("aop", "-")):
+            op = peek()[1]
+            pos += 1
+            left = ("app", op, (left, product()))
+        return left
+
+    def product():
+        nonlocal pos
+        left = signed()
+        while peek() in (("aop", "*"), ("aop", "/")):
+            op = peek()[1]
+            pos += 1
+            left = ("app", op, (left, signed()))
+        return left
+
+    def signed():
+        nonlocal pos
+        if peek() == ("aop", "-"):
+            pos += 1
+            return ("app", "neg", (signed(),))
+        return power()
+
+    def power():
+        nonlocal pos
+        base = primary()
+        if peek() in (("aop", "^"), ("aop", "_")):
+            op = peek()[1]
+            pos += 1
+            return ("app", op, (base, signed() if peek() != "(" else primary()))
+        return base
+
+    def primary():
+        nonlocal pos
+        t = peek()
+        if kind(t) == "name":
+            pos += 1
+            if peek() == "(" and not t[2] and not t[1][0].isdigit():   # f(x), g(x, y)
+                pos += 1
+                args = [term()]
+                while peek() == ",":
+                    pos += 1
+                    args.append(term())
+                expect(")")
+                return ("app", t[1], tuple(args))
+            return ("v", t[1])
+        if t == "(":
+            pos += 1
+            inner = term()
+            expect(")")
+            return inner
+        if kind(t) == "bar":
+            pos += 1
+            inner = term()
+            if kind(peek()) != "bar":
+                raise ParseError("unclosed |")
+            pos += 1
+            return ("app", "abs", (inner,))
+        if kind(t) == "fn":
+            pos += 1
+            args = []
+            for _ in range(t[2]):
+                expect("(")
+                args.append(term())
+                expect(")")
+            return ("app", t[1], tuple(args))
+        raise ParseError(f"unexpected {t!r}")
+
+    tree = binary(0)
+    if pos != len(tokens):
+        raise ParseError(f"trailing {tokens[pos]!r}")
+    return tree
+
+
+def read_formula(text: str):
+    """A line's formula: propositional if it parses as such, else first-order."""
+    try:
+        return parse_formula(text)
+    except ParseError:
+        return parse_fo(text)
+
+
+QUANT = ("forall", "exists")
+CONNECTIVES = ("not", "and", "or", "imp", "iff")
+
+
+def term_names(t) -> set:
+    if t[0] == "v":
+        return {t[1]}
+    return set().union(*(term_names(a) for a in t[2]))
+
+
+def names(f, free_only=False) -> set:
+    """Names occurring in formula f (with free_only, only free occurrences)."""
+    k = f[0]
+    if k in ("var", "bot", "top"):
+        return set()
+    if k == "pred":
+        return set().union(*(term_names(a) for a in f[2]))
+    if k == "rel":
+        return term_names(f[2]) | term_names(f[3])
+    if k in CONNECTIVES:
+        return set().union(*(names(a, free_only) for a in f[1:]))
+    x, body, bound = f[1], f[2], f[3]
+    inner = names(body, free_only) | (names(bound, free_only) if bound else set())
+    return inner - {x} if free_only else inner | {x}
+
+
+def subst_term(t, x, s):
+    if t[0] == "v":
+        return s if t[1] == x else t
+    return ("app", t[1], tuple(subst_term(a, x, s) for a in t[2]))
+
+
+def subst(f, x, s):
+    """f[s/x]: replace the free occurrences of the name x by the term s (no capture check)."""
+    k = f[0]
+    if k in ("var", "bot", "top"):
+        return f
+    if k == "pred":
+        return ("pred", f[1], tuple(subst_term(a, x, s) for a in f[2]))
+    if k == "rel":
+        return ("rel", f[1], subst_term(f[2], x, s), subst_term(f[3], x, s))
+    if k in CONNECTIVES:
+        return (k,) + tuple(subst(a, x, s) for a in f[1:])
+    if f[1] == x:
+        return f
+    return (k, f[1], subst(f[2], x, s), subst(f[3], x, s) if f[3] else None)
+
+
+def free_for(s, x, f, bound=frozenset()) -> bool:
+    """s is free for x in f: no free x of f lies under a quantifier on a name of s."""
+    k = f[0]
+    if k in ("var", "bot", "top"):
+        return True
+    if k in ("pred", "rel"):
+        if x in names(f) and x not in bound:
+            return not (term_names(s) & bound)
+        return True
+    if k in CONNECTIVES:
+        return all(free_for(s, x, a, bound) for a in f[1:])
+    if f[1] == x:
+        return True
+    inner = bound | {f[1]}
+    return free_for(s, x, f[2], inner) and (f[3] is None or free_for(s, x, f[3], inner))
+
+
+def instance_term(pattern, x, target):
+    """A term t with pattern[t/x] == target: ("ok", t) (t None if x is not free in
+    pattern, so any term works), or None if target is no instance of pattern."""
+    found = []
+
+    def mt(p, q, bound):
+        if p[0] == "v" and p[1] == x and x not in bound:
+            if found and found[0] != q:
+                return False
+            if not found:
+                found.append(q)
+            return True
+        if p[0] != q[0]:
+            return False
+        if p[0] == "v":
+            return p == q
+        return p[1] == q[1] and len(p[2]) == len(q[2]) and all(
+            mt(a, b, bound) for a, b in zip(p[2], q[2]))
+
+    def mf(p, q, bound):
+        if p[0] != q[0]:
+            return False
+        k = p[0]
+        if k in ("var", "bot", "top"):
+            return p == q
+        if k == "pred":
+            return p[1] == q[1] and len(p[2]) == len(q[2]) and all(
+                mt(a, b, bound) for a, b in zip(p[2], q[2]))
+        if k == "rel":
+            return p[1] == q[1] and mt(p[2], q[2], bound) and mt(p[3], q[3], bound)
+        if k in CONNECTIVES:
+            return all(mf(a, b, bound) for a, b in zip(p[1:], q[1:]))
+        if p[1] != q[1] or (p[3] is None) != (q[3] is None):
+            return False
+        inner = bound | {p[1]}
+        return mf(p[2], q[2], inner) and (p[3] is None or mf(p[3], q[3], inner))
+
+    if not mf(pattern, target, frozenset()):
+        return None
+    t = found[0] if found else None
+    if (subst(pattern, x, t) if t else pattern) != target:
+        return None
+    return ("ok", t)
+
+
+def replaces(a, b, t, s):
+    """b arises from a by replacing some free occurrences of the term t by s, none of
+    them under a quantifier on a name of t or s: a = φ[t/x], b = φ[s/x] for some φ.
+    Returns "" or what is wrong ("no" for a shape mismatch, "capture" for a binder)."""
+    risky = term_names(t) | term_names(s)
+    problem = []
+
+    def rt(p, q, bound):
+        if p == q:
+            return True
+        if p == t and q == s:
+            if risky & bound:
+                problem.append("capture")
+                return False
+            return True
+        if p[0] == "app" and q[0] == "app" and p[1] == q[1] and len(p[2]) == len(q[2]):
+            return all(rt(x, y, bound) for x, y in zip(p[2], q[2]))
+        return False
+
+    def rf(p, q, bound):
+        if p[0] != q[0]:
+            return False
+        k = p[0]
+        if k in ("var", "bot", "top"):
+            return p == q
+        if k == "pred":
+            return p[1] == q[1] and len(p[2]) == len(q[2]) and all(
+                rt(x, y, bound) for x, y in zip(p[2], q[2]))
+        if k == "rel":
+            return p[1] == q[1] and rt(p[2], q[2], bound) and rt(p[3], q[3], bound)
+        if k in CONNECTIVES:
+            return all(rf(x, y, bound) for x, y in zip(p[1:], q[1:]))
+        if p[1] != q[1] or (p[3] is None) != (q[3] is None):
+            return False
+        inner = bound | {p[1]}
+        return rf(p[2], q[2], inner) and (p[3] is None or rf(p[3], q[3], inner))
+
+    ok = rf(a, b, frozenset())
+    return "" if ok else (problem[0] if problem else "no")
+
+
+def show_term(t) -> str:
+    if t[0] == "v":
+        return t[1]
+    head, args = t[1], t[2]
+    if head in ("+", "-", "*", "/") and len(args) == 2:
+        sym = {"*": "·"}.get(head, head)
+        return f"({show_term(args[0])} {sym} {show_term(args[1])})"
+    if head in ("^", "_"):
+        return f"{show_term(args[0])}{head}{show_term(args[1])}"
+    if head == "neg":
+        return "-" + show_term(args[0])
+    if head == "abs":
+        return f"|{show_term(args[0])}|"
+    return f"{head}({', '.join(show_term(a) for a in args)})"
+
+
+def matrix(f):
+    """The body of a quantifier, with a bound unfolded: ∀x∈A φ is ∀x (x∈A → φ),
+    ∃x∈A φ is ∃x (x∈A ∧ φ)."""
+    if f[3] is None:
+        return f[2]
+    return ("imp" if f[0] == "forall" else "and", f[3], f[2])
 
 
 # ---------------------------------------------------------------------------
@@ -213,8 +710,12 @@ RULES = {  # macro -> (display name, citation shape: L = line, B = box)
     # derived rules (Chapter 1 proves each once; latex/fitch-book.sty has their macros)
     "nni": ("¬¬I", "L"), "nne": ("¬¬E", "L"), "mt": ("MT", "LL"), "ctp": ("CP", "L"),
     "ds": ("DS", "LL"), "dm": ("DM", "L"), "lem": ("LEM", ""),
+    # quantifier and equality rules (Chapter 4); "|" separates the citation shapes
+    # of the unbounded and the bounded form (\forall x \in A: the bound is a line)
+    "Ae": ("∀E", "L|LL"), "Ai": ("∀I", "B"), "Ei": ("∃I", "L|LL"), "Ee": ("∃E", "LB"),
+    "eqi": ("=I", ""), "eqe": ("=E", "LL"),
 }
-UNCHECKED = {"Ai": "∀I", "Ae": "∀E", "Ei": "∃I", "Ee": "∃E", "eqi": "=I", "eqe": "=E"}
+QUANT_RULES = {"Ae", "Ai", "Ei", "Ee", "eqi", "eqe"}
 
 
 @dataclass
@@ -239,6 +740,7 @@ class Box:
     parent: int | None
     lines: list = field(default_factory=list)   # indices into the line list
     closed_at: int = -1                          # index of the first line after it
+    guard: list = field(default_factory=list)   # flagged names, from \open[x_0]
 
 
 def read_group(s: str, i: int):
@@ -294,7 +796,15 @@ def render_number(base: str, ctr: int) -> str:
     return base + ("" if ctr == 0 else f"+{ctr}" if ctr > 0 else str(ctr))
 
 
-COMMAND = re.compile(r"\\(hypo|have|open|close)\b")
+COMMAND = re.compile(r"\\(hypo|have|open|close|guard)\b")
+
+
+def guard_names(text: str) -> list:
+    """The names of a guard [x_0] or [x_0, y_0]."""
+    toks = [t for t in fo_tokenize(text) if t != ","]
+    if toks and all(isinstance(t, tuple) and t[0] == "name" for t in toks):
+        return [t[1] for t in toks]
+    return [text.strip()] if text.strip() else []
 
 
 def parse_nd(body: str, first_lineno: int, schema_key: bool = False):
@@ -316,10 +826,21 @@ def parse_nd(body: str, first_lineno: int, schema_key: bool = False):
         cmd = m.group(1)
         pos = m.end()
         if cmd == "open":
-            _, pos = read_opt(body, pos)          # guard
+            g, pos = read_opt(body, pos)          # guard: the flagged name
             box = Box(id=len(boxes), parent=stack[-1] if stack else None)
+            box.guard = guard_names(g) if g else []
             boxes.append(box)
             stack.append(box.id)
+            continue
+        if cmd == "guard":                        # \guard[n]{x}: the n-th innermost box
+            n, pos = read_opt(body, pos)
+            g, pos = read_group(body, pos)
+            try:
+                depth = int(n) if n and n.strip() else 1
+            except ValueError:
+                depth = 1
+            if g is not None and 0 < depth <= len(stack):
+                boxes[stack[-depth]].guard += guard_names(g)
             continue
         if cmd == "close":
             if not stack:
@@ -335,7 +856,9 @@ def parse_nd(body: str, first_lineno: int, schema_key: bool = False):
         if opt1 is not None:
             opt2, pos = read_opt(body, pos)
         label, pos = read_group(body, pos)
-        _, pos = read_opt(body, pos)              # guard
+        g, pos = read_opt(body, pos)              # guard (\hypo{i}[x_0]{...}): innermost box
+        if g and stack:
+            boxes[stack[-1]].guard += guard_names(g)
         text, pos = read_group(body, pos)
         if label is None or text is None:
             errors.append((lineno, f"\\{cmd} needs {{label}} {{formula}}"))
@@ -446,8 +969,8 @@ def check_derivation(lines, boxes, schema=False):
         errors += check_numbering(lines)
 
     # boxes begin with their assumption; no assumption in mid-box
-    for box in boxes:
-        if box.lines and not lines[box.lines[0]].hypo:
+    for box in boxes:                  # a flagged box (\open[x_0], for ∀I) may have none
+        if box.lines and not lines[box.lines[0]].hypo and not box.guard:
             errors.append((lines[box.lines[0]].lineno,
                            f"box starting at line {lines[box.lines[0]].label} "
                            f"does not begin with an assumption"))
@@ -487,7 +1010,7 @@ def check_derivation(lines, boxes, schema=False):
             notes.append((ln.lineno, "\\vdots or unlabelled row: skipped"))
             continue
         try:
-            ln.formula = parse_formula(ln.text)
+            ln.formula = read_formula(ln.text)
         except ParseError as e:
             ln.parse_error = str(e)
         if ln.hypo:
@@ -531,30 +1054,37 @@ def check_derivation(lines, boxes, schema=False):
             notes.append((ln.lineno, f"line {ln.label} justified by text "
                                      f"({ln.by_text.strip() or 'empty'}): shape not checked"))
             continue
-        if ln.rule in UNCHECKED:
-            notes.append((ln.lineno, f"line {ln.label}: {UNCHECKED[ln.rule]} not checked"))
-            continue
         if ln.rule not in RULES:
             errors.append((ln.lineno, f"line {ln.label}: unknown rule macro \\{ln.rule}"))
             continue
         name, want = RULES[ln.rule]
         got = "".join(s for s, _ in cites)
-        if got != want:
+        if got not in want.split("|"):
             errors.append((ln.lineno, f"line {ln.label}: {name} cites "
                                       f"{_shape_words(want)}, got {ln.refs or 'nothing'}"))
             continue
         if not cited_ok:
             continue
+        quant = ln.rule in QUANT_RULES
         involved = [ln] + [lines[i] for s, i in resolved if s == "L"]
         for s, box in resolved:
-            if s == "B":
+            if s == "B" and quant:          # a ∀I box may open with a gap row, not an assumption
+                involved += own_assumptions(box, lines) + [lines[box.lines[-1]]]
+            elif s == "B":
                 involved += [lines[box.lines[0]], lines[box.lines[-1]]]
         bad = [x for x in involved if x.formula is None]
         if bad:
             notes.append((ln.lineno, f"line {ln.label}: formula of line {bad[0].label} "
-                                     f"not propositional ({bad[0].parse_error}): shape not checked"))
+                                     f"not propositional or first-order "
+                                     f"({bad[0].parse_error or 'a gap row'}): shape not checked"))
             continue
-        problem = check_shape(ln.rule, ln.formula, resolved, lines)
+        if quant:
+            problem = check_quant(ln.rule, k, resolved, lines)
+            if problem is None:
+                notes.append((ln.lineno, f"line {ln.label}: {name} box not readable: shape not checked"))
+                continue
+        else:
+            problem = check_shape(ln.rule, ln.formula, resolved, lines)
         if problem:
             errors.append((ln.lineno, f"line {ln.label}: {name} {problem}"))
     return errors, notes
@@ -562,7 +1092,7 @@ def check_derivation(lines, boxes, schema=False):
 
 def _shape_words(want: str) -> str:
     words = {"L": "a line", "B": "a box i-j"}
-    return ", ".join(words[c] for c in want)
+    return " or ".join(", ".join(words[c] for c in alt) or "nothing" for alt in want.split("|"))
 
 
 def check_shape(rule, f, resolved, lines):
@@ -672,6 +1202,174 @@ def check_shape(rule, f, resolved, lines):
         if f[0] == "or" and f[2] == ("not", f[1]):
             return ""
         return f"needs A ∨ ¬A, not {s(f)}"
+    return "unknown rule"
+
+
+# ---------------------------------------------------------------------------
+# Quantifier and equality rules
+# ---------------------------------------------------------------------------
+
+def occurs(name: str, ln) -> bool:
+    """The name occurs in line ln (read from its tokens when the formula did not parse)."""
+    if ln.formula is not None:
+        return name in names(ln.formula)
+    return any(t[0] == "name" and t[1] == name
+               for t in fo_tokenize(ln.text) if isinstance(t, tuple))
+
+
+def own_assumptions(box, lines):
+    """The assumption lines of the box itself (not of a box inside it)."""
+    return [lines[i] for i in box.lines if lines[i].hypo and lines[i].boxes[-1] == box.id]
+
+
+def check_quant(rule, k, resolved, lines):
+    """Return '' if line k is a correct instance of a quantifier or equality rule,
+    else what is wrong. All formulas involved have parsed."""
+    ln = lines[k]
+    f = ln.formula
+    L = [lines[i].formula for s, i in resolved if s == "L"]
+    boxes_cited = [b for s, b in resolved if s == "B"]
+    s = show
+
+    def instance(pattern, x, target, what):
+        """'' or the problem with target = pattern[t/x], t free for x."""
+        r = instance_term(pattern, x, target)
+        if r is None:
+            return f"needs {what}"
+        t = r[1]
+        if t is not None and not free_for(t, x, pattern):
+            return (f"substitutes {show_term(t)} for {x}, but {show_term(t)} is not free for "
+                    f"{x} in {s(pattern)} (a variable of it would be captured)")
+        return ""
+
+    def fresh(x0, extra):
+        """The first side-condition clause x0 violates, or ''."""
+        for what, g in extra:
+            if x0 in names(g):
+                return f"the flagged name {x0} occurs in {what} {s(g)}"
+        for j in range(k):
+            h = lines[j]
+            if h.hypo and set(h.boxes) <= set(ln.boxes) and occurs(x0, h):
+                kind = "premise" if not h.boxes else "open assumption"
+                return f"the flagged name {x0} occurs in the {kind} {h.label} ({h.text.strip()})"
+        return ""
+
+    if rule == "eqi":
+        if f[0] == "rel" and f[1] == "=" and f[2] == f[3]:
+            return ""
+        return f"concludes t = t, not {s(f)}"
+
+    if rule == "eqe":
+        errs = []
+        for eq, a in ((L[0], L[1]), (L[1], L[0])):
+            if not (eq[0] == "rel" and eq[1] == "="):
+                continue
+            r = replaces(a, f, eq[2], eq[3])
+            if r == "":
+                return ""
+            errs.append(r)
+        if not errs:
+            return f"cites no equation (got {s(L[0])}, {s(L[1])})"
+        if "capture" in errs:
+            return ("replaces a term under a quantifier that binds one of its variables "
+                    "(not free for x)")
+        return (f"needs an equation t = s and a line φ[t/x] giving φ[s/x] "
+                f"(got {s(L[0])}, {s(L[1])}, {s(f)})")
+
+    if rule == "Ae":
+        quants = [(n, q) for n, q in enumerate(L) if q[0] == "forall"]
+        if not quants:
+            return f"cites no ∀ line (got {', '.join(s(q) for q in L)})"
+        problem = ""
+        for n, q in quants:
+            x = q[1]
+            if len(L) == 1:
+                problem = instance(matrix(q), x, f, f"{s(f)} to be an instance of {s(q)}")
+            elif q[3] is None:
+                problem = f"cites two lines, but {s(q)} has no bound"
+            else:
+                other = L[1 - n]
+                problem = instance(("and", q[3], q[2]), x, ("and", other, f),
+                                   f"{s(other)} and {s(f)} to be the bound and the body of "
+                                   f"{s(q)} at one term")
+            if not problem:
+                return ""
+        return problem
+
+    if rule == "Ei":
+        if f[0] != "exists":
+            return f"concludes {s(f)}, which is not an ∃ formula"
+        x = f[1]
+        if len(L) == 1:
+            return instance(matrix(f), x, L[0], f"{s(L[0])} to be an instance of {s(f)}")
+        if f[3] is None:
+            return f"cites two lines, but {s(f)} has no bound"
+        problem = ""
+        for a, b in ((L[0], L[1]), (L[1], L[0])):
+            problem = instance(("and", f[3], f[2]), x, ("and", a, b),
+                               f"the cited lines to be the bound and the body of {s(f)} "
+                               f"at one term")
+            if not problem:
+                return ""
+        return problem
+
+    box, = boxes_cited
+    if not box.guard:
+        return "needs a flagged box (\\open[x_0])"
+    first, last = lines[box.lines[0]], lines[box.lines[-1]]
+    if last.boxes[-1] != box.id:
+        return f"the box's last line {last.label} must be a line of the box itself"
+    if last.formula is None:
+        return None
+    hyps = own_assumptions(box, lines)
+    if any(h.formula is None for h in hyps):
+        return None
+
+    if rule == "Ai":
+        if f[0] != "forall":
+            return f"concludes {s(f)}, which is not a ∀ formula"
+        x = f[1]
+        problem = ""
+        for x0 in box.guard:
+            v = ("v", x0)
+            if not hyps:
+                ok = last.formula == subst(matrix(f), x, v)
+                want = f"a box with no assumption ending in {s(subst(matrix(f), x, v))}"
+            elif len(hyps) == 1 and f[3] is not None:
+                ok = (hyps[0].formula == subst(f[3], x, v)
+                      and last.formula == subst(f[2], x, v))
+                want = (f"a box assuming {s(subst(f[3], x, v))} and ending in "
+                        f"{s(subst(f[2], x, v))}")
+            else:
+                ok = False
+                want = "a flagged box with no assumption (a ∀I box has none)"
+            if not ok:
+                problem = f"needs {want}"
+                continue
+            return fresh(x0, [("the conclusion", f)])
+        return problem
+
+    if rule == "Ee":
+        e = L[0]
+        if e[0] != "exists":
+            return f"cites {s(e)}, which is not an ∃ formula"
+        x = e[1]
+        if last.formula != f:
+            return f"the box must end in the conclusion {s(f)} (ends in {s(last.formula)})"
+        problem = ""
+        for x0 in box.guard:
+            v = ("v", x0)
+            got = [h.formula for h in hyps]
+            wants = [[subst(matrix(e), x, v)]]
+            if e[3] is not None:
+                b, m = subst(e[3], x, v), subst(e[2], x, v)
+                wants += [[b, m], [m, b]]
+            if got not in wants:
+                problem = (f"the box must assume {' and '.join(s(w) for w in wants[-1])} "
+                           f"(assumes {', '.join(s(g) for g in got) or 'nothing'})")
+                continue
+            return fresh(x0, [("the conclusion", f), ("the ∃ line", e)])
+        return problem
     return "unknown rule"
 
 
