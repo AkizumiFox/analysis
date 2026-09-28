@@ -70,6 +70,10 @@ Let \( F \) be an ordered field (only (F1)–(F9) are used) and let \( a, b \in 
 :::
 :::
 
+::: {.idea}
+Each identity is forced by uniqueness. An element is pinned down by the equation it satisfies, so to show that \( (-a)b \) is \( -(ab) \), we show that it satisfies the equation defining \( -(ab) \), namely that it adds to \( ab \) to give \( 0 \). Part (a) proves the uniqueness, and the other parts use it.
+:::
+
 ::: {.proof}
 (a) If \( 0' \) also has the property (F3), then \( 0' = 0' + 0 = 0 + 0' = 0 \) by (F3) for \( 0 \), (F1), and (F3) for \( 0' \). If \( a + b = 0 \) and \( a + c = 0 \), then
 \[
@@ -118,7 +122,7 @@ Why state the order axioms with the strict relation \( < \) rather than with \( 
 
 ## The rules for inequalities
 
-Chapter 1 used facts such as \( x^2 \ge 0 \) and "multiplying by a negative number reverses an inequality" as school algebra. We now prove them from (O1)–(O4) and the field axioms. So nothing earlier was circular: those facts were true, and here is why.
+Chapter 1 used facts such as \( x^2 \ge 0 \) (in @exm-square-plus-one) and the sign rules for products (in @exm-abs-product-cases) as school algebra. We now prove them from (O1)–(O4) and the field axioms. So nothing earlier was circular: those facts were true, and here is why.
 
 ::: {#thm-ordered-field-rules}
 [Rules for Inequalities]
@@ -197,7 +201,7 @@ x & \text{if } x \ge 0, \\
 
 The definition is by cases, and trichotomy guarantees that exactly one case applies, so \( \abs{x} \) is well defined. For example \( \abs{3} = 3 \), \( \abs{-3} = -(-3) = 3 \), and \( \abs{0} = 0 \); the degenerate point \( 0 \) falls in the first case, and it is the only element of absolute value \( 0 \). A minimal change shows that the case split is doing real work: the rule "\( \abs{x} = x \) for all \( x \)" agrees with the definition on every non-negative \( x \) and fails at every negative one, where it would make \( \abs{-3} = -3 < 0 \).
 
-The next proposition collects the facts about absolute value that we use constantly. Chapter 1 proved some of them by cases, taking the sign rules on trust; the sign rules are now @thm-ordered-field-rules.
+The next proposition collects the facts about absolute value that we use constantly. Chapter 1 proved some of them by cases (@exm-triangle-inequality-cases begins with \( a \le \abs{a} \) and \( -a \le \abs{a} \)), taking the sign rules on trust; the sign rules are now @thm-ordered-field-rules.
 
 ::: {#prp-absolute-value-rules}
 [Rules for Absolute Value]
@@ -210,6 +214,10 @@ Let \( F \) be an ordered field and let \( x, y, r \in F \).
 3. \( -\abs{x} \le x \le \abs{x} \).
 4. \( \abs{x} \le r \) if and only if \( -r \le x \le r \); and \( \abs{x} < r \) if and only if \( -r < x < r \).
 :::
+:::
+
+::: {.idea}
+The definition of \( \abs{x} \) has two cases, so each part is proved by checking \( x \ge 0 \) and \( x < 0 \) separately and quoting the sign rules of @thm-ordered-field-rules in each case. Part (d) is the exception. Once (c) is available, (d) needs no new case split for its forward direction.
 :::
 
 ::: {.proof}
@@ -258,7 +266,7 @@ Let \( F \) be an ordered field. For all \( x, y \in F \),
 :::
 
 ::: {.idea}
-Chapter 1 proved (a) by splitting into cases by the signs of \( x \) and \( y \). There is a shorter route that needs no cases at all. By @prp-absolute-value-rules (d), the goal \( \abs{x + y} \le \abs{x} + \abs{y} \) is the pair of inequalities \( -(\abs{x} + \abs{y}) \le x + y \le \abs{x} + \abs{y} \), and these come from adding the two sandwiches \( -\abs{x} \le x \le \abs{x} \) and \( -\abs{y} \le y \le \abs{y} \). For (b), write \( x \) as \( (x - y) + y \) and apply (a).
+Chapter 1 proved (a) in @exm-triangle-inequality-cases with two case splits: one to show \( a \le \abs{a} \) and \( -a \le \abs{a} \), and then one on the sign of \( x + y \). Here the first split is already done, as @prp-absolute-value-rules (c), and the second is not needed. By @prp-absolute-value-rules (d), the goal \( \abs{x + y} \le \abs{x} + \abs{y} \) is the pair of inequalities \( -(\abs{x} + \abs{y}) \le x + y \le \abs{x} + \abs{y} \), and these come from adding the two sandwiches \( -\abs{x} \le x \le \abs{x} \) and \( -\abs{y} \le y \le \abs{y} \). For (b), write \( x \) as \( (x - y) + y \) and apply (a).
 :::
 
 ::: {.proof}
@@ -409,3 +417,13 @@ If \( a \ge b \), then \( \abs{a - b} = a - b \), so \( \frac{a + b + \abs{a - b
 
 For the inequality, put \( m \coloneqq \max\{ \abs{a - c}, \abs{b - d} \} \). By @prp-absolute-value-rules (c), \( a \le c + \abs{a - c} \le \max\{c, d\} + m \), and likewise \( b \le d + \abs{b - d} \le \max\{c, d\} + m \). Hence \( \max\{a, b\} \le \max\{c, d\} + m \), that is, \( \max\{a, b\} - \max\{c, d\} \le m \). Swapping the roles of \( (a, b) \) and \( (c, d) \), which leaves \( m \) unchanged, gives \( \max\{c, d\} - \max\{a, b\} \le m \). By @prp-absolute-value-rules (d), the two together say \( \abs{\max\{a, b\} - \max\{c, d\}} \le m \).
 :::
+
+<!-- dependency ledger
+exm-ordered-fields-q-r (example): Q with fraction arithmetic and p/q < p'/q' iff pq' < p'q satisfies (F1)-(F9) and (O1)-(O4) | taken as known from the arithmetic of Z; the construction of Q is not in the main line (ch06 (promised) for the integer facts)
+exm-ordered-fields-q-r (example): R is an ordered field containing Q, N and Z | assumption, stated in the example; completed by ax-least-upper-bound in 03-the-axiom
+lem-field-algebra (proof): the rules of fraction arithmetic (a/b + c/d = (ad + bc)/bd and the like) | inline: derived from (F1)-(F9) as in lem-field-algebra, stated in the sentence after the proof and not written out
+exm-integers-not-a-field (example): no integer m satisfies 2m = 1 | arithmetic of Z, ch06 (promised)
+exr-ordered-fields-a1 (solution): no integer m satisfies 2m = 1 | arithmetic of Z, ch06 (promised)
+exr-ordered-fields-c1 (solution): proof by induction on n, and a second induction starting at m + 1 | induction, ch06 (promised)
+thm-ordered-field-rules (example): C is a field with i^2 = -1 (the non-example of C after the theorem) | school algebra of complex numbers; companion ch 0
+-->

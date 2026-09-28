@@ -1,6 +1,6 @@
 # The Archimedean Property
 
-We now have the least upper bound axiom (@ax-least-upper-bound) and a way to use it, the \( \varepsilon \)-characterization of the supremum (@thm-sup-epsilon). This section draws the first consequence, one that looks too obvious to need proof: the natural numbers eventually pass every real number. When we first met suprema, we claimed that \( \sup \{ 1 - 1/n : n \in \nN \} = 1 \) and postponed the proof, because it needs exactly this fact. Here we prove the fact from the axiom, pay off that claim, and then meet an ordered field where the fact is false, so that we can see which line of the proof the axiom is holding up.
+We now have the least upper bound axiom (@ax-least-upper-bound) and a way to use it, the characterization of the supremum by \( \varepsilon \) (@thm-sup-epsilon). This section draws the first consequence, one that looks too obvious to need proof: the natural numbers eventually pass every real number. When we first met suprema, we claimed that \( \sup \{ 1 - 1/n : n \in \nN \} = 1 \) and postponed the proof, because it needs exactly this fact. Here we prove the fact from the axiom, pay off that claim, and then meet an ordered field where the fact is false, so that we can see which line of the proof the axiom is holding up.
 
 ## Where the natural numbers live
 
@@ -83,7 +83,7 @@ Therefore \( \nN \) is not bounded above. Unwinding the definition (@def-bounded
 Each hypothesis of the axiom was used and named: "non-empty" through \( 1 \in \nN \), "bounded above" through the assumption for contradiction. The inductive property of \( \nN \) supplied the jump \( n \mapsto n + 1 \).
 
 ::: {.remark}
-The contradiction step is \( \rulename{\neg I} \) (@def-rules-negation), not \( \rulename{RAA} \) (@def-rule-raa): we assumed "\( \nN \) is bounded above", reached a contradiction, and concluded its negation. The proof does contain a classical step, but it comes after the \( \rulename{\neg I} \), in the proof's last paragraph. Passing from "not every \( n \) satisfies \( n \le x \)" to "some \( n \) satisfies \( n > x \)" is the quantifier law "not all" gives "some not" of Chapter 3, and that law is derived there with \( \rulename{RAA} \).
+The contradiction step is \( \rulename{\neg I} \) (@def-rules-negation), not \( \rulename{RAA} \), the classical rule of proof by contradiction that Chapter 1 adds after the rules for negation: we assumed "\( \nN \) is bounded above", reached a contradiction, and concluded its negation. The proof does contain a classical step, but it comes after the \( \rulename{\neg I} \), in the proof's last paragraph. Passing from "not every \( n \) satisfies \( n \le x \)" to "some \( n \) satisfies \( n > x \)" is the quantifier law "not all" gives "some not" of Chapter 3, and that law is derived there with \( \rulename{RAA} \).
 :::
 
 The form we will use most often puts a small number, not a large one, in the role of \( x \).
@@ -259,6 +259,32 @@ For the second statement, put \( x \coloneqq \abs{a - b} \). Then \( 0 \le x < 1
 This is how equality is proved in analysis over and over: show that the distance is non-negative and smaller than every \( 1/n \).
 :::
 
+::: {#exr-archimedean-property-b4}
+[B4: Putting a proof in order]
+
+Here are nine lines. Seven of them, in a suitable order, prove that \( \sup A = 1 \) for \( A \coloneqq \{ \frac{n}{n + 1} : n \in \nN \} \). Give an admissible order. Then say why each of the other two lines cannot be used.
+
+::: {.enumerate options="label=(\roman*)"}
+1. Let \( \varepsilon > 0 \).
+2. Hence \( a \coloneqq \frac{n}{n + 1} \) is an element of \( A \) with \( a > 1 - \varepsilon \).
+3. For every \( n \in \nN \), \( n < n + 1 \) and \( n + 1 > 0 \), so \( \frac{n}{n + 1} < 1 \). Hence \( 1 \) is an upper bound of \( A \).
+4. By @cor-archimedean-epsilon there is \( n \in \nN \), depending on \( \varepsilon \), with \( \frac1n < \varepsilon \).
+5. Choose \( n \in \nN \) such that \( \frac1n < \varepsilon \) for every \( \varepsilon > 0 \).
+6. Since \( \varepsilon > 0 \) was arbitrary, every band \( (1 - \varepsilon, 1] \) contains an element of \( A \).
+7. Then \( \frac{n}{n + 1} = 1 - \frac1{n + 1} \), and \( \frac1{n + 1} < \frac1n < \varepsilon \).
+8. By @thm-sup-epsilon, \( \sup A = 1 \).
+9. Fix \( n \in \nN \) and let \( \varepsilon \coloneqq \frac1n \); then \( \frac{n}{n + 1} = 1 - \frac1{n + 1} > 1 - \varepsilon \).
+:::
+:::
+
+::: {.solution}
+An admissible order is (iii), (i), (iv), (vii), (ii), (vi), (viii). The line (iii) may stand anywhere before (viii), since it uses nothing but the definition of \( A \). The other lines admit only this order. Inside the block that starts with (i), line (iv) needs the \( \varepsilon \) of (i), line (vii) needs the \( n \) of (iv), line (ii) needs (vii), and (vi) records that \( \varepsilon \) was arbitrary. Line (viii) needs both (iii) and (vi), the two hypotheses of @thm-sup-epsilon.
+
+Line (v) has the quantifiers in the wrong order. It asks for one \( n \) that works for every \( \varepsilon \), and there is none: \( \varepsilon = \frac1n \) itself would give \( \frac1n < \frac1n \). @cor-archimedean-epsilon gives an \( n \) for each \( \varepsilon \).
+
+Line (ix) is true, but its \( \varepsilon \) is of the wrong kind: it is chosen to fit \( n \), instead of being given first. It shows only that the bands of the special widths \( \frac1n \) meet \( A \), while @thm-sup-epsilon needs **every** band, of every width \( \varepsilon > 0 \). Passing from the special widths to all widths is exactly the work of lines (iv) and (vii), which (ix) skips.
+:::
+
 ### C. Going deeper
 
 ::: {#exr-archimedean-property-c1}
@@ -278,6 +304,17 @@ In \( \nR(x) \) the set \( \nN \) is non-empty and bounded above by \( x \) (@ex
 (b) The gap is the existence of \( \ceil{x} \). The set \( \{ k \in \nZ : k \ge x \} \) has a least element only if it is non-empty, and it is non-empty exactly when some integer is at least \( x \). That is (a form of) the Archimedean property, the statement being proved. The proof is circular.
 
 In \( \nR(x) \), take the element \( x \) and suppose \( k \in \nZ \) satisfies \( k \ge x \). If \( k \le 0 \), then \( k \le 0 < 1 < x \). If \( k \ge 1 \), then \( k \in \nN \) and \( k < x \) by @exm-nonarchimedean-field. Either way \( k < x \), a contradiction. So no integer is greater than or equal to \( x \), and \( \ceil{x} \) does not exist.
+
+**Marking scheme.** (10 points)
+- 1: (a) supposes, for a contradiction, that \( \nN \) is bounded above, and notes \( 1 \in \nN \).
+- 2: (a) obtains \( s = \sup \nN \) from @ax-least-upper-bound, with both hypotheses checked, and marks this line.
+- 2: (a) uses the "least" property (S2), or @thm-sup-epsilon with \( \varepsilon = 1 \), to find \( n \in \nN \) with \( n > s - 1 \).
+- 1: (a) uses that \( \nN \) is inductive to get \( n + 1 \in \nN \) with \( n + 1 > s \), contradicting (S1), and concludes.
+- 1: (a) explains why the marked line fails in \( \nR(x) \): every upper bound \( M \) of \( \nN \) there has the smaller upper bound \( M - 1 \).
+- 2: (b) names the existence of \( \ceil{x} \) as the gap, and says it already needs an integer at least \( x \), which is what is being proved.
+- 1: (b) shows that no integer is at least \( x \) in \( \nR(x) \).
+Fatal errors (0 for the step): taking \( s \) to be a natural number, or the maximum of \( \nN \); asserting "some \( n > s - 1 \)" with no appeal to (S2); using \( \ceil{x} \), \( \floor{x} \) or the Archimedean property inside (a).
+A proof of (a) that applies the axiom to a bounded set of the form \( \{ n \in \nN : n \le x \} \) instead earns full marks for (a) if it reaches a contradiction from the supremum in the same way.
 :::
 
 ::: {#exr-archimedean-property-c2}
@@ -292,7 +329,18 @@ Let \( P \subseteq \nR(x) \) be the set of positive elements defined in this sec
 4. Deduce the order axioms of @def-ordered-field for \( < \): trichotomy, transitivity, \( f < g \Rightarrow f + h < g + h \), and \( f, g > 0 \Rightarrow f g > 0 \).
 :::
 
-*Hint: in (c), compare the degrees of the two terms of the numerator of \( f + g \).*
+:::
+
+::: {.solution}
+[Hint 1]
+
+Choose good representatives first. Every fraction can be rewritten so that its denominator has positive leading coefficient, and after that only the numerator decides positivity.
+:::
+
+::: {.solution}
+[Hint 2]
+
+For the sum in (c), with both denominators normalized, write \( f + g = (p_1 q_2 + p_2 q_1)/(q_1 q_2) \) and split into two cases: the two terms of the numerator have different degrees, or the same degree.
 :::
 
 ::: {.solution}
@@ -331,3 +379,16 @@ Both \( p_1 q_2 \) and \( p_2 q_1 \) have positive leading coefficient. If their
 
 (b) By (a), \( \nQ \) is an ordered field in which \( \nN \) is not bounded above, so \( \nQ \) has the Archimedean property. By @thm-no-rational-sup-sqrt2, the non-empty set \( \{ x \in \nQ : x > 0, \ x^2 < 2 \} \), which is bounded above by \( 2 \), has no supremum in \( \nQ \). So \( \nQ \) is Archimedean and fails the least upper bound axiom, and the Archimedean property cannot imply the axiom.
 :::
+
+<!-- dependency ledger
+def-inductive-set (example): N is the intersection of all inductive subsets of R (a set defined from a family of sets) | sets and intersections, ch05 (promised)
+exm-naturals-at-least-one (solution): none beyond def-inductive-set and thm-ordered-field-rules | inline
+thm-naturals-unbounded (proof): "not (n <= x for all n)" gives "n > x for some n" | quantifier negation, ch03 (promised); the remark after the proof says so
+cor-archimedean-epsilon (proof): none | inline
+exm-nonarchimedean-field (example): R(x) is a field; lc(pq) = lc(p) lc(q) | algebra of polynomials and fractions, taken as known and stated in the text
+exm-nonarchimedean-field (example): the natural numbers of R(x) are the constants 1, 2, 3, ... | inline: the constants form an inductive set, and every inductive set contains them (exr-ordered-fields-c1)
+exm-sup-one-minus-reciprocal-finished (solution): 100/101 > 0.99 | arithmetic, shown inline
+exr-archimedean-property-a1 (solution): 3/2 lies strictly between the natural numbers 1 and 2, so it is not in N | arithmetic of N stated in the remark on N, ch06 (promised)
+exr-archimedean-property-c1 (solution): a non-empty set of integers bounded below has a least element (for the ceiling) | well-ordering, ch06 (promised)
+exr-archimedean-property-c3 (solution): every rational is m/k with m in Z, k in N | definition of Q in the remark on N
+-->

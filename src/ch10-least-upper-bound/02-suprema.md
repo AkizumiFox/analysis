@@ -30,7 +30,7 @@ M \text{ is not an upper bound of } A
 \]
 where we have used trichotomy to rewrite "not \( a \le M \)" as "\( a > M \)".
 
-The empty set is the degenerate case, and it will matter. **Every** \( M \in F \) is an upper bound of \( \emptyset \): the condition "\( a \le M \) for every \( a \in \emptyset \)" has no instances to check, so it holds vacuously (Chapter 1 explains why a statement with no instances counts as true). Likewise every element of \( F \) is a lower bound of \( \emptyset \).
+The empty set is the degenerate case, and it will matter. **Every** \( M \in F \) is an upper bound of \( \emptyset \): the condition "\( a \le M \) for every \( a \in \emptyset \)" has no instances to check, so it holds vacuously. Instance by instance it is the implication "if \( a \in \emptyset \), then \( a \le M \)", whose hypothesis is false, and @prp-vacuous-implication derives an implication from the negation of its hypothesis. Likewise every element of \( F \) is a lower bound of \( \emptyset \).
 
 ::: {#def-bounded-above}
 [Bounded Sets]
@@ -168,7 +168,7 @@ Let \( A = \{ 1 - \frac1n : n \in \nN \} = \{ 0, \frac12, \frac23, \frac34, \dot
 ::: {.solution}
 Each \( n \in \nN \) is positive, by induction on \( n \) (Chapter 6): \( 1 > 0 \) by @thm-ordered-field-rules (e), and if \( n > 0 \), then \( n + 1 > n > 0 \) by (O3) and (O2). So \( \frac1n > 0 \) by @thm-ordered-field-rules (f), and hence \( 1 - \frac1n < 1 \) by @thm-ordered-field-rules (a). So \( 1 \) is an upper bound, and \( 1 \notin A \). No element is a maximum either: \( 1 - \frac1n < 1 - \frac1{n + 1} \), because \( \frac1{n + 1} < \frac1n \) by @thm-ordered-field-rules (f), so every element is beaten by the next one.
 
-It is true that \( \sup A = 1 \), but (S2) is harder than it looks. It says that no \( M < 1 \) is an upper bound, that is, for every \( M < 1 \) some \( 1 - \frac1n \) exceeds \( M \). That requires \( \frac1n < 1 - M \) for some \( n \), and the existence of such an \( n \) is the Archimedean property. It does not follow from the ordered-field axioms. We prove \( \sup A = 1 \) later in this chapter, right after the Archimedean property itself.
+It is true that \( \sup A = 1 \), but (S2) is harder than it looks. It says that no \( M < 1 \) is an upper bound, that is, for every \( M < 1 \) some \( 1 - \frac1n \) exceeds \( M \). That requires \( \frac1n < 1 - M \) for some \( n \). The existence of such an \( n \) says, in effect, that the natural numbers are not bounded above, and that does not follow from the ordered-field axioms. We prove it later in this chapter, from the axiom of the next section, and prove \( \sup A = 1 \) right after it.
 :::
 
 The degenerate case is the empty set. By the vacuous-truth remark above, every element of \( F \) is an upper bound of \( \emptyset \). If \( s \) were a supremum, then \( s - 1 \) would be an upper bound too, and (S2) would give \( s \le s - 1 \), that is, \( 1 \le 0 \), contradicting \( 1 > 0 \). So **the empty set has no supremum**, although it is bounded above. This is why the axiom of the next section has to say "non-empty".
@@ -258,14 +258,15 @@ This is the gap in \( \nQ \) in its final form. The next section adds to the ord
 ::: {#exr-suprema-a1}
 [A1]
 
-For each set in \( \nR \), give its supremum, infimum, maximum and minimum, or say that it does not exist. Justify each answer in a line or two.
+In (a)–(d), give the supremum, infimum, maximum and minimum of the set in \( \nR \), or say that it does not exist. Justify each answer in a line or two. Parts (e) and (f) are about the proof of @thm-no-rational-sup-sqrt2.
 
 ::: {.enumerate options="label=(\alph*)"}
 1. \( \{ -2, 0, \frac73 \} \).
 2. \( [-1, 4) \).
 3. \( \{ x \in \nR : x^2 \le 4 \} \).
 4. \( \emptyset \).
-5. \( (3, \infty) \).
+5. Run Case 2 of the proof on the rational upper bound \( s = \frac{17}{12} \): compute \( h \) and \( s - h \), and check that \( (s - h)^2 > 2 \).
+6. Replace \( \nQ \) by \( \nR \) throughout the statement and the proof. Which single step of the proof can no longer be justified, and what possibility does it leave open?
 :::
 :::
 
@@ -278,7 +279,15 @@ For each set in \( \nR \), give its supremum, infimum, maximum and minimum, or s
 
 (d) None of the four exists. Every real number is an upper and a lower bound of \( \emptyset \), so there is no least upper bound and no greatest lower bound (as shown in the text), and \( \emptyset \) has no elements to be a maximum or minimum.
 
-(e) The set is not bounded above: given \( M \), the element \( \max\{ M, 3 \} + 1 \) lies in it and exceeds \( M \). So there is no supremum and no maximum. \( \inf = 3 \) and there is no minimum: \( 3 \) is a lower bound not in the set, and if some \( m > 3 \) were a lower bound, the midpoint \( \frac{3 + m}{2} \) would lie in the set and be smaller than \( m \).
+(e) Here \( s^2 = \frac{289}{144} = 2 + \frac1{144} \), so
+\[
+h = \frac{s^2 - 2}{2s} = \frac{1/144}{17/6} = \frac{1}{408},
+\qquad
+s - h = \frac{17}{12} - \frac{1}{408} = \frac{577}{408} .
+\]
+Then \( (s - h)^2 = 2 + h^2 = 2 + \frac{1}{166464} > 2 \), as the proof's display predicts; directly, \( 577^2 = 332929 = 2 \cdot 408^2 + 1 \). So \( \frac{577}{408} \) is a smaller rational upper bound, and the step can be repeated from it.
+
+(f) The step "by @thm-sqrt2-irrational, \( s^2 \ne 2 \)". Over \( \nR \) nothing rules out \( s^2 = 2 \), so after Cases 1 and 2 the possibility \( s^2 = 2 \) remains, and no contradiction is reached. Every other step is algebra valid in any ordered field, \( \nR \) included. This is exactly the opening that the existence proof for \( \sqrt2 \), later in this chapter, walks through.
 :::
 
 ### B. Practice
@@ -390,3 +399,14 @@ Let \( F \) be an ordered field, \( A \subseteq F \), and let \( U(A) \) be the 
 
 (c) \( U(\emptyset) = F \), since every element is an upper bound of the empty set vacuously; and \( F \) has no minimum, because \( m - 1 < m \) for every \( m \in F \). So \( \emptyset \) has no supremum. \( U(F) = \emptyset \), since for any \( M \) the element \( M + 1 \in F \) exceeds \( M \); and \( \emptyset \) has no minimum. So \( F \) has no supremum either. The two degenerate cases fail for opposite reasons: too many upper bounds, and none.
 :::
+
+<!-- dependency ledger
+def-upper-bound (example): negating "for every a in A, a <= M" to "there exists a in A with a > M" | quantifier negation, ch03 (promised); prose pointer in the text
+def-bounded-above (example): max{M, 0} + 1 > M for every real M | thm-ordered-field-rules and (O3), shown inline
+exm-sup-finite-and-closed (solution): every non-empty finite subset of an ordered field has a maximum | induction on the number of elements, ch06 (promised); prose pointer in the text; not used in any proof
+exm-sup-one-minus-reciprocal (solution): n > 0 for every n in N | inline, by induction on n; the principle is ch06 (promised)
+thm-no-rational-sup-sqrt2 (proof): Q is closed under the field operations, so h and s + h, s - h are rational | exm-ordered-fields-q-r
+thm-no-rational-sup-sqrt2 (proof): the arithmetic of the two values of h ((s + h)^2 bound, (s - h)^2 = 2 + h^2) | inline; lem-field-algebra
+exr-suprema-a1 (solution): 577^2 = 332929 = 2 * 408^2 + 1 | arithmetic, shown inline
+exr-suprema-c1 (solution): the midpoint of two rationals is rational | exm-ordered-fields-q-r
+-->

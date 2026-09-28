@@ -44,7 +44,7 @@ Draw the band \( (s - \varepsilon, s] \) just below \( s \). The theorem says: \
 
 (\( \Rightarrow \)) The number \( s - \varepsilon \) is smaller than \( s \), so it cannot be an upper bound, by (S2). Not being an upper bound means precisely that some element of \( A \) lies above it.
 
-(\( \Leftarrow \)) We need (S2): every upper bound \( M \) satisfies \( s \le M \). Suppose some upper bound \( M \) lies below \( s \). Then the band between \( M \) and \( s \) contains no point of \( A \), and the hypothesis says every band does. So the band of width \( s - M \) gives the contradiction. *Before reading on: which value of \( \varepsilon \) does the proof feed into the hypothesis?*
+(\( \Leftarrow \)) We need (S2): every upper bound \( M \) satisfies \( s \le M \). Suppose some upper bound \( M \) lies below \( s \). Then the band between \( M \) and \( s \) contains no point of \( A \), and the hypothesis says every band does. So the band of width \( s - M \), that is, the hypothesis with \( \varepsilon = s - M \), gives the contradiction.
 :::
 
 ::: {.proof}
@@ -191,12 +191,16 @@ Let \( A, B \subseteq \nR \) be non-empty and bounded above. Then \( A + B \) is
 \]
 :::
 
+*Try it first (ten minutes): the inequality \( \le \) takes one line. Try to prove \( \ge \).*
+
 ::: {.idea}
-We prove the equality as **two inequalities**.
+The attempt that comes first to mind takes \( a = \sup A \) and \( b = \sup B \): then \( a + b \in A + B \), and (S1) for \( \sup(A + B) \) gives \( \ge \) at once. It fails because a supremum need not belong to its set: for \( A = B = (0, 1) \), the number \( 2 \) is not in \( A + B = (0, 2) \). (The last exercise of this section takes that attempt apart.) The repair is to use elements that are only **close** to the suprema, which is what @thm-sup-epsilon (\( \Rightarrow \)) supplies.
+
+So we prove the equality as **two inequalities**.
 
 (\( \le \)) Every \( a + b \) is at most \( \sup A + \sup B \), so the right side is an upper bound, and the supremum is at most any upper bound.
 
-(\( \ge \)) Work backwards. To show that \( \sup(A + B) \) is at least \( \sup A + \sup B \), it suffices to find, for each \( \varepsilon > 0 \), an element of \( A + B \) above \( \sup A + \sup B - \varepsilon \). The natural candidate is \( a + b \) with \( a \) close to \( \sup A \) and \( b \) close to \( \sup B \). If \( a \) falls short of \( \sup A \) by less than \( \varepsilon/2 \), and \( b \) falls short of \( \sup B \) by less than \( \varepsilon/2 \), the total shortfall is less than \( \varepsilon \). So we split the budget \( \varepsilon \) into two halves, one for each set, and ask @thm-sup-epsilon for an element within \( \varepsilon/2 \) of each supremum. This is the **\( \varepsilon/2 \) argument**. The number \( \varepsilon/2 \) depends only on \( \varepsilon \); the elements \( a \) and \( b \) depend on \( \varepsilon \). *Before reading on: why does the proof need \( \varepsilon/2 \) and not \( \varepsilon \)?*
+(\( \ge \)) Work backwards. To show that \( \sup(A + B) \) is at least \( \sup A + \sup B \), it suffices to find, for each \( \varepsilon > 0 \), an element of \( A + B \) above \( \sup A + \sup B - \varepsilon \). The natural candidate is \( a + b \) with \( a \) close to \( \sup A \) and \( b \) close to \( \sup B \). If \( a \) falls short of \( \sup A \) by less than \( \varepsilon/2 \), and \( b \) falls short of \( \sup B \) by less than \( \varepsilon/2 \), the total shortfall is less than \( \varepsilon \). So we split the budget \( \varepsilon \) into two halves, one for each set, and ask @thm-sup-epsilon for an element within \( \varepsilon/2 \) of each supremum. This is the **\( \varepsilon/2 \) argument**. The number \( \varepsilon/2 \) depends only on \( \varepsilon \); the elements \( a \) and \( b \) depend on \( \varepsilon \). *Before reading on: the proof asks for elements within \( \varepsilon/2 \) of each supremum. What would it give if it asked for \( \varepsilon \) instead, and would that still be enough?*
 :::
 
 ::: {.proof}
@@ -219,6 +223,8 @@ This holds for every \( \varepsilon > 0 \). If we had \( \sup(A + B) < \sup A + 
 The two inequalities and trichotomy give \( \sup(A + B) = \sup A + \sup B \).
 :::
 
+The answer to the prompt: with \( \varepsilon \) in place of \( \varepsilon/2 \) the proof gives \( \sup(A + B) > \sup A + \sup B - 2\varepsilon \) for every \( \varepsilon > 0 \), and that is still enough, since \( 2\varepsilon \) runs through all positive numbers as \( \varepsilon \) does. Halving is a convenience: it makes the final inequality come out with exactly \( \varepsilon \), which is the form @thm-sup-epsilon (\( \Leftarrow \)) asks for.
+
 The halves of the proof use the two halves of the definition. The first inequality used only that each supremum is an upper bound (S1) and that \( \sup(A + B) \) is least (S2). The second used that each of \( \sup A \) and \( \sup B \) is least, in its \( \varepsilon \) form, and that \( \sup(A + B) \) is an upper bound. We call the pattern **equality by two inequalities**: prove \( \le \) by exhibiting an upper bound, and \( \ge \) with an \( \varepsilon \).
 
 Every hypothesis is needed. If \( B = \emptyset \), then \( A + B = \emptyset \) has no supremum. If \( B \) is not bounded above, neither is \( A + B \) (@exr-epsilon-characterization-c2). And the analogous rule for differences is **not** \( \sup(A - B) = \sup A - \sup B \): the correct version subtracts an infimum (@exr-epsilon-characterization-b3).
@@ -239,6 +245,8 @@ Every hypothesis is needed. If \( B = \emptyset \), then \( A + B = \emptyset \)
 2. Use @thm-sup-epsilon to confirm that \( \sup \{ 3 \} = 3 \). Does your witness depend on \( \varepsilon \)? Why not?
 3. Use @thm-sup-epsilon to confirm that \( \sup \bigl( (-1, 1) \cup (2, 4) \bigr) = 4 \).
 4. Let \( s \) be an upper bound of \( A \). Write in symbols, using the \( \varepsilon \) characterization, the statement "\( s \) is **not** the supremum of \( A \)".
+5. Run the (\( \ge \)) half of the proof of @thm-sup-sum on \( A = (0, 1) \), \( B = \{ 5 \} \) and \( \varepsilon = \frac1{10} \): give an \( a \) and a \( b \) the proof could use, and check the inequality it derives.
+6. In the proof of @thm-sup-sum, which line can no longer be justified if \( B \) is allowed to be empty?
 :::
 :::
 
@@ -250,6 +258,10 @@ Every hypothesis is needed. If \( B = \emptyset \), then \( A + B = \emptyset \)
 (c) Every element is less than \( 4 \), so \( 4 \) is an upper bound. Given \( \varepsilon > 0 \), let \( a \coloneqq \max\{ 3, 4 - \frac{\varepsilon}{2} \} \). Then \( 3 \le a < 4 \), so \( a \in (2, 4) \), and \( a \ge 4 - \frac{\varepsilon}{2} > 4 - \varepsilon \). By @thm-sup-epsilon the supremum is \( 4 \).
 
 (d) \( \exists \varepsilon > 0 \ \ \forall a \in A : a \le s - \varepsilon \). In words: some band below \( s \) contains no point of \( A \), so \( s - \varepsilon \) is a smaller upper bound.
+
+(e) Here \( \sup A = 1 \), \( \sup B = 5 \) and \( \frac{\varepsilon}{2} = \frac1{20} \). The proof needs \( a \in (0, 1) \) with \( a > 1 - \frac1{20} = \frac{19}{20} \), for instance \( a = \frac{24}{25} \), and \( b \in B \) with \( b > 5 - \frac1{20} \), which forces \( b = 5 \). Then \( a + b = \frac{149}{25} = 5.96 > 5.9 = \sup A + \sup B - \varepsilon \). Any \( a \in (\frac{19}{20}, 1) \) works; the one \( b \) works for every \( \varepsilon \) because \( 5 \) is the maximum of \( B \).
+
+(f) The first line, "By @ax-least-upper-bound, \( \sup A \) and \( \sup B \) exist". The axiom needs \( B \) non-empty, and \( \emptyset \) has no supremum. The line that chooses \( b \in B \) in the (\( \ge \)) half fails too, since there is nothing to choose.
 :::
 
 ### B. Practice
@@ -310,7 +322,18 @@ For \( A, B \subseteq \nR \) let \( AB \coloneqq \{ ab : a \in A, \ b \in B \} \
 2. Prove that it holds when \( A \) and \( B \) are non-empty, bounded above, and contained in \( (0, \infty) \).
 :::
 
-*Hint: for (b), fix \( b \in B \) and compare \( bA \) with \( AB \).*
+:::
+
+::: {.solution}
+[Hint 1]
+
+For (a), try sets of negative numbers. For (b), the inequality \( \le \) is routine; for \( \ge \), fix one element \( b \in B \) and compare the set \( bA \) with \( AB \).
+:::
+
+::: {.solution}
+[Hint 2]
+
+For \( \ge \) in (b): fix \( b \in B \). Since \( b > 0 \) and \( bA \subseteq AB \), @thm-sup-scaling and @thm-sup-monotone give \( b \sup A \le \sup(AB) \). Now let \( b \) vary.
 :::
 
 ::: {.solution}
@@ -350,6 +373,15 @@ Let \( A, B \subseteq \nR \) be non-empty.
 Here \( A + B \) is bounded below because \( -(A + B) \) is bounded above, by (a) and @thm-inf-neg-sup (a).
 
 (c) Fix \( a_0 \in A \) and let \( M \in \nR \). Since \( B \) is not bounded above, \( M - a_0 \) is not an upper bound of \( B \), so some \( b \in B \) has \( b > M - a_0 \). Then \( a_0 + b \in A + B \) and \( a_0 + b > M \). As \( M \) was arbitrary, \( A + B \) is not bounded above.
+
+**Marking scheme.** (10 points)
+- 1: (a) says why \( \sup A \), \( \sup B \) exist and why \( A + B \) is non-empty.
+- 2: (a) shows \( \sup A + \sup B \) is an upper bound of \( A + B \), adding the two (S1) inequalities.
+- 3: (a) fixes an arbitrary \( \varepsilon > 0 \), obtains \( a \in A \) and \( b \in B \), **depending on \( \varepsilon \)**, within \( \varepsilon/2 \) of their suprema, and concludes with @thm-sup-epsilon (\( \Leftarrow \)).
+- 2: (b) reduces to (a) through \( -(A + B) = (-A) + (-B) \) and @thm-greatest-lower-bound, including why \( A + B \) is bounded below.
+- 2: (c) produces, for an arbitrary \( M \), an element of \( A + B \) above \( M \).
+Fatal errors (0 for the step): taking \( a = \sup A \in A \); choosing one \( a \) before \( \varepsilon \) is fixed; proving only \( \le \) in (a).
+A solution of (a) that proves \( \le \) and \( \ge \) separately, as in @thm-sup-sum, earns the 5 points of the second and third lines if the \( \ge \) half is complete. A solution of (b) that repeats the argument of (a) with lower bounds earns the (b) points.
 :::
 
 ::: {#exr-epsilon-characterization-c3}
@@ -368,3 +400,11 @@ Each "proof" below contains a line that is false in general. Find it, give a set
 
 (b) Line (2) is wrong for the same reason: for \( A = B = (0, 1) \), neither supremum belongs to its set, so \( a + b = 2 \) need not lie in \( A + B = (0, 2) \), and here it does not. The claim is **true**, since it is half of @thm-sup-sum, but this argument does not prove it; a correct argument for this inequality is the \( \varepsilon/2 \) argument in the proof of @thm-sup-sum. The flawed line is valid exactly when \( A \) and \( B \) have maxima, which is the situation the author of the "proof" silently imagined.
 :::
+
+<!-- dependency ledger
+exm-sup-squares-epsilon (solution): min{1/2, eps/2} is at most each of 1/2 and eps/2, and is positive | def-maximum (minimum of a two-element set), existence by trichotomy (O1)
+cor-sup-approximation (proof): choosing a_n for every n at once is countable choice | flagged in the prose after the proof; the corollary itself makes one choice per n and needs no choice principle
+exr-epsilon-characterization-a1 (solution): 24/25 > 19/20 and 24/25 + 5 = 149/25 | arithmetic, shown inline
+exr-epsilon-characterization-b2 (solution): max{sup A, sup B} is one of the two, so "by symmetry" covers both cases | def-maximum and trichotomy (O1)
+exr-epsilon-characterization-c3 (solution): A + B = (0, 2) for A = B = (0, 1) | inline (only 2 not in (0, 2) is used, since every element of A + B is < 2)
+-->

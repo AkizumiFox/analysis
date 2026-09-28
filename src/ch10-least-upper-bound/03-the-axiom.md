@@ -65,7 +65,7 @@ Let \( A = \{ n \in \nZ : n \le 3.5 \} = \{ \dots, 1, 2, 3 \} \). Does \( A \) s
 :::
 
 ::: {.solution}
-Yes: \( 3 \in A \), so \( A \) is non-empty, and \( 3.5 \) is an upper bound by definition of \( A \). So \( \sup A \) exists. It is \( 3 \), not \( 3.5 \): the element \( 3 \) is an upper bound, because no integer lies strictly between \( 3 \) and \( 3.5 \) (a fact about integers that is made precise when \( \nZ \) is located inside \( \nR \) later in this chapter), and it belongs to \( A \), so it is the maximum, and a maximum is the supremum (@exr-suprema-b1). The bound used to check the hypothesis was not the supremum.
+Yes: \( 3 \in A \), so \( A \) is non-empty, and \( 3.5 \) is an upper bound by definition of \( A \). So \( \sup A \) exists. It is \( 3 \), not \( 3.5 \): the element \( 3 \) is an upper bound, because an integer greater than \( 3 \) is at least \( 4 \), which exceeds \( 3.5 \) (arithmetic of the integers, Chapter 6), and it belongs to \( A \), so it is the maximum, and a maximum is the supremum (@exr-suprema-b1). The bound used to check the hypothesis was not the supremum.
 :::
 
 ## Infima come free
@@ -226,3 +226,9 @@ If \( A = \{ a \} \), then \( a \) is both the maximum and the minimum of \( A \
 
 (c) In \( \nR \) the upper bounds of a non-empty bounded-above set always form a closed ray that starts at a point, while in \( \nQ \) they can form a ray whose starting point is missing.
 :::
+
+<!-- dependency ledger
+ax-least-upper-bound (example): an integer greater than 3 is at least 4 (Quick check on the integers up to 3.5) | arithmetic of Z, ch06 (promised); prose pointer in the text
+thm-greatest-lower-bound (proof): A non-empty implies -A non-empty | inline (a in A gives -a in -A)
+exr-the-axiom-a1 (solution): x >= 1 and x > 0 give x^2 >= x; |M| >= M | thm-ordered-field-rules (c), prp-absolute-value-rules (c); shown inline
+-->

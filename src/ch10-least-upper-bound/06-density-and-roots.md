@@ -12,8 +12,10 @@ Chapter 1 showed that no rational number squares to \( 2 \) (@thm-sqrt2-irration
 There is exactly one real number \( s > 0 \) with \( s^2 = 2 \).
 :::
 
+*Try it first (ten minutes): the axiom is the only statement we have that produces a real number. To which set would you apply it, and what would you then have to show?*
+
 ::: {.idea}
-Collect the positive reals whose square is below \( 2 \) into a set \( S \). The candidate is \( s = \sup S \). The plan has three steps: ① check that \( S \) is non-empty and bounded above, so the axiom supplies \( s \); ② rule out \( s^2 < 2 \); ③ rule out \( s^2 > 2 \). Trichotomy then leaves \( s^2 = 2 \).
+The obvious attempts do not get started. There is no formula for \( \sqrt 2 \) in terms of rationals, and the decimals \( 1, 1.4, 1.41, \dots \) of the chapter's introduction would need a limit, which we do not have yet. The only statement that produces a real number is @ax-least-upper-bound, so \( \sqrt 2 \) will have to be a supremum, and @thm-no-rational-sup-sqrt2 suggests which one. Collect the positive reals whose square is below \( 2 \) into a set \( S \). The candidate is \( s = \sup S \). The plan has three steps: ① check that \( S \) is non-empty and bounded above, so the axiom supplies \( s \); ② rule out \( s^2 < 2 \); ③ rule out \( s^2 > 2 \). Trichotomy then leaves \( s^2 = 2 \).
 
 Each case is ruled out by nudging \( s \). If \( s^2 < 2 \), there is still room below \( 2 \), so a slightly larger number \( s + h \) is still in \( S \). That is impossible for an upper bound. If \( s^2 > 2 \), a slightly smaller number \( s - h \) still has square above \( 2 \), and is therefore still an upper bound. That is impossible for the *least* upper bound.
 
@@ -59,7 +61,7 @@ The proof is an instance of a move this book uses again and again.
 
 *To construct a point: collect the points where "things are still fine" into a set, take its supremum, and rule out each way the supremum could fail to be the point you want.*
 
-Here "things are still fine" meant \( x^2 < 2 \). In Chapter 15 the Intermediate Value Theorem is proved the same way: the point where a continuous function crosses zero is the supremum of the points where it is still negative. In Chapter 13 the Heine–Borel theorem takes the supremum of the points \( x \) for which \( [a, x] \) is still covered by finitely many of the given open sets.
+Here "things are still fine" meant \( x^2 < 2 \). The exercises of this section and of the last section of the chapter ask you to run the move yourself, with less and less of the proof given. In Chapter 15 the Intermediate Value Theorem is proved the same way: the point where a continuous function crosses zero is the supremum of the points where it is still negative. In Chapter 13 the Heine–Borel theorem takes the supremum of the points \( x \) for which \( [a, x] \) is still covered by finitely many of the given open sets.
 
 ## Roots of every order
 
@@ -295,6 +297,7 @@ True or false? Give a reason or a counterexample for each.
 3. Between any two distinct irrational numbers there is a rational number.
 4. Every non-empty set of rationals that is bounded above has a supremum in \( \nR \), and that supremum is rational.
 5. In the proof of @thm-nth-root, the constant \( C \) depends on \( h \).
+6. Run Case 1 of the proof of @thm-sqrt2-exists with the value \( \frac75 \) in place of \( s \) (so \( s^2 = \frac{49}{25} < 2 \)): compute \( h \), and check that \( (s + h)^2 < 2 \). Which property of a supremum does this show \( \frac75 \) lacks?
 :::
 :::
 
@@ -308,6 +311,12 @@ True or false? Give a reason or a counterexample for each.
 (d) False. The set \( A \coloneqq \{ x \in \nQ : x > 0, \ x^2 < 2 \} \) is non-empty and bounded above by \( 2 \), so it has a supremum \( s \in \nR \) by @ax-least-upper-bound. If \( s \) were rational, it would be a rational upper bound of \( A \) that is at most every real upper bound, and in particular at most every rational one. So \( s \) would be a supremum of \( A \) in \( \nQ \), contradicting @thm-no-rational-sup-sqrt2. (In fact \( s = \sqrt{2} \).)
 
 (e) False. \( C = n(s + 1)^{n-1} \) depends only on \( n \) and \( s \). It has to be independent of \( h \), because \( h \) is then chosen in terms of \( C \).
+
+(f) Here \( 2 - s^2 = \frac1{25} \) and \( 4s + 2 = \frac{38}{5} \), so \( h = \frac{1/25}{38/5} = \frac1{190} \) and \( s + h = \frac{267}{190} \). Then
+\[
+\Bigl( \frac{267}{190} \Bigr)^2 = \frac{71289}{36100} < \frac{72200}{36100} = 2 ,
+\]
+and the proof's bound gives the same: \( (s + h)^2 \le 1 + \frac{s^2}{2} = \frac{99}{50} < 2 \). So \( \frac{267}{190} \in S \) and \( \frac{267}{190} > \frac75 \): the number \( \frac75 \) is not an upper bound of \( S \), so it fails (S1). This is no contradiction, because nothing said that \( \frac75 \) was the supremum. In the proof the same computation contradicts (S1) for \( s = \sup S \).
 :::
 
 ### B. Practice
@@ -325,27 +334,29 @@ Let \( \varepsilon > 0 \). By @thm-rationals-dense applied to \( x - \varepsilon
 :::
 
 ::: {#exr-density-and-roots-b2}
-[B2: The square root of three]
+[B2: The square root of three, finished]
 
-Prove that there is exactly one real \( s > 0 \) with \( s^2 = 3 \), following the proof of @thm-sqrt2-exists. Give the explicit \( h \) in each case, and check that it works.
+Here is the start of a proof that there is exactly one real \( s > 0 \) with \( s^2 = 3 \).
+
+> Let \( S \coloneqq \{ x \in \nR : x > 0, \ x^2 < 3 \} \). Then \( 1 \in S \), and if \( x \ge 2 \), then \( x^2 \ge 4 > 3 \); so \( S \) is non-empty and bounded above by \( 2 \). By @ax-least-upper-bound, \( s \coloneqq \sup S \) exists, and \( s \ge 1 \).
+>
+> *Case \( s^2 < 3 \).* Let \( h \coloneqq (3 - s^2)/(4s + 2) \). Then \( h > 0 \). Since \( 3 - s^2 \le 2 \) and \( 4s + 2 \ge 6 \), we have \( h \le \frac13 \), so \( h^2 \le h \), and \( (s + h)^2 \le s^2 + (2s + 1)h = \frac{3 + s^2}{2} < 3 \). Hence \( s + h \in S \), and \( s + h > s \) contradicts (S1).
+>
+> *Case \( s^2 > 3 \).* \( \ldots \)
+
+*Name the move, then complete it.* Give an explicit \( h \) for the second case and check that it works; then finish the proof, including uniqueness.
 :::
 
 ::: {.solution}
-Let \( S \coloneqq \{ x \in \nR : x > 0, \ x^2 < 3 \} \). Then \( 1 \in S \), and if \( x \ge 2 \), then \( x^2 \ge 4 > 3 \); so \( S \) is non-empty and bounded above by \( 2 \). By @ax-least-upper-bound, \( s \coloneqq \sup S \) exists, and \( s \ge 1 \).
+The move is **construct a point as a supremum**: the points where "things are still fine" (\( x^2 < 3 \)) form \( S \), the axiom supplies \( s = \sup S \), and each way \( s \) could fail (\( s^2 < 3 \), \( s^2 > 3 \)) is ruled out. The given text rules out the first; the missing step rules out the second, against (S2) this time.
 
-*Case \( s^2 < 3 \).* Let \( h \coloneqq (3 - s^2)/(4s + 2) \), which uses half of the room \( 3 - s^2 \). Then \( h > 0 \). Since \( s \ge 1 \), we have \( 3 - s^2 \le 2 \) and \( 4s + 2 \ge 6 \), so \( h \le \tfrac13 \le 1 \), and hence \( h^2 \le h \). Therefore
+*Case \( s^2 > 3 \).* Let \( h \coloneqq (s^2 - 3)/(2s) \), which is defined and positive because \( s \ge 1 \) and \( s^2 > 3 \). Then \( s - h = (s^2 + 3)/(2s) > 0 \) and
 \[
-\begin{aligned}
-    (s + h)^2 &\le s^2 + (2s + 1)h = s^2 + \tfrac{3 - s^2}{2} \\
-              &= \tfrac{3 + s^2}{2} < 3 ,
-\end{aligned}
+(s - h)^2 = s^2 - 2sh + h^2 = 3 + h^2 > 3 .
 \]
-where the last step uses \( s^2 < 3 \).
-So \( s + h \in S \) and \( s + h > s \), contradicting that \( s \) is an upper bound.
+If some \( x \in S \) had \( x > s - h \), then, as \( s - h > 0 \), @thm-ordered-field-rules (g) would give \( x^2 > (s - h)^2 > 3 \), which is impossible for \( x \in S \). So \( s - h \) is an upper bound of \( S \), and (S2) gives \( s \le s - h \), which is false since \( h > 0 \).
 
-*Case \( s^2 > 3 \).* Let \( h \coloneqq (s^2 - 3)/(2s) > 0 \). Then \( s - h = (s^2 + 3)/(2s) > 0 \) and \( (s - h)^2 = s^2 - 2sh + h^2 = 3 + h^2 > 3 \). If \( x \in S \) had \( x > s - h \), then \( x^2 > (s - h)^2 > 3 \), which is impossible. So \( s - h \) is an upper bound of \( S \) smaller than \( s \), contradicting that \( s \) is the least upper bound.
-
-By trichotomy \( s^2 = 3 \). Uniqueness is as in @thm-sqrt2-exists: two distinct positive numbers have distinct squares.
+Both cases are impossible, so \( s^2 = 3 \) by trichotomy. For uniqueness, let \( t > 0 \) with \( t^2 = 3 \). If \( t < s \) or \( s < t \), then @thm-ordered-field-rules (g) gives \( t^2 < s^2 \) or \( s^2 < t^2 \), contradicting \( t^2 = 3 = s^2 \). Hence \( t = s \).
 :::
 
 ::: {#exr-density-and-roots-b3}
@@ -384,6 +395,16 @@ If \( r^2 > 2 \), let \( h \coloneqq (r^2 - 2)/(2r) \). Then \( r - h = (r^2 + 2
 Both cases are impossible, so \( A \) has no supremum in \( \nQ \).
 
 (c) The computation shows, in any ordered field, that a supremum of the set cannot have square less than \( 2 \) or greater than \( 2 \). In \( \nR \) the axiom guarantees that a supremum exists, so its square must be \( 2 \): existence. In \( \nQ \) no element has square \( 2 \) (@thm-sqrt2-irrational), so no case is left, and no supremum can exist. For rational \( r \) the values of \( h \) are rational, which is why the argument stays inside \( \nQ \).
+
+**Marking scheme.** (10 points)
+- 1: (a) defines \( S \), checks that it is non-empty and bounded above, and takes \( s = \sup S \) from @ax-least-upper-bound.
+- 2: (a) rules out \( s^2 < 2 \) with an explicit \( h > 0 \), verifying \( (s + h)^2 < 2 \) including any side condition such as \( h \le 1 \), and contradicts (S1).
+- 2: (a) rules out \( s^2 > 2 \) with an explicit \( h > 0 \), verifying \( s - h > 0 \) and that \( s - h \) is an upper bound, and contradicts (S2).
+- 1: (b) supposes a rational supremum \( r \) and excludes \( r^2 = 2 \) by @thm-sqrt2-irrational.
+- 2: (b) in each case checks that the new number is **rational** and derives the contradiction with "upper bound in \( \nQ \)" or "least among rational upper bounds".
+- 2: (c) says that the computation excludes \( s^2 < 2 \) and \( s^2 > 2 \) in any ordered field, that in \( \nR \) the axiom supplies \( s \) so \( s^2 = 2 \) remains, and that in \( \nQ \) nothing remains.
+Fatal errors (0 for the step): using \( \sqrt 2 \) to define \( S \) or \( h \); asserting \( s + h \in S \) or \( (s - h)^2 > 2 \) without the computation; an \( h \) that depends on an element of \( S \) rather than on \( s \) alone.
+A proof with a different \( h \) (for instance \( h = \min\{ 1, (2 - s^2)/6 \} \) in Case 1, using \( 2s + 1 \le 5 \)) earns full marks if its bound is verified.
 :::
 
 ::: {#exr-density-and-roots-c2}
@@ -419,11 +440,27 @@ A student proves @thm-rationals-dense as follows. Let \( x < y \).
 5. Therefore \( q \in \nQ \) and \( x < q < y \).
 :::
 
-Find the line that fails and say why. Show that for \( x = 0 \) the set \( R \) has no least element. Then repair the proof by changing \( R \) so that the faulty line becomes correct.
+Is the statement the student is proving true? Does the argument prove it? Find the line that fails and say why. Show that for \( x = 0 \) the set \( R \) has no least element. Then repair the proof by changing \( R \) so that the faulty line becomes correct.
 :::
 
 ::: {.solution}
+The statement is true: it is @thm-rationals-dense. So there is no counterexample to the conclusion, and the only question is whether the argument proves it. It does not.
+
 Line (2) fails. Well-ordering says that a non-empty subset of \( \nN \) has a least element. The set \( R \) is a set of rationals, not of natural numbers, and it need not have a least element. For \( x = 0 \), \( R \) is the set of positive rationals; if \( q \in R \), then \( q/2 \in R \) and \( q/2 < q \). So no element of \( R \) is least. Lines (3)–(5) are correct once a least element is available.
 
 *Repair.* Fix \( n \) first, as in line (3), and replace \( R \) by a set of integers: \( R_n \coloneqq \{ m \in \nZ : m/n > x \} \). By @lem-integer-part, its least element is \( m \coloneqq \floor{nx} + 1 \): indeed \( m/n > x \), while \( (m - 1)/n \le x \). Now line (4) holds with \( q \coloneqq m/n \): since \( (m - 1)/n = q - 1/n \le x \), we get \( q \le x + 1/n < y \). This is the proof of @thm-rationals-dense. The point is that the step \( 1/n \) is fixed first, so the candidates \( m/n \) form a copy of the integers, where "least" makes sense.
 :::
+
+<!-- dependency ledger
+thm-sqrt2-exists (proof): the two values of h and their arithmetic | inline, the same computation as thm-no-rational-sup-sqrt2
+thm-nth-root (claim): powers are defined by recursion; the claim is proved by induction on k | recursion and induction, ch06 (promised); prose pointer in the text
+thm-nth-root (claim): the telescoping of the two sums in (y - x) * Sigma | inline
+thm-nth-root (proof): x0^n <= x0 for 0 < x0 < 1, and x^n >= x for x >= 1 | inline, by induction on n (ch06 (promised))
+exm-cube-root-bounds (solution): 1.25^3 = 1.953125 and 1.26^3 = 2.000376 | arithmetic, shown inline
+lem-integer-part (proof): well-ordering of N; differences of integers are integers; j - 1 in N for j >= 2 in N | ch06 (promised), recalled in the remark on N in 05-archimedean-property
+cor-irrationals-dense (proof): the difference of two rationals is rational | exm-ordered-fields-q-r (Q is a field)
+exr-density-and-roots-a1 (solution): if z/2 were rational, z = 2(z/2) would be rational | exm-ordered-fields-q-r
+exr-density-and-roots-a1 (solution): 267^2 = 71289 and 2 * 190^2 = 72200 | arithmetic, shown inline
+exr-density-and-roots-b3 (solution): 1.70^3 = 4.913 and 1.71^3 = 5.000211 | arithmetic, shown inline
+exr-density-and-roots-c2 (solution): 2^k > k for every k in N | inline, by induction (ch06 (promised))
+-->
