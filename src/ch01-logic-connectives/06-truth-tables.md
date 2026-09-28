@@ -283,35 +283,46 @@ Determine which of the following argument forms are valid. For each valid one gi
 ::: {.solution}
 (a) Valid:
 
-\[
-\begin{array}{r l l}
-1 & P \to Q & \text{premise} \\
-2 & \neg Q & \text{premise} \\
-3 & \fsc \fhyp{P} & \text{assumption} \\
-4 & \fsc Q & \rulename{{\to}E}\ 1, 3 \\
-5 & \fsc \bot & \rulename{\neg E}\ 4, 2 \\
-6 & \neg P & \rulename{\neg I}\ \lines{3}{5}
-\end{array}
-\]
+```{=latex}
+\begin{center}
+$\begin{nd}
+  \hypo {1} {P \to Q}
+  \hypo {2} {\neg Q}
+  \open
+  \hypo {3} {P}
+  \have {4} {Q} \ie{1,3}
+  \have {5} {\bot} \ne{4,2}
+  \close
+  \have {6} {\neg P} \ni{3-5}
+\end{nd}$
+\end{center}
+```
 
 (b) Invalid. In row TT both premises are T and \( \neg Q \) is F. The form would be valid only if "or" were exclusive, and the mathematical \( \vee \) is not.
 
 (c) Valid:
 
-\[
-\begin{array}{r l l}
-1 & P \to R & \text{premise} \\
-2 & Q \to R & \text{premise} \\
-3 & \fsc \fhyp{P \vee Q} & \text{assumption} \\
-4 & \fsc \fsc \fhyp{P} & \text{assumption} \\
-5 & \fsc \fsc R & \rulename{{\to}E}\ 1, 4 \\
-& \fsc & \\[-1.5ex]
-6 & \fsc \fsc \fhyp{Q} & \text{assumption} \\
-7 & \fsc \fsc R & \rulename{{\to}E}\ 2, 6 \\
-8 & \fsc R & \rulename{\vee E}\ 3, \lines{4}{5}, \lines{6}{7} \\
-9 & (P \vee Q) \to R & \rulename{{\to}I}\ \lines{3}{8}
-\end{array}
-\]
+```{=latex}
+\begin{center}
+$\begin{nd}
+  \hypo {1} {P \to R}
+  \hypo {2} {Q \to R}
+  \open
+  \hypo {3} {P \vee Q}
+  \open
+  \hypo {4} {P}
+  \have {5} {R} \ie{1,4}
+  \close
+  \open
+  \hypo {6} {Q}
+  \have {7} {R} \ie{2,6}
+  \close
+  \have {8} {R} \oe{3,4-5,6-7}
+  \close
+  \have {9} {(P \vee Q) \to R} \ii{3-8}
+\end{nd}$
+\end{center}
+```
 
 (d) Invalid. In the row \( P \) = T, \( Q \) = F, \( R \) = F, the premise is T (its left side \( P \wedge Q \) is F) and the conclusion \( P \to R \) is F.
 :::
@@ -331,37 +342,49 @@ Determine which of the following argument forms are valid. For each valid one gi
 
 (b) The goal is an implication, so open a box with \( P \); inside it, use the disjunction by cases.
 
-\[
-\begin{array}{r l l}
-1 & \neg P \vee Q & \text{premise} \\
-2 & \fsc \fhyp{P} & \text{assumption} \\
-3 & \fsc \fsc \fhyp{\neg P} & \text{assumption} \\
-4 & \fsc \fsc \bot & \rulename{\neg E}\ 2, 3 \\
-5 & \fsc \fsc Q & \rulename{\bot E}\ 4 \\
-& \fsc & \\[-1.5ex]
-6 & \fsc \fsc \fhyp{Q} & \text{assumption} \\
-7 & \fsc Q & \rulename{\vee E}\ 1, \lines{3}{5}, \lines{6}{6} \\
-8 & P \to Q & \rulename{{\to}I}\ \lines{2}{7}
-\end{array}
-\]
+```{=latex}
+\begin{center}
+$\begin{nd}
+  \hypo {1} {\neg P \vee Q}
+  \open
+  \hypo {2} {P}
+  \open
+  \hypo {3} {\neg P}
+  \have {4} {\bot} \ne{2,3}
+  \have {5} {Q} \be{4}
+  \close
+  \open
+  \hypo {6} {Q}
+  \close
+  \have {7} {Q} \oe{1,3-5,6-6}
+  \close
+  \have {8} {P \to Q} \ii{2-7}
+\end{nd}$
+\end{center}
+```
 
 The box at line 6 has one line: it opens with \( Q \), which is already its goal.
 
 (c) The goal is a disjunction, but we cannot tell which side holds, so we split on excluded middle:
 
-\[
-\begin{array}{r l l}
-1 & P \to Q & \text{premise} \\
-2 & P \vee \neg P & \text{excluded middle} \\
-3 & \fsc \fhyp{P} & \text{assumption} \\
-4 & \fsc Q & \rulename{{\to}E}\ 1, 3 \\
-5 & \fsc \neg P \vee Q & \rulename{\vee I}\ 4 \\
-& & \\[-1.5ex]
-6 & \fsc \fhyp{\neg P} & \text{assumption} \\
-7 & \fsc \neg P \vee Q & \rulename{\vee I}\ 6 \\
-8 & \neg P \vee Q & \rulename{\vee E}\ 2, \lines{3}{5}, \lines{6}{7}
-\end{array}
-\]
+```{=latex}
+\begin{center}
+$\begin{nd}
+  \hypo {1} {P \to Q}
+  \have {2} {P \vee \neg P} \by{excluded middle}{}
+  \open
+  \hypo {3} {P}
+  \have {4} {Q} \ie{1,3}
+  \have {5} {\neg P \vee Q} \oi{4}
+  \close
+  \open
+  \hypo {6} {\neg P}
+  \have {7} {\neg P \vee Q} \oi{6}
+  \close
+  \have {8} {\neg P \vee Q} \oe{2,3-5,6-7}
+\end{nd}$
+\end{center}
+```
 
 Line 2 is @prp-excluded-middle, whose derivation uses RAA. So this direction uses RAA and the direction in (b) does not. (In fact every derivation of this direction must use RAA; we do not prove that here.)
 :::

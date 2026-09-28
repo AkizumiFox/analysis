@@ -32,14 +32,16 @@ Finally, from \( 0 < xy \) and \( xy < 1 \), \( [\rulename{\wedge I}] \) gives \
 The solution shows the division of labor that runs through every proof in the book. The facts about numbers (a product of positive numbers is positive, multiplying by a positive number keeps an inequality) supply the content. The rules supply the joints: they take a statement apart, and they put the pieces back together.
 
 Proofs about letters \( P \), \( Q \), \( R \) have no content of their own, only joints, and this makes them the clearest place to see the rules. We lay such a proof out as a **derivation**: numbered lines, each carrying one statement and, on the right, its justification. Here is a derivation of \( Q \wedge P \) from \( P \wedge Q \).
-\[
-\begin{array}{r l l}
-1 & P \wedge Q & \text{premise} \\
-2 & P & \rulename{\wedge E}\ 1 \\
-3 & Q & \rulename{\wedge E}\ 1 \\
-4 & Q \wedge P & \rulename{\wedge I}\ 3, 2
-\end{array}
-\]{#eq-derivation-and-commutes}
+```{=latex}
+\begin{center}
+$\begin{nd}
+  \hypo {1} {P \wedge Q}
+  \have {2} {P} \ae{1}
+  \have {3} {Q} \ae{1}
+  \have {4} {Q \wedge P} \ai{3,2}
+\end{nd}$
+\end{center}
+```
 A **premise** is a statement we are given, and the derivation shows what follows from it. The justification "\( \rulename{\wedge I}\ 3, 2 \)" says that line 4 comes from the rule \( \rulename{\wedge I} \) applied to lines 3 and 2, in that order: the statement on line 3 becomes the left half of line 4. Line 4 is a statement the rules produced from line 1 alone, without looking at what \( P \) and \( Q \) say.
 
 ## The rules for "implies", and the box
@@ -66,16 +68,20 @@ A derivation draws the temporary world as a **box**. The assumption opens the bo
 The elimination rule is the everyday use of a theorem. The school fact "if \( a < b \) and \( b < c \), then \( a < c \)" is an implication. Given the two specific facts \( \sqrt{2} < 1.5 \) and \( 1.5 < 2 \), it yields \( \sqrt{2} < 2 \). Every time a proof says "by Theorem so-and-so", it is applying \( \rulename{{\to}E} \) to the theorem and to the verified hypotheses.
 
 The introduction rule is the new move. Here it is in its first full derivation, which proves that implication is transitive: from \( P \to Q \) and \( Q \to R \) we get \( P \to R \).
-\[
-\begin{array}{r l l}
-1 & P \to Q & \text{premise} \\
-2 & Q \to R & \text{premise} \\
-3 & \fsc \fhyp{P} & \text{assumption} \\
-4 & \fsc Q & \rulename{{\to}E}\ 1, 3 \\
-5 & \fsc R & \rulename{{\to}E}\ 2, 4 \\
-6 & P \to R & \rulename{{\to}I}\ \lines{3}{5}
-\end{array}
-\]{#eq-derivation-transitive}
+```{=latex}
+\begin{center}
+$\begin{nd}
+  \hypo {1} {P \to Q}
+  \hypo {2} {Q \to R}
+  \open
+  \hypo {3} {P}
+  \have {4} {Q} \ie{1,3}
+  \have {5} {R} \ie{2,4}
+  \close
+  \have {6} {P \to R} \ii{3-5}
+\end{nd}$
+\end{center}
+```
 Line 3 opens a box with the assumption \( P \). Inside it, two applications of modus ponens reach \( R \). Line 6 closes the box, and the bar stops: \( P \) and \( R \) were never established outright, and only \( P \to R \) leaves.
 
 Now give the letters some content. Let \( x \) be a real number, and let
@@ -144,13 +150,17 @@ Decide whether each of the following is a derivation, and if so, what it shows.
 ::: {.enumerate options="label=(\alph*)"}
 1. The single line \( 1 \quad P \quad \text{premise} \).
 2. The two lines below, which have no premises.
-\[
-\begin{array}{r l l}
-1 & \fsc \fhyp{P} & \text{assumption} \\
-2 & P \to P & \rulename{{\to}I}\ \lines{1}{1}
-\end{array}
-\]
-3. The derivation @eq-derivation-transitive.
+```{=latex}
+\begin{center}
+$\begin{nd}
+  \open
+  \hypo {1} {P}
+  \close
+  \have {2} {P \to P} \ii{1-1}
+\end{nd}$
+\end{center}
+```
+3. The derivation of \( P \to R \) from \( P \to Q \) and \( Q \to R \), shown after @def-rules-implication.
 :::
 :::
 
@@ -164,18 +174,22 @@ Decide whether each of the following is a derivation, and if so, what it shows.
 
 A single-line box, as in (b), is legal and occasionally useful. It is also the degenerate case that tests our reading of the definition: nothing in \( \rulename{{\to}I} \) requires the box to contain more than its assumption.
 
-Now change @eq-derivation-transitive by one line, as a careless writer might.
-\[
-\begin{array}{r l l}
-1 & P \to Q & \text{premise} \\
-2 & Q \to R & \text{premise} \\
-3 & \fsc \fhyp{P} & \text{assumption} \\
-4 & \fsc Q & \rulename{{\to}E}\ 1, 3 \\
-5 & \fsc R & \rulename{{\to}E}\ 2, 4 \\
-6 & P \to R & \rulename{{\to}I}\ \lines{3}{5} \\
-7 & R & \text{repetition of } 5
-\end{array}
-\]
+Now change that derivation of \( P \to R \) by one line, as a careless writer might.
+```{=latex}
+\begin{center}
+$\begin{nd}
+  \hypo {1} {P \to Q}
+  \hypo {2} {Q \to R}
+  \open
+  \hypo {3} {P}
+  \have {4} {Q} \ie{1,3}
+  \have {5} {R} \ie{2,4}
+  \close
+  \have {6} {P \to R} \ii{3-5}
+  \have {7} {R} \r{5}
+\end{nd}$
+\end{center}
+```
 Lines 1–6 are as before, and line 7 is justified by (D3), a repetition. It is illegal. Line 5 lies inside the box 3–5, which does not contain line 7, so line 5 is not available at line 7. If the line were allowed, the derivation would show \( P \to Q, Q \to R \vdash R \), which is absurd: with \( x \) a real number, take \( P \): "\( x > 3 \)", \( Q \): "\( x > 2 \)" and \( R \): "\( x > 1 \)". Both premises are true whatever \( x \) is, and at \( x = 0 \) the conclusion is false.
 
 ::: {.warning}
@@ -184,17 +198,21 @@ The assumption of a closed box is gone. Here is a typical slip. *"Suppose \( x >
 
 ::: {.check}
 In the derivation below, which of lines 3 to 7 may cite line 2 individually?
-\[
-\begin{array}{r l l}
-1 & P \to Q & \text{premise} \\
-2 & \fsc \fhyp{P} & \text{assumption} \\
-3 & \fsc Q & \rulename{{\to}E}\ 1, 2 \\
-4 & \fsc P \wedge Q & \rulename{\wedge I}\ 2, 3 \\
-5 & \fsc Q \wedge P & \rulename{\wedge I}\ 3, 2 \\
-6 & P \to (Q \wedge P) & \rulename{{\to}I}\ \lines{2}{5} \\
-7 & (P \to Q) \wedge (P \to (Q \wedge P)) & \rulename{\wedge I}\ 1, 6
-\end{array}
-\]
+```{=latex}
+\begin{center}
+$\begin{nd}
+  \hypo {1} {P \to Q}
+  \open
+  \hypo {2} {P}
+  \have {3} {Q} \ie{1,2}
+  \have {4} {P \wedge Q} \ai{2,3}
+  \have {5} {Q \wedge P} \ai{3,2}
+  \close
+  \have {6} {P \to (Q \wedge P)} \ii{2-5}
+  \have {7} {(P \to Q) \wedge (P \to (Q \wedge P))} \ai{1,6}
+\end{nd}$
+\end{center}
+```
 :::
 
 ::: {.solution}
@@ -212,7 +230,7 @@ A derivation with letters proves more than one fact. The rules look only at the 
 :::
 
 ::: {.proof}
-The derivation @eq-derivation-and-commutes has the single premise \( P \wedge Q \), and its last line is \( Q \wedge P \). Its lines are a premise and three rule applications, each citing line 1 or lines outside every box, so it is a derivation by @def-derivation. This proves the proposition.
+The derivation of \( Q \wedge P \) shown after @def-rules-conjunction has the single premise \( P \wedge Q \), and its last line is \( Q \wedge P \). Its lines are a premise and three rule applications, each citing line 1 or lines outside every box, so it is a derivation by @def-derivation. This proves the proposition.
 :::
 
 ::: {#prp-implication-transitive}
@@ -222,7 +240,7 @@ The derivation @eq-derivation-and-commutes has the single premise \( P \wedge Q 
 :::
 
 ::: {.proof}
-The derivation @eq-derivation-transitive has premises \( P \to Q \) and \( Q \to R \), and its last line is \( P \to R \). It was checked against @def-derivation in @exm-derivations. This proves the proposition.
+The derivation of \( P \to R \) shown after @def-rules-implication has premises \( P \to Q \) and \( Q \to R \), and its last line is \( P \to R \). It was checked against @def-derivation in @exm-derivations. This proves the proposition.
 :::
 
 The third result explains a habit of mathematical writing. A theorem with two hypotheses, "if \( x > 0 \) and \( y > 0 \), then \( xy > 0 \)", is often written with one hypothesis at a time: "let \( x > 0 \); then for every \( y > 0 \), \( xy > 0 \)". The two forms are \( (P \wedge Q) \to R \) and \( P \to (Q \to R) \), and they are interchangeable.
@@ -239,31 +257,41 @@ Read each goal's main connective. For \( P \to (Q \to R) \) it is \( \to \), so 
 
 ::: {.proof}
 For the first claim, the following is a derivation with premise \( (P \wedge Q) \to R \) and last line \( P \to (Q \to R) \).
-\[
-\begin{array}{r l l}
-1 & (P \wedge Q) \to R & \text{premise} \\
-2 & \fsc \fhyp{P} & \text{assumption} \\
-3 & \fsc \fsc \fhyp{Q} & \text{assumption} \\
-4 & \fsc \fsc P \wedge Q & \rulename{\wedge I}\ 2, 3 \\
-5 & \fsc \fsc R & \rulename{{\to}E}\ 1, 4 \\
-6 & \fsc Q \to R & \rulename{{\to}I}\ \lines{3}{5} \\
-7 & P \to (Q \to R) & \rulename{{\to}I}\ \lines{2}{6}
-\end{array}
-\]
+```{=latex}
+\begin{center}
+$\begin{nd}
+  \hypo {1} {(P \wedge Q) \to R}
+  \open
+  \hypo {2} {P}
+  \open
+  \hypo {3} {Q}
+  \have {4} {P \wedge Q} \ai{2,3}
+  \have {5} {R} \ie{1,4}
+  \close
+  \have {6} {Q \to R} \ii{3-5}
+  \close
+  \have {7} {P \to (Q \to R)} \ii{2-6}
+\end{nd}$
+\end{center}
+```
 Line 4 may cite line 2 because the only box containing line 2, the box 2–6, also contains line 4.
 
 For the second claim, the following is a derivation with premise \( P \to (Q \to R) \) and last line \( (P \wedge Q) \to R \).
-\[
-\begin{array}{r l l}
-1 & P \to (Q \to R) & \text{premise} \\
-2 & \fsc \fhyp{P \wedge Q} & \text{assumption} \\
-3 & \fsc P & \rulename{\wedge E}\ 2 \\
-4 & \fsc Q & \rulename{\wedge E}\ 2 \\
-5 & \fsc Q \to R & \rulename{{\to}E}\ 1, 3 \\
-6 & \fsc R & \rulename{{\to}E}\ 5, 4 \\
-7 & (P \wedge Q) \to R & \rulename{{\to}I}\ \lines{2}{6}
-\end{array}
-\]
+```{=latex}
+\begin{center}
+$\begin{nd}
+  \hypo {1} {P \to (Q \to R)}
+  \open
+  \hypo {2} {P \wedge Q}
+  \have {3} {P} \ae{2}
+  \have {4} {Q} \ae{2}
+  \have {5} {Q \to R} \ie{1,3}
+  \have {6} {R} \ie{5,4}
+  \close
+  \have {7} {(P \wedge Q) \to R} \ii{2-6}
+\end{nd}$
+\end{center}
+```
 This proves both claims.
 :::
 
@@ -292,16 +320,20 @@ The sentence for \( \rulename{{\to}I} \) is the one to watch. "Assume \( P \)" o
 [A1]
 
 Consider the following derivation, whose justifications are missing.
-\[
-\begin{array}{r l l}
-1 & P \to (Q \to R) & \text{premise} \\
-2 & Q & \text{premise} \\
-3 & \fsc \fhyp{P} & \text{assumption} \\
-4 & \fsc Q \to R & \text{(i)} \\
-5 & \fsc R & \text{(ii)} \\
-6 & P \to R & \text{(iii)}
-\end{array}
-\]
+```{=latex}
+\begin{center}
+$\begin{nd}
+  \hypo {1} {P \to (Q \to R)}
+  \hypo {2} {Q}
+  \open
+  \hypo {3} {P}
+  \have {4} {Q \to R} \by{(i)}{}
+  \have {5} {R} \by{(ii)}{}
+  \close
+  \have {6} {P \to R} \by{(iii)}{}
+\end{nd}$
+\end{center}
+```
 
 ::: {.enumerate options="label=(\alph*)"}
 1. State the rules \( \rulename{{\to}I} \) and \( \rulename{{\to}E} \).
@@ -334,15 +366,19 @@ Show that \( \vdash (P \wedge Q) \to (Q \wedge P) \) by a derivation. Then write
 
 ::: {.solution}
 The goal has main connective \( \to \), so the derivation assumes \( P \wedge Q \).
-\[
-\begin{array}{r l l}
-1 & \fsc \fhyp{P \wedge Q} & \text{assumption} \\
-2 & \fsc P & \rulename{\wedge E}\ 1 \\
-3 & \fsc Q & \rulename{\wedge E}\ 1 \\
-4 & \fsc Q \wedge P & \rulename{\wedge I}\ 3, 2 \\
-5 & (P \wedge Q) \to (Q \wedge P) & \rulename{{\to}I}\ \lines{1}{4}
-\end{array}
-\]
+```{=latex}
+\begin{center}
+$\begin{nd}
+  \open
+  \hypo {1} {P \wedge Q}
+  \have {2} {P} \ae{1}
+  \have {3} {Q} \ae{1}
+  \have {4} {Q \wedge P} \ai{3,2}
+  \close
+  \have {5} {(P \wedge Q) \to (Q \wedge P)} \ii{1-4}
+\end{nd}$
+\end{center}
+```
 It has no premises, and its last line lies outside the box, so it shows \( \vdash (P \wedge Q) \to (Q \wedge P) \).
 
 In prose: *Assume \( P \) and \( Q \). In particular \( P \) holds, and in particular \( Q \) holds. Hence \( Q \) and \( P \) both hold. This proves that if \( P \) and \( Q \), then \( Q \) and \( P \).* Compared with @prp-and-commutes, the premise \( P \wedge Q \) has become an assumption, and the conclusion has become an implication that depends on nothing.
@@ -356,15 +392,21 @@ Show that \( \vdash P \to (Q \to P) \) by a derivation, and write it as prose. T
 
 ::: {.solution}
 Both implications are proved by \( \rulename{{\to}I} \), so the derivation opens two boxes, one inside the other.
-\[
-\begin{array}{r l l}
-1 & \fsc \fhyp{P} & \text{assumption} \\
-2 & \fsc \fsc \fhyp{Q} & \text{assumption} \\
-3 & \fsc \fsc P & \text{repetition of } 1 \\
-4 & \fsc Q \to P & \rulename{{\to}I}\ \lines{2}{3} \\
-5 & P \to (Q \to P) & \rulename{{\to}I}\ \lines{1}{4}
-\end{array}
-\]
+```{=latex}
+\begin{center}
+$\begin{nd}
+  \open
+  \hypo {1} {P}
+  \open
+  \hypo {2} {Q}
+  \have {3} {P} \r{1}
+  \close
+  \have {4} {Q \to P} \ii{2-3}
+  \close
+  \have {5} {P \to (Q \to P)} \ii{1-4}
+\end{nd}$
+\end{center}
+```
 Line 3 is a legal repetition (D3): the only box containing line 1 is the box 1–4, which also contains line 3. It is needed because \( \rulename{{\to}I} \) asks for \( P \) as a line of the box 2–3 itself.
 
 In prose: *Assume \( P \). Assume further \( Q \). Then \( P \) holds, since it was assumed. Hence \( Q \) implies \( P \). This proves that \( P \) implies that \( Q \) implies \( P \).*
@@ -383,17 +425,21 @@ The instance reads: "if \( x^2 \ge 0 \), then (if \( x > 5 \), then \( x^2 \ge 0
 
 ::: {.solution}
 (a) The goal is an implication, so assume \( P \), and reach \( Q \wedge R \) by getting each half.
-\[
-\begin{array}{r l l}
-1 & P \to Q & \text{premise} \\
-2 & P \to R & \text{premise} \\
-3 & \fsc \fhyp{P} & \text{assumption} \\
-4 & \fsc Q & \rulename{{\to}E}\ 1, 3 \\
-5 & \fsc R & \rulename{{\to}E}\ 2, 3 \\
-6 & \fsc Q \wedge R & \rulename{\wedge I}\ 4, 5 \\
-7 & P \to (Q \wedge R) & \rulename{{\to}I}\ \lines{3}{6}
-\end{array}
-\]
+```{=latex}
+\begin{center}
+$\begin{nd}
+  \hypo {1} {P \to Q}
+  \hypo {2} {P \to R}
+  \open
+  \hypo {3} {P}
+  \have {4} {Q} \ie{1,3}
+  \have {5} {R} \ie{2,3}
+  \have {6} {Q \wedge R} \ai{4,5}
+  \close
+  \have {7} {P \to (Q \wedge R)} \ii{3-6}
+\end{nd}$
+\end{center}
+```
 
 (b) Take \( P \): "\( \abs{x - 2} < 1 \)", \( Q \): "\( x > 1 \)" and \( R \): "\( x < 3 \)". The two facts are the premises \( P \to Q \) and \( P \to R \), and \( Q \wedge R \) is \( 1 < x < 3 \). By (a), with the letters replaced, the implication \( P \to (Q \wedge R) \) follows.
 
@@ -406,18 +452,22 @@ In prose: *Suppose \( \abs{x - 2} < 1 \). Then \( x > 1 \) by the first fact, an
 [C1: A line from a closed box]
 
 A student offers the following derivation, claiming it shows \( P \to Q, \; Q \to R \vdash R \).
-\[
-\begin{array}{r l l}
-1 & P \to Q & \text{premise} \\
-2 & Q \to R & \text{premise} \\
-3 & \fsc \fhyp{P} & \text{assumption} \\
-4 & \fsc Q & \rulename{{\to}E}\ 1, 3 \\
-5 & \fsc R & \rulename{{\to}E}\ 2, 4 \\
-6 & P \to R & \rulename{{\to}I}\ \lines{3}{5} \\
-7 & Q & \rulename{{\to}E}\ 1, 3 \\
-8 & R & \rulename{{\to}E}\ 2, 7
-\end{array}
-\]
+```{=latex}
+\begin{center}
+$\begin{nd}
+  \hypo {1} {P \to Q}
+  \hypo {2} {Q \to R}
+  \open
+  \hypo {3} {P}
+  \have {4} {Q} \ie{1,3}
+  \have {5} {R} \ie{2,4}
+  \close
+  \have {6} {P \to R} \ii{3-5}
+  \have {7} {Q} \ie{1,3}
+  \have {8} {R} \ie{2,7}
+\end{nd}$
+\end{center}
+```
 
 ::: {.enumerate options="label=(\alph*)"}
 1. Find the first illegal line and name the rule, or the clause of @def-derivation, that it breaks.
@@ -431,7 +481,7 @@ A student offers the following derivation, claiming it shows \( P \to Q, \; Q \t
 ::: {.solution}
 (a) Line 7 is illegal. It applies \( \rulename{{\to}E} \) to lines 1 and 3, but line 3 lies in the box 3–5, which ended at line 5 and does not contain line 7. So line 3 is not available at line 7, and clause (D4) of @def-derivation, which allows a rule to be applied only to available lines, is broken. Line 8 is illegal as a consequence, since it cites line 7.
 
-(b) Delete lines 7 and 8. Lines 1–6 are the derivation @eq-derivation-transitive, and they correctly show \( P \to Q, \; Q \to R \vdash P \to R \) (@prp-implication-transitive). The student's derivation had in fact reached this correct conclusion at line 6 and then tried to keep going with an assumption that had already been discharged.
+(b) Delete lines 7 and 8. Lines 1–6 are the derivation of \( P \to R \) shown after @def-rules-implication, and they correctly show \( P \to Q, \; Q \to R \vdash P \to R \) (@prp-implication-transitive). The student's derivation had in fact reached this correct conclusion at line 6 and then tried to keep going with an assumption that had already been discharged.
 
 (c) No. Let \( x \) be a real number, and take \( P \): "\( x > 3 \)", \( Q \): "\( x > 2 \)" and \( R \): "\( x > 1 \)". Both premises are true whatever \( x \) is: every number greater than \( 3 \) is greater than \( 2 \), and every number greater than \( 2 \) is greater than \( 1 \). At \( x = 0 \) the conclusion \( R \) is false. A derivation of \( R \) from these premises, with its letters replaced by these statements, would lead from true premises to a false conclusion, and the rules are designed never to do that (Section 1.1; Section 1.6 checks it rule by rule). So no such derivation exists. The repair in (b) is the best the premises allow.
 :::
@@ -448,17 +498,23 @@ A student offers the following derivation, claiming it shows \( P \to Q, \; Q \t
 
 ::: {.solution}
 (a) The goal is an implication whose conclusion is again an implication, so we open a box for \( Q \) and inside it a box for \( P \).
-\[
-\begin{array}{r l l}
-1 & P \to (Q \to R) & \text{premise} \\
-2 & \fsc \fhyp{Q} & \text{assumption} \\
-3 & \fsc \fsc \fhyp{P} & \text{assumption} \\
-4 & \fsc \fsc Q \to R & \rulename{{\to}E}\ 1, 3 \\
-5 & \fsc \fsc R & \rulename{{\to}E}\ 4, 2 \\
-6 & \fsc P \to R & \rulename{{\to}I}\ \lines{3}{5} \\
-7 & Q \to (P \to R) & \rulename{{\to}I}\ \lines{2}{6}
-\end{array}
-\]
+```{=latex}
+\begin{center}
+$\begin{nd}
+  \hypo {1} {P \to (Q \to R)}
+  \open
+  \hypo {2} {Q}
+  \open
+  \hypo {3} {P}
+  \have {4} {Q \to R} \ie{1,3}
+  \have {5} {R} \ie{4,2}
+  \close
+  \have {6} {P \to R} \ii{3-5}
+  \close
+  \have {7} {Q \to (P \to R)} \ii{2-6}
+\end{nd}$
+\end{center}
+```
 Line 5 may cite line 2, because the only box containing line 2, the box 2–6, also contains line 5.
 
 (b) Using derived rules: from the premise \( (P \wedge Q) \to R \), the first half of @prp-curry gives \( P \to (Q \to R) \); part (a) gives \( Q \to (P \to R) \); and the second half of @prp-curry, with \( P \) and \( Q \) exchanged, gives \( (Q \wedge P) \to R \). Each step is an instance of a derived result applied to the line before, so the three steps together are a derivation of \( (Q \wedge P) \to R \) from \( (P \wedge Q) \to R \).

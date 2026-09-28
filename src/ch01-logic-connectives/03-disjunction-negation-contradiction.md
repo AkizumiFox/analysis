@@ -123,17 +123,23 @@ The goal is an implication, so assume \( \neg Q \). The new goal \( \neg P \) is
 
 ::: {.proof}
 The following is a derivation with premise \( P \to Q \) and last line \( \neg Q \to \neg P \).
-\[
-\begin{array}{r l l}
-1 & P \to Q & \text{premise} \\
-2 & \fsc \fhyp{\neg Q} & \text{assumption} \\
-3 & \fsc \fsc \fhyp{P} & \text{assumption} \\
-4 & \fsc \fsc Q & \rulename{{\to}E}\ 1, 3 \\
-5 & \fsc \fsc \bot & \rulename{\neg E}\ 4, 2 \\
-6 & \fsc \neg P & \rulename{\neg I}\ \lines{3}{5} \\
-7 & \neg Q \to \neg P & \rulename{{\to}I}\ \lines{2}{6}
-\end{array}
-\]
+```{=latex}
+\begin{center}
+$\begin{nd}
+  \hypo {1} {P \to Q}
+  \open
+  \hypo {2} {\neg Q}
+  \open
+  \hypo {3} {P}
+  \have {4} {Q} \ie{1,3}
+  \have {5} {\bot} \ne{4,2}
+  \close
+  \have {6} {\neg P} \ni{3-5}
+  \close
+  \have {7} {\neg Q \to \neg P} \ii{2-6}
+\end{nd}$
+\end{center}
+```
 Line 5 may cite line 2, since the only box containing line 2, the box 2–6, also contains line 5. This proves the proposition.
 :::
 
@@ -149,18 +155,23 @@ Section 1.1's Argument A also used a second pattern: a case split in which one c
 
 ::: {.proof}
 The following is a derivation with premises \( P \vee Q \) and \( \neg P \), and last line \( Q \).
-\[
-\begin{array}{r l l}
-1 & P \vee Q & \text{premise} \\
-2 & \neg P & \text{premise} \\
-3 & \fsc \fhyp{P} & \text{assumption} \\
-4 & \fsc \bot & \rulename{\neg E}\ 3, 2 \\
-5 & \fsc Q & \rulename{\bot E}\ 4 \\
-  & & \\[-1.5ex]
-6 & \fsc \fhyp{Q} & \text{assumption} \\
-7 & Q & \rulename{\vee E}\ 1, \lines{3}{5}, \lines{6}{6}
-\end{array}
-\]
+```{=latex}
+\begin{center}
+$\begin{nd}
+  \hypo {1} {P \vee Q}
+  \hypo {2} {\neg P}
+  \open
+  \hypo {3} {P}
+  \have {4} {\bot} \ne{3,2}
+  \have {5} {Q} \be{4}
+  \close
+  \open
+  \hypo {6} {Q}
+  \close
+  \have {7} {Q} \oe{1,3-5,6-6}
+\end{nd}$
+\end{center}
+```
 The two boxes 3–5 and 6–6 are separate, as the break in the bar shows; the second consists of its assumption alone, which is already the statement \( Q \) that \( \rulename{\vee E} \) needs. This proves the proposition.
 :::
 
@@ -238,14 +249,16 @@ true, for a real number \( x \)? The hypothesis never holds, and the conclusion 
 
 ::: {.proof}
 The derivation
-\[
-\begin{array}{r l l}
-1 & P & \text{premise} \\
-2 & \neg P & \text{premise} \\
-3 & \bot & \rulename{\neg E}\ 1, 2 \\
-4 & Q & \rulename{\bot E}\ 3
-\end{array}
-\]
+```{=latex}
+\begin{center}
+$\begin{nd}
+  \hypo {1} {P}
+  \hypo {2} {\neg P}
+  \have {3} {\bot} \ne{1,2}
+  \have {4} {Q} \be{3}
+\end{nd}$
+\end{center}
+```
 has premises \( P \) and \( \neg P \) and last line \( Q \). This proves the proposition.
 :::
 
@@ -257,15 +270,19 @@ has premises \( P \) and \( \neg P \) and last line \( Q \). This proves the pro
 
 ::: {.proof}
 The derivation
-\[
-\begin{array}{r l l}
-1 & \neg P & \text{premise} \\
-2 & \fsc \fhyp{P} & \text{assumption} \\
-3 & \fsc \bot & \rulename{\neg E}\ 2, 1 \\
-4 & \fsc Q & \rulename{\bot E}\ 3 \\
-5 & P \to Q & \rulename{{\to}I}\ \lines{2}{4}
-\end{array}
-\]
+```{=latex}
+\begin{center}
+$\begin{nd}
+  \hypo {1} {\neg P}
+  \open
+  \hypo {2} {P}
+  \have {3} {\bot} \ne{2,1}
+  \have {4} {Q} \be{3}
+  \close
+  \have {5} {P \to Q} \ii{2-4}
+\end{nd}$
+\end{center}
+```
 has premise \( \neg P \) and last line \( P \to Q \). This proves the proposition.
 :::
 
@@ -283,15 +300,19 @@ Is \( \neg(P \vee Q) \vdash \neg P \) true? If so, give the derivation and name 
 
 ::: {.solution}
 Yes. The goal \( \neg P \) is a negation, so assume \( P \) and aim at \( \bot \); \( \rulename{\vee I} \) turns \( P \) into \( P \vee Q \), which clashes with the premise.
-\[
-\begin{array}{r l l}
-1 & \neg(P \vee Q) & \text{premise} \\
-2 & \fsc \fhyp{P} & \text{assumption} \\
-3 & \fsc P \vee Q & \rulename{\vee I}\ 2 \\
-4 & \fsc \bot & \rulename{\neg E}\ 3, 1 \\
-5 & \neg P & \rulename{\neg I}\ \lines{2}{4}
-\end{array}
-\]
+```{=latex}
+\begin{center}
+$\begin{nd}
+  \hypo {1} {\neg(P \vee Q)}
+  \open
+  \hypo {2} {P}
+  \have {3} {P \vee Q} \oi{2}
+  \have {4} {\bot} \ne{3,1}
+  \close
+  \have {5} {\neg P} \ni{2-4}
+\end{nd}$
+\end{center}
+```
 The rules are \( \rulename{\vee I} \), \( \rulename{\neg E} \) and \( \rulename{\neg I} \). In words: if neither \( P \) nor \( Q \) holds, then in particular \( P \) does not.
 :::
 
@@ -349,18 +370,23 @@ In Lean, \( \neg P \) is defined to be the implication \( P \to \bot \), with \(
 
 ::: {.solution}
 (a) As in @prp-disjunctive-syllogism, with the roles of the boxes exchanged: now the case \( Q \) is the impossible one.
-\[
-\begin{array}{r l l}
-1 & P \vee Q & \text{premise} \\
-2 & \neg Q & \text{premise} \\
-3 & \fsc \fhyp{P} & \text{assumption} \\
-  & & \\[-1.5ex]
-4 & \fsc \fhyp{Q} & \text{assumption} \\
-5 & \fsc \bot & \rulename{\neg E}\ 4, 2 \\
-6 & \fsc P & \rulename{\bot E}\ 5 \\
-7 & P & \rulename{\vee E}\ 1, \lines{3}{3}, \lines{4}{6}
-\end{array}
-\]
+```{=latex}
+\begin{center}
+$\begin{nd}
+  \hypo {1} {P \vee Q}
+  \hypo {2} {\neg Q}
+  \open
+  \hypo {3} {P}
+  \close
+  \open
+  \hypo {4} {Q}
+  \have {5} {\bot} \ne{4,2}
+  \have {6} {P} \be{5}
+  \close
+  \have {7} {P} \oe{1,3-3,4-6}
+\end{nd}$
+\end{center}
+```
 
 (b) Since \( x^2 = 1 \), we have \( x = 1 \) or \( x = -1 \). Since \( x > 0 \), we have \( x \ne -1 \), because \( -1 < 0 \). By part (a), with \( P \): "\( x = 1 \)" and \( Q \): "\( x = -1 \)", we conclude \( x = 1 \).
 :::
@@ -373,21 +399,26 @@ Show that \( P \wedge (Q \vee R) \vdash (P \wedge Q) \vee (P \wedge R) \). Then 
 
 ::: {.solution}
 Take the premise apart, then split on \( Q \vee R \); each case builds one side of the goal and weakens it with \( \rulename{\vee I} \).
-\[
-\begin{array}{r l l}
-1 & P \wedge (Q \vee R) & \text{premise} \\
-2 & P & \rulename{\wedge E}\ 1 \\
-3 & Q \vee R & \rulename{\wedge E}\ 1 \\
-4 & \fsc \fhyp{Q} & \text{assumption} \\
-5 & \fsc P \wedge Q & \rulename{\wedge I}\ 2, 4 \\
-6 & \fsc (P \wedge Q) \vee (P \wedge R) & \rulename{\vee I}\ 5 \\
-  & & \\[-1.5ex]
-7 & \fsc \fhyp{R} & \text{assumption} \\
-8 & \fsc P \wedge R & \rulename{\wedge I}\ 2, 7 \\
-9 & \fsc (P \wedge Q) \vee (P \wedge R) & \rulename{\vee I}\ 8 \\
-10 & (P \wedge Q) \vee (P \wedge R) & \rulename{\vee E}\ 3, \lines{4}{6}, \lines{7}{9}
-\end{array}
-\]
+```{=latex}
+\begin{center}
+$\begin{nd}
+  \hypo {1} {P \wedge (Q \vee R)}
+  \have {2} {P} \ae{1}
+  \have {3} {Q \vee R} \ae{1}
+  \open
+  \hypo {4} {Q}
+  \have {5} {P \wedge Q} \ai{2,4}
+  \have {6} {(P \wedge Q) \vee (P \wedge R)} \oi{5}
+  \close
+  \open
+  \hypo {7} {R}
+  \have {8} {P \wedge R} \ai{2,7}
+  \have {9} {(P \wedge Q) \vee (P \wedge R)} \oi{8}
+  \close
+  \have {10} {(P \wedge Q) \vee (P \wedge R)} \oe{3,4-6,7-9}
+\end{nd}$
+\end{center}
+```
 Lines 5 and 8 may cite line 2, which lies in no box.
 
 The instance: if \( x \ne 0 \) and (\( x > 0 \) or \( x < 0 \)), then (\( x \ne 0 \) and \( x > 0 \)) or (\( x \ne 0 \) and \( x < 0 \)). In words: a non-zero number that is positive or negative is a positive non-zero number or a negative non-zero number.

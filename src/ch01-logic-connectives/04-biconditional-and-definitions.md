@@ -25,32 +25,43 @@ In words: \( \rulename{{\leftrightarrow}I} \) is two uses of the box of \( \rule
 
 ::: {.proof}
 For the first claim, the following is a derivation with premise \( P \leftrightarrow Q \) and last line \( (P \to Q) \wedge (Q \to P) \).
-\[
-\begin{array}{r l l}
-1 & P \leftrightarrow Q & \text{premise} \\
-2 & \fsc \fhyp{P} & \text{assumption} \\
-3 & \fsc Q & \rulename{{\leftrightarrow}E}\ 1, 2 \\
-4 & P \to Q & \rulename{{\to}I}\ \lines{2}{3} \\
-5 & \fsc \fhyp{Q} & \text{assumption} \\
-6 & \fsc P & \rulename{{\leftrightarrow}E}\ 1, 5 \\
-7 & Q \to P & \rulename{{\to}I}\ \lines{5}{6} \\
-8 & (P \to Q) \wedge (Q \to P) & \rulename{\wedge I}\ 4, 7
-\end{array}
-\]
+```{=latex}
+\begin{center}
+$\begin{nd}
+  \hypo {1} {P \leftrightarrow Q}
+  \open
+  \hypo {2} {P}
+  \have {3} {Q} \bie{1,2}
+  \close
+  \have {4} {P \to Q} \ii{2-3}
+  \open
+  \hypo {5} {Q}
+  \have {6} {P} \bie{1,5}
+  \close
+  \have {7} {Q \to P} \ii{5-6}
+  \have {8} {(P \to Q) \wedge (Q \to P)} \ai{4,7}
+\end{nd}$
+\end{center}
+```
 For the second claim, the following is a derivation with premise \( (P \to Q) \wedge (Q \to P) \) and last line \( P \leftrightarrow Q \).
-\[
-\begin{array}{r l l}
-1 & (P \to Q) \wedge (Q \to P) & \text{premise} \\
-2 & P \to Q & \rulename{\wedge E}\ 1 \\
-3 & Q \to P & \rulename{\wedge E}\ 1 \\
-4 & \fsc \fhyp{P} & \text{assumption} \\
-5 & \fsc Q & \rulename{{\to}E}\ 2, 4 \\
-  & & \\[-1.5ex]
-6 & \fsc \fhyp{Q} & \text{assumption} \\
-7 & \fsc P & \rulename{{\to}E}\ 3, 6 \\
-8 & P \leftrightarrow Q & \rulename{{\leftrightarrow}I}\ \lines{4}{5}, \lines{6}{7}
-\end{array}
-\]
+```{=latex}
+\begin{center}
+$\begin{nd}
+  \hypo {1} {(P \to Q) \wedge (Q \to P)}
+  \have {2} {P \to Q} \ae{1}
+  \have {3} {Q \to P} \ae{1}
+  \open
+  \hypo {4} {P}
+  \have {5} {Q} \ie{2,4}
+  \close
+  \open
+  \hypo {6} {Q}
+  \have {7} {P} \ie{3,6}
+  \close
+  \have {8} {P \leftrightarrow Q} \bi{4-5,6-7}
+\end{nd}$
+\end{center}
+```
 This proves both claims.
 :::
 
@@ -175,20 +186,25 @@ To get \( P \leftrightarrow Q \) we need two boxes. From \( P \), one step along
 
 ::: {.proof}
 The following is a derivation with the three premises and last line \( P \leftrightarrow Q \).
-\[
-\begin{array}{r l l}
-1 & P \to Q & \text{premise} \\
-2 & Q \to R & \text{premise} \\
-3 & R \to P & \text{premise} \\
-4 & \fsc \fhyp{P} & \text{assumption} \\
-5 & \fsc Q & \rulename{{\to}E}\ 1, 4 \\
-  & & \\[-1.5ex]
-6 & \fsc \fhyp{Q} & \text{assumption} \\
-7 & \fsc R & \rulename{{\to}E}\ 2, 6 \\
-8 & \fsc P & \rulename{{\to}E}\ 3, 7 \\
-9 & P \leftrightarrow Q & \rulename{{\leftrightarrow}I}\ \lines{4}{5}, \lines{6}{8}
-\end{array}
-\]
+```{=latex}
+\begin{center}
+$\begin{nd}
+  \hypo {1} {P \to Q}
+  \hypo {2} {Q \to R}
+  \hypo {3} {R \to P}
+  \open
+  \hypo {4} {P}
+  \have {5} {Q} \ie{1,4}
+  \close
+  \open
+  \hypo {6} {Q}
+  \have {7} {R} \ie{2,6}
+  \have {8} {P} \ie{3,7}
+  \close
+  \have {9} {P \leftrightarrow Q} \bi{4-5,6-8}
+\end{nd}$
+\end{center}
+```
 Now replace \( P \), \( Q \), \( R \) throughout by \( Q \), \( R \), \( P \) respectively. The premises \( P \to Q \), \( Q \to R \), \( R \to P \) become \( Q \to R \), \( R \to P \), \( P \to Q \), the same three statements in a different order, and every line remains justified by the same rule. So the renamed derivation derives \( Q \leftrightarrow R \) from the same premises. Rotating once more gives \( R \leftrightarrow P \). This proves the proposition.
 :::
 
@@ -262,23 +278,32 @@ Show that \( P \leftrightarrow Q \vdash \neg P \leftrightarrow \neg Q \).
 
 ::: {.solution}
 The goal is an iff, so we need two boxes, one opened by \( \neg P \) and reaching \( \neg Q \), the other the reverse. Each target is a negation, so each box contains a \( \rulename{\neg I} \) box.
-\[
-\begin{array}{r l l}
-1 & P \leftrightarrow Q & \text{premise} \\
-2 & \fsc \fhyp{\neg P} & \text{assumption} \\
-3 & \fsc \fsc \fhyp{Q} & \text{assumption} \\
-4 & \fsc \fsc P & \rulename{{\leftrightarrow}E}\ 1, 3 \\
-5 & \fsc \fsc \bot & \rulename{\neg E}\ 4, 2 \\
-6 & \fsc \neg Q & \rulename{\neg I}\ \lines{3}{5} \\
-  & & \\[-1.5ex]
-7 & \fsc \fhyp{\neg Q} & \text{assumption} \\
-8 & \fsc \fsc \fhyp{P} & \text{assumption} \\
-9 & \fsc \fsc Q & \rulename{{\leftrightarrow}E}\ 1, 8 \\
-10 & \fsc \fsc \bot & \rulename{\neg E}\ 9, 7 \\
-11 & \fsc \neg P & \rulename{\neg I}\ \lines{8}{10} \\
-12 & \neg P \leftrightarrow \neg Q & \rulename{{\leftrightarrow}I}\ \lines{2}{6}, \lines{7}{11}
-\end{array}
-\]
+```{=latex}
+\begin{center}
+$\begin{nd}
+  \hypo {1} {P \leftrightarrow Q}
+  \open
+  \hypo {2} {\neg P}
+  \open
+  \hypo {3} {Q}
+  \have {4} {P} \bie{1,3}
+  \have {5} {\bot} \ne{4,2}
+  \close
+  \have {6} {\neg Q} \ni{3-5}
+  \close
+  \open
+  \hypo {7} {\neg Q}
+  \open
+  \hypo {8} {P}
+  \have {9} {Q} \bie{1,8}
+  \have {10} {\bot} \ne{9,7}
+  \close
+  \have {11} {\neg P} \ni{8-10}
+  \close
+  \have {12} {\neg P \leftrightarrow \neg Q} \bi{2-6,7-11}
+\end{nd}$
+\end{center}
+```
 :::
 
 ::: {#exr-biconditional-and-definitions-b2}

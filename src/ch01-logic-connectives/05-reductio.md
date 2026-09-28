@@ -35,14 +35,18 @@ Can the rules we have take it out? Let us try to derive \( P \) from \( \neg\neg
 
 **RAA.** If a box opens with the assumption \( \neg P \) and reaches \( \bot \), then after the box closes we may write \( P \). Schematically,
 
-\[
-\begin{array}{r l l}
-i & \fsc \fhyp{\neg P} & \text{assumption} \\
- & \fsc \quad \vdots & \\
-j & \fsc \bot & \\
-k & P & \rulename{RAA}\ \lines{i}{j}
-\end{array}
-\]
+```{=latex}
+\begin{center}
+$\begin{nd}
+  \open
+  \hypo {i} {\neg P}
+  \have {} {\quad \vdots}
+  \have {j} {\bot}
+  \close
+  \have {k} {P} \raa{i-j}
+\end{nd}$
+\end{center}
+```
 
 The assumption \( \neg P \) is **discharged** when the box closes: like every assumption, it may be cited only by lines inside its box.
 :::
@@ -66,14 +70,18 @@ The assumption that opens an RAA box must be the **exact** negation of the goal.
 
 **Examples.** The first is the degenerate one. RAA can prove \( P \) from \( P \):
 
-\[
-\begin{array}{r l l}
-1 & P & \text{premise} \\
-2 & \fsc \fhyp{\neg P} & \text{assumption} \\
-3 & \fsc \bot & \rulename{\neg E}\ 1, 2 \\
-4 & P & \rulename{RAA}\ \lines{2}{3}
-\end{array}
-\]
+```{=latex}
+\begin{center}
+$\begin{nd}
+  \hypo {1} {P}
+  \open
+  \hypo {2} {\neg P}
+  \have {3} {\bot} \ne{1,2}
+  \close
+  \have {4} {P} \raa{2-3}
+\end{nd}$
+\end{center}
+```
 
 It is legal and pointless: line 1 already is the goal. We keep it because it is the purest case of a pattern we will meet in real proofs, a contradiction box whose assumption does nothing except clash with a line we already had. The last part of this section is about recognizing that pattern.
 
@@ -95,25 +103,33 @@ For every statement \( P \):
 ::: {.proof}
 (a) Here \( \neg\neg P \) is the negation of \( \neg P \), so \( \rulename{\neg I} \) asks for a box that opens with \( \neg P \) and reaches \( \bot \):
 
-\[
-\begin{array}{r l l}
-1 & P & \text{premise} \\
-2 & \fsc \fhyp{\neg P} & \text{assumption} \\
-3 & \fsc \bot & \rulename{\neg E}\ 1, 2 \\
-4 & \neg\neg P & \rulename{\neg I}\ \lines{2}{3}
-\end{array}
-\]
+```{=latex}
+\begin{center}
+$\begin{nd}
+  \hypo {1} {P}
+  \open
+  \hypo {2} {\neg P}
+  \have {3} {\bot} \ne{1,2}
+  \close
+  \have {4} {\neg\neg P} \ni{2-3}
+\end{nd}$
+\end{center}
+```
 
 (b) The goal \( P \) has no connective to introduce, so we open an RAA box with \( \neg P \):
 
-\[
-\begin{array}{r l l}
-1 & \neg\neg P & \text{premise} \\
-2 & \fsc \fhyp{\neg P} & \text{assumption} \\
-3 & \fsc \bot & \rulename{\neg E}\ 2, 1 \\
-4 & P & \rulename{RAA}\ \lines{2}{3}
-\end{array}
-\]
+```{=latex}
+\begin{center}
+$\begin{nd}
+  \hypo {1} {\neg\neg P}
+  \open
+  \hypo {2} {\neg P}
+  \have {3} {\bot} \ne{2,1}
+  \close
+  \have {4} {P} \raa{2-3}
+\end{nd}$
+\end{center}
+```
 
 Line 3 applies \( \rulename{\neg E} \) to the statement \( \neg P \) (line 2) and its negation \( \neg\neg P \) (line 1). This proves both parts.
 :::
@@ -153,17 +169,23 @@ The goal is an implication, so the outer box opens with \( P \) and must reach \
 ::: {.proof}
 The derivation is:
 
-\[
-\begin{array}{r l l}
-1 & \neg Q \to \neg P & \text{premise} \\
-2 & \fsc \fhyp{P} & \text{assumption} \\
-3 & \fsc \fsc \fhyp{\neg Q} & \text{assumption} \\
-4 & \fsc \fsc \neg P & \rulename{{\to}E}\ 1, 3 \\
-5 & \fsc \fsc \bot & \rulename{\neg E}\ 2, 4 \\
-6 & \fsc Q & \rulename{RAA}\ \lines{3}{5} \\
-7 & P \to Q & \rulename{{\to}I}\ \lines{2}{6}
-\end{array}
-\]
+```{=latex}
+\begin{center}
+$\begin{nd}
+  \hypo {1} {\neg Q \to \neg P}
+  \open
+  \hypo {2} {P}
+  \open
+  \hypo {3} {\neg Q}
+  \have {4} {\neg P} \ie{1,3}
+  \have {5} {\bot} \ne{2,4}
+  \close
+  \have {6} {Q} \raa{3-5}
+  \close
+  \have {7} {P \to Q} \ii{2-6}
+\end{nd}$
+\end{center}
+```
 
 Line 5 is available because line 2 belongs to an enclosing box that is still open. RAA enters at line 6. This proves the proposition.
 :::
@@ -189,18 +211,24 @@ The goal is a disjunction, so the natural move is \( \rulename{\vee I} \), which
 ::: {.proof}
 The derivation is:
 
-\[
-\begin{array}{r l l}
-1 & \fsc \fhyp{\neg(P \vee \neg P)} & \text{assumption} \\
-2 & \fsc \fsc \fhyp{P} & \text{assumption} \\
-3 & \fsc \fsc P \vee \neg P & \rulename{\vee I}\ 2 \\
-4 & \fsc \fsc \bot & \rulename{\neg E}\ 3, 1 \\
-5 & \fsc \neg P & \rulename{\neg I}\ \lines{2}{4} \\
-6 & \fsc P \vee \neg P & \rulename{\vee I}\ 5 \\
-7 & \fsc \bot & \rulename{\neg E}\ 6, 1 \\
-8 & P \vee \neg P & \rulename{RAA}\ \lines{1}{7}
-\end{array}
-\]
+```{=latex}
+\begin{center}
+$\begin{nd}
+  \open
+  \hypo {1} {\neg(P \vee \neg P)}
+  \open
+  \hypo {2} {P}
+  \have {3} {P \vee \neg P} \oi{2}
+  \have {4} {\bot} \ne{3,1}
+  \close
+  \have {5} {\neg P} \ni{2-4}
+  \have {6} {P \vee \neg P} \oi{5}
+  \have {7} {\bot} \ne{6,1}
+  \close
+  \have {8} {P \vee \neg P} \raa{1-7}
+\end{nd}$
+\end{center}
+```
 
 The derivation has no premises, so it shows \( \vdash P \vee \neg P \). RAA is used once, at line 8. This proves the proposition.
 :::
@@ -235,77 +263,104 @@ Read each goal's main connective. In (a) it is \( \wedge \), so we prove \( \neg
 ::: {.proof}
 (a) Two \( \rulename{\neg I} \) boxes, one for each conjunct, then \( \rulename{\wedge I} \):
 
-\[
-\begin{array}{r l l}
-1 & \neg(P \vee Q) & \text{premise} \\
-2 & \fsc \fhyp{P} & \text{assumption} \\
-3 & \fsc P \vee Q & \rulename{\vee I}\ 2 \\
-4 & \fsc \bot & \rulename{\neg E}\ 3, 1 \\
-5 & \neg P & \rulename{\neg I}\ \lines{2}{4} \\
-6 & \fsc \fhyp{Q} & \text{assumption} \\
-7 & \fsc P \vee Q & \rulename{\vee I}\ 6 \\
-8 & \fsc \bot & \rulename{\neg E}\ 7, 1 \\
-9 & \neg Q & \rulename{\neg I}\ \lines{6}{8} \\
-10 & \neg P \wedge \neg Q & \rulename{\wedge I}\ 5, 9
-\end{array}
-\]
+```{=latex}
+\begin{center}
+$\begin{nd}
+  \hypo {1} {\neg(P \vee Q)}
+  \open
+  \hypo {2} {P}
+  \have {3} {P \vee Q} \oi{2}
+  \have {4} {\bot} \ne{3,1}
+  \close
+  \have {5} {\neg P} \ni{2-4}
+  \open
+  \hypo {6} {Q}
+  \have {7} {P \vee Q} \oi{6}
+  \have {8} {\bot} \ne{7,1}
+  \close
+  \have {9} {\neg Q} \ni{6-8}
+  \have {10} {\neg P \wedge \neg Q} \ai{5,9}
+\end{nd}$
+\end{center}
+```
 
 (b) One \( \rulename{\neg I} \) box that opens with \( P \vee Q \); inside it, \( \rulename{\vee E} \) splits into the two cases, and each case clashes with one half of the premise:
 
-\[
-\begin{array}{r l l}
-1 & \neg P \wedge \neg Q & \text{premise} \\
-2 & \neg P & \rulename{\wedge E}\ 1 \\
-3 & \neg Q & \rulename{\wedge E}\ 1 \\
-4 & \fsc \fhyp{P \vee Q} & \text{assumption} \\
-5 & \fsc \fsc \fhyp{P} & \text{assumption} \\
-6 & \fsc \fsc \bot & \rulename{\neg E}\ 5, 2 \\
-& \fsc & \\[-1.5ex]
-7 & \fsc \fsc \fhyp{Q} & \text{assumption} \\
-8 & \fsc \fsc \bot & \rulename{\neg E}\ 7, 3 \\
-9 & \fsc \bot & \rulename{\vee E}\ 4, \lines{5}{6}, \lines{7}{8} \\
-10 & \neg(P \vee Q) & \rulename{\neg I}\ \lines{4}{9}
-\end{array}
-\]
+```{=latex}
+\begin{center}
+$\begin{nd}
+  \hypo {1} {\neg P \wedge \neg Q}
+  \have {2} {\neg P} \ae{1}
+  \have {3} {\neg Q} \ae{1}
+  \open
+  \hypo {4} {P \vee Q}
+  \open
+  \hypo {5} {P}
+  \have {6} {\bot} \ne{5,2}
+  \close
+  \open
+  \hypo {7} {Q}
+  \have {8} {\bot} \ne{7,3}
+  \close
+  \have {9} {\bot} \oe{4,5-6,7-8}
+  \close
+  \have {10} {\neg(P \vee Q)} \ni{4-9}
+\end{nd}$
+\end{center}
+```
 
 The two inner boxes sit side by side at the same depth; the underlined assumption at line 7 is where the second one begins.
 
 (c) The same shape as (b), with the roles of \( \wedge \) and \( \vee \) exchanged:
 
-\[
-\begin{array}{r l l}
-1 & \neg P \vee \neg Q & \text{premise} \\
-2 & \fsc \fhyp{P \wedge Q} & \text{assumption} \\
-3 & \fsc P & \rulename{\wedge E}\ 2 \\
-4 & \fsc Q & \rulename{\wedge E}\ 2 \\
-5 & \fsc \fsc \fhyp{\neg P} & \text{assumption} \\
-6 & \fsc \fsc \bot & \rulename{\neg E}\ 3, 5 \\
-& \fsc & \\[-1.5ex]
-7 & \fsc \fsc \fhyp{\neg Q} & \text{assumption} \\
-8 & \fsc \fsc \bot & \rulename{\neg E}\ 4, 7 \\
-9 & \fsc \bot & \rulename{\vee E}\ 1, \lines{5}{6}, \lines{7}{8} \\
-10 & \neg(P \wedge Q) & \rulename{\neg I}\ \lines{2}{9}
-\end{array}
-\]
+```{=latex}
+\begin{center}
+$\begin{nd}
+  \hypo {1} {\neg P \vee \neg Q}
+  \open
+  \hypo {2} {P \wedge Q}
+  \have {3} {P} \ae{2}
+  \have {4} {Q} \ae{2}
+  \open
+  \hypo {5} {\neg P}
+  \have {6} {\bot} \ne{3,5}
+  \close
+  \open
+  \hypo {7} {\neg Q}
+  \have {8} {\bot} \ne{4,7}
+  \close
+  \have {9} {\bot} \oe{1,5-6,7-8}
+  \close
+  \have {10} {\neg(P \wedge Q)} \ni{2-9}
+\end{nd}$
+\end{center}
+```
 
 (d) Excluded middle for \( P \), then two cases:
 
-\[
-\begin{array}{r l l}
-1 & \neg(P \wedge Q) & \text{premise} \\
-2 & P \vee \neg P & \text{excluded middle} \\
-3 & \fsc \fhyp{P} & \text{assumption} \\
-4 & \fsc \fsc \fhyp{Q} & \text{assumption} \\
-5 & \fsc \fsc P \wedge Q & \rulename{\wedge I}\ 3, 4 \\
-6 & \fsc \fsc \bot & \rulename{\neg E}\ 5, 1 \\
-7 & \fsc \neg Q & \rulename{\neg I}\ \lines{4}{6} \\
-8 & \fsc \neg P \vee \neg Q & \rulename{\vee I}\ 7 \\
-& & \\[-1.5ex]
-9 & \fsc \fhyp{\neg P} & \text{assumption} \\
-10 & \fsc \neg P \vee \neg Q & \rulename{\vee I}\ 9 \\
-11 & \neg P \vee \neg Q & \rulename{\vee E}\ 2, \lines{3}{8}, \lines{9}{10}
-\end{array}
-\]
+```{=latex}
+\begin{center}
+$\begin{nd}
+  \hypo {1} {\neg(P \wedge Q)}
+  \have {2} {P \vee \neg P} \by{excluded middle}{}
+  \open
+  \hypo {3} {P}
+  \open
+  \hypo {4} {Q}
+  \have {5} {P \wedge Q} \ai{3,4}
+  \have {6} {\bot} \ne{5,1}
+  \close
+  \have {7} {\neg Q} \ni{4-6}
+  \have {8} {\neg P \vee \neg Q} \oi{7}
+  \close
+  \open
+  \hypo {9} {\neg P}
+  \have {10} {\neg P \vee \neg Q} \oi{9}
+  \close
+  \have {11} {\neg P \vee \neg Q} \oe{2,3-8,9-10}
+\end{nd}$
+\end{center}
+```
 
 Line 2 is @prp-excluded-middle, and the only use of RAA is inside it. This proves all four laws.
 :::
@@ -413,31 +468,41 @@ For each argument, say whether its last step is \( \rulename{\neg I} \), RAA, or
 ::: {.solution}
 (a) The goal \( \neg P \) is a negation, so we open a \( \rulename{\neg I} \) box with \( P \). Inside it, @prp-double-negation (a) suggests building \( \neg\neg P \), which then clashes with the premise:
 
-\[
-\begin{array}{r l l}
-1 & \neg\neg\neg P & \text{premise} \\
-2 & \fsc \fhyp{P} & \text{assumption} \\
-3 & \fsc \fsc \fhyp{\neg P} & \text{assumption} \\
-4 & \fsc \fsc \bot & \rulename{\neg E}\ 2, 3 \\
-5 & \fsc \neg\neg P & \rulename{\neg I}\ \lines{3}{4} \\
-6 & \fsc \bot & \rulename{\neg E}\ 5, 1 \\
-7 & \neg P & \rulename{\neg I}\ \lines{2}{6}
-\end{array}
-\]
+```{=latex}
+\begin{center}
+$\begin{nd}
+  \hypo {1} {\neg\neg\neg P}
+  \open
+  \hypo {2} {P}
+  \open
+  \hypo {3} {\neg P}
+  \have {4} {\bot} \ne{2,3}
+  \close
+  \have {5} {\neg\neg P} \ni{3-4}
+  \have {6} {\bot} \ne{5,1}
+  \close
+  \have {7} {\neg P} \ni{2-6}
+\end{nd}$
+\end{center}
+```
 
 Both boxes are closed by \( \rulename{\neg I} \), so no RAA is used.
 
 (b) The goal \( P \) is a bare letter, so we open an RAA box with \( \neg P \):
 
-\[
-\begin{array}{r l l}
-1 & \neg P \to P & \text{premise} \\
-2 & \fsc \fhyp{\neg P} & \text{assumption} \\
-3 & \fsc P & \rulename{{\to}E}\ 1, 2 \\
-4 & \fsc \bot & \rulename{\neg E}\ 3, 2 \\
-5 & P & \rulename{RAA}\ \lines{2}{4}
-\end{array}
-\]
+```{=latex}
+\begin{center}
+$\begin{nd}
+  \hypo {1} {\neg P \to P}
+  \open
+  \hypo {2} {\neg P}
+  \have {3} {P} \ie{1,2}
+  \have {4} {\bot} \ne{3,2}
+  \close
+  \have {5} {P} \raa{2-4}
+\end{nd}$
+\end{center}
+```
 
 (c) For (a): "Suppose \( P \). Then \( \neg P \) is impossible, so \( \neg\neg P \) holds. This contradicts the premise \( \neg\neg\neg P \). Hence \( \neg P \)." For (b): "Suppose, for a contradiction, that \( P \) fails. Then the premise gives \( P \), which contradicts our supposition. Hence \( P \)."
 :::
@@ -504,18 +569,23 @@ Suppose that, instead of adding RAA as a rule, we had added excluded middle, \( 
 ::: {.solution}
 (a) Suppose the derivation contains a box, lines \( i \) to \( j \), that opens with \( \neg P \) and ends with \( \bot \). Instead of closing it with RAA, we write excluded middle and use the box as the second case of \( \rulename{\vee E} \). Schematically, with the given box moved inside:
 
-\[
-\begin{array}{r l l}
-1 & P \vee \neg P & \text{excluded middle} \\
-2 & \fsc \fhyp{P} & \text{assumption} \\
-& & \\[-1.5ex]
-3 & \fsc \fhyp{\neg P} & \text{assumption} \\
- & \fsc \quad \vdots & \text{the given box} \\
-4 & \fsc \bot & \\
-5 & \fsc P & \rulename{\bot E}\ 4 \\
-6 & P & \rulename{\vee E}\ 1, \lines{2}{2}, \lines{3}{5}
-\end{array}
-\]
+```{=latex}
+\begin{center}
+$\begin{nd}
+  \have {1} {P \vee \neg P} \by{excluded middle}{}
+  \open
+  \hypo {2} {P}
+  \close
+  \open
+  \hypo {3} {\neg P}
+  \have {} {\quad \vdots} \by{the given box}{}
+  \have {4} {\bot}
+  \have {5} {P} \be{4}
+  \close
+  \have {6} {P} \oe{1,2-2,3-5}
+\end{nd}$
+\end{center}
+```
 
 The first case is a one-line box: it opens with \( P \) and already ends with the goal \( P \). The second case is the given box, extended by one line of \( \rulename{\bot E} \). Every line of the given box is still justified, because it sits in the same position relative to its own assumption. No RAA is used.
 

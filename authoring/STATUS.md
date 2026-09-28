@@ -43,7 +43,7 @@ Prose pointers that must become `@ref`s (or be paid off) when the target chapter
 
 ## Engine and convention notes from the pilot
 
-- Fitch bars: `\fsc` is a smashed rule so consecutive rows join; two sibling boxes at the same depth need a spacer row (`& \fsc & \\[-1.5ex]`), see `latex/macros.tex`.
+- Fitch derivations use fitch.sty (`latex/fitch-book.sty`, `nd` environment in a raw LaTeX block); the website gets build-time SVGs through filters/tikz.lua. Converted from the pilots' arrays on 2026-09-28.
 - Line ranges in justifications: `\lines{2}{5}` (no non-ASCII in math, test_display_math_source).
 - A paragraph opening "(a) …" becomes a Pandoc list: one lettered item per paragraph, or italic `*(a) ⇒ (b).*`.
 - `enumerate` does not take a constant label such as `label=(L)`.

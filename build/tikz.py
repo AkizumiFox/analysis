@@ -26,6 +26,7 @@ STANDALONE_TEMPLATE = r"""\documentclass[tikz,border=2pt]{standalone}
 \usepackage{pgfplots}
 \pgfplotsset{compat=1.18}
 \usetikzlibrary{arrows.meta,shapes.geometric,calc,positioning,patterns}
+\IfFileExists{fitch-book.sty}{\usepackage{fitch-book}}{}
 \input{%(macros)s}
 \begin{document}
 %(picture)s

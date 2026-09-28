@@ -108,3 +108,6 @@
 % reclaims \H (the Hungarian-umlaut accent). Restore the bold matrix H once
 % the preamble is over, so \H means the matrix in Chapter 7 onwards.
 \AtBeginDocument{\def\H{\mathbf{H}}}
+
+% Fitch-style derivations (Part 0), if the book uses them: latex/fitch-book.sty.
+\IfFileExists{fitch-book.sty}{\usepackage{fitch-book}}{}

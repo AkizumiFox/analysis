@@ -144,21 +144,26 @@ Three things stand out. Sentence (7) uses the assumption made in (1); it may, be
 
 Let \( n \) be an integer. Write \( E \) for "\( n \) is even", \( O \) for "\( n \) is odd", \( F \) for "\( n + 1 \) is even", and \( G \) for "\( n(n+1) \) is even". The following derivation uses four facts about integers as premises. Write the paragraph a mathematician would write for it.
 
-\[
-\begin{array}{r l l}
-1 & E \vee O & \text{premise (every integer is even or odd)} \\
-2 & E \to G & \text{premise (an even factor makes a product even)} \\
-3 & O \to F & \text{premise (odd plus one is even)} \\
-4 & F \to G & \text{premise (an even factor again)} \\
-5 & \fsc \fhyp{E} & \text{assumption} \\
-6 & \fsc G & \rulename{{\to}E}\ 2, 5 \\
-& & \\[-1.5ex]
-7 & \fsc \fhyp{O} & \text{assumption} \\
-8 & \fsc F & \rulename{{\to}E}\ 3, 7 \\
-9 & \fsc G & \rulename{{\to}E}\ 4, 8 \\
-10 & G & \rulename{\vee E}\ 1, \lines{5}{6}, \lines{7}{9}
-\end{array}
-\]
+```{=latex}
+\begin{center}
+$\begin{nd}
+  \hypo {1} {E \vee O} \by{(every integer is even or odd)}{}
+  \hypo {2} {E \to G} \by{(an even factor makes a product even)}{}
+  \hypo {3} {O \to F} \by{(odd plus one is even)}{}
+  \hypo {4} {F \to G} \by{(an even factor again)}{}
+  \open
+  \hypo {5} {E}
+  \have {6} {G} \ie{2,5}
+  \close
+  \open
+  \hypo {7} {O}
+  \have {8} {F} \ie{3,7}
+  \have {9} {G} \ie{4,8}
+  \close
+  \have {10} {G} \oe{1,5-6,7-9}
+\end{nd}$
+\end{center}
+```
 :::
 
 ::: {.solution}
@@ -374,17 +379,21 @@ This proves the equivalence.
 ::: {.solution}
 (a) The goal is an implication, so the skeleton is \( \rulename{{\to}I} \); inside, the premise is a conjunction, so \( \rulename{\wedge E} \) takes it apart.
 
-\[
-\begin{array}{r l l}
-1 & (P \to Q) \wedge (Q \to R) & \text{premise} \\
-2 & P \to Q & \rulename{\wedge E}\ 1 \\
-3 & Q \to R & \rulename{\wedge E}\ 1 \\
-4 & \fsc \fhyp{P} & \text{assumption} \\
-5 & \fsc Q & \rulename{{\to}E}\ 2, 4 \\
-6 & \fsc R & \rulename{{\to}E}\ 3, 5 \\
-7 & P \to R & \rulename{{\to}I}\ \lines{4}{6}
-\end{array}
-\]
+```{=latex}
+\begin{center}
+$\begin{nd}
+  \hypo {1} {(P \to Q) \wedge (Q \to R)}
+  \have {2} {P \to Q} \ae{1}
+  \have {3} {Q \to R} \ae{1}
+  \open
+  \hypo {4} {P}
+  \have {5} {Q} \ie{2,4}
+  \have {6} {R} \ie{3,5}
+  \close
+  \have {7} {P \to R} \ii{4-6}
+\end{nd}$
+\end{center}
+```
 
 (b) If \( x > 2 \), then \( x > 0 \), and multiplying \( x > 2 \) by the positive number \( x \) gives \( x^2 > 2x > 4 \); so \( P \to Q \) holds. If \( x^2 > 4 \), adding 1 gives \( x^2 + 1 > 5 \); so \( Q \to R \) holds. The prose version of (a):
 

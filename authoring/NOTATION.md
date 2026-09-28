@@ -85,15 +85,15 @@ The main characters: what letter each kind of object gets.
 | `\wedge, \vee, \to, \leftrightarrow, \neg, \bot` | and, or, implies, iff, not, contradiction (in derivations; prose says "implies", and theorems use `\Rightarrow`, `\iff`) |
 | `\forall, \exists` | quantifiers |
 | `\Gamma \vdash P` | P is derivable from the assumptions Γ |
-| `\fsc`, `\fhyp{P}` | one open assumption box in a Fitch derivation; the assumption that opens it (see `latex/macros.tex`) |
+| `nd` environment | a Fitch derivation: fitch.sty via `latex/fitch-book.sty` (syntax and rule macros documented there) |
 | `\rulename{\wedge I}` | a rule name: ∧I, ∧E, →I, →E, ∨I, ∨E, ¬I, ¬E, ⊥E, RAA, ∀I, ∀E, ∃I, ∃E, =I, =E |
 
 Typesetting rules for logic (learned in the Chapter 1 pilot):
-- A rule name whose symbol is a relation gets braces: `\rulename{{\to}I}`, `\rulename{{\leftrightarrow}E}`; otherwise the arrow's relation spacing prints "→ I".
-- Rule names and connectives in prose are always math: `\( \rulename{\neg I} \)`. A bare Unicode ¬, ∧, → in prose stops pdflatex.
-- A range of cited lines is `2\text{–}5` (Unicode en dash inside `\text`); `\text{--}` prints "--" on the web.
-- Truth tables, and any table whose headers are formulas, are display arrays (`\begin{array}{cc|c} … \hline …`), not pipe tables, which wrap formulas in the PDF.
-- In a derivation a line may cite any earlier line not inside a closed box (no reiteration rule), and a result already derived may be used as one line.
+- **Derivations** are fitch.sty `nd` environments in a raw LaTeX block (```` ```{=latex} ````, inside `\begin{center} $ … $ \end{center}`), never `array`s. The PDF typesets them; the website gets an SVG compiled at build time (filters/tikz.lua). `\open`/`\close` make boxes, `\hypo` an assumption or premise, `\have` a derived line; justifications are the rule macros of `latex/fitch-book.sty` (`\ai{3,2}`, `\ii{3-5}`, `\oe{1,3-5,6-8}`, `\raa{i-j}`) or `\by{text}{refs}`. A derivation cannot carry an `{#eq-…}` label: refer to it in prose ("the derivation after @def-…").
+- A rule name in prose: `\( \rulename{\neg I} \)`; with a relation symbol, brace it: `\rulename{{\to}I}`. A bare Unicode ¬, ∧, → in prose stops pdflatex.
+- A range of cited lines in prose: `\lines{2}{5}` (no non-ASCII inside math).
+- Truth tables, and any table whose headers are formulas, are display arrays (`\begin{array}{cc|c} … \hline …`), not pipe tables.
+- In a derivation a line may cite any earlier line not inside a closed box, and a result already derived may be used as one line.
 
 ## Operators and named maps
 
