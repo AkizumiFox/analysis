@@ -147,3 +147,25 @@ def kripke_refutation(prem, concl, max_worlds=3):
                 if all(forces(0, p) for p in prem) and not forces(0, concl):
                     return (n, sorted(le), {x: sorted(s) for x, s in val.items()})
     return None
+
+
+# ---------------------------------------------------------------------------
+# Derivations: an independent check of the line counts the text quotes. The
+# derivation is written out here (not read from the book) and passed through the
+# book's own checker, tools/check_fitch.py.
+# ---------------------------------------------------------------------------
+import re as _re
+import sys as _sys
+from pathlib import Path as _Path
+
+_sys.path.insert(0, str(_Path(__file__).resolve().parents[2] / "tools"))
+from check_fitch import check_text as _check_text  # noqa: E402
+
+
+def check_derivation(body):
+    """Check an nd body with tools/check_fitch.py; return (errors, number of lines)."""
+    text = ("```{=latex}\n\\begin{center}\n$\\begin{nd}\n" + body
+            + "\n\\end{nd}$\n\\end{center}\n```\n")
+    errors, notes, counts = _check_text(text)
+    n = len(_re.findall(r"\\(?:hypo|have)\s*\{\d+\}", body))
+    return errors, n

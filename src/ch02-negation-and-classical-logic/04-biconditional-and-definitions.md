@@ -4,7 +4,7 @@ One connective is still without rules: "if and only if". Theorems say "\( n \) i
 
 ## The rules for "if and only if"
 
-"\( P \) if and only if \( Q \)" combines "\( P \) if \( Q \)", which is \( Q \to P \), with "\( P \) only if \( Q \)", which is \( P \to Q \), as @exr-statements-and-connectives-c1 explains. So a proof of it must travel both ways, and a use of it may travel either way. An implication is proved by a box, opened on the hypothesis and closed on the conclusion (@def-rules-implication); an "if and only if" needs two such boxes.
+"\( P \) if and only if \( Q \)" combines "\( P \) if \( Q \)", which is \( Q \to P \), with "\( P \) only if \( Q \)", which is \( P \to Q \), as @exr-statements-and-connectives-c1 explains. A proof of it travels both ways; a use of it, either way. An implication is proved by a box, opened on the hypothesis and closed on the conclusion (@def-rules-implication); an "if and only if" needs two such boxes.
 
 *An "if and only if" is two implications, and proving it takes two proofs.*
 
@@ -27,7 +27,7 @@ $\begin{nd}[schema]
   \close
   \have {m} {\varphi \leftrightarrow \psi} \bi{i-j,k-l}
 \end{nd}$
-\qquad
+\\[2ex]
 $\begin{nd}[schema]
   \have {i} {\varphi \leftrightarrow \psi}
   \have {j} {\varphi}
@@ -42,7 +42,7 @@ $\begin{nd}[schema]
 \end{center}
 ```
 
-The left schema is the rule \( \rulename{{\leftrightarrow}I} \) (**iff-introduction**); its two assumptions are discharged when their boxes close, and each box's last line (\( \psi \) in the first, \( \varphi \) in the second) is a line **of that box itself**, not of a box inside it. The other two schemas are the two forms of \( \rulename{{\leftrightarrow}E} \) (**iff-elimination**).
+The first schema is the rule \( \rulename{{\leftrightarrow}I} \) (**iff-introduction**); its two assumptions are discharged when their boxes close, and each box's last line (\( \psi \) in the first, \( \varphi \) in the second) is a line **of that box itself**, not of a box inside it. The two schemas below it are the two forms of \( \rulename{{\leftrightarrow}E} \) (**iff-elimination**).
 :::
 
 As in every schema (@def-rule-schema), \( \varphi \) and \( \psi \) stand for any statements, replaced consistently, and \( i, j, k, l, m \) for line numbers. Read the rules clause by clause.
@@ -59,7 +59,10 @@ The section's goal-directed move: **a goal \( \varphi \leftrightarrow \psi \) op
 ::: {#exm-iff-symmetric}
 [An iff read both ways]
 
-(a) Show that \( P \leftrightarrow Q \vdash Q \leftrightarrow P \). (b) Show that \( P \leftrightarrow Q, \; \neg Q \vdash \neg P \).
+::: {.enumerate options="label=(\alph*)"}
+1. Show that \( P \leftrightarrow Q \vdash Q \leftrightarrow P \).
+2. Show that \( P \leftrightarrow Q, \; \neg Q \vdash \neg P \).
+:::
 :::
 
 ::: {.solution}
@@ -219,7 +222,7 @@ Statements \( P \) and \( Q \) are **provably equivalent**, written \( P \dashv\
 
 In words: there is a derivation with premise \( P \) and last line \( Q \), and **another** with premise \( Q \) and last line \( P \). The symbol is the turnstile of @def-derivable written twice, back to back; two derivations prove the claim.
 
-The degenerate example is \( P \dashv\vdash P \): the one-line derivation of @exm-derivations serves in both directions. A first real example is \( P \vee Q \dashv\vdash Q \vee P \): @exm-disjunction-first-derivations shows \( P \vee Q \vdash Q \vee P \), and the same derivation with the letters exchanged shows the converse. By the same exchange, part (a) of @exm-iff-symmetric gives \( P \leftrightarrow Q \dashv\vdash Q \leftrightarrow P \).
+The degenerate example is \( P \dashv\vdash P \): the one-line derivation of part (a) of @exm-derivations serves in both directions. A first real example is \( P \vee Q \dashv\vdash Q \vee P \): @exm-disjunction-first-derivations shows \( P \vee Q \vdash Q \vee P \), and the same derivation with the letters exchanged shows the converse. By the same exchange, part (a) of @exm-iff-symmetric gives \( P \leftrightarrow Q \dashv\vdash Q \leftrightarrow P \).
 
 A minimal change gives a one-way street. @exm-double-negation-introduction derived \( P \vdash \neg\neg P \), but the converse, \( \neg\neg P \vdash P \), would have to remove two negations, and no rule met so far removes one. So we cannot claim \( P \dashv\vdash \neg\neg P \): the clause "\( Q \vdash P \)" is the one missing. (It holds once Section 2.5 adds its rule; that it cannot hold without that rule is true, and Chapter 3 proves it.) Likewise @prp-contrapositive derives \( \neg Q \to \neg P \) from \( P \to Q \), but not yet the reverse.
 
@@ -250,7 +253,7 @@ We use one observation twice. Let \( D \) be a derivation, and copy its lines, i
 (b) The one-line derivation consisting of the premise \( P \) shows \( P \vdash P \), in both directions, so \( P \dashv\vdash P \). Symmetry holds because @def-provable-equivalence says the same thing about \( P, Q \) as about \( Q, P \). For transitivity it is enough to show that \( P \vdash Q \) and \( Q \vdash R \) give \( P \vdash R \), since the reverse direction is the same statement with \( P \) and \( R \) exchanged. Take a derivation \( D_1 \) of \( Q \) from \( P \), and below its last line copy a derivation \( D_2 \) of \( R \) from \( Q \), turning each premise line \( Q \) of \( D_2 \) into a repetition of the last line of \( D_1 \). That line lies in no box, so it is available everywhere below it, and by the observation the rest of the copy is justified. The result has premise \( P \) and last line \( R \). This proves the proposition.
 :::
 
-Part (a) says that one derivation of \( P \leftrightarrow Q \) from no premises carries the same information as two derivations, one each way. Part (b) says that \( \dashv\vdash \) can be used the way "\( = \)" is used in a calculation: chains of provable equivalences can be run in either direction and joined end to end.
+Part (a) says that one derivation of \( P \leftrightarrow Q \) from no premises carries the same information as two derivations, one each way. Part (b) says that \( \dashv\vdash \) can be used like "\( = \)" in a calculation: chains of provable equivalences run either way and join end to end.
 
 Here are equivalences derived so far. Each row gives two derived rules (@def-derived-rule), one in each direction.
 
@@ -282,6 +285,10 @@ The first example completes the story of parity. We use the facts (E1)–(E3) of
 Let \( n \) be an integer. Then \( n \) is odd if and only if \( n^2 \) is odd.
 :::
 
+::: {.idea}
+Two boxes. Forwards is (E3). Backwards, "\( n^2 \) is odd" gives nothing to compute with, so split on (E1) and show the even case impossible, as in @exm-impossible-case.
+:::
+
 ::: {.proof}
 \( (\Rightarrow) \) This is (E3).
 
@@ -290,9 +297,9 @@ Let \( n \) be an integer. Then \( n \) is odd if and only if \( n^2 \) is odd.
 This proves the theorem \( [\rulename{{\leftrightarrow}I}] \).
 :::
 
-The \( (\Leftarrow) \) direction has the shape of @exm-impossible-case: two cases, one impossible. With the derived rules of Section 2.3 it fits in one breath: "\( n \) cannot be even, since then \( n^2 \) would be even; so \( n \) is odd", which is \( \rulename{\neg I} \) with (E2), then \( \rulename{MT} \), then \( \rulename{DS} \) on (E1).
+With the derived rules of Section 2.3, \( (\Leftarrow) \) fits in one breath, "\( n \) cannot be even, since then \( n^2 \) would be even; so \( n \) is odd": \( \rulename{\neg I} \) with (E2), then \( \rulename{MT} \), then \( \rulename{DS} \) on (E1).
 
-The next example is about real numbers, and its two directions do genuinely different work. Each hypothesis is needed: dropping either one breaks one of the two directions, as the remark after the proof shows.
+The next example is about real numbers, and its two directions do different work. Each hypothesis is needed: dropping either one breaks one of the two directions, as the remark after the proof shows.
 
 ::: {#thm-squares-order}
 [Squaring Preserves Order]
@@ -349,7 +356,7 @@ Grammatically the sentence is an implication, "\( f \) is strictly increasing **
 
 *In a definition, "if" means "if and only if".*
 
-This is a convention of mathematical language, not a rule of logic. Some books write "iff" or \( :\Leftrightarrow \) in definitions; this book, like most, writes "if" and puts the term defined in **bold**, which signals that the "if" is an "iff". Here is the definition above used three ways. The words "for all real numbers \( x \) and \( y \)" are a quantifier, whose rules come in Chapter 4; here we use them informally.
+This is a convention of mathematical language, not a rule of logic. Some books write "iff" or \( :\Leftrightarrow \) in definitions; this book, like most, writes "if" and puts the term defined in **bold**, which signals that the "if" is an "iff". Here it is used three ways. The words "for all real numbers \( x \) and \( y \)" are a quantifier, whose rules come in Chapter 4; here we use them informally.
 
 ::: {#exm-strictly-increasing-both-ways}
 [A definition used in both directions]
@@ -372,7 +379,7 @@ This is a convention of mathematical language, not a rule of logic. Some books w
 Part (a) uses the definition from the condition to the term; parts (b) and (c) use it from the term to the condition. A definition read only as an "if" would permit (a) and nothing else.
 
 ::: {.warning}
-The convention is for **definitions only**. In a theorem, "if" means "if", one direction. A familiar theorem of calculus, proved in Chapter 17, says: if \( f \) is differentiable at \( a \), then \( f \) is continuous at \( a \). Its converse is false. The function \( f(x) = \abs{x} \) is continuous at \( 0 \), but it is not differentiable there, since its graph has a corner: the difference quotient \( \abs{h}/h \) is \( 1 \) for \( h > 0 \) and \( -1 \) for \( h < 0 \). Reading a theorem's "if" as "iff" means proving its converse without a proof, which is the error of Argument B in Section 1.1.
+The convention is for **definitions only**. In a theorem, "if" means "if", one direction. A familiar theorem of calculus, proved in Chapter 17, says: if \( f \) is differentiable at \( a \), then \( f \) is continuous at \( a \). Its converse is false. The function \( f(x) = \abs{x} \) is continuous at \( 0 \), but it is not differentiable there, since its graph has a corner: the quotient \( \abs{h}/h \) is \( 1 \) for \( h > 0 \) and \( -1 \) for \( h < 0 \). Reading a theorem's "if" as "iff" means proving its converse without a proof, which is the error of Argument B in Section 1.1.
 :::
 
 ## Chains of equivalences
@@ -419,7 +426,7 @@ $\begin{nd}
 Now replace \( P \), \( Q \), \( R \) throughout by \( Q \), \( R \), \( P \) respectively. The premises \( P \to Q \), \( Q \to R \), \( R \to P \) become \( Q \to R \), \( R \to P \), \( P \to Q \), the same three statements in a different order, and every line remains justified by the same rule. So the renamed derivation derives \( Q \leftrightarrow R \) from the same premises. Rotating once more gives \( R \leftrightarrow P \). This proves the proposition.
 :::
 
-In a cycle every condition can reach every other along the arrows, and four or more conditions work the same way.
+In a cycle every condition reaches every other along the arrows; longer cycles work the same way.
 
 ::: {.warning}
 Two arrows back and forth are not a cycle through three conditions. Proving (a) \( \Rightarrow \) (b) and (b) \( \Rightarrow \) (a) shows that (a) and (b) are equivalent and says nothing about (c): no arrow enters or leaves it. For a real number \( x \), take (a) "\( x > 0 \)", (b) "\( 2x > 0 \)" and (c) "\( x > 1 \)". Both arrows between (a) and (b) are true, and (c) is not equivalent to them: \( x = \frac{1}{2} \) satisfies (a) and (b) but not (c). Every condition in the list must lie on the cycle.

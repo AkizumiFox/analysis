@@ -26,7 +26,7 @@ Look at its shape. The box opens with the assumption \( \neg P \), where \( P \)
 
 ## Where the rules so far stop short
 
-The second argument is not a curiosity. Three times already in this chapter, a derivation has stopped exactly where it would need to take a negation out.
+The second argument is not a curiosity. Three times already in this chapter a derivation has stopped short in the same way: it reached a negation where the goal was not one.
 
 1. Section 2.2 warned against the argument "suppose \( x \) is not positive; …; hence \( x \) is positive". The box opens with \( \neg(x > 0) \) and reaches \( \bot \), so \( \rulename{\neg I} \) gives \( \neg\neg(x > 0) \), and no rule so far gets from there to \( x > 0 \).
 2. In @exr-derived-rules-c1, the premises \( P \to Q \) and \( \neg P \to R \) led to \( \neg(\neg Q \wedge \neg R) \), "not both \( Q \) and \( R \) fail", and not to \( Q \vee R \).
@@ -98,7 +98,7 @@ We are **stuck** at a gap when the goal-directed moves give nothing (the goal is
 
 *When stuck, assume the negation of the goal, and hunt for a clash.*
 
-The move is a last resort, not a first one. Section 2.6 explains why it never does harm and still comes last. The five derivations below each reach the moment of being stuck, and each Idea says where.
+The move is a last resort, not a first one. Section 2.6 explains why it never does harm and still comes last. Four of the five derivations below reach the moment of being stuck, and their Ideas say where; the first shows the rule at its smallest.
 
 ## Five derivations with the new rule
 
@@ -274,7 +274,7 @@ For all statements \( P \) and \( Q \), \( \vdash ((P \to Q) \to P) \to P \).
 ::: {.idea}
 The goal is an implication, so we open a box on \( (P \to Q) \to P \) with the goal \( P \), a letter. The only line that can produce \( P \) is the assumption itself, by \( \rulename{{\to}E} \), once we have its hypothesis \( P \to Q \). So \( P \to Q \) becomes a subgoal, and the goal-directed move opens a box on \( P \) with the goal \( Q \). There the moves stall: the resources are \( (P \to Q) \to P \) and \( P \), and neither says anything about \( Q \). What the stalled gap lacks is a clash, which \( \rulename{\bot E} \) would turn into \( Q \).
 
-Now the new move. Go back to the outer goal \( P \), where we were stuck, and assume its negation, \( \neg P \). That is exactly what the stalled gap lacked: inside the box of \( P \), the pair \( P \), \( \neg P \) gives \( \bot \), and \( \rulename{\bot E} \) gives \( Q \). Then \( P \to Q \), then \( P \) by \( \rulename{{\to}E} \), which clashes with \( \neg P \).
+We are stuck, so the new move applies, but where? Assuming \( \neg Q \) at the stalled gap gives nothing new: a clash with \( \neg Q \) needs \( Q \), the stalled goal itself. So apply the move one level out, to the goal \( P \), and assume \( \neg P \). That is exactly what the stalled gap lacked: inside the box of \( P \), the pair \( P \), \( \neg P \) gives \( \bot \), and \( \rulename{\bot E} \) gives \( Q \). Then \( P \to Q \), then \( P \) by \( \rulename{{\to}E} \), which clashes with \( \neg P \).
 :::
 
 ::: {.proof}
@@ -306,7 +306,7 @@ $\begin{nd}
 The derivation has no premises, and \( \rulename{RAA} \) enters at line 9. This proves the proposition.
 :::
 
-The assumption \( \neg P \) of line 2 is used twice: at line 4 it makes the innermost box contradictory, and at line 8 it clashes with the \( P \) that line 7 obtained. Notice where the new box went: around the stalled box, not inside it. The move "assume the negation of the goal" was applied to the goal \( P \) one level out, because that was the goal at which we were stuck and it gave the inner gap the line it lacked. Peirce's law contains no \( \neg \), yet our derivation uses \( \rulename{RAA} \): the classical rule is about more than negation. (That every derivation of it must use \( \rulename{RAA} \), or one of the two rules this section shows equivalent to it, is true; we do not prove it.)
+The assumption \( \neg P \) of line 2 is used twice: at line 4 it makes the innermost box contradictory, and at line 8 it clashes with the \( P \) that line 7 obtained. Notice where the new box went: around the stalled box, not inside it. An assumption made one level out is available in every gap inside its box, and so it could give the stalled gap the line it lacked. Peirce's law contains no \( \neg \), yet our derivation uses \( \rulename{RAA} \): the classical rule is about more than negation. (That every derivation of it must use \( \rulename{RAA} \), or one of the two rules this section shows equivalent to it, is true; we do not prove it.)
 
 ## De Morgan's laws
 
@@ -628,7 +628,7 @@ An \( \rulename{RAA} \) box on \( \neg\varphi \) whose assumption is used **only
 :::
 
 ::: {.warning}
-Not every "proof by contradiction" is \( \rulename{RAA} \). Calling the proof of @thm-sqrt2-irrational an \( \rulename{RAA} \) is a mislabelling: its box opens with \( r^2 = 2 \), not with a negation, and it concludes \( r^2 \ne 2 \), which \( \rulename{\neg I} \) writes. The difference matters when you count classical steps: that proof has none.
+Not every "proof by contradiction" is \( \rulename{RAA} \). Calling the proof of @thm-sqrt2-irrational an \( \rulename{RAA} \) is a mislabeling: its box opens with \( r^2 = 2 \), not with a negation, and it concludes \( r^2 \ne 2 \), which \( \rulename{\neg I} \) writes. The difference matters when you count classical steps: the box of that proof closes by \( \rulename{\neg I} \) and contributes none.
 :::
 
 ## What the rules sound like

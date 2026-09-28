@@ -1,4 +1,4 @@
-"""exm-unit-interval-tfae (Ch 1, Section 1.5): 0 < x < 1, x^2 < x, (x > 0 and 1/x > 1) agree."""
+"""exm-unit-interval-tfae (Ch 2, Section 2.4): 0 < x < 1, x^2 < x, (x > 0 and 1/x > 1) agree."""
 from fractions import Fraction as F
 
 QUOTED = {"interval": (0, 1)}

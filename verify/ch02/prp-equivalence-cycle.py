@@ -1,4 +1,4 @@
-"""prp-equivalence-cycle (Ch 1, Section 1.5) and the two-arrow warning after it:
+"""prp-equivalence-cycle (Ch 2, Section 2.4) and the two-arrow warning after it:
 (a) x > 0, (b) 2x > 0, (c) x > 1; x = 1/2 satisfies (a), (b) but not (c)."""
 from fractions import Fraction as F
 

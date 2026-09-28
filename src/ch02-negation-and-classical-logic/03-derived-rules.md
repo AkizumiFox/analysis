@@ -114,18 +114,18 @@ $\begin{nd}[schema]
 ```
 :::
 
-In words: a proved sequent is a new rule. Its premises become the lines the rule cites, its conclusion becomes the line it writes, and its letters become the metavariables of a schema, exactly as in @def-rule-schema. Read the definition clause by clause.
+In words: a proved sequent is a new rule. Its premises become the cited lines, its conclusion the line written, and its letters the metavariables of a schema (@def-rule-schema). Read the definition clause by clause.
 
 1. **"Already derived."** The sequent must have been derived **before** the line that uses it: earlier in the book, and never inside its own derivation. A derivation that used a sequent to derive that same sequent would prove nothing.
 2. **"Replace each letter … the same statement for every occurrence."** The letters of a derived sequent stood for arbitrary statements all along (@def-derivable), so they may be replaced by any statements, provided the replacement is **uniform**. From \( (A \wedge B) \to C \) and \( \neg C \), the rule \( \rulename{MT} \) gives \( \neg(A \wedge B) \), with \( \varphi \) replaced by \( A \wedge B \) and \( \psi \) by \( C \). Chapter 3 makes this replacement exact, under the name substitution.
 3. **"Available at line \( k \)."** The scope rule of @def-derivation still governs every citation. A derived rule may not reach into a closed box, just as a primitive rule may not.
 4. **"The resulting instance of \( \psi \)."** The rule writes the conclusion, with the same replacement, and nothing else. The derived rule does not open or close any box of the derivation that uses it.
 
-We give the derived rules of this section short tags: \( \rulename{MT} \) for @prp-modus-tollens, \( \rulename{CP} \) for @prp-contrapositive, and, once it is proved below, \( \rulename{DS} \) for @prp-disjunctive-syllogism. Every other sequent derived in the book is also a derived rule; it is cited by its name or label, since it has no tag.
+We give the derived rules of this section short tags: \( \rulename{MT} \) for @prp-modus-tollens, \( \rulename{CP} \) for @prp-contrapositive, and, once it is proved below, \( \rulename{DS} \) for @prp-disjunctive-syllogism. Every other derived sequent is a derived rule too, cited by its name: the five lines written out in @exm-vacuous-square, for instance, are now one line citing @prp-vacuous-implication.
 
 **Convenience, not power.** A derived-rule line abbreviates a stretch of derivation that we could write out in full. To expand it, repeat each cited line by (D3) of @def-derivation, then copy the derivation of the sequent below the repetitions, with its letters replaced, its premises replaced by the repetitions, and its line numbers shifted. Every citation inside the copy points inside the copy or to a repetition, all in the current box, so every citation is available. The copy's boxes close before its last line, which is the instance of \( \psi \). If the copy itself uses derived rules, expand those lines in the same way; this stops, because each derivation cites only results proved before it. So whatever can be derived with derived rules can be derived with the primitive rules alone.
 
-The degenerate case is a sequent with nothing done to its premise, \( P \vdash P \), whose derivation is the single premise line (@exm-derivations): as a derived rule it copies an available line, which repetition already does. The first use with content is modus tollens proved a second time, with \( \rulename{CP} \) as a rule. The premise \( P \to Q \) invites \( \rulename{CP} \), and its conclusion \( \neg Q \to \neg P \) is an implication whose hypothesis is the other premise.
+The degenerate case is a sequent with nothing done to its premise, \( P \vdash P \), whose derivation is the single premise line (part (a) of @exm-derivations): as a derived rule it copies an available line, which repetition already does. The first use with content is modus tollens proved a second time, with \( \rulename{CP} \) as a rule. The premise \( P \to Q \) invites \( \rulename{CP} \), and its conclusion \( \neg Q \to \neg P \) is an implication whose hypothesis is the other premise.
 
 ```{=latex}
 \begin{center}
@@ -189,7 +189,10 @@ The rule as stated refutes the **left** disjunct. To refute the right one, first
 ::: {#exm-derived-rules-in-use}
 [Derived rules in use]
 
-(a) Show that \( P \to Q, \; Q \to R, \; \neg R \vdash \neg P \), and then write the derivation out with primitive rules only. (b) Show that \( P \vee Q, \; \neg P, \; Q \to R \vdash R \).
+::: {.enumerate options="label=(\alph*)"}
+1. Show that \( P \to Q, \; Q \to R, \; \neg R \vdash \neg P \), and then write the derivation out with primitive rules only.
+2. Show that \( P \vee Q, \; \neg P, \; Q \to R \vdash R \).
+:::
 :::
 
 ::: {.solution}
@@ -276,9 +279,9 @@ Let \( x \) be a real number with \( x^2 \le 4 \). Use the implication "if \( x 
 Take \( P \): "\( x > 2 \)" and \( Q \): "\( x^2 > 4 \)". The implication is \( P \to Q \). (It holds because \( x > 2 > 0 \) gives \( x^2 = x \cdot x > 2x > 4 \).) The hypothesis \( x^2 \le 4 \) is \( \neg Q \), since for real numbers \( x^2 \le 4 \) and \( x^2 > 4 \) are exact negations of each other. By \( \rulename{MT} \) (@prp-modus-tollens), \( \neg P \), that is, \( \neg(x > 2) \), which is \( x \le 2 \).
 :::
 
-The same step settles the card most people leave on the table in @exm-wason-selection (Section 1.4): the cards show \( 6 \), \( 7 \), red and green, and the claim is "if a card shows an even number, its other side is red". For the green card, let \( E \) be "this card's number is even" and \( R \) "its colour side is red". The claim, for this card, is \( E \to R \). The card shows green, so \( \neg R \). If the claim holds, \( \rulename{MT} \) gives \( \neg E \): the hidden number must be odd. Turning the card tests exactly that line: an even number there would give \( E \), and with \( \neg R \) and \( E \to R \), \( \rulename{{\to}E} \) and \( \rulename{\neg E} \) would reach \( \bot \). The red card offers only \( R \), and from \( E \to R \) and \( R \) no rule gives anything about \( E \); that was Section 1.4's affirming the consequent. So the green card must be turned and the red one need not be.
+The same step settles the card most people leave on the table in @exm-wason-selection (Section 1.4): the cards show \( 6 \), \( 7 \), red and green, and the claim is "if a card shows an even number on one side, then its other side is red". For the green card, let \( E \) be "this card's number is even" and \( R \) "its color side is red". The claim, for this card, is \( E \to R \). The card shows green, so \( \neg R \). If the claim holds, \( \rulename{MT} \) gives \( \neg E \): the hidden number must be odd. Turning the card tests exactly that line: an even number there would give \( E \), and with \( \neg R \) and \( E \to R \), \( \rulename{{\to}E} \) and \( \rulename{\neg E} \) would reach \( \bot \). The red card offers only \( R \), and from \( E \to R \) and \( R \) no rule gives anything about \( E \); that was Section 1.4's affirming the consequent. So the green card must be turned and the red one need not be.
 
-Modus tollens is the step people skip. \( \rulename{CP} \) turns the claim into its contrapositive \( \neg R \to \neg E \), "a card whose colour is not red has an odd number", which carries the claim's content to the green card; Section 2.5 derives the passage back, so the two say the same. The converse \( R \to E \), "a red card has an even number", is a different claim, and the card rule never made it.
+Modus tollens is the step people skip. \( \rulename{CP} \) turns the claim into its contrapositive \( \neg R \to \neg E \), "a card whose color is not red has an odd number", which carries the claim's content to the green card; Section 2.5 derives the passage back, so the two say the same. The converse \( R \to E \), "a red card has an even number", is a different claim, and the card rule never made it.
 
 ## How this rule looks in a mathematical proof
 
@@ -601,7 +604,7 @@ Yes: a line "\( \neg P \), \( \rulename{MT} \) 1, 2" inside the box of \( \neg Q
 :::
 
 ::: {#exr-derived-rules-c3}
-[C3: Exit check: labelling a proof]
+[C3: Exit check: labeling a proof]
 
 Here is a proof that for an integer \( n \), if \( n^2 \) is odd, then \( n \) is odd.
 
@@ -655,7 +658,7 @@ The computation is right: \( (2k)^2 = 4k^2 = 2(2k^2) \), and \( 2k^2 \) is an in
 - 2: identifies \( \rulename{DS} \) on "every integer is even or odd", naming "even" as the refuted side.
 - 1: names the closing \( \rulename{{\to}I} \).
 
-Fatal errors (0 for the step): calling the "not even" step RAA or proof by contradiction in the sense of Section 2.5 (it concludes a negation from a box on the unnegated statement, which is \( \rulename{\neg I} \)); applying \( \rulename{CP} \) to the converse, "if \( n^2 \) is even, then \( n \) is even".
+Fatal errors (0 for the step): naming anything but \( \rulename{\neg I} \) for the "not even" step (it concludes a negation from a box on the unnegated statement); applying \( \rulename{CP} \) to the converse, "if \( n^2 \) is even, then \( n \) is even".
 :::
 
 <!-- dependency ledger
@@ -664,7 +667,7 @@ prp-contrapositive (claim): no derivation of the converse with the rules so far 
 def-derived-rule (claim): pasting a derivation (repetitions, shifted line numbers) keeps every citation available; iterated expansion terminates | argued inline in the paragraph after the definition, from def-derivation's scope rule and (D3)
 def-derived-rule (claim): letters of a derived sequent may be replaced uniformly by any statements | def-derivable and def-rule-schema (cited); made exact in ch03 (substitution, prose pointer)
 exm-modus-tollens-instance (example): x > 2 implies x^2 > 4; x^2 <= 4 is the negation of x^2 > 4; x <= 2 is the negation of x > 2 | school algebra, shown inline
-exm-modus-tollens-instance (example): (the green card) a card's colour side has one colour, so green is not red | stated in the paragraph; exm-wason-selection (cited)
+exm-modus-tollens-instance (example): (the green card) a card's color side has one color, so green is not red | stated in the paragraph; exm-wason-selection (cited)
 exm-modus-tollens-instance (example): the passage from the contrapositive back to the claim | ch02 s05 prp-contrapositive-converse (prose pointer, later section of this chapter; nothing here depends on it)
 exm-square-even-via-contrapositive (example): (E1)-(E3) and the parity computation | school facts stated in Section 2.1 (thm-square-even-implies-even)
 exr-derived-rules-b1 (solution): -1 < 0; x^2 = 1 gives x = 1 or x = -1 | school algebra; the second is supplied by the item

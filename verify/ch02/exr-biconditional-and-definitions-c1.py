@@ -1,4 +1,4 @@
-"""exr-biconditional-and-definitions-c1 (Ch 1, Section 1.5): 6 | n, (2 | n and 3 | n), 6 | n^2
+"""exr-biconditional-and-definitions-c1 (Ch 2, Section 2.4): 6 | n, (2 | n and 3 | n), 6 | n^2
 agree; 36k^2 = 6(6k^2); b = 2c+1 gives 3b = 6c + 3 = 2(3c+1)+1."""
 QUOTED = {}
 

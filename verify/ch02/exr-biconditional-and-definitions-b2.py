@@ -1,4 +1,4 @@
-"""exr-biconditional-and-definitions-b2 (Ch 1, Section 1.5): n even iff n + 3 odd;
+"""exr-biconditional-and-definitions-b2 (Ch 2, Section 2.4): n even iff n + 3 odd;
 2k + 3 = 2(k+1) + 1; 2j + 1 - 3 = 2(j - 1)."""
 QUOTED = {}
 

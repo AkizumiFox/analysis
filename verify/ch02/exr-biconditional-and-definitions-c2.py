@@ -1,4 +1,4 @@
-"""exr-biconditional-and-definitions-c2 (Ch 1, Section 1.5): with y >= 0 only, (<=) survives,
+"""exr-biconditional-and-definitions-c2 (Ch 2, Section 2.4): with y >= 0 only, (<=) survives,
 (=>) fails at x = -2, y = 1; |x| <= |y| iff x^2 <= y^2 for all reals."""
 from fractions import Fraction as F
 

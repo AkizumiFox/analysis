@@ -1,8 +1,8 @@
-"""exr-finding-derivations-c2 (Ch 1 s07): the rows quoted in (b); validity; RAA/LEM not avoidable."""
+"""exr-finding-derivations-c2 (Ch 2 s06): the rows quoted in (b); validity; the 13-line derivation."""
 import sys
 from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from _s06s07_logic import *  # noqa: E402,F401,F403
+from _s05s06_logic import *  # noqa: E402,F401,F403
 P, Q, R, S, N, G = V("P"), V("Q"), V("R"), V("S"), V("N"), V("G")
 
 QUOTED = {"row_PQ_TF": {"P": True, "Q": False, "P->Q": False},

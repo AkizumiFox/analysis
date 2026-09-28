@@ -1,4 +1,4 @@
-"""exr-biconditional-and-definitions-a1 (Ch 1, Section 1.5): x^2 = x iff x in {0, 1} (x >= 0);
+"""exr-biconditional-and-definitions-a1 (Ch 2, Section 2.4): x^2 = x iff x in {0, 1} (x >= 0);
 10 = 2*5; x = -2 has x^2 = 4 > 1 and x < 1."""
 from fractions import Fraction as F
 

@@ -93,3 +93,6 @@ underivable
 schemas
 subgoal
 subgoals
+unnegated
+disjuncts
+metavariables
