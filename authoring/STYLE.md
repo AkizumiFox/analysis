@@ -13,7 +13,7 @@ The method comes from the kwok-proof skill (`/home/akizumi/coding/kw/skill/kwok-
 **Hard rules**
 - **Nobody is named.** The book never names, quotes or alludes to the lecturer the skill was distilled from. It uses his method silently. Never write "as X would say", course weeks or theorem numbers from his notes.
 - **No copying.** The reference books (converted to Markdown under `~/coding/analysis/converted/`, listed in `blueprint/sources.yaml`) are copyrighted. You may use them to check which topics exist and whether a statement is true. Do not paraphrase their prose or copy their examples or exercises. Standard theorems are common property, but the explanation, the examples and the exercises must be our own. `blueprint/originality.py <chapter>` checks this; run it before handing a chapter back.
-- **No forward references in proofs.** A proof may cite only results that appear **earlier** in the book: an earlier section, or earlier in the same section. The blueprint lists what each section may use. A forward pointer in the prose ("we will prove in Chapter 10 that …") is fine. It must never be a step in an argument.
+- **No forward references in proofs.** A proof may cite only results that appear **earlier** in the book: an earlier section, or earlier in the same section. The blueprint lists what each section may use. A forward pointer in the prose ("we will prove in Chapter 11 that …") is fine. It must never be a step in an argument.
 - **Every claim is true.** Check every computation (with sympy, privately: the book text never mentions software, "sympy confirms" or how a result was verified; write a by-hand check the reader can follow instead), and state every hypothesis (non-empty, bounded, closed, compact, complete, σ-finite, 1 ≤ p < ∞, …). If you are unsure, compute it in a sidecar script (§9) or leave a `TODO(verify)` comment. Never guess.
 
 ---
@@ -156,7 +156,7 @@ Some results are worth stating and proving and yet nobody is obliged to read the
 
 `.optional` goes on the statement's div, beside its id. Both editions then print a marker on the title line — *Optional: nothing later depends on this.* — and the reader may skip the block, its Idea and its proof without wondering what they lost.
 
-**What it buys.** The reading paths (`tools/reading_path.py`) treat an optional result's citations as context rather than prerequisites. Nothing requires the result, so nothing it cites can be required through it, and it puts no section on anybody's path. That is the point: `thm-adjoint-vs-dual`, a two-line verification that the adjoint is the dual map read through Riesz, put two sections of Chapter 5 and one of Chapter 1 onto seven of the ten reading paths. Marked optional, it puts nothing on any of them, and the label stays in the book.
+**What it buys.** The reading paths (`tools/reading_path.py`) treat an optional result's citations as context rather than prerequisites. Nothing requires the result, so nothing it cites can be required through it, and it puts no section on anybody's path. That is the point: `thm-adjoint-vs-dual`, a two-line verification that the adjoint is the dual map read through Riesz, put two sections of Chapter 6 and one of Chapter 1 onto seven of the ten reading paths. Marked optional, it puts nothing on any of them, and the label stays in the book.
 
 **The invariant.** *Nothing anywhere may be proved from an optional result.* No proof, proof idea, claim or written solution may cite one — in the whole book, not just later in the section. `tools/check_optional.py` checks it and `./build.py check` fails on it, naming the citing sites:
 
@@ -241,7 +241,7 @@ The chapter's **exit checks** are C items titled `[C1: Exit check: …]`, and th
 - **Voice.** "We" for the author and reader together; "you" sparingly, for direct advice. Median sentence 12–18 words. Paragraphs of 1–4 sentences. Vary rhythm; no walls of text.
 - **Emphasis.** Bold is for defined terms and load-bearing small words, italics for slogans and light emphasis. No exclamation marks, and no "Note that" at the start of every other sentence.
 - **Names.** Name results by content ("the Bolzano–Weierstrass Theorem"), with `@label`. Titles of named theorems match exactly so the dependency graph picks up mentions.
-- **Promises.** Every forward promise ("we will see in @sec…" or "in Chapter 9") must be paid off. A drafter reports each promise it opens and each it pays (with the paying label); the coordinator enters them in `authoring/STATUS.md`, and `tools/promises.py` reconciles the table with the text. Never promise what you have not checked the target chapter's blueprint will deliver.
+- **Promises.** Every forward promise ("we will see in @sec…" or "in Chapter 10") must be paid off. A drafter reports each promise it opens and each it pays (with the paying label); the coordinator enters them in `authoring/STATUS.md`, and `tools/promises.py` reconciles the table with the text. Never promise what you have not checked the target chapter's blueprint will deliver.
 - **Spelling.** American spelling: "normalize", "color", "behavior", "center". Mathematical names keep their accents (Gershgorin, Schur, Cauchy–Schwarz with an en dash).
 - **Math delimiters.** `\( … \)` inline and `\[ … \]` display, never `$` (except inside TikZ and inside `\tag{$\ast$}`). Numbered equations take `{#eq-slug}` **on the same line as the closing `\]`, with no space** (`\]{#eq-normal-equations}`), and are cited with `@eq-slug`; on its own line, or after a blank line, the label is just text.
 - **Relation symbols are typeset, never plain characters.** Write `\( \Rightarrow \)`, `\( \subseteq \)`, `\( \in \)`, `\( \le \)`, not the unicode characters — including proof-direction tags `\( (\Rightarrow) \)` and chains such as `(a) \( \Rightarrow \) (b)`. (An arrow used rhetorically, as in "abstract space → write down a matrix", is ordinary prose and stays plain, as does an environment title such as `[The 2 × 2 puzzle]`.)
@@ -285,20 +285,20 @@ Every non-trivial computation and every chosen constant (N, δ, r, a bound, a nu
 
 ### The dependency ledger
 
-Every section file ends with a **dependency ledger**: an HTML comment, which Pandoc passes through to the web page as an invisible comment and drops from the PDF, so the reader never sees it. It lists every fact a proof, idea, claim or solution in the section **uses without an `@ref`**: an arithmetic or order fact, a property of ℕ or ℤ, a fact from the linear-algebra companion, a standard identity, "by induction" before Chapter 4. For each it says where the fact comes from.
+Every section file ends with a **dependency ledger**: an HTML comment, which Pandoc passes through to the web page as an invisible comment and drops from the PDF, so the reader never sees it. It lists every fact a proof, idea, claim or solution in the section **uses without an `@ref`**: an arithmetic or order fact, a property of ℕ or ℤ, a fact from the linear-algebra companion, a standard identity, "by induction" before Chapter 5. For each it says where the fact comes from.
 
 ```markdown
 <!-- dependency ledger
 lem-integer-part (proof): every non-empty set of integers bounded above has a maximum | ch06 (promised; STATUS)
 thm-archimedean (proof): n + 1 > n for n in N | ax-ordered-field (O1), recalled in prose
-exr-archimedean-properties-c1 (solution): 2^n >= n + 1 | proved inline by induction; Ch 6 not yet available -> flagged
+exr-archimedean-properties-c1 (solution): 2^n >= n + 1 | proved inline by induction; Ch 7 not yet available -> flagged
 none: (write this line alone if the section uses nothing without an @ref)
 -->
 ```
 
 - **Format:** the first line is exactly `<!-- dependency ledger`; then one line per fact, `<label> (<kind>): <fact> | <source>`; the last line is `-->`. The kind is `proof`, `idea`, `claim`, `solution` or `example`. The source is an earlier label, `chNN (promised)` for a fact owed by an earlier chapter that is not yet written, `companion ch N` for linear algebra used without an `@la:` citation, or `inline` if the section proves it on the spot.
 - **What it is for.** Referee B checks it against what each proof actually uses, and the seam referee checks that every `chNN (promised)` source is in STATUS's promise table. A fact whose source is a *later* chapter is a forward dependency: fix the proof, do not ledger it.
-- **Keep it short and honest.** Standard facts about the ordered field ℝ after Chapter 10 need no line. Anything the reader could reasonably ask "where was that proved?" about does.
+- **Keep it short and honest.** Standard facts about the ordered field ℝ after Chapter 11 need no line. Anything the reader could reasonably ask "where was that proved?" about does.
 
 ### Meta-claims
 
@@ -336,7 +336,7 @@ These come from the planning record (`authoring/design/decisions.md`, `curriculu
 - **The spiral is written out.** When a concept returns at a higher stage (compactness on ℝ, then in a metric space, then weakly), the opening frame of the section recalls the earlier version with `@label` and says in one sentence what changes and what survives. The spiral table in `curriculum.md` lists the returns.
 - **Motivating problems come first.** Each chapter's `index.md` names the concrete problem that forces the chapter's main abstraction. A section never introduces a notion without saying what problem it answers (§3, step 2).
 - **Proof verification is practised.** At least one exercise per chapter (usually a C item) gives a flawed proof and asks for the exact line that fails and the reason; at least one such argument per chapter has a **true** conclusion (§11.3). In Part 0 the reason names the natural-deduction rule broken; after Part 0 it names the missing hypothesis or the illegal step.
-- **Self-explanation prompts.** For the three or four hardest proofs of a chapter, the Idea ends with a prompt such as "*Before reading on: where will compactness be used?*" or "*Self-explain lines 3–5.*" (at most one per proof). From Chapter 5 on they remind the reader of a trained habit (§11.1).
+- **Self-explanation prompts.** For the three or four hardest proofs of a chapter, the Idea ends with a prompt such as "*Before reading on: where will compactness be used?*" or "*Self-explain lines 3–5.*" (at most one per proof). From Chapter 6 on they remind the reader of a trained habit (§11.1).
 - **Part 0's rule tags.** In Part 0 only, proofs may annotate steps with the natural-deduction rule in small caps in brackets (e.g. `[∀I]`, `[∃E]`). Later Parts do not, but the "what is not allowed" catalogue of Part 0 is cited (`@...`) when a warning concerns one of its errors.
 - **Choice and non-constructive steps are flagged in prose.** Where a proof uses the axiom of choice (countable unions, Vitali, Hahn–Banach, Tychonoff) or a genuinely non-constructive step discussed in the excluded-middle section, one clause says so. Do not dwell on it.
 - **The companion book.** Linear algebra is never re-proved. It is cited with `@la:<label>`, the label as it stands in the linear-algebra book (e.g. `@la:thm-spectral-real`; the registry is `../linear-algebra/_build/crossref_labels.json`): in running text `@la:…` prints "Linear Algebra, Theorem 12.4" and links to it with a preview; in brackets, `[@la:…]` prints the short form "[LA, Theorem 12.4]". The config's `external-books` sets this up, and `./build.py check` fails on a label the companion does not have. An `@la:` citation is not a dependency inside this book: it never counts as forward and is not ledgered. When the companion is not built on the machine, the build prints "Linear Algebra, <label>" and check only warns; build it (`./build.py html` in `../linear-algebra`) before checking numbers. For a whole chapter with no single result to point at, the prose form "the linear-algebra companion, Chapter N" is still right.
@@ -345,7 +345,7 @@ These come from the planning record (`authoring/design/decisions.md`, `curriculu
 
 The reader of §1 has no teacher, no marker and no classmates. The rules below give them what a course would: training in how to read a proof, feedback they can apply to themselves, review spaced over months, and a checkpoint at the end of each Part. Most rest on controlled studies; the evidence and the sources are in `authoring/design/research-reader.md` (B2–B4, B7). Where a rule sets a count ("at most two per chapter"), the count is binding; the blueprint says where the items go.
 
-**11.1 Self-explanation is taught once.** The book has exactly one training passage on self-explanation, in Chapter 4, `from-derivations-to-prose` (the self-explanation section; the blueprint names it). It takes one short proof and shows it explained twice:
+**11.1 Self-explanation is taught once.** The book has exactly one training passage on self-explanation, in Chapter 5, `from-derivations-to-prose` (the self-explanation section; the blueprint names it). It takes one short proof and shows it explained twice:
 - **well:** each line justified by earlier lines, definitions and named results ("line 4 follows from lines 2 and 3 by @def-…; this is where x > 0 is needed");
 - **badly:** each line paraphrased ("so now we know the thing is small").
 
@@ -382,7 +382,7 @@ The flawed argument is written to be plausible: the error sits in one line, and 
 Rules:
 - The problem text **never names its source chapter**; the solution does, with `@ref`.
 - **Chapters that end in a Gate.** The R group sits in the last section that has an exercise set, just before the Gate section.
-- **Early chapters.** Where the book has too few earlier chapters (Chapter 1 has none; Chapters 2–4 have no earlier Part), R items reach back as far as the book allows, within the chapter if need be, spaced as far apart as possible.
+- **Early chapters.** Where the book has too few earlier chapters (Chapter 1 has none; Chapters 3–5 have no earlier Part), R items reach back as far as the book allows, within the chapter if need be, spaced as far apart as possible.
 - Each item takes at most 20 minutes.
 - Prefer results that later chapters rarely cite in proofs: a heavily cited result is reviewed for free, a dormant one is forgotten.
 
@@ -417,7 +417,7 @@ The Idea that follows **starts from the obstacles such an attempt meets** ("the 
 
 **11.9 The chapter's time line.** Every chapter `index.md` has the **Time** line of §2, after **What you need**. The core track is all of A, one B and one C per section, and the exit checks; the full track is everything. The estimate is a promise to the reader about their week, so round honestly and do not shade it down.
 
-**11.10 Gates.** The last main-line chapter of each Part ends with a **Gate** section: in the 77-chapter numbering, Chapters 7, 20 (its §06 review becomes the Gate), 32, 41, 53, 61 and 77 (§08, the mixed qualifying exam). Renumbering may move these; the Gate follows the Part's last main-line chapter. A Gate section contains, in order:
+**11.10 Gates.** The last main-line chapter of each Part ends with a **Gate** section: in the 78-chapter numbering, Chapters 8, 21 (its §06 review becomes the Gate), 33, 42, 54, 62 and 78 (§08, the mixed qualifying exam). Renumbering may move these; the Gate follows the Part's last main-line chapter. A Gate section contains, in order:
 1. **Instructions:** time allowed (2 hours for Gate 0, 3 hours after), closed book, and the pass line: 70% overall, with no *core* problem at 0.
 2. **Definition drill:** every major definition of the Part, to be stated in symbols, answers folded. This is the Part's one retrieval list.
 3. **The problems** (6 for Gate 0 and Gate III, 8 otherwise), each `::: {#exr-<section-slug>-p1}` titled `[P1]`, or `[P1: core]` for a core problem, followed by a folded solution ending in a marking scheme (§11.6).

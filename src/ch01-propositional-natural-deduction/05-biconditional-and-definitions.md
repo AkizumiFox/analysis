@@ -89,7 +89,7 @@ In words: there is a derivation with premise \( P \) and last line \( Q \), and 
 
 The simplest example is \( P \dashv\vdash P \): the derivation whose only line is the premise \( P \) has last line \( P \), and it serves in both directions. A first real example is \( P \vee Q \dashv\vdash Q \vee P \). The derivation of @exm-disjunction-first-derivations shows \( P \vee Q \vdash Q \vee P \), and since \( P \) and \( Q \) stand for arbitrary statements, the same derivation with the two letters exchanged shows \( Q \vee P \vdash P \vee Q \).
 
-A minimal change turns an equivalence into a one-way street. In @exm-double-negation-introduction we derived \( P \vdash \neg\neg P \). The converse, \( \neg\neg P \vdash P \), would have to remove two negations, and no rule met so far removes one. So we cannot yet claim \( P \dashv\vdash \neg\neg P \): the clause "\( Q \vdash P \)" of the definition is the one missing. (It holds once Section 1.6 adds its rule; that it cannot hold without that rule is true, and Chapter 2 proves it.) Likewise @prp-contrapositive derives \( \neg Q \to \neg P \) from \( P \to Q \), but not yet the reverse.
+A minimal change turns an equivalence into a one-way street. In @exm-double-negation-introduction we derived \( P \vdash \neg\neg P \). The converse, \( \neg\neg P \vdash P \), would have to remove two negations, and no rule met so far removes one. So we cannot yet claim \( P \dashv\vdash \neg\neg P \): the clause "\( Q \vdash P \)" of the definition is the one missing. (It holds once Section 1.6 adds its rule; that it cannot hold without that rule is true, and Chapter 3 proves it.) Likewise @prp-contrapositive derives \( \neg Q \to \neg P \) from \( P \to Q \), but not yet the reverse.
 
 The connective \( \leftrightarrow \) and the relation \( \dashv\vdash \) are two sides of one idea, and the next result makes the link exact. It also says that \( \dashv\vdash \) behaves as an equivalence should.
 
@@ -132,7 +132,7 @@ Here are the equivalences derived so far. Each row of the table gives two derive
 | \( P \leftrightarrow Q \dashv\vdash (P \to Q) \wedge (Q \to P) \) | @prp-iff-two-implications |
 
 ::: {.warning}
-A sequent in one direction is not an equivalence. \( P \wedge Q \vdash P \) holds by \( \rulename{\wedge E} \), but \( P \vdash P \wedge Q \) does not: take \( P \): "\( 2 > 1 \)" and \( Q \): "\( 1 > 2 \)", and the premise is true while the conclusion is false. (Informally, a derivation never leads from true premises to a false conclusion; Chapter 2 proves this.) Before writing \( \dashv\vdash \), check that **both** derivations exist.
+A sequent in one direction is not an equivalence. \( P \wedge Q \vdash P \) holds by \( \rulename{\wedge E} \), but \( P \vdash P \wedge Q \) does not: take \( P \): "\( 2 > 1 \)" and \( Q \): "\( 1 > 2 \)", and the premise is true while the conclusion is false. (Informally, a derivation never leads from true premises to a false conclusion; Chapter 3 proves this.) Before writing \( \dashv\vdash \), check that **both** derivations exist.
 :::
 
 The next derivation adds a row with a negation on each side. It shows \( \rulename{{\leftrightarrow}I} \) and \( \rulename{\neg I} \) working together.
@@ -225,7 +225,7 @@ This proves the theorem \( [\rulename{{\leftrightarrow}I}] \).
 Each hypothesis has a job. The direction \( (\Rightarrow) \) needs \( x \ge 0 \), and fails without it: \( x = -2 \), \( y = 1 \) gives \( x \le y \) but \( x^2 = 4 > 1 = y^2 \). (Its proof also multiplied by \( y \ge 0 \), but there \( y \ge 0 \) already follows from \( y \ge x \ge 0 \).) The direction \( (\Leftarrow) \) used only \( y \ge 0 \), and fails without it: \( x = 1 \), \( y = -2 \) gives \( x^2 = 1 \le 4 = y^2 \) but \( x > y \).
 :::
 
-A payoff comes at once. For \( a \ge 0 \) and \( b \ge 0 \), apply @thm-squares-order to \( x = \sqrt{a} \) and \( y = \sqrt{b} \), which are non-negative with squares \( a \) and \( b \): it says \( \sqrt{a} \le \sqrt{b} \) if and only if \( a \le b \). So taking square roots preserves order, a fact used constantly in estimates. (That square roots of non-negative numbers exist is a school fact here; Chapter 10 proves it from the least upper bound axiom.)
+A payoff comes at once. For \( a \ge 0 \) and \( b \ge 0 \), apply @thm-squares-order to \( x = \sqrt{a} \) and \( y = \sqrt{b} \), which are non-negative with squares \( a \) and \( b \): it says \( \sqrt{a} \le \sqrt{b} \) if and only if \( a \le b \). So taking square roots preserves order, a fact used constantly in estimates. (That square roots of non-negative numbers exist is a school fact here; Chapter 11 proves it from the least upper bound axiom.)
 
 ::: {.check}
 Here is a proof of the statement "for a real number \( x \), \( x^2 = 1 \) if and only if \( x = 1 \) or \( x = -1 \)".
@@ -255,7 +255,7 @@ Grammatically the sentence is an implication: "\( f \) is strictly increasing **
 
 *In a definition, "if" means "if and only if".*
 
-This is a convention of mathematical language, not a rule of logic. Some books write "iff" in definitions, or the symbol \( :\Leftrightarrow \), to be explicit. This book, like most, writes "if" and marks the term being defined in **bold**; the bold type is the signal that the sentence is a definition and its "if" is an "iff". Here is the one definition above used three ways. The words "for all real numbers \( x \) and \( y \)" are a quantifier, whose rules come in Chapter 3; here we use them informally.
+This is a convention of mathematical language, not a rule of logic. Some books write "iff" in definitions, or the symbol \( :\Leftrightarrow \), to be explicit. This book, like most, writes "if" and marks the term being defined in **bold**; the bold type is the signal that the sentence is a definition and its "if" is an "iff". Here is the one definition above used three ways. The words "for all real numbers \( x \) and \( y \)" are a quantifier, whose rules come in Chapter 4; here we use them informally.
 
 ::: {#exm-strictly-increasing-both-ways}
 [A definition used in both directions]
@@ -278,7 +278,7 @@ This is a convention of mathematical language, not a rule of logic. Some books w
 Part (a) shows that something **is** an instance of the term, which uses the definition from the condition to the term. Parts (b) and (c) **use** the term, from the term to the condition. A definition read only as an "if" would permit (a) and nothing else; every proof that uses a hypothesis such as "\( g \) is strictly increasing" relies on the other direction.
 
 ::: {.warning}
-The convention is for **definitions only**. In a theorem, "if" means "if", one direction. A familiar theorem of calculus, proved in Chapter 16, says: if \( f \) is differentiable at \( a \), then \( f \) is continuous at \( a \). Its converse is false. The function \( f(x) = \abs{x} \) is continuous at \( 0 \), but it is not differentiable there, since its graph has a corner: the difference quotient \( \abs{h}/h \) is \( 1 \) for \( h > 0 \) and \( -1 \) for \( h < 0 \). Reading a theorem's "if" as "iff" means proving its converse without a proof, which is the error of Argument B in Section 1.1.
+The convention is for **definitions only**. In a theorem, "if" means "if", one direction. A familiar theorem of calculus, proved in Chapter 17, says: if \( f \) is differentiable at \( a \), then \( f \) is continuous at \( a \). Its converse is false. The function \( f(x) = \abs{x} \) is continuous at \( 0 \), but it is not differentiable there, since its graph has a corner: the difference quotient \( \abs{h}/h \) is \( 1 \) for \( h > 0 \) and \( -1 \) for \( h < 0 \). Reading a theorem's "if" as "iff" means proving its converse without a proof, which is the error of Argument B in Section 1.1.
 :::
 
 ## Chains of equivalences
@@ -512,12 +512,12 @@ Any other cycle through the three conditions earns full marks if each of its arr
 prp-provable-equivalence-basics (proof): copying a derivation into a new place (inside extra boxes, numbers shifted) keeps every citation available | inline (the "observation" in the proof), from def-derivation's scope rule and (D3)
 prp-provable-equivalence-basics (proof): a one-line derivation consisting of a premise is a derivation | def-derivation (a premise is a line; the last line lies in no box)
 thm-odd-iff-square-odd (proof): (E1)-(E3); n = 2k gives n^2 = 2(2k^2) | school facts stated in Section 1.4 (ch01 blueprint, Allowed prerequisites); computation inline
-thm-squares-order (proof): multiplying an inequality by a non-negative (positive) number; x <= y or y < x; transitivity of <= and < | school algebra, taken as known; Ch 10 re-proves (prose pointer)
-thm-squares-order (claim): (aftermath) existence of square roots of non-negative reals | school fact, taken as known; Ch 10 proves it (prose pointer); nothing depends on it
-def-provable-equivalence (claim): a derivation never leads from true premises to a false conclusion | forward pointer to ch02 (thm-soundness), flagged in the text as proved there; the warning's example is motivation only
-def-provable-equivalence (claim): not-not-P |- P does not hold without RAA | forward pointer to ch02 (thm-raa-independent, optional there), flagged in prose; nothing depends on it
+thm-squares-order (proof): multiplying an inequality by a non-negative (positive) number; x <= y or y < x; transitivity of <= and < | school algebra, taken as known; Ch 11 re-proves (prose pointer)
+thm-squares-order (claim): (aftermath) existence of square roots of non-negative reals | school fact, taken as known; Ch 11 proves it (prose pointer); nothing depends on it
+def-provable-equivalence (claim): a derivation never leads from true premises to a false conclusion | forward pointer to ch03 (thm-soundness), flagged in the text as proved there; the warning's example is motivation only
+def-provable-equivalence (claim): not-not-P |- P does not hold without RAA | forward pointer to ch03 (thm-raa-independent, optional there), flagged in prose; nothing depends on it
 exm-iff-negations (claim): the converse needs RAA | stated without proof and marked so; nothing depends on it
-exm-strictly-increasing-both-ways (example): 3 > 0; multiplying/adding inequalities; the quantifier "for all x, y" used informally | school algebra; quantifier rules in Ch 3 (prose pointer)
+exm-strictly-increasing-both-ways (example): 3 > 0; multiplying/adding inequalities; the quantifier "for all x, y" used informally | school algebra; quantifier rules in Ch 4 (prose pointer)
 exm-unit-interval-tfae (example): x <= 0 or x > 0; x^2 >= 0; dividing an inequality by x > 0 | school algebra, taken as known
 thm-squares-order (solution): (the quick check after this theorem) a product of reals is zero only if a factor is zero | school algebra, taken as known
 exr-biconditional-and-definitions-a1 (solution): 10 = 2*5; (-2)^2 = 4 > 1 | arithmetic

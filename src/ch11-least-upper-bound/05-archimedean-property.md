@@ -55,7 +55,7 @@ The set \( [1, \infty) \) is inductive, as checked above. Since \( \nN \) is con
 The proof never mentioned a single natural number by name. It found an inductive set containing the property we wanted, and let the definition of \( \nN \) do the rest. That is the whole technique.
 
 ::: {.remark}
-Chapter 6 takes \( \nN \) with induction and well-ordering as its starting point. The set defined here is that same \( \nN \), now located inside \( \nR \); it is also the copy \( 1, 1 + 1, 1 + 1 + 1, \dots \) that every ordered field contains (@exr-ordered-fields-c1), and "\( \nN \) is the smallest inductive set" is exactly the induction principle stated there. From now on we use the familiar arithmetic of \( \nN \), each item proved by induction in Chapter 6: sums and products of natural numbers are natural numbers; if \( n \in \nN \) and \( n \ge 2 \), then \( n - 1 \in \nN \); no natural number lies strictly between \( n \) and \( n + 1 \); and every non-empty subset of \( \nN \) has a least element (**well-ordering**). The integers are \( \nZ \coloneqq \nN \cup \{ 0 \} \cup \{ -n : n \in \nN \} \), and the rationals are \( \nQ \coloneqq \{ m/n : m \in \nZ, \ n \in \nN \} \). We also use, again from Chapter 6, that sums, differences and products of integers are integers. A **positive** integer is a natural number, directly from the definition of \( \nZ \): it is not \( 0 \), and it is not \( -n \) with \( n \in \nN \), since \( -n < 0 \).
+Chapter 7 takes \( \nN \) with induction and well-ordering as its starting point. The set defined here is that same \( \nN \), now located inside \( \nR \); it is also the copy \( 1, 1 + 1, 1 + 1 + 1, \dots \) that every ordered field contains (@exr-ordered-fields-c1), and "\( \nN \) is the smallest inductive set" is exactly the induction principle stated there. From now on we use the familiar arithmetic of \( \nN \), each item proved by induction in Chapter 7: sums and products of natural numbers are natural numbers; if \( n \in \nN \) and \( n \ge 2 \), then \( n - 1 \in \nN \); no natural number lies strictly between \( n \) and \( n + 1 \); and every non-empty subset of \( \nN \) has a least element (**well-ordering**). The integers are \( \nZ \coloneqq \nN \cup \{ 0 \} \cup \{ -n : n \in \nN \} \), and the rationals are \( \nQ \coloneqq \{ m/n : m \in \nZ, \ n \in \nN \} \). We also use, again from Chapter 7, that sums, differences and products of integers are integers. A **positive** integer is a natural number, directly from the definition of \( \nZ \): it is not \( 0 \), and it is not \( -n \) with \( n \in \nN \), since \( -n < 0 \).
 :::
 
 ## The natural numbers are not bounded
@@ -83,7 +83,7 @@ Therefore \( \nN \) is not bounded above. Unwinding the definition (@def-bounded
 Each hypothesis of the axiom was used and named: "non-empty" through \( 1 \in \nN \), "bounded above" through the assumption for contradiction. The inductive property of \( \nN \) supplied the jump \( n \mapsto n + 1 \).
 
 ::: {.remark}
-The contradiction step is \( \rulename{\neg I} \) (@def-rules-negation), not \( \rulename{RAA} \) (@def-rule-raa), the classical rule of proof by contradiction: we assumed "\( \nN \) is bounded above", reached a contradiction, and concluded its negation. The proof does contain a classical step, but it comes after the \( \rulename{\neg I} \), in the proof's last paragraph. Passing from "not every \( n \) satisfies \( n \le x \)" to "some \( n \) satisfies \( n > x \)" is the quantifier law "not all" gives "some not" of Chapter 3, and that law is derived there with \( \rulename{RAA} \).
+The contradiction step is \( \rulename{\neg I} \) (@def-rules-negation), not \( \rulename{RAA} \) (@def-rule-raa), the classical rule of proof by contradiction: we assumed "\( \nN \) is bounded above", reached a contradiction, and concluded its negation. The proof does contain a classical step, but it comes after the \( \rulename{\neg I} \), in the proof's last paragraph. Passing from "not every \( n \) satisfies \( n \le x \)" to "some \( n \) satisfies \( n > x \)" is the quantifier law "not all" gives "some not" of Chapter 4, and that law is derived there with \( \rulename{RAA} \).
 :::
 
 The form we will use most often puts a small number, not a large one, in the role of \( x \).
@@ -102,7 +102,7 @@ Let \( \varepsilon > 0 \). Then \( 1/\varepsilon \) is defined and positive. By 
 
 Read the quantifiers in order. The \( \varepsilon \) is given first and the \( n \) is found afterwards, so **\( n \) depends on \( \varepsilon \)**: the proof chose \( n > 1/\varepsilon \), and a smaller \( \varepsilon \) forces a larger \( n \). Swapping the quantifiers gives a false statement. "There is \( n \in \nN \) such that \( 1/n < \varepsilon \) for every \( \varepsilon > 0 \)" would make \( 1/n \) smaller than every positive number. Since \( 1/n > 0 \) (@exm-naturals-at-least-one), we could take \( \varepsilon = 1/n \) itself and get \( 1/n < 1/n \), which is absurd.
 
-The "moreover" clause says that once one \( n \) works, every later one works too. Chapter 11 turns this "from some point on" into the definition of a limit.
+The "moreover" clause says that once one \( n \) works, every later one works too. Chapter 12 turns this "from some point on" into the definition of a limit.
 
 ::: {.check}
 Find the least \( n \in \nN \) with \( 1/n < 0.003 \). Then do the same for \( \varepsilon = 0.0003 \). What does the comparison say about the dependence of \( n \) on \( \varepsilon \)?
@@ -189,7 +189,7 @@ The Archimedean property is not "obvious", and it is not a consequence of the or
 :::
 
 ::: {.remark}
-The converse fails: an ordered field can be Archimedean without satisfying the axiom. The field \( \nQ \) is one (@exr-archimedean-property-c3), and it fails the axiom by @thm-no-rational-sup-sqrt2. So the Archimedean property is strictly weaker than the axiom. Chapter 20 shows which properties, added to the Archimedean property, bring back the full axiom.
+The converse fails: an ordered field can be Archimedean without satisfying the axiom. The field \( \nQ \) is one (@exr-archimedean-property-c3), and it fails the axiom by @thm-no-rational-sup-sqrt2. So the Archimedean property is strictly weaker than the axiom. Chapter 21 shows which properties, added to the Archimedean property, bring back the full axiom.
 :::
 
 ## Exercises
@@ -381,14 +381,14 @@ Both \( p_1 q_2 \) and \( p_2 q_1 \) have positive leading coefficient. If their
 :::
 
 <!-- dependency ledger
-def-inductive-set (example): N is the intersection of all inductive subsets of R (a set defined from a family of sets) | sets and intersections, ch05 (promised)
+def-inductive-set (example): N is the intersection of all inductive subsets of R (a set defined from a family of sets) | sets and intersections, ch06 (promised)
 exm-naturals-at-least-one (solution): none beyond def-inductive-set and thm-ordered-field-rules | inline
-thm-naturals-unbounded (proof): "not (n <= x for all n)" gives "n > x for some n" | quantifier negation, ch03 (promised); the remark after the proof says so
+thm-naturals-unbounded (proof): "not (n <= x for all n)" gives "n > x for some n" | quantifier negation, ch04 (promised); the remark after the proof says so
 cor-archimedean-epsilon (proof): none | inline
 exm-nonarchimedean-field (example): R(x) is a field; lc(pq) = lc(p) lc(q) | algebra of polynomials and fractions, taken as known and stated in the text
 exm-nonarchimedean-field (example): the natural numbers of R(x) are the constants 1, 2, 3, ... | inline: the constants form an inductive set, and every inductive set contains them (exr-ordered-fields-c1)
 exm-sup-one-minus-reciprocal-finished (solution): 100/101 > 0.99 | arithmetic, shown inline
-exr-archimedean-property-a1 (solution): 3/2 lies strictly between the natural numbers 1 and 2, so it is not in N | arithmetic of N stated in the remark on N, ch06 (promised)
-exr-archimedean-property-c1 (solution): a non-empty set of integers bounded below has a least element (for the ceiling) | well-ordering, ch06 (promised)
+exr-archimedean-property-a1 (solution): 3/2 lies strictly between the natural numbers 1 and 2, so it is not in N | arithmetic of N stated in the remark on N, ch07 (promised)
+exr-archimedean-property-c1 (solution): a non-empty set of integers bounded below has a least element (for the ceiling) | well-ordering, ch07 (promised)
 exr-archimedean-property-c3 (solution): every rational is m/k with m in Z, k in N | definition of Q in the remark on N
 -->

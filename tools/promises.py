@@ -51,7 +51,7 @@ REF = re.compile(r"@([a-z]+-[\w-]+)")
 
 @dataclass(frozen=True)
 class Promise:
-    file: str          # e.g. ch10-least-upper-bound/03-the-axiom.md
+    file: str          # e.g. ch11-least-upper-bound/03-the-axiom.md
     line: int
     chapter: int       # chapter the pointer is written in
     section: str       # "03", or "index"

@@ -52,11 +52,11 @@ These are book-independent. Keep them.
 | `\card{S}` | cardinality |
 | `\ind_{A}` | indicator function 𝟏_A of a set A |
 | `\sup A`, `\inf A`, `\max`, `\min` | supremum and infimum (sup ∅ = −∞ and sup of an unbounded set = +∞ only from Part IV on, where it is announced) |
-| `\abs{x}` | absolute value of a number: defined by cases in Ch 1 (first in §01 C2, displayed in §03; school algebra), formally in Ch 10 (`def-absolute-value`); \( \abs{x - y} \) is the distance from \( x \) to \( y \) |
+| `\abs{x}` | absolute value of a number: defined by cases in Ch 1 (first in §01 C2, displayed in §03; school algebra), formally in Ch 11 (`def-absolute-value`); \( \abs{x - y} \) is the distance from \( x \) to \( y \) |
 | `d \mid n` | d divides n: n = dk for some integer k (first used Ch 1 §05, C1) |
-| `-A \coloneqq \{ -a : a \in A \}` | reflection of a set of numbers (Ch 10); \( \inf A = -\sup(-A) \) |
-| `cA \coloneqq \{ ca : a \in A \}` | scaling of a set of numbers by \( c \in \nR \) (Ch 10) |
-| `A + B \coloneqq \{ a + b : a \in A, \ b \in B \}` | sum of two sets of numbers (Ch 10); later also for subsets of a vector space |
+| `-A \coloneqq \{ -a : a \in A \}` | reflection of a set of numbers (Ch 11); \( \inf A = -\sup(-A) \) |
+| `cA \coloneqq \{ ca : a \in A \}` | scaling of a set of numbers by \( c \in \nR \) (Ch 11) |
+| `A + B \coloneqq \{ a + b : a \in A, \ b \in B \}` | sum of two sets of numbers (Ch 11); later also for subsets of a vector space |
 | `\limsup_{n \to \infty} a_n`, `\liminf` | upper and lower limits |
 | `\floor{x}`, `\ceil{x}` | floor and ceiling |
 | `(a_n)_{n \ge 1}` or `(a_n)` | a sequence (parentheses: ordered); `\{a_n : n \in \nN\}` is its set of values |

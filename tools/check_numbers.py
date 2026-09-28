@@ -34,7 +34,7 @@ executed; `Fraction(p, q)`/`F(p, q)`/`Rational(p, q)` calls are understood):
 The keys of QUOTED are descriptions for the reader of the script and are not checked.
 
     python3 tools/check_numbers.py                  # every chapter under verify/
-    python3 tools/check_numbers.py 10               # only verify/ch10
+    python3 tools/check_numbers.py 11               # only verify/ch11
     python3 tools/check_numbers.py --no-run         # cross-check only, do not run
     python3 tools/check_numbers.py --advisory       # also list blocks with no sidecar
 

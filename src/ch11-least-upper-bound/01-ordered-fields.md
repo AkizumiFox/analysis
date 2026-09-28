@@ -122,7 +122,7 @@ Why state the order axioms with the strict relation \( < \) rather than with \( 
 
 ## The rules for inequalities
 
-Chapter 1 used facts such as \( x^2 \ge 0 \) (in @exm-square-plus-one) and the sign rules for products (in @exm-abs-product-cases) as school algebra. We now prove them from (O1)–(O4) and the field axioms. So nothing earlier was circular: those facts were true, and here is why.
+Chapters 1 and 2 used facts such as \( x^2 \ge 0 \) (in @exm-square-plus-one) and the sign rules for products (in @exm-abs-product-cases) as school algebra. We now prove them from (O1)–(O4) and the field axioms. So nothing earlier was circular: those facts were true, and here is why.
 
 ::: {#thm-ordered-field-rules}
 [Rules for Inequalities]
@@ -238,7 +238,7 @@ Part (d), applied to \( x - a \) in place of \( x \), is the single most used eq
 \quad\iff\quad
 a - r < x < a + r .
 \]{#eq-abs-interval}
-In words: *\( x \) is within distance \( r \) of \( a \) exactly when \( x \) lies in the open interval of radius \( r \) centered at \( a \)*. Here, for \( a \le b \) in \( F \), the **intervals** are \( (a, b) \coloneqq \{ x \in F : a < x < b \} \), \( [a, b] \coloneqq \{ x \in F : a \le x \le b \} \), and \( (a, b] \), \( [a, b) \) similarly; in the degenerate case \( a = b \), the closed interval \( [a, a] = \{ a \} \) is a single point and the other three are empty; \( (a, \infty) \coloneqq \{ x \in F : x > a \} \), and the other unbounded intervals are defined in the same way. The symbol \( \infty \) here is part of the name of a set, not an element of \( F \). From Chapter 11 on, every statement "\( a_n \) is close to \( L \)" is turned into two inequalities by @eq-abs-interval, and back.
+In words: *\( x \) is within distance \( r \) of \( a \) exactly when \( x \) lies in the open interval of radius \( r \) centered at \( a \)*. Here, for \( a \le b \) in \( F \), the **intervals** are \( (a, b) \coloneqq \{ x \in F : a < x < b \} \), \( [a, b] \coloneqq \{ x \in F : a \le x \le b \} \), and \( (a, b] \), \( [a, b) \) similarly; in the degenerate case \( a = b \), the closed interval \( [a, a] = \{ a \} \) is a single point and the other three are empty; \( (a, \infty) \coloneqq \{ x \in F : x > a \} \), and the other unbounded intervals are defined in the same way. The symbol \( \infty \) here is part of the name of a set, not an element of \( F \). From Chapter 12 on, every statement "\( a_n \) is close to \( L \)" is turned into two inequalities by @eq-abs-interval, and back.
 
 ::: {#exm-solve-abs-inequality}
 [Reading an absolute-value inequality as an interval]
@@ -387,7 +387,7 @@ Find all real \( x \) satisfying each inequality. Hence write each solution set 
 3. Deduce that the elements \( 1, 1 + 1, 1 + 1 + 1, \dots \) of an ordered field are all different, so every ordered field contains a copy of \( \nN \) (and in particular is infinite).
 :::
 
-*Hint: for (b), use induction on \( n \) (Chapter 6).*
+*Hint: for (b), use induction on \( n \) (Chapter 7).*
 :::
 
 ::: {.solution}
@@ -419,11 +419,11 @@ For the inequality, put \( m \coloneqq \max\{ \abs{a - c}, \abs{b - d} \} \). By
 :::
 
 <!-- dependency ledger
-exm-ordered-fields-q-r (example): Q with fraction arithmetic and p/q < p'/q' iff pq' < p'q satisfies (F1)-(F9) and (O1)-(O4) | taken as known from the arithmetic of Z; the construction of Q is not in the main line (ch06 (promised) for the integer facts)
+exm-ordered-fields-q-r (example): Q with fraction arithmetic and p/q < p'/q' iff pq' < p'q satisfies (F1)-(F9) and (O1)-(O4) | taken as known from the arithmetic of Z; the construction of Q is not in the main line (ch07 (promised) for the integer facts)
 exm-ordered-fields-q-r (example): R is an ordered field containing Q, N and Z | assumption, stated in the example; completed by ax-least-upper-bound in 03-the-axiom
 lem-field-algebra (proof): the rules of fraction arithmetic (a/b + c/d = (ad + bc)/bd and the like) | inline: derived from (F1)-(F9) as in lem-field-algebra, stated in the sentence after the proof and not written out
-exm-integers-not-a-field (example): no integer m satisfies 2m = 1 | arithmetic of Z, ch06 (promised)
-exr-ordered-fields-a1 (solution): no integer m satisfies 2m = 1 | arithmetic of Z, ch06 (promised)
-exr-ordered-fields-c1 (solution): proof by induction on n, and a second induction starting at m + 1 | induction, ch06 (promised)
+exm-integers-not-a-field (example): no integer m satisfies 2m = 1 | arithmetic of Z, ch07 (promised)
+exr-ordered-fields-a1 (solution): no integer m satisfies 2m = 1 | arithmetic of Z, ch07 (promised)
+exr-ordered-fields-c1 (solution): proof by induction on n, and a second induction starting at m + 1 | induction, ch07 (promised)
 thm-ordered-field-rules (example): C is a field with i^2 = -1 (the non-example of C after the theorem) | school algebra of complex numbers; companion ch 0
 -->

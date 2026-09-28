@@ -40,7 +40,7 @@ The rules for \( \neg \) have the same shapes as rules we already know, with \( 
 | use it, given \( P \) | \( \bot \) by \( \rulename{\neg E} \) | \( \bot \) by \( \rulename{{\to}E} \) |
 
 ::: {.remark}
-Row by row, \( \neg P \) behaves exactly like \( P \to \bot \): "not \( P \)" means "\( P \) leads to contradiction". Some presentations of logic take this as the definition of \( \neg \). This book keeps \( \neg \) as a connective with its own rules, and Chapter 4 returns to the reading \( \neg P \approx P \to \bot \) when it asks what a proof of a negation provides.
+Row by row, \( \neg P \) behaves exactly like \( P \to \bot \): "not \( P \)" means "\( P \) leads to contradiction". Some presentations of logic take this as the definition of \( \neg \). This book keeps \( \neg \) as a connective with its own rules, and Chapter 5 returns to the reading \( \neg P \approx P \to \bot \) when it asks what a proof of a negation provides.
 :::
 
 ::: {.warning}
@@ -265,7 +265,7 @@ The third is a computation: if \( n = 2k + 1 \) for an integer \( k \), then
 \[
 n^2 = 4k^2 + 4k + 1 = 2(2k^2 + 2k) + 1 ,
 \]
-and \( 2k^2 + 2k \) is an integer. Naming the integer \( k \) is a step about "there exists" ("there is a \( k \) with \( n = 2k + 1 \); take one"), and the rules for such steps come in Chapter 3.
+and \( 2k^2 + 2k \) is an integer. Naming the integer \( k \) is a step about "there exists" ("there is a \( k \) with \( n = 2k + 1 \); take one"), and the rules for such steps come in Chapter 4.
 
 ::: {#thm-square-even-implies-even}
 [Even Square, Even Number]
@@ -287,7 +287,7 @@ The theorem is the key to one of the oldest proofs in mathematics. Its shape is 
 
 **(L)** Every rational number can be written as \( p/q \) with \( p \) and \( q \) integers, \( q \ne 0 \), and \( p \) and \( q \) **not both even**.
 
-This holds because a fraction whose numerator and denominator are both even can be reduced by \( 2 \), and the reduction cannot go on for ever, since the denominator shrinks in absolute value each time. Making "cannot go on for ever" precise needs the well-ordering of the natural numbers, which comes in Chapter 6; here we take (L) as known.
+This holds because a fraction whose numerator and denominator are both even can be reduced by \( 2 \), and the reduction cannot go on for ever, since the denominator shrinks in absolute value each time. Making "cannot go on for ever" precise needs the well-ordering of the natural numbers, which comes in Chapter 7; here we take (L) as known.
 
 ::: {#thm-sqrt2-irrational}
 [Irrationality of the Square Root of Two]
@@ -335,9 +335,9 @@ $\begin{nd}
 \end{nd}$
 \end{center}
 ```
-Line 13 is \( r^2 \ne 2 \). Two steps of the proof lie outside the skeleton: choosing \( p \), \( q \) and \( m \), and passing from the arbitrary \( r \) to every rational number. Both are quantifier rules, which come in Chapter 3.
+Line 13 is \( r^2 \ne 2 \). Two steps of the proof lie outside the skeleton: choosing \( p \), \( q \) and \( m \), and passing from the arbitrary \( r \) to every rational number. Both are quantifier rules, which come in Chapter 4.
 
-Notice also what the proof does **not** need: that \( \sqrt{2} \) exists as a real number. The theorem is a statement about rational numbers only. Chapter 10 uses it in exactly this form, as evidence that the rational numbers have a gap where \( \sqrt{2} \) should be.
+Notice also what the proof does **not** need: that \( \sqrt{2} \) exists as a real number. The theorem is a statement about rational numbers only. Chapter 11 uses it in exactly this form, as evidence that the rational numbers have a gap where \( \sqrt{2} \) should be.
 
 ## Vacuous truth
 
@@ -396,7 +396,7 @@ Apply @prp-vacuous-implication with \( P \): "\( x^2 < 0 \)" and \( Q \): "\( x 
 
 Everyday language agrees. A friend says: "if you finish the exercises by Friday, I will buy you lunch". You do not finish them. Whatever your friend does on Friday, the promise has not been broken. *A promise never tested is never broken.*
 
-Vacuous truth is not a curiosity; it is what makes case splits work. The impossible case in the derivation of @prp-disjunctive-syllogism was closed by \( \rulename{\bot E} \), at line 5. When Chapter 2 gives each connective a truth table, the rows of \( \to \) with a false hypothesis are the ones that \( \rulename{\bot E} \) and @prp-vacuous-implication force.
+Vacuous truth is not a curiosity; it is what makes case splits work. The impossible case in the derivation of @prp-disjunctive-syllogism was closed by \( \rulename{\bot E} \), at line 5. When Chapter 3 gives each connective a truth table, the rows of \( \to \) with a false hypothesis are the ones that \( \rulename{\bot E} \) and @prp-vacuous-implication force.
 
 ::: {.warning}
 "True" is not "useful". The statements "if \( x^2 < 0 \), then \( x = 7 \)" and "if \( x^2 < 0 \), then \( x \ne 7 \)" are both true, by @prp-vacuous-implication, and neither says anything about \( 7 \). Likewise "if \( n \) is an even prime greater than \( 2 \), then \( n = 17 \)" is true and empty. When a hypothesis turns out to be impossible, suspect the hypothesis; do not believe the conclusion.
@@ -620,13 +620,13 @@ Here is a "proof" that \( \sqrt{4} \) is irrational, modeled on @thm-sqrt2-irrat
 :::
 
 <!-- dependency ledger
-exm-square-plus-one (example): x^2 >= 0 for real x; a >= b is the negation of a < b (exactly one holds); a != b means not(a = b) | school algebra, taken as known (ch01 blueprint, Allowed prerequisites), stated in prose; Ch 10 re-proves the order facts (prose pointer)
+exm-square-plus-one (example): x^2 >= 0 for real x; a >= b is the negation of a < b (exactly one holds); a != b means not(a = b) | school algebra, taken as known (ch01 blueprint, Allowed prerequisites), stated in prose; Ch 11 re-proves the order facts (prose pointer)
 def-derived-rule (claim): pasting a derivation (repetitions, shifted line numbers) keeps every citation available | argued inline in the paraphrase, from def-derivation's scope rule
 exm-modus-tollens-instance (example): x > 2 implies x^2 > 4; x^2 <= 4 is the negation of x^2 > 4 | school algebra, shown inline
 thm-square-even-implies-even (proof): (E1) every integer is odd or even; (E2) no integer is both; (E3) odd squared is odd | (E1), (E2) school facts (ch01 blueprint, Allowed prerequisites), stated in the text; (E3) computed inline
-thm-square-even-implies-even (proof): naming k with n = 2k + 1 (a there-exists step) | used as school reasoning; its rule comes in Ch 3 (prose pointer)
-thm-sqrt2-irrational (proof): (L) every rational is p/q with q != 0, p and q not both even | school fact taken as known, stated as (L) in the text; justified informally in prose; precise proof by well-ordering in Ch 6 (prose pointer, nothing in Ch 1 depends on that proof)
-thm-sqrt2-irrational (proof): p^2 = r^2 q^2; 4m^2 = 2q^2 gives q^2 = 2m^2; "r arbitrary, so every rational" | school algebra; the last step is a quantifier step (Ch 3, prose pointer)
+thm-square-even-implies-even (proof): naming k with n = 2k + 1 (a there-exists step) | used as school reasoning; its rule comes in Ch 4 (prose pointer)
+thm-sqrt2-irrational (proof): (L) every rational is p/q with q != 0, p and q not both even | school fact taken as known, stated as (L) in the text; justified informally in prose; precise proof by well-ordering in Ch 7 (prose pointer, nothing in Ch 1 depends on that proof)
+thm-sqrt2-irrational (proof): p^2 = r^2 q^2; 4m^2 = 2q^2 gives q^2 = 2m^2; "r arbitrary, so every rational" | school algebra; the last step is a quantifier step (Ch 4, prose pointer)
 exr-negation-and-contradiction-b1 (solution): -1 < 0 | school algebra; x^2 = 1 gives x = 1 or x = -1 is supplied by the item
 exr-negation-and-contradiction-b3 (solution): every integer is 3k, 3k+1 or 3k+2 in one way only; the mod-3 form of (L) | stated in the item as usable facts
 exr-negation-and-contradiction-c1 (solution): parity computations 3(2j+1) = 2(3j+1)+1 | school algebra, shown inline

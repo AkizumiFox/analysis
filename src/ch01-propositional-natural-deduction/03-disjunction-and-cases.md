@@ -132,7 +132,7 @@ The rule needs **two** boxes, one opened by each disjunct, and the box opened by
 
 ## Cases about real numbers
 
-The facts about \( \le \) and the absolute value used below are school algebra: every real number \( a \) satisfies \( a \ge 0 \) or \( a < 0 \); the rules of signs for products; adding two inequalities of the same direction. Chapter 10 proves all of them from the axioms of an ordered field. Here we take them as known.
+The facts about \( \le \) and the absolute value used below are school algebra: every real number \( a \) satisfies \( a \ge 0 \) or \( a < 0 \); the rules of signs for products; adding two inequalities of the same direction. Chapter 11 proves all of them from the axioms of an ordered field. Here we take them as known.
 
 In the language of this chapter, "every real number \( a \) satisfies \( a \ge 0 \) or \( a < 0 \)" is a supply of disjunctions. For each number we meet, it gives a line \( (a \ge 0) \vee (a < 0) \) that \( \rulename{\vee E} \) may cite.
 
@@ -374,7 +374,7 @@ The second derivation is the one place in this section where \( \rulename{\vee I
 
 ## What the rules sound like
 
-Here are the rows of the rule, phrase and Lean table for this section's rules. As before, the last column is for readers who use a proof assistant, and nothing depends on it. Chapter 4 gives the full dictionary.
+Here are the rows of the rule, phrase and Lean table for this section's rules. As before, the last column is for readers who use a proof assistant, and nothing depends on it. Chapter 5 gives the full dictionary.
 
 | Rule | You write | Lean |
 |------|--------------------------------------|------------------------|
@@ -423,7 +423,7 @@ The phrase for \( \rulename{\vee E} \) has three parts, and a written proof ofte
 
 (c) False. \( P \vee Q \) does not say which of \( P \), \( Q \) holds, so \( R \) must also be derived from \( Q \). For example, with \( x \) real, from "\( x \ge 0 \) or \( x < 0 \)" and a derivation of \( \abs{x} = x \) from \( x \ge 0 \), we may not conclude \( \abs{x} = x \): it fails at \( x = -1 \).
 
-(d) Line 5. \( \rulename{\vee E} \) needs two boxes, one opened by each disjunct; line 5 cites only the box opened by \( P \), and no box opened by \( Q \) exists. Nothing available reaches \( R \) from \( Q \) either, so the gap cannot be filled from these premises. An instance shows the claim itself fails (informally: a derivation never leads from true premises to a false conclusion, which Chapter 2 proves): for a real number \( x \), take \( P \): "\( x > 1 \)", \( Q \): "\( x < 1 \)", \( R \): "\( x > 0 \)". At \( x = -1 \) both premises hold and \( R \) does not.
+(d) Line 5. \( \rulename{\vee E} \) needs two boxes, one opened by each disjunct; line 5 cites only the box opened by \( P \), and no box opened by \( Q \) exists. Nothing available reaches \( R \) from \( Q \) either, so the gap cannot be filled from these premises. An instance shows the claim itself fails (informally: a derivation never leads from true premises to a false conclusion, which Chapter 3 proves): for a real number \( x \), take \( P \): "\( x > 1 \)", \( Q \): "\( x < 1 \)", \( R \): "\( x > 0 \)". At \( x = -1 \) both premises hold and \( R \) does not.
 :::
 
 ### B. Practice
@@ -615,12 +615,12 @@ Here is a proof, by four cases, that \( \abs{x - y} \le \abs{x} + \abs{y} \) for
 :::
 
 <!-- dependency ledger
-exm-abs-product-cases (example): every real a satisfies a >= 0 or a < 0; sign rules for products; |a| = -a for a <= 0 | school algebra, taken as known (ch01 blueprint, Allowed prerequisites); stated in prose before the example; Ch 10 re-proves (prose pointer)
+exm-abs-product-cases (example): every real a satisfies a >= 0 or a < 0; sign rules for products; |a| = -a for a <= 0 | school algebra, taken as known (ch01 blueprint, Allowed prerequisites); stated in prose before the example; Ch 11 re-proves (prose pointer)
 exm-triangle-inequality-cases (example): adding two inequalities of the same direction; -a <= 0 <= a for a >= 0 | school algebra, taken as known; stated in prose before exm-abs-product-cases
 exr-disjunction-and-cases-a1 (solution): x <= 3 means (x < 3 or x = 3); a = 0 or b = 0 gives ab = 0; every integer is even or odd; t^2 >= 0 | school facts
-exr-disjunction-and-cases-a1 (solution): (d) a derivation never leads from true premises to a false conclusion | forward pointer to ch02 (thm-soundness), flagged in the text as proved there; the answer (line 5) does not use it
+exr-disjunction-and-cases-a1 (solution): (d) a derivation never leads from true premises to a false conclusion | forward pointer to ch03 (thm-soundness), flagged in the text as proved there; the answer (line 5) does not use it
 exr-disjunction-and-cases-b2 (solution): a >= b or a < b; dividing an inequality by 2 > 0 | school algebra, taken as known
-exr-disjunction-and-cases-b3 (solution): every integer is even or odd (stated in the item); n = 2k or n = 2k + 1 with k an integer (naming k is a quantifier step, Ch 3) | stated in the item; school fact
+exr-disjunction-and-cases-b3 (solution): every integer is even or odd (stated in the item); n = 2k or n = 2k + 1 with k an integer (naming k is a quantifier step, Ch 4) | stated in the item; school fact
 exr-disjunction-and-cases-c1 (solution): a >= b or a < b; |-a| = |a| | school algebra; |-a| = |a| proved inline by cases
 exr-disjunction-and-cases-c2 (solution): order facts for x, y < 0 | school algebra, taken as known
 -->

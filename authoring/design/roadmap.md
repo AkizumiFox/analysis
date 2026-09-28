@@ -23,12 +23,14 @@ Chapter numbers in the A rows above are those of the old 72-chapter plan. After 
 
 **Renumbering of 2026-09-28 (75 → 77 chapters).** The author expanded Part 0's logic from two chapters to four, modelled on Huth & Ryan, *Logic in Computer Science* (2nd ed), ch. 1–2: 1 `propositional-natural-deduction`, 2 `semantics-soundness-completeness`, 3 `predicate-logic`, 4 `from-derivations-to-prose`. They replace `logic-connectives` and `quantifiers-and-proof` (the quantifier material goes to 3, the excluded-middle section to 4). Every chapter from the old Chapter 3 on moves up by two (old 3 → 5, …, old 8 → 10, …, old 75 → 77); the least-upper-bound pilot is now `src/ch10-least-upper-bound/`. Chapter numbers in the A rows are those in force when the row was written; the B and C rows below are updated to the 77-chapter numbers, and `book.yaml`, READING.md, STATUS.md, decisions.md and PIPELINE.md use the 77-chapter numbers.
 
+**Renumbering of 2026-09-28, second (77 → 78 chapters).** The author split Chapter 1 (`propositional-natural-deduction`) into two chapters, slower and with one new rule or idea per section: 1 `connectives-and-derivations` (statements and connectives, the derivation format, ∧, →, ∨) and 2 `negation-and-classical-logic` (¬, ⊥, derived rules, ↔, RAA and classical logic, finding derivations). Every chapter from the old Chapter 2 on moves up by one (old 2 → 3, …, old 7 (Gate 0) → 8, old 10 → 11, …, old 77 → 78); the least-upper-bound pilot is now `src/ch11-least-upper-bound/`. The B and C rows below, `book.yaml`, READING.md, STATUS.md, decisions.md and PIPELINE.md now use the 78-chapter numbers.
+
 ## B. The reader (STYLE.md, exercise design, config)
 
 | # | Change | Evidence | Lead's view | State |
 |---|---|---|---|---|
-| B1 | **Self-explanation training passage**, once, in Chapter 4, `from-derivations-to-prose` (Chapter 2 in the 75-chapter plan) (reader B7.1; d = 0.95). | strong | accept | **done** 2026-09-28 (STYLE §11.1) |
-| B2 | **A Gate at the end of each Part**: timed, with a marking scheme, a pass line, and an `@ref` remediation map (ch. 7, 20, 32, 41, 53, 61, 77) (reader B2). | moderate | accept | **done** 2026-09-28 (STYLE §11.10, READING.md) |
+| B1 | **Self-explanation training passage**, once, in Chapter 5, `from-derivations-to-prose` (Chapter 4 in the 77-chapter plan, Chapter 2 in the 75-chapter plan) (reader B7.1; d = 0.95). | strong | accept | **done** 2026-09-28 (STYLE §11.1) |
+| B2 | **A Gate at the end of each Part**: timed, with a marking scheme, a pass line, and an `@ref` remediation map (ch. 8, 21, 33, 42, 54, 62, 78) (reader B2). | moderate | accept | **done** 2026-09-28 (STYLE §11.10, READING.md) |
 | B3 | An **R. Review** exercise group at the end of each chapter, with spaced and interleaved items (reader B3/B7.5). | strong | accept | **done** 2026-09-28 (STYLE §6, §11.5) |
 | B4 | **New exercise formats**: proof comprehension, find-the-error with a *true* conclusion, proof ordering, faded proofs, "try it first", marking schemes, a hint ladder (reader B4, B7.2–8). | strong for most | accept, tapering after Part I (B7.12) | **done** 2026-09-28 (STYLE §6, §11.2–§11.8) |
 | B5 | A **time estimate** in each chapter index; a weekly rhythm in the preface (reader B1, B7.9). | estimate | accept | **done** 2026-09-28 (STYLE §2, §11.9, READING.md) |
@@ -40,19 +42,19 @@ The key finding of research-production is that the pilots' mathematics is sound 
 
 | # | Change | Lead's view | State |
 |---|---|---|---|
-| C1 | **Fix the pilot findings** (§3.1): Ch 8 (now 10) has 2 false prose sentences and 4 dependency gaps; Ch 1 has 1 false meta-claim, 1 Lean rendering problem and 1 "RAA in costume" model proof; the reiteration rule in NOTATION.md must be reconciled with the chapter. | do before approving the exemplar | **done** 2026-09-28 |
+| C1 | **Fix the pilot findings** (§3.1): Ch 8 (now 11) has 2 false prose sentences and 4 dependency gaps; Ch 1 has 1 false meta-claim, 1 Lean rendering problem and 1 "RAA in costume" model proof; the reiteration rule in NOTATION.md must be reconciled with the chapter. | do before approving the exemplar | **done** 2026-09-28 |
 | C2 | **The per-chapter pipeline** of §5.2: blueprint expansion → blueprint verification (statement referee plus Mathlib anchoring with back-translation) → draft (sidecar scripts, dependency ledger) → mechanical gates → two blind referees (proofs; claims and bookkeeping) → exercises solved blind → revision accepted by a fresh re-referee → seam referee → author samples one section. | accept | **done** 2026-09-28 (PIPELINE.md, DRAFTING.md) |
 | C3 | **Tools** (§6), first tranche: `check_structure.py`, `check_fitch.py`, `promises.py`, `check_rendered.py`, `ledger.py`, `check_blueprint.py`. Second tranche: `lean/` + `lean_check.py` + back-translation, `verify/` + `check_numbers.py`, `metrics.py`, `seed_errors.py`, `check_notation.py`. | accept; first tranche before wave 1 | accepted 2026-09-28 |
-| C4 | **Order**: waves of 3–4 chapters in dependency order, starting with Part 0 (ch. 2–7, which pay Chapter 10's promises); the first chapter of each Part goes alone as a Part pilot; Parts IV and V interleaved (§5.1). | accept | **done** 2026-09-28 (PIPELINE.md) |
+| C4 | **Order**: waves of 3–4 chapters in dependency order, starting with Part 0 (ch. 2–8, which pay Chapter 11's promises); the first chapter of each Part goes alone as a Part pilot; Parts IV and V interleaved (§5.1). | accept | **done** 2026-09-28 (PIPELINE.md) |
 | C5 | **Budget**: about 6–9M tokens and 5–7 agent-hours per chapter; about 3–5 weeks for the book, limited by the author's review (about 60–70 hours) (§7.2). | note | — |
 
 ## Proposed next steps, in order
 
 1. The author decides on A, B and C (this file).
 2. Wave 0:
-   - fix the pilot findings (C1), including the B-items that touch Chapters 1 and 8 (now 10);
+   - fix the pilot findings (C1), including the B-items that touch Chapters 1 and 8 (now 11);
    - approve the exemplar;
    - build the first tranche of tools (C3);
    - apply the accepted A-items to `book.yaml` and re-run `check_order.py`;
    - regenerate the blueprints.
-3. Wave 1: Chapters 1–7, Part 0's main line: the four logic chapters (Chapter 1 rewritten; the excluded-middle section and the self-explanation training in Chapter 4), then sets, relations and cardinality.
+3. Wave 1: Chapters 1–8, Part 0's main line: the five logic chapters (the rewritten Chapter 1 split into Chapters 1 and 2; the excluded-middle section and the self-explanation training in Chapter 5), then sets, relations and cardinality.

@@ -34,23 +34,23 @@ Second tranche (use as soon as each lands; until then the manual fallback in bra
 
 ## Order: waves (C4)
 
-**Wave 0, before any new chapter.** Fix the pilot findings (C1); approve the exemplar and name it in STATUS; resolve NOTATION.md against Chapter 1 on reiteration; build the first-tranche tools; apply the accepted route changes to `book.yaml` and re-run `check_order.py`; regenerate the blueprints. Then, if time allows: set up `lean/` and run the anchoring pilot on Chapters 10–12's must-prove lists; plant 10 known errors in a copy of Chapter 10 and measure referee recall.
+**Wave 0, before any new chapter.** Fix the pilot findings (C1); approve the exemplar and name it in STATUS; resolve NOTATION.md against Chapter 1 on reiteration; build the first-tranche tools; apply the accepted route changes to `book.yaml` and re-run `check_order.py`; regenerate the blueprints. Then, if time allows: set up `lean/` and run the anchoring pilot on Chapters 11–13's must-prove lists; plant 10 known errors in a copy of Chapter 11 and measure referee recall.
 
 **Waves 1–N.** A wave is **3–4 chapters whose prerequisites are all approved**. Within a chapter, 3–4 drafting agents take about two sections each. A new wave opens when the previous wave's chapters pass S8; the author's S9 may trail one wave behind. Draft at most one dependency level ahead of approved text, so citations point at reviewed labels.
 
 | Wave | Chapters | Why |
 |---|---|---|
-| 1 | 1–4, then 5, 6, 7 | Part 0's main line. The four logic chapters first, in order (1 rewritten as `propositional-natural-deduction`; 2 needs 1, 3 needs 1–2, 4 needs 3): the self-explanation training and the excluded-middle section are in Ch 4. Then sets (5), relations and induction (6), cardinality with Gate 0 (7). Pays Chapter 10's promises |
-| 2 | 11, 8, 9 | 11 is the next level; 8 and 9 are optional and run beside it |
-| 3 | 12, 13 | same level |
-| 4 | 14, then 15 | a chain |
-| 5 | 16, 21, 22 | 21 and 22 are optional and need only 10 |
-| 6 | 17, then 18, 19, then 20 | Riemann–Darboux has low Mathlib coverage: give it an extra referee |
+| 1 | 1–5, then 6, 7, 8 | Part 0's main line. The five logic chapters first, in order (1 and 2 split from the rewritten `propositional-natural-deduction`; 2 needs 1, 3 needs 1–2, 4 needs 1–3, 5 needs 4): the self-explanation training and the excluded-middle section are in Ch 5. Then sets (6), relations and induction (7), cardinality with Gate 0 (8). Pays Chapter 11's promises |
+| 2 | 12, 9, 10 | 12 is the next level; 9 and 10 are optional and run beside it |
+| 3 | 13, 14 | same level |
+| 4 | 15, then 16 | a chain |
+| 5 | 17, 22, 23 | 22 and 23 are optional and need only 11 |
+| 6 | 18, then 19, 20, then 21 | Riemann–Darboux has low Mathlib coverage: give it an extra referee |
 | 7+ | Part II, then Part III | as the blueprint levels allow |
 | … | Parts IV and V **interleaved** | both need only Parts I–III |
 | last | Part VI, then the capstone, then the whole-book pass | |
 
-Chapter numbers are the 77-chapter `book.yaml`'s (Part 0's logic expanded to four chapters, 2026-09-28; everything from the old Chapter 3 on moved up by two).
+Chapter numbers are the 78-chapter `book.yaml`'s (Part 0's logic expanded to four chapters, 2026-09-28, everything from the old Chapter 3 on moving up by two; then Chapter 1 split in two the same day, everything from the old Chapter 2 on moving up by one more).
 
 **Part pilots.** The first chapter of each Part goes through the pipeline **alone**, the author approves it, and only then does the Part fan out. At each Part pilot, measure referee recall on seeded errors (target ≥ 0.8).
 
@@ -61,7 +61,7 @@ Chapter numbers are the 77-chapter `book.yaml`'s (Part 0's logic expanded to fou
 Each stage: who, what the brief must contain, what it produces, exit criterion. Every agent in S2–S8 starts in a **fresh context** and never sees another reviewer's verdict unless the stage says so. Every finding carries a verdict (`correct` / `minor` / `gap` / `error`) and evidence: file:line plus a counterexample, a computation, or the quoted text.
 
 ### S1. Blueprint expansion (1 agent)
-**Brief contains:** the stub `authoring/blueprints/chNN.md`; the curriculum node; the earlier chapters' label lists; STATUS's promises due to this chapter; the Chapter 10 blueprint as the model of depth; STYLE §11 (so it places the reader-alone items); the source books, for coverage only.
+**Brief contains:** the stub `authoring/blueprints/chNN.md`; the curriculum node; the earlier chapters' label lists; STATUS's promises due to this chapter; the Chapter 11 blueprint as the model of depth; STYLE §11 (so it places the reader-alone items); the source books, for coverage only.
 **Produces** a blueprint of about 3–4k words: labels; each must-prove statement with **all hypotheses**; a proof route citing specific earlier labels; examples, checks and exercises with intended answers; the 2–3 key proofs (§11.2); where the find-the-error, ordering, faded, try-it-first, R and (if last chapter of a Part) Gate items go; exit checks with marking-scheme outlines; the prerequisite ledger; notation additions; promises paid and opened.
 **Exit:** `blueprint/check_blueprint.py` passes.
 

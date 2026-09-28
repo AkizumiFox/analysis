@@ -134,7 +134,7 @@ In words. (D1) Premises are the givens, and they hold throughout. (D2) We may as
 
 The scope rule is the definition's real content. Line \( i \) is available at line \( k \) when every assumption that line \( i \) was derived under is still in force at line \( k \). A line outside all boxes is available everywhere below it. A line inside a box is available further down that box, and inside boxes opened within it, but not after the box closes. A closed box, cited as a whole by a rule such as \( \rulename{{\to}I} \), must sit directly in the part of the derivation where the citing line is: the citing line may not lie outside a box that contains the cited box (that box has closed), nor inside a further box opened after the cited box ended.
 
-Two more words will be needed in Chapter 2, where the rules are proved trustworthy. The **length** of a derivation is its number of lines. The **context** of a line is the list of the premises together with the assumptions of every box containing that line: the statements the line depends on. The last column of the table in the next subsection lists the contexts in a derivation. The context of the last line is always just the premises, since the last line lies in no box.
+Two more words will be needed in Chapter 3, where the rules are proved trustworthy. The **length** of a derivation is its number of lines. The **context** of a line is the list of the premises together with the assumptions of every box containing that line: the statements the line depends on. The last column of the table in the next subsection lists the contexts in a derivation. The context of the last line is always just the premises, since the last line lies in no box.
 
 With derivations defined, we can say what it means for a statement to follow from others.
 
@@ -148,7 +148,7 @@ Let \( \Gamma \) be a list of statements and \( P \) a statement. We say \( P \)
 if there is a derivation whose premises all belong to \( \Gamma \) and whose last line is \( P \). We write \( P_1, \dots, P_n \vdash P \) when \( \Gamma \) consists of \( P_1, \dots, P_n \), and \( \vdash P \) when \( \Gamma \) is empty.
 :::
 
-This makes the sequent of @def-sequent exact: the claim \( P_1, \dots, P_n \vdash Q \) holds exactly when some derivation has its premises among \( P_1, \dots, P_n \) and its last line \( Q \). A derivation need not use every statement in \( \Gamma \), and it proves the claim by existing. Because \( P \), \( Q \), \( R \) stand for arbitrary statements, a derivation written with letters proves infinitely many sequents at once, one for each way of putting statements in for the letters; Chapter 2 makes this precise.
+This makes the sequent of @def-sequent exact: the claim \( P_1, \dots, P_n \vdash Q \) holds exactly when some derivation has its premises among \( P_1, \dots, P_n \) and its last line \( Q \). A derivation need not use every statement in \( \Gamma \), and it proves the claim by existing. Because \( P \), \( Q \), \( R \) stand for arbitrary statements, a derivation written with letters proves infinitely many sequents at once, one for each way of putting statements in for the letters; Chapter 3 makes this precise.
 
 ::: {#exm-derivations}
 [Derivations, simplest first]
@@ -397,7 +397,7 @@ Every rule is something mathematicians already say. The table pairs each rule of
 | \( \rulename{{\to}I} \) | "Assume \( P \). … Hence \( Q \)." | `intro hp` |
 | \( \rulename{{\to}E} \) | "Since \( P \) implies \( Q \), and \( P \) holds, \( Q \)." | `exact h hp` |
 
-The sentence for \( \rulename{{\to}I} \) is the one to watch. "Assume \( P \)" opens a box, and "hence \( Q \)" is its last line. The conclusion "\( P \) implies \( Q \)" is often left unsaid, so the closing line is invisible on the page; it is still there, and it is the line Argument B gets wrong. Chapter 4 extends the table to every rule and turns it into a dictionary between derivations and prose.
+The sentence for \( \rulename{{\to}I} \) is the one to watch. "Assume \( P \)" opens a box, and "hence \( Q \)" is its last line. The conclusion "\( P \) implies \( Q \)" is often left unsaid, so the closing line is invisible on the page; it is still there, and it is the line Argument B gets wrong. Chapter 5 extends the table to every rule and turns it into a dictionary between derivations and prose.
 
 ## Exercises
 

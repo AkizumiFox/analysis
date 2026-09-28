@@ -25,7 +25,7 @@ In symbols: for every \( A \subseteq \nR \),
 
 **Standing assumption.** From now on, \( \nR \) is an ordered field (@def-ordered-field), containing \( \nQ \), that satisfies @ax-least-upper-bound. Every theorem about real numbers in this book is proved from these assumptions and nothing else.
 
-In words, the axiom has two hypotheses and one conclusion. The hypotheses are about the set \( A \): it has at least one element, and at least one upper bound. The conclusion is about \( \nR \): among the upper bounds of \( A \) there is a least one, and it is a real number. By @thm-sup-unique it is unique, so the notation \( \sup A \) is justified whenever the two hypotheses hold. The axiom is also called the **completeness axiom**; "complete" will acquire a second, related meaning in Chapter 11, and the two are reconciled in Chapter 20.
+In words, the axiom has two hypotheses and one conclusion. The hypotheses are about the set \( A \): it has at least one element, and at least one upper bound. The conclusion is about \( \nR \): among the upper bounds of \( A \) there is a least one, and it is a real number. By @thm-sup-unique it is unique, so the notation \( \sup A \) is justified whenever the two hypotheses hold. The axiom is also called the **completeness axiom**; "complete" will acquire a second, related meaning in Chapter 12, and the two are reconciled in Chapter 21.
 
 Each hypothesis is there because without it the conclusion is false.
 
@@ -35,7 +35,7 @@ Each hypothesis is there because without it the conclusion is false.
 The axiom is a statement about \( \nR \) and not about ordered fields in general. It fails in \( \nQ \): @thm-no-rational-sup-sqrt2 exhibits a non-empty subset of \( \nQ \), bounded above in \( \nQ \), with no supremum in \( \nQ \) (@exr-the-axiom-c1). So the axiom is exactly the property that separates the two fields we have been comparing.
 
 ::: {.remark}
-Why is this an axiom and not a theorem? Because we have not said what a real number is. One can **construct** \( \nR \) from \( \nQ \), for instance by Dedekind cuts, and then prove the least upper bound property as a theorem; the optional Chapter 21 does this. The optional Chapter 22 shows that any two ordered fields satisfying the axiom are the same up to relabeling, so the axiom pins \( \nR \) down completely. Nothing else in the book uses those chapters: everything we need follows from the axiom.
+Why is this an axiom and not a theorem? Because we have not said what a real number is. One can **construct** \( \nR \) from \( \nQ \), for instance by Dedekind cuts, and then prove the least upper bound property as a theorem; the optional Chapter 22 does this. The optional Chapter 23 shows that any two ordered fields satisfying the axiom are the same up to relabeling, so the axiom pins \( \nR \) down completely. Nothing else in the book uses those chapters: everything we need follows from the axiom.
 :::
 
 ::: {#exm-lub-first-use}
@@ -65,7 +65,7 @@ Let \( A = \{ n \in \nZ : n \le 3.5 \} = \{ \dots, 1, 2, 3 \} \). Does \( A \) s
 :::
 
 ::: {.solution}
-Yes: \( 3 \in A \), so \( A \) is non-empty, and \( 3.5 \) is an upper bound by definition of \( A \). So \( \sup A \) exists. It is \( 3 \), not \( 3.5 \): the element \( 3 \) is an upper bound, because an integer greater than \( 3 \) is at least \( 4 \), which exceeds \( 3.5 \) (arithmetic of the integers, Chapter 6), and it belongs to \( A \), so it is the maximum, and a maximum is the supremum (@exr-suprema-b1). The bound used to check the hypothesis was not the supremum.
+Yes: \( 3 \in A \), so \( A \) is non-empty, and \( 3.5 \) is an upper bound by definition of \( A \). So \( \sup A \) exists. It is \( 3 \), not \( 3.5 \): the element \( 3 \) is an upper bound, because an integer greater than \( 3 \) is at least \( 4 \), which exceeds \( 3.5 \) (arithmetic of the integers, Chapter 7), and it belongs to \( A \), so it is the maximum, and a maximum is the supremum (@exr-suprema-b1). The bound used to check the hypothesis was not the supremum.
 :::
 
 ## Infima come free
@@ -228,7 +228,7 @@ If \( A = \{ a \} \), then \( a \) is both the maximum and the minimum of \( A \
 :::
 
 <!-- dependency ledger
-ax-least-upper-bound (example): an integer greater than 3 is at least 4 (Quick check on the integers up to 3.5) | arithmetic of Z, ch06 (promised); prose pointer in the text
+ax-least-upper-bound (example): an integer greater than 3 is at least 4 (Quick check on the integers up to 3.5) | arithmetic of Z, ch07 (promised); prose pointer in the text
 thm-greatest-lower-bound (proof): A non-empty implies -A non-empty | inline (a in A gives -a in -A)
 exr-the-axiom-a1 (solution): x >= 1 and x > 0 give x^2 >= x; |M| >= M | thm-ordered-field-rules (c), prp-absolute-value-rules (c); shown inline
 -->

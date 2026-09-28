@@ -35,7 +35,7 @@ The steps are listed in the order in which to try them, and the order has reason
 
 **The goal-directed steps lose nothing.** Suppose the goal \( A \to B \) is derivable from the resources \( \Gamma \) at all, by some derivation \( D \). Then \( B \) is derivable from \( \Gamma \) together with \( A \): add \( A \) to the premises of \( D \) (@def-derivable only asks that the premises belong to the list), and append the line \( B \) by \( \rulename{{\to}E} \), citing the last line of \( D \) and the premise \( A \). So opening a box on \( A \) never turns a derivable gap into an underivable one. With \( \rulename{\wedge E} \), \( \rulename{\neg E} \) or \( \rulename{{\leftrightarrow}E} \) as the appended line, the same argument covers \( \wedge \), \( \neg \) and \( \leftrightarrow \). That is why step 2 may be applied without thinking.
 
-**Choosing a side of \( \vee \) can lose everything.** A disjunction can be derivable when neither side is. From \( P \vee Q \) the goal \( Q \vee P \) is derivable (the section on disjunction derives it), but \( P \vee Q \) does not say which side holds, so a last line \( \rulename{\vee I} \) from \( Q \), or from \( P \), leaves a gap that cannot be filled (Chapter 2 makes "cannot" exact). Choosing a side is safe only once the resources decide it, typically inside a case of \( \rulename{\vee E} \).
+**Choosing a side of \( \vee \) can lose everything.** A disjunction can be derivable when neither side is. From \( P \vee Q \) the goal \( Q \vee P \) is derivable (the section on disjunction derives it), but \( P \vee Q \) does not say which side holds, so a last line \( \rulename{\vee I} \) from \( Q \), or from \( P \), leaves a gap that cannot be filled (Chapter 3 makes "cannot" exact). Choosing a side is safe only once the resources decide it, typically inside a case of \( \rulename{\vee E} \).
 
 **\( \rulename{RAA} \) also loses nothing, and still comes last.** If \( G \) is derivable from the resources, then \( \bot \) is derivable from them together with \( \neg G \), by one \( \rulename{\neg E} \), so an \( \rulename{RAA} \) box is always safe. It comes last because its goal \( \bot \) gives step 2 nothing to work with, and because a derivation that did not need the box reads worse with it (the last warning of the previous section).
 
@@ -237,7 +237,7 @@ $\begin{nd}
 \end{center}
 ```
 
-In the case \( R \) the resources are \( P \to (Q \vee R) \), \( P \), \( Q \vee R \) and \( R \), and none of them says anything that yields \( Q \). Choosing the right side instead fails in the mirror image, in the case \( Q \). In fact neither side follows from the premise alone: with \( P \) and \( Q \) true and \( R \) false the premise is true and \( P \to R \) is false, and with \( P \) and \( R \) true and \( Q \) false the premise is true and \( P \to Q \) is false. (Chapter 2 turns such rows into proofs that no derivation exists.)
+In the case \( R \) the resources are \( P \to (Q \vee R) \), \( P \), \( Q \vee R \) and \( R \), and none of them says anything that yields \( Q \). Choosing the right side instead fails in the mirror image, in the case \( Q \). In fact neither side follows from the premise alone: with \( P \) and \( Q \) true and \( R \) false the premise is true and \( P \to R \) is false, and with \( P \) and \( R \) true and \( Q \) false the premise is true and \( P \to Q \) is false. (Chapter 3 turns such rows into proofs that no derivation exists.)
 
 *The diagnosis.* Each case of the dead end knew which side it wanted: the case \( Q \) wanted \( P \to Q \), and the case \( R \) wanted \( P \to R \). But those cases were opened inside the box of \( P \), too late to choose the side of a disjunction that stands outside it. The side must be decided **before** any box is opened, and the premise does not decide it: that is step 5. The dead end also names the statement to split on. If \( Q \) holds, the left side is easy; if \( Q \) fails, then from \( P \) the premise gives \( Q \vee R \) with its left side excluded. So we use \( \rulename{LEM} \) on \( Q \):
 
@@ -372,7 +372,7 @@ The goal \( P \) is a letter. Step 3: \( \rulename{{\to}E} \) on line 1 needs \(
 
 But notice what we have **not** shown. A search that fails proves nothing about derivations in general: an assumption may be any statement at all, by (D2) of @def-derivation, so there are infinitely many derivations to consider, and a cleverer one might exist. To show that **no** derivation of \( Q \to P \) from \( P \to Q \) exists we need a different tool.
 
-That is the question this chapter leaves open. *We show that something is derivable by exhibiting a derivation; how could we ever show that something is not?* Chapter 2 answers it. It gives each statement a truth value and proves that the rules never lead from true premises to a false conclusion; the assignment with \( P \) false and \( Q \) true, which makes \( P \to Q \) true and \( Q \to P \) false, then settles this search for good.
+That is the question this chapter leaves open. *We show that something is derivable by exhibiting a derivation; how could we ever show that something is not?* Chapter 3 answers it. It gives each statement a truth value and proves that the rules never lead from true premises to a false conclusion; the assignment with \( P \) false and \( Q \) true, which makes \( P \to Q \) true and \( Q \to P \) false, then settles this search for good.
 
 ## A mathematical goal
 
@@ -393,7 +393,7 @@ First, if \( m \) is even, say \( m = 2k \) with \( k \) an integer, then \( mn 
 
 Exchanging the roles of \( m \) and \( n \) in the previous paragraph shows that \( n \) is odd. Hence \( m \) and \( n \) are both odd.
 
-*What the method did.* It fixed the first sentence, the two paragraphs and the last sentence; the only computation is \( mn = 2(kn) \). No step uses \( \rulename{RAA} \): the classical-looking move from "\( m \) is not even" to "\( m \) is odd" is disjunctive syllogism on the fact that every integer is even or odd. (The phrase "say \( m = 2k \)" names a witness, which is a rule for "there exists" from Chapter 3.)
+*What the method did.* It fixed the first sentence, the two paragraphs and the last sentence; the only computation is \( mn = 2(kn) \). No step uses \( \rulename{RAA} \): the classical-looking move from "\( m \) is not even" to "\( m \) is odd" is disjunctive syllogism on the fact that every integer is even or odd. (The phrase "say \( m = 2k \)" names a witness, which is a rule for "there exists" from Chapter 4.)
 :::
 
 ::: {.warning}
@@ -603,7 +603,7 @@ For (a)–(d), name the goal's main connective, the first rule the method aims f
 ::: {.solution}
 (a) \( \to \); \( \rulename{{\to}I} \): "Assume \( x^3 < 0 \)." (Starting "Suppose \( x \ge 0 \)" inside that frame is an \( \rulename{RAA} \) box on the goal \( x < 0 \), not the contrapositive; a proof through the contrapositive replaces the frame, proving "if \( x \ge 0 \) then \( x^3 \ge 0 \)" and then applying \( \rulename{CP} \).)
 
-(b) \( \neg \), since the claim is "not: there is an integer \( n \) with \( 2n = 7 \)"; \( \rulename{\neg I} \): "Suppose \( n \) is an integer with \( 2n = 7 \)." (Naming \( n \) uses a rule for "there exists", from Chapter 3.)
+(b) \( \neg \), since the claim is "not: there is an integer \( n \) with \( 2n = 7 \)"; \( \rulename{\neg I} \): "Suppose \( n \) is an integer with \( 2n = 7 \)." (Naming \( n \) uses a rule for "there exists", from Chapter 4.)
 
 (c) \( \wedge \); \( \rulename{\wedge I} \): "We prove the two statements in turn."
 
@@ -881,7 +881,7 @@ $\begin{nd}
 
 \( \rulename{LEM} \) on \( P \) works equally well, with the roles of the two sides exchanged.
 
-(b) \( \rulename{LEM} \) is used at line 1, and \( \rulename{RAA} \) only inside it. The method cannot avoid step 5 here. Step 2 postpones the \( \vee \) goal; with no premises, step 3 has nothing to eliminate and step 4 nothing to clash; and \( \rulename{\vee I} \) cannot come first, because neither side is derivable from no premises (with \( P \) true and \( Q \) false, \( P \to Q \) is false; with \( P \) false and \( Q \) true, \( Q \to P \) is false; Chapter 2 turns such rows into proofs). So a resource must be created from nothing, and only step 5 does that. This shows that the **method** needs step 5; that every derivation of the sequent uses \( \rulename{RAA} \) or an equivalent is a stronger claim, which we do not prove.
+(b) \( \rulename{LEM} \) is used at line 1, and \( \rulename{RAA} \) only inside it. The method cannot avoid step 5 here. Step 2 postpones the \( \vee \) goal; with no premises, step 3 has nothing to eliminate and step 4 nothing to clash; and \( \rulename{\vee I} \) cannot come first, because neither side is derivable from no premises (with \( P \) true and \( Q \) false, \( P \to Q \) is false; with \( P \) false and \( Q \) true, \( Q \to P \) is false; Chapter 3 turns such rows into proofs). So a resource must be created from nothing, and only step 5 does that. This shows that the **method** needs step 5; that every derivation of the sequent uses \( \rulename{RAA} \) or an equivalent is a stronger claim, which we do not prove.
 
 **Marking scheme.** (10 points)
 - 3: a correct split by \( \rulename{LEM} \) (on \( Q \) or on \( P \)), with two case boxes combined by \( \rulename{\vee E} \), or a correct \( \rulename{RAA} \) box on the negated goal.
@@ -1100,21 +1100,21 @@ $\begin{nd}
 
 The repetition at line 5 puts \( Q \) inside the box of line 4, as \( \rulename{{\to}I} \) requires. Two look-alike tools do not apply. @prp-curry moves a **conjunction** in and out of an antecedent, \( (P \wedge Q) \to R \dashv\vdash P \to (Q \to R) \), and the premise here has \( P \to Q \), not \( P \wedge Q \), in that place. And @prp-implication-transitive chains two implications, which we do not have.
 
-The converse is not derivable, but a search can only stall, not show it. With \( P \) and \( R \) false (and \( Q \) either way), the premise \( P \to (Q \to R) \) is true because \( P \) is false, while \( P \to Q \) is true and \( R \) is false, so the conclusion is false. Chapter 2 proves that such a row rules out every derivation: the chapter's open question, in a new place.
+The converse is not derivable, but a search can only stall, not show it. With \( P \) and \( R \) false (and \( Q \) either way), the premise \( P \to (Q \to R) \) is true because \( P \) is false, while \( P \to Q \) is true and \( R \) is false, so the conclusion is false. Chapter 3 proves that such a row rules out every derivation: the chapter's open question, in a new place.
 :::
 
 <!-- dependency ledger
 prp-peirce (claim): every derivation of Peirce's law uses RAA or an equivalent | stated without proof and marked so in the text; nothing depends on it
-exm-search-postpone-or (example): neither disjunct follows from the premise (two rows) | informal, with a pointer to ch02 (thm-soundness); the example does not depend on it
+exm-search-postpone-or (example): neither disjunct follows from the premise (two rows) | informal, with a pointer to ch03 (thm-soundness); the example does not depend on it
 exm-search-postpone-or (example): LEM on P also succeeds, with a nested or-E | inline description; not used
 exm-skeleton-odd-product (example): every integer is even or odd, and not both; m = 2k gives mn = 2(kn) | school algebra, an allowed prerequisite of ch01 (blueprint)
-exm-skeleton-odd-product (example): "say m = 2k" names a witness | informal reading of "there exists"; the rule is ch03's, flagged in prose
+exm-skeleton-odd-product (example): "say m = 2k" names a witness | informal reading of "there exists"; the rule is ch04's, flagged in prose
 finding-derivations-method (claim): the goal-directed steps and RAA never turn a derivable gap into an underivable one | inline (argued in the text from def-derivable and one elimination step)
-finding-derivations-method (claim): P or Q |- Q or P is derivable but neither disjunct follows from P or Q alone | derivability: s03 (the derivation of P or Q |- Q or P); non-derivation of the disjuncts: informal, ch02 makes it exact; nothing depends on it
-finding-derivations-failed-search (claim): no derivation of Q -> P from P -> Q exists | not claimed as proved; forward pointer to ch02 (cor-refuting-row), which is the chapter's closing question
-exr-finding-derivations-a1 (solution): (b) naming n uses a rule for "there exists" | informal; ch03 (flagged in prose)
+finding-derivations-method (claim): P or Q |- Q or P is derivable but neither disjunct follows from P or Q alone | derivability: s03 (the derivation of P or Q |- Q or P); non-derivation of the disjuncts: informal, ch03 makes it exact; nothing depends on it
+finding-derivations-failed-search (claim): no derivation of Q -> P from P -> Q exists | not claimed as proved; forward pointer to ch03 (cor-refuting-row), which is the chapter's closing question
+exr-finding-derivations-a1 (solution): (b) naming n uses a rule for "there exists" | informal; ch04 (flagged in prose)
 exr-finding-derivations-b1 (solution): no derivation of P from not(P -> Q) avoids RAA | stated without proof and marked so; nothing depends on it
-exr-finding-derivations-c2 (solution): neither disjunct is derivable from no premises (rows) | informal, pointer to ch02; the solution says it proves only that the method needs step 5
+exr-finding-derivations-c2 (solution): neither disjunct is derivable from no premises (rows) | informal, pointer to ch03; the solution says it proves only that the method needs step 5
 exr-finding-derivations-r2 (solution): a >= b or a < b for real numbers; b + a = a + b | school algebra, an allowed prerequisite
-exr-finding-derivations-r3 (solution): the converse is not derivable (row P = R = false) | forward pointer to ch02 (cor-refuting-row), flagged in the solution
+exr-finding-derivations-r3 (solution): the converse is not derivable (row P = R = false) | forward pointer to ch03 (cor-refuting-row), flagged in the solution
 -->

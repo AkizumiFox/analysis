@@ -20,11 +20,11 @@ Let \( x \) be a real number with \( x \ge 0 \), and suppose that \( x \le \vare
 Suppose, for a contradiction, that \( x \ne 0 \). Since \( x \ge 0 \) and \( x \ne 0 \), we have \( x > 0 \). Then \( \varepsilon \coloneqq x/2 \) is a real number with \( \varepsilon > 0 \), so the hypothesis applies to it and gives \( x \le x/2 \). Subtracting \( x/2 \) from both sides gives \( x/2 \le 0 \), and multiplying by \( 2 \) gives \( x \le 0 \). This contradicts \( x > 0 \). Hence \( x = 0 \).
 :::
 
-(The step "the hypothesis applies to it" uses a rule for "every", which Chapter 3 makes precise; the facts about \( \le \) are school algebra, which Chapter 10 derives from axioms.)
+(The step "the hypothesis applies to it" uses a rule for "every", which Chapter 4 makes precise; the facts about \( \le \) are school algebra, which Chapter 11 derives from axioms.)
 
 Look at its shape. The box opens with the assumption \( \neg P \), where \( P \) is "\( x = 0 \)", reaches \( \bot \), and closes to give \( P \). If we tried to justify the last line with \( \rulename{\neg I} \), we would get \( \neg\neg P \), "it is not the case that \( x \ne 0 \)", and not \( P \). The two arguments put their negations in different places: \( \rulename{\neg I} \) puts a \( \neg \) **into** the conclusion, and this second argument takes one **out**.
 
-Can the rules we have take it out? Try the smallest case, \( P \) from \( \neg\neg P \). The goal \( P \) is a bare letter, so no introduction rule applies. The premise can be used only by \( \rulename{\neg E} \), which needs \( \neg P \) beside it, so we assume \( \neg P \) in a box. The box reaches \( \bot \) at once, and \( \rulename{\neg I} \) closes it with \( \neg\neg P \): the premise again. Every attempt goes round this circle, and in fact no derivation of \( P \) from \( \neg\neg P \) uses only the rules of the earlier sections. Chapter 2 proves that, by reading statements with more than two truth values. Here we name the missing step and add it as a rule.
+Can the rules we have take it out? Try the smallest case, \( P \) from \( \neg\neg P \). The goal \( P \) is a bare letter, so no introduction rule applies. The premise can be used only by \( \rulename{\neg E} \), which needs \( \neg P \) beside it, so we assume \( \neg P \) in a box. The box reaches \( \bot \) at once, and \( \rulename{\neg I} \) closes it with \( \neg\neg P \): the premise again. Every attempt goes round this circle, and in fact no derivation of \( P \) from \( \neg\neg P \) uses only the rules of the earlier sections. Chapter 3 proves that, by reading statements with more than two truth values. Here we name the missing step and add it as a rule.
 
 ## The rule \( \rulename{RAA} \)
 
@@ -153,7 +153,7 @@ A box opens with the assumption \( \neg(x < 0) \) and reaches \( \bot \). Which 
 (i) By \( \rulename{RAA} \): the box opened with the negation of \( x < 0 \). (ii) By \( \rulename{\neg I} \): the box opened with \( \neg(x < 0) \), and \( \rulename{\neg I} \) writes the negation of its assumption. (iii) Neither. For real numbers \( x \ge 0 \) says the same as \( \neg(x < 0) \), which is exactly the statement the box has refuted.
 :::
 
-**Why add the rule at all?** Without \( \rulename{RAA} \) the rules of the earlier sections form a coherent system, and some mathematicians have chosen to work only in it; Chapter 4 tells that story. Ordinary mathematics, though, uses \( \rulename{RAA} \) constantly, usually without noticing, and so do the laws derived next.
+**Why add the rule at all?** Without \( \rulename{RAA} \) the rules of the earlier sections form a coherent system, and some mathematicians have chosen to work only in it; Chapter 5 tells that story. Ordinary mathematics, though, uses \( \rulename{RAA} \) constantly, usually without noticing, and so do the laws derived next.
 
 ## The converse of the contrapositive
 
@@ -260,7 +260,7 @@ For all statements \( P \) and \( Q \):
 ::: {.idea}
 Parts (a)–(c) yield to their goals: in (a) two \( \rulename{\neg I} \) boxes, one per conjunct; in (b) and (c) one \( \rulename{\neg I} \) box, with the disjunction used inside it by \( \rulename{\vee E} \).
 
-Part (d) resists. Its goal is a disjunction, so the natural last line is \( \rulename{\vee I} \), from \( \neg P \) or from \( \neg Q \). But neither follows from the premise alone: with \( P \) true and \( Q \) false the premise is true and \( \neg P \) false, with \( P \) false and \( Q \) true the premise is true and \( \neg Q \) false, and the rules never lead from true premises to a false conclusion (Chapter 2 proves this). The premise itself can be used only by \( \rulename{\neg E} \), against \( P \wedge Q \), which we do not have. So we go round the goal by \( \rulename{RAA} \): assume \( \neg(\neg P \vee \neg Q) \), which says that neither \( \neg P \) nor \( \neg Q \) holds. It gives \( P \) and \( Q \), each by a small \( \rulename{RAA} \) box of its own, and together they clash with the premise.
+Part (d) resists. Its goal is a disjunction, so the natural last line is \( \rulename{\vee I} \), from \( \neg P \) or from \( \neg Q \). But neither follows from the premise alone: with \( P \) true and \( Q \) false the premise is true and \( \neg P \) false, with \( P \) false and \( Q \) true the premise is true and \( \neg Q \) false, and the rules never lead from true premises to a false conclusion (Chapter 3 proves this). The premise itself can be used only by \( \rulename{\neg E} \), against \( P \wedge Q \), which we do not have. So we go round the goal by \( \rulename{RAA} \): assume \( \neg(\neg P \vee \neg Q) \), which says that neither \( \neg P \) nor \( \neg Q \) holds. It gives \( P \) and \( Q \), each by a small \( \rulename{RAA} \) box of its own, and together they clash with the premise.
 :::
 
 ::: {.proof}
@@ -521,23 +521,23 @@ In each replacement the later lines are renumbered, and a later citation of the 
 Finally, replacements can be chained. \( \rulename{LEM} \) derives \( \rulename{RAA} \): replace each use of \( \rulename{RAA} \) by the fragment of ②, and then each use of \( \rulename{\neg\neg E} \) so created by the fragment of ③. \( \rulename{\neg\neg E} \) derives \( \rulename{LEM} \): replace each use of \( \rulename{LEM} \) by the derivation of ①, and then each use of \( \rulename{RAA} \) in it by the fragment of ②. With ①, ② and ③ this shows that each of the three rules derives the other two, as claimed.
 :::
 
-So the classical part of our rules is **one** extra principle, whichever of its three forms we write down. Chapter 4 tells the history of the mathematicians who declined it, and what their mathematics looks like.
+So the classical part of our rules is **one** extra principle, whichever of its three forms we write down. Chapter 5 tells the history of the mathematicians who declined it, and what their mathematics looks like.
 
 ::: {.remark}
 Some books call exactly our \( \rulename{RAA} \) "proof by contradiction" or PBC, and some take \( \rulename{\neg\neg E} \) as their primitive rule and derive \( \rulename{RAA} \) from it. By @thm-classical-rules-interderivable nothing changes: all these choices prove the same sequents.
 :::
 
 ::: {.remark}
-\( \rulename{\bot E} \) could have been dropped from the primitive rules, since \( \rulename{RAA} \) and repetition derive it (@exr-reductio-and-classical-rules-b3 asks for the derivation). We keep it so that the primitive rules other than \( \rulename{RAA} \) form a system of their own, the one Chapter 4 studies.
+\( \rulename{\bot E} \) could have been dropped from the primitive rules, since \( \rulename{RAA} \) and repetition derive it (@exr-reductio-and-classical-rules-b3 asks for the derivation). We keep it so that the primitive rules other than \( \rulename{RAA} \) form a system of their own, the one Chapter 5 studies.
 :::
 
 ::: {.warning}
-An \( \rulename{RAA} \) box on \( \neg P \) whose assumption is used **only at its last step**, against a \( P \) derived without it, is legal, but it is a direct proof in disguise: the lines before the clash already derive \( P \), so the box can be deleted. The degenerate derivation of \( P \vdash P \) above is the smallest case. Chapter 4 shows how to spot this costume in written proofs and take it off. (A box that reaches \( \bot \) without using its assumption at all is a different matter: the same lines, written before the box, derive \( \bot \) without it, and \( \rulename{\bot E} \) then gives the goal at once.)
+An \( \rulename{RAA} \) box on \( \neg P \) whose assumption is used **only at its last step**, against a \( P \) derived without it, is legal, but it is a direct proof in disguise: the lines before the clash already derive \( P \), so the box can be deleted. The degenerate derivation of \( P \vdash P \) above is the smallest case. Chapter 5 shows how to spot this costume in written proofs and take it off. (A box that reaches \( \bot \) without using its assumption at all is a different matter: the same lines, written before the box, derive \( \bot \) without it, and \( \rulename{\bot E} \) then gives the goal at once.)
 :::
 
 ## What the rules sound like
 
-Written mathematics carries these rules in a handful of phrases. The Lean column is for readers who use that proof assistant; nothing later depends on it, and the full dictionary is in Chapter 4.
+Written mathematics carries these rules in a handful of phrases. The Lean column is for readers who use that proof assistant; nothing later depends on it, and the full dictionary is in Chapter 5.
 
 | Rule | You write | Lean |
 |---|---|---|
@@ -574,7 +574,7 @@ The phrase "for a contradiction" does not by itself tell \( \rulename{\neg I} \)
 
 (d) \( \rulename{\neg I} \): a box that opens with \( P \) and reaches \( \bot \) gives \( \neg P \). \( \rulename{RAA} \): a box that opens with \( \neg P \) and reaches \( \bot \) gives \( P \). The derivation of @prp-double-negation (a) uses \( \rulename{\neg I} \), with \( \neg P \) as the assumption, so its conclusion is the negation of \( \neg P \), namely \( \neg\neg P \).
 
-(e) \( \rulename{\vee I} \) would need \( \neg P \) or \( \neg Q \) on a line derived from the premise. Neither can be derived from \( \neg(P \wedge Q) \) alone: with \( P \) true and \( Q \) false the premise is true and \( \neg P \) is false, and with \( P \) false and \( Q \) true the premise is true and \( \neg Q \) is false, while the rules never lead from true premises to a false conclusion (proved in Chapter 2).
+(e) \( \rulename{\vee I} \) would need \( \neg P \) or \( \neg Q \) on a line derived from the premise. Neither can be derived from \( \neg(P \wedge Q) \) alone: with \( P \) true and \( Q \) false the premise is true and \( \neg P \) is false, and with \( P \) false and \( Q \) true the premise is true and \( \neg Q \) is false, while the rules never lead from true premises to a false conclusion (proved in Chapter 3).
 
 (f) Line 5 cites it, by \( \rulename{\neg E} \) against line 4, \( \neg P \vee \neg Q \); and line 9 cites it, by \( \rulename{\neg E} \) against line 8, the same statement. Both lines lie in boxes inside the box of line 2, which is still open, so the citations are legal.
 
@@ -808,7 +808,7 @@ $\begin{nd}
 
 (b) No. Line 6 fails: it cites line 3, the assumption of the first case box, lines 3–4, which closed before line 5. By the scope rule of @def-derivation, line 3 is not available at line 6. The form of \( \rulename{\neg E} \) is right; what is broken is availability. In words, the student used the assumption of one case inside the other case, where it has not been assumed.
 
-(c) The same move derives \( P \vee Q \vdash P \): split on the premise by \( \rulename{\vee E} \), with a first box that opens with \( P \) and ends there, and a second box that opens with \( Q \) and "repeats" \( P \) from the first. That sequent must not be derivable: with \( P \) false and \( Q \) true the premise is true and the conclusion false, and Chapter 2 proves that no derivation leads from true premises to a false conclusion. So citing a line of a sibling box is illegal in general, not just unlucky here.
+(c) The same move derives \( P \vee Q \vdash P \): split on the premise by \( \rulename{\vee E} \), with a first box that opens with \( P \) and ends there, and a second box that opens with \( Q \) and "repeats" \( P \) from the first. That sequent must not be derivable: with \( P \) false and \( Q \) true the premise is true and the conclusion false, and Chapter 3 proves that no derivation leads from true premises to a false conclusion. So citing a line of a sibling box is illegal in general, not just unlucky here.
 
 (d) Keep lines 1–5, and in the case \( \neg P \) argue for \( Q \) by \( \rulename{RAA} \), using the premise:
 
@@ -840,16 +840,16 @@ Line 7 cites line 5, the assumption of the enclosing case box, which is still op
 :::
 
 <!-- dependency ledger
-exm-raa-zero (example): x >= 0 and x != 0 give x > 0; subtracting x/2 and multiplying by 2 preserve <= | school algebra, an allowed prerequisite of ch01 (blueprint); ch10 derives it from axioms (prose pointer only)
-exm-raa-zero (example): the hypothesis "x <= eps for every eps > 0" applies to eps = x/2 | informal reading of "every"; the rule is ch03's, flagged in prose; the example illustrates the shape of RAA and nothing cites it
-def-rule-raa (claim): no derivation of P from not-not-P uses only the rules of s01-s05 | forward pointer to ch02 (thm-raa-independent, optional there), flagged in prose; the motivation for RAA, nothing proved from it
+exm-raa-zero (example): x >= 0 and x != 0 give x > 0; subtracting x/2 and multiplying by 2 preserve <= | school algebra, an allowed prerequisite of ch01 (blueprint); ch11 derives it from axioms (prose pointer only)
+exm-raa-zero (example): the hypothesis "x <= eps for every eps > 0" applies to eps = x/2 | informal reading of "every"; the rule is ch04's, flagged in prose; the example illustrates the shape of RAA and nothing cites it
+def-rule-raa (claim): no derivation of P from not-not-P uses only the rules of s01-s05 | forward pointer to ch03 (thm-raa-independent, optional there), flagged in prose; the motivation for RAA, nothing proved from it
 exm-raa-zero (example): for real numbers x > 0 says the same as "not x <= 0" (used to read the clash as not-E) | school algebra (trichotomy), allowed prerequisite
 prp-double-negation (proof): (a) is exm-double-negation-introduction (s04) | cited with @ref and repeated in full here
-prp-de-morgan (idea): no derivation reaches not-P from not(P and Q) alone, because a row makes the premise true and not-P false | forward pointer to ch02 (thm-soundness), flagged in the text as proved there; motivation only, the proof does not use it
+prp-de-morgan (idea): no derivation reaches not-P from not(P and Q) alone, because a row makes the premise true and not-P false | forward pointer to ch03 (thm-soundness), flagged in the text as proved there; motivation only, the proof does not use it
 prp-de-morgan (claim): no derivation of (d) avoids RAA | stated without proof and marked so; nothing depends on it
 thm-classical-rules-interderivable (proof): replacing a line by a fragment keeps every citation available and the premises and last line unchanged | inline (argued in the proof)
 exr-reductio-and-classical-rules-a1 (solution): squares are non-negative; 3 < 7/2 < 4 | school algebra
-exr-reductio-and-classical-rules-a1 (solution): the rules never lead from true premises to a false conclusion | forward pointer to ch02 (thm-soundness), flagged in the solution as proved there; blueprint-mandated comprehension part
+exr-reductio-and-classical-rules-a1 (solution): the rules never lead from true premises to a false conclusion | forward pointer to ch03 (thm-soundness), flagged in the solution as proved there; blueprint-mandated comprehension part
 exr-reductio-and-classical-rules-b4 (solution): x > 1 gives x > 0 and x^2 > x | school algebra
-exr-reductio-and-classical-rules-c2 (solution): P or Q |- P is not derivable (the row P false, Q true) | forward pointer to ch02 (thm-soundness, cor-refuting-row), flagged in the solution; the find-the-error verdict does not depend on it
+exr-reductio-and-classical-rules-c2 (solution): P or Q |- P is not derivable (the row P false, Q true) | forward pointer to ch03 (thm-soundness, cor-refuting-row), flagged in the solution; the find-the-error verdict does not depend on it
 -->

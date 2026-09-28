@@ -4,7 +4,7 @@ This is where the book starts, and it starts with a question every reader of mat
 
 ## Two arguments about squares
 
-Recall that an integer \( n \) is **even** when \( n = 2k \) for some integer \( k \), and **odd** when \( n = 2k + 1 \) for some integer \( k \). (The word "some" has rules of its own, which come in Chapter 3; here we use it as school algebra does.) Here is a fact about integers that this chapter proves properly in Section 1.4.
+Recall that an integer \( n \) is **even** when \( n = 2k \) for some integer \( k \), and **odd** when \( n = 2k + 1 \) for some integer \( k \). (The word "some" has rules of its own, which come in Chapter 4; here we use it as school algebra does.) Here is a fact about integers that this chapter proves properly in Section 1.4.
 
 > For every integer \( n \), if \( n^2 \) is even, then \( n \) is even.
 
@@ -61,9 +61,9 @@ Decide which of the following are statements.
 (f) This is the sentence of (e) with \( x \) replaced by \( 3 \), and it is a true statement.
 :::
 
-Items (e) and (f) differ by one symbol, and the difference is the whole point. The open sentence \( x > 2 \) becomes a statement in two ways. We can put a number in for \( x \), as in (f). Or we can say which \( x \) we mean in some other way, as in "for every real number \( x \), \( x > 2 \)" (a false statement) or "for some real number \( x \), \( x > 2 \)" (a true one). The words "for every" and "for some" are the **quantifiers**, and they are the subject of Chapter 3.
+Items (e) and (f) differ by one symbol, and the difference is the whole point. The open sentence \( x > 2 \) becomes a statement in two ways. We can put a number in for \( x \), as in (f). Or we can say which \( x \) we mean in some other way, as in "for every real number \( x \), \( x > 2 \)" (a false statement) or "for some real number \( x \), \( x > 2 \)" (a true one). The words "for every" and "for some" are the **quantifiers**, and they are the subject of Chapter 4.
 
-Mathematics is full of open sentences, and we cannot wait until Chapter 3 to use them. So this chapter adopts a convention. When an example says "let \( x \) be a real number" and then talks about \( x \), the letter \( x \) names **one fixed** number, not further specified. Every sentence about that \( x \) is then a statement, true or false according to which number \( x \) is. "Let \( x \) be a real number with \( x > 2 \); then \( x^2 > 4 \)" is an argument about one number, which happens to work whatever the number is. Chapter 3 explains why an argument of that kind proves a statement about every \( x \) at once.
+Mathematics is full of open sentences, and we cannot wait until Chapter 4 to use them. So this chapter adopts a convention. When an example says "let \( x \) be a real number" and then talks about \( x \), the letter \( x \) names **one fixed** number, not further specified. Every sentence about that \( x \) is then a statement, true or false according to which number \( x \) is. "Let \( x \) be a real number with \( x > 2 \); then \( x^2 > 4 \)" is an argument about one number, which happens to work whatever the number is. Chapter 4 explains why an argument of that kind proves a statement about every \( x \) at once.
 
 ::: {.remark}
 The book reserves the words "proposition" and "theorem" for proved results, so it calls the sentences of logic **statements**. Other books call them propositions, which is where the name **propositional logic**, for the subject of this chapter, comes from.
@@ -112,7 +112,7 @@ Parentheses settle every such question, and a few conventions let us drop the on
 4. In a mixture of \( \wedge \) and \( \vee \), or of \( \to \) and \( \leftrightarrow \), the parentheses are always written. We never write \( P \wedge Q \vee R \).
 :::
 
-Convention (3) is the natural one: a statement "if \( P \), then if \( Q \), then \( R \)" is common, and \( (P \to Q) \to R \), whose hypothesis is itself an implication, is rare. Chapter 2 turns "a statement built from letters by connectives" into an exact definition and proves that every such statement can be read in only one way. In this chapter we parse by eye.
+Convention (3) is the natural one: a statement "if \( P \), then if \( Q \), then \( R \)" is common, and \( (P \to Q) \to R \), whose hypothesis is itself an implication, is rare. Chapter 3 turns "a statement built from letters by connectives" into an exact definition and proves that every such statement can be read in only one way. In this chapter we parse by eye.
 
 ::: {#def-main-connective}
 [Main Connective]
@@ -230,13 +230,13 @@ Every connective works the same way. Each comes with introduction rules, saying 
 
 *A proof is a chain in which every line is an assumption or one application of a rule.*
 
-The rules are chosen so that they never lead from true statements to a false one. For \( \wedge \) this is plain: if \( P \) and \( Q \) are both true, so is \( P \wedge Q \), and if \( P \wedge Q \) is true, so is \( P \). Chapter 2 proves it for every rule at once; the theorem is called soundness.
+The rules are chosen so that they never lead from true statements to a false one. For \( \wedge \) this is plain: if \( P \) and \( Q \) are both true, so is \( P \wedge Q \), and if \( P \wedge Q \) is true, so is \( P \). Chapter 3 proves it for every rule at once; the theorem is called soundness.
 
-The second slogan is what makes a proof possible to check. Finding a proof may need an idea. Checking one needs none: go through it line by line and ask of each line which rule produced it and whether that rule was applied to lines that really are there. A reader who has lost the thread of a long argument can always fall back on that question, and it is the question to ask of Argument B. In Part 0 we ask it out loud; Chapter 4 shows how the same rules run silently underneath ordinary written proofs.
+The second slogan is what makes a proof possible to check. Finding a proof may need an idea. Checking one needs none: go through it line by line and ask of each line which rule produced it and whether that rule was applied to lines that really are there. A reader who has lost the thread of a long argument can always fall back on that question, and it is the question to ask of Argument B. In Part 0 we ask it out loud; Chapter 5 shows how the same rules run silently underneath ordinary written proofs.
 
-The order of this chapter differs from that of many logic books, which begin with truth tables: tables listing, for instance, when \( P \to Q \) is true. There, the row "if \( P \) is false, then \( P \to Q \) is true" has to be accepted as a convention, and it looks arbitrary. Here, that fact comes out of how proofs work (Section 1.4), and the tables arrive in Chapter 2, which proves that the rules and the tables agree.
+The order of this chapter differs from that of many logic books, which begin with truth tables: tables listing, for instance, when \( P \to Q \) is true. There, the row "if \( P \) is false, then \( P \to Q \) is true" has to be accepted as a convention, and it looks arbitrary. Here, that fact comes out of how proofs work (Section 1.4), and the tables arrive in Chapter 3, which proves that the rules and the tables agree.
 
-We can now say what this chapter will make of Argument B. Its claim has the form \( Q \to P \), with \( Q \): "\( n^2 \) is even" and \( P \): "\( n \) is even", and B's box of reasoning runs from \( P \) to \( Q \). Section 1.2 names the error as a misuse of the rule for proving an implication: B assumed the conclusion and reached the hypothesis. And to repair B without new ideas, one would have to pass from "if \( n \) is even, then \( n^2 \) is even" and "\( n^2 \) is even" to "\( n \) is even", the form \( P \to Q, \ Q \vdash P \) of the Quick check above. Chapter 2 proves that the sequent \( P \to Q, \ Q \vdash P \) does not hold: no derivation leads from those premises to that conclusion, so the step is not a rule and cannot be assembled from the rules.
+We can now say what this chapter will make of Argument B. Its claim has the form \( Q \to P \), with \( Q \): "\( n^2 \) is even" and \( P \): "\( n \) is even", and B's box of reasoning runs from \( P \) to \( Q \). Section 1.2 names the error as a misuse of the rule for proving an implication: B assumed the conclusion and reached the hypothesis. And to repair B without new ideas, one would have to pass from "if \( n \) is even, then \( n^2 \) is even" and "\( n^2 \) is even" to "\( n \) is even", the form \( P \to Q, \ Q \vdash P \) of the Quick check above. Chapter 3 proves that the sequent \( P \to Q, \ Q \vdash P \) does not hold: no derivation leads from those premises to that conclusion, so the step is not a rule and cannot be assembled from the rules.
 
 ## Exercises
 
