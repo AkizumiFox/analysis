@@ -591,7 +591,7 @@ For (a)–(d), name the goal's main connective, the first rule the method aims f
 :::
 
 ::: {.solution}
-(a) \( \to \); \( \rulename{{\to}I} \): "Assume \( x^3 < 0 \)." (A proof through the contrapositive starts "Suppose \( x \ge 0 \)" instead, inside the same frame.)
+(a) \( \to \); \( \rulename{{\to}I} \): "Assume \( x^3 < 0 \)." (Starting "Suppose \( x \ge 0 \)" inside that frame is an RAA box on the goal \( x < 0 \), not the contrapositive; a proof through the contrapositive replaces the frame, proving "if \( x \ge 0 \) then \( x^3 \ge 0 \)" and then applying \( \rulename{CP} \).)
 
 (b) \( \neg \), since the claim is "not: there is an integer \( n \) with \( 2n = 7 \)"; \( \rulename{\neg I} \): "Suppose \( n \) is an integer with \( 2n = 7 \)." (Naming \( n \) uses a rule for "there exists", from Chapter 3.)
 
@@ -874,13 +874,14 @@ LEM on \( P \) works equally well, with the roles of the two sides exchanged.
 (b) LEM is used at line 1, and RAA only inside it. The method cannot avoid step 5 here. Step 2 postpones the \( \vee \) goal; with no premises, step 3 has nothing to eliminate and step 4 nothing to clash; and \( \rulename{\vee I} \) cannot come first, because neither side is derivable from no premises (with \( P \) true and \( Q \) false, \( P \to Q \) is false; with \( P \) false and \( Q \) true, \( Q \to P \) is false; Chapter 2 turns such rows into proofs). So a resource must be created from nothing, and only step 5 does that. This shows that the **method** needs step 5; that every derivation of the sequent uses RAA or an equivalent is a stronger claim, which we do not prove.
 
 **Marking scheme.** (10 points)
-- 3: a correct split by LEM (on \( Q \) or on \( P \)), with two case boxes combined by \( \rulename{\vee E} \).
+- 3: a correct split by LEM (on \( Q \) or on \( P \)), with two case boxes combined by \( \rulename{\vee E} \), or a correct RAA box on the negated goal.
 - 2: in one case, the implication by a box that repeats the case assumption.
 - 2: in the other case, the implication by a box that clashes with the case assumption, then \( \rulename{\bot E} \).
 - 1: \( \rulename{\vee I} \) on the correct side in each case, every citation available.
-- 2: the paragraph names the LEM line and explains why no other step of the method applies.
+- 2: the paragraph names the LEM line (or the RAA line) and explains why no other step of the method applies.
 
 Fatal errors (0 for the step): choosing a side of the goal before the split; citing one case's assumption in the other case.
+A correct derivation by RAA on the negated goal earns full marks: its 2 + 2 + 1 points go to the two implications derived inside the RAA box (one by a box that repeats an assumption, one by a clash and \( \rulename{\bot E} \)) and to the \( \rulename{\vee I} \) lines that clash with the RAA assumption.
 :::
 
 ::: {#exr-finding-derivations-c3}

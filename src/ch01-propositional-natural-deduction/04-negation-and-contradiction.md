@@ -1,6 +1,6 @@
 # Not, Contradiction, and the Contrapositive
 
-With the rules for "and", "implies" and "or" (@def-rules-conjunction, @def-rules-implication, @def-rules-disjunction) we can prove that things are so, but not yet that something is **not** so: that no rational number has square \( 2 \), or that \( x^2 + 1 \) is never \( 0 \). This section gives the rules for "not" and for \( \bot \). With them we prove the contrapositive, meet the first **derived rule**, prove that \( \sqrt{2} \) is irrational, and see where the strangest feature of implication comes from.
+With the rules for "and", "implies" and "or" (@def-rules-conjunction, @def-rules-implication, @def-rules-disjunction) we can prove that things are so, but not yet that something is **not** so: that no rational number has square \( 2 \) or that \( x^2 + 1 \) is never \( 0 \). This section gives the rules for "not" and for \( \bot \). With them we prove the contrapositive, meet the first **derived rule**, prove that \( \sqrt{2} \) is irrational, and see where the strangest feature of implication comes from.
 
 ## How to prove that something is not so
 
@@ -190,7 +190,7 @@ Suppose a sequent \( P_1, \dots, P_n \vdash Q \) has been derived. In a later de
 
 In words: a proved sequent is a new rule. Its premises become the lines the rule cites, its conclusion the line it writes, and its letters may be replaced by any statements, since they stood for arbitrary statements (@def-derivable).
 
-A derived rule adds **convenience, not power**. Its line abbreviates a piece of derivation we could write out in full: repeat each cited line by (D3) of @def-derivation, then copy the derivation of the sequent below the repetitions, with its letters replaced, its premises replaced by the repetitions, and its line numbers shifted. Every citation inside the copy points inside the copy or to a repetition, all in the current box, so all are available; and the copy's boxes close before its last line, the instance of \( Q \). So whatever is derivable with derived rules is derivable with the primitive rules alone.
+A derived rule adds **convenience, not power**. Its line abbreviates a piece of derivation we could write out in full: repeat each cited line by (D3) of @def-derivation, then copy the derivation of the sequent below the repetitions, with its letters replaced, its premises replaced by the repetitions, and its line numbers shifted. Every citation inside the copy points inside the copy or to a repetition, all in the current box, so all are available; and the copy's boxes close before its last line, the instance of \( Q \). If the copy itself uses derived rules, expand those lines in the same way; this stops, because each derivation cites only results proved before it. So whatever is derivable with derived rules is derivable with the primitive rules alone.
 
 We name the derived rules of this chapter by short tags: \( \rulename{MT} \) for @prp-modus-tollens and \( \rulename{CP} \) for @prp-contrapositive, and more to come in Sections 1.6 and 1.7. Here is the first *use* of one. With \( \rulename{CP} \) available as a rule, modus tollens has a two-step proof.
 ```{=latex}
@@ -577,7 +577,7 @@ Follow the proof of @thm-sqrt2-irrational. After writing \( p = 2m \), you will 
 ::: {.solution}
 [Hint 2]
 
-You will reach \( 3q^2 = 2m^2 \). Show that \( q \) is not odd, by assuming it is and computing the parity of \( 3q^2 \).
+You will reach \( 3q^2 = 2m^2 \), so \( 3q^2 \) is even. The proof of @thm-square-even-implies-even passed from "\( n^2 \) is even" to "\( n \) is even"; imitate its shape for \( 3q^2 \) and \( q \).
 :::
 
 ::: {.solution}

@@ -52,7 +52,8 @@ These are book-independent. Keep them.
 | `\card{S}` | cardinality |
 | `\ind_{A}` | indicator function 𝟏_A of a set A |
 | `\sup A`, `\inf A`, `\max`, `\min` | supremum and infimum (sup ∅ = −∞ and sup of an unbounded set = +∞ only from Part IV on, where it is announced) |
-| `\abs{x}` | absolute value of a number (Ch 10, `def-absolute-value`); \( \abs{x - y} \) is the distance from \( x \) to \( y \) |
+| `\abs{x}` | absolute value of a number: defined by cases in Ch 1 (first in §01 C2, displayed in §03; school algebra), formally in Ch 10 (`def-absolute-value`); \( \abs{x - y} \) is the distance from \( x \) to \( y \) |
+| `d \mid n` | d divides n: n = dk for some integer k (first used Ch 1 §05, C1) |
 | `-A \coloneqq \{ -a : a \in A \}` | reflection of a set of numbers (Ch 10); \( \inf A = -\sup(-A) \) |
 | `cA \coloneqq \{ ca : a \in A \}` | scaling of a set of numbers by \( c \in \nR \) (Ch 10) |
 | `A + B \coloneqq \{ a + b : a \in A, \ b \in B \}` | sum of two sets of numbers (Ch 10); later also for subsets of a vector space |
@@ -86,6 +87,7 @@ The main characters: what letter each kind of object gets.
 | `\forall, \exists` | quantifiers |
 | `\Gamma \vdash P` | P is derivable from the assumptions Γ |
 | `P \dashv\vdash Q` | P and Q are provably equivalent: P ⊢ Q and Q ⊢ P (Ch 1, `def-provable-equivalence`) |
+| `\mathsf{X}`, `\mathsf{Y}` | a variable standing for a rule, in statements about rules (Ch 1 §06, "X derives Y" before `thm-classical-rules-interderivable`) |
 | `nd` environment | a Fitch derivation: fitch.sty via `latex/fitch-book.sty` (syntax and rule macros documented there) |
 | `\rulename{\wedge I}` | a rule name: ∧I, ∧E, →I, →E, ∨I, ∨E, ¬I, ¬E, ⊥E, RAA, ↔I, ↔E, R, ∀I, ∀E, ∃I, ∃E, =I, =E; derived: ¬¬I, ¬¬E, MT, CP, DS, DM, LEM; plus R (repetition, (D3) of `def-derivation`) |
 

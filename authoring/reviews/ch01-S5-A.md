@@ -178,3 +178,15 @@
 - `prp-equivalence-cycle`: without R → P, the row P false, Q, R true refutes P ↔ Q.
 - MT / DS / ex falso / vacuous implication / transitivity: dropping the second premise gives a refuting row (evidence column).
 - `thm-square-even-implies-even`, `thm-odd-iff-square-odd`: the hypothesis "n integer" is what makes "even/odd" meaningful (n = √2 has n² = 2 even).
+
+## Resolution (S7, reviser, 2026-09-28)
+
+Ledger: each item below has an S7 verdict `correct` by `reviser` (the ledger has no `fixed` verdict; `correct` on the new text is the closest), awaiting the S7 re-referee.
+
+| Finding | Resolution |
+|---|---|
+| 06:66 `def-rule-raa` (gap) | The sentence now claims only the last step: "So the **last** step of a derivation of a negation never needs RAA, though steps inside its box still may; RAA earns its place on the other goals." No global claim remains; 06:198's local use is unchanged. |
+| 03:373 `exm-cases-on-hypothesis` | Now "the one place in this section where ∨I manufactures the hypothesis of a premise" (also S5-B). |
+| 04:193 `def-derived-rule` | Added: "If the copy itself uses derived rules, expand those lines in the same way; this stops, because each derivation cites only results proved before it." |
+| 05:177 `exm-iff-negations` | The reason is now precise (the natural box on ¬Q ends in ¬¬Q) and the claim is marked "we state it without proof, and nothing depends on it"; added to §05's dependency ledger. |
+| 05:201/225 `thm-squares-order` | Lead-in: "each hypothesis is needed: dropping either one breaks one of the two directions". Remark: (⇒) "needs" x ≥ 0, with a parenthesis that its proof's use of y ≥ 0 follows from y ≥ x ≥ 0; (⇐) "used only" y ≥ 0 (also S5-B). |

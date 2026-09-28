@@ -89,7 +89,7 @@ In words: there is a derivation with premise \( P \) and last line \( Q \), and 
 
 The simplest example is \( P \dashv\vdash P \): the derivation whose only line is the premise \( P \) has last line \( P \), and it serves in both directions. A first real example is \( P \vee Q \dashv\vdash Q \vee P \). The derivation of @exm-disjunction-first-derivations shows \( P \vee Q \vdash Q \vee P \), and since \( P \) and \( Q \) stand for arbitrary statements, the same derivation with the two letters exchanged shows \( Q \vee P \vdash P \vee Q \).
 
-A minimal change turns an equivalence into a one-way street. In @exm-double-negation-introduction we derived \( P \vdash \neg\neg P \). The converse, \( \neg\neg P \vdash P \), would have to remove two negations, and no rule met so far removes one. So we cannot yet claim \( P \dashv\vdash \neg\neg P \): the clause "\( Q \vdash P \)" of the definition is the one missing. (It holds once Section 1.6 adds its rule; that it cannot hold without that rule is true, and we state it without proof.) Likewise @prp-contrapositive derives \( \neg Q \to \neg P \) from \( P \to Q \), but not yet the reverse.
+A minimal change turns an equivalence into a one-way street. In @exm-double-negation-introduction we derived \( P \vdash \neg\neg P \). The converse, \( \neg\neg P \vdash P \), would have to remove two negations, and no rule met so far removes one. So we cannot yet claim \( P \dashv\vdash \neg\neg P \): the clause "\( Q \vdash P \)" of the definition is the one missing. (It holds once Section 1.6 adds its rule; that it cannot hold without that rule is true, and Chapter 2 proves it.) Likewise @prp-contrapositive derives \( \neg Q \to \neg P \) from \( P \to Q \), but not yet the reverse.
 
 The connective \( \leftrightarrow \) and the relation \( \dashv\vdash \) are two sides of one idea, and the next result makes the link exact. It also says that \( \dashv\vdash \) behaves as an equivalence should.
 
@@ -174,7 +174,7 @@ $\begin{nd}
 Line 5 cites line 2, the assumption of the outer box, which is still open there. The two halves are mirror images, with \( P \) and \( Q \) exchanged.
 :::
 
-The derivation uses only the rules of this section and of @def-rules-negation. Its converse, \( \neg P \leftrightarrow \neg Q \vdash P \leftrightarrow Q \), is also derivable, but it needs the rule of Section 1.6: inside the box of \( P \) it must produce the **positive** statement \( Q \), and nothing met so far produces a positive statement from negated ones. Section 1.6 sets it as an exercise (its B2). So we cannot yet add \( P \leftrightarrow Q \dashv\vdash \neg P \leftrightarrow \neg Q \) to the table.
+The derivation uses only the rules of this section and of @def-rules-negation. Its converse, \( \neg P \leftrightarrow \neg Q \vdash P \leftrightarrow Q \), is also derivable, but it needs the rule of Section 1.6: inside the box of \( P \) it must produce the **positive** statement \( Q \), and the natural attempt, a box on \( \neg Q \), ends in \( \neg\neg Q \) instead. That no derivation avoids the rule is true, but we state it without proof, and nothing depends on it. Section 1.6 sets it as an exercise (its B2). So we cannot yet add \( P \leftrightarrow Q \dashv\vdash \neg P \leftrightarrow \neg Q \) to the table.
 
 ## Proving an iff: two directions
 
@@ -198,7 +198,7 @@ This proves the theorem \( [\rulename{{\leftrightarrow}I}] \).
 
 The \( (\Leftarrow) \) direction has the same shape as @prp-disjunctive-syllogism: two cases, one of which is impossible. Once the pattern is familiar, a proof says it in one breath: "\( n \) cannot be even, since then \( n^2 \) would be even; so \( n \) is odd." Behind that sentence are the three rules named above.
 
-The next example is about real numbers, and its two directions do genuinely different work. A remark afterwards shows that each hypothesis is used, by one direction each.
+The next example is about real numbers, and its two directions do genuinely different work. A remark afterwards shows that each hypothesis is needed: dropping either one breaks one of the two directions.
 
 ::: {#thm-squares-order}
 [Squaring Preserves Order]
@@ -222,7 +222,7 @@ This proves the theorem \( [\rulename{{\leftrightarrow}I}] \).
 :::
 
 ::: {.remark}
-Each hypothesis has a job. The direction \( (\Rightarrow) \) used \( x \ge 0 \), and fails without it: \( x = -2 \), \( y = 1 \) gives \( x \le y \) but \( x^2 = 4 > 1 = y^2 \). The direction \( (\Leftarrow) \) used \( y \ge 0 \), and fails without it: \( x = 1 \), \( y = -2 \) gives \( x^2 = 1 \le 4 = y^2 \) but \( x > y \).
+Each hypothesis has a job. The direction \( (\Rightarrow) \) needs \( x \ge 0 \), and fails without it: \( x = -2 \), \( y = 1 \) gives \( x \le y \) but \( x^2 = 4 > 1 = y^2 \). (Its proof also multiplied by \( y \ge 0 \), but there \( y \ge 0 \) already follows from \( y \ge x \ge 0 \).) The direction \( (\Leftarrow) \) used only \( y \ge 0 \), and fails without it: \( x = 1 \), \( y = -2 \) gives \( x^2 = 1 \le 4 = y^2 \) but \( x > y \).
 :::
 
 A payoff comes at once. For \( a \ge 0 \) and \( b \ge 0 \), apply @thm-squares-order to \( x = \sqrt{a} \) and \( y = \sqrt{b} \), which are non-negative with squares \( a \) and \( b \): it says \( \sqrt{a} \le \sqrt{b} \) if and only if \( a \le b \). So taking square roots preserves order, a fact used constantly in estimates. (That square roots of non-negative numbers exist is a school fact here; Chapter 10 proves it from the least upper bound axiom.)
@@ -468,7 +468,7 @@ Choose the order of the cycle so that each arrow is short. The two results you m
 ::: {.solution}
 [Hint 2]
 
-Try (i) \( \Rightarrow \) (iii) \( \Rightarrow \) (ii) \( \Rightarrow \) (i). For (ii) \( \Rightarrow \) (i), write \( n = 3b \) and ask whether \( b \) can be odd.
+Try (i) \( \Rightarrow \) (iii) \( \Rightarrow \) (ii) \( \Rightarrow \) (i). The last arrow is the one that needs an idea: the two halves of (ii) must be used together, not one at a time.
 :::
 
 ::: {.solution}
@@ -485,10 +485,10 @@ Each arrow does one kind of work: (i) \( \Rightarrow \) (iii) is a computation, 
 **Marking scheme.** (10 points)
 - 1: names a cycle through all three conditions and cites @prp-equivalence-cycle (or proves the needed implications explicitly).
 - 2: (i) \( \Rightarrow \) (iii) by computation.
-- 3: (iii) \( \Rightarrow \) (ii), citing @thm-square-even-implies-even for the factor \( 2 \) and the result of B3 for the factor \( 3 \).
+- 3: (iii) \( \Rightarrow \) (ii), citing @thm-square-even-implies-even for the factor \( 2 \) and part (a) of @exr-negation-and-contradiction-b3 for the factor \( 3 \).
 - 4: (ii) \( \Rightarrow \) (i), with the odd case for \( b \) ruled out by a correct parity computation.
 Fatal errors (0 for the step): a "cycle" that omits a condition; using "\( 2 \mid n \) and \( 3 \mid n \) gives \( 6 \mid n \)" without proof; using "\( 6 \mid n^2 \Rightarrow 6 \mid n \)" as known.
-Any other cycle through the three conditions earns full marks if each of its arrows is proved.
+Any other cycle through the three conditions earns full marks if each of its arrows is proved: 1 point for the cycle and its citation, and 3 points for each of its three arrows.
 :::
 
 ::: {#exr-biconditional-and-definitions-c2}
@@ -514,6 +514,9 @@ prp-provable-equivalence-basics (proof): a one-line derivation consisting of a p
 thm-odd-iff-square-odd (proof): (E1)-(E3); n = 2k gives n^2 = 2(2k^2) | school facts stated in Section 1.4 (ch01 blueprint, Allowed prerequisites); computation inline
 thm-squares-order (proof): multiplying an inequality by a non-negative (positive) number; x <= y or y < x; transitivity of <= and < | school algebra, taken as known; Ch 10 re-proves (prose pointer)
 thm-squares-order (claim): (aftermath) existence of square roots of non-negative reals | school fact, taken as known; Ch 10 proves it (prose pointer); nothing depends on it
+def-provable-equivalence (claim): a derivation never leads from true premises to a false conclusion | forward pointer to ch02 (thm-soundness), flagged in the text as proved there; the warning's example is motivation only
+def-provable-equivalence (claim): not-not-P |- P does not hold without RAA | forward pointer to ch02 (thm-raa-independent, optional there), flagged in prose; nothing depends on it
+exm-iff-negations (claim): the converse needs RAA | stated without proof and marked so; nothing depends on it
 exm-strictly-increasing-both-ways (example): 3 > 0; multiplying/adding inequalities; the quantifier "for all x, y" used informally | school algebra; quantifier rules in Ch 3 (prose pointer)
 exm-unit-interval-tfae (example): x <= 0 or x > 0; x^2 >= 0; dividing an inequality by x > 0 | school algebra, taken as known
 thm-squares-order (solution): (the quick check after this theorem) a product of reals is zero only if a factor is zero | school algebra, taken as known

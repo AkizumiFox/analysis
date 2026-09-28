@@ -15,7 +15,7 @@ This chapter answers such questions for the connectives "and", "or", "implies", 
 - **Or, and proof by cases.** The rules for disjunction, proof by cases on absolute values, and why the cases must exhaust.
 - **Not, contradiction, and the contrapositive.** The rules for negation and contradiction, the first derived rules, the irrationality of \( \sqrt{2} \), and where vacuous truth comes from.
 - **Iff, equivalence, and what a definition says.** The rules for the biconditional, provable equivalence, why a definition's "if" means "iff", and cycles of implications.
-- **Proof by contradiction and the classical rules.** Reductio ad absurdum, double negation, excluded middle and De Morgan's laws, and why these three classical principles stand or fall together.
+- **Proof by contradiction and the classical rules.** Reductio ad absurdum, double negation, excluded middle and De Morgan's laws, and why reductio, double-negation elimination and excluded middle stand or fall together.
 - **How to find a derivation.** A goal-directed search method, worked searches, the rules in one place, and a search that fails, which leaves the question Chapter 2 answers.
 
 ## Named moves

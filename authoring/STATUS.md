@@ -27,18 +27,22 @@ is rewritten as `propositional-natural-deduction`; its prose still carries the o
 ## Forward promises
 
 Prose pointers that must become `@ref`s (or be paid off) when the target chapter is written.
-Rows from Chapter 1 give the new target first and, in brackets, the old number its prose still uses.
+Chapter 1 rows use the rewritten chapter's section numbers (2026-09-28, S7); its prose uses the new chapter numbers.
 
 | From | Promise | Target |
 |---|---|---|
-| Ch 1 §01, §03, §04, §05, §06, §07, index | quantifier rules: ∀I ("r was arbitrary"), naming a witness k | Ch 3 (prose: Ch 2) |
-| Ch 1 §02 warning | using an assumption outside its box, catalogued among what is not allowed | Ch 3 (prose: Ch 2) |
-| Ch 1 §05 | ¬¬P ⊢ P and P ∨ ¬P are not derivable without RAA; ⊢ ¬¬(P ∨ ¬P) without RAA; the people who refused the rule | Ch 4, final section (prose: Ch 2) |
-| Ch 1 §06 | full proof of soundness (by induction on the length of a derivation) | Ch 2 (prose: Ch 4) |
-| Ch 1 §03 | the lowest-terms fact (L) rests on induction / well-ordering | Ch 6 (prose: Ch 4) |
-| Ch 1 §05 C1 | every integer ≥ 2 has a prime divisor | Ch 6 (prose: Ch 4) |
-| Ch 1 §03, §04, index | facts about ≤, absolute value, existence of square roots | Ch 10 (paid; prose: Ch 8) |
-| Ch 1 §04 warning | differentiable ⇒ continuous | Ch 16 (prose: Ch 14) |
+| Ch 1 §01, §02, §03, §04, §05, §06, §07, index | soundness: truth tables for the connectives, the rules never lead from true premises to a false conclusion, a refuting row rules out every derivation (`thm-soundness`, `cor-refuting-row`); the length and context of a derivation (§02) | Ch 2 |
+| Ch 1 §01 | unique readability: a statement built from letters by connectives is read in only one way | Ch 2 |
+| Ch 1 §02 | substitution: a derivation stays a derivation under each way of putting statements in for the letters | Ch 2 |
+| Ch 1 §05, §06 | ¬¬P ⊢ P is not derivable without RAA, by reading statements with more than two truth values (`thm-raa-independent`, optional there) | Ch 2 |
+| Ch 1 §01, §04, §05, §06, §07, index | quantifier rules: "for every" (∀I, "r was arbitrary"; applying a hypothesis "for every ε"), "there exists" (naming a witness k) | Ch 3 |
+| Ch 1 §01, §02, index | checking a proof line by line: the rules run silently under written proofs; the rule/phrase table extended to every rule | Ch 4 |
+| Ch 1 §03, §06 | the full rule, phrase and Lean dictionary | Ch 4 |
+| Ch 1 §04, §06 | the reading ¬P as P → ⊥, and the system of the rules other than RAA (intuitionistic logic); the history of those who declined RAA | Ch 4, final section |
+| Ch 1 §06 | spotting a "proof by contradiction" that is a direct proof in disguise | Ch 4 |
+| Ch 1 §04 | the lowest-terms fact (L) rests on well-ordering | Ch 6 |
+| Ch 1 §03, §04, §05, §06, index | facts about ≤ and absolute value from the ordered-field axioms; existence of square roots of non-negative reals; `thm-sqrt2-irrational` used as is | Ch 10 (paid) |
+| Ch 1 §05 | differentiable ⇒ continuous | Ch 16 |
 | Ch 10 §02, §05 | the quantifier law "not all" ⇒ "some not" (uses RAA); quantifier negation | Ch 3 |
 | Ch 10 index | sets, images, −A, A + B as images | Ch 5 |
 | Ch 10 §01 C1, §02, §04, §05, §06 | induction (used for n > 0 in exm-sup-one-minus-reciprocal and cor-sup-approximation, and in §06); every non-empty finite set has a maximum; ℕ closed under + and ·; n ≥ 2 ⇒ n − 1 ∈ ℕ; nothing between n and n + 1; well-ordering (used in lem-integer-part); definition by recursion (powers uⁿ in thm-nth-root) | Ch 6 |
@@ -49,6 +53,10 @@ Rows from Chapter 1 give the new target first and, in brackets, the old number i
 | Ch 10 §06 | aˣ for irrational x | Ch 19 |
 | Ch 10 index, §03, §05, §07 | equivalent forms of completeness | Ch 20 |
 | Ch 10 index, §03 | constructing ℝ; uniqueness (prose only, optional) | Ch 21, Ch 22 |
+
+## Blueprint deviations
+
+- Ch 1 (recorded at S7 from S5 Referee B, R4; for S2a to confirm): six labels not in the frozen blueprint's label list carry content the blueprint asks for: `exm-disjunction-first-derivations`, `exm-disjunction-regroup`, `exm-cases-on-hypothesis` (§03); `exm-double-negation-introduction`, `exm-modus-tollens-instance` (§04); `prp-provable-equivalence-basics` (§05).
 
 ## Engine and convention notes from the pilot
 

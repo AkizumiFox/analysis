@@ -63,7 +63,7 @@ Set the two rules side by side:
 
 The rows differ only in where the \( \neg \) sits, and that makes RAA different in kind. Every other primitive rule is the introduction or the elimination rule of one connective (\( \rulename{\bot E} \) is the elimination rule of \( \bot \)); repetition is a clause of @def-derivation, not a rule for a connective. RAA belongs to no connective: it applies to every statement \( P \), whatever its main connective.
 
-The box opens with the negation of the **whole** of \( P \): if \( P \) is \( Q \vee R \), the box opens with \( \neg(Q \vee R) \), not with \( \neg Q \vee R \). If \( P \) is itself a negation \( \neg Q \), the box opens with \( \neg\neg Q \), and then RAA can always be avoided: open a \( \rulename{\neg I} \) box with \( Q \) instead, derive \( \neg\neg Q \) from \( Q \) inside it as in @exm-double-negation-introduction, and continue as the RAA box did, citing that line wherever the RAA box cited its assumption. So RAA is never needed to prove a **negation**; it earns its place on the other goals.
+The box opens with the negation of the **whole** of \( P \): if \( P \) is \( Q \vee R \), the box opens with \( \neg(Q \vee R) \), not with \( \neg Q \vee R \). If \( P \) is itself a negation \( \neg Q \), the box opens with \( \neg\neg Q \), and then RAA can always be avoided: open a \( \rulename{\neg I} \) box with \( Q \) instead, derive \( \neg\neg Q \) from \( Q \) inside it as in @exm-double-negation-introduction, and continue as the RAA box did, citing that line wherever the RAA box cited its assumption. So the **last** step of a derivation of a negation never needs RAA, though steps inside its box still may; RAA earns its place on the other goals.
 
 ::: {.warning}
 The assumption that opens an RAA box must be the **exact** negation of the goal. To prove \( x \le 1 \) by contradiction, assume \( x > 1 \), since for real numbers "not \( x \le 1 \)" says \( x > 1 \). Assuming \( x \ge 1 \) instead is a common slip: it is not the negation, because \( x = 1 \) satisfies both \( x \le 1 \) and \( x \ge 1 \). A box opened with \( x \ge 1 \) cannot reach \( \bot \) when \( x = 1 \) is possible, and a "contradiction" that seems to be reached hides an error.
@@ -236,7 +236,7 @@ $\begin{nd}
 The derivation has no premises, so it shows \( \vdash P \vee \neg P \). RAA is used once, at line 8. This proves the proposition.
 :::
 
-Excluded middle becomes a derived rule with no premises: a line \( P \vee \neg P \) may be written anywhere, for any \( P \), justified by LEM with no line cited; pasting in the eight lines above would replace it. Its use is **proof by cases on a statement**: to derive \( R \), derive it once in a box that assumes \( P \) and once in a box that assumes \( \neg P \), and combine the two boxes with the line \( P \vee \neg P \) by \( \rulename{\vee E} \). The next two results use it that way.
+Excluded middle becomes a derived rule with no premises: a line \( P \vee \neg P \) may be written anywhere, for any \( P \), justified by LEM with no line cited; pasting in the eight lines above would replace it. Its use is **proof by cases on a statement**: to derive \( R \), derive it once in a box that assumes \( P \) and once in a box that assumes \( \neg P \), and combine the two boxes with the line \( P \vee \neg P \) by \( \rulename{\vee E} \). The paragraph after the next result uses it that way, and so does part (b) of the result after that.
 
 ## De Morgan's laws
 
@@ -561,6 +561,7 @@ The phrase "for a contradiction" does not by itself tell \( \rulename{\neg I} \)
 4. State RAA and \( \rulename{\neg I} \) side by side, and say which of the two the derivation of @prp-double-negation (a) uses.
 5. In the derivation of @prp-de-morgan (d), why can the last line not be \( \rulename{\vee I} \) applied to a line derived from the premise?
 6. In the same derivation, the assumption \( \neg(\neg P \vee \neg Q) \) on line 2 is cited twice. Name the two lines that cite it, and the rule each uses.
+7. In the fragment for ② in the proof of @thm-classical-rules-interderivable, which rule justifies line \( k \), and why does the box of lines \( i \) to \( j \) need no change?
 :::
 :::
 
@@ -576,6 +577,8 @@ The phrase "for a contradiction" does not by itself tell \( \rulename{\neg I} \)
 (e) \( \rulename{\vee I} \) would need \( \neg P \) or \( \neg Q \) on a line derived from the premise. Neither can be derived from \( \neg(P \wedge Q) \) alone: with \( P \) true and \( Q \) false the premise is true and \( \neg P \) is false, and with \( P \) false and \( Q \) true the premise is true and \( \neg Q \) is false, while the rules never lead from true premises to a false conclusion (proved in Chapter 2).
 
 (f) Line 5 cites it, by \( \rulename{\neg E} \) against line 4, \( \neg P \vee \neg Q \); and line 9 cites it, by \( \rulename{\neg E} \) against line 8, the same statement. Both lines lie in boxes inside the box of line 2, which is still open, so the citations are legal.
+
+(g) \( \rulename{\neg I} \): the box opens with \( \neg P \) and ends with \( \bot \), so \( \rulename{\neg I} \) gives the negation of its assumption, \( \neg\neg P \). The box needs no change because \( \rulename{\neg I} \), like RAA, asks only for a box that ends with \( \bot \); the two rules differ in what they write after the box, not in the box.
 :::
 
 ### B. Practice
@@ -801,7 +804,7 @@ $\begin{nd}
 :::
 
 ::: {.solution}
-(a) Yes: (d) gives a derivation. The conclusion is true, and the argument is still wrong.
+(a) Yes: part (d) below gives a derivation. The conclusion is true, and the argument is still wrong.
 
 (b) No. Line 6 fails: it cites line 3, the assumption of the first case box, lines 3–4, which closed before line 5. By the scope rule of @def-derivation, line 3 is not available at line 6. The form of \( \rulename{\neg E} \) is right; what is broken is availability. In words, the student used the assumption of one case inside the other case, where it has not been assumed.
 

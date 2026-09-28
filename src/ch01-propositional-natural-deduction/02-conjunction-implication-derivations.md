@@ -377,11 +377,11 @@ $\begin{nd}
 The goal asks for a box with \( P \) and, inside it, a box with \( Q \) whose last line is \( P \). The statement \( P \) is available inside that box, on line 1, but \( \rulename{{\to}I} \) wants it as a line **of the box \( \lines{2}{3} \) itself**. Line 3 puts it there, legally, because the only box containing line 1 also contains line 3. The assumption \( Q \) is never used, and nothing in \( \rulename{{\to}I} \) requires it to be: an implication whose conclusion is already known holds whatever its hypothesis.
 
 ::: {.check}
-To show \( P \to Q, \ P \to R \vdash P \to (Q \wedge R) \), does the derivation need one box or two?
+To show \( P \to (Q \wedge R) \vdash (P \to Q) \wedge (P \to R) \), does the derivation need one box or two?
 :::
 
 ::: {.solution}
-One. The goal's main connective is \( \to \), so the derivation opens one box with \( P \). Inside it, \( \rulename{{\to}E} \) applied to each premise gives \( Q \) and \( R \), and \( \rulename{\wedge I} \) gives \( Q \wedge R \) as the box's last line; \( \rulename{{\to}I} \) then closes it. The \( \wedge \) in the goal needs no box of its own, because \( \rulename{\wedge I} \) opens none.
+Two. The goal's main connective is \( \wedge \), which opens no box, so the goal splits into the two implications \( P \to Q \) and \( P \to R \). Each is proved by \( \rulename{{\to}I} \), with its own box opened by \( P \): inside it, \( \rulename{{\to}E} \) on the premise gives \( Q \wedge R \), and \( \rulename{\wedge E} \) gives the half that box needs.
 :::
 
 Every derivation in this section was built from the rules alone. Section 1.4 lets a sequent already proved be used as a single line of a later derivation; until then, a derivation that needs a result proved earlier must repeat its steps.
@@ -680,7 +680,7 @@ Read the boxes off the goal. The premise's hypothesis is \( P \to Q \): what wou
 ::: {.solution}
 [Hint 2]
 
-After the boxes of \( P \) and \( Q \), open a box with \( P \) once more; its last line must be \( Q \).
+Inside the boxes of \( P \) and \( Q \), the hypothesis \( P \to Q \) is itself an implication. Which rule proves an implication, and what does that rule need?
 :::
 
 ::: {.solution}

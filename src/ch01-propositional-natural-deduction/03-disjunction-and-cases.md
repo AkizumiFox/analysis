@@ -370,7 +370,7 @@ $\begin{nd}
 ```
 :::
 
-The second derivation is the one place in this section where \( \rulename{\vee I} \) is used for something other than finishing a case: it manufactures the hypothesis \( P \vee Q \) that the premise needs before \( \rulename{{\to}E} \) can fire. Weakening is how a strong fact is fed to a rule that asks for a weaker one.
+The second derivation is the one place in this section where \( \rulename{\vee I} \) manufactures the hypothesis of a premise: it builds the hypothesis \( P \vee Q \) that the premise needs before \( \rulename{{\to}E} \) can fire. Weakening is how a strong fact is fed to a rule that asks for a weaker one.
 
 ## What the rules sound like
 
@@ -617,7 +617,8 @@ Here is a proof, by four cases, that \( \abs{x - y} \le \abs{x} + \abs{y} \) for
 <!-- dependency ledger
 exm-abs-product-cases (example): every real a satisfies a >= 0 or a < 0; sign rules for products; |a| = -a for a <= 0 | school algebra, taken as known (ch01 blueprint, Allowed prerequisites); stated in prose before the example; Ch 10 re-proves (prose pointer)
 exm-triangle-inequality-cases (example): adding two inequalities of the same direction; -a <= 0 <= a for a >= 0 | school algebra, taken as known; stated in prose before exm-abs-product-cases
-exr-disjunction-and-cases-a1 (solution): x <= 3 means (x < 3 or x = 3); an even prime equals 2 | school facts
+exr-disjunction-and-cases-a1 (solution): x <= 3 means (x < 3 or x = 3); a = 0 or b = 0 gives ab = 0; every integer is even or odd; t^2 >= 0 | school facts
+exr-disjunction-and-cases-a1 (solution): (d) a derivation never leads from true premises to a false conclusion | forward pointer to ch02 (thm-soundness), flagged in the text as proved there; the answer (line 5) does not use it
 exr-disjunction-and-cases-b2 (solution): a >= b or a < b; dividing an inequality by 2 > 0 | school algebra, taken as known
 exr-disjunction-and-cases-b3 (solution): every integer is even or odd (stated in the item); n = 2k or n = 2k + 1 with k an integer (naming k is a quantifier step, Ch 3) | stated in the item; school fact
 exr-disjunction-and-cases-c1 (solution): a >= b or a < b; |-a| = |a| | school algebra; |-a| = |a| proved inline by cases
