@@ -86,3 +86,4 @@ Chapter 1 rows use the rewritten chapter's section numbers (2026-09-28, S7); its
 - `tools/seed_errors.py` does not skip `% schema` blocks yet.
 - `tools/check_numbers.py` is advisory (`NUMBERS_FATAL = False`) until Chapter 1's three unprinted QUOTED values (the three-valued 1/2 in prp-peirce and exr-finding-derivations-b1) are resolved in S7.
 - The PDF running head overflows for long section titles (e.g. Chapter 1 §01); needs a short-title mechanism in the engine.
+- fitch.sty resolves line references in one pass, so a (deliberately illegal) citation of a LATER line prints "??". Workaround in Ch 1 §02: write the justification as literal text, `\by{Tr\ 5, 3}{}`, which check_fitch cannot see. Fix: teach check_fitch to read such literal citations (or add a `\byfwd` macro that prints the numbers verbatim) so illegal-example blocks can carry `% expect-invalid` again.

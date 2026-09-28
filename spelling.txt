@@ -90,3 +90,6 @@ PBC
 Peirce
 disjunctions
 underivable
+schemas
+subgoal
+subgoals
