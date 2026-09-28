@@ -85,11 +85,12 @@ The main characters: what letter each kind of object gets.
 | `\wedge, \vee, \to, \leftrightarrow, \neg, \bot` | and, or, implies, iff, not, contradiction (in derivations; prose says "implies", and theorems use `\Rightarrow`, `\iff`) |
 | `\forall, \exists` | quantifiers |
 | `\Gamma \vdash P` | P is derivable from the assumptions Γ |
+| `P \dashv\vdash Q` | P and Q are provably equivalent: P ⊢ Q and Q ⊢ P (Ch 1, `def-provable-equivalence`) |
 | `nd` environment | a Fitch derivation: fitch.sty via `latex/fitch-book.sty` (syntax and rule macros documented there) |
 | `\rulename{\wedge I}` | a rule name: ∧I, ∧E, →I, →E, ∨I, ∨E, ¬I, ¬E, ⊥E, RAA, ↔I, ↔E, R, ∀I, ∀E, ∃I, ∃E, =I, =E; derived: ¬¬I, ¬¬E, MT, CP, DS, DM, LEM; plus R (repetition, (D3) of `def-derivation`) |
 
 Typesetting rules for logic (learned in the Chapter 1 pilot):
-- **Derivations** are fitch.sty `nd` environments in a raw LaTeX block (```` ```{=latex} ````, inside `\begin{center} $ … $ \end{center}`), never `array`s. The PDF typesets them; the website gets an SVG compiled at build time (filters/tikz.lua). `\open`/`\close` make boxes, `\hypo` an assumption or premise, `\have` a derived line; justifications are the rule macros of `latex/fitch-book.sty` (`\ai{3,2}`, `\ii{3-5}`, `\oe{1,3-5,6-8}`, `\raa{i-j}`) or `\by{text}{refs}`. A derivation cannot carry an `{#eq-…}` label: refer to it in prose ("the derivation after @def-…").
+- **Derivations** are fitch.sty `nd` environments in a raw LaTeX block (```` ```{=latex} ````, inside `\begin{center} $ … $ \end{center}`), never `array`s. The PDF typesets them; the website gets an SVG compiled at build time (filters/tikz.lua). `\open`/`\close` make boxes, `\begin{nd}[schema]` prints each line's own label (i, j, k) instead of a number for a rule pattern, `\hypo` an assumption or premise, `\have` a derived line; justifications are the rule macros of `latex/fitch-book.sty` (`\ai{3,2}`, `\ii{3-5}`, `\oe{1,3-5,6-8}`, `\raa{i-j}`) or `\by{text}{refs}`. A derivation cannot carry an `{#eq-…}` label: refer to it in prose ("the derivation after @def-…").
 - A rule name in prose: `\( \rulename{\neg I} \)`; with a relation symbol, brace it: `\rulename{{\to}I}`. A bare Unicode ¬, ∧, → in prose stops pdflatex.
 - A range of cited lines in prose: `\lines{2}{5}` (no non-ASCII inside math).
 - Truth tables, and any table whose headers are formulas, are display arrays (`\begin{array}{cc|c} … \hline …`), not pipe tables.

@@ -81,3 +81,12 @@ Tonelli
 cardinality
 topologies
 else
+sequent
+sequents
+tollens
+interderivable
+LEM
+PBC
+Peirce
+disjunctions
+underivable

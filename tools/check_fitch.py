@@ -188,6 +188,9 @@ RULES = {  # macro -> (display name, citation shape: L = line, B = box)
     "oi": ("∨I", "L"), "oe": ("∨E", "LBB"), "ni": ("¬I", "B"), "ne": ("¬E", "LL"),
     "be": ("⊥E", "L"), "raa": ("RAA", "B"), "bi": ("↔I", "BB"), "bie": ("↔E", "LL"),
     "r": ("R", "L"),
+    # derived rules (Chapter 1 proves each once; latex/fitch-book.sty has their macros)
+    "nni": ("¬¬I", "L"), "nne": ("¬¬E", "L"), "mt": ("MT", "LL"), "ctp": ("CP", "L"),
+    "ds": ("DS", "LL"), "dm": ("DM", "L"), "lem": ("LEM", ""),
 }
 UNCHECKED = {"Ai": "∀I", "Ae": "∀E", "Ei": "∃I", "Ee": "∃E", "eqi": "=I", "eqe": "=E"}
 
@@ -509,6 +512,42 @@ def check_shape(rule, f, resolved, lines):
         return f"needs a biconditional and one side giving the other (got {s(L[0])}, {s(L[1])}, {s(f)})"
     if rule == "r":
         return "" if L[0] == f else f"repeats {s(L[0])} as {s(f)}"
+    if rule == "nni":
+        return "" if f == ("not", ("not", L[0])) else f"needs ¬¬{s(L[0])}, not {s(f)}"
+    if rule == "nne":
+        return "" if L[0] == ("not", ("not", f)) else f"needs the cited line to be ¬¬{s(f)} (got {s(L[0])})"
+    if rule == "mt":
+        for imp, neg in ((L[0], L[1]), (L[1], L[0])):
+            if imp[0] == "imp" and neg == ("not", imp[2]) and f == ("not", imp[1]):
+                return ""
+        return f"needs A → B and ¬B giving ¬A (got {s(L[0])}, {s(L[1])}, {s(f)})"
+    if rule == "ctp":
+        a = L[0]
+        if a[0] == "imp" and f == ("imp", ("not", a[2]), ("not", a[1])):
+            return ""
+        if (a[0] == "imp" and a[1][0] == "not" and a[2][0] == "not"
+                and f == ("imp", a[2][1], a[1][1])):
+            return ""          # the converse direction, ¬B → ¬A to A → B
+        return f"needs the contrapositive of {s(a)}, not {s(f)}"
+    if rule == "ds":
+        for d, n in ((L[0], L[1]), (L[1], L[0])):
+            if d[0] == "or" and ((n == ("not", d[1]) and f == d[2]) or (n == ("not", d[2]) and f == d[1])):
+                return ""
+        return f"needs A ∨ B and ¬A giving B (got {s(L[0])}, {s(L[1])}, {s(f)})"
+    if rule == "dm":
+        a = L[0]
+        def dual(x):
+            if x[0] == "not" and x[1][0] in ("and", "or"):
+                op = "or" if x[1][0] == "and" else "and"
+                return (op, ("not", x[1][1]), ("not", x[1][2]))
+            return None
+        if dual(a) == f or dual(f) == a:
+            return ""
+        return f"is not a De Morgan law between {s(a)} and {s(f)}"
+    if rule == "lem":
+        if f[0] == "or" and f[2] == ("not", f[1]):
+            return ""
+        return f"needs A ∨ ¬A, not {s(f)}"
     return "unknown rule"
 
 

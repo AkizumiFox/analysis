@@ -58,3 +58,8 @@
   \def\ds{\by{DS}}%
   \def\dm{\by{DM}}%
   \def\ctp{\by{CP}}}
+%
+% Schema option: \begin{nd}[schema] makes each line print its own label instead of a number,
+% for a rule pattern whose lines are i, j, k, ...; a line with an empty label ({} {\vdots})
+% prints no number. The option is local to that one derivation.
+\define@key{fitch}{schema}[true]{\def\nd@num##1{\nd@numo{##1}{##1}}}
