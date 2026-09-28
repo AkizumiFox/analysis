@@ -48,22 +48,30 @@ class BlueprintTests(unittest.TestCase):
         # lem-later's first mention (line 8) creates it, so no citation problem
         self.assertNotIn("lem-later", text)
         self.assertIn("5:10: main-line chapter cites thm-construct-n from optional Chapter 6", text)
-        self.assertIn("9:2: creates def-countable, already defined in src/ch05/01.md", text)
-        self.assertIn("9:2: creates def-countable, also created by the blueprint of Chapter 5", text)
-        self.assertIn("5:4: creates def-countable, also created by the blueprint of Chapter 9", text)
+        # duplicates are advisory notes now (a later blueprint's first mention of an earlier
+        # chapter's label reads as a creation), not problems
+        cb.NOTES.clear()
+        cb.find_violations({5: BP5, 9: BP9}, LABELS, optional={6})
+        notes = "\n".join(f"{ch}:{n}: {m}" for ch, n, m in cb.NOTES)
+        self.assertNotIn("creates def-countable", text)
+        self.assertIn("9:2: creates def-countable, already defined in src/ch05/01.md", notes)
+        self.assertIn("9:2: creates def-countable, also created by the blueprint of Chapter 5", notes)
         self.assertFalse(any("thm-induction" in m for _, _, m in problems))
 
     def test_cited_before_created(self):
         bp = "<!-- hand-written -->\n- Cite `lem-x` first.\n- Then `lem-x` again.\n"
         # the first mention is a citation (cite word); the second, with no cite word, creates
+        cb.NOTES.clear()
         problems = cb.find_violations({3: bp}, {}, set())
-        self.assertEqual([(n, m) for _, n, m in problems],
-                         [(2, "cites lem-x, which is created later in this blueprint (line 3)")])
+        self.assertEqual(problems, [])
+        self.assertEqual([(n, m) for _, n, m in cb.NOTES],
+                         [(2, "cites lem-x, created later in this blueprint (line 3)")])
         bp2 = "<!-- hand-written -->\n- Cite `@lem-x` first.\n- **`lem-x`**: created.\n"
         # an @-mention never creates; the bold line has no cite word, so it creates
+        cb.NOTES.clear()
         problems = cb.find_violations({3: bp2}, {}, set())
-        self.assertEqual([m for _, _, m in problems],
-                         ["cites lem-x, which is created later in this blueprint (line 3)"])
+        self.assertEqual([m for _, _, m in cb.NOTES],
+                         ["cites lem-x, created later in this blueprint (line 3)"])
 
     def test_optional_chapter_may_cite_anything(self):
         self.assertEqual(cb.find_violations({6: "<!-- hand-written -->\nCite `thm-construct-n`.\n"},

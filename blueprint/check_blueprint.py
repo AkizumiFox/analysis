@@ -44,6 +44,7 @@ CITE_WORDS = re.compile(
     r"\bcit(?:e|es|ed|ing)\b|\bfrom Chapters? \d+|\bChapter \d+'s\b|\brecall(?:s|ed|ing)?\b"
     r"|\breus(?:e|es|ed|ing)\b|\bpoint(?:s|ing)? back\b|\(from\b", re.I)
 DEF = re.compile(r"\{#([a-z]+-[\w-]+)")
+NOTES = []  # advisory findings, printed with --notes
 
 
 def mentions(text: str):
@@ -117,22 +118,33 @@ def find_violations(blueprints: dict, labels: dict, optional: set, only=None) ->
         if only and ch not in only:
             continue
         for label, n in created[ch].items():
+            # A label another blueprint of an EARLIER chapter creates is, in this one, only a
+            # mention (the heuristic reads a first mention as a creation). Notes, not problems:
+            # the blueprints of a block of chapters (Part 0's logic) routinely list labels that
+            # move between them, and src may still hold a pilot being rewritten.
             elsewhere = [f for c, f in labels.get(label, []) if c != ch]
-            if elsewhere:
-                problems.append((ch, n, f"creates {label}, already defined in {', '.join(elsewhere)}"))
+            if elsewhere and NOTES is not None:
+                NOTES.append((ch, n, f"creates {label}, already defined in {', '.join(elsewhere)}"))
             others = sorted(c for c, cr in created.items() if c != ch and label in cr)
-            if others:
-                problems.append((ch, n, f"creates {label}, also created by the blueprint of "
-                                        f"{', '.join(f'Chapter {c}' for c in others)}"))
+            if others and NOTES is not None:
+                NOTES.append((ch, n, f"creates {label}, also created by the blueprint of "
+                                     f"{', '.join(f'Chapter {c}' for c in others)}"))
         for k, (n, label, how) in enumerate(parsed[ch]):
             if how != "cite":
                 continue
             in_src = label in labels
             earlier = order[ch].get(label, 10 ** 9) < k
-            if not in_src and not earlier:
-                where = ("created later in this blueprint (line "
-                         f"{created[ch][label]})") if label in created[ch] else "defined nowhere"
-                problems.append((ch, n, f"cites {label}, which is {where}"))
+            in_earlier_blueprint = any(label in created[c] for c in created if c < ch)
+            if not in_src and not earlier and not in_earlier_blueprint:
+                if label in created[ch]:
+                    # a summary line mentioning a label its own section creates further down
+                    if NOTES is not None:
+                        NOTES.append((ch, n, f"cites {label}, created later in this blueprint "
+                                             f"(line {created[ch][label]})"))
+                elif any(label in created[c] for c in created if c > ch):
+                    problems.append((ch, n, f"cites {label}, which only a LATER chapter's blueprint creates"))
+                else:
+                    problems.append((ch, n, f"cites {label}, which is defined nowhere"))
             if ch not in optional:
                 opt = sorted(c for c in owner(label) if c in optional and c != ch)
                 if opt:

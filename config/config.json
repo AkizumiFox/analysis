@@ -98,7 +98,7 @@
   "reading-paths": [],
   "chapters": [
     {
-      "dir": "src/ch01-logic-connectives",
+      "dir": "src/ch01-propositional-natural-deduction",
       "part": "Part 0 · Foundations"
     },
     {

@@ -86,7 +86,7 @@ The main characters: what letter each kind of object gets.
 | `\forall, \exists` | quantifiers |
 | `\Gamma \vdash P` | P is derivable from the assumptions Γ |
 | `nd` environment | a Fitch derivation: fitch.sty via `latex/fitch-book.sty` (syntax and rule macros documented there) |
-| `\rulename{\wedge I}` | a rule name: ∧I, ∧E, →I, →E, ∨I, ∨E, ¬I, ¬E, ⊥E, RAA, ∀I, ∀E, ∃I, ∃E, =I, =E; plus R (repetition, (D3) of `def-derivation`) |
+| `\rulename{\wedge I}` | a rule name: ∧I, ∧E, →I, →E, ∨I, ∨E, ¬I, ¬E, ⊥E, RAA, ↔I, ↔E, R, ∀I, ∀E, ∃I, ∃E, =I, =E; derived: ¬¬I, ¬¬E, MT, CP, DS, DM, LEM; plus R (repetition, (D3) of `def-derivation`) |
 
 Typesetting rules for logic (learned in the Chapter 1 pilot):
 - **Derivations** are fitch.sty `nd` environments in a raw LaTeX block (```` ```{=latex} ````, inside `\begin{center} $ … $ \end{center}`), never `array`s. The PDF typesets them; the website gets an SVG compiled at build time (filters/tikz.lua). `\open`/`\close` make boxes, `\hypo` an assumption or premise, `\have` a derived line; justifications are the rule macros of `latex/fitch-book.sty` (`\ai{3,2}`, `\ii{3-5}`, `\oe{1,3-5,6-8}`, `\raa{i-j}`) or `\by{text}{refs}`. A derivation cannot carry an `{#eq-…}` label: refer to it in prose ("the derivation after @def-…").
