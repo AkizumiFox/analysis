@@ -14,7 +14,7 @@ This chapter answers such questions for the five connectives: "and", "or", "impl
 - **Iff, and what a definition says.** The rules for "if and only if", proofs in two directions, why a definition's "if" means "iff", and proving several conditions equivalent by a cycle.
 - **Proof by contradiction is a different rule.** Reductio ad absurdum, the one rule that removes a negation, and what only it can prove.
 - **Truth tables summarize the rules.** Each connective's table read off its rules, tautologies and equivalence, and refuting an argument with a single row.
-- **Reading the proof off the goal.** The goal's main connective chooses the skeleton of its proof; the full table of rules, phrases and Lean tactics; checking proofs line by line.
+- **Reading the proof off the goal.** The goal's main connective chooses the skeleton of its proof; the full table of rules, phrases and their Lean counterparts; checking proofs line by line.
 
 ## Named moves
 

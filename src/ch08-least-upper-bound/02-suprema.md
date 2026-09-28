@@ -44,7 +44,7 @@ In symbols, \( A \) is bounded above when
 \]
 The order of the quantifiers carries the meaning. **One** \( M \) is chosen first and must then work **for every** \( a \). Swap them, to "\( \forall a \in A \ \exists M \in F : a \le M \)", and the statement becomes empty of content: every set satisfies it, since each \( a \) can take \( M = a \).
 
-Examples in \( \nR \): the interval \( (0, 1) \) is bounded; the empty set is bounded (by anything); the interval \( [0, \infty) \) is bounded below by \( 0 \) but **not** bounded above. To see the last claim, negate the definition: we must show that for every \( M \in \nR \) there is \( a \in [0, \infty) \) with \( a > M \). Given \( M \), the element \( a \coloneqq \max\{ M, 0 \} + 1 \) works: it is at least \( 1 > 0 \), so it lies in \( [0, \infty) \), and it exceeds \( M \) by (O3). The witness \( a \) depends on \( M \), as the order \( \forall M \ \exists a \) allows.
+Examples in \( \nR \): the interval \( (0, 1) \) is bounded; the empty set is bounded (by anything); the interval \( [0, \infty) \) is bounded below by \( 0 \) but **not** bounded above. To see the last claim, negate the definition: we must show that for every \( M \in \nR \) there is \( a \in [0, \infty) \) with \( a > M \). Given \( M \), the element \( a \coloneqq \max\{ M, 0 \} + 1 \) works, where \( \max\{ M, 0 \} \) is the larger of \( M \) and \( 0 \) (maxima are defined in general just below): it is at least \( 1 > 0 \), so it lies in \( [0, \infty) \), and it exceeds \( M \) by (O3). The witness \( a \) depends on \( M \), as the order \( \forall M \ \exists a \) allows.
 
 Whether \( \nN \) is bounded above in \( \nR \) looks like the same kind of question, but it is not. The answer, "no", is the Archimedean property, and it is proved later in this chapter from the axiom of the next section. It cannot be proved from the ordered-field axioms alone.
 
@@ -166,7 +166,7 @@ Let \( A = \{ 1 - \frac1n : n \in \nN \} = \{ 0, \frac12, \frac23, \frac34, \dot
 :::
 
 ::: {.solution}
-Each \( n \in \nN \) is positive, being a sum \( 1 + \dots + 1 \) of copies of \( 1 > 0 \) (@thm-ordered-field-rules (b) and (e)), so \( \frac1n > 0 \) by @thm-ordered-field-rules (f), and hence \( 1 - \frac1n < 1 \) by @thm-ordered-field-rules (a). So \( 1 \) is an upper bound, and \( 1 \notin A \). No element is a maximum either: \( 1 - \frac1n < 1 - \frac1{n + 1} \), because \( \frac1{n + 1} < \frac1n \) by @thm-ordered-field-rules (f), so every element is beaten by the next one.
+Each \( n \in \nN \) is positive, by induction on \( n \) (Chapter 4): \( 1 > 0 \) by @thm-ordered-field-rules (e), and if \( n > 0 \), then \( n + 1 > n > 0 \) by (O3) and (O2). So \( \frac1n > 0 \) by @thm-ordered-field-rules (f), and hence \( 1 - \frac1n < 1 \) by @thm-ordered-field-rules (a). So \( 1 \) is an upper bound, and \( 1 \notin A \). No element is a maximum either: \( 1 - \frac1n < 1 - \frac1{n + 1} \), because \( \frac1{n + 1} < \frac1n \) by @thm-ordered-field-rules (f), so every element is beaten by the next one.
 
 It is true that \( \sup A = 1 \), but (S2) is harder than it looks. It says that no \( M < 1 \) is an upper bound, that is, for every \( M < 1 \) some \( 1 - \frac1n \) exceeds \( M \). That requires \( \frac1n < 1 - M \) for some \( n \), and the existence of such an \( n \) is the Archimedean property. It does not follow from the ordered-field axioms. We prove \( \sup A = 1 \) later in this chapter, right after the Archimedean property itself.
 :::

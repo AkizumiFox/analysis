@@ -14,7 +14,7 @@ The method comes from the kwok-proof skill (`/home/akizumi/coding/kw/skill/kwok-
 - **Nobody is named.** The book never names, quotes or alludes to the lecturer the skill was distilled from. It uses his method silently. Never write "as X would say", course weeks or theorem numbers from his notes.
 - **No copying.** The reference books (converted to Markdown under `~/coding/analysis/converted/`, listed in `blueprint/sources.yaml`) are copyrighted. You may use them to check which topics exist and whether a statement is true. Do not paraphrase their prose or copy their examples or exercises. Standard theorems are common property, but the explanation, the examples and the exercises must be our own. `blueprint/originality.py <chapter>` checks this; run it before handing a chapter back.
 - **No forward references in proofs.** A proof may cite only results that appear **earlier** in the book: an earlier section, or earlier in the same section. The blueprint lists what each section may use. A forward pointer in the prose ("we will prove in Chapter 10 that …") is fine. It must never be a step in an argument.
-- **Every claim is true.** Check every computation (with sympy, privately: the book text never mentions software, "sympy confirms" or how a result was verified; write a by-hand check the reader can follow instead), and state every hypothesis (non-empty, bounded, closed, compact, complete, σ-finite, 1 ≤ p < ∞, …). If you are unsure, compute it (sympy) or leave a `TODO(verify)` comment. Never guess.
+- **Every claim is true.** Check every computation (with sympy, privately: the book text never mentions software, "sympy confirms" or how a result was verified; write a by-hand check the reader can follow instead), and state every hypothesis (non-empty, bounded, closed, compact, complete, σ-finite, 1 ≤ p < ∞, …). If you are unsure, compute it in a sidecar script (§9) or leave a `TODO(verify)` comment. Never guess.
 
 ---
 
@@ -29,6 +29,7 @@ The reader is a motivated student working **alone**. They have no lecture to fil
 - **Show every move.** Where a move is not visible ("why this basis?"), give one clause of reason. The written proof stays minimal and forward; the Idea block carries the discovery.
 - **Stay calm.** No hype and no "clearly" or "obviously" hiding a step. "Trivially" is allowed only for something that really is one line and is then written out.
 - **One new notion at a time.** Use at most two new **major** notions per section. Minor definitions (notation, auxiliary terms) may exceed this when they are introduced just before their first use; if a section carries more than two major notions, the blueprint splits it.
+- **Taper the scaffolding.** The reader is taught to read and write proofs early and is then trusted to do it. §11 says what is dense in Parts 0–I and sparse afterwards.
 
 ## 2. Page skeleton
 
@@ -49,16 +50,24 @@ does. Plain prose, no heading.
 ### A. Check your understanding
 ### B. Practice
 ### C. Going deeper
+### R. Review
+
+<!-- dependency ledger
+...one line per fact a proof uses without an @ref (§9)...
+-->
 ```
 
-Section titles (the `#` line) contain no math, since they appear in navigation links and page titles. Use `##` for subsections (they appear in the page's table of contents) and `###` only inside Exercises or for a long worked computation. Aim for **2,500–5,000 words**. Split a longer section at a natural seam.
+Section titles (the `#` line) contain no math, since they appear in navigation links and page titles. Use `##` for subsections (they appear in the page's table of contents) and `###` only inside Exercises or for a long worked computation. Aim for **2,500–5,000 words**. Split a longer section at a natural seam. The `### R. Review` group appears only in the chapter's last section (§6), and the dependency ledger closes every section file (§9).
 
 A chapter's `index.md` contains, in this order:
 1. `# Chapter Title`.
 2. A 1–2 paragraph story of the chapter: the question it answers and why the reader should care.
 3. **What you need:** the earlier chapters or sections used, with links.
-4. **Roadmap:** a bullet per section, with one sentence each.
-5. **Named moves:** a short list of the proof techniques this chapter introduces, so the reader can transfer them.
+4. **Time:** one line, `**Time.** About N hours on the core track (all of A, one B and one C per section, the exit checks); about M hours for everything.` Until there are reader logs, N and M come from the formula in `authoring/design/research-reader.md` B1: about 15 minutes per 400 words of prose for reading, plus 20–45 minutes per exercise. Round to the nearest 5 hours. Replace them with the median of logged hours when there is one.
+5. **Roadmap:** a bullet per section, with one sentence each.
+6. **Named moves:** a short list of the proof techniques this chapter introduces, so the reader can transfer them.
+
+The **last main-line chapter of each Part** also ends with a **Gate** section (§11.10). The Gate is a section like any other in the Roadmap, and it has no Exercises heading of its own: its problems are the section.
 
 ## 3. Introducing a notion (the explain template)
 
@@ -98,6 +107,7 @@ For each theorem:
    - The reasoning found backwards, a picture described in words (or TikZ), a small case, or a numbered plan ① ② ③.
    - This is where "why do we do this?" is answered.
    - Omit it for proofs of 3 lines or fewer.
+   - For at most two theorems per chapter, a *Try it first* prompt comes between the statement and the Idea, and the Idea then starts from what the attempt runs into (§11.8).
 4. **Proof** (`::: {.proof}`), in the typeset register:
    - **First sentence does mathematics:** "Let …", "Suppose …", "Since …", "By @thm-x, …". Never motivation (that went in the Idea).
    - **Chain the steps** with Therefore / Hence / Thus / In particular / Then.
@@ -174,25 +184,33 @@ Run `python3 tools/check_optional.py --list` to see everything currently marked.
 - **Warning** `::: {.warning}`: one misconception, a concrete failing case, 1–4 sentences.
 - **Remark** `::: {.remark}`: 1–3 sentences with one job (converse fails, other names or notations, in other words, outlook).
 - **Pictures:** TikZ inside `\begin{center}\begin{tikzpicture}…\end{tikzpicture}\end{center}` in a raw LaTeX block, or with the tikz syntax already used in `src/`. Use one idea per figure. Colour must never be the only carrier of meaning.
-- **Interactive:** `::: {.plot fn= x= y= params=}` for functions with sliders, `{.python .run}` for small numpy/sympy experiments, and `::: {.widget src=}` with a `::: {.print}` fallback. Use them sparingly and only where exploring helps (partial sums of a series, uniform vs pointwise convergence of fₙ, Fejér means, a contraction's iterates).
+- **Interactive:** `::: {.plot fn= x= y= params=}` for functions with sliders, `{.python .run}` for small numpy/sympy experiments, and `::: {.widget src=}` with a `::: {.print}` fallback. Use them sparingly and only where exploring helps (partial sums of a series, uniform vs pointwise convergence of fₙ, Fejér means, a contraction's iterates). **They illustrate objects, never a proof's steps**: no animated or stepped-through proof, no narrated walkthrough (§11.11). A proof is read, not watched.
+- **Meta-claims.** A sentence about the book's own text ("the classical step comes after the proof", "every other property fails in ℚ", "this proof never assumes n odd") is a mathematical claim and must be true of what is on the page. Write it so that a reader can check it by looking: point at the line, the table row or the label (§9).
 
 ## 6. Exercises
 
-Each section ends with `## Exercises` and three groups.
+Each section ends with `## Exercises` and three groups, A, B and C. The **last section of a chapter** has a fourth group, R. The exercise formats of §11 (comprehension parts, find-the-error, proof ordering, faded proofs, example generation) live inside these groups; they are not groups of their own.
 
 **A. Check your understanding.** Exactly one exercise with 2–6 lettered parts: define, state, decide true/false with a reason, negate a definition, name the method. Readers should be able to answer before moving on.
+- In the section holding one of the chapter's two or three **key proofs**, at least one part is a **proof-comprehension** question about it (§11.2).
+- A proof-ordering item (§11.4) may be the A exercise's last part or a B item.
 
 **B. Practice.** 2–4 exercises "like the examples", each with a worked example type in the section:
 - A "Determine which of the following … Justify your answer." batch with one or two planted failures.
 - A computation (a limit, a sup, an explicit N or δ, an integral) ending in "Hence …".
 - A routine proof applying one theorem once.
+- **Example generation:** "Give an example of … such that …; check each property." Where the answer space is narrow, the solution lists the properties an answer must have, so a *different* correct example can be checked against them.
 
 **C. Going deeper.** 1–4 exercises:
 - a (a) Prove / (b) Deduce pair;
 - a counterexample, construction or dropped-hypothesis item ("Is this still true on (0,1)?");
-- optionally one harder problem, made reachable with scaffolded parts and a hint.
+- optionally one harder problem, made reachable with scaffolded parts and a hint ladder.
 
-**Format.** Every exercise is `::: {#exr-<section-slug>-a1}` (then `-b1`, `-b2`, `-c1`, …) whose first line is a title `[A1]`, `[B2: Short name]`, etc. It is followed by a `::: {.solution}` written in the typeset register (complete, not a sketch).
+The chapter's **exit checks** are C items titled `[C1: Exit check: …]`, and the chapter's find-the-error items (§10, §11.3) are usually C items.
+
+**R. Review** (last section only; §11.5). 3–4 exercises labelled `-r1` … `-r4`, each short (at most 20 minutes): one reaching one chapter back, one 3–4 chapters back, one spiral item from an earlier Part, and optionally one that gives no hint of its method. The problem never names its source; the solution does, with `@ref`.
+
+**Format.** Every exercise is `::: {#exr-<section-slug>-a1}` (then `-b1`, `-b2`, `-c1`, `-r1`, …) whose first line is a title `[A1]`, `[B2: Short name]`, `[R1]`, etc. It is followed by a `::: {.solution}` written in the typeset register (complete, not a sketch).
 
 **Parts** use a lettered list:
 
@@ -205,20 +223,25 @@ Each section ends with `## Exercises` and three groups.
 
 **Wording:** "Prove that", "Determine whether … Justify your answer.", "Give an example of …", "Explain why … is **not** …", "Hence deduce …".
 
-**Hints** go at the end in italics: *Hint: consider the kernel of …*. A hint names a tool or an object, never a step.
+**Hints.**
+- An A or B item may carry **one** hint, at the end of the problem in italics: *Hint: consider the kernel of …*. It names a tool or an object, never a step.
+- A C item may instead carry a **hint ladder** of two folded rungs, placed between the problem and the solution (§11.7): rung 1 names the tool or object; rung 2 gives the first line of the proof. Neither executes the key idea. Until the engine has a hint block, write each rung as a `::: {.solution}` whose first line is `[Hint 1]` or `[Hint 2]`, so it folds on the web.
+
+**Marking schemes.** Every exit check, every Gate problem and any C item a reader is likely to write up in full ends its solution with a `**Marking scheme.**` paragraph (§11.6).
 
 **Calibration:**
 - B uses one theorem once.
 - C combines two ideas, generalizes (ℝ → metric space → normed space), or drops a hypothesis and asks what survives.
 - A harder C item uses three ingredients, one from an earlier chapter.
-- A later exercise may cite an earlier one ("By @exr-span-b2 …").
+- An R item uses one method from its source chapter, applied to data it has not seen.
+- A later exercise may cite an earlier one ("By @exr-span-b2 …"). A proof in the text never may (§9).
 
 ## 7. Prose
 
 - **Voice.** "We" for the author and reader together; "you" sparingly, for direct advice. Median sentence 12–18 words. Paragraphs of 1–4 sentences. Vary rhythm; no walls of text.
 - **Emphasis.** Bold is for defined terms and load-bearing small words, italics for slogans and light emphasis. No exclamation marks, and no "Note that" at the start of every other sentence.
 - **Names.** Name results by content ("the Bolzano–Weierstrass Theorem"), with `@label`. Titles of named theorems match exactly so the dependency graph picks up mentions.
-- **Promises.** Every forward promise ("we will see in @sec…" or "in Chapter 9") must be paid off. When writing, add each promise to `authoring/STATUS.md`.
+- **Promises.** Every forward promise ("we will see in @sec…" or "in Chapter 9") must be paid off. A drafter reports each promise it opens and each it pays (with the paying label); the coordinator enters them in `authoring/STATUS.md`, and `tools/promises.py` reconciles the table with the text. Never promise what you have not checked the target chapter's blueprint will deliver.
 - **Spelling.** American spelling: "normalize", "color", "behavior", "center". Mathematical names keep their accents (Gershgorin, Schur, Cauchy–Schwarz with an en dash).
 - **Math delimiters.** `\( … \)` inline and `\[ … \]` display, never `$` (except inside TikZ and inside `\tag{$\ast$}`). Numbered equations take `{#eq-slug}` **on the same line as the closing `\]`, with no space** (`\]{#eq-normal-equations}`), and are cited with `@eq-slug`; on its own line, or after a blank line, the label is just text.
 - **Relation symbols are typeset, never plain characters.** Write `\( \Rightarrow \)`, `\( \subseteq \)`, `\( \in \)`, `\( \le \)`, not the unicode characters — including proof-direction tags `\( (\Rightarrow) \)` and chains such as `(a) \( \Rightarrow \) (b)`. (An arrow used rhetorically, as in "abstract space → write down a matrix", is ordinary prose and stays plain, as does an environment title such as `[The 2 × 2 puzzle]`.)
@@ -253,16 +276,50 @@ Let ...  This proves the theorem.
 
 ## 9. Before handing a section back
 
+Two things are written for the reviewers rather than the reader: the sidecar scripts and the dependency ledger. The meta-claim rule is here because referees found more errors in meta-claims than in proofs (`authoring/design/research-production.md` §3.1).
+
+### Sidecar scripts
+
+Every non-trivial computation and every chosen constant (N, δ, r, a bound, a numeric answer in an example or solution) is checked by a script `verify/chNN/<label>.py`, keyed by the label of the block that quotes the values (`verify/ch09/exm-geometric-tail.py`). The script **asserts** the values the text quotes, so that a changed number fails it. It is not a private CAS session that nobody can rerun. The book text never mentions it (hard rules, above): the page gives a by-hand check the reader can follow.
+
+### The dependency ledger
+
+Every section file ends with a **dependency ledger**: an HTML comment, which Pandoc passes through to the web page as an invisible comment and drops from the PDF, so the reader never sees it. It lists every fact a proof, idea, claim or solution in the section **uses without an `@ref`**: an arithmetic or order fact, a property of ℕ or ℤ, a fact from the linear-algebra companion, a standard identity, "by induction" before Chapter 4. For each it says where the fact comes from.
+
+```markdown
+<!-- dependency ledger
+lem-integer-part (proof): every non-empty set of integers bounded above has a maximum | ch04 (promised; STATUS)
+thm-archimedean (proof): n + 1 > n for n in N | ax-ordered-field (O1), recalled in prose
+exr-archimedean-properties-c1 (solution): 2^n >= n + 1 | proved inline by induction; Ch 4 not yet available -> flagged
+none: (write this line alone if the section uses nothing without an @ref)
+-->
+```
+
+- **Format:** the first line is exactly `<!-- dependency ledger`; then one line per fact, `<label> (<kind>): <fact> | <source>`; the last line is `-->`. The kind is `proof`, `idea`, `claim`, `solution` or `example`. The source is an earlier label, `chNN (promised)` for a fact owed by an earlier chapter that is not yet written, `companion ch N` for linear algebra, or `inline` if the section proves it on the spot.
+- **What it is for.** Referee B checks it against what each proof actually uses, and the seam referee checks that every `chNN (promised)` source is in STATUS's promise table. A fact whose source is a *later* chapter is a forward dependency: fix the proof, do not ledger it.
+- **Keep it short and honest.** Standard facts about the ordered field ℝ after Chapter 8 need no line. Anything the reader could reasonably ask "where was that proved?" about does.
+
+### Meta-claims
+
+A **meta-claim** is a sentence about the book's own content: "the classical step comes after the proof", "everything else fails in ℚ", "this proof never assumes n odd", "we did not use completeness", "this is the only place choice is used". Each must be true of the page, and **checkable on the page**: name the line, the step, the table row or the label it is about, so that a reader (and Referee B) can look. If a meta-claim cannot be made checkable, cut it. Pilot referees found 3 false sentences of this kind and no false proofs.
+
+### Checklist
+
 - [ ] Every definition is preceded by its need. Major notions follow §3 in full.
-- [ ] Every proof cites only earlier results, and every step names its reason.
-- [ ] Every example's arithmetic is verified (sympy for anything with more than two steps), and every chosen constant (N, δ, r) is checked to do its job.
-- [ ] There is at least one Quick check (its solution a sibling block after it), one warning and one non-example. The exercises have A, B and C groups, each exercise with a complete solution.
+- [ ] Every proof cites only earlier results, and every step names its reason. No proof, idea or claim rests on an exercise.
+- [ ] Every example's arithmetic and every chosen constant (N, δ, r) has a sidecar script `verify/chNN/<label>.py` that asserts the quoted values.
+- [ ] There is at least one Quick check (its solution a sibling block after it), one warning and one non-example. The exercises have A, B and C groups (and R in the chapter's last section), each exercise with a complete solution.
 - [ ] Every B-type task has a worked example in the text.
+- [ ] If the section holds a key proof, its A exercise has a proof-comprehension part (§11.2). Exit checks and write-up C items end their solutions with a marking scheme (§11.6).
+- [ ] Every meta-claim points at something on the page and is true of it.
+- [ ] The file ends with a dependency ledger in the format above (or its `none:` line).
+- [ ] Every forward pointer in prose ("in Chapter N") is reported for STATUS's promise table, and every promise this section pays names the label that pays it.
 - [ ] Notation matches `NOTATION.md`. No symbol is used before it is introduced, and none is reused with a new meaning.
 - [ ] Labels are unique (grep `src/`), and every `@ref` target exists or is created in this chapter.
 - [ ] Anything marked `.optional` is genuinely skippable: no proof, idea, claim or solution anywhere cites it (`python3 tools/check_optional.py`).
 - [ ] Every theorem's hypotheses are each used, and each major theorem has a remark or exercise showing what fails when one is dropped.
 - [ ] Every chosen constant says what it depends on.
+- [ ] Scaffolding matches the Part (§11.12): no Part 0 density of prompts after Part I.
 - [ ] No copied text or examples from the references (`blueprint/originality.py`), and no attribution to any person.
 
 ## Hyphenation of "non-"
@@ -277,8 +334,100 @@ These come from the planning record (`authoring/design/decisions.md`, `curriculu
 - **A counterexample for every hypothesis that matters.** Each major theorem is followed by a remark, warning or exercise showing what fails when one hypothesis is dropped, with a named witness. The four modes of convergence, compact versus closed-and-bounded, and Riemann versus Lebesgue all get their own tables of witnesses.
 - **The spiral is written out.** When a concept returns at a higher stage (compactness on ℝ, then in a metric space, then weakly), the opening frame of the section recalls the earlier version with `@label` and says in one sentence what changes and what survives. The spiral table in `curriculum.md` lists the returns.
 - **Motivating problems come first.** Each chapter's `index.md` names the concrete problem that forces the chapter's main abstraction. A section never introduces a notion without saying what problem it answers (§3, step 2).
-- **Proof verification is practised.** At least one exercise per chapter (usually a C item) gives a flawed proof and asks for the exact line that fails and the reason. In Part 0 the reason names the natural-deduction rule broken; after Part 0 it names the missing hypothesis or the illegal step.
-- **Self-explanation prompts.** For the three or four hardest proofs of a chapter, the Idea ends with a prompt such as "*Before reading on: where will compactness be used?*" (at most one per proof).
+- **Proof verification is practised.** At least one exercise per chapter (usually a C item) gives a flawed proof and asks for the exact line that fails and the reason; at least one such argument per chapter has a **true** conclusion (§11.3). In Part 0 the reason names the natural-deduction rule broken; after Part 0 it names the missing hypothesis or the illegal step.
+- **Self-explanation prompts.** For the three or four hardest proofs of a chapter, the Idea ends with a prompt such as "*Before reading on: where will compactness be used?*" or "*Self-explain lines 3–5.*" (at most one per proof). From Chapter 2 on they remind the reader of a trained habit (§11.1).
 - **Part 0's rule tags.** In Part 0 only, proofs may annotate steps with the natural-deduction rule in small caps in brackets (e.g. `[∀I]`, `[∃E]`). Later Parts do not, but the "what is not allowed" catalogue of Part 0 is cited (`@...`) when a warning concerns one of its errors.
 - **Choice and non-constructive steps are flagged in prose.** Where a proof uses the axiom of choice (countable unions, Vitali, Hahn–Banach, Tychonoff) or a genuinely non-constructive step discussed in the excluded-middle section, one clause says so. Do not dwell on it.
 - **The companion book.** Linear algebra is cited as "the linear-algebra companion, Chapter N" in prose, never re-proved and never `@ref`ed.
+
+## 11. The reader working alone
+
+The reader of §1 has no teacher, no marker and no classmates. The rules below give them what a course would: training in how to read a proof, feedback they can apply to themselves, review spaced over months, and a checkpoint at the end of each Part. Most rest on controlled studies; the evidence and the sources are in `authoring/design/research-reader.md` (B2–B4, B7). Where a rule sets a count ("at most two per chapter"), the count is binding; the blueprint says where the items go.
+
+**11.1 Self-explanation is taught once.** The book has exactly one training passage on self-explanation, in Chapter 2 (the section on reading and writing proofs; the blueprint names it). It takes one short proof and shows it explained twice:
+- **well:** each line justified by earlier lines, definitions and named results ("line 4 follows from lines 2 and 3 by @def-…; this is where x > 0 is needed");
+- **badly:** each line paraphrased ("so now we know the thing is small").
+
+It then says why the first helps and the second does not. Write it as our own passage; take the method from the research, never its example. Every later "*Before reading on*" prompt (§10) assumes this training and may simply say "*Self-explain lines 3–5.*" Do not re-teach it elsewhere.
+
+**11.2 Key proofs get comprehension questions.** For the two or three key proofs of a chapter (the blueprint names them), the A exercise of the section holding each proof includes at least one proof-comprehension part:
+- why line k (or the displayed step) follows;
+- where hypothesis H is used;
+- the proof's idea in two sentences;
+- the proof run on a given example (a specific set, sequence or function);
+- which step fails if H is dropped.
+
+Every part has a short answer the reader can check against the folded solution. No part asks for an opinion.
+
+**11.3 Find the error, with a true conclusion.** The find-the-error exercise of §10 keeps two questions apart: *is the conclusion true?* and *does the argument prove it?* At least one flawed argument per chapter has a **true** conclusion; that is the case readers miss. Aim for two such items per chapter in Parts 0 and I, then one. The solution names:
+- the exact line that fails;
+- the rule broken (Part 0) or the hypothesis missing or the illegal step (later);
+- a counterexample **to the illegal step**, not just to the conclusion (for a true conclusion there is none to the conclusion);
+- where the error is one of Part 0's catalogued errors, the `@ref` to it.
+
+The flawed argument is written to be plausible: the error sits in one line, and the rest is correct.
+
+**11.4 Proof ordering and faded proofs, tapering.**
+- **Proof ordering.** Give 6–10 lines of a proof, shuffled and numbered (i), (ii), …, plus one or two **distractors**: a line with the quantifiers in the wrong order, an ε of the wrong kind, a constant that depends on the wrong thing. The reader writes an order. The folded solution gives an admissible order, says which other orders are also admissible (any order respecting what each line uses), and says why each distractor fails.
+- **Faded proofs.** The chapter's main named move appears three times: worked in full; with the last step blank; with the last half blank. Each blank carries the prompt "*Name the move, then complete it.*" The three may be spread across the chapter (an example, then a B item, then a C item). Good moves to fade: ε/2, "construct a point as a sup", the 3ε argument, the diagonal argument, density plus a uniform bound.
+- **Taper.** In Parts 0 and I every chapter has one proof-ordering item and one faded triple. From Part II on, use them only where a genuinely new named move appears. Readers who have the skill are slowed by the scaffold (the expertise-reversal effect).
+
+**11.5 The R. Review group.** The last section of each chapter has a fourth exercise group, `### R. Review`, with 3–4 items labelled `-r1` …:
+- **R1:** one item whose method comes from the previous chapter;
+- **R2:** one from 3–4 chapters back;
+- **R3:** one spiral item from an earlier Part, taken from the spiral table in `curriculum.md` ("you proved X on ℝ; prove it in a metric space", or "say what now fails");
+- **R4 (optional):** one item that gives no hint of its method. Its solution names the tool and says why the look-alike tools fail.
+
+Rules:
+- The problem text **never names its source chapter**; the solution does, with `@ref`.
+- Each item takes at most 20 minutes.
+- Prefer results that later chapters rarely cite in proofs: a heavily cited result is reviewed for free, a dormant one is forgotten.
+
+**11.6 Marking schemes.** Every exit check, every Gate problem, and any C item a reader is likely to write up in full ends its solution with a paragraph:
+
+```markdown
+**Marking scheme.** (10 points)
+- 2: fixes \( \varepsilon > 0 \) arbitrary and states the goal \( \abs{f(x) - f(y)} < \varepsilon \).
+- 3: chooses \( \delta \) from compactness, **uniformly in \( x \)**, and says so.
+- 3: verifies the inequality, citing the triangle inequality.
+- 2: concludes with the quantifiers in the right order.
+Fatal errors (0 for the step): \( \delta \) depends on \( x \); compactness used for an open set.
+```
+
+- 3–6 key steps, with points summing to 10, then the named **fatal errors**.
+- Write it so that another person, or a program, could grade a **different** correct proof fairly. Award the step, not the wording: "shows the sequence is Cauchy", not "writes the displayed inequality".
+- The scheme follows the book's solution but must not require its route. If there is a second natural route, add one line saying how its steps map to the points.
+
+**11.7 The hint ladder.** A C item may have two folded hints between the problem and its solution (markup in §6):
+1. the tool or the object ("*Consider the set of points where f > c.*");
+2. the first line of the proof ("*Let s = sup{…}; it exists because …*").
+
+Neither gives the execution of the key idea. The failure the ladder prevents is opening the full solution too early. A or B items keep a single italic hint, or none.
+
+**11.8 Try it first.** At most two theorems per chapter are preceded, between the statement and the Idea, by an italic paragraph naming what to attempt and for how long:
+
+```markdown
+*Try it first (ten minutes): which point would you build, and from which set?*
+```
+
+The Idea that follows **starts from the obstacles such an attempt meets** ("the obvious candidate is …; it fails because …"). Choose theorems where a reader can get somewhere in ten minutes; an unanswerable prompt costs a lone reader more than a student in class.
+
+**11.9 The chapter's time line.** Every chapter `index.md` has the **Time** line of §2, after **What you need**. The core track is all of A, one B and one C per section, and the exit checks; the full track is everything. The estimate is a promise to the reader about their week, so round honestly and do not shade it down.
+
+**11.10 Gates.** The last main-line chapter of each Part ends with a **Gate** section: at the time of writing Chapters 5, 18 (its §06 review becomes the Gate), 31, 40, 51, 59 and 72 (§08, the mixed qualifying exam). Renumbering under the route changes may move these; the Gate follows the Part's last main-line chapter. A Gate section contains, in order:
+1. **Instructions:** time allowed (2 hours for Gate 0, 3 hours after), closed book, and the pass line: 70% overall, with no *core* problem at 0.
+2. **Definition drill:** every major definition of the Part, to be stated in symbols, answers folded. This is the Part's one retrieval list.
+3. **The problems** (6 for Gate 0 and Gate III, 8 otherwise), each `::: {#exr-<section-slug>-p1}` titled `[P1]`, or `[P1: core]` for a core problem, followed by a folded solution ending in a marking scheme (§11.6).
+4. **Remediation map:** for each problem, the sections it tests, as `@ref`s, so a failed item sends the reader to named sections, not "reread Part II".
+
+Gate problems are original. They may take the style and level of a qualifying exam (the floor of a good one for Gate I, real- and complex-analysis exams for Gates IV and V), never their text. A reader arriving by a reading path takes the Gate of the Part before their target as an entry test; the Gate's opening frame says so.
+
+**11.11 No narration in proofs.** Interactive elements illustrate objects: a sequence of functions, a kernel, the iterates of a contraction. They never step through, animate or narrate a proof, and there is no "watch the proof" alternative to reading it. A proof is read, not watched.
+
+**11.12 Taper the scaffolding.** Scaffolding decreases through the book:
+- **Part 0** annotates rules on proof lines, orders lines for the reader, and prompts often.
+- **Part I** keeps the formats of §11.2–§11.5 at full density but annotates less.
+- **Parts II–III** keep the comprehension items, find-the-error, R groups and marking schemes, and use ordering and fading only for new moves.
+- **Parts IV–VI** expect the reader to supply routine ε-management, measurability checks and "take a subsequence" without comment; prompts are for the genuinely new step.
+
+Do not carry Part 0's density of prompts into Part IV. A reader who is told everything twice learns to skim.

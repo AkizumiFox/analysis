@@ -1,0 +1,151 @@
+"""Tests for tools/ledger.py: items, content hashes, verdicts and staleness.
+
+The pure functions need no YAML and run everywhere; the command-line round trip
+needs PyYAML and runs under the repo's .venv/bin/python when it exists.
+"""
+
+import importlib.util
+import subprocess
+import tempfile
+import unittest
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parent.parent
+TOOL = ROOT / "tools" / "ledger.py"
+VENV = ROOT / ".venv" / "bin" / "python"
+spec = importlib.util.spec_from_file_location("ledger", TOOL)
+ledger = importlib.util.module_from_spec(spec)
+spec.loader.exec_module(ledger)
+
+SECTION = """# S
+
+Frame.
+
+::: {#def-thing}
+[Thing]
+A thing is.
+:::
+
+::: {#thm-thing}
+[Thing theorem]
+Things exist.
+:::
+
+::: {.proof}
+Because.
+
+::: {.claim}
+Inner.
+:::
+
+::: {.proof}
+Nested proof, part of the outer one.
+:::
+:::
+
+::: {.check}
+Is it?
+:::
+
+::: {.solution}
+Yes.
+:::
+
+::: {#exr-s-a1}
+[A1]
+Do it.
+:::
+
+::: {.solution}
+Done.
+:::
+"""
+
+
+class PureTests(unittest.TestCase):
+    def setUp(self):
+        self.tmp = tempfile.TemporaryDirectory()
+        self.ch = Path(self.tmp.name) / "src" / "ch03-three"
+        self.ch.mkdir(parents=True)
+        (self.ch / "01-s.md").write_text(SECTION)
+
+    def tearDown(self):
+        self.tmp.cleanup()
+
+    def items(self):
+        return ledger.extract_items(self.ch)
+
+    def test_extract(self):
+        got = [(i["key"], i["kind"]) for i in self.items()]
+        self.assertEqual(got, [("def-thing", "def"), ("thm-thing", "thm"),
+                               ("proof:thm-thing", "proof"), ("check:01-s:1", "check"),
+                               ("exr-s-a1", "exr")])
+
+    def test_solution_is_part_of_exercise_hash(self):
+        before = {i["key"]: i["hash"] for i in self.items()}
+        (self.ch / "01-s.md").write_text(SECTION.replace("Done.", "Done differently."))
+        after = {i["key"]: i["hash"] for i in self.items()}
+        self.assertNotEqual(before["exr-s-a1"], after["exr-s-a1"])
+        self.assertEqual(before["thm-thing"], after["thm-thing"])
+
+    def test_verdicts_go_stale(self):
+        items = self.items()
+        led, added, removed = ledger.refresh({}, items)
+        self.assertEqual((len(added), removed), (5, []))
+        ledger.add_verdict(led, items, "proof:thm-thing", "S5a", "correct", "refA", today="2026-01-01")
+        with self.assertRaises(ValueError):
+            ledger.add_verdict(led, items, "thm-thing", "S5a", "gap", "refA")   # no evidence
+        with self.assertRaises(KeyError):
+            ledger.add_verdict(led, items, "thm-nope", "S5a", "correct", "refA")
+        self.assertEqual(ledger.stale_items(led, items), [])
+        (self.ch / "01-s.md").write_text(SECTION.replace("Because.", "Because, indeed."))
+        items2 = self.items()
+        stale = ledger.stale_items(led, items2)
+        self.assertEqual([k for k, _ in stale], ["proof:thm-thing"])
+        s = ledger.summarize(led, items2)
+        self.assertEqual((s["reviewed"], s["correct"], s["stale"]), (1, 1, 1))
+
+    def test_refresh_keeps_verdicts_and_removed_items(self):
+        items = self.items()
+        led, _, _ = ledger.refresh({}, items)
+        ledger.add_verdict(led, items, "def-thing", "S5b", "minor", "refB", evidence="01:5 wording")
+        (self.ch / "01-s.md").write_text(SECTION.replace("{#def-thing}", "{#def-object}"))
+        led, added, removed = ledger.refresh(led, self.items())
+        self.assertEqual((added, removed), (["def-object"], ["def-thing"]))
+        gone = next(e for e in led["items"] if e["key"] == "def-thing")
+        self.assertTrue(gone["removed"])
+        self.assertEqual(gone["verdicts"][0]["verdict"], "minor")
+        self.assertIn(("def-thing", "no longer in the source"), ledger.stale_items(led, self.items()))
+
+
+@unittest.skipUnless(VENV.exists(), "needs the repo's .venv (PyYAML)")
+class CliTests(unittest.TestCase):
+    def run_cli(self, *args, cwd):
+        return subprocess.run([str(VENV), str(TOOL), "--src", "src", "--dir", "led", *args],
+                              cwd=cwd, capture_output=True, text=True)
+
+    def test_round_trip(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            ch = Path(tmp) / "src" / "ch03-three"
+            ch.mkdir(parents=True)
+            (ch / "01-s.md").write_text(SECTION)
+            r = self.run_cli("init", "3", cwd=tmp)
+            self.assertEqual(r.returncode, 0, r.stderr)
+            self.assertTrue((Path(tmp) / "led" / "ch03.yaml").exists())
+            r = self.run_cli("set", "3", "thm-thing", "--stage", "S5a", "--verdict", "correct",
+                             "--by", "refA", cwd=tmp)
+            self.assertEqual(r.returncode, 0, r.stderr)
+            self.assertEqual(self.run_cli("stale", "3", cwd=tmp).returncode, 0)
+            (ch / "01-s.md").write_text(SECTION.replace("Things exist.", "Things exist twice."))
+            r = self.run_cli("stale", "3", cwd=tmp)
+            self.assertEqual(r.returncode, 1)
+            self.assertIn("thm-thing", r.stdout)
+            r = self.run_cli("summary", cwd=tmp)
+            self.assertIn("ch03: 5 items, 1 reviewed", r.stdout)
+            r = self.run_cli("set", "3", "thm-thing", "--stage", "S5a", "--verdict", "error",
+                             "--by", "refA", cwd=tmp)
+            self.assertNotEqual(r.returncode, 0)
+
+
+if __name__ == "__main__":
+    unittest.main()

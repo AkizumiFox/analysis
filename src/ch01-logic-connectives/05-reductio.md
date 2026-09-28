@@ -24,7 +24,7 @@ Suppose, for a contradiction, that \( x \ne 0 \). Since \( x \ge 0 \) and \( x \
 
 Look at the shape. The box opens with the assumption \( \neg P \), where \( P \) is "\( x = 0 \)", reaches \( \bot \), and closes to give \( P \). If we tried to justify the last line with \( \rulename{\neg I} \), we would get \( \neg\neg P \) ("it is not the case that \( x \ne 0 \)"), not \( P \). The two arguments put their negation in different places. \( \rulename{\neg I} \) puts a \( \neg \) **into** the conclusion; this second argument takes one **out**.
 
-Can the rules we have take it out? Let us try to derive \( P \) from \( \neg\neg P \), the smallest case of the problem. The premise \( \neg\neg P \) can be used only through \( \rulename{\neg E} \), and \( \rulename{\neg E} \) needs \( \neg P \) beside it, which we do not have; if we assume \( \neg P \) in a box, the box reaches \( \bot \), and \( \rulename{\neg I} \) then gives \( \neg\neg P \) back again. The goal \( P \) is a bare letter, so no introduction rule applies to it. Every attempt goes round in a circle. In fact no derivation of \( P \) from \( \neg\neg P \) exists using only the rules of §01–§04. We do not prove this here: it needs a way of reading statements other than as true or false, and Chapter 2 returns to the question. What we can do is name the missing step and add it as a rule.
+Can the rules we have take it out? Let us try to derive \( P \) from \( \neg\neg P \), the smallest case of the problem. The premise \( \neg\neg P \) can be used only through \( \rulename{\neg E} \), and \( \rulename{\neg E} \) needs \( \neg P \) beside it, which we do not have; if we assume \( \neg P \) in a box, the box reaches \( \bot \), and \( \rulename{\neg I} \) then gives \( \neg\neg P \) back again. The goal \( P \) is a bare letter, so no introduction rule applies to it. Every attempt goes round in a circle. In fact no derivation of \( P \) from \( \neg\neg P \) exists using only the rules of Sections 1.1–1.4. We do not prove this here: it needs a way of reading statements other than as true or false, and Chapter 2 returns to the question. What we can do is name the missing step and add it as a rule.
 
 ## The rule RAA
 
@@ -146,7 +146,7 @@ A box opens with the assumption \( \neg(x < 0) \) and reaches \( \bot \). Which 
 (i) By RAA: the box opened with the negation of \( x < 0 \). (ii) By \( \rulename{\neg I} \): the box opened with \( \neg(x < 0) \), and \( \rulename{\neg I} \) writes the negation of the assumption. (iii) Neither. The box shows that \( \neg(x < 0) \) is impossible, so \( x \ge 0 \), which for real numbers says the same thing as \( \neg(x < 0) \), is the one statement the box has refuted.
 :::
 
-**Why add the rule at all?** Without it, the rules of §01–§04 form a coherent and useful system in their own right, and some mathematicians work only in it. But ordinary mathematics uses RAA constantly, usually without noticing, and a number of familiar laws cannot be derived without it. The rest of this section shows the most important ones. The end of Chapter 2 tells the story of the mathematicians who refused the rule and what their mathematics looks like.
+**Why add the rule at all?** Without it, the rules of Sections 1.1–1.4 form a coherent and useful system in their own right, and some mathematicians work only in it. But ordinary mathematics uses RAA constantly, usually without noticing, and a number of familiar laws cannot be derived without it. The rest of this section shows the most important ones. The end of Chapter 2 tells the story of the mathematicians who refused the rule and what their mathematics looks like.
 
 ## What only RAA gives
 
@@ -154,7 +154,7 @@ We now derive three laws that everyday mathematics takes for granted. Each deriv
 
 ### The converse of the contrapositive
 
-In §03 we derived @prp-contrapositive: from \( P \to Q \) we get \( \neg Q \to \neg P \), using \( \rulename{{\to}I} \) and \( \rulename{\neg I} \) only. In practice we use it the other way round. To prove "if \( n^2 \) is even then \( n \) is even", one proves "if \( n \) is not even then \( n^2 \) is not even" and declares the job done. That step goes from \( \neg Q \to \neg P \) back to \( P \to Q \).
+In Section 1.3 we derived @prp-contrapositive: from \( P \to Q \) we get \( \neg Q \to \neg P \), using \( \rulename{{\to}I} \) and \( \rulename{\neg I} \) only. In practice we use it the other way round. To prove "if \( n^2 \) is even then \( n \) is even", one proves "if \( n \) is not even then \( n^2 \) is not even" and declares the job done. That step goes from \( \neg Q \to \neg P \) back to \( P \to Q \).
 
 ::: {#prp-contrapositive-converse}
 [Converse of the Contrapositive]
@@ -205,7 +205,7 @@ For every statement \( P \), \( \vdash P \vee \neg P \).
 ::: {.idea}
 The goal is a disjunction, so the natural move is \( \rulename{\vee I} \), which asks us to prove \( P \) or to prove \( \neg P \). With no premises we can do neither, so we argue by RAA on the whole disjunction: assume \( \neg(P \vee \neg P) \) and look for a clash. The assumption says that neither disjunct holds. If \( P \) held, then \( P \vee \neg P \) would hold; that clash gives \( \neg P \) by \( \rulename{\neg I} \). But then \( P \vee \neg P \) holds after all, by \( \rulename{\vee I} \), and that is the final clash.
 
-*Before reading on: which line of the derivation is the only one that cannot be justified by the rules of §01–§04?*
+*Before reading on: which line of the derivation is the only one that cannot be justified by the rules of Sections 1.1–1.4?*
 :::
 
 ::: {.proof}
@@ -410,7 +410,7 @@ The hypothesis "\( n^2 \) is even" is cited once, in the sentence "This contradi
 
 > We prove the contrapositive: if \( n \) is not even, then \( n^2 \) is not even. Suppose \( n \) is not even. Then \( n \) is odd, say \( n = 2k + 1 \). Then \( n^2 = 2(2k^2 + 2k) + 1 \) is odd, and so it is not even.
 
-The rewrite tells the reader at the start what is going to be shown, and the final clash disappears. (The proof of @thm-square-even-implies-even in §03 is organized differently, by cases on "\( n \) is even or odd", and that route needs no RAA at all.)
+The rewrite tells the reader at the start what is going to be shown, and the final clash disappears. (The proof of @thm-square-even-implies-even in Section 1.3 is organized differently, by cases on "\( n \) is even or odd", and that route needs no RAA at all.)
 :::
 
 *The test:* if everything inside the box follows from its assumption \( \neg Q \) alone, and the hypothesis \( P \) of the theorem enters only in the line that produces \( \bot \), then the box proved \( \neg Q \to \neg P \). Present it as a contrapositive.
@@ -559,8 +559,8 @@ Here is a common proof that there are infinitely many primes. It uses two facts 
 Suppose that, instead of adding RAA as a rule, we had added excluded middle, \( P \vee \neg P \), as a line that may be written at any point for any statement \( P \).
 
 ::: {.enumerate options="label=(\alph*)"}
-1. Show that RAA would then be unnecessary: given a box that opens with \( \neg P \) and reaches \( \bot \), derive \( P \) using excluded middle, \( \rulename{\vee E} \), \( \rulename{\bot E} \) and the other rules of §01–§04, but not RAA.
-2. Deduce that "RAA" and "excluded middle" are interchangeable as additions to the rules of §01–§04: each can be derived from the other.
+1. Show that RAA would then be unnecessary: given a box that opens with \( \neg P \) and reaches \( \bot \), derive \( P \) using excluded middle, \( \rulename{\vee E} \), \( \rulename{\bot E} \) and the other rules of Sections 1.1–1.4, but not RAA.
+2. Deduce that "RAA" and "excluded middle" are interchangeable as additions to the rules of Sections 1.1–1.4: each can be derived from the other.
 :::
 
 *Hint: split on \( P \vee \neg P \). One case is immediate; in the other, the box you were given can be reused.*
@@ -589,5 +589,5 @@ $\begin{nd}
 
 The first case is a one-line box: it opens with \( P \) and already ends with the goal \( P \). The second case is the given box, extended by one line of \( \rulename{\bot E} \). Every line of the given box is still justified, because it sits in the same position relative to its own assumption. No RAA is used.
 
-(b) Part (a) shows that, with excluded middle available, every use of RAA can be replaced. Conversely, @prp-excluded-middle derives \( P \vee \neg P \) using RAA. So adding either one to the rules of §01–§04 lets us derive the other, and the two additions prove exactly the same things. Chapter 2 adds double-negation elimination to this list.
+(b) Part (a) shows that, with excluded middle available, every use of RAA can be replaced. Conversely, @prp-excluded-middle derives \( P \vee \neg P \) using RAA. So adding either one to the rules of Sections 1.1–1.4 lets us derive the other, and the two additions prove exactly the same things. Chapter 2 adds double-negation elimination to this list.
 :::

@@ -221,6 +221,35 @@ def check(book: Book, quiet: bool = False) -> bool:
     forward_checker = _tool("check_forward_deps")
     errors.extend(forward_checker.report(forward_checker.find_violations(labels)).splitlines())
 
+    # The section contract of STYLE.md (frame, check + solution, warning, exercise groups,
+    # a solution for every exercise). Its fatal rules fail the check; its advisories
+    # (Idea before long proofs, word count, dependency ledger) are summarized in one
+    # line -- run `python3 tools/check_structure.py` for the list.
+    # The contract is this book's house style, so it applies only to a book that has
+    # one (`authoring/STYLE.md`); the engine's fixture book does not.
+    has_style = (book.root / "authoring" / "STYLE.md").exists()
+    if has_style:
+        structure_checker = _tool("check_structure")
+        fatal, advisory = structure_checker.find_violations(book.src_dir)
+        errors.extend(structure_checker.report(
+            [(p.relative_to(book.root), n, m) for p, n, m in fatal]).splitlines())
+        if advisory:
+            warnings.append(f"{len(advisory)} section-structure advisory note(s); "
+                            f"run `python3 tools/check_structure.py` to list them")
+
+    # Fitch derivations and truth tables (Part 0). ADVISORY for now: the Chapter 1 pilot
+    # has two deliberately flawed derivations (02-conjunction-and-implication, lines ~180
+    # and ~457) that still lack their `% expect-invalid` marker. Once they carry it and
+    # the checker is clean (it is, since 2026-09-28): a flawed derivation fails the check.
+    FITCH_FATAL = True
+    if has_style:
+        fitch_checker = _tool("check_fitch")
+        fitch_errors, _, _ = fitch_checker.find_violations(book.src_dir)
+        fitch_lines = [f"fitch: {line}" for line in
+                       fitch_checker.report([(p.relative_to(book.root), n, m)
+                                             for p, n, m in fitch_errors]).splitlines()]
+        (errors if FITCH_FATAL else warnings).extend(fitch_lines)
+
     # Web vs PDF numbering
     book_aux = book.build_dir / "tmp" / "latex-book" / "book.aux"
     newest_source = _newest_source_mtime(book)

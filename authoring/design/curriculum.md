@@ -9,7 +9,7 @@ This file condenses the planning research of 2026-09-27. For each stage it lists
 - the UCLA and Berkeley qualifying exams;
 - NTU.
 
-Chapter blueprints take their content from here. Parts are mapped to stages in `decisions.md`.
+Chapter blueprints take their content from here. Parts are mapped to stages in `decisions.md`. The route changes of 2026-09-28 (`roadmap.md` A1–A8) moved some placements; the stage sections below state the current ones, and `blueprint/book.yaml` is authoritative.
 
 Every stage has the same fields:
 - **(a)** goal
@@ -257,13 +257,16 @@ About half the exercises annotate or build real proofs from analysis.
 - Derive the implicit function theorem and compute a tangent plane.
 
 **Additions.**
-- A 2-week module on topological spaces: topologies, subspaces, finite products, quotients, Hausdorff, cover compactness, and the fact that a continuous bijection from a compact space to a Hausdorff space is a homeomorphism.
-- A 1-week module on the Riemann integral on ℝⁿ: Jordan content, Fubini for continuous functions, linear change of variables.
+- ~~A 2-week module on topological spaces~~ *(moved 2026-09-28, roadmap A2)*: general topology is now a two-chapter block at the start of Part VI. Part II keeps metric topology only, plus the metric Urysohn function and the Tietze extension theorem for metric spaces (in the compactness chapter), which is all Part IV needs.
+- Linear systems, the matrix exponential and the flow (roadmap A4), after the inverse function theorem: e^{tA}, variation of constants, stability, C¹ dependence on initial data, the flow's group property, and a Sturm–Liouville preview.
+- A 1-week module on the Riemann integral on ℝⁿ: Jordan content, Fubini for continuous functions, linear change of variables. (Green's theorem moved to Part IV's surfaces chapter, roadmap A1.)
 - The completion of a metric space, and ℝ as the completion of ℚ.
 
 **(i) Benchmark texts.** Pugh chapters 2, 4, 5 (forms optional).
 
 **Linear algebra II (companion book).** Inner products, the spectral theorem, SVD, the double dual.
+
+**Linear-algebra gates (roadmap A8).** Determinants and eigenvalues before the derivative in ℝⁿ; eigenvalues and Jordan form before linear systems; inner products, the spectral theorem and SVD before Part III's mean-square chapter.
 
 ---
 
@@ -276,7 +279,7 @@ About half the exercises annotate or build real proofs from analysis.
 - The Dirichlet, Fejér and Poisson kernels; good kernels and approximate identities.
 - Cesàro and Abel summability; convolution.
 - The Schwartz space and the Fourier transform.
-- Characters of finite abelian groups.
+- Characters of finite abelian groups (optional chapter, roadmap A7).
 
 **(c) Prove unaided.**
 - Uniqueness: a continuous function with all coefficients zero is zero.
@@ -295,9 +298,9 @@ About half the exercises annotate or build real proofs from analysis.
 - The heat and Poisson kernels.
 - Lacunary series.
 
-**(e) Skills.** Approximate identities; regularizing by convolution; summability in place of convergence; Parseval arguments; symmetry and characters. This is the first just-in-time use of groups.
+**(e) Skills.** Approximate identities; regularizing by convolution; summability in place of convergence; Parseval arguments; symmetry and characters. This is the first just-in-time use of groups, in the optional finite-group chapter (roadmap A7).
 
-**(f) Motivation.** The heat and wave equations; the isoperimetric inequality (Hurwitz); equidistribution of {nγ}; optionally, Dirichlet's theorem.
+**(f) Motivation.** The heat and wave equations; the isoperimetric inequality (Hurwitz); equidistribution of {nγ}; optionally, Dirichlet's theorem. Kirchhoff's formula, descent and the Radon transform are optional sections (roadmap A7).
 
 **(g) Exit checks.**
 - Fejér's theorem, and hence that trigonometric polynomials are dense in C(𝕋).
@@ -326,7 +329,9 @@ About half the exercises annotate or build real proofs from analysis.
 - **Convergence theorems:** MCT, Fatou, DCT; Egorov; Lusin; Vitali convergence and uniform integrability.
 - **Products:** Fubini–Tonelli, in full.
 - **Lᵖ:** Hölder and Minkowski; Lᵖ complete (Riesz–Fischer); C_c dense in Lᵖ (p<∞); translation continuous in Lᵖ.
-- **Differentiation:** the Vitali covering lemma, the weak (1,1) maximal inequality, Lebesgue differentiation; BV functions are differentiable a.e.; the FTC for AC functions.
+- **Differentiation:** the Vitali covering lemma, the weak (1,1) maximal inequality, Marcinkiewicz interpolation (diagonal case, roadmap A5), Lebesgue differentiation; BV functions are differentiable a.e.; the FTC for AC functions.
+- **Surfaces (roadmap A1):** surface measure on C¹ hypersurfaces; the divergence theorem on bounded C¹ domains; Green's identities; the mean value property of harmonic functions in ℝⁿ.
+- **Probability (roadmap A3):** independence via product measure; Borel–Cantelli; the weak law and the L⁴ strong law; the CLT by Lindeberg's replacement method.
 - **Signed measures:** the Hahn and Jordan decompositions; Radon–Nikodym by von Neumann's L² proof; Lebesgue decomposition.
 - **Change of variables:** linear, with the general C¹ case in outline.
 
@@ -344,13 +349,15 @@ About half the exercises annotate or build real proofs from analysis.
 - Lebesgue differentiation, from the covering lemma up.
 - The implication diagram of the four modes of convergence, with a counterexample for every non-implication.
 
-**Placement.** Urysohn and Tietze come in week 1. Lᵖ duality, Riesz–Markov and weak convergence move to Part VI.
+**Placement.** *(Amended 2026-09-28.)* No general topology in Part IV: Lusin and C_c density use the metric Urysohn and Tietze theorems of Part II (roadmap A2). Surfaces and the divergence theorem follow change of variables (A1); probability closes the Part and carries Gate IV (A3, reader B2). Lᵖ duality, Riesz–Markov and weak convergence move to Part VI.
 
 **(i) Benchmark texts.** Folland chapters 1–3 and 6 (first half), or Stein–Shakarchi III chapters 1–3 and 6.
 
 ---
 
 ## Stage S3-B — Complex analysis (Part V)
+
+**Placement.** On the two-year schedule Part V follows Part IV, not alongside it (roadmap A10). Part V is logically independent of Parts III–IV, so the `complex-early` path reads it straight after Part II (roadmap A6); where it cites Part IV's Green's identities it keeps a self-contained disc case.
 
 **(b) Definitions.**
 - Holomorphic functions and Cauchy–Riemann; contour integrals, winding numbers.
@@ -385,6 +392,7 @@ About half the exercises annotate or build real proofs from analysis.
 ## Stage S4 — Functional analysis, distributions, Sobolev, capstone (Part VI)
 
 **(b) Definitions.**
+- Topological spaces, bases, subspaces and products, Hausdorff and normal spaces, cover compactness, locally compact Hausdorff spaces, C_c and C_0 (the Part VI topology block, roadmap A2).
 - Banach and Hilbert spaces, bounded operators, duals, sublinear functionals.
 - Weak and weak* topologies, reflexive and separable spaces, orthonormal bases.
 - Compact and Hilbert–Schmidt operators, adjoints, spectrum and resolvent, Fredholm operators.
@@ -393,7 +401,9 @@ About half the exercises annotate or build real proofs from analysis.
 
 **(c) Prove unaided.**
 - **Duality and Baire:** Hahn–Banach, analytic and geometric (Zorn); the UBP; open mapping and closed graph; Lᵖ duality (1<p<∞, and p=1 when σ-finite); Riesz–Markov for C(K)* (outline allowed).
+- **Topology:** compact subsets of Hausdorff spaces are closed; a continuous bijection from a compact space to a Hausdorff space is a homeomorphism; Urysohn and Tietze for normal spaces; the LCH Urysohn lemma and partitions of unity.
 - **Weak compactness:** Tychonoff; Banach–Alaoglu (the separable case by a diagonal argument); Mazur.
+- **Interpolation (roadmap A5):** the three-lines lemma, Riesz–Thorin, Young's convolution inequality, Hausdorff–Young.
 - **Hilbert space:** projection and Riesz representation; Bessel, Parseval, Riesz–Fischer; Lax–Milgram.
 - **Compact operators:** Fredholm alternative; the spectral theorem for compact self-adjoint operators.
 - **Fourier and Sobolev:** Fourier on 𝒮′; Plancherel; Poincaré; Rellich–Kondrachov, on an interval or torus at least.
@@ -416,7 +426,7 @@ About half the exercises annotate or build real proofs from analysis.
 2. Rellich and the compact self-adjoint spectral theorem show that the Dirichlet-Laplacian eigenfunctions form an orthonormal basis of L²(Ω).
 3. A mixed qualifying exam.
 
-**Optional.** Gelfand theory; ideals and quotients just in time.
+**Optional.** Gelfand theory; ideals and quotients just in time. Characteristic functions, weak convergence of probability measures, Lévy continuity and Prokhorov (a section of the tempered-distributions chapter, roadmap A3). Quotient gluing (a section of the topology block).
 
 **(i) Benchmark texts.** Brezis chapters 1–6 and 8–9, or Stein–Shakarchi IV chapters 1, 3, 4; Folland chapters 8–9 for distributions.
 
@@ -426,9 +436,9 @@ About half the exercises annotate or build real proofs from analysis.
 
 | Branch | Entry nodes | First milestones |
 |---|---|---|
-| Harmonic analysis | maximal function, Lebesgue differentiation, weak Lᵖ, Plancherel, approximate identities | interpolation, the Hilbert transform, Calderón–Zygmund |
-| PDE | Sobolev, Lax–Milgram, Rellich, distributions, harmonic functions | H² regularity, energy methods |
-| Probability | abstract measure, RN, Fubini | conditional expectation, SLLN, CLT, martingales |
+| Harmonic analysis | maximal function, Lebesgue differentiation, weak Lᵖ, Plancherel, approximate identities, interpolation (Marcinkiewicz, Riesz–Thorin, Hausdorff–Young), the Hilbert transform on L² | Lᵖ bounds for the Hilbert transform, Calderón–Zygmund |
+| PDE | Sobolev, Lax–Milgram, Rellich, distributions, harmonic functions, the divergence theorem and Green's identities, linear ODE flows (characteristics) | H² regularity, energy methods |
+| Probability | abstract measure, RN, Fubini, the probability chapter of Part IV (LLN, Lindeberg CLT), characteristic functions (optional, Part VI) | conditional expectation, martingales, Brownian motion |
 | Ergodic theory | measure-preserving maps, L² projection | von Neumann and Birkhoff |
 
 ---

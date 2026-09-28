@@ -93,22 +93,29 @@ For \( s - h \) the same factorization gives \( s^n - (s - h)^n \le h \cdot n s^
 We first prove a power estimate.
 
 ::: {.claim}
-Let \( 0 \le x < y \) and \( k \in \nN \). Then
+Let \( 0 \le x < y \) and \( k \in \nN \). Then \( x^k < y^k \): the map \( x \mapsto x^k \) is strictly increasing on \( [0, \infty) \). Consequently \( x^m \le y^m \) for every integer \( m \ge 0 \), where \( u^0 \coloneqq 1 \). Moreover
 \[
     0 < y^k - x^k \le k y^{k-1} (y - x).
 \]
-In particular \( x^k < y^k \): the map \( x \mapsto x^k \) is strictly increasing on \( [0, \infty) \).
 :::
 
 ::: {.proofofclaim}
-Write \( \Sigma \coloneqq \sum_{j=0}^{k-1} y^j x^{k-1-j} \), with the convention \( u^0 = 1 \). Multiplying out,
+Powers are defined by recursion (Chapter 4): \( u^1 \coloneqq u \) and \( u^{k+1} \coloneqq u^k u \).
+
+We first show \( 0 \le x^k < y^k \) by induction on \( k \). For \( k = 1 \) this is the hypothesis. If \( 0 \le x^k < y^k \), then \( x^{k+1} = x^k x \ge 0 \), and
+\[
+    x^{k+1} = x^k x \le x^k y < y^k y = y^{k+1},
+\]
+where the first step multiplies \( x < y \) by \( x^k \ge 0 \) (@thm-ordered-field-rules (c), or equality if \( x^k = 0 \)) and the second multiplies \( x^k < y^k \) by \( y > 0 \). This proves the first statement, and the second follows, since for \( m = 0 \) both sides are \( 1 \).
+
+For the estimate, write \( \Sigma \coloneqq \sum_{j=0}^{k-1} y^j x^{k-1-j} \). Multiplying out,
 \[
 \begin{aligned}
     (y - x)\Sigma &= \sum_{j=0}^{k-1} y^{j+1} x^{k-1-j} - \sum_{j=0}^{k-1} y^j x^{k-j} \\
                   &= y^k - x^k,
 \end{aligned}
 \]
-since every other term appears once in each sum and cancels. Since \( 0 \le x < y \), each term of \( \Sigma \) satisfies \( 0 \le y^j x^{k-1-j} \le y^{k-1} \), and the term with \( j = k - 1 \) equals \( y^{k-1} > 0 \). Hence \( 0 < \Sigma \le k y^{k-1} \). Multiplying by \( y - x > 0 \) gives the claim.
+since every other term appears once in each sum and cancels. Each term of \( \Sigma \) satisfies \( 0 \le y^j x^{k-1-j} \le y^j y^{k-1-j} = y^{k-1} \), by the second statement with \( m = k - 1 - j \), multiplied by \( y^j > 0 \); and the term with \( j = k - 1 \) equals \( y^{k-1} > 0 \). Hence \( 0 < \Sigma \le k y^{k-1} \). Multiplying by \( y - x > 0 \) gives the claim.
 :::
 
 Let \( S \coloneqq \{ x \in \nR : x > 0, \ x^n < a \} \).
@@ -127,13 +134,13 @@ which depends only on \( n \) and \( s \). Suppose \( s^n \ne a \), and let
 \]
 Then \( hC \le \tfrac12 \abs{s^n - a} < \abs{s^n - a} \).
 
-*Case 1: \( s^n < a \).* Apply the claim with \( k = n \), \( x = s \) and \( y = s + h \). Since \( s + h < s + 1 \), the claim with \( k = n - 1 \) gives \( (s + h)^{n-1} \le (s + 1)^{n-1} \) (with equality \( 1 = 1 \) when \( n = 1 \)). Therefore
+*Case 1: \( s^n < a \).* Apply the claim with \( k = n \), \( x = s \) and \( y = s + h \). Since \( s + h < s + 1 \), the claim with \( m = n - 1 \) gives \( (s + h)^{n-1} \le (s + 1)^{n-1} \) (both sides are \( 1 \) when \( n = 1 \)). Therefore
 \[
     (s + h)^n - s^n \le n (s + h)^{n-1} h \le C h < a - s^n ,
 \]
 so \( (s + h)^n < a \). Hence \( s + h \in S \), although \( s + h > s \). This contradicts that \( s \) is an upper bound of \( S \).
 
-*Case 2: \( s^n > a \).* First, \( s - h > 0 \). Indeed \( (s + 1)^{n-1} \ge s^{n-1} \) by the claim with \( k = n - 1 \), so
+*Case 2: \( s^n > a \).* First, \( s - h > 0 \). Indeed \( (s + 1)^{n-1} \ge s^{n-1} \) by the claim with \( m = n - 1 \) (both sides are \( 1 \) when \( n = 1 \)), so
 \[
     h \le \frac{s^n - a}{2C} < \frac{s^n}{2C} \le \frac{s^n}{2 n s^{n-1}} = \frac{s}{2n} < s .
 \]
@@ -187,12 +194,12 @@ Picture the integers as marks spaced \( 1 \) apart. The Archimedean property put
 \[
     T \coloneqq \{ j \in \nN : j - p > y \}
 \]
-is non-empty. By well-ordering (Chapter 4), \( T \) has a least element \( j_0 \). Let \( m \coloneqq j_0 - p - 1 \), an integer. Then \( m + 1 = j_0 - p > y \), since \( j_0 \in T \). It remains to show \( m \le y \).
+is non-empty. By well-ordering (Chapter 4), \( T \) has a least element \( j_0 \). Let \( m \coloneqq j_0 - p - 1 \), an integer because differences of integers are integers (the remark on \( \nN \) in the previous section). Then \( m + 1 = j_0 - p > y \), since \( j_0 \in T \). It remains to show \( m \le y \).
 
 - If \( j_0 = 1 \), then \( m = -p < y \), by the choice of \( p \).
-- If \( j_0 \ge 2 \), then \( j_0 - 1 \in \nN \), and \( j_0 - 1 \notin T \) because it is smaller than the least element of \( T \). So \( (j_0 - 1) - p \le y \), that is, \( m \le y \).
+- If \( j_0 \ge 2 \), then \( j_0 - 1 \in \nN \) (again from that remark), and \( j_0 - 1 \notin T \) because it is smaller than the least element of \( T \). So \( (j_0 - 1) - p \le y \), that is, \( m \le y \).
 
-*Uniqueness.* Suppose \( m \) and \( m' \) are integers with \( m \le y < m + 1 \) and \( m' \le y < m' + 1 \), and suppose \( m < m' \). Then \( m' \ge m + 1 \), since no integer lies strictly between \( m \) and \( m + 1 \). Hence \( y \ge m' \ge m + 1 > y \), a contradiction. By symmetry \( m' < m \) is impossible too, so \( m = m' \).
+*Uniqueness.* Suppose \( m \) and \( m' \) are integers with \( m \le y < m + 1 \) and \( m' \le y < m' + 1 \), and suppose \( m < m' \). Then \( m' - m \) is a positive integer, hence a natural number, so \( m' - m \ge 1 \) by @exm-naturals-at-least-one; that is, \( m' \ge m + 1 \). Hence \( y \ge m' \ge m + 1 > y \), a contradiction. By symmetry \( m' < m \) is impossible too, so \( m = m' \).
 :::
 
 ## The rationals are dense

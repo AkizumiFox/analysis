@@ -1,6 +1,6 @@
 # Design decisions (record)
 
-These decisions were made on 2026-09-27, across two planning conversations and the plan that followed them. `curriculum.md` (same directory) holds the stage-by-stage content specification, and `sources.md` holds the reference books and their roles. Blueprints and chapters follow this file. When a decision changes, edit this file and say why.
+These decisions were made on 2026-09-27, across two planning conversations and the plan that followed them. `curriculum.md` (same directory) holds the stage-by-stage content specification, and `sources.md` holds the reference books and their roles. Blueprints and chapters follow this file. When a decision changes, edit this file and say why. The route changes of 2026-09-28 (`roadmap.md` A1–A8, A10; evidence in `research-route.md` and `research-reader.md`) are recorded below where they amend an item.
 
 ## The book
 - **One book, seven Parts, written in English first.** A Chinese edition comes later; the engine has no CJK support yet (xelatex + ctex, interface strings and spell check all still to do).
@@ -11,11 +11,11 @@ These decisions were made on 2026-09-27, across two planning conversations and t
 |---|---|---|
 | 0 | Foundations: logic, sets, cardinality (+ optional ZF, ℕ, ℤ, ℚ) | three-year route, first semester; two-year route, a 3–4 week bridge (logic and sets only) |
 | I | Analysis on the real line (+ optional Dedekind cuts and uniqueness of ℝ at the end) | S1 |
-| II | Metric spaces and several variables | S2 |
-| III | Fourier analysis (Riemann setting) | Summer 1 |
-| IV | Measure and integration | S3 |
-| V | Complex analysis | S3 (read alongside IV, or after it) |
-| VI | Functional analysis and distributions | S4, ending with the Dirichlet-problem capstone |
+| II | Metric spaces, several variables and ODE | S2 |
+| III | Fourier analysis (Riemann setting; finite groups optional) | Summer 1 |
+| IV | Measure and integration (+ surfaces and the divergence theorem, probability) | S3 |
+| V | Complex analysis | after IV on the two-year schedule (not in parallel: roadmap A10); or straight after II on the `complex-early` path |
+| VI | General topology, functional analysis and distributions | S4, ending with the Dirichlet-problem capstone |
 
 ## Structural decisions
 1. **Proof skills are practised inside analysis, not in a separate logic course.** Part 0's logic is short, and every rule it introduces comes with an example from real analysis.
@@ -47,15 +47,16 @@ These decisions were made on 2026-09-27, across two planning conversations and t
    - Whether Fourier series converge leads to the list of what the Riemann integral lacks, and so to Lebesgue.
    - The Dirichlet problem leads to Hilbert spaces and Lax–Milgram.
    - Polynomial approximation leads to Stone–Weierstrass.
-8. **Point-set topology is split into three places.**
-   - End of Part II: topological spaces, Hausdorff, compactness, quotients.
-   - Start of Part IV: Urysohn and Tietze (locally compact Hausdorff), needed for Lusin and the density of C_c.
-   - Part VI, just before Alaoglu: Tychonoff (with Zorn), plus the diagonal proof in the separable case.
+8. **Point-set topology: metric in Part II, general in one block in Part VI.** *(Amended 2026-09-28, roadmap A2 / route R2. The earlier split into three places, end of Part II, start of Part IV and before Alaoglu, is reversed: no programme or text surveyed splits general topology, and nothing in Parts II–V uses the abstract theory.)*
+   - Part II: metric topology only. `compactness-connectedness` carries a section on the metric Urysohn function d(x,A)/(d(x,A)+d(x,B)) and the Tietze extension theorem for metric spaces; that is all Part IV needs (Lusin, density of C_c in Lᵖ(ℝᵈ)).
+   - Start of Part VI, just before its users: `topological-spaces-compactness` (topologies, bases, subspaces and arbitrary products, Hausdorff, compactness, the compact-to-Hausdorff theorem; quotient gluing as an optional section) and `separation-urysohn-lch` (normal spaces, Urysohn and Tietze, locally compact Hausdorff spaces, C_c and C_0, partitions of unity). Riesz–Markov uses the second at once.
+   - Tychonoff (with Zorn) stays in `weak-topologies-alaoglu`, just before Banach–Alaoglu, with the diagonal proof in the separable case.
+   - The block replaces the former chapters `topological-spaces`, `compactness-quotients` (Part II) and `urysohn-tietze` (Part IV), and is about 40 pages shorter.
 9. **Load moved out of measure theory into Part VI.** Lᵖ duality, the Riesz–Markov theorem for C(K)*, weak topologies and abstract Hilbert space theory all go in Part VI. Part IV uses L² only for the von Neumann proof of Radon–Nikodym.
 10. **Fubini–Tonelli and change of variables are proved in full** in Part IV. Part II covers the Riemann integral on ℝⁿ: Jordan content, Fubini for continuous functions, and linear change of variables.
 11. **Complex analysis covers the qualifying-exam "second layer".** That means harmonic functions and Harnack, subharmonic functions, normal families, Hurwitz, infinite products, Weierstrass and Mittag-Leffler, Hadamard (in outline), analytic continuation and monodromy, Schwarz reflection, and little Picard.
-12. **Differential forms and Stokes are deferred.** They are not in the main line, but a Green's theorem node (rectangle and disc) is kept, because harmonic functions and PDE need it.
-13. **Abstract algebra is taught just in time.** Groups and characters appear with Fourier analysis on finite abelian groups (Part III). Ideals and quotients appear with Gelfand theory, an optional section of Part VI.
+12. **The divergence theorem is main line; differential forms and the general Stokes theorem are deferred.** *(Amended 2026-09-28, roadmap A1 / route R1.)* The main-line chapter `surfaces-divergence-theorem` (Part IV, right after `change-of-variables`) covers C¹ hypersurfaces as local graphs, surface measure, C¹ domains and the outward normal, the divergence theorem by partition of unity, Fubini and the FTC, Green's identities, and harmonic functions in ℝⁿ (mean value property, fundamental solution). Green's theorem on a rectangle and a disc moved there from `riemann-integral-rn` and keeps its label `thm-green`. Its users are `harmonic-functions` (Part V; the disc case stays self-contained there for the `complex-early` path), `distributions` (ΔΦ = δ), `poincare-rellich` (traces) and the capstone. No forms are used. An optional chapter on forms and Stokes is still open (roadmap A9).
+13. **Abstract algebra is taught just in time.** Groups and characters appear with Fourier analysis on finite abelian groups (Part III), which is now an **optional** chapter (roadmap A7 / route R7: no main-line chapter after Part III needs it; its users, Dirichlet's theorem and Gelfand theory, are optional). Ideals and quotients appear with Gelfand theory, an optional chapter of Part VI. In the same trim, the Kirchhoff/descent/Huygens and Radon sections of `fourier-transform-rd` are optional.
 14. **Cross-cutting skills are named and recur**, in Quick checks, warnings and C-exercises:
     - quantifier management;
     - ε allocation;
@@ -68,11 +69,16 @@ These decisions were made on 2026-09-27, across two planning conversations and t
     - self-explanation;
     - proof verification (finding the error).
 15. **Every chapter ends with exit checks.** These are C-level exercises taken from the "exit check" items in `curriculum.md`. Examples include proving that a continuous function on [a,b] is uniformly continuous in two different ways, and the capstone at the end of Part VI.
+16. **Every Part ends with a Gate** (roadmap B2 / reader B2): the last section of the Part's last main-line chapter is a timed, closed-book exam with a marking scheme, a pass line and an `@ref` remediation map. Gate 0 is in `countable-and-uncountable` (ch. 5), Gate I in `forms-of-completeness` (ch. 18, replacing the Part I review), Gate II in `riemann-integral-rn` (ch. 30), Gate III in `riemann-limits` (ch. 39), Gate IV in `probability-measure-spaces` (ch. 51; its probability problems are non-core, so a reader who defers that chapter sits Gate IV after ch. 50), Gate V in `continuation-and-picard` (ch. 59) and Gate VI in the capstone (ch. 75). The UCLA-style qual checks that used to be exit checks of ch. 50 and ch. 59 are now inside Gates IV and V.
+17. **ODE covers linear systems and the flow** (roadmap A4 / route R4). `linear-odes-flows` (Part II, after `inverse-implicit`) adds the matrix exponential, fundamental matrices and variation of constants, stability of x′ = Ax, C¹ dependence on initial data and the local flow, with a Sturm–Liouville preview that `compact-operators-spectral` answers. Jordan form is cited from the companion book.
+18. **Probability is on the main line** (roadmap A3 / route R3). `probability-measure-spaces` closes Part IV: random variables and distributions, independence through product measure, Borel–Cantelli and the 0–1 law, the weak law and the L⁴ strong law, normal numbers, and the CLT by Lindeberg's replacement method (no Fourier). No later chapter depends on it, so on the two-year schedule it may be read after Part VI. Characteristic functions, weak convergence of measures, Lévy continuity and Prokhorov are an optional last section of `tempered-distributions-fourier`.
+19. **Interpolation is the harmonic-analysis on-ramp** (roadmap A5 / route R5). Marcinkiewicz (diagonal case) is proved in `lebesgue-differentiation` and gives the maximal function's Lᵖ bound. The short main-line chapter `interpolation` (Part VI, after `tempered-distributions-fourier`) proves the three-lines lemma, Riesz–Thorin, Young's convolution inequality and Hausdorff–Young, and previews the Hilbert transform on L²; the capstone does not depend on it.
+20. **Linear-algebra gates are published** (roadmap A8 / route R8), as `external_prerequisites` of the Part II and Part III openers and of the chapters concerned: the companion book through determinants and eigenvalues before `derivative-rn`; eigenvalues and Jordan form before `linear-odes-flows`; inner products, orthogonal projection, the spectral theorem and SVD before `mean-square-pointwise`; alternating multilinear forms before any forms chapter (A9).
 
 ## Reading paths (`config.json` `reading-paths`)
-- `two-year`: Part 0 logic and sets without the constructions, then Parts I–VI.
-- `three-year`: everything, including the constructions.
-- Narrower paths: `measure-only` (up to Radon–Nikodym), `complex-only`, and `foundations` (Part 0 alone).
+- *(Amended 2026-09-28, roadmap B6 and A10.)* The two-year and three-year routes are **schedules** on the "How to read this book" page (`authoring/READING.md`), not reading paths. On the two-year schedule **Parts IV and V run in sequence, not in parallel** (in parallel they would be about 32 hours a week).
+- Narrower paths are defined in `READING.md`, among them `measure-only`, `complex-only` and `foundations`.
+- **`complex-early`** (roadmap A6 / route R6): Parts 0 → I → II → V. Part V needs nothing from Parts III–IV beyond the Poisson/Abel link, and wherever it cites Part IV (Green's identities, now in `surfaces-divergence-theorem`) it keeps a self-contained disc-case fallback, so the path is valid.
 
 ## Source policy
 - Original prose only. The converted reference books (`~/coding/analysis/converted/`) may be used to check truth and coverage and for nothing else.
@@ -80,5 +86,6 @@ These decisions were made on 2026-09-27, across two planning conversations and t
 - Converted text is never committed.
 
 ## Deferred on purpose
+- Roadmap A9 (decide after Part IV is written): optional chapters on Hausdorff measure and on differential forms and Stokes; interior H² regularity in the capstone; Hilbert before Banach in Part VI; the bounded self-adjoint spectral theorem.
 - The one-node-per-file YAML knowledge graph, `term:` links, natural-deduction rule tags on proof steps, and `uses_choice` / `nonconstructive` flags. For now the engine's `@ref` graph, `graph.json` and the reading paths stand in for them.
 - The Chinese edition.

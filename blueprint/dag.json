@@ -2241,7 +2241,7 @@
    "id": "FOL.4",
    "book": "FOL",
    "ch": "4",
-   "title": "Point Set Topology (§4.5 locally compact Hausdorff spaces only)",
+   "title": "Point Set Topology (§4.1–4.2 and §4.5)",
    "pages": 38,
    "files": "028-035"
   },
@@ -2249,7 +2249,7 @@
    "id": "FOL.6",
    "book": "FOL",
    "ch": "6",
-   "title": "Lᵖ Spaces (§6.1, 6.3, 6.4 only)",
+   "title": "Lᵖ Spaces (§6.1, 6.3–6.5 only)",
    "pages": 32,
    "files": "044-050"
   },
@@ -3164,6 +3164,86 @@
    "title": "The Tychonoff Theorem (§37 only)",
    "pages": 8,
    "files": "050"
+  },
+  "TES.3": {
+   "id": "TES.3",
+   "book": "TES",
+   "ch": "3",
+   "title": "Linear equations (§3.1–3.4, §3.8)",
+   "pages": 52,
+   "files": "015-022"
+  },
+  "MOA.5": {
+   "id": "MOA.5",
+   "book": "MOA",
+   "ch": "5",
+   "title": "Manifolds (§21–25: volume of a parallelopiped, manifolds in ℝⁿ, integrating a scalar function over a manifold)",
+   "pages": 44,
+   "files": "027-032"
+  },
+  "MOA.7": {
+   "id": "MOA.7",
+   "book": "MOA",
+   "ch": "7",
+   "title": "Stokes' Theorem (§38 applications to vector analysis only: the divergence theorem)",
+   "pages": 16,
+   "files": "048-050"
+  },
+  "EVA.C": {
+   "id": "EVA.C",
+   "book": "EVA",
+   "ch": "C",
+   "title": "Appendix C: Calculus Facts (C.1 boundaries, C.2 Gauss–Green, C.3 polar coordinates and coarea)",
+   "pages": 9,
+   "files": "120-121"
+  },
+  "EVA.2": {
+   "id": "EVA.2",
+   "book": "EVA",
+   "ch": "2",
+   "title": "Four Important Linear PDE (§2.2 Laplace's equation only)",
+   "pages": 27,
+   "files": "007-011"
+  },
+  "FOL.11": {
+   "id": "FOL.11",
+   "book": "FOL",
+   "ch": "11",
+   "title": "More Measures and Integrals (§11.4 integration on manifolds only)",
+   "pages": 6,
+   "files": "081-082"
+  },
+  "FOL.10": {
+   "id": "FOL.10",
+   "book": "FOL",
+   "ch": "10",
+   "title": "Topics in Probability Theory (§10.1–10.3)",
+   "pages": 17,
+   "files": "072-074"
+  },
+  "SS4.5": {
+   "id": "SS4.5",
+   "book": "SS4",
+   "ch": "5",
+   "title": "Rudiments of Probability Theory",
+   "pages": 46,
+   "files": "044-053"
+  },
+  "MIRA.12": {
+   "id": "MIRA.12",
+   "book": "MIRA",
+   "ch": "12",
+   "title": "Probability Measures",
+   "pages": 23,
+   "files": "131-137"
+  },
+  "SS4.2": {
+   "id": "SS4.2",
+   "book": "SS4",
+   "ch": "2",
+   "title": "Lᵖ Spaces in Harmonic Analysis (§1–4)",
+   "pages": 26,
+   "files": "014-019"
   }
  },
  "hard": [
@@ -4374,6 +4454,34 @@
   [
    "FJ.9",
    "EVA.5"
+  ],
+  [
+   "TES.2",
+   "TES.3"
+  ],
+  [
+   "MOA.4",
+   "MOA.5"
+  ],
+  [
+   "MOA.5",
+   "MOA.7"
+  ],
+  [
+   "FOL.2",
+   "FOL.11"
+  ],
+  [
+   "FOL.2",
+   "FOL.10"
+  ],
+  [
+   "MIRA.5",
+   "MIRA.12"
+  ],
+  [
+   "SS4.1",
+   "SS4.2"
   ]
  ],
  "soft": [

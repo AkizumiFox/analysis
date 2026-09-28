@@ -1,6 +1,6 @@
 # Reading the Proof off the Goal
 
-We now have every rule for the connectives: the introduction and elimination rules of §02–§04, and RAA from §05. This section turns them into a working method. Faced with a statement to prove, the first question is not "what do I know about the mathematics?" but "what is the main connective of the goal?", because that alone fixes the outer frame of the proof: which boxes to open and what the last line will be. We call that frame the proof's **skeleton**. The section then collects every rule in one reference table, practices translating between derivations and mathematical prose in both directions, and ends with the skill of checking someone else's proof line by line.
+We now have every rule for the connectives: the introduction and elimination rules of Sections 1.2–1.4, and RAA from Section 1.5. This section turns them into a working method. Faced with a statement to prove, the first question is not "what do I know about the mathematics?" but "what is the main connective of the goal?", because that alone fixes the outer frame of the proof: which boxes to open and what the last line will be. We call that frame the proof's **skeleton**. The section then collects every rule in one reference table, practices translating between derivations and mathematical prose in both directions, and ends with the skill of checking someone else's proof line by line.
 
 ## The skeletons
 
@@ -49,15 +49,15 @@ Let \( m \) and \( n \) be integers. Prove that if \( mn \) is odd, then \( m \)
 :::
 
 ::: {.solution}
-*The skeleton.* The main connective is "if … then", so the outer skeleton is \( \rulename{{\to}I} \): "Assume \( mn \) is odd. … Hence \( m \) is odd and \( n \) is odd." The new goal is a conjunction, so inside the box the skeleton is \( \rulename{\wedge I} \): two separate proofs, one that \( m \) is odd and one that \( n \) is odd. Each is atomic. Nothing in the hypothesis "\( mn \) is odd" can be taken apart further, so we try the contrapositive of the claim "\( mn \) odd implies \( m \) odd", which asks for "\( m \) even implies \( mn \) even", a statement we can compute with.
+*The skeleton.* The main connective is "if … then", so the outer skeleton is \( \rulename{{\to}I} \): "Assume \( mn \) is odd. … Hence \( m \) is odd and \( n \) is odd." The new goal is a conjunction, so inside the box the skeleton is \( \rulename{\wedge I} \): two separate proofs, one that \( m \) is odd and one that \( n \) is odd. Each is atomic. Nothing in the hypothesis "\( mn \) is odd" can be taken apart further, so, as in @thm-square-even-implies-even, we work with a contrapositive: "\( m \) even implies \( mn \) even" is a statement we can compute with, and @prp-contrapositive turns it into "\( mn \) not even implies \( m \) not even".
 
 *The proof.* Assume \( mn \) is odd. We show that \( m \) is odd and that \( n \) is odd.
 
-To see that \( m \) is odd, suppose that \( m \) is not odd. Then \( m \) is even, since every integer is even or odd, say \( m = 2k \) with \( k \) an integer. Then \( mn = 2(kn) \) is even, and so it is not odd, since no integer is both. This contradicts the assumption that \( mn \) is odd. Hence \( m \) is odd.
+To see that \( m \) is odd, we first show that if \( m \) is even, then \( mn \) is even: writing \( m = 2k \) with \( k \) an integer, \( mn = 2(kn) \). By the contrapositive (@prp-contrapositive), if \( mn \) is not even, then \( m \) is not even. Now \( mn \) is odd, so it is not even, since no integer is both; hence \( m \) is not even. Since every integer is even or odd, \( m \) is odd (@prp-disjunctive-syllogism).
 
 Exchanging the roles of \( m \) and \( n \) in the previous paragraph shows that \( n \) is odd. Hence \( m \) and \( n \) are both odd.
 
-*What the skeleton did.* It dictated the first sentence, the split into two paragraphs, and the final sentence before any mathematics was done. The only mathematical idea is the one line \( mn = 2(kn) \).
+*What the skeleton did.* It dictated the first sentence, the split into two paragraphs, and the final sentence before any mathematics was done. The only mathematical idea is the one line \( mn = 2(kn) \). Note also what the proof avoids: it never writes "suppose \( m \) is not odd … this contradicts the assumption that \( mn \) is odd". That version would be the contrapositive in costume of Section 1.5, and would use RAA where none is needed.
 :::
 
 ::: {.check}
@@ -89,10 +89,10 @@ Here is every rule of this chapter, with the phrase that carries it in mathemati
 | \( \rulename{{\to}I} \) | box from \( P \) to \( Q \) | \( P \to Q \) | "Assume \( P \). … Hence \( Q \)." | `intro hp` |
 | \( \rulename{{\to}E} \) | \( P \to Q \); \( P \) | \( Q \) | "Since \( P \to Q \) and \( P \) holds, \( Q \)." | `exact h hp` |
 | \( \rulename{\vee I} \) | \( P \) (or \( Q \)) | \( P \vee Q \) | "Since \( P \), in particular \( P \) or \( Q \)." | `left`, `right` |
-| \( \rulename{\vee E} \) | \( P \vee Q \); box from \( P \) to \( R \); box from \( Q \) to \( R \) | \( R \) | "*Case 1:* \( P \). … *Case 2:* \( Q \). … In either case, \( R \)." | `rcases h with hp \| hq` |
+| \( \rulename{\vee E} \) | \( P \vee Q \); box from \( P \) to \( R \); box from \( Q \) to \( R \) | \( R \) | "*Case 1:* \( P \). … *Case 2:* \( Q \). … In either case, \( R \)." | `rcases h with hp | hq` |
 | \( \rulename{\neg I} \) | box from \( P \) to \( \bot \) | \( \neg P \) | "Suppose \( P \). … Contradiction. Hence not \( P \)." | `intro hp` (goal `False`) |
 | \( \rulename{\neg E} \) | \( P \); \( \neg P \) | \( \bot \) | "This contradicts \( P \)." | `exact hn hp` |
-| \( \rulename{\bot E} \) | \( \bot \) | any \( Q \) | "This case cannot occur." | `exfalso`, `absurd` |
+| \( \rulename{\bot E} \) | \( \bot \) | any \( Q \) | "This case cannot occur." | `exfalso` |
 | RAA | box from \( \neg P \) to \( \bot \) | \( P \) | "Suppose, for a contradiction, that not \( P \). … Hence \( P \)." | `by_contra h` |
 | \( \rulename{{\leftrightarrow}I} \) | box from \( P \) to \( Q \); box from \( Q \) to \( P \) | \( P \leftrightarrow Q \) | "\( (\Rightarrow) \) … \( (\Leftarrow) \) …" | `constructor` |
 | \( \rulename{{\leftrightarrow}E} \) | \( P \leftrightarrow Q \); \( P \) | \( Q \) (and conversely) | "Since \( P \) if and only if \( Q \), and \( P \) holds, \( Q \)." | `h.mp hp`, `h.mpr hq` |
@@ -219,7 +219,7 @@ The two columns catch different errors. A line can be true and yet not follow (a
 | (4) | yes, given (1) | the definition of "even" |
 | (5) | the statement is true, but … | **does not follow**: \( \rulename{{\to}I} \) on the box (1)–(4) gives "if \( n \) is even then \( n^2 \) is even", not (5) |
 
-**Verdict: wrong; line (5) fails.** Every line is true, and lines (1)–(4) are a perfectly good proof of the converse. The error is in the one rule used at the end. \( \rulename{{\to}I} \) turns a box from \( P \) to \( Q \) into \( P \to Q \), with the box's assumption on the **left**. Here the box went from "\( n \) is even" to "\( n^2 \) is even", so \( \rulename{{\to}I} \) gives exactly the converse of the claim. Writing the claim instead is the invalid step from \( Q \to P \) to \( P \to Q \), which §06 refuted with a single row in the discussion after @exm-affirming-the-consequent. This is the flawed argument from the start of §01, and this is its diagnosis: **the \( \rulename{{\to}I} \) rule was used with the assumption and the conclusion swapped.** The claim is true, and @thm-square-even-implies-even proves it correctly, inside a box that opens with "\( n^2 \) is even".
+**Verdict: wrong; line (5) fails.** Every line is true, and lines (1)–(4) are a perfectly good proof of the converse. The error is in the one rule used at the end. \( \rulename{{\to}I} \) turns a box from \( P \) to \( Q \) into \( P \to Q \), with the box's assumption on the **left**. Here the box went from "\( n \) is even" to "\( n^2 \) is even", so \( \rulename{{\to}I} \) gives exactly the converse of the claim. Writing the claim instead is the invalid step from \( Q \to P \) to \( P \to Q \), which Section 1.6 refuted with a single row in the discussion after @exm-affirming-the-consequent. This is the flawed argument from the start of Section 1.1, and this is its diagnosis: **the \( \rulename{{\to}I} \) rule was used with the assumption and the conclusion swapped.** The claim is true, and @thm-square-even-implies-even proves it correctly, inside a box that opens with "\( n^2 \) is even".
 :::
 
 ::: {#exm-verify-negation}
@@ -423,7 +423,7 @@ Label each sentence of the following proof with the rule it uses, as in @exm-ann
 | (6) | \( \rulename{\neg E} \): (1) and (5), since \( x + y \le 2 \) is the negation of \( x + y > 2 \) |
 | (7) | RAA on the box (2)–(6); then \( \rulename{{\to}I} \) on (1)–(7) |
 
-RAA is used in (7): the box opened with the negation of the goal \( x > 1 \vee y > 1 \) and closed with the goal itself. Sentence (3) uses De Morgan law (a), a direction that needs no RAA. By the second test of §05 this is a contrapositive in costume: everything in the box follows from (2) alone, and the hypothesis (1) enters only at the clash in (6). The open version reads: "We prove the contrapositive: if \( x \le 1 \) and \( y \le 1 \), then \( x + y \le 2 \)." The rewrite is clearer, but it does not remove RAA: passing from the contrapositive back to the claim is @prp-contrapositive-converse, which uses it.
+RAA is used in (7): the box opened with the negation of the goal \( x > 1 \vee y > 1 \) and closed with the goal itself. Sentence (3) uses De Morgan law (a), a direction that needs no RAA. By the second test of Section 1.5 this is a contrapositive in costume: everything in the box follows from (2) alone, and the hypothesis (1) enters only at the clash in (6). The open version reads: "We prove the contrapositive: if \( x \le 1 \) and \( y \le 1 \), then \( x + y \le 2 \)." The rewrite is clearer, but it does not remove RAA: passing from the contrapositive back to the claim is @prp-contrapositive-converse, which uses it.
 :::
 
 ::: {#exr-proof-skeletons-c3}

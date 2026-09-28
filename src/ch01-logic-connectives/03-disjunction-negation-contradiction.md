@@ -207,7 +207,7 @@ The hypothesis "\( n^2 \) is even" hands us nothing to compute with, while "\( n
 Suppose \( n^2 \) is even \( [\text{assumption for } \rulename{{\to}I}] \). By (E3), \( n \) odd implies \( n^2 \) odd, so @prp-contrapositive gives: \( n^2 \) not odd implies \( n \) not odd. Since \( n^2 \) is even, (E2) rules out \( n^2 \) odd. Hence \( n \) is not odd \( [\rulename{{\to}E}] \). By (E1), \( n \) is odd or \( n \) is even, and \( n \) is not odd, so @prp-disjunctive-syllogism gives that \( n \) is even. This proves that if \( n^2 \) is even, then \( n \) is even \( [\rulename{{\to}I}] \).
 :::
 
-Every step is one of the rules so far, or a derived result built from them. In particular, although the argument feels like "suppose not", it never assumes that \( n \) is odd in order to reach a contradiction. It uses a contrapositive and a case split with an impossible case. The difference will matter in Section 1.5.
+Every step is one of the rules so far, or a derived result built from them. The argument feels like "suppose not", and in a sense it is one: written out in full, the derivation of @prp-contrapositive does assume that \( n \) is odd, reaches \( \bot \), and concludes that \( n \) is **not** odd by \( \rulename{\neg I} \). What the argument never does is assume that \( n \) is not even and conclude from a contradiction that \( n \) **is** even. Every negation in it is introduced, none is removed, and "even" comes from the case split with an impossible case. The difference will matter in Section 1.5.
 
 The theorem is the key to one of the oldest proofs in mathematics. Its shape is \( \rulename{\neg I} \): the claim is negative, so we assume its opposite and look for \( \bot \). The school fact it needs is about writing fractions:
 
@@ -326,7 +326,7 @@ Here are the rows of the rule, phrase and Lean table for this section's rules. A
 | \( \rulename{\vee E} \) | "Case 1: \( P \). … so \( R \). Case 2: \( Q \). … so \( R \). In either case, \( R \)." | `rcases h with hp | hq` |
 | \( \rulename{\neg I} \) | "Suppose \( P \). … This is a contradiction. Hence not \( P \)." | `intro hp` (goal `False`) |
 | \( \rulename{\neg E} \) | "This contradicts \( \neg P \)." | `exact hn hp` |
-| \( \rulename{\bot E} \) | "This case cannot occur." | `exfalso` / `absurd` |
+| \( \rulename{\bot E} \) | "This case cannot occur." | `exfalso` |
 
 In Lean, \( \neg P \) is defined to be the implication \( P \to \bot \), with \( \bot \) written `False`. That is why the same tactic `intro` performs both \( \rulename{{\to}I} \) and \( \rulename{\neg I} \), and why applying a proof `hn` of \( \neg P \) to a proof `hp` of \( P \) produces `False`, which is \( \rulename{\neg E} \).
 

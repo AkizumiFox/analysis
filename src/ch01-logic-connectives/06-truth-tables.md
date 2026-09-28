@@ -194,7 +194,7 @@ We do not write out the full proof here. It is an induction on the number of lin
 What soundness gives us is a way to show that something is **not** derivable. If a row makes all the premises T and the conclusion F, no derivation of the conclusion from the premises can exist, because by @thm-soundness it would force the conclusion to be T in that row.
 
 ::: {.remark}
-The converse also holds, with RAA among the rules: if every row that makes \( A_1, \dots, A_n \) true makes \( B \) true, then \( A_1, \dots, A_n \vdash B \). This is the **completeness theorem** for propositional logic, and we do not prove it. Without RAA the converse fails: \( P \vee \neg P \) is a tautology, yet, like \( P \) from \( \neg\neg P \) in §05, it cannot be derived from the other rules, a fact we do not prove here. A truth table cannot see this, because the table itself assumes that every statement is T or F, which is exactly the classical principle that RAA encodes.
+The converse also holds, with RAA among the rules: if every row that makes \( A_1, \dots, A_n \) true makes \( B \) true, then \( A_1, \dots, A_n \vdash B \). This is the **completeness theorem** for propositional logic, and we do not prove it. Without RAA the converse fails: \( P \vee \neg P \) is a tautology, yet, like \( P \) from \( \neg\neg P \) in Section 1.5, it cannot be derived from the other rules, a fact we do not prove here. A truth table cannot see this, because the table itself assumes that every statement is T or F, which is exactly the classical principle that RAA encodes.
 :::
 
 ## Using tables to refute
@@ -223,7 +223,7 @@ In row FT, the premise \( Q \) is T, and \( P \to Q \) is T by its third row; th
 For an instance, let \( x = -2 \), let \( P \) be "\( x = 2 \)" and let \( Q \) be "\( x^2 = 4 \)". Then \( P \to Q \) is true (if \( x = 2 \) then \( x^2 = 4 \)), and \( Q \) is true since \( (-2)^2 = 4 \), but \( P \) is false. This is row FT in real life.
 :::
 
-This is the error behind the plausible-looking argument at the start of §01. There the goal was \( P \to Q \), with \( P \) = "\( n^2 \) is even" and \( Q \) = "\( n \) is even". The argument assumed \( Q \) and derived \( P \), so what it established was \( Q \to P \). Passing from \( Q \to P \) to \( P \to Q \) is invalid: in row TF the premise \( Q \to P \) is T and the conclusion \( P \to Q \) is F. That the statement \( P \to Q \) happens to be true for integers (it is @thm-square-even-implies-even) does not rescue the argument. A valid form never leads from true premises to a false conclusion, and this form does, as the instance with \( x = -2 \) shows once "\( x = 2 \)" and "\( x^2 = 4 \)" are put in the roles of \( Q \) and \( P \).
+This is the error behind the plausible-looking argument at the start of Section 1.1. There the goal was \( P \to Q \), with \( P \) = "\( n^2 \) is even" and \( Q \) = "\( n \) is even". The argument assumed \( Q \) and derived \( P \), so what it established was \( Q \to P \). Passing from \( Q \to P \) to \( P \to Q \) is invalid: in row TF the premise \( Q \to P \) is T and the conclusion \( P \to Q \) is F. That the statement \( P \to Q \) happens to be true for integers (it is @thm-square-even-implies-even) does not rescue the argument. A valid form never leads from true premises to a false conclusion, and this form does, as the instance with \( x = -2 \) shows once "\( x = 2 \)" and "\( x^2 = 4 \)" are put in the roles of \( Q \) and \( P \).
 
 ::: {.check}
 Find a refuting row for the argument form with premises \( P \to Q \) and \( \neg P \), and conclusion \( \neg Q \). (It is called **denying the antecedent**.)
@@ -249,7 +249,7 @@ A truth table checks **propositional form** only; it cannot see inside a stateme
 2. Write out the truth table of \( (P \vee Q) \to P \). Is it a tautology?
 3. Show that \( P \leftrightarrow \neg P \) is a contradiction.
 4. Decide whether \( (P \to Q) \vee (Q \to P) \) is a tautology.
-5. Which rule of §02–§03 is responsible for the value T of \( P \to Q \) in row FF?
+5. Which rule of Sections 1.2–1.3 is responsible for the value T of \( P \to Q \) in row FF?
 :::
 :::
 

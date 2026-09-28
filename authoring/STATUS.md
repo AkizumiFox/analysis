@@ -13,8 +13,8 @@ imitates its register, density and exercise design.
 
 | Ch | Slug | State |
 |---|---|---|
-| 1 | logic-connectives | pilot: drafted 2026-09-27 (7 sections, ~26.6k words); awaiting author review |
-| 8 | least-upper-bound | pilot: drafted 2026-09-27 (7 sections, ~24.2k words); awaiting author review |
+| 1 | logic-connectives | pilot: drafted 2026-09-27 (7 sections, ~26.6k words); referee findings (research-production §3.1) fixed 2026-09-28 (roadmap C1); awaiting author review |
+| 8 | least-upper-bound | pilot: drafted 2026-09-27 (7 sections, ~24.2k words); referee findings (research-production §3.1) fixed 2026-09-28 (roadmap C1); awaiting author review |
 | all others | see `blueprint/book.yaml` | not started |
 
 ## Forward promises
@@ -33,7 +33,8 @@ Prose pointers that must become `@ref`s (or be paid off) when the target chapter
 | Ch 1 §04 warning | differentiable ⇒ continuous | Ch 14 |
 | Ch 8 §02, §05 | the quantifier law "not all" ⇒ "some not" (uses RAA); quantifier negation | Ch 2 |
 | Ch 8 index | sets, images, −A, A + B as images | Ch 3 |
-| Ch 8 §01 C1, §02, §05, §06 | induction; every non-empty finite set has a maximum; ℕ closed under + and ·; nothing between n and n + 1; well-ordering (used in lem-integer-part); definition by recursion | Ch 4 |
+| Ch 8 §01 C1, §02, §04, §05, §06 | induction (used for n > 0 in exm-sup-one-minus-reciprocal and cor-sup-approximation, and in §06); every non-empty finite set has a maximum; ℕ closed under + and ·; n ≥ 2 ⇒ n − 1 ∈ ℕ; nothing between n and n + 1; well-ordering (used in lem-integer-part); definition by recursion (powers uⁿ in thm-nth-root) | Ch 4 |
+| Ch 8 §05 remark, §06 lem-integer-part | ℤ closed under +, − and · (used for m = j₀ − p − 1 and for m′ − m in lem-integer-part; "positive integer ⇒ natural number" is proved in the §05 remark) | Ch 4 |
 | Ch 8 index, §07 | countable = listable with repetitions (image of ℕ); ℕ, ℤ, ℚ countable; diagonal proof via decimals, 0.4999… = 0.5 flagged | Ch 5 (match the definition there) |
 | Ch 8 §01, §04 | @eq-abs-interval is the move of limits; sup approximation becomes a limit | Ch 9 |
 | Ch 8 index | Heine–Borel and the IVT proved by "construct a point as a sup" | Ch 11, Ch 13 |

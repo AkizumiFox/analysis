@@ -54,7 +54,39 @@ In words, the four order axioms say:
 
 From (O1) and (O2), the relation \( \le \) is transitive as well, and a mixed chain \( a \le b < c \) gives \( a < c \): if \( a = b \) this is the hypothesis \( b < c \), and otherwise it is (O2).
 
-**Field algebra.** The field axioms alone imply the familiar algebraic identities: \( a \cdot 0 = 0 \), \( (-a)b = -(ab) \), \( (-a)(-b) = ab \), \( -(-a) = a \), \( (a + b)^2 = a^2 + 2ab + b^2 \), and "if \( ab = 0 \) then \( a = 0 \) or \( b = 0 \)". Their proofs use no order at all, and we do not repeat them here; they are proved from the field axioms in the linear-algebra companion, Chapter 0. From now on they are used without comment.
+**Field algebra.** The field axioms alone imply the familiar algebraic identities. Their proofs use no order at all and are short, so we give them once.
+
+::: {#lem-field-algebra}
+[Field Algebra]
+
+Let \( F \) be an ordered field (only (F1)–(F9) are used) and let \( a, b \in F \).
+
+::: {.enumerate options="label=(\alph*)"}
+1. The elements \( 0 \) and \( 1 \) are unique, and so are \( -a \) and, for \( a \ne 0 \), \( a^{-1} \). In particular \( -(-a) = a \).
+2. \( a \cdot 0 = 0 \).
+3. \( (-a)b = -(ab) \) and \( (-a)(-b) = ab \).
+4. If \( ab = 0 \), then \( a = 0 \) or \( b = 0 \).
+5. \( (a + b)^2 = a^2 + 2ab + b^2 \), where \( x^2 \coloneqq xx \) and \( 2 \coloneqq 1 + 1 \).
+:::
+:::
+
+::: {.proof}
+(a) If \( 0' \) also has the property (F3), then \( 0' = 0' + 0 = 0 + 0' = 0 \) by (F3) for \( 0 \), (F1), and (F3) for \( 0' \). If \( a + b = 0 \) and \( a + c = 0 \), then
+\[
+b = b + (a + c) = (b + a) + c = 0 + c = c
+\]
+by (F3), (F2), (F1) and (F3). The same arguments with (F5)–(F8) in place of (F1)–(F4) give the uniqueness of \( 1 \) and of \( a^{-1} \). Finally \( (-a) + a = 0 \) by (F1) and (F4), so \( a \) is an additive inverse of \( -a \), and \( -(-a) = a \) by uniqueness.
+
+(b) By (F3) and (F9), \( a \cdot 0 = a(0 + 0) = a \cdot 0 + a \cdot 0 \). Adding \( -(a \cdot 0) \) to both sides and using (F2), (F4) and (F3) gives \( 0 = a \cdot 0 \).
+
+(c) By (F6), (F9), (F4) and (b), \( ab + (-a)b = (a + (-a))b = 0 \cdot b = 0 \), so \( (-a)b \) is an additive inverse of \( ab \), and \( (-a)b = -(ab) \) by (a). Using this twice, with (F6), and then (a), \( (-a)(-b) = -(a(-b)) = -(-(ab)) = ab \).
+
+(d) Suppose \( ab = 0 \) and \( a \ne 0 \). Then \( b = 1 \cdot b = (a^{-1} a) b = a^{-1}(ab) = a^{-1} \cdot 0 = 0 \), by (F7), (F6), (F8), (F5) and (b).
+
+(e) By (F9) and (F6), \( (a + b)(a + b) = a^2 + ba + ab + b^2 \), and \( ba + ab = ab \cdot 1 + ab \cdot 1 = ab(1 + 1) = 2ab \) by (F6), (F7) and (F9).
+:::
+
+From now on these identities, and the rules of fraction arithmetic that follow from them in the same way, are used without comment.
 
 ::: {#exm-ordered-fields-q-r}
 [The rationals and the reals]
@@ -65,7 +97,7 @@ Explain why \( \nQ \) is an ordered field, and what we are assuming when we say 
 ::: {.solution}
 For \( \nQ \), the field axioms are the rules of fraction arithmetic. The order is \( p/q < p'/q' \) (with \( q, q' > 0 \)) exactly when \( pq' < p'q \) as integers. Trichotomy, transitivity, (O3) and (O4) then come from the corresponding facts about integers. Checking them is routine and belongs to the construction of \( \nQ \) from \( \nZ \); here we accept them.
 
-For \( \nR \) we have not yet said what a real number *is*, and this chapter deliberately does not. Instead we **assume** that \( \nR \) is an ordered field containing \( \nQ \), with its usual operations and order. A later section of this chapter completes the list of assumptions by adding exactly one more. Everything proved in this section from (F1)–(F9) and (O1)–(O4) therefore holds in \( \nQ \) and in \( \nR \) alike.
+For \( \nR \) we have not yet said what a real number *is*, and this chapter deliberately does not. Instead we **assume** that \( \nR \) is an ordered field containing \( \nQ \), with its usual operations and order; in particular \( \nR \) contains \( \nN \) and \( \nZ \), with their usual arithmetic. (Later in this chapter we locate \( \nN \) inside \( \nR \) using the axioms alone.) A later section of this chapter completes the list of assumptions by adding exactly one more. Everything proved in this section from (F1)–(F9) and (O1)–(O4) therefore holds in \( \nQ \) and in \( \nR \) alike.
 :::
 
 ::: {#exm-integers-not-a-field}
@@ -198,7 +230,7 @@ Part (d), applied to \( x - a \) in place of \( x \), is the single most used eq
 \quad\iff\quad
 a - r < x < a + r .
 \]{#eq-abs-interval}
-In words: *\( x \) is within distance \( r \) of \( a \) exactly when \( x \) lies in the open interval of radius \( r \) centered at \( a \)*. Here, for \( a < b \) in \( F \), the **intervals** are \( (a, b) \coloneqq \{ x \in F : a < x < b \} \), \( [a, b] \coloneqq \{ x \in F : a \le x \le b \} \), and \( (a, b] \), \( [a, b) \) similarly; \( (a, \infty) \coloneqq \{ x \in F : x > a \} \), and the other unbounded intervals are defined in the same way. The symbol \( \infty \) here is part of the name of a set, not an element of \( F \). From Chapter 9 on, every statement "\( a_n \) is close to \( L \)" is turned into two inequalities by @eq-abs-interval, and back.
+In words: *\( x \) is within distance \( r \) of \( a \) exactly when \( x \) lies in the open interval of radius \( r \) centered at \( a \)*. Here, for \( a \le b \) in \( F \), the **intervals** are \( (a, b) \coloneqq \{ x \in F : a < x < b \} \), \( [a, b] \coloneqq \{ x \in F : a \le x \le b \} \), and \( (a, b] \), \( [a, b) \) similarly; in the degenerate case \( a = b \), the closed interval \( [a, a] = \{ a \} \) is a single point and the other three are empty; \( (a, \infty) \coloneqq \{ x \in F : x > a \} \), and the other unbounded intervals are defined in the same way. The symbol \( \infty \) here is part of the name of a set, not an element of \( F \). From Chapter 9 on, every statement "\( a_n \) is close to \( L \)" is turned into two inequalities by @eq-abs-interval, and back.
 
 ::: {#exm-solve-abs-inequality}
 [Reading an absolute-value inequality as an interval]
@@ -259,7 +291,7 @@ Everything proved so far holds in \( \nQ \) and in \( \nR \) equally. So none of
 ::: {.enumerate options="label=(\alph*)"}
 1. Here is a derivation, in an ordered field, of "if \( a > 0 \) and \( b > 0 \) then \( a + b > 0 \)": from \( b > 0 \) we get \( a + b > a + 0 \); and \( a + 0 = a \); and \( a > 0 \); hence \( a + b > 0 \). Name the axiom that justifies each of the four steps.
 2. True or false, with a reason: in an ordered field, if \( a < b \) then \( a^2 < b^2 \).
-3. True or false, with a reason: \( \abs{x} = \max \{ x, -x \} \) for every \( x \) in an ordered field.
+3. True or false, with a reason: \( \abs{x} = \max \{ x, -x \} \) for every \( x \) in an ordered field. (Here \( \max\{ a, b \} \) is the larger of \( a \) and \( b \): it is \( a \) if \( a \ge b \), and \( b \) otherwise.)
 4. The integers satisfy all four order axioms. Why is \( \nZ \) not an ordered field?
 :::
 :::
@@ -361,7 +393,7 @@ Find all real \( x \) satisfying each inequality. Hence write each solution set 
 ::: {#exr-ordered-fields-c2}
 [C2: Max and min without cases]
 
-Let \( F \) be an ordered field and \( a, b \in F \). Prove that
+Let \( F \) be an ordered field and \( a, b \in F \). Write \( \max\{ a, b \} \) for the larger of \( a \) and \( b \) and \( \min\{ a, b \} \) for the smaller (as in @exr-ordered-fields-a1). Prove that
 \[
 \max \{ a, b \} = \frac{a + b + \abs{a - b}}{2},
 \qquad

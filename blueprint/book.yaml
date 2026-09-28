@@ -1,5 +1,5 @@
 # The analysis book -- single source of truth for the chapter plan.
-# First assembled from blueprint/fragments/ by merge_fragments.py; edited by hand since.
+# First assembled from blueprint/fragments/ by merge_fragments.py; edited by hand since (route changes of 2026-09-28: roadmap A1–A8).
 # sources: [DAG node, sections]. Node ids refer to blueprint/dag.json (<BOOK>.<chapter>).
 
 title: 'Analysis: From First Proofs to Modern Analysis'
@@ -73,8 +73,9 @@ cut:
   SUT.3: 'sets and functions: Part 0'
   SUT.4: 'review of real analysis: Part I'
   MUN.1: 'set theory and logic: Part 0'
-  MUN.4: 'countability and separation axioms, Urysohn: Part IV (decisions.md 8)'
-  MUN.5: 'Tychonoff and Stone–Čech: Part VI (decisions.md 8)'
+  MUN.4: 'countability and separation axioms: §31–33, §35 used in separation-urysohn-lch (Part VI) and, specialized
+    to metric spaces, in compactness-connectedness; metrization out of scope'
+  MUN.5: Tychonoff (§37) used in weak-topologies-alaoglu; Stone–Čech out of scope (decisions.md 8)
   MUN.6: 'metrization and paracompactness: out of scope'
   MUN.7: 'complete metric spaces and function spaces: content taken from PUG/TAO2/KF; MUN restricted to topological
     basics'
@@ -92,16 +93,14 @@ cut:
   KF.7: 'measure: Part IV'
   KF.8: 'integration: Part IV'
   KF.9: 'differentiation (Lebesgue): Part IV'
-  MOA.5: 'manifolds: forms and Stokes deferred (decisions.md 12)'
-  MOA.6: 'differential forms: deferred (decisions.md 12)'
-  MOA.7: 'Stokes'' theorem: deferred (decisions.md 12); the Green node is written from Fubini + FTC instead of the
-    manifold proof'
-  MOA.8: 'closed and exact forms: deferred (decisions.md 12)'
+  MOA.6: 'differential forms: deferred (decisions.md 12, amended: the divergence theorem is main line, forms and
+    general Stokes are the open optional chapter, roadmap A9)'
+  MOA.8: 'closed and exact forms: deferred with forms (decisions.md 12)'
   MOA.9: 'epilogue on manifolds: out of scope'
   TES.1: 'introduction and explicit solution methods: not part of the analysis curriculum'
-  TES.3: 'linear equations, matrix exponential: not required by curriculum.md; linear algebra is the companion book''s'
   TES.4: 'ODEs in the complex domain: out of scope'
-  TES.5: 'boundary value problems / Sturm–Liouville: spectral content returns via compact operators in Part VI'
+  TES.5: 'boundary value problems / Sturm–Liouville: previewed in linear-odes-flows (original writing); the spectral
+    content returns via compact operators in Part VI'
   TES.6: 'dynamical systems: out of scope'
   TES.7: 'planar dynamical systems: out of scope'
   TES.8: 'higher-dimensional dynamical systems: out of scope'
@@ -110,7 +109,8 @@ cut:
   TES.11: 'one-dimensional discrete dynamics: out of scope'
   TES.12: 'periodic solutions: out of scope'
   TES.13: 'chaos in higher dimensions: out of scope'
-  PMA.10: 'integration of differential forms: deferred (decisions.md 12); Riemann integral on ℝⁿ taken from MOA'
+  PMA.10: 'integration of differential forms: deferred (decisions.md 12); Riemann integral on ℝⁿ taken from MOA;
+    the divergence theorem is written without forms (surfaces-divergence-theorem)'
   GO.1: 'real number system: Parts 0/I'
   GO.2: 'functions and limits: Part I'
   GO.3: 'differentiation: Part I'
@@ -138,11 +138,10 @@ cut:
   SS3.7: 'Hausdorff measure and fractals: beyond the stage (branch)'
   SS3.1 §5*: Brunn–Minkowski kept only as an optional section of change-of-variables
   FOL.6 §6.2: dual of Lᵖ → Part VI (decisions.md 9)
-  FOL.6 §6.5: Riesz–Thorin/Marcinkiewicz interpolation → Part VI / harmonic-analysis branch
-  FOL.4 (except §4.5): general topology (nets, Tychonoff, metrization) → Parts II and VI
+  FOL.4 (except §4.5): 'nets, Tychonoff, metrization: §4.1–4.2 and §4.5 used in the Part VI topology block; the
+    rest out of scope'
   MIRA.6: metric/normed/Banach spaces and Baire → Parts II and VI
   MIRA.9 §9B dual of Lᵖ: → Part VI
-  MIRA.10–12: operators, Fourier analysis on Lᵖ, probability → Part VI / branches
   WZ.1: ℝⁿ as a metric space → Part II
   WZ.8 §8.7: Hilbert spaces → Part VI
   WZ.9 §9.4: Marcinkiewicz integral → harmonic-analysis branch
@@ -150,7 +149,7 @@ cut:
   WZ.11 §11.4: Hausdorff measure → branch
   WZ.7 §7.7: 'differential in ℝⁿ, Rademacher: beyond main line (could be an optional pointer in change-of-variables)'
   WZ.12–15: harmonic analysis, fractional integration, Sobolev → Part VI / branches
-  MUN (other chapters): topology placed in Parts II and VI
+  MUN (other chapters): topology placed in Parts II (metric) and VI (general)
   SS2.4: 'Fourier transform class F and Paley–Wiener: Fourier transform is Part III/VI; contour shifting is already
     practised in cauchy-theorem'
   SS2.7: 'prime number theorem: number-theory branch, beyond the qual benchmark'
@@ -165,8 +164,6 @@ cut:
   NEE.10: 'vector fields, Poincaré–Hopf: topology branch'
   BRZ.7: 'Hille–Yosida and evolution problems: PDE branch after Part VI'
   BRZ.10: 'heat and wave equations by semigroup methods: PDE branch'
-  SS4.2: 'Lᵖ in harmonic analysis (Riesz–Thorin, Hilbert transform, H¹, BMO): harmonic-analysis branch'
-  SS4.5: 'probability: probability branch'
   SS4.6: 'Brownian motion: probability branch'
   SS4.7: 'several complex variables: out of scope'
   SS4.8: 'oscillatory integrals: harmonic-analysis branch'
@@ -199,7 +196,6 @@ cut:
   FJ.10: 'Fourier–Laplace transform, Malgrange–Ehrenpreis: PDE branch'
   FJ.11: 'wavefront sets: beyond scope'
   EVA.1: 'introduction: PDE branch'
-  EVA.2: 'four linear PDE by representation formulas: PDE branch'
   EVA.3: 'nonlinear first-order PDE: PDE branch'
   EVA.4: 'other representations of solutions: PDE branch'
   EVA.7: 'linear evolution equations: PDE branch'
@@ -207,6 +203,10 @@ cut:
   EVA.9: 'nonvariational techniques: PDE branch'
   EVA.10: 'Hamilton–Jacobi equations: PDE branch'
   EVA.11: 'systems of conservation laws: PDE branch'
+  MIRA.10–11: operators, Fourier analysis on Lᵖ → Part VI
+  EVA.2 §2.3–2.5: 'heat, wave and transport equations by representation formulas: PDE branch'
+  FOL.10 §10.4–10.6: 'construction of sample spaces, the Wiener process: probability branch'
+  SS4.5 §2.2, §2.6: 'martingales and random walks: probability branch'
 exemptions:
 - edge:
   - TAO1.2
@@ -284,14 +284,6 @@ exemptions:
     is placed in signed-measures-radon-nikodym, after lp-spaces where SS3 ch 4 §1 (L²) is used; the rest of SS3
     ch 4 goes to Part VI.
 external_prerequisites:
-- needs: statement of the ordered-field axioms and the least upper bound axiom (Part I ch 1, ax-least-upper-bound);
-    the recommended route reads Part I ch 1–3 before this optional chapter
-  for_chapter: reals-dedekind-cuts
-  part: '0'
-- needs: the least upper bound axiom and its first consequences, Archimedean property and density of ℚ (Part I ch
-    1)
-  for_chapter: complete-ordered-field
-  part: '0'
 - needs: 'forward hook only, not a prerequisite: Part I (sup of a located set, IVT, Bolzano–Weierstrass) and Part
     II (Cauchy completion) are previewed, and later Parts flag uses of choice (Vitali set, Hahn–Banach, Tychonoff)'
   for_chapter: quantifiers-and-proof
@@ -333,6 +325,14 @@ external_prerequisites:
     in sequential arguments)'
   for_chapter: forms-of-completeness
   part: I
+- needs: statement of the ordered-field axioms and the least upper bound axiom (Part I ch 1, ax-least-upper-bound);
+    the recommended route reads Part I ch 1–3 before this optional chapter
+  for_chapter: reals-dedekind-cuts
+  part: '0'
+- needs: the least upper bound axiom and its first consequences, Archimedean property and density of ℚ (Part I ch
+    1)
+  for_chapter: complete-ordered-field
+  part: '0'
 - needs: LUB axiom, sup/inf and the ε-characterization (Part I ch 1)
   for_chapter: metric-spaces
   part: II
@@ -340,6 +340,15 @@ external_prerequisites:
   for_chapter: metric-spaces
   part: II
 - needs: ε-δ continuity and uniform continuity on ℝ (Part I)
+  for_chapter: metric-spaces
+  part: II
+- needs: 'companion linear-algebra book: inner products and Cauchy–Schwarz in ℝⁿ'
+  for_chapter: metric-spaces
+  part: II
+- needs: 'LINEAR-ALGEBRA GATE for Part II (route R8), stated in the Part opener and the reading paths: the companion
+    book through vector spaces, linear maps, matrices and inner products before this Part; through determinants
+    and eigenvalues before derivative-rn; the spectral theorem for symmetric matrices before derivative-rn''s second-derivative
+    test; eigenvalues and the Jordan form before linear-odes-flows'
   for_chapter: metric-spaces
   part: II
 - needs: equivalent forms of completeness, incl. the Archimedean caveat (end of Part I)
@@ -362,6 +371,10 @@ external_prerequisites:
 - needs: the Cantor set as an example (Part I)
   for_chapter: compactness-connectedness
   part: II
+- needs: 'companion linear-algebra book (cite by chapter in prose): vector spaces, bases, dimension, linear maps
+    and matrices'
+  for_chapter: compactness-connectedness
+  part: II
 - needs: Riemann integral on [a,b], FTC, integration commutes with uniform limits (Part I)
   for_chapter: contraction-picard
   part: II
@@ -374,31 +387,32 @@ external_prerequisites:
 - needs: mean value theorem and Taylor's theorem with remainder on ℝ (Part I)
   for_chapter: derivative-rn
   part: II
-- needs: Darboux integral, Riemann's criterion, sets of measure zero / Lebesgue criterion if stated (Part I)
-  for_chapter: riemann-integral-rn
-  part: II
-- needs: 'companion linear-algebra book (cite by chapter in prose): vector spaces, bases, dimension, linear maps
-    and matrices'
-  for_chapter: compactness-connectedness
-  part: II
-- needs: 'companion linear-algebra book: inner products and Cauchy–Schwarz in ℝⁿ'
-  for_chapter: metric-spaces
-  part: II
 - needs: 'companion linear-algebra book: rank, invertibility, determinants'
   for_chapter: derivative-rn
   part: II
 - needs: 'companion linear-algebra book: symmetric matrices, definiteness of quadratic forms, spectral theorem'
   for_chapter: derivative-rn
   part: II
+- needs: 'LINEAR-ALGEBRA GATE (route R8): the companion book through determinants and eigenvalues is done before
+    this chapter'
+  for_chapter: derivative-rn
+  part: II
 - needs: 'companion linear-algebra book: kernels, images, rank–nullity, direct-sum decompositions'
   for_chapter: inverse-implicit
+  part: II
+- needs: power series, the exponential function and Taylor's theorem (Part I)
+  for_chapter: linear-odes-flows
+  part: II
+- needs: 'LINEAR-ALGEBRA GATE (route R8): companion book through eigenvalues, diagonalization and the Jordan canonical
+    form'
+  for_chapter: linear-odes-flows
+  part: II
+- needs: Darboux integral, Riemann's criterion, sets of measure zero / Lebesgue criterion if stated (Part I)
+  for_chapter: riemann-integral-rn
   part: II
 - needs: 'companion linear-algebra book: elementary matrices, factorization of invertible matrices, multiplicativity
     of det'
   for_chapter: riemann-integral-rn
-  part: II
-- needs: equivalence relations and quotient sets (Part 0)
-  for_chapter: compactness-quotients
   part: II
 - needs: Riemann (Darboux) integral on [a,b], FTC, uniform convergence, Weierstrass M-test, power series, complex
     exponential (Part I)
@@ -408,11 +422,16 @@ external_prerequisites:
     it; otherwise stated in riemann-limits
   for_chapter: fourier-series-foundations
   part: III
-- needs: metric spaces, completeness, C(K) is complete (Part II)
-  for_chapter: mean-square-pointwise
+- needs: 'LINEAR-ALGEBRA GATE for Part III (route R8), stated in the Part opener: the companion book through inner
+    products, orthogonal projection, the spectral theorem and SVD before mean-square-pointwise; unitary diagonalization
+    of commuting normal operators before the optional finite-fourier-analysis'
+  for_chapter: fourier-series-foundations
   part: III
 - needs: Weierstrass approximation / Stone–Weierstrass (Part II); Fejér gives the trigonometric case independently
   for_chapter: good-kernels-summability
+  part: III
+- needs: metric spaces, completeness, C(K) is complete (Part II)
+  for_chapter: mean-square-pointwise
   part: III
 - needs: inner-product spaces, orthogonal projection onto finite-dimensional subspaces (linear-algebra companion)
   for_chapter: mean-square-pointwise
@@ -434,13 +453,6 @@ external_prerequisites:
 - needs: Cantor set, nowhere dense sets (Part I); Baire category (Part II)
   for_chapter: riemann-limits
   part: III
-- needs: topological spaces, bases, subspaces, Hausdorff, compactness, closed subsets of compact sets, continuous
-    bijection compact→Hausdorff (Part II, end)
-  for_chapter: urysohn-tietze
-  part: IV
-- needs: metric spaces, distance to a set, uniform limits of continuous functions, C(K) complete (Part II)
-  for_chapter: urysohn-tietze
-  part: IV
 - needs: the 'what the Riemann integral lacks' list (Part III, riemann-limits)
   for_chapter: lebesgue-measure
   part: IV
@@ -475,6 +487,13 @@ external_prerequisites:
 - needs: linear change of variables for Riemann integrals (Part II)
   for_chapter: change-of-variables
   part: IV
+- needs: the implicit function theorem, regular level sets and tangent spaces (Part II, inverse-implicit); the Riemann
+    integral on ℝⁿ, Fubini for continuous functions and line integrals of curves (Part II)
+  for_chapter: surfaces-divergence-theorem
+  part: IV
+- needs: 'companion linear-algebra book: the Gram determinant det(AᵀA) as squared volume, orthogonal complements'
+  for_chapter: surfaces-divergence-theorem
+  part: IV
 - needs: Parseval, Fejér, good kernels, ℛ(𝕋) incomplete (Part III)
   for_chapter: lp-spaces
   part: IV
@@ -489,6 +508,10 @@ external_prerequisites:
   part: IV
 - needs: Hurwitz isoperimetric inequality (Part III, fourier-series-applications) for the optional rectifiable version
   for_chapter: bv-and-absolute-continuity
+  part: IV
+- needs: binary expansions of numbers in [0,1] (Part I) and Taylor's theorem with remainder (Part I), for the Rademacher
+    model and Lindeberg's method
+  for_chapter: probability-measure-spaces
   part: IV
 - needs: complex numbers, polar form, e^{iθ} (Part 0 / Part I)
   for_chapter: holomorphic-functions
@@ -507,11 +530,12 @@ external_prerequisites:
     I/II)
   for_chapter: cauchy-theorem
   part: V
-- needs: Green's theorem node, rectangle and disc (Part II) — used only as motivation; Goursat is proved without
-    it
+- needs: Green's theorem (Part IV, surfaces-divergence-theorem), used only as motivation, so the chapter stands
+    without Part IV; Goursat is proved without it
   for_chapter: cauchy-theorem
   part: V
-- needs: homotopy of paths and simple connectivity in the topological-spaces module (Part II)
+- needs: path-connectedness and 'open connected subsets of ℝ² are path-connected' (Part II, compactness-connectedness);
+    homotopy and simple connectivity are defined in this chapter
   for_chapter: global-cauchy-theory
   part: V
 - needs: Arzelà–Ascoli and diagonal extraction (Part II)
@@ -520,12 +544,24 @@ external_prerequisites:
 - needs: Poisson kernel, Abel summability and Fourier series of continuous functions (Part III)
   for_chapter: harmonic-functions
   part: V
-- needs: Green's theorem on the disc (Part II node) for Green's identities
+- needs: Green's theorem and Green's identities (Part IV, surfaces-divergence-theorem); on the complex-early path,
+    with Part IV not yet read, the disc case is proved inline
   for_chapter: harmonic-functions
   part: V
 - needs: Γ-integral and Stirling-type estimates on ℝ (Part I); theta function and Poisson summation (Part III)
   for_chapter: continuation-and-picard
   part: V
+- needs: equivalence relations and quotient sets (Part 0), for the optional quotient section
+  for_chapter: topological-spaces-compactness
+  part: VI
+- needs: metric spaces, open sets, continuity, compactness and connectedness in metric spaces (Part II), each recalled
+    as the metric case
+  for_chapter: topological-spaces-compactness
+  part: VI
+- needs: the metric Urysohn function and the metric Tietze extension theorem (Part II, compactness-connectedness);
+    uniform limits of continuous functions, C_b(X) complete (Part II)
+  for_chapter: separation-urysohn-lch
+  part: VI
 - needs: normed spaces, operator norm, equivalence of norms in finite dimension, non-compactness of the ℓ² ball
     (Part II)
   for_chapter: banach-spaces-lp-duality
@@ -534,8 +570,7 @@ external_prerequisites:
     (Part IV)
   for_chapter: banach-spaces-lp-duality
   part: VI
-- needs: locally compact Hausdorff spaces, Urysohn's lemma and partitions of unity, outer measure and Carathéodory
-    (Part IV)
+- needs: outer measure, Carathéodory's construction and regularity of Lebesgue–Stieltjes measures (Part IV)
   for_chapter: riesz-markov
   part: VI
 - needs: Zorn's lemma / axiom of choice (Part 0, sets)
@@ -546,9 +581,6 @@ external_prerequisites:
   part: VI
 - needs: Dirichlet kernel and ‖D_N‖₁ ~ log N (Part III)
   for_chapter: baire-category-operators
-  part: VI
-- needs: topological spaces, bases, finite products, Hausdorff, compactness (Part II topology module)
-  for_chapter: weak-topologies-alaoglu
   part: VI
 - needs: L² projection used for von Neumann's Radon–Nikodym proof (Part IV) — recalled as the first Hilbert-space
     argument
@@ -575,11 +607,24 @@ external_prerequisites:
 - needs: harmonic functions, mean value property (Part V) for the fundamental solution of Δ
   for_chapter: distributions
   part: VI
+- needs: the divergence theorem and Green's identities (Part IV, surfaces-divergence-theorem), for ΔΦ = δ
+  for_chapter: distributions
+  part: VI
 - needs: Schwartz space, Fourier transform, inversion and Plancherel on 𝒮, Poisson summation (Part III)
   for_chapter: tempered-distributions-fourier
   part: VI
 - needs: Fubini–Tonelli, polar coordinates, dominated convergence (Part IV)
   for_chapter: tempered-distributions-fourier
+  part: VI
+- needs: probability on measure spaces, independence and the Lindeberg CLT (Part IV), for the optional characteristic-function
+    section
+  for_chapter: tempered-distributions-fourier
+  part: VI
+- needs: Phragmén–Lindelöf and the maximum modulus principle on a strip (Part V, global-cauchy-theory)
+  for_chapter: interpolation
+  part: VI
+- needs: weak Lᵖ, the layer-cake formula and the Marcinkiewicz interpolation theorem (Part IV)
+  for_chapter: interpolation
   part: VI
 - needs: absolutely continuous functions and the FTC for AC functions (Part IV)
   for_chapter: sobolev-spaces
@@ -587,8 +632,12 @@ external_prerequisites:
 - needs: Arzelà–Ascoli (Part II) and translation continuity in Lᵖ (Part IV), for Kolmogorov–Riesz
   for_chapter: poincare-rellich
   part: VI
-- needs: Green's theorem node / divergence theorem for smooth compactly supported fields (Part II), Dirichlet principle
-    history and harmonic functions (Part V)
+- needs: surface measure on C¹ boundaries and the divergence theorem (Part IV, surfaces-divergence-theorem), for
+    traces
+  for_chapter: poincare-rellich
+  part: VI
+- needs: the divergence theorem and Green's identities on bounded C¹ domains (Part IV, surfaces-divergence-theorem);
+    Dirichlet principle history and harmonic functions (Part V)
   for_chapter: dirichlet-capstone
   part: VI
 coverage_gaps:
@@ -614,6 +663,9 @@ coverage_gaps:
   gap: Curry–Howard, Lean's Classical.em via Diaconescu, and noncomputable (no assigned source)
 - part: '0'
   gap: Cross-Part list of where choice is used (Vitali, Hahn–Banach, Tychonoff)
+- part: '0'
+  gap: 'Gate problems for every Part (reader B2): original problems in qualifying-exam style with marking schemes
+    and remediation maps; never copied from past exams'
 - part: I
   gap: 'The Levi-Civita field and the hyperreals (curriculum S1 (c)): no Part I source treats them; GO 1.7 supplies
     a different Cauchy-complete non-Archimedean field. The Levi-Civita construction and the ultrafilter sketch of
@@ -628,12 +680,11 @@ coverage_gaps:
   gap: 'Existence of a pointwise limit of continuous functions that is not Riemann integrable (Stage S1 exit check):
     the fat-Cantor-set construction is assembled from ABB §3.1 exercises, GO 8.6 and ABB §7.6; the exposition is
     original.'
+- part: I
+  gap: 'complex numbers (ℂ as ℝ², modulus, e^{iθ}, polar form): placed in power-series by the merge'
 - part: II
   gap: 'Linear change of variables proved independently of the general C¹ theorem (elementary matrices + Fubini
     + translation invariance): MOA §20 derives it from the general theorem, so the proof is original writing'
-- part: II
-  gap: 'Green''s theorem on a disc by Fubini + FTC on type-I/type-II regions with elementary line integrals: sources
-    give it via forms/manifolds (MOA §38, PUG §5.9) or only as an exercise; original writing'
 - part: II
   gap: 'All norms on a finite-dimensional space are equivalent: appears only as an exercise (PUG ch 5 exercises);
     write the proof'
@@ -642,8 +693,11 @@ coverage_gaps:
     use of ℝ-valued metrics: PUG §2.10 gives the idea; the careful ℚ-valued treatment and the three-way comparison
     (axiom / cuts / Cauchy sequences) is original'
 - part: II
-  gap: 'Cocountable topology as the standard example where sequences do not detect closure: only in SSB''s catalogue;
-    write it up'
+  gap: Urysohn and Tietze proved directly for metric spaces (MUN proves them for normal spaces; the metric proofs
+    are short and original) (compactness-connectedness)
+- part: II
+  gap: 'The Sturm–Liouville preview and a readable proof of C¹ dependence on initial data: TES §2.4 is terse and
+    TES ch 5 is cut; expand (linear-odes-flows)'
 - part: III
   gap: The explicit 'what the Riemann integral lacks' list is original synthesis (SS3 Introduction, MIRA §1B, BRL
     ch 1–4 are raw material).
@@ -653,6 +707,9 @@ coverage_gaps:
 - part: III
   gap: Riemann-setting rules for exchanging improper integrals and differentiating under the integral sign are scattered
     (KOR 47–48, 53; SS1 App. §3); collect them into one stated toolkit.
+- part: IV
+  gap: 'Green''s theorem on a disc by Fubini + FTC on type-I/type-II regions with elementary line integrals: sources
+    give it via forms/manifolds (MOA §38, PUG §5.9) or only as an exercise; original writing (now in surfaces-divergence-theorem)'
 - part: IV
   gap: 'Uniform integrability and the Vitali convergence theorem: only exercises in FOL and remarks in BRL; original
     writing (modes-of-convergence).'
@@ -667,12 +724,21 @@ coverage_gaps:
     for L²(μ) specifically, not abstract Hilbert space (signed-measures-radon-nikodym).
 - part: IV
   gap: The full C¹ change-of-variables proof exists in FOL Theorem 2.47 only, tersely; expand it (change-of-variables).
+- part: IV
+  gap: 'Surface measure by local graphs and a partition of unity, and the divergence theorem on C¹ domains without
+    forms: Evans App. C only states it, Munkres proves it through forms, Folland §11.4 is terse; original writing
+    (surfaces-divergence-theorem)'
+- part: IV
+  gap: 'The CLT by Lindeberg''s replacement method: FOL and SS4 use characteristic functions; original writing (probability-measure-spaces)'
 - part: V
   gap: UCLA-style mixed qual problem sets (exit checks for continuation-and-picard) must be assembled and written
     originally.
 - part: V
   gap: Transplanting the disc Dirichlet problem to a simply connected Jordan region via the Riemann map needs Carathéodory
     boundary extension, which none of the sources proves at this level; it is stated, not proved.
+- part: VI
+  gap: 'Cocountable topology as the standard example where sequences do not detect closure: only in SSB''s catalogue;
+    write it up'
 - part: VI
   gap: Rellich on the torus via Fourier coefficients is not written out in any assigned source (Brezis and Evans
     treat domains); original writing, short.
@@ -687,8 +753,6 @@ coverage_gaps:
     Part VI source; original writing, with a hook back to Part V harmonic-functions.
 - part: VI
   gap: The mixed qualifying exam must be assembled originally.
-- part: I
-  gap: 'complex numbers (ℂ as ℝ², modulus, e^{iθ}, polar form): placed in power-series by the merge'
 parts:
 - num: '0'
   title: 'Foundations: Logic, Sets, Numbers'
@@ -704,21 +768,23 @@ parts:
     fails or is unprovable without completeness; it closes by proving that the forms of completeness are equivalent.
 - num: II
   title: Metric Spaces and Several Variables
-  summary: Lifts convergence, completeness, compactness and continuity from ℝ to metric spaces and C(K), forced
+  summary: 'Lifts convergence, completeness, compactness and continuity from ℝ to metric spaces and C(K), forced
     by concrete problems (ODE existence and uniqueness, polynomial approximation, typical continuous functions),
-    then does calculus in ℝⁿ (inverse and implicit functions, the Riemann integral on ℝⁿ) and ends by abstracting
-    open sets into topological spaces.
+    then does calculus in ℝⁿ: inverse and implicit functions, linear systems with the matrix exponential and the
+    flow, and the Riemann integral on ℝⁿ. General topology waits for Part VI, where it is used; Part II ends with
+    Gate II.'
 - num: III
   title: Fourier Analysis in the Riemann Setting
   summary: 'Fourier series and the Fourier transform on 𝒮(ℝᵈ), built entirely on the Riemann integral: summability,
-    mean-square and pointwise convergence, applications, and finite abelian groups. The Part ends by listing what
-    the Riemann framework cannot do, and that list motivates Part IV.'
+    mean-square and pointwise convergence, applications, and (optionally) finite abelian groups and Dirichlet''s
+    theorem. The Part ends by listing what the Riemann framework cannot do, and that list motivates Part IV.'
 - num: IV
   title: Measure and Integration
   summary: Starting from Part III's list of what the Riemann integral lacks, build Lebesgue measure and the Lebesgue
-    integral on ℝᵈ, then abstract measures, products (Fubini–Tonelli and change of variables in full), Lᵖ, modes
-    of convergence, differentiation, and signed measures up to Radon–Nikodym, preceded by the Urysohn and Tietze
-    theorems that Lusin and the density of C_c need.
+    integral on ℝᵈ, then abstract measures, products (Fubini–Tonelli and change of variables in full), surfaces
+    and the divergence theorem, Lᵖ, modes of convergence, differentiation, and signed measures up to Radon–Nikodym,
+    ending with probability on measure spaces (the laws of large numbers and the central limit theorem). Lusin and
+    the density of C_c use only the metric Urysohn and Tietze theorems of Part II.
 - num: V
   title: Complex Analysis
   summary: Complex differentiability turns out to be so rigid that one integral formula controls everything; the
@@ -727,11 +793,12 @@ parts:
     spiral node of Arzelà–Ascoli.
 - num: VI
   title: Functional Analysis and Distributions
-  summary: 'The Dirichlet problem forces the move from function spaces to abstract ones: the Part first settles
-    what was moved out of measure theory (Lᵖ duality, Riesz–Markov, weak and weak* topologies, with Tychonoff just
-    before Banach–Alaoglu), builds Hahn–Banach, Baire, Hilbert and compact-operator theory, then distributions,
-    𝒮′ and Sobolev spaces, and ends with the Lax–Milgram solution of the Dirichlet problem and the Dirichlet-Laplacian
-    eigenbasis.'
+  summary: 'The Dirichlet problem forces the move from function spaces to abstract ones: the Part opens with the
+    general topology it needs (topological spaces, products and compactness; separation, Urysohn–Tietze and locally
+    compact spaces), settles what was moved out of measure theory (Lᵖ duality, Riesz–Markov, weak and weak* topologies,
+    with Tychonoff just before Banach–Alaoglu), builds Hahn–Banach, Baire, Hilbert and compact-operator theory,
+    then distributions, 𝒮′, interpolation and Sobolev spaces, and ends with the Lax–Milgram solution of the Dirichlet
+    problem and the Dirichlet-Laplacian eigenbasis.'
 chapters:
 - num: 1
   part: '0'
@@ -985,7 +1052,7 @@ chapters:
   part: '0'
   slug: countable-and-uncountable
   title: 'Cardinality: Countable and Uncountable Sets'
-  pages: 48
+  pages: 52
   sources:
   - - VEL.8
     - §8.1–8.3 equinumerous, countable and uncountable, Cantor–Schröder–Bernstein (scaffolding)
@@ -1004,6 +1071,11 @@ chapters:
   - 'Comparing cardinalities: injections, the Schröder–Bernstein theorem, examples ℝ ~ (0,1) ~ [0,1]'
   - 'Infinite sets: every infinite set has a countably infinite subset (choice again), hence is equinumerous with
     a proper subset'
+  - 'Gate 0 (main line of Part 0): 2 hours, 6 problems — formalise and negate a three-quantifier statement; turn
+    a Fitch derivation into prose; find the error and name the rule; an induction proof; a preimage identity; a
+    diagonal argument; timed and closed-book, solutions folded; a marking scheme per problem (key steps with points,
+    common fatal errors), a pass line (≥ 70% overall, no core problem at 0) and an @ref remediation map from each
+    problem to the sections it tests. Problems are original, in qualifying-exam style, never copied'
   must_prove:
   - ℕ×ℕ and ℚ are countable
   - a countable union of countable sets is countable (flag choice)
@@ -1020,12 +1092,13 @@ chapters:
   - Prove that a countable union of countable sets is countable and point to the step that uses choice
   - Prove Cantor's theorem and deduce that P(ℕ) is uncountable
   optional: false
-  note: The diagonal proof that ℝ is uncountable uses decimal (or binary) expansions taken from school as a stated
+  note: 'The diagonal proof that ℝ is uncountable uses decimal (or binary) expansions taken from school as a stated
     fact, with the rigour issue flagged (non-uniqueness 0.4999… = 0.5 handled by avoiding 9s/0s); Part I can give
     the nested-interval proof and should point back. Do not cite the optional constructions. The axiom of choice
     is STATED here as a main-line axiom (`ax-choice`) because main-line proofs (Vitali, Hahn–Banach, Tychonoff)
     must cite it; its equivalents (Zorn, well-ordering) and ZF context are in the optional zf-and-natural-numbers.
-    Zorn's lemma is proved just in time in Part VI's hahn-banach chapter.
+    Zorn''s lemma is proved just in time in Part VI''s hahn-banach chapter. Last main-line chapter of Part 0: it
+    ends with Gate 0 (reader B2).'
 - num: 6
   part: '0'
   slug: zf-and-natural-numbers
@@ -1367,11 +1440,11 @@ chapters:
   - prove the Cantor set is uncountable and has no isolated points
   - 'from an open cover to a finite subcover: work three examples, and exhibit a cover of (0,1] with no finite subcover'
   optional: false
-  note: 'Placed per decisions.md 8: point-set topology on ℝ belongs in Part I; metric and general topology come
-    at the end of Part II and later. Keep everything on ℝ; mention the metric-space version only as a forward pointer.
-    The Baire section is a preview (no successor in Part I depends on it except the optional remark in limits-and-continuity).
-    Skill: ''from a cover to a finite subcover''. The Lebesgue number lemma is needed for the second Heine–Cantor
-    proof in continuity-on-intervals.'
+  note: 'Placed per decisions.md 8: point-set topology on ℝ belongs in Part I; metric topology comes in Part II
+    and general topology in Part VI (decision 8 as amended 2026-09-28). Keep everything on ℝ; mention the metric-space
+    version only as a forward pointer. The Baire section is a preview (no successor in Part I depends on it except
+    the optional remark in limits-and-continuity). Skill: ''from a cover to a finite subcover''. The Lebesgue number
+    lemma is needed for the second Heine–Cantor proof in continuity-on-intervals.'
 - num: 12
   part: I
   slug: limits-and-continuity
@@ -1771,7 +1844,11 @@ chapters:
   - Other theorems equivalent to the axiom — IVT, EVT, Heine–Borel — and one that is not (Archimedes)
   - Uniqueness of the complete ordered field (stated in prose; proved in the optional chapter that follows) and
     the completion of ℚ ahead in Part II
-  - 'Part I review: the Stage S1 exit checks revisited as one problem set'
+  - 'Gate I (Part I; replaces the former Part I review): 3 hours, 8 problems at the floor of the UCLA qualifying
+    exam, built on the Stage S1 exit checks; timed and closed-book, solutions folded; a marking scheme per problem
+    (key steps with points, common fatal errors), a pass line (≥ 70% overall, no core problem at 0) and an @ref
+    remediation map from each problem to the sections it tests. Problems are original, in qualifying-exam style,
+    never copied'
   must_prove:
   - LUB ⇒ MCT ⇒ BW ⇒ (Cauchy complete + Archimedean) ⇒ (nested intervals + Archimedean) ⇒ LUB, all in an arbitrary
     ordered field
@@ -1792,7 +1869,7 @@ chapters:
     Every proof here must work inside an arbitrary ordered field F and must not cite chapter-1 results that used
     the axiom; re-prove what is needed (e.g. BW in F from MCT in F). The uniqueness theorem is stated in prose only;
     its proof is the optional complete-ordered-field chapter that follows. Forward pointer: completion (Part II,
-    decisions.md 5).'
+    decisions.md 5). Last main-line chapter of Part I: its final section is Gate I (reader B2).'
 - num: 19
   part: I
   slug: reals-dedekind-cuts
@@ -1997,7 +2074,7 @@ chapters:
   part: II
   slug: compactness-connectedness
   title: Compactness and Connectedness in Metric Spaces
-  pages: 55
+  pages: 60
   sources:
   - - PUG.2
     - §2.4 compactness, §2.5 connectedness, §2.7 coverings and total boundedness, §2.8 Cantor sets, §2.9* Peano
@@ -2014,6 +2091,8 @@ chapters:
     - 'plane sets: disjoint closed sets at distance 0; connected sets that are not arcs'
   - - SSB.II
     - '#116–118 topologist''s sine curve'
+  - - MUN.4
+    - §33 Urysohn lemma and §35 Tietze extension, specialized to metric spaces
   outline:
   - Sequential compactness; compact ⇒ closed and bounded; Bolzano–Weierstrass and Heine–Borel in ℝⁿ
   - Open covers, the Lebesgue number lemma, total boundedness; compact ⇔ sequentially compact ⇔ complete and totally
@@ -2026,6 +2105,9 @@ chapters:
     limit
   - Connectedness and path-connectedness; connected subsets of ℝ are intervals; continuous images; the general intermediate
     value theorem
+  - 'Separating closed sets in a metric space: the Urysohn function d(x,A)/(d(x,A)+d(x,B)); the Tietze extension
+    theorem for metric spaces (by uniform approximation, using completeness of C_b); continuous partitions of unity
+    subordinate to a finite open cover of a compact set'
   - 'Local to global: open connected subsets of ℝⁿ are path-connected; a locally constant function on a connected
     space is constant; the topologist''s sine curve'
   must_prove:
@@ -2039,6 +2121,8 @@ chapters:
   - unit ball of ℓ² is not compact
   - path-connected ⇒ connected; connected subsets of ℝ are intervals
   - open connected subsets of ℝⁿ are path-connected
+  - 'metric Urysohn lemma: disjoint closed A, B ⊆ X are separated by a continuous f: X → [0,1]'
+  - Tietze extension theorem for a closed subset of a metric space (bounded, then real-valued)
   key_examples:
   - 'eₙ in ℓ²: bounded, no convergent subsequence'
   - 'closed bounded non-compact: ℕ with discrete metric, closed unit ball of C[0,1]'
@@ -2046,15 +2130,18 @@ chapters:
   - Peano curve [0,1] → [0,1]² (continuous surjection; cannot be a homeomorphism)
   - 'topologist''s sine curve: connected, not path-connected'
   - 'graphs y=0 and y=1/x: disjoint closed sets at distance 0'
+  - 'Tietze fails for non-closed subsets: sin(1/x) on (0,1]'
   exit_checks:
   - 'prove uniform continuity on compact metric spaces twice: by sequences and contradiction, and by the Lebesgue
     number'
   - unit ball of ℓ² is not compact; prove the finite-dimensional contrast via norm equivalence
   - prove [0,1] and [0,1]² are not homeomorphic using connectedness
   optional: false
-  note: 'Cover-compactness is defined here directly for metric spaces; the topological version returns in compactness-quotients
-    (spiral). KF §11 is written after its topological §9–10: use its metric content only. Norm equivalence uses
-    compactness of the unit sphere in ℝⁿ and a basis (cite companion LA book for bases).'
+  note: 'Cover-compactness is defined here directly for metric spaces; the topological version returns in topological-spaces-compactness
+    (Part VI, spiral). KF §11 is written after its topological §9–10: use its metric content only. Norm equivalence
+    uses compactness of the unit sphere in ℝⁿ and a basis (cite companion LA book for bases). The metric Urysohn
+    and Tietze section (route R2) is all that Part IV needs from topology (Lusin, C_c density in ℝᵈ); the normal-space
+    versions wait for separation-urysohn-lch in Part VI.'
 - num: 24
   part: II
   slug: contraction-picard
@@ -2103,8 +2190,8 @@ chapters:
   - explain precisely which hypothesis of Picard–Lindelöf fails for y' = y^{1/3}
   optional: false
   note: 'Decisions.md 7: ODE existence forces contraction maps (this chapter) and Arzelà–Ascoli (next). The contraction
-    theorem is reused by the inverse function theorem (inverse-implicit). Linear systems and the matrix exponential
-    are not developed (companion LA book / ODE course).'
+    theorem is reused by the inverse function theorem (inverse-implicit). Linear systems, the matrix exponential,
+    differentiable dependence and the flow are linear-odes-flows, after inverse-implicit.'
 - num: 25
   part: II
   slug: arzela-ascoli-peano
@@ -2256,7 +2343,9 @@ chapters:
   optional: false
   note: 'Linear algebra is not taught: cite the companion LA book by chapter in prose for matrices, rank, determinants,
     definiteness. The operator norm is the spiral''s first appearance of ''bounded = continuous'' for linear maps
-    (Part VI).'
+    (Part VI). Linear-algebra gate (route R8): the companion book through determinants and eigenvalues is done before
+    this chapter, and its spectral theorem for symmetric matrices before the second-derivative test; the Part II
+    opener states this.'
 - num: 28
   part: II
   slug: inverse-implicit
@@ -2298,20 +2387,75 @@ chapters:
   - solve a two-constraint Lagrange problem and justify the regularity hypothesis
   optional: false
   note: 'Uses contraction-picard''s theorem (decisions.md 7 spiral of contraction). Forms and manifolds are deferred
-    (decisions.md 12): keep ''submanifold'' to regular level sets and local graphs in ℝⁿ.'
+    (decisions.md 12): keep ''submanifold'' to regular level sets and local graphs in ℝⁿ. Forward hooks: linear-odes-flows
+    uses the inverse function theorem for the flow maps, and surfaces-divergence-theorem (Part IV) builds surface
+    measure on regular level sets.'
 - num: 29
+  part: II
+  slug: linear-odes-flows
+  title: Linear Systems, the Matrix Exponential and the Flow
+  pages: 36
+  sources:
+  - - TES.3
+    - §3.1–3.4 the matrix exponential, linear autonomous systems and equations of order n, general linear first-order
+      systems (fundamental matrix, Liouville's formula, variation of constants); §3.8 Jordan form (cited from the
+      companion linear-algebra book, not taught)
+  - - TES.2
+    - §2.4–2.5 dependence on the initial condition (differentiability, the variational equation), regular perturbation
+  outline:
+  - 'The questions: what do the solutions of x′ = Ax look like, and how does the solution of x′ = f(t,x) depend
+    on its initial point? Linear systems as the one large class solved in closed form'
+  - 'The matrix exponential: e^{A} = Σ Aᵏ/k! in the operator norm; d/dt e^{tA} = Ae^{tA}; e^{A+B} = e^{A}e^{B} when
+    AB = BA, and its failure otherwise'
+  - 'Constant-coefficient systems: x(t) = e^{tA}x₀; computing e^{tA} from the Jordan form (companion book); phase
+    portraits in the plane; higher-order scalar equations as systems'
+  - 'Time-dependent linear systems: the solution space, fundamental matrices, Liouville''s formula det Φ(t) = det
+    Φ(t₀)·exp ∫ tr A; variation of constants (Duhamel)'
+  - 'Stability of x′ = Ax: eigenvalues with negative real part give exponential decay; linearization at an equilibrium
+    as a preview'
+  - 'Differentiable dependence on initial data: the variational equation; C¹ dependence proved with Gronwall'
+  - 'The local flow φ_t of an autonomous equation: the group property φ_{s+t} = φ_s ∘ φ_t, each φ_t a C¹ diffeomorphism
+    onto its image; linear flows e^{tA} as the model'
+  - 'Preview of boundary value problems: −u″ = λu with u(0) = u(π) = 0 has non-zero solutions only for λ = k² (forward
+    to compact-operators-spectral and the capstone)'
+  must_prove:
+  - e^{A} converges absolutely in the operator norm, ‖e^{A}‖ ≤ e^{‖A‖}, and d/dt e^{tA} = Ae^{tA}
+  - e^{A+B} = e^{A}e^{B} when AB = BA
+  - the solutions of x′ = A(t)x form an n-dimensional vector space; Liouville's formula
+  - the variation-of-constants formula for x′ = A(t)x + g(t)
+  - if every eigenvalue of A has negative real part, then ‖e^{tA}‖ ≤ Ce^{−εt} for some C, ε > 0
+  - C¹ dependence on initial data, the derivative solving the variational equation
+  - the group property of the flow of an autonomous C¹ equation
+  key_examples:
+  - 'A = [[0,−1],[1,0]]: e^{tA} is rotation by t'
+  - 'nilpotent A: e^{tA} is a polynomial in t'
+  - two non-commuting matrices with e^{A+B} ≠ e^{A}e^{B}
+  - the harmonic oscillator x″ + x = 0 as a planar system
+  - 'x′ = x²: the flow is defined only on part of ℝ × ℝ'
+  - '−u″ = λu, u(0) = u(π) = 0: eigenvalues k², eigenfunctions sin kx'
+  exit_checks:
+  - Solve x′ = Ax for a 2×2 matrix with a repeated eigenvalue, justifying the form of e^{tA}
+  - Prove the variation-of-constants formula and use it to bound the solutions of a perturbed linear system
+  - Prove that the flow of x′ = f(x), f ∈ C¹, satisfies φ_{s+t} = φ_s ∘ φ_t where defined
+  optional: false
+  note: Route R4 (roadmap A4). Extends contraction-picard (existence, Gronwall, continuous dependence) to linear
+    systems, differentiable dependence and the flow, as Bonn Analysis II and ENS do. Uses the operator norm (derivative-rn),
+    power series (Part I, now in the Banach algebra of matrices) and the inverse function theorem (inverse-implicit).
+    Linear algebra (eigenvalues, Jordan form) is cited from the companion book by chapter in prose, not taught (linear-algebra
+    gate, route R8). The Sturm–Liouville section is a preview only; the spectral theory is compact-operators-spectral.
+    Characteristics and transport equations (PDE branch) are named as users of the flow.
+- num: 30
   part: II
   slug: riemann-integral-rn
   title: The Riemann Integral on ℝⁿ
-  pages: 52
+  pages: 50
   sources:
   - - MOA.3
     - §10–14 integral over a rectangle, existence, evaluation (Fubini), bounded sets, rectifiable (Jordan) sets
   - - MOA.4
     - §20 the meaning of the determinant (statement only; our proof avoids the general theorem)
   - - PUG.5
-    - §5.7 multiple integrals, Fubini, Cavalieri; §5.9 Green's formula in the plane (statement and the FTC-based
-      exercise)
+    - §5.7 multiple integrals, Fubini, Cavalieri
   - - PMA.9
     - §9.9 differentiation of integrals
   - - GO.11
@@ -2330,7 +2474,10 @@ chapters:
   - Differentiation under the integral sign (Leibniz rule)
   - 'Linear change of variables: vol(T(A)) = |det T|·vol(A) and ∫f(Tx)|det T| dx = ∫f, proved via elementary matrices
     and Fubini; volume of a parallelepiped; statement of the C¹ formula with proof deferred to Part IV'
-  - Curves and line integrals; Green's theorem on a rectangle and on a disc
+  - 'Gate II (Part II, metric spaces through the Riemann integral on ℝⁿ): 3 hours, 8 problems; timed and closed-book,
+    solutions folded; a marking scheme per problem (key steps with points, common fatal errors), a pass line (≥
+    70% overall, no core problem at 0) and an @ref remediation map from each problem to the sections it tests. Problems
+    are original, in qualifying-exam style, never copied'
   must_prove:
   - continuous functions on a closed rectangle are integrable
   - discontinuity set of content zero ⇒ integrable
@@ -2339,147 +2486,23 @@ chapters:
   - differentiation under the integral sign for continuous ∂f/∂t
   - vol(T(A)) = |det T| vol(A) for linear T and Jordan A
   - linear change-of-variables formula
-  - Green's theorem on a rectangle and on a disc
   key_examples:
   - 'ℚ² ∩ [0,1]²: bounded, no content'
   - a compact set without content (fat Cantor square, GO.11)
   - a function whose iterated integrals both exist and differ (GO.9)
   - f(x,y) = (x²−y²)/(x²+y²)² on (0,1]²
   - area of an ellipse by a linear change of variables
-  - Green's theorem computing the area of a disc via ∮x dy
   exit_checks:
   - prove Fubini for a continuous function on a rectangle
   - prove vol(T(A)) = |det T| vol(A) for an elementary matrix, then in general
-  - verify Green's theorem on the unit disc for P = −y, Q = x and prove it on a rectangle
+  - use Fubini and a linear change of variables to compute the volume of an ellipsoid, justifying each step
   optional: false
   note: 'One-week module (decisions.md 10): the general C¹ change of variables and Fubini–Tonelli are proved in
     Part IV; here state the C¹ formula only as a forward reference and do not use it in proofs. Green''s theorem
-    (rectangle and disc) is a named theorem node (decisions.md 12; label e.g. thm-green) needed by harmonic functions
-    in Part V and by PDE; prove it for regions that are both type I and type II using Fubini + FTC, no forms. Polar
-    coordinates (hence ∫e^{−x²}) must wait for Part IV or use a one-variable argument.'
-- num: 30
-  part: II
-  slug: topological-spaces
-  title: Topological Spaces
-  pages: 55
-  sources:
-  - - MUN.2
-    - §12–13 topologies and bases, §16 subspace, §15/§19 product (finite only), §17 closed sets, limit points, Hausdorff,
-      §18 continuity, §20–21 metric topology
-  - - SUT.7
-    - definition and examples (bridge)
-  - - SUT.8
-    - continuity, homeomorphisms, bases
-  - - SUT.9
-    - closure, interior, boundary in topological spaces
-  - - SUT.10
-    - subspaces and products
-  - - SUT.11
-    - the Hausdorff condition
-  - - KF.3
-    - §9 basic concepts
-  - - TAO2.2
-    - §2.5 topological spaces (optional)
-  - - SSB.1
-    - basic definitions
-  - - SSB.2
-    - T₂ only
-  - - SSB.II
-    - '#1–4 discrete/indiscrete, #18–20 finite and countable complement, #51 right half-open (Sorgenfrey) topology'
-  - - GO.12
-    - topological-space counterexamples
-  outline:
-  - 'Why forget the metric: equivalent metrics share every topological notion; the axioms for open sets'
-  - 'Examples: metric topologies, discrete, indiscrete, cofinite, cocountable, the Sorgenfrey line; comparing topologies'
-  - Bases and neighbourhoods; generating a topology; the metric topology as the one generated by balls
-  - Closed sets, closure, interior, boundary and limit points; sequences do not determine the topology (cocountable
-    topology), first countability and when sequences suffice
-  - Continuous maps and homeomorphisms; topological properties
-  - 'Subspaces and finite products: the subspace and product topologies, their universal properties; the product
-    topology on ℝⁿ equals the metric one'
-  - 'Hausdorff spaces: uniqueness of limits, metrizable ⇒ Hausdorff, non-metrizable examples'
-  must_prove:
-  - a family of sets satisfying the basis axioms generates a topology
-  - closure = intersection of closed supersets = A ∪ (limit points of A); interior and closure are dual under complements
-  - in a first-countable space, closure is given by sequences; the counterexample without first countability
-  - continuity via open sets, closed sets, closure and neighbourhoods are equivalent
-  - universal property of subspace and finite product topologies
-  - limits are unique in a Hausdorff space; metric spaces are Hausdorff
-  key_examples:
-  - 'cofinite topology on an infinite set: not Hausdorff, every sequence of distinct points converges to every point'
-  - 'cocountable topology on ℝ: convergent sequences are eventually constant, yet closure is not sequential'
-  - Sorgenfrey line
-  - 'indiscrete topology: not metrizable'
-  - 'identity from discrete to usual ℝ: continuous bijection, not a homeomorphism'
-  exit_checks:
-  - show the cofinite topology on ℝ is not metrizable
-  - prove the product and metric topologies on ℝ² coincide
-  - find the error in a 'proof' that sequential closure equals closure in every topological space
-  optional: false
-  note: First week of the 2-week topology module (decisions.md 8, end of Part II). Only finite products; infinite
-    products and Tychonoff are Part VI. Countability and separation beyond T₂ (regular, normal, Urysohn) are Part
-    IV. Recall each metric version explicitly (spiral).
+    has moved to surfaces-divergence-theorem in Part IV (route R1, decision 12 amended). Polar coordinates (hence
+    ∫e^{−x²}) must wait for Part IV or use a one-variable argument. Last main-line chapter of Part II, so it ends
+    with Gate II (reader B2).'
 - num: 31
-  part: II
-  slug: compactness-quotients
-  title: Compactness, Connectedness and Quotient Spaces
-  pages: 55
-  sources:
-  - - MUN.3
-    - §23 connected spaces, §26 compact spaces (tube lemma, compact–Hausdorff), §27 compact subspaces of ℝ; §28
-      limit point compactness (remark)
-  - - MUN.2
-    - §22 quotient topology
-  - - SUT.12
-    - connectedness (topological)
-  - - SUT.13
-    - compact spaces, subspaces, products
-  - - SUT.14
-    - sequential compactness revisited
-  - - SUT.15
-    - quotient spaces and surfaces
-  - - KF.3
-    - §10 compactness in topological spaces
-  - - SSB.3
-    - compactness properties
-  - - SSB.4
-    - connectedness properties
-  - - GO.12
-    - compactness and continuity counterexamples (open/closed maps)
-  outline:
-  - Compactness by open covers in a topological space; closed subsets of compact sets; compact subsets of Hausdorff
-    spaces are closed; continuous images
-  - The tube lemma and compactness of finite products (Tychonoff for infinite products deferred to Part VI)
-  - 'Compact to Hausdorff: continuous bijections are homeomorphisms, continuous maps are closed; embeddings'
-  - 'Compactness vs sequential compactness: equal for metric spaces (recalled), different in general (informal examples)'
-  - 'Connectedness revisited: unions, closures, finite products, components'
-  - Quotient topology and its universal property; the circle, torus, Möbius band, projective plane and Klein bottle
-    by gluing
-  - When is a quotient Hausdorff? Quotients of compact spaces; ℝ/ℚ and the line with two origins
-  must_prove:
-  - closed subset of compact is compact; compact subset of Hausdorff is closed
-  - tube lemma; finite product of compact spaces is compact
-  - continuous bijection from compact to Hausdorff is a homeomorphism
-  - continuous image of compact (connected) is compact (connected)
-  - finite products of connected spaces are connected
-  - universal property of the quotient topology
-  - '[0,1]/(0∼1) is homeomorphic to S¹'
-  key_examples:
-  - 'cofinite ℝ: compact and non-Hausdorff, compact sets need not be closed'
-  - 'line with two origins: locally Euclidean quotient that is not Hausdorff'
-  - 'ℝ/ℚ: indiscrete quotient'
-  - '[0,1) → S¹, t ↦ e^{2πit}: continuous bijection, not a homeomorphism'
-  - torus as [0,1]²/∼ and as S¹×S¹
-  exit_checks:
-  - prove that a continuous bijection from a compact space to a Hausdorff space is a homeomorphism, and show both
-    hypotheses are needed
-  - prove the torus quotient is homeomorphic to S¹×S¹
-  - prove the tube lemma and use it for compactness of X×Y
-  optional: false
-  note: 'Second week of the topology module (decisions.md 8). Local compactness and the one-point compactification
-    go with Urysohn/Tietze at the start of Part IV; Tychonoff (Zorn) goes to Part VI before Alaoglu. Surfaces are
-    illustrative only: no classification, no fundamental group.'
-- num: 32
   part: III
   slug: fourier-series-foundations
   title: 'Fourier Series: Origins and Basic Properties'
@@ -2526,7 +2549,7 @@ chapters:
   optional: false
   note: Stay strictly with Riemann-integrable functions. Complex exponentials from Part I. Convolution defined here
     is reused as the model for Part IV's convolution (lp-spaces).
-- num: 33
+- num: 32
   part: III
   slug: good-kernels-summability
   title: Good Kernels, Summability and Fejér's Theorem
@@ -2572,7 +2595,7 @@ chapters:
   optional: false
   note: Name the skills 'approximate identities' and 'summability in place of convergence'. Stone–Weierstrass (Part
     II) may be recalled but Fejér's route must stand alone.
-- num: 34
+- num: 33
   part: III
   slug: mean-square-pointwise
   title: Mean-Square and Pointwise Convergence
@@ -2635,8 +2658,10 @@ chapters:
   optional: false
   note: 'The divergence example is done by explicit construction here; Part VI redoes it by the uniform boundedness
     principle (curriculum S4 (d)). Record the first entry of the ''what we need'' list: ℛ(𝕋) is not complete, so
-    Parseval gives an isometry into ℓ² that is not onto.'
-- num: 35
+    Parseval gives an isometry into ℓ² that is not onto. Linear-algebra gate (route R8): inner products, orthogonal
+    projection, the spectral theorem and SVD from the companion book are done before this chapter; the Part III
+    opener states this.'
+- num: 34
   part: III
   slug: fourier-series-applications
   title: Applications of Fourier Series
@@ -2678,9 +2703,9 @@ chapters:
   - Prove Weyl's criterion and apply it to {nγ}
   - Prove the isoperimetric inequality by Parseval
   optional: false
-  note: Weyl's criterion uses the characters of ℝ/ℤ concretely; finite-fourier-analysis later recasts them in group
-    language (decisions.md 13).
-- num: 36
+  note: Weyl's criterion uses the characters of ℝ/ℤ concretely; the optional finite-fourier-analysis recasts them
+    in group language (decisions.md 13).
+- num: 35
   part: III
   slug: fourier-transform-line
   title: The Fourier Transform on ℝ
@@ -2743,7 +2768,7 @@ chapters:
   optional: false
   note: 'The Riemann framework is felt here: every exchange of limits needs its own ad hoc hypothesis; record these
     on the ''what we need'' list for riemann-limits.'
-- num: 37
+- num: 36
   part: III
   slug: fourier-transform-rd
   title: The Fourier Transform on ℝᵈ and the Wave Equation
@@ -2763,27 +2788,30 @@ chapters:
     from Part II's Jordan content and linear change of variables)
   - 𝒮(ℝᵈ) and the Fourier transform; behaviour under translations, dilations and rotations; inversion and Plancherel
   - 'The wave equation in ℝᵈ × ℝ: solution by Fourier transform, conservation of energy, uniqueness'
-  - 'ℝ³: spherical means, Kirchhoff''s formula, Huygens'' principle; ℝ²: the method of descent and the failure of
-    Huygens'
   - 'Radial functions: the Fourier transform of a radial function is radial; Bessel functions'
+  - '(Optional) ℝ³: spherical means, Kirchhoff''s formula, Huygens'' principle; ℝ²: the method of descent and the
+    failure of Huygens'
   - (Optional) The X-ray transform in ℝ² and the Radon transform in ℝ³
   must_prove:
   - Fourier transform commutes with rotations
   - inversion and Plancherel on 𝒮(ℝᵈ)
   - existence and energy-uniqueness for the wave equation with 𝒮 data
-  - Kirchhoff's formula in ℝ³
+  - (optional section) Kirchhoff's formula in ℝ³
   - polar-coordinate formula for continuous functions of moderate decrease
   key_examples:
   - e^{−π|x|²} on ℝᵈ
   - transform of surface measure on S² (sin(2π|ξ|)/(π|ξ|))
-  - Huygens fails in ℝ²
+  - (optional section) Huygens fails in ℝ²
   exit_checks:
-  - Derive the solution of the wave equation in ℝ³ and explain Huygens' principle
+  - Solve the wave equation in ℝᵈ with 𝒮 data by the Fourier transform and prove conservation of energy
+  - (Optional sections) Derive the solution of the wave equation in ℝ³ and explain Huygens' principle
   optional: false
-  note: Needs polar coordinates in the Riemann setting. If Part II's ℝⁿ module does not include them, this chapter
+  note: 'Needs polar coordinates in the Riemann setting. If Part II''s ℝⁿ module does not include them, this chapter
     proves them for continuous functions of moderate decrease (SS1 App. §2.4, 3.3). The general C¹ change of variables
-    is not used; Part IV proves it in full.
-- num: 38
+    is not used; Part IV proves it in full. Route R7 (roadmap A7): the Kirchhoff/descent/Huygens section and the
+    Radon section are optional; the main line is integration on ℝᵈ, 𝒮(ℝᵈ) with inversion and Plancherel, the wave
+    equation by Fourier transform with energy, and radial functions (about 35 pp.).'
+- num: 37
   part: III
   slug: finite-fourier-analysis
   title: Fourier Analysis on Finite Abelian Groups
@@ -2825,11 +2853,12 @@ chapters:
   exit_checks:
   - Prove that the characters of a finite abelian group form an orthonormal basis
   - Compute the character table of ℤ*(5) and of ℤ*(8)
-  optional: false
-  note: 'decisions.md 13: this is where groups and characters are introduced; keep the group theory minimal and
-    only what the Fourier theory uses. The linear-algebra companion is cited for simultaneous diagonalization of
-    commuting unitary operators.'
-- num: 39
+  optional: true
+  note: 'Optional (route R7, roadmap A7): nothing on the main line after Part III needs finite abelian groups; its
+    only users, dirichlet-theorem and gelfand-theory, are optional too. decisions.md 13: this is where groups and
+    characters are introduced for readers who take it; keep the group theory minimal and only what the Fourier theory
+    uses. The linear-algebra companion is cited for simultaneous diagonalization of commuting unitary operators.'
+- num: 38
   part: III
   slug: dirichlet-theorem
   title: Dirichlet's Theorem on Primes in Arithmetic Progressions
@@ -2867,13 +2896,13 @@ chapters:
   - Prove Σ 1/p = ∞ via the Euler product
   - Show how Fourier analysis on ℤ*(q) reduces Dirichlet's theorem to L(1,χ) ≠ 0
   optional: true
-  note: 'Optional (curriculum: ''optionally, Dirichlet''s theorem''). Uses only series, logarithms and finite Fourier
-    analysis; no main-line proof may cite it.'
-- num: 40
+  note: 'Optional (curriculum: ''optionally, Dirichlet''s theorem''). Uses only series, logarithms and the optional
+    finite-fourier-analysis; no main-line proof may cite it.'
+- num: 39
   part: III
   slug: riemann-limits
   title: What the Riemann Integral Lacks
-  pages: 42
+  pages: 45
   sources:
   - - SS3.0
     - Introduction §1–5 (completion of Fourier series, limits of continuous functions, length of curves, differentiation
@@ -2914,6 +2943,10 @@ chapters:
   - 'The list: what an integral must provide (countable additivity, monotone and dominated limits, a complete L¹
     and L², Fubini without continuity, FTC for all differentiable-enough functions), with a map to the Part IV chapters
     that deliver each item'
+  - 'Gate III (main line of Part III, after ''The list''): 3 hours, 6 problems; timed and closed-book, solutions
+    folded; a marking scheme per problem (key steps with points, common fatal errors), a pass line (≥ 70% overall,
+    no core problem at 0) and an @ref remediation map from each problem to the sections it tests. Problems are original,
+    in qualifying-exam style, never copied'
   must_prove:
   - ℛ[0,1] with the L² distance is not complete (explicit Cauchy sequence)
   - a bounded monotone limit of Riemann-integrable functions need not be Riemann integrable
@@ -2933,48 +2966,9 @@ chapters:
   note: 'decisions.md 7: this chapter is the forcing problem for Part IV and must end with the explicit list; Part
     IV''s first measure chapter opens by quoting it. Arzelà''s bounded convergence theorem is stated here; its proof
     is given in Part IV as a corollary of the bounded convergence theorem (BRL §4.3 has an elementary proof the
-    drafter may include as optional). Volterra''s function may be sketched with its key properties proved.'
-- num: 41
-  part: IV
-  slug: urysohn-tietze
-  title: Urysohn, Tietze and Locally Compact Spaces
-  pages: 32
-  sources:
-  - - MUN.4
-    - §31 (separation axioms), §32 (normal spaces), §33 (Urysohn lemma), §35 (Tietze extension)
-  - - MUN.3
-    - §29 (local compactness, one-point compactification)
-  - - FOL.4
-    - §4.5 (LCH Urysohn, C_c, C_0, partitions of unity)
-  outline:
-  - 'The problem ahead: Lusin''s theorem and the density of C_c in Lᵖ both need continuous functions with prescribed
-    values on closed sets; the separation question'
-  - 'Separation axioms: regular and normal spaces; metric spaces and compact Hausdorff spaces are normal'
-  - 'In metric spaces Urysohn is free: f = d(x,A)/(d(x,A)+d(x,B))'
-  - Urysohn's lemma for normal spaces (dyadic-rational construction)
-  - 'The Tietze extension theorem: bounded version by uniform approximation, then unbounded values'
-  - Locally compact Hausdorff spaces; one-point compactification; supports, C_c(X) and C_0(X)
-  - LCH Urysohn (K ≺ f ≺ U) and finite partitions of unity subordinate to an open cover of a compact set
-  must_prove:
-  - metric spaces and compact Hausdorff spaces are normal
-  - Urysohn's lemma
-  - Tietze extension theorem (real-valued, closed subset of a normal space)
-  - one-point compactification of an LCH space is compact Hausdorff
-  - LCH Urysohn lemma
-  - partitions of unity on a compact subset of an LCH space
-  key_examples:
-  - distance-function Urysohn functions in ℝᵈ
-  - Tietze fails for non-closed subsets (sin(1/x) on (0,1])
-  - ℕ and ℝⁿ one-point compactifications
-  - an infinite-dimensional normed space is not locally compact (pointer to Part II's ℓ²)
-  exit_checks:
-  - Prove Urysohn's lemma for normal spaces
-  - Derive Tietze from Urysohn with the uniform-approximation argument
-  optional: false
-  note: 'decisions.md 8 (second of the three topology placements). Keep it lean: no metrization theorem, no Tychonoff
-    (Part VI). Announce the two uses up front: Lusin (lebesgue-measure) and C_c density (lp-spaces). Riesz–Markov
-    (Part VI) will reuse the LCH Urysohn and partitions of unity.'
-- num: 42
+    drafter may include as optional). Volterra''s function may be sketched with its key properties proved. Last
+    main-line chapter of Part III: it ends with Gate III, after ''The list'' (reader B2).'
+- num: 40
   part: IV
   slug: lebesgue-measure
   title: Lebesgue Measure on ℝᵈ and Measurable Functions
@@ -3036,9 +3030,10 @@ chapters:
   - Prove that the Vitali set is not measurable and say exactly where choice is used
   - Prove Egorov's theorem and show it fails on ℝ with 1_[n,n+1]
   optional: false
-  note: Opens by quoting the riemann-limits list (decisions.md 7). SS3's concrete route on ℝᵈ is the scaffold; the
-    abstract Carathéodory theory comes in abstract-measure (spiral). Lusin cites Tietze from urysohn-tietze.
-- num: 43
+  note: 'Opens by quoting the riemann-limits list (decisions.md 7). SS3''s concrete route on ℝᵈ is the scaffold;
+    the abstract Carathéodory theory comes in abstract-measure (spiral). Lusin cites the metric Tietze extension
+    theorem of compactness-connectedness (Part II): no general topology is needed on ℝᵈ (route R2).'
+- num: 41
   part: IV
   slug: lebesgue-integral
   title: The Lebesgue Integral and the Convergence Theorems
@@ -3093,7 +3088,7 @@ chapters:
   optional: false
   note: Write the convergence-theorem proofs using only countable additivity and the definition as a sup, so abstract-measure
     can transfer them verbatim. Ticks off items 'limits' and 'L¹ completeness' from the Part III list.
-- num: 44
+- num: 42
   part: IV
   slug: abstract-measure
   title: Abstract Measure Spaces and Carathéodory's Construction
@@ -3142,7 +3137,7 @@ chapters:
   optional: false
   note: 'Spiral return (decisions.md 6): the ℝᵈ construction of lebesgue-measure is recalled and reframed. π-λ is
     written originally (FOL and MIRA use the monotone class theorem; include both, π-λ as the main tool).'
-- num: 45
+- num: 43
   part: IV
   slug: fubini-tonelli
   title: Product Measures and the Fubini–Tonelli Theorem
@@ -3192,7 +3187,7 @@ chapters:
   optional: false
   note: 'decisions.md 10: full proofs. Part II supplied Fubini for continuous functions on rectangles; recall it
     explicitly and show it is a special case. KOR 47–48 examples from Part III are resolved here.'
-- num: 46
+- num: 44
   part: IV
   slug: change-of-variables
   title: Linear Maps, Change of Variables and Polar Coordinates
@@ -3233,8 +3228,74 @@ chapters:
   - Compute ∫_{ℝᵈ} (1+|x|)^{−p} and decide for which p it is finite
   optional: false
   note: decisions.md 10 requires a full proof (curriculum S3-A says 'outline'; decisions.md governs). Uses the inverse
-    function theorem from Part II. Rademacher (WZ §7.7) is not in the main line.
-- num: 47
+    function theorem from Part II. Rademacher (WZ §7.7) is not in the main line. The next chapter, surfaces-divergence-theorem,
+    extends σ on S^{d−1} to surface measure on C¹ hypersurfaces.
+- num: 45
+  part: IV
+  slug: surfaces-divergence-theorem
+  title: Surfaces, Surface Measure and the Divergence Theorem
+  pages: 46
+  sources:
+  - - EVA.C
+    - C.1–C.3 C¹ boundaries and the outward normal, the Gauss–Green theorem, integration by parts, Green's formulas,
+      polar coordinates and the coarea formula (statement)
+  - - MOA.5
+    - §22–25 manifolds in ℝⁿ, the volume of a parametrized manifold, integrating a scalar function over a manifold
+      (surface measure through parametrizations and a partition of unity)
+  - - MOA.7
+    - §38 the divergence theorem for (n−1)-manifolds in ℝⁿ (statement and vector-calculus reading only; the proof
+      there goes through forms, which are not used)
+  - - FOL.11
+    - §11.4 integration on manifolds (surface measure, comparison with σ on the sphere)
+  - - PUG.5
+    - §5.9 Green's formula in the plane (the FTC-based proof)
+  - - EVA.2
+    - §2.2.1–2.2.3 the fundamental solution of Laplace's equation, mean-value formulas, the maximum principle
+  outline:
+  - 'Why the rest of the book needs it: integration by parts on a domain, Green''s identities, traces, harmonic
+    functions in ℝⁿ'
+  - Green's theorem on a rectangle, on a disc and on regions of type I and II, by Fubini and the FTC; line integrals
+    of vector fields; area as ∮x dy (moved here from the Riemann integral on ℝⁿ)
+  - C¹ hypersurfaces as local graphs (implicit function theorem); parametrizations, the area element √det(DφᵀDφ)
+    and its independence of the parametrization
+  - Surface measure on a C¹ hypersurface, by local graphs and a partition of unity; agreement with σ on spheres
+    from change-of-variables; the area of S^{d−1}
+  - C¹ domains and the outward unit normal; smooth bump functions from e^{−1/t} and smooth partitions of unity subordinate
+    to a finite cover of a compact set
+  - 'The divergence theorem ∫_Ω div F = ∫_∂Ω F·ν dσ for C¹ fields on bounded C¹ domains: local graph pieces by Fubini
+    and the FTC, glued by a partition of unity'
+  - Integration by parts in ℝⁿ and Green's identities; uniqueness for the Dirichlet problem by the energy
+  - 'Harmonic functions in ℝⁿ: the mean value property through the divergence theorem, the maximum principle, and
+    the fundamental solution Φ as a preview of distributions and the capstone'
+  must_prove:
+  - Green's theorem on a rectangle and on a disc
+  - surface measure on a C¹ hypersurface is well defined (independent of the local graphs and of the partition of
+    unity)
+  - existence of smooth partitions of unity subordinate to a finite open cover of a compact subset of ℝⁿ
+  - the divergence theorem for C¹ vector fields on a bounded C¹ domain
+  - Green's first and second identities
+  - the mean value property of harmonic functions on balls in ℝⁿ, and the maximum principle
+  - σ(S^{d−1}) = d·|B₁| = 2π^{d/2}/Γ(d/2)
+  key_examples:
+  - the area of a disc by ∮x dy
+  - the unit sphere as two graphs; the area of S² is 4π
+  - x/|x|ᵈ is divergence-free away from 0, yet its flux through every sphere about 0 is σ(S^{d−1})
+  - a domain with an outward cusp, where the C¹ hypothesis fails
+  - the fundamental solution Φ(x) = −(1/2π) log|x| in ℝ² and c_d|x|^{2−d} for d ≥ 3
+  exit_checks:
+  - Prove the divergence theorem on a bounded C¹ domain, marking where the partition of unity and Fubini enter
+  - Derive Green's identities and use the second to prove uniqueness for the Dirichlet problem on a bounded C¹ domain
+  - Prove the mean value property of harmonic functions in ℝⁿ
+  optional: false
+  note: 'Route R1 (roadmap A1; decision 12 amended): the divergence theorem is main line; differential forms and
+    the general Stokes theorem are not (an optional forms chapter is roadmap A9, still open). Uses change-of-variables
+    (the C¹ theorem, polar coordinates and σ), fubini-tonelli and the implicit function theorem of Part II. Green''s
+    theorem (rectangle and disc) moved here from riemann-integral-rn and keeps its label thm-green as the chapter''s
+    first example. Consumers: harmonic-functions (Part V, Green''s identities; the complex-early path keeps a self-contained
+    disc case there), distributions (ΔΦ = δ), poincare-rellich (traces on C¹ domains) and the capstone (Green''s
+    identities, back to classical solutions). Bump functions are built by hand from e^{−1/t}, so mollifiers (lp-spaces)
+    are not needed. The target is the vector-calculus form of Evans App. C; no forms.'
+- num: 46
   part: IV
   slug: lp-spaces
   title: Lᵖ Spaces, Convolution and Mollifiers
@@ -3286,7 +3347,7 @@ chapters:
   note: Only concrete L² (completeness, Parseval on 𝕋) appears; abstract Hilbert space theory is Part VI (decisions.md
     9). Lᵖ duality is Part VI; state no duality theorem here. Pointwise convergence of approximate identities at
     Lebesgue points waits for lebesgue-differentiation.
-- num: 48
+- num: 47
   part: IV
   slug: modes-of-convergence
   title: Modes of Convergence, Uniform Integrability and Weak Lᵖ
@@ -3336,11 +3397,11 @@ chapters:
   note: Uniform integrability and the Vitali convergence theorem are original writing (no assigned source treats
     them beyond exercises). Weak L¹ is set up here because lebesgue-differentiation's maximal inequality is a weak-(1,1)
     statement.
-- num: 49
+- num: 48
   part: IV
   slug: lebesgue-differentiation
   title: The Maximal Function and Lebesgue Differentiation
-  pages: 50
+  pages: 54
   sources:
   - - SS3.3
     - §1–2 (Hardy–Littlewood maximal function, Lebesgue differentiation, good kernels and approximations to the
@@ -3353,11 +3414,13 @@ chapters:
     - all (maximal function, derivatives, Lebesgue density theorem)
   - - FOL.3
     - §3.4 up to Theorem 3.20 (differentiation on Euclidean space)
+  - - FOL.6
+    - §6.5 the Marcinkiewicz interpolation theorem (diagonal case only)
   outline:
   - 'The question: is d/dx ∫ₐˣ f = f a.e.? Averages over balls and the obstruction'
   - The Vitali covering lemma (finite, 3ᵈ version) and the Vitali covering theorem for fine covers
-  - The Hardy–Littlewood maximal function; the weak (1,1) inequality; the Lᵖ bound for p > 1 via the layer-cake
-    formula
+  - The Hardy–Littlewood maximal function; the weak (1,1) inequality; the Marcinkiewicz interpolation theorem (diagonal
+    case) and the Lᵖ bound for p > 1 as its corollary
   - 'The Lebesgue differentiation theorem: the template ''prove it on a dense class, extend with the maximal inequality'''
   - Lebesgue points and density points; the Lebesgue density theorem
   - Approximations to the identity converge at every Lebesgue point; Fejér and Poisson means of L¹(𝕋) functions
@@ -3366,6 +3429,8 @@ chapters:
   - Vitali covering lemma
   - Vitali covering theorem (fine covers)
   - weak (1,1) maximal inequality
+  - 'Marcinkiewicz interpolation theorem, diagonal case: weak (1,1) and strong (∞,∞) give strong (p,p) for 1 < p
+    < ∞'
   - ‖Mf‖_p ≤ C_p‖f‖_p for 1 < p ≤ ∞
   - Lebesgue differentiation theorem
   - a.e. point is a Lebesgue point
@@ -3380,8 +3445,9 @@ chapters:
   - Show Fejér means of f ∈ L¹(𝕋) converge a.e. to f
   optional: false
   note: Name and drill the maximal-function argument skill. Uses weak L¹ and the layer-cake formula from modes-of-convergence.
-    The last part of FOL §3.4 (differentiating regular measures) is deferred to signed-measures-radon-nikodym.
-- num: 50
+    Marcinkiewicz (route R5a) replaces the ad hoc layer-cake proof of the Lᵖ bound and returns beside Riesz–Thorin
+    in interpolation (Part VI). The last part of FOL §3.4 (differentiating regular measures) is deferred to signed-measures-radon-nikodym.
+- num: 49
   part: IV
   slug: bv-and-absolute-continuity
   title: Bounded Variation, Absolute Continuity and the Fundamental Theorem
@@ -3432,7 +3498,7 @@ chapters:
   optional: false
   note: 'Answers the Part III item ''the FTC fails'' (Volterra). WZ ch 7 is split: §7.1–7.3 went to lebesgue-differentiation,
     §7.4–7.6 are here with WZ ch 2 (see exemptions).'
-- num: 51
+- num: 50
   part: IV
   slug: signed-measures-radon-nikodym
   title: Signed Measures, Radon–Nikodym and Lebesgue Decomposition
@@ -3480,12 +3546,71 @@ chapters:
   exit_checks:
   - Prove Radon–Nikodym by von Neumann's L² argument
   - Prove the Hahn decomposition
-  - Six UCLA real-analysis qual problems in 3 hours, at least 3 essentially complete (Part IV capstone)
   optional: false
   note: 'decisions.md 9: L² is used only for von Neumann''s proof, and the L² facts it needs (nearest point, Riesz
     representation) are proved here for L²(μ) concretely; the abstract Hilbert-space chapter in Part VI will recall
     this as its first instance (spiral). No Lᵖ duality here even though RN makes it one step away — flag it as the
-    Part VI forward hook.'
+    Part VI forward hook. The Part IV qualifying-exam check has moved to Gate IV at the end of probability-measure-spaces,
+    the Part''s last chapter.'
+- num: 51
+  part: IV
+  slug: probability-measure-spaces
+  title: Probability on Measure Spaces
+  pages: 46
+  sources:
+  - - FOL.10
+    - §10.1–10.2 basic concepts, independence, Borel–Cantelli, Kolmogorov's 0–1 law, the laws of large numbers;
+      §10.3 the central limit theorem (statement; its Fourier proof returns in the optional section of tempered-distributions-fourier)
+  - - SS4.5
+    - §1 Bernoulli trials (coin flips, the case N = ∞, first results, the CLT for coin flips), §2.1, §2.3–2.4 law
+      of large numbers, the zero-one law, the central limit theorem
+  - - MIRA.12
+    - probability spaces, independence, Borel–Cantelli, variance and the weak law of large numbers (bridge)
+  outline:
+  - 'Probability as measure theory: sample spaces and events, random variables as measurable maps, distributions
+    as push-forward measures, distribution functions (Lebesgue–Stieltjes recalled), expectation as the integral'
+  - 'Rademacher functions and binary digits: infinitely many fair coin flips inside Lebesgue measure on [0,1] (Part
+    I''s binary expansions revisited)'
+  - Independence of σ-algebras and of random variables; independence through product measures (fubini-tonelli);
+    E[XY] = E[X]E[Y]; sequences of independent variables with prescribed laws, built on [0,1]
+  - The Borel–Cantelli lemmas; tail σ-algebras and Kolmogorov's 0–1 law
+  - Chebyshev and the weak law of large numbers; the strong law under a fourth-moment hypothesis (the L⁴ proof);
+    Etemadi's version as a guided exercise
+  - Borel's normal numbers theorem
+  - Convergence in distribution; the central limit theorem by Lindeberg's replacement method (Taylor's theorem only,
+    no Fourier analysis); de Moivre–Laplace as the special case
+  - 'Gate IV (Part IV): 3 hours, 8 problems in UCLA real-analysis style, those on this chapter marked non-core so
+    that a reader who defers it sits the gate after signed-measures-radon-nikodym; timed and closed-book, solutions
+    folded; a marking scheme per problem (key steps with points, common fatal errors), a pass line (≥ 70% overall,
+    no core problem at 0) and an @ref remediation map from each problem to the sections it tests. Problems are original,
+    in qualifying-exam style, never copied'
+  must_prove:
+  - the distribution of a random variable is a Borel probability measure, and E g(X) = ∫ g dμ_X
+  - the Rademacher functions are independent for Lebesgue measure on [0,1]
+  - E[XY] = E[X]E[Y] for independent integrable X, Y
+  - both Borel–Cantelli lemmas (the second under independence)
+  - Kolmogorov's 0–1 law
+  - the weak law of large numbers under finite variance
+  - the strong law of large numbers under a finite fourth moment
+  - Borel's normal numbers theorem
+  - the central limit theorem for i.i.d. variables with finite variance, by Lindeberg's replacement method
+  key_examples:
+  - infinitely many coin flips as the binary digits of x ∈ [0,1]
+  - pairwise independent events that are not independent
+  - 'Cauchy-distributed variables: no mean, and Sₙ/n does not settle down'
+  - 'the typewriter sequence as random variables: convergence in probability without a.s. convergence'
+  - de Moivre–Laplace for fair coin flips
+  exit_checks:
+  - Prove the strong law of large numbers under a finite fourth moment
+  - Prove the central limit theorem by Lindeberg's replacement method
+  - Show that almost every x ∈ [0,1] is normal in base 2
+  optional: false
+  note: 'Route R3 (roadmap A3). Main line, but no later chapter depends on it: stage S3 is the heaviest semester,
+    so a reader on the two-year route may read it after Part VI. The CLT is proved by Lindeberg''s replacement (Taylor''s
+    theorem only) so that no Fourier transform of measures is needed; characteristic functions, weak convergence
+    of probability measures, Lévy continuity and Prokhorov are the optional last section of tempered-distributions-fourier.
+    Conditional expectation (via Radon–Nikodym) and martingales are named as the next steps of the probability branch,
+    stated only. Gate IV ends this chapter because the gate belongs to the Part''s end (reader B2).'
 - num: 52
   part: V
   slug: holomorphic-functions
@@ -3678,7 +3803,8 @@ chapters:
   optional: false
   note: 'The Jordan curve theorem is cited, not proved (SS2 Appendix B is used only for simple connectivity equivalences).
     Hurwitz is placed here so that the Riemann mapping proof can use it. Homotopy of closed paths is defined and
-    used here: Part II''s topology module does not cover it.'
+    used here: no topology chapter covers it (the general topology block is in Part VI). Phragmén–Lindelöf on a
+    strip is cited by interpolation (Part VI) for the three-lines lemma.'
 - num: 56
   part: V
   slug: conformal-riemann-mapping
@@ -3779,9 +3905,11 @@ chapters:
   - If u>0 is harmonic on 𝔻 with u(0)=1, bound u(1/2) above and below (Harnack)
   - Prove that an entire function real on ℝ satisfies f(z̄)= conj f(z)
   optional: false
-  note: This chapter is the entry node for the PDE branch and for Part VI's capstone (harmonic functions, Dirichlet
-    principle). Green's identities use the Green's theorem node from Part II. Perron's method is outline-level;
-    the disc case is proved in full.
+  note: 'This chapter is the entry node for the PDE branch and for Part VI''s capstone (harmonic functions, Dirichlet
+    principle). Green''s identities cite surfaces-divergence-theorem (Part IV: thm-green and the divergence theorem).
+    On the complex-early path (Parts 0, I, II, V, with Part IV not yet read) the chapter keeps a short self-contained
+    proof of Green''s theorem on the disc, so Part V stays readable before Part IV. Perron''s method is outline-level;
+    the disc case is proved in full.'
 - num: 58
   part: V
   slug: entire-functions-products
@@ -3830,7 +3958,7 @@ chapters:
   part: V
   slug: continuation-and-picard
   title: Analytic Continuation, Monodromy and Picard's Theorem
-  pages: 48
+  pages: 51
   sources:
   - - CON.9
     - §2–3 analytic continuation along a path, monodromy theorem
@@ -3851,6 +3979,10 @@ chapters:
   - Bloch's theorem and Landau's constant
   - The little Picard theorem
   - Schottky's theorem and the great Picard theorem (outline); the modular-function proof (outline)
+  - 'Gate V (Part V): 3 hours, 8 problems in UCLA complex-analysis style; timed and closed-book, solutions folded;
+    a marking scheme per problem (key steps with points, common fatal errors), a pass line (≥ 70% overall, no core
+    problem at 0) and an @ref remediation map from each problem to the sections it tests. Problems are original,
+    in qualifying-exam style, never copied'
   must_prove:
   - uniqueness of analytic continuation along a path
   - the monodromy theorem
@@ -3864,11 +3996,152 @@ chapters:
   - e^z omits exactly one value; an entire function omitting two values is constant
   exit_checks:
   - Prove little Picard via Bloch/Landau unaided
-  - Six UCLA complex-analysis qual problems in 3 hours, at least 3 essentially complete (Part V exit check)
   optional: false
   note: Riemann surfaces, sheaves and covering spaces (CON §IX.4–7) are cut; monodromy is proved directly for paths
-    in a region. The Part V exit exam sits at the end of this chapter.
+    in a region. The Part V exit exam is Gate V, the last section of this chapter (reader B2).
 - num: 60
+  part: VI
+  slug: topological-spaces-compactness
+  title: Topological Spaces, Products and Compactness
+  pages: 60
+  sources:
+  - - MUN.2
+    - §12–13 topologies and bases, §15–16 and §19 product and subspace topologies, §17 closed sets, limit points,
+      Hausdorff, §18 continuity, §20–21 metric topology; §22 quotient topology (optional section)
+  - - MUN.3
+    - §23–25 connected spaces, §26–27 compact spaces (tube lemma, compact–Hausdorff), §28 limit point compactness
+      (remark)
+  - - SUT.7
+    - definition and examples (bridge)
+  - - SUT.8
+    - continuity, homeomorphisms, bases
+  - - SUT.9
+    - closure, interior, boundary in topological spaces
+  - - SUT.10
+    - subspaces and products
+  - - SUT.11
+    - the Hausdorff condition
+  - - SUT.12
+    - connectedness (topological)
+  - - SUT.13
+    - compact spaces, subspaces, products
+  - - SUT.14
+    - sequential compactness revisited
+  - - SUT.15
+    - quotient spaces and surfaces (optional section)
+  - - KF.3
+    - §9 basic concepts, §10 compactness in topological spaces
+  - - TAO2.2
+    - §2.5 topological spaces (optional)
+  - - FOL.4
+    - §4.1–4.2 topological spaces, continuous maps, nets (in brief)
+  - - SSB.1
+    - basic definitions
+  - - SSB.3
+    - compactness properties
+  - - SSB.4
+    - connectedness properties
+  - - SSB.II
+    - '#1–4 discrete/indiscrete, #18–20 finite and countable complement, #51 right half-open (Sorgenfrey) topology'
+  - - GO.12
+    - topological-space, compactness and continuity counterexamples (open/closed maps)
+  outline:
+  - 'Why forget the metric, and why now: C₀(X) for locally compact X (Riesz–Markov) and the weak and weak* topologies
+    are not metric; the axioms for open sets, with every metric notion of Part II recalled'
+  - 'Examples: metric topologies, discrete, indiscrete, cofinite, cocountable, the Sorgenfrey line; comparing topologies;
+    bases, subbases and neighbourhoods'
+  - Closure, interior, boundary and limit points; sequences do not determine the topology (the cocountable topology);
+    first countability; nets in brief
+  - 'Continuous maps and homeomorphisms; initial topologies: subspaces and arbitrary products with their universal
+    properties (the product topology on ℝ^X as pointwise convergence)'
+  - 'Hausdorff spaces: uniqueness of limits; metrizable ⇒ Hausdorff; non-metrizable examples'
+  - 'Compactness by open covers: closed subsets, compact subsets of Hausdorff spaces are closed, continuous images;
+    the tube lemma and finite products (Tychonoff comes in weak-topologies-alaoglu)'
+  - 'Compact to Hausdorff: continuous bijections are homeomorphisms; compactness versus sequential compactness in
+    general; connectedness revisited (products, components)'
+  - (Optional) The quotient topology and its universal property; the circle, torus, Möbius band, projective plane
+    and Klein bottle by gluing; the line with two origins
+  must_prove:
+  - a family of sets satisfying the basis axioms generates a topology
+  - closure = intersection of closed supersets = A ∪ (limit points of A)
+  - in a first-countable space closure is given by sequences; the counterexample without first countability
+  - continuity via open sets, closed sets, closure and neighbourhoods are equivalent
+  - universal properties of the subspace and product topologies
+  - limits are unique in a Hausdorff space; metric spaces are Hausdorff
+  - closed subset of compact is compact; compact subset of Hausdorff is closed
+  - tube lemma; a finite product of compact spaces is compact
+  - a continuous bijection from a compact space to a Hausdorff space is a homeomorphism
+  - (optional section) universal property of the quotient topology; [0,1]/(0∼1) ≅ S¹
+  key_examples:
+  - 'cofinite topology on an infinite set: compact, not Hausdorff, every sequence of distinct points converges to
+    every point'
+  - 'cocountable topology on ℝ: convergent sequences are eventually constant, yet closure is not sequential'
+  - Sorgenfrey line
+  - 'indiscrete topology: not metrizable'
+  - '[0,1) → S¹, t ↦ e^{2πit}: continuous bijection, not a homeomorphism'
+  - 'ℝ^[0,1] with the product topology: pointwise convergence, not first countable'
+  - (optional section) the line with two origins; the torus as [0,1]²/∼ and as S¹×S¹
+  exit_checks:
+  - Show that the cofinite topology on ℝ is not metrizable
+  - Prove that a continuous bijection from a compact space to a Hausdorff space is a homeomorphism, and show both
+    hypotheses are needed
+  - Find the error in a 'proof' that sequential closure equals closure in every topological space
+  optional: false
+  note: 'Route R2 (roadmap A2; decision 8 amended): general topology in one block, just before its users (riesz-markov
+    needs locally compact Hausdorff spaces; weak-topologies-alaoglu needs products and Tychonoff). Merges the former
+    Part II chapters topological-spaces and compactness-quotients; every metric version from Part II is recalled
+    explicitly (spiral). Products are arbitrary, so that weak-topologies-alaoglu can state Tychonoff directly; Tychonoff
+    itself stays there with Zorn. The quotient-gluing material is an optional section: nothing in analysis uses
+    it. Homotopy is not needed (global-cauchy-theory defines it).'
+- num: 61
+  part: VI
+  slug: separation-urysohn-lch
+  title: Separation, Urysohn–Tietze and Locally Compact Spaces
+  pages: 38
+  sources:
+  - - MUN.4
+    - §31 separation axioms, §32 normal spaces, §33 Urysohn lemma, §35 Tietze extension
+  - - MUN.3
+    - §29 local compactness, one-point compactification
+  - - FOL.4
+    - §4.5 LCH Urysohn, C_c, C_0, partitions of unity
+  - - SSB.2
+    - separation axioms and their standard counterexamples
+  outline:
+  - 'The problem ahead: Riesz–Markov builds a measure from a functional on C_c(X), which needs continuous functions
+    with prescribed values on compact and closed sets'
+  - 'Separation axioms: regular and normal spaces; metric spaces and compact Hausdorff spaces are normal; the metric
+    Urysohn function of compactness-connectedness recalled'
+  - Urysohn's lemma for normal spaces (dyadic-rational construction)
+  - 'The Tietze extension theorem for normal spaces: the metric proof of Part II transplanted'
+  - Locally compact Hausdorff spaces; the one-point compactification; supports, C_c(X) and C_0(X); C_0(X) is the
+    sup-norm closure of C_c(X)
+  - LCH Urysohn (K ≺ f ≺ U) and finite partitions of unity subordinate to an open cover of a compact set
+  - 'Countability in brief: second countable and σ-compact LCH spaces (ℝᵈ and its open subsets); Urysohn metrization
+    stated'
+  must_prove:
+  - metric spaces and compact Hausdorff spaces are normal
+  - Urysohn's lemma
+  - Tietze extension theorem (real-valued, closed subset of a normal space)
+  - the one-point compactification of an LCH space is compact Hausdorff
+  - LCH Urysohn lemma
+  - partitions of unity on a compact subset of an LCH space
+  - C_0(X) is the closure of C_c(X) in the sup norm
+  key_examples:
+  - distance-function Urysohn functions in ℝᵈ (recalled)
+  - ℝⁿ ∪ {∞} ≅ Sⁿ; ℕ ∪ {∞} ≅ {0} ∪ {1/n}
+  - an infinite-dimensional normed space is not locally compact (Part II's ℓ²); ℚ is not locally compact
+  - the Sorgenfrey plane is not normal (statement, SSB)
+  exit_checks:
+  - Prove Urysohn's lemma for normal spaces
+  - Derive Tietze from Urysohn with the uniform-approximation argument
+  - Prove the LCH Urysohn lemma and build a partition of unity subordinate to a cover of a compact set
+  optional: false
+  note: 'Second chapter of the topology block (route R2; decision 8 amended). Replaces the former Part IV chapter
+    urysohn-tietze: Part IV now uses only the metric Urysohn function and metric Tietze theorem of compactness-connectedness
+    (Lusin, C_c density in ℝᵈ). Keep it lean: no Tychonoff (weak-topologies-alaoglu), metrization stated only. riesz-markov
+    reuses the LCH Urysohn lemma and partitions of unity.'
+- num: 62
   part: VI
   slug: banach-spaces-lp-duality
   title: Banach Spaces, Dual Spaces and the Dual of Lᵖ
@@ -3911,7 +4184,7 @@ chapters:
   note: Opens the Part with Lᵖ duality as decided (decisions.md 9). Proof via Radon–Nikodym ties directly to Part
     IV; Brezis's uniform-convexity proof appears later in weak-topologies-alaoglu as a second proof. Folland §6.2
     is the natural extra reference, but FOL.6 is a Part IV node.
-- num: 61
+- num: 63
   part: VI
   slug: riesz-markov
   title: Radon Measures and the Dual of C₀(X)
@@ -3944,10 +4217,10 @@ chapters:
   - Prove Riesz–Markov for C(K), K compact metric (outline allowed for general LCH)
   - Show the unit ball of M([0,1]) contains δ-measures at distance 2 from each other, so M([0,1]) is not separable
   optional: false
-  note: Riesz–Markov is placed in Part VI per decisions.md 9. It uses only Part IV measure construction and Urysohn,
-    not Hahn–Banach, so it can precede hahn-banach; outline-level proof is allowed by the curriculum but the C(K),
-    K compact metric case should be complete.
-- num: 62
+  note: Riesz–Markov is placed in Part VI per decisions.md 9. It uses Part IV's measure construction and the LCH
+    Urysohn lemma and partitions of unity of separation-urysohn-lch, not Hahn–Banach, so it can precede hahn-banach;
+    outline-level proof is allowed by the curriculum but the C(K), K compact metric case should be complete.
+- num: 64
   part: VI
   slug: hahn-banach
   title: The Hahn–Banach Theorems
@@ -3997,7 +4270,7 @@ chapters:
   optional: false
   note: 'Duality arguments (decisions.md 14) are named here: test against functionals. Zorn''s lemma is proved here
     from ax-choice (Part 0 main line) and is then cited by Tychonoff in weak-topologies-alaoglu.'
-- num: 63
+- num: 65
   part: VI
   slug: baire-category-operators
   title: Baire Category and the Fundamental Theorems for Operators
@@ -4040,7 +4313,7 @@ chapters:
   optional: false
   note: Second appearance of Baire (first in Part II with nowhere-differentiable functions); the text explicitly
     recalls it. Placed before weak topologies because weakly convergent sequences are bounded only by the UBP.
-- num: 64
+- num: 66
   part: VI
   slug: weak-topologies-alaoglu
   title: Weak Topologies, Tychonoff and Banach–Alaoglu
@@ -4097,10 +4370,11 @@ chapters:
   - Prove Banach–Alaoglu for separable X by a diagonal argument, then generally via Tychonoff
   - Show that c₀ is not reflexive and that L¹ is not a dual space
   optional: false
-  note: 'Third and last piece of point-set topology (decisions.md 8): Tychonoff sits immediately before Banach–Alaoglu,
-    with the diagonal proof for the separable case. Closes the ''moved out of measure theory'' block (Lᵖ duality,
+  note: 'Tychonoff sits here, immediately before Banach–Alaoglu, with the diagonal proof for the separable case
+    (decision 8 amended: general topology is the Part VI block topological-spaces-compactness and separation-urysohn-lch,
+    and Tychonoff joins it here because it needs Zorn). Closes the ''moved out of measure theory'' block (Lᵖ duality,
     Riesz–Markov, weak/weak*). Spiral: compactness row, Lᵖ/weak* column.'
-- num: 65
+- num: 67
   part: VI
   slug: hilbert-spaces
   title: Hilbert Spaces
@@ -4147,7 +4421,7 @@ chapters:
   note: 'Abstract Hilbert space theory lives here (decisions.md 9); Part IV used only the L² projection. Lax–Milgram
     is proved here and applied in the capstone. Placed after the Banach-space chapters so Hilbert spaces are seen
     as the reflexive, self-dual special case (spiral: Hilbert column).'
-- num: 66
+- num: 68
   part: VI
   slug: compact-operators-spectral
   title: Compact Operators, the Fredholm Alternative and the Spectral Theorem
@@ -4208,8 +4482,9 @@ chapters:
   optional: false
   note: Merges compact operators and the compact spectral theorem to keep the Part near the chapter budget. Unbounded
     operators, Hille–Yosida and the general spectral theorem are out of scope (see cut). The vibrating-string example
-    is the one-dimensional rehearsal of the capstone.
-- num: 67
+    is the one-dimensional rehearsal of the capstone. The Sturm–Liouville preview of linear-odes-flows (Part II)
+    is recalled here and answered.
+- num: 69
   part: VI
   slug: gelfand-theory
   title: Banach Algebras and Gelfand Theory
@@ -4247,7 +4522,7 @@ chapters:
   note: 'Optional chapter (decisions.md 13): ideals and quotients are introduced here just in time. Placed after
     compact-operators-spectral (spectrum, resolvent) so the main line from there to the capstone is uninterrupted;
     nothing later depends on it.'
-- num: 68
+- num: 70
   part: VI
   slug: distributions
   title: Distributions
@@ -4302,12 +4577,13 @@ chapters:
   optional: false
   note: Locally convex spaces are used for 𝒟 and 𝒮 only (curriculum b); the inductive-limit topology is handled
     through sequential convergence plus a short appendix-style section. Tensor products and convolution of two general
-    distributions (FJ ch. 4, 5.3) are cut.
-- num: 69
+    distributions (FJ ch. 4, 5.3) are cut. ΔΦ = δ uses the divergence theorem and Green's identities of surfaces-divergence-theorem
+    (Part IV).
+- num: 71
   part: VI
   slug: tempered-distributions-fourier
   title: Tempered Distributions, the Fourier Transform and Plancherel
-  pages: 55
+  pages: 62
   sources:
   - - FOL.8
     - §8.3 the Fourier transform on L¹ and L²
@@ -4320,6 +4596,10 @@ chapters:
     - §1.4–1.5, §2.1 tempered distributions, Fourier transform, Hilbert transform and p.v. 1/x
   - - FOL.9
     - §9.2 compactly supported, tempered and periodic distributions
+  - - FOL.10
+    - §10.3 the central limit theorem via characteristic functions (optional section)
+  - - SS4.5
+    - §2.4–2.5 the central limit theorem, random variables in ℝᵈ (optional section)
   outline:
   - The Schwartz space as a Fréchet space (Part III recalled); density of C_c^∞
   - 'The Fourier transform on L¹ in the Lebesgue setting: Riemann–Lebesgue and inversion'
@@ -4328,12 +4608,16 @@ chapters:
   - 'The Fourier transform on 𝒮′: 𝔉δ = 1, derivatives ↔ multiplication, 𝔉(p.v. 1/x)'
   - Convolution theorem; periodic distributions and Poisson summation
   - 'Solving constant-coefficient equations: heat equation and the Paley–Wiener theorem (statement)'
+  - '(Optional) Fourier transforms of finite measures: characteristic functions, weak convergence of probability
+    measures (weak* convergence in M(ℝᵈ) = C₀(ℝᵈ)* plus tightness), Lévy''s continuity theorem, Prokhorov''s theorem,
+    and the central limit theorem again'
   must_prove:
   - 𝔉 is a continuous isomorphism of 𝒮 and of 𝒮′
   - Plancherel's theorem on L²(ℝⁿ)
   - Riemann–Lebesgue for L¹
   - 𝔉(p.v. 1/x) = −iπ sgn ξ
   - 𝔉(u*φ) = û φ̂ for u ∈ 𝒮′, φ ∈ 𝒮
+  - (optional section) Lévy's continuity theorem, and the CLT via characteristic functions
   key_examples:
   - 𝔉δ = 1 and 𝔉1 = δ
   - e^{x} is a distribution but not tempered
@@ -4345,8 +4629,48 @@ chapters:
   - Compute the Fourier transform of p.v. 1/x and of the Heaviside function
   optional: false
   note: 'Spiral from Part III: Fourier on 𝒮 is recalled, not redone; the new content is L¹/L² in the Lebesgue setting
-    and the extension to 𝒮′.'
-- num: 70
+    and the extension to 𝒮′. The optional last section (route R3) is the characteristic-function half of probability:
+    it uses probability-measure-spaces (Part IV), riesz-markov and the weak* topology of weak-topologies-alaoglu.'
+- num: 72
+  part: VI
+  slug: interpolation
+  title: 'Interpolation: Riesz–Thorin, Young and Hausdorff–Young'
+  pages: 26
+  sources:
+  - - SS4.2
+    - §1 early motivations, §2 the Riesz interpolation theorem and its examples, §3.1 the L² formalism of the Hilbert
+      transform, §4 maximal functions and weak-type estimates (comparison)
+  - - FOL.6
+    - §6.5 interpolation of Lᵖ spaces (Riesz–Thorin and its corollaries)
+  outline:
+  - 'The question: Plancherel gives ‖f̂‖₂ = ‖f‖₂ and trivially ‖f̂‖_∞ ≤ ‖f‖₁; what happens for 1 < p < 2? Operators
+    bounded at two endpoints'
+  - Hadamard's three-lines lemma (Phragmén–Lindelöf on a strip, recalled from global-cauchy-theory)
+  - 'The Riesz–Thorin theorem: complex interpolation of Lᵖ norms, on simple functions first, then by density'
+  - 'Consequences: Young''s convolution inequality ‖f*g‖_r ≤ ‖f‖_p‖g‖_q; Hausdorff–Young on ℝⁿ and on 𝕋; the exponents
+    forced by scaling'
+  - 'Real versus complex interpolation: Marcinkiewicz (lebesgue-differentiation) beside Riesz–Thorin'
+  - 'The Hilbert transform on L² through Plancherel (the multiplier −i sgn ξ) and the statement of its Lᵖ bounds:
+    the entry to the harmonic-analysis branch'
+  must_prove:
+  - Hadamard's three-lines lemma
+  - the Riesz–Thorin interpolation theorem
+  - Young's convolution inequality for 1 + 1/r = 1/p + 1/q
+  - Hausdorff–Young ‖f̂‖_{p′} ≤ ‖f‖_p for 1 ≤ p ≤ 2, on ℝⁿ and on 𝕋
+  - the Hilbert transform is unitary on L²(ℝ)
+  key_examples:
+  - dilated Gaussians force the exponent p′ in Hausdorff–Young
+  - Hausdorff–Young fails for p > 2 (a function in Lᵖ(𝕋), p > 2, whose coefficients are not in ℓ^{p′})
+  - 'the Hilbert transform of 1_[0,1] is (1/π) log|x/(x−1)|: no L^∞ bound'
+  exit_checks:
+  - Prove Riesz–Thorin from the three-lines lemma
+  - Deduce Hausdorff–Young and show by scaling that its exponent cannot be improved
+  optional: false
+  note: 'Route R5b (roadmap A5): the harmonic-analysis on-ramp, kept short. Placed after tempered-distributions-fourier
+    because Hausdorff–Young completes the Lᵖ story of Plancherel; nothing later in Part VI depends on it, so a reader
+    aiming only at the capstone may postpone it. Cross-links: Phragmén–Lindelöf (Part V) and Marcinkiewicz (Part
+    IV). Calderón–Zygmund theory and the Lᵖ bounds of the Hilbert transform are stated only (branch).'
+- num: 73
   part: VI
   slug: sobolev-spaces
   title: Sobolev Spaces
@@ -4387,7 +4711,7 @@ chapters:
   optional: false
   note: Traces, Poincaré, H¹₀ and compactness are the next chapter. Brezis's one-dimensional chapter is the gentle
     entry; Evans supplies the n-dimensional statements.
-- num: 71
+- num: 74
   part: VI
   slug: poincare-rellich
   title: H¹₀, the Poincaré Inequality and Rellich Compactness
@@ -4407,7 +4731,8 @@ chapters:
   - 'Compactness in Lᵖ: the Kolmogorov–Riesz criterion (spiral with Arzelà–Ascoli)'
   - Rellich on the torus via Fourier coefficients, and on an interval
   - Rellich–Kondrachov for H¹₀(Ω), Ω bounded; the general W^{1,p}(Ω) statement with extension
-  - Traces on C¹ domains (outline) and H¹₀ as the kernel of the trace
+  - Traces on C¹ domains, using the surface measure and divergence theorem of surfaces-divergence-theorem (proof
+    for the half-space, localization outlined), and H¹₀ as the kernel of the trace
   - 'The dual space H^{−1} and −Δ: H¹₀ → H^{−1} as a preview of the capstone'
   must_prove:
   - Poincaré inequality on H¹₀(Ω) for bounded Ω
@@ -4424,8 +4749,9 @@ chapters:
   optional: false
   note: 'The capstone needs only H¹₀(Ω), for which Rellich follows from extension by zero and Kolmogorov–Riesz with
     no boundary regularity; the W^{1,p}(Ω) version with extension operators is stated. Spiral table: compactness
-    row, Lᵖ column (Alaoglu; Kolmogorov–Riesz; Rellich).'
-- num: 72
+    row, Lᵖ column (Alaoglu; Kolmogorov–Riesz; Rellich). Traces use surface measure on ∂Ω from surfaces-divergence-theorem
+    (Part IV), which is what makes the trace statement precise.'
+- num: 75
   part: VI
   slug: dirichlet-capstone
   title: 'Capstone: The Dirichlet Problem and the Dirichlet-Laplacian Eigenbasis'
@@ -4451,7 +4777,10 @@ chapters:
   - 'The Dirichlet-Laplacian eigenbasis: 0 < λ₁ ≤ λ₂ ≤ … → ∞, eigenfunctions an orthonormal basis of L²(Ω); Rayleigh
     quotient for λ₁'
   - 'Back to classical solutions: interior regularity (outline) and Weyl''s lemma'
-  - A mixed qualifying exam across Parts IV–VI
+  - 'Gate VI (Parts IV–VI; replaces the former mixed-qualifying-exam section): a mixed 3-hour qualifying exam; timed
+    and closed-book, solutions folded; a marking scheme per problem (key steps with points, common fatal errors),
+    a pass line (≥ 70% overall, no core problem at 0) and an @ref remediation map from each problem to the sections
+    it tests. Problems are original, in qualifying-exam style, never copied'
   must_prove:
   - existence and uniqueness of a weak solution u ∈ H¹₀(Ω) of −Δu = f for f ∈ L²(Ω) (or H^{−1})
   - energy estimate ‖u‖_{H¹₀} ≤ C‖f‖
@@ -4470,5 +4799,7 @@ chapters:
   - 'Capstone 3: a mixed qualifying exam (UCLA real/complex level plus Cambridge Part II functional analysis)'
   optional: false
   note: 'Final chapter of the book. Everything is assembled: Hilbert spaces (Lax–Milgram), Sobolev (H¹₀, Poincaré),
-    compactness (Rellich), spectral theory (compact self-adjoint). Evans 6.3 boundary regularity and 6.4 maximum
-    principles are out of scope; interior regularity is outlined only.'
+    compactness (Rellich), spectral theory (compact self-adjoint), and the divergence theorem and Green''s identities
+    of surfaces-divergence-theorem (Part IV) for ''back to classical solutions''. Evans 6.3 boundary regularity
+    and 6.4 maximum principles are out of scope; interior regularity is outlined only (interior H² regularity is
+    roadmap A9, still open). The last section is Gate VI (reader B2).'

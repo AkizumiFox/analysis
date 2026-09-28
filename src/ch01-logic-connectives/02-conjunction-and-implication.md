@@ -150,16 +150,17 @@ Decide whether each of the following is a derivation, and if so, what it shows.
 ::: {.enumerate options="label=(\alph*)"}
 1. The single line \( 1 \quad P \quad \text{premise} \).
 2. The two lines below, which have no premises.
-```{=latex}
-\begin{center}
-$\begin{nd}
-  \open
-  \hypo {1} {P}
-  \close
-  \have {2} {P \to P} \ii{1-1}
-\end{nd}$
-\end{center}
-```
+
+   ```{=latex}
+   \begin{center}
+   $\begin{nd}
+     \open
+     \hypo {1} {P}
+     \close
+     \have {2} {P \to P} \ii{1-1}
+   \end{nd}$
+   \end{center}
+   ```
 3. The derivation of \( P \to R \) from \( P \to Q \) and \( Q \to R \), shown after @def-rules-implication.
 :::
 :::
@@ -177,6 +178,7 @@ A single-line box, as in (b), is legal and occasionally useful. It is also the d
 Now change that derivation of \( P \to R \) by one line, as a careless writer might.
 ```{=latex}
 \begin{center}
+% expect-invalid: a deliberately flawed derivation (a line cites a closed box)
 $\begin{nd}
   \hypo {1} {P \to Q}
   \hypo {2} {Q \to R}
@@ -301,7 +303,7 @@ Each derived result can now be used as a **derived rule**. If \( \Gamma \vdash P
 
 ## What the rules sound like
 
-Every rule is something mathematicians already say. The table below pairs each rule of this section with the sentence that uses it in a written proof, and, for readers who meet a proof assistant, with the Lean tactic that performs it. Nothing later in the book depends on the last column.
+Every rule is something mathematicians already say. The table below pairs each rule of this section with the sentence that uses it in a written proof, and, for readers who meet a proof assistant, with the Lean code that performs it: a tactic such as `intro`, or a term such as `h.1`, which names the left half of `h`. Nothing later in the book depends on the last column.
 
 | Rule | You write | Lean |
 |------|--------------------------------------|------------------------|
@@ -454,6 +456,7 @@ In prose: *Suppose \( \abs{x - 2} < 1 \). Then \( x > 1 \) by the first fact, an
 A student offers the following derivation, claiming it shows \( P \to Q, \; Q \to R \vdash R \).
 ```{=latex}
 \begin{center}
+% expect-invalid: a deliberately flawed derivation (a line cites a closed box)
 $\begin{nd}
   \hypo {1} {P \to Q}
   \hypo {2} {Q \to R}
