@@ -644,3 +644,44 @@ $\begin{nd}
 \end{nd}$
 \end{center}
 ```
+
+### N23 s06 B3 replacement: P -> (Q -> R), P -> (R -> S) |- P -> (Q -> S) (10 lines; replaces D43 = H&R 1.2.1(k) curried)
+
+```{=latex}
+\begin{center}
+$\begin{nd}
+  \hypo {1} {P \to (Q \to R)}
+  \hypo {2} {P \to (R \to S)}
+  \open
+    \hypo {3} {P}
+    \have {4} {Q \to R} \ie{1,3}
+    \have {5} {R \to S} \ie{2,3}
+    \open
+      \hypo {6} {Q}
+      \have {7} {R} \ie{4,6}
+      \have {8} {S} \ie{5,7}
+    \close
+    \have {9} {Q \to S} \ii{6-8}
+  \close
+  \have {10} {P \to (Q \to S)} \ii{3-9}
+\end{nd}$
+\end{center}
+```
+
+### N24 s06 B1(a) replacement: P and (Q -> R) |- (P -> Q) -> R (7 lines)
+
+```{=latex}
+\begin{center}
+$\begin{nd}
+  \hypo {1} {P \wedge (Q \to R)}
+  \open
+    \hypo {2} {P \to Q}
+    \have {3} {P} \ae{1}
+    \have {4} {Q} \ie{2,3}
+    \have {5} {Q \to R} \ae{1}
+    \have {6} {R} \ie{5,4}
+  \close
+  \have {7} {(P \to Q) \to R} \ii{2-6}
+\end{nd}$
+\end{center}
+```
