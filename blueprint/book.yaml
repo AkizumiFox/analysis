@@ -1147,9 +1147,12 @@ chapters:
   - Prove that equivalence classes partition the set
   - Find the error in a flawed induction proof and name the step that fails
   optional: false
-  note: ℕ with induction and the well-ordering principle is taken as given here; its construction is optional (zf-and-natural-numbers).
+  note: 'ℕ with induction and the well-ordering principle is taken as given here; its construction is optional (zf-and-natural-numbers).
     The orders section plants upper bounds and greatest elements so that Part I ch 1 (sup, LUB axiom) can recall
-    them.
+    them. DECIDED 2026-09-28: induction is stated as ax-induction in Chapter 2 (semantics-soundness-completeness),
+    which also proves thm-strong-induction and thm-structural-induction; this chapter cites them and does not re-derive
+    them. It keeps well-ordering (and its equivalence with induction), definition by recursion on ℕ, and the pitfalls
+    of induction.'
 - num: 7
   part: '0'
   slug: countable-and-uncountable

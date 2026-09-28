@@ -432,7 +432,7 @@
    "ch": "1",
    "title": "Propositional logic",
    "pages": 92,
-   "files": null,
+   "files": "003-021",
    "pp": "1–92"
   },
   "HR.2": {
@@ -441,7 +441,7 @@
    "ch": "2",
    "title": "Predicate logic",
    "pages": 79,
-   "files": null,
+   "files": "022-036",
    "pp": "93–171"
   },
   "HAL.1": {

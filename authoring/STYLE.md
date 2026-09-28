@@ -335,7 +335,7 @@ These come from the planning record (`authoring/design/decisions.md`, `curriculu
 - **The spiral is written out.** When a concept returns at a higher stage (compactness on ℝ, then in a metric space, then weakly), the opening frame of the section recalls the earlier version with `@label` and says in one sentence what changes and what survives. The spiral table in `curriculum.md` lists the returns.
 - **Motivating problems come first.** Each chapter's `index.md` names the concrete problem that forces the chapter's main abstraction. A section never introduces a notion without saying what problem it answers (§3, step 2).
 - **Proof verification is practised.** At least one exercise per chapter (usually a C item) gives a flawed proof and asks for the exact line that fails and the reason; at least one such argument per chapter has a **true** conclusion (§11.3). In Part 0 the reason names the natural-deduction rule broken; after Part 0 it names the missing hypothesis or the illegal step.
-- **Self-explanation prompts.** For the three or four hardest proofs of a chapter, the Idea ends with a prompt such as "*Before reading on: where will compactness be used?*" or "*Self-explain lines 3–5.*" (at most one per proof). From Chapter 2 on they remind the reader of a trained habit (§11.1).
+- **Self-explanation prompts.** For the three or four hardest proofs of a chapter, the Idea ends with a prompt such as "*Before reading on: where will compactness be used?*" or "*Self-explain lines 3–5.*" (at most one per proof). From Chapter 5 on they remind the reader of a trained habit (§11.1).
 - **Part 0's rule tags.** In Part 0 only, proofs may annotate steps with the natural-deduction rule in small caps in brackets (e.g. `[∀I]`, `[∃E]`). Later Parts do not, but the "what is not allowed" catalogue of Part 0 is cited (`@...`) when a warning concerns one of its errors.
 - **Choice and non-constructive steps are flagged in prose.** Where a proof uses the axiom of choice (countable unions, Vitali, Hahn–Banach, Tychonoff) or a genuinely non-constructive step discussed in the excluded-middle section, one clause says so. Do not dwell on it.
 - **The companion book.** Linear algebra is cited as "the linear-algebra companion, Chapter N" in prose, never re-proved and never `@ref`ed.
@@ -380,6 +380,7 @@ The flawed argument is written to be plausible: the error sits in one line, and 
 
 Rules:
 - The problem text **never names its source chapter**; the solution does, with `@ref`.
+- **Early chapters.** Where the book has too few earlier chapters (Chapter 1 has none; Chapters 2–4 have no earlier Part), R items reach back as far as the book allows, within the chapter if need be, spaced as far apart as possible.
 - Each item takes at most 20 minutes.
 - Prefer results that later chapters rarely cite in proofs: a heavily cited result is reviewed for free, a dormant one is forgotten.
 
