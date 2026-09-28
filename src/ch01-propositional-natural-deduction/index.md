@@ -24,5 +24,5 @@ This chapter answers such questions for the connectives "and", "or", "implies", 
 - **Use a premise by its main connective.** Its elimination rule says what you may do with it.
 - **Open a box, close a box.** An assumption lives exactly as long as its box.
 - **Work from both ends.** Premises at the top, the goal at the bottom; fill the gap from both sides.
-- **When stuck, assume the negation of the goal** (RAA), and hunt for a clash among the available lines.
+- **When stuck, assume the negation of the goal** (\( \rulename{RAA} \)), and hunt for a clash among the available lines.
 - **Use a derived rule as one line.** A sequent already proved is a new rule.

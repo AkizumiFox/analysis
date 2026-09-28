@@ -83,7 +83,7 @@ Therefore \( \nN \) is not bounded above. Unwinding the definition (@def-bounded
 Each hypothesis of the axiom was used and named: "non-empty" through \( 1 \in \nN \), "bounded above" through the assumption for contradiction. The inductive property of \( \nN \) supplied the jump \( n \mapsto n + 1 \).
 
 ::: {.remark}
-The contradiction step is \( \rulename{\neg I} \) (@def-rules-negation), not \( \rulename{RAA} \), the classical rule of proof by contradiction that Chapter 1 adds after the rules for negation: we assumed "\( \nN \) is bounded above", reached a contradiction, and concluded its negation. The proof does contain a classical step, but it comes after the \( \rulename{\neg I} \), in the proof's last paragraph. Passing from "not every \( n \) satisfies \( n \le x \)" to "some \( n \) satisfies \( n > x \)" is the quantifier law "not all" gives "some not" of Chapter 3, and that law is derived there with \( \rulename{RAA} \).
+The contradiction step is \( \rulename{\neg I} \) (@def-rules-negation), not \( \rulename{RAA} \) (@def-rule-raa), the classical rule of proof by contradiction: we assumed "\( \nN \) is bounded above", reached a contradiction, and concluded its negation. The proof does contain a classical step, but it comes after the \( \rulename{\neg I} \), in the proof's last paragraph. Passing from "not every \( n \) satisfies \( n \le x \)" to "some \( n \) satisfies \( n > x \)" is the quantifier law "not all" gives "some not" of Chapter 3, and that law is derived there with \( \rulename{RAA} \).
 :::
 
 The form we will use most often puts a small number, not a large one, in the role of \( x \).

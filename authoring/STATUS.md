@@ -19,10 +19,11 @@ is rewritten as `propositional-natural-deduction`; its prose still carries the o
 
 | Ch | Slug | State |
 |---|---|---|
-| 1 | propositional-natural-deduction | pilot drafted as `logic-connectives` 2026-09-27 (7 sections, ~26.6k words); referee findings (research-production §3.1) fixed 2026-09-28 (roadmap C1); to be rewritten to the new four-chapter logic plan (blueprint being re-authored); labels `thm-sqrt2-irrational`, `def-rule-raa`, `prp-contrapositive` stay in Chapter 1 |
-| 2–4 | semantics-soundness-completeness, predicate-logic, from-derivations-to-prose | blueprints being authored |
-| 10 | least-upper-bound | pilot: drafted 2026-09-27 as Chapter 8 (7 sections, ~24.2k words); referee findings (research-production §3.1) fixed 2026-09-28 (roadmap C1); renumbered to 10 on 2026-09-28; awaiting author review |
-| all others | see `blueprint/book.yaml` | not started |
+| 1 | propositional-natural-deduction | rewritten to the four-chapter logic plan 2026-09-28 (7 sections, ~34k words, 104 checked derivations); S2 blueprint, S3 draft, S4 gates, S5 referees A/B, S6 exercises, S7 revision + fresh re-check, S8 seam all passed; **awaiting author review (S9)** — candidate exemplar for Part 0 |
+| 10 | least-upper-bound | pilot drafted 2026-09-27; renumbered 2026-09-28; retrofitted to STYLE §11 2026-09-28 (sidecars, R group, ledgers, Time line); **awaiting author review** — candidate exemplar for Parts I–VI; needs a full S5–S8 pass after the retrofit |
+| 2, 3, 4 | logic block | hand-written blueprints, S2 passed 2026-09-28; not drafted |
+| 5, 6, 7 | sets, relations and induction, cardinality (Gate 0) | hand-written blueprints 2026-09-28; S2 pending |
+| all others | see `blueprint/book.yaml` | generated blueprints; not started |
 
 ## Forward promises
 

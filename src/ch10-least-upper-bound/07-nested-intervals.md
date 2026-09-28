@@ -453,7 +453,7 @@ r^2 = 2 + 2\sqrt2 \sqrt3 + 3 = 5 + 2\sqrt6 ,
 \]
 so \( \sqrt6 = (r^2 - 5)/2 \) is rational, because the rationals are closed under the field operations. But no rational number has square \( 6 \) (@exr-negation-and-contradiction-c1). Hence \( r \) is irrational \( [\rulename{\neg I}] \).
 
-Chapter 1 could prove only the negative half: no rational squares to \( 6 \). With @thm-nth-root the number \( \sqrt6 \) exists in \( \nR \), and the negative statement becomes the positive one, "\( \sqrt6 \) is irrational", which is what the argument uses.
+Chapter 1 could prove only the negative half: no rational squares to \( 6 \) (@exr-negation-and-contradiction-c1). With @thm-nth-root the number \( \sqrt6 \) exists in \( \nR \), and the negative statement becomes the positive one, "\( \sqrt6 \) is irrational", which is what the argument uses.
 :::
 
 ::: {#exr-nested-intervals-r4}
