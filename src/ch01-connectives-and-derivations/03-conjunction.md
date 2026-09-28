@@ -85,7 +85,7 @@ Line 2 is \( P \wedge Q \) and line 5 is \( R \). Which line does "\( \rulename{
 
 **Why these rules.** They are exactly the two moves of the opening paragraph, "prove both" and "use either", and nothing more. Section 1.1's slogan said that each connective comes with a way to prove it and a way to use it; for \( \wedge \), the way to prove it is \( \rulename{\wedge I} \) and the way to use it is \( \rulename{\wedge E} \).
 
-**Why they are safe.** If the given lines are true statements, so is the new line: if \( \varphi \) and \( \psi \) are both true, so is \( \varphi \wedge \psi \), and if \( \varphi \wedge \psi \) is true, so is each conjunct. Chapter 3 proves this property for every rule of the calculus at once, and calls it soundness.
+**Why they are safe.** If the given lines are true statements, so is the new line: if \( \varphi \) and \( \psi \) are both true, so is \( \varphi \wedge \psi \), and if \( \varphi \wedge \psi \) is true, so is each conjunct. Chapter 3 proves this property for every rule of the calculus at once, and calls it soundness (@thm-soundness).
 
 ## Two directions of reasoning
 
@@ -300,7 +300,7 @@ $\begin{nd}
 \end{center}
 ```
 
-The recipe visibly does not depend on these particular letters or brackets. Take the premise apart with \( \rulename{\wedge E} \) until only letters remain, then build the goal from the letters with \( \rulename{\wedge I} \), inside out. It works whenever the premise and the goal are both built from letters by \( \wedge \) alone and every letter of the goal occurs in the premise, whatever the bracketing and the order on either side. So "\( \wedge \) is commutative and associative" is, in the end, the observation that \( \rulename{\wedge E} \) can always take a conjunction down to its letters and \( \rulename{\wedge I} \) can always build one back up. (Chapter 3's completeness theorem gives another reason, from the truth tables.)
+The recipe visibly does not depend on these particular letters or brackets. Take the premise apart with \( \rulename{\wedge E} \) until only letters remain, then build the goal from the letters with \( \rulename{\wedge I} \), inside out. It works whenever the premise and the goal are both built from letters by \( \wedge \) alone and every letter of the goal occurs in the premise, whatever the bracketing and the order on either side. So "\( \wedge \) is commutative and associative" is, in the end, the observation that \( \rulename{\wedge E} \) can always take a conjunction down to its letters and \( \rulename{\wedge I} \) can always build one back up. (Chapter 3's completeness theorem, @thm-completeness, gives another reason, from the truth tables.)
 
 ## How this looks in a mathematical proof
 
@@ -530,7 +530,7 @@ If it is \( \rulename{\wedge E} \), citing line \( i \), then its statement is o
 
 Either way line \( k \) does not contain \( R \), which contradicts the choice of \( k \). So no line contains \( R \). In particular no such derivation has the last line \( P \wedge R \), and \( P \wedge Q \vdash P \wedge R \) cannot be shown with these rules.
 
-The argument, "look at the first bad line; it cannot be a premise, and no rule can create it from good lines", is an argument by induction on the lines of a derivation. Chapter 3 makes such arguments exact.
+The argument, "look at the first bad line; it cannot be a premise, and no rule can create it from good lines", is an argument by induction on the lines of a derivation. Chapter 3 makes such arguments exact (@thm-strong-induction); the proof of @thm-soundness is one.
 
 **Marking scheme.** (10 points)
 

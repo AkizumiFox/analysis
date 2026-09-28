@@ -224,7 +224,7 @@ In words: there is a derivation with premise \( P \) and last line \( Q \), and 
 
 The degenerate example is \( P \dashv\vdash P \): the one-line derivation of part (a) of @exm-derivations serves in both directions. A first real example is \( P \vee Q \dashv\vdash Q \vee P \): @exm-disjunction-first-derivations shows \( P \vee Q \vdash Q \vee P \), and the same derivation with the letters exchanged shows the converse. By the same exchange, part (a) of @exm-iff-symmetric gives \( P \leftrightarrow Q \dashv\vdash Q \leftrightarrow P \).
 
-A minimal change gives a one-way street. @exm-double-negation-introduction derived \( P \vdash \neg\neg P \), but the converse, \( \neg\neg P \vdash P \), would have to remove two negations, and no rule met so far removes one. So we cannot claim \( P \dashv\vdash \neg\neg P \): the clause "\( Q \vdash P \)" is the one missing. (It holds once Section 2.5 adds its rule; that it cannot hold without that rule is true, and Chapter 3 proves it.) Likewise @prp-contrapositive derives \( \neg Q \to \neg P \) from \( P \to Q \), but not yet the reverse.
+A minimal change gives a one-way street. @exm-double-negation-introduction derived \( P \vdash \neg\neg P \), but the converse, \( \neg\neg P \vdash P \), would have to remove two negations, and no rule met so far removes one. So we cannot claim \( P \dashv\vdash \neg\neg P \): the clause "\( Q \vdash P \)" is the one missing. (It holds once Section 2.5 adds its rule; that it cannot hold without that rule is true, and Chapter 3 proves it: @thm-raa-independent.) Likewise @prp-contrapositive derives \( \neg Q \to \neg P \) from \( P \to Q \), but not yet the reverse.
 
 The connective \( \leftrightarrow \) and the relation \( \dashv\vdash \) are two sides of one idea; the next result makes the link exact, and shows that \( \dashv\vdash \) behaves as an equivalence should.
 
@@ -270,7 +270,7 @@ Here are equivalences derived so far. Each row gives two derived rules (@def-der
 The fourth row is distributivity of \( \wedge \) over \( \vee \) as a provable equivalence. Some familiar laws are not in the table, because the text has derived them in one direction only; associativity of \( \vee \) is one (@exm-disjunction-regroup).
 
 ::: {.warning}
-A sequent in one direction is not an equivalence. \( P \wedge Q \vdash P \) holds by \( \rulename{\wedge E} \), but \( P \vdash P \wedge Q \) does not: take \( P \): "\( 2 > 1 \)" and \( Q \): "\( 1 > 2 \)", and the premise is true while the conclusion is false. (A derivation never leads from true premises to a false conclusion; Chapter 3 proves this.) Before writing \( \dashv\vdash \), check that **both** derivations exist.
+A sequent in one direction is not an equivalence. \( P \wedge Q \vdash P \) holds by \( \rulename{\wedge E} \), but \( P \vdash P \wedge Q \) does not: take \( P \): "\( 2 > 1 \)" and \( Q \): "\( 1 > 2 \)", and the premise is true while the conclusion is false. (A derivation never leads from true premises to a false conclusion; Chapter 3 proves this, @thm-soundness.) Before writing \( \dashv\vdash \), check that **both** derivations exist.
 :::
 
 ## Proving an iff: two directions

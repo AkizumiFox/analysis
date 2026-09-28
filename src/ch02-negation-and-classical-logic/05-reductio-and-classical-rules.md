@@ -34,7 +34,7 @@ The second argument is not a curiosity. Three times already in this chapter a de
 
 Try the smallest case, \( P \) from \( \neg\neg P \). The goal \( P \) is a letter, so no introduction rule applies: the goal-directed moves have nothing to say. The premise \( \neg\neg P \) is a negation, and a negation can be used only by \( \rulename{\neg E} \), against the statement it negates, \( \neg P \). So we assume \( \neg P \) in a box. The box reaches \( \bot \) at once, and \( \rulename{\neg I} \) closes it with \( \neg\neg P \): the premise again. Every attempt goes round this circle.
 
-In fact no derivation of \( P \) from \( \neg\neg P \) uses only the rules of Chapter 1 and Sections 2.1–2.4. That is a claim about **all** derivations, and no search can prove it. Chapter 3 proves it, by reading statements with more than two truth values. For the other two stalls the same is true, but we state it without proof, and nothing in this book depends on it. Here we name the missing step and add it as a rule.
+In fact no derivation of \( P \) from \( \neg\neg P \) uses only the rules of Chapter 1 and Sections 2.1–2.4. That is a claim about **all** derivations, and no search can prove it. Chapter 3 proves it (@thm-raa-independent), by reading statements with more than two truth values. For the other two stalls the same is true, but we state it without proof, and nothing in this book depends on it. Here we name the missing step and add it as a rule.
 
 ## Reductio ad absurdum
 
@@ -306,7 +306,7 @@ $\begin{nd}
 The derivation has no premises, and \( \rulename{RAA} \) enters at line 9. This proves the proposition.
 :::
 
-The assumption \( \neg P \) of line 2 is used twice: at line 4 it makes the innermost box contradictory, and at line 8 it clashes with the \( P \) that line 7 obtained. Notice where the new box went: around the stalled box, not inside it. An assumption made one level out is available in every gap inside its box, and so it could give the stalled gap the line it lacked. Peirce's law contains no \( \neg \), yet our derivation uses \( \rulename{RAA} \): the classical rule is about more than negation. (That every derivation of it must use \( \rulename{RAA} \), or one of the two rules this section shows equivalent to it, is true, and Chapter 3 proves it, by the same reading with more than two truth values that settles \( \neg\neg P \vdash P \).)
+The assumption \( \neg P \) of line 2 is used twice: at line 4 it makes the innermost box contradictory, and at line 8 it clashes with the \( P \) that line 7 obtained. Notice where the new box went: around the stalled box, not inside it. An assumption made one level out is available in every gap inside its box, and so it could give the stalled gap the line it lacked. Peirce's law contains no \( \neg \), yet our derivation uses \( \rulename{RAA} \): the classical rule is about more than negation. (That every derivation of it must use \( \rulename{RAA} \), or one of the two rules this section shows equivalent to it, is true, and Chapter 3 proves it in the remark after @thm-raa-independent, by the same reading with more than two truth values that settles \( \neg\neg P \vdash P \).)
 
 ## De Morgan's laws
 
@@ -668,7 +668,7 @@ Written mathematics carries these rules in a handful of phrases. The Lean column
 
 (d) \( \rulename{\neg I} \): a box that opens with \( \varphi \) and reaches \( \bot \) gives \( \neg\varphi \). \( \rulename{RAA} \): a box that opens with \( \neg\varphi \) and reaches \( \bot \) gives \( \varphi \). The derivation of @prp-double-negation (a) uses \( \rulename{\neg I} \), with \( \neg P \) as the assumption, so its conclusion is the negation of \( \neg P \), namely \( \neg\neg P \).
 
-(e) \( \rulename{\vee I} \) would need \( \neg P \) or \( \neg Q \) on a line derived from the premise alone. Neither can be: with \( P \) true and \( Q \) false the premise is true and \( \neg P \) false, with \( P \) false and \( Q \) true the premise is true and \( \neg Q \) false, and the rules never lead from true premises to a false conclusion (proved in Chapter 3).
+(e) \( \rulename{\vee I} \) would need \( \neg P \) or \( \neg Q \) on a line derived from the premise alone. Neither can be: with \( P \) true and \( Q \) false the premise is true and \( \neg P \) false, with \( P \) false and \( Q \) true the premise is true and \( \neg Q \) false, and the rules never lead from true premises to a false conclusion (proved in Chapter 3, @thm-soundness).
 
 (f) Line 5 cites it, by \( \rulename{\neg E} \) against line 4, \( \neg P \vee \neg Q \); and line 9 cites it, by \( \rulename{\neg E} \) against line 8, the same statement. Both lines lie in boxes inside the box of line 2, which is still open, so the citations are legal.
 
@@ -921,7 +921,7 @@ $\begin{nd}
 
 (b) No. Line 6 fails: it cites line 3, the assumption of the first case box, lines 3–4, which closed before line 5. By the scope rule of @def-derivation, line 3 is not available at line 6. The form of \( \rulename{\neg E} \) is right; what is broken is availability. In words, the student used the assumption of one case inside the other case, where it has not been assumed.
 
-(c) The same move derives \( P \vee Q \vdash P \): split on the premise by \( \rulename{\vee E} \), with a first box that opens with \( P \) and ends there, and a second box that opens with \( Q \) and "repeats" \( P \) from the first. That sequent must not be derivable: with \( P \) false and \( Q \) true the premise is true and the conclusion false, and Chapter 3 proves that no derivation leads from true premises to a false conclusion. So citing a line of a sibling box is illegal in general, not just unlucky here.
+(c) The same move derives \( P \vee Q \vdash P \): split on the premise by \( \rulename{\vee E} \), with a first box that opens with \( P \) and ends there, and a second box that opens with \( Q \) and "repeats" \( P \) from the first. That sequent must not be derivable: with \( P \) false and \( Q \) true the premise is true and the conclusion false, and Chapter 3 proves that no derivation leads from true premises to a false conclusion (@thm-soundness). So citing a line of a sibling box is illegal in general, not just unlucky here.
 
 (d) Keep lines 1–5, and in the case \( \neg P \) we are stuck at the goal \( Q \), so we argue for it by \( \rulename{RAA} \), using the premise:
 

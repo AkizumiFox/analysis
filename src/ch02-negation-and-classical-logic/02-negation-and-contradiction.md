@@ -42,7 +42,7 @@ Read the schema of \( \rulename{\neg I} \) clause by clause.
 
 1. **Open a box** whose first line is the assumption \( \varphi \). It is the **unnegated** statement: the thing we want to refute, not the thing we want to prove. Any statement may be assumed.
 2. **Inside the box** every rule may be used, and every line available just above the box may be cited, as in any box (@def-derivation).
-3. **The last line of the box** is exactly \( \bot \), and it is a line of that box itself, not inside a further box opened within it. This is the same wording as for \( \rulename{{\to}I} \), and every box rule shares it; Chapter 3's soundness proof relies on it.
+3. **The last line of the box** is exactly \( \bot \), and it is a line of that box itself, not inside a further box opened within it. This is the same wording as for \( \rulename{{\to}I} \), and every box rule shares it; Chapter 3's soundness proof (@thm-soundness) relies on it.
 4. **Close the box** and write \( \neg\varphi \) on the next line, outside it. The justification cites the box as a range, "\( \rulename{\neg I} \) \( i \)–\( j \)". The assumption is discharged: after the box closes, nothing inside it may be cited, and only the negation leaves.
 5. **The new line is always a negation.** \( \rulename{\neg I} \) never writes a statement whose main connective is not \( \neg \).
 
@@ -63,7 +63,7 @@ So \( \vdash \neg\bot \): "it is not the case that contradiction" is derivable f
 
 **A non-instance by one change.** Take a box opened by \( \varphi \) whose last line is \( \neg\varphi \) instead of \( \bot \). It looks as if the assumption has refuted itself, and \( \rulename{\neg I} \) still does not apply: the box must end on \( \bot \). One more line, \( \bot \) by \( \rulename{\neg E} \) citing the assumption and the line \( \neg\varphi \), repairs it. The same holds if \( \bot \) is reached only inside a smaller box within the box: it is not then a line of the box itself.
 
-**Why this rule.** The statement \( \neg\varphi \) says that \( \varphi \) fails, and the box shows what would happen if \( \varphi \) held: together with the lines above it, it would lead to \( \bot \), which never holds. So in any situation where the lines above the box hold, \( \varphi \) cannot hold. That is exactly what \( \neg\varphi \) claims. As for Section 2.1's rules, Chapter 3 turns this into a proof.
+**Why this rule.** The statement \( \neg\varphi \) says that \( \varphi \) fails, and the box shows what would happen if \( \varphi \) held: together with the lines above it, it would lead to \( \bot \), which never holds. So in any situation where the lines above the box hold, \( \varphi \) cannot hold. That is exactly what \( \neg\varphi \) claims. As for Section 2.1's rules, Chapter 3 turns this into a proof (@thm-soundness).
 
 The rules for \( \neg \) have the same shapes as rules we already know, with \( \bot \) in one slot. Put them beside the rules for \( \to \), applied to the statement \( \varphi \to \bot \):
 

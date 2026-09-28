@@ -381,7 +381,7 @@ Find all real \( x \) satisfying each inequality. Hence write each solution set 
 3. Deduce that the elements \( 1, 1 + 1, 1 + 1 + 1, \dots \) of an ordered field are all different, so every ordered field contains a copy of \( \nN \) (and in particular is infinite).
 :::
 
-*Hint: for (b), use induction on \( n \) (Chapter 3).*
+*Hint: for (b), use induction on \( n \) (@ax-induction).*
 :::
 
 ::: {.solution}
@@ -418,7 +418,7 @@ exm-ordered-fields-q-r (example): R is an ordered field containing Q, N and Z | 
 lem-field-algebra (proof): the rules of fraction arithmetic (a/b + c/d = (ad + bc)/bd and the like) | inline: derived from (F1)-(F9) as in lem-field-algebra, stated in the sentence after the proof and not written out
 exm-integers-not-a-field (example): no integer m satisfies 2m = 1 | arithmetic of Z, ch07 (promised)
 exr-ordered-fields-a1 (solution): no integer m satisfies 2m = 1 | arithmetic of Z, ch07 (promised)
-exr-ordered-fields-c1 (solution): proof by induction on n, a second induction starting at m + 1, and a third for (m + n) 1 = m 1 + n 1 | induction, ch03 (promised)
+exr-ordered-fields-c1 (solution): proof by induction on n, a second induction starting at m + 1, and a third for (m + n) 1 = m 1 + n 1 | induction, ax-induction
 exr-ordered-fields-c1 (solution): (m + n) + 1 = m + (n + 1) in N | arithmetic of N, ch07 (promised)
 thm-ordered-field-rules (example): C is a field with i^2 = -1 (the non-example of C after the theorem) | school algebra of complex numbers; companion ch 0
 -->

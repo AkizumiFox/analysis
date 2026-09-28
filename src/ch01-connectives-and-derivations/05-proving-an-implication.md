@@ -64,7 +64,7 @@ Clause 5 is the boundary of the temporary world. The subsection "Derivations, pr
 
 The **degenerate case** is \( i = j \): a box of one line, whose assumption is also its last line. Then \( \psi \) is \( \varphi \), and the rule writes \( \varphi \to \varphi \). Nothing in the rule asks the box to contain more than its assumption.
 
-*Why the rule is right.* The implication \( \varphi \to \psi \) claims only that \( \psi \) holds whenever \( \varphi \) does. The box shows exactly that: starting from \( \varphi \), and from facts that hold anyway, the rules lead to \( \psi \). Chapter 3 proves that every rule, \( \rulename{{\to}I} \) included, never leads from true premises to a false conclusion.
+*Why the rule is right.* The implication \( \varphi \to \psi \) claims only that \( \psi \) holds whenever \( \varphi \) does. The box shows exactly that: starting from \( \varphi \), and from facts that hold anyway, the rules lead to \( \psi \). Chapter 3 proves that every rule, \( \rulename{{\to}I} \) included, never leads from true premises to a false conclusion (@thm-soundness).
 
 *Why the box closes.* The lines inside hold only under the assumption. If the assumption is false, as \( x > 2 \) is at \( x = 0 \), they may be false too. Closing the box is what stops them being used where the assumption is not in force.
 
@@ -202,7 +202,7 @@ A closed box, cited as a whole by \( \rulename{{\to}I} \), must sit directly in 
 
 *Nothing earlier changes.* A derivation with no boxes is a box-free derivation of @def-box-free-derivation for the same rules with \( \rulename{R} \) added: with no boxes, "available" means just "earlier". So every derivation of Sections 1.2–1.4 is a derivation in the new sense, and @def-derivable is read from now on with this definition. The sequent \( \Gamma \vdash \psi \) still means: **there is** a derivation whose premises all belong to \( \Gamma \) and whose last line is \( \psi \). Its last line lies in no box, so it depends on the premises and on nothing that was merely assumed.
 
-Two more words will be needed in Chapter 3, where the rules are proved trustworthy. The **length** of a derivation is its number of lines. The **context** of a line is the list of the premises together with the assumptions of every box containing that line: the statements the line depends on. The context of the last line is just the premises, since the last line lies in no box.
+Two more words will be needed in Chapter 3, where the rules are proved trustworthy (@thm-soundness). The **length** of a derivation is its number of lines. The **context** of a line is the list of the premises together with the assumptions of every box containing that line: the statements the line depends on. The context of the last line is just the premises, since the last line lies in no box.
 
 *Repetition.* Most rules may cite an available line directly, so \( \rulename{R} \) is rarely needed. It is needed when a rule wants a statement as a line **of a particular box**: \( \rulename{{\to}I} \) wants its \( \psi \) as a line of the box itself (clause 3 of the reading). The typical use copies a line into a box opened below it.
 

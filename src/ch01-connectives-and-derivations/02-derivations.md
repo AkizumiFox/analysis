@@ -349,7 +349,7 @@ Written chains like this one are everywhere in analysis, and they are derivation
 
 (d) \( 1 < x, \ x < y, \ y < 5 \vdash 1 + 2 < 5 + 2 \) with \( \mathrm{Tr} \) and \( \mathrm{Sh} \).
 
-(e) True. Both rules lead from true lines to true lines: if \( a < b \) and \( b < c \) are true, so is \( a < c \), and if \( a < b \) is true, so is \( a + c < b + c \). Go down the derivation: the premises are in \( \Gamma \), so they are true, and each later line comes from earlier, true lines by one of the two rules, so it is true too. Hence the last line, \( \psi \), is true. This is soundness in miniature: Chapter 3 proves it for the rules of logic, and makes "go down the derivation" a proof by induction.
+(e) True. Both rules lead from true lines to true lines: if \( a < b \) and \( b < c \) are true, so is \( a < c \), and if \( a < b \) is true, so is \( a + c < b + c \). Go down the derivation: the premises are in \( \Gamma \), so they are true, and each later line comes from earlier, true lines by one of the two rules, so it is true too. Hence the last line, \( \psi \), is true. This is soundness in miniature: Chapter 3 proves it for the rules of logic (@thm-soundness), and makes "go down the derivation" a proof by induction.
 :::
 
 ### B. Practice
@@ -435,7 +435,7 @@ $\begin{nd}
 
 (b) \( m - 1 \). Each application takes the line \( e_0 < e_k \) reached so far and the next link \( e_k < e_{k+1} \), and writes \( e_0 < e_{k+1} \), so it absorbs one more link. The first link needs no application, and each of the other \( m - 1 \) links needs one. In (a), \( m = 3 \) and there are \( 2 \) applications; when \( m = 1 \), the single premise is already the conclusion.
 
-No cleverer derivation does better: every derivation of \( e_0 < e_m \) from the links with \( \mathrm{Tr} \) uses at least \( m - 1 \) applications. We do not prove this here; the proof is an induction, the method of Chapter 3, and nothing in the book depends on it.
+No cleverer derivation does better: every derivation of \( e_0 < e_m \) from the links with \( \mathrm{Tr} \) uses at least \( m - 1 \) applications. We do not prove this here; the proof is an induction, the method of Chapter 3 (@ax-induction), and nothing in the book depends on it.
 :::
 
 ### C. Going deeper
@@ -465,7 +465,7 @@ $\begin{nd}
 
 (b) Line 1 is a premise. Line 2 names a rule on the list, cites line 1, which is earlier, and lines 1, 2 are an instance of the schema of \( \mathrm{Flip} \) with \( a \) replaced by \( 0 \) and \( b \) by \( 1 \). All three questions pass. The checker never asks whether a line is true, only whether it matches a rule, so a bad rule is invisible to it.
 
-(c) \( \mathrm{Tr} \) and \( \mathrm{Sh} \) never lead from true lines to a false one (A1(e)). \( \mathrm{Flip} \) does: from the true line \( 0 < 1 \) it writes the false line \( 1 < 0 \). With such a rule, a derivation from true premises could end anywhere, so checking is only as good as the rules checked against. Chapter 3 proves that the rules of logic have the good property, and calls it **soundness**.
+(c) \( \mathrm{Tr} \) and \( \mathrm{Sh} \) never lead from true lines to a false one (A1(e)). \( \mathrm{Flip} \) does: from the true line \( 0 < 1 \) it writes the false line \( 1 < 0 \). With such a rule, a derivation from true premises could end anywhere, so checking is only as good as the rules checked against. Chapter 3 proves that the rules of logic have the good property, and calls it **soundness** (@thm-soundness).
 :::
 
 ::: {#exr-derivations-c2}

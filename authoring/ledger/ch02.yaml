@@ -2876,6 +2876,15 @@ items:
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch02-S8-seam.md rows 3, 4, 22: rule order, RAA claims, v2 fixes held'
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: c42e6bb81d1d
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: 'cross-chapter cleanup 2026-09-28: a Chapter 3 @ref added to an existing prose pointer (signpost
+      in a solution/example, not a step); text otherwise unchanged; check_forward_deps and check_optional
+      pass'
 - key: exr-reductio-and-classical-rules-b1
   kind: exr
   file: 05-reductio-and-classical-rules.md
@@ -3109,6 +3118,15 @@ items:
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch02-S8-seam.md rows 3, 4, 22: rule order, RAA claims, v2 fixes held'
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: df2e2afc5ddc
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: 'cross-chapter cleanup 2026-09-28: a Chapter 3 @ref added to an existing prose pointer (signpost
+      in a solution/example, not a step); text otherwise unchanged; check_forward_deps and check_optional
+      pass'
 - key: exr-reductio-and-classical-rules-c3
   kind: exr
   file: 05-reductio-and-classical-rules.md
@@ -3361,6 +3379,15 @@ items:
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch02-S8-seam.md rows 3, 6, 22: method, worked searches, rules table'
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: 26ff374fc213
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: 'cross-chapter cleanup 2026-09-28: a Chapter 3 @ref added to an existing prose pointer (signpost
+      in a solution/example, not a step); text otherwise unchanged; check_forward_deps and check_optional
+      pass'
 - key: exm-search-raa
   kind: exm
   file: 06-finding-derivations.md
@@ -3873,3 +3900,12 @@ items:
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch02-S8-seam.md rows 3, 6, 22: method, worked searches, rules table'
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: dc1d25eb9f8c
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: 'cross-chapter cleanup 2026-09-28: a Chapter 3 @ref added to an existing prose pointer (signpost
+      in a solution/example, not a step); text otherwise unchanged; check_forward_deps and check_optional
+      pass'

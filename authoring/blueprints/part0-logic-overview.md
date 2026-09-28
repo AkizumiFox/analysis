@@ -1,7 +1,7 @@
 <!-- hand-written -->
 # Part 0 logic block: overview of Chapters 1–5
 
-One page for the coordinator and the drafters: how the five logic chapters divide the material, where the drafted pilot Chapter 1 (`src/ch01-propositional-natural-deduction/`, seven sections, refereed S2–S8) goes now that it is split into Chapters 1 and 2 (author, 2026-09-28), and how Chapter 5 hands over to the rest of the book. The chapter blueprints (`ch01.md` … `ch05.md`) are binding; this file only maps them.
+One page for the coordinator and the drafters: how the five logic chapters divide the material, where the former pilot Chapter 1 (`src/ch01-propositional-natural-deduction/`, seven sections, refereed S2–S8; now archived in `authoring/pilot-archive/`) went when the author split it into Chapters 1 and 2 (2026-09-28), and how Chapter 5 hands over to the rest of the book. The two chapters are drafted as `src/ch01-connectives-and-derivations/` and `src/ch02-negation-and-classical-logic/`, and Chapter 3 as `src/ch03-semantics-soundness-completeness/`. The chapter blueprints (`ch01.md` … `ch05.md`) are binding; this file only maps them.
 
 ## The author's direction for the logic chapters (2026-09-28)
 
@@ -28,9 +28,9 @@ Then Part 0 continues: 6 sets and functions, 7 relations and induction, 8 cardin
 - **Single-rule labels.** Where a section introduces one half of an I/E pair, that half gets its own label (`def-rule-implication-elimination`, `def-rule-disjunction-introduction`, `def-rules-contradiction`, `def-rule-universal-elimination`, `def-rule-existential-introduction`), and the pair label (`def-rules-implication`, `def-rules-disjunction`, `def-rules-negation`, `def-rules-universal`, `def-rules-existential`) sits in the section of the other half, whose definition block recalls the first schema. The pair labels are the ones later chapters cite.
 - **Tool gap (coordinator):** `tools/check_fitch.py` rejects a box that does not begin with an assumption and the \( i \)–\( i \) citation of such a box, so every \( \forall \)I schema and derivation (a flagged box `\open[x_0]` with no assumption line) fails the gate until the tool accepts flagged boxes. Checked on 2026-09-28.
 
-## Where the drafted Chapter 1 goes
+## Where the pilot Chapter 1 went (history)
 
-The drafted chapter `src/ch01-propositional-natural-deduction/` is the material to reuse and expand. The *Migrates* line of each section of `ch01.md` and `ch02.md` gives the passage-level detail.
+The pilot chapter `src/ch01-propositional-natural-deduction/` (now `authoring/pilot-archive/ch01-propositional-natural-deduction/`) was the material reused and expanded in the split; the current chapters are `src/ch01-connectives-and-derivations/` and `src/ch02-negation-and-classical-logic/`. The *Migrates* line of each section of `ch01.md` and `ch02.md` gives the passage-level detail.
 
 | Drafted section | New home |
 |---|---|
@@ -42,7 +42,7 @@ The drafted chapter `src/ch01-propositional-natural-deduction/` is the material 
 | 06 reductio-and-classical-rules | Ch 2 §05 (with `prp-peirce` moved in from 07) |
 | 07 finding-derivations | Ch 2 §06 (the search method, the worked searches, the rules in one place, the R group) |
 
-The older pilot `src/ch01-logic-connectives/` (no longer in `src/`) was mapped into the drafted chapter earlier; its truth tables went to Chapter 3, and its annotating, writing and checking material and the "costume" examples to Chapter 5 §01, §05, §06 (`ch05.md`'s migration list).
+The older pilot `src/ch01-logic-connectives/` (archived in `authoring/pilot-archive/`) was mapped into the drafted chapter earlier; its truth tables went to Chapter 3, and its annotating, writing and checking material and the "costume" examples to Chapter 5 §01, §05, §06 (`ch05.md`'s migration list).
 
 ## Labels that must survive the split
 
@@ -54,7 +54,7 @@ The Chapter 3–8 blueprints cite further labels, all kept: `def-statement`, `de
 
 ## Induction arrives early
 
-Chapter 3 needs induction for soundness and completeness. It states `ax-induction` (a basic property of ℕ, taken as given) and proves `thm-strong-induction` and `thm-structural-induction`. Chapter 7 cites these and does not re-derive them; it keeps well-ordering (and its equivalence with induction), recursion on ℕ, and the induction pitfalls. Chapter 1 §03 C1 (a "first bad line" argument) is a deliberate preview, with a prose pointer to Chapter 3.
+Chapter 3 needs induction for soundness and completeness. It states `ax-induction` (a basic property of ℕ, taken as given) and proves `thm-strong-induction` and `thm-structural-induction`. Chapter 7 cites these and does not re-derive them; it keeps well-ordering (and its equivalence with induction), recursion on ℕ, and the induction pitfalls. Chapter 1 §03 C1 (a "first bad line" argument) is a deliberate preview, with a signpost to Chapter 3 (`@thm-strong-induction`, in the solution).
 
 ## How Chapter 5 hands over to the rest of the book
 
@@ -70,10 +70,10 @@ Chapter 3 needs induction for soundness and completeness. It states `ax-inductio
 
 Chapter 11 (the pilot Part I chapter, formerly ch08, then ch10) already uses the split numbering: "Chapter 1" for proof by cases and the absolute-value examples, "Chapter 2" for \( \sqrt 2 \), the negation rules, the contrapositive and the equivalence cycle (Chapter 11 S8 seam review: every chapter number it gives for a Chapter 1 or 2 label is right). Remaining items: the quantifier-negation law (`prp-quantifier-negation`, Chapter 4 §09) is a prose pointer in Chapter 11 §05 and becomes `@ref`-able **once Chapter 4 is drafted**; induction is Chapter 3 (`ax-induction`, `thm-strong-induction`); well-ordering and recursion are Chapter 7; countable sets are Chapter 8. (The former item "Chapter 1 explains why a statement with no instances counts as true" is obsolete: Chapter 11 §02 cites `@prp-vacuous-implication` directly.) The STATUS promise rows "full proof of soundness" and "¬¬P ⊢ P, P ∨ ¬P not derivable without RAA; the people who refused the rule" are paid by Chapter 3 §05 and Chapter 5 §07.
 
-**Coordinator:** the STATUS rows that give drafted-chapter homes "Ch 1 §04–§07" must be re-pointed to Chapter 2 §01–§06, and the Chapter 1 rows' section numbers updated, as in the table above.
+*(Done: the STATUS rows that gave drafted-chapter homes "Ch 1 §04–§07" were re-pointed to Chapter 2 §01–§06, and the Chapter 1 rows' section numbers updated, at Ch 1 S7 and the Ch 1/Ch 2 S8 seams.)*
 
 ## Open for the author
 
 - `blueprint/book.yaml`'s Chapter 4 outline still lists the former nine sections; `ch04.md` now has twelve (one rule per section).
 - Chapter 1's exit check (2) in book.yaml is a printed direction of `prp-distributivity`; `ch01.md` replaces it by an unprinted sequent of the same shape (reason there). Chapter 2's exit checks for LEM and De Morgan (d) coincide with results its text proves (see `ch02.md`).
-- `NOTATION.md` needs a row for the schema metavariables \( \varphi, \psi, \chi \) from Chapter 1 §02, and its Chapter 1 pointers (\( \dashv\vdash \), \( \mathsf{X} \), \( \mathsf{Y} \), \( d \mid n \)) re-pointed to Chapter 2.
+- *(Done, history.)* `NOTATION.md` has the row for the schema metavariables \( \varphi, \psi, \chi \) from Chapter 1 §02, and its pointers for \( \dashv\vdash \), \( \mathsf{X} \), \( \mathsf{Y} \), \( d \mid n \) name Chapter 2.

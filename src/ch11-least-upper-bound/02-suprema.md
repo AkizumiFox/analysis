@@ -166,7 +166,7 @@ Let \( A = \{ 1 - \frac1n : n \in \nN \} = \{ 0, \frac12, \frac23, \frac34, \dot
 :::
 
 ::: {.solution}
-Each \( n \in \nN \) is positive, by induction on \( n \) (Chapter 3): \( 1 > 0 \) by @thm-ordered-field-rules (e), and if \( n > 0 \), then \( n + 1 > n > 0 \) by (O3) and (O2). So \( \frac1n > 0 \) by @thm-ordered-field-rules (f), and hence \( 1 - \frac1n < 1 \) by @thm-ordered-field-rules (a). So \( 1 \) is an upper bound, and \( 1 \notin A \). No element is a maximum either: \( 1 - \frac1n < 1 - \frac1{n + 1} \), because \( \frac1{n + 1} < \frac1n \) by @thm-ordered-field-rules (f), so every element is beaten by the next one.
+Each \( n \in \nN \) is positive, by induction on \( n \) (@ax-induction): \( 1 > 0 \) by @thm-ordered-field-rules (e), and if \( n > 0 \), then \( n + 1 > n > 0 \) by (O3) and (O2). So \( \frac1n > 0 \) by @thm-ordered-field-rules (f), and hence \( 1 - \frac1n < 1 \) by @thm-ordered-field-rules (a). So \( 1 \) is an upper bound, and \( 1 \notin A \). No element is a maximum either: \( 1 - \frac1n < 1 - \frac1{n + 1} \), because \( \frac1{n + 1} < \frac1n \) by @thm-ordered-field-rules (f), so every element is beaten by the next one.
 
 It is true that \( \sup A = 1 \), but (S2) is harder than it looks. It says that no \( M < 1 \) is an upper bound, that is, for every \( M < 1 \) some \( 1 - \frac1n \) exceeds \( M \). That requires \( \frac1n < 1 - M \) for some \( n \). The existence of such an \( n \) says, in effect, that the natural numbers are not bounded above, and that does not follow from the ordered-field axioms. We prove it later in this chapter, from the axiom of the next section, and prove \( \sup A = 1 \) right after it.
 :::
@@ -404,7 +404,7 @@ Let \( F \) be an ordered field, \( A \subseteq F \), and let \( U(A) \) be the 
 def-upper-bound (example): negating "for every a in A, a <= M" to "there exists a in A with a > M" | quantifier negation, ch04 (promised); prose pointer in the text
 def-bounded-above (example): max{M, 0} + 1 > M for every real M | thm-ordered-field-rules and (O3), shown inline
 exm-sup-finite-and-closed (solution): every non-empty finite subset of an ordered field has a maximum | induction on the number of elements, ch07 (promised); prose pointer in the text; not used in any proof
-exm-sup-one-minus-reciprocal (solution): n > 0 for every n in N | inline, by induction on n; the principle is ch03 (promised)
+exm-sup-one-minus-reciprocal (solution): n > 0 for every n in N | inline, by induction on n; the principle is ax-induction
 thm-no-rational-sup-sqrt2 (proof): Q is closed under the field operations, so h and s + h, s - h are rational | exm-ordered-fields-q-r
 thm-no-rational-sup-sqrt2 (proof): the arithmetic of the two values of h ((s + h)^2 bound, (s - h)^2 = 2 + h^2) | inline; lem-field-algebra
 exr-suprema-a1 (solution): 577^2 = 332929 = 2 * 408^2 + 1 | arithmetic, shown inline

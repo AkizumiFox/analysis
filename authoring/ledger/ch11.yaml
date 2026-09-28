@@ -520,6 +520,14 @@ items:
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: authoring/reviews/ch11-S8-seam.md row 9, 12
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: d110eecbbec0
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: 'cross-chapter cleanup 2026-09-28: ''induction (Chapter 3)'' now cites @ax-induction (earlier
+      chapter); exr-density-and-roots-c2 also points to @exr-induction-b1 as an aside; argument unchanged'
 - key: exr-ordered-fields-c2
   kind: exr
   file: 01-ordered-fields.md
@@ -807,6 +815,14 @@ items:
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: authoring/reviews/ch11-S8-seam.md row 9 (ax-induction, ch03)
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: 80e5d13e73a6
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: 'cross-chapter cleanup 2026-09-28: ''induction (Chapter 3)'' now cites @ax-induction (earlier
+      chapter); exr-density-and-roots-c2 also points to @exr-induction-b1 as an aside; argument unchanged'
 - key: check:02-suprema:1
   kind: check
   file: 02-suprema.md
@@ -2390,6 +2406,20 @@ items:
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: authoring/reviews/ch11-S8-seam.md row 5
+  - stage: fmt
+    verdict: correct
+    by: coordinator
+    hash: 0e8eccda6cf8
+    date: '2026-09-28'
+    evidence: 'typographic change only: lettered paragraph ''(a)'' set as ''*(a)*'' (2026-09-28); content
+      reviewed at S5-S8 unchanged'
+  - stage: S8fix
+    verdict: correct
+    by: coordinator
+    hash: 0e8eccda6cf8
+    date: '2026-09-28'
+    evidence: 'content edit after S8 (seam row: roots of 0): added the a = 0 case (only non-negative root
+      of 0 is 0; nth-root of 0 := 0) and powers from u^0; checked by build/check; not re-refereed'
 - key: exm-cube-root-bounds
   kind: exm
   file: 06-density-and-roots.md
@@ -2756,6 +2786,14 @@ items:
     hash: f85b46ee2cd0
     date: '2026-09-28'
     evidence: 'S5b: claims, meta-claims, ledger lines and refs checked; see authoring/reviews/ch10-S5-B.md'
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: 85fff5271ef9
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: 'cross-chapter cleanup 2026-09-28: ''induction (Chapter 3)'' now cites @ax-induction (earlier
+      chapter); exr-density-and-roots-c2 also points to @exr-induction-b1 as an aside; argument unchanged'
 - key: exr-density-and-roots-c3
   kind: exr
   file: 06-density-and-roots.md

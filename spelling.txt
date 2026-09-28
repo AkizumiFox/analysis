@@ -112,3 +112,18 @@ checkable
 TF
 integrable
 weakenings
+# Chapter 3 (semantics, normal forms): flagged by ./build.py check at the cross-chapter cleanup
+metavariable
+NAND
+NOR
+CNF
+CNFs
+DNF
+DNFs
+disjoin
+Kalmár
+ands
+ors
+# possessive bases: the check strips 's and then looks the bare word up here
+schema
+rewriting

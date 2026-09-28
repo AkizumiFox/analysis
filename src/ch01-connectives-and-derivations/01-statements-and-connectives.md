@@ -124,7 +124,7 @@ Parentheses settle every such question, and a few conventions let us drop the on
 4. In a mixture of \( \wedge \) and \( \vee \), or of \( \to \) and \( \leftrightarrow \), the parentheses are always written. We never write \( P \wedge Q \vee R \).
 :::
 
-Convention (3) is the natural one: a statement "if \( P \), then if \( Q \), then \( R \)" is common, and \( (P \to Q) \to R \), whose hypothesis is itself an implication, is rare. Chapter 3 turns "a statement built from letters by connectives" into an exact definition and proves that every such statement can be read in only one way. In this chapter we parse by eye.
+Convention (3) is the natural one: a statement "if \( P \), then if \( Q \), then \( R \)" is common, and \( (P \to Q) \to R \), whose hypothesis is itself an implication, is rare. Chapter 3 turns "a statement built from letters by connectives" into an exact definition (@def-formula) and proves that every such statement can be read in only one way (@thm-unique-readability). In this chapter we parse by eye.
 
 The conventions only decide where parentheses may be dropped. The next definition names the one piece of information that reading a statement is for.
 
@@ -252,13 +252,13 @@ Every connective works the same way. Each comes with introduction rules, saying 
 
 *A proof is a chain in which every line is a premise, an assumption, or one application of a rule.*
 
-The rules are chosen so that they never lead from true statements to a false one. For \( \wedge \) this is plain: if \( P \) and \( Q \) are both true, so is \( P \wedge Q \), and if \( P \wedge Q \) is true, so is \( P \). Chapter 3 proves it for every rule at once; the theorem is called soundness.
+The rules are chosen so that they never lead from true statements to a false one. For \( \wedge \) this is plain: if \( P \) and \( Q \) are both true, so is \( P \wedge Q \), and if \( P \wedge Q \) is true, so is \( P \). Chapter 3 proves it for every rule at once (@thm-soundness); the theorem is called soundness.
 
 The second slogan is what makes a proof possible to check. Finding a proof may need an idea. Checking one needs none: go through it line by line and ask of each line which rule produced it and whether that rule was applied to lines that really are there. A reader who has lost the thread of a long argument can always fall back on that question, and it is the question to ask of Argument B. In Part 0 we ask it out loud; Chapter 5 shows how the same rules run silently underneath ordinary written proofs.
 
-The order of these chapters differs from that of many logic books, which begin with truth tables: tables listing, for instance, when \( P \to Q \) is true. There, the row "if \( P \) is false, then \( P \to Q \) is true" has to be accepted as a convention, and it looks arbitrary. Here, that fact comes out of how proofs work (Section 2.1), and the tables arrive in Chapter 3, which proves that the rules and the tables agree.
+The order of these chapters differs from that of many logic books, which begin with truth tables: tables listing, for instance, when \( P \to Q \) is true. There, the row "if \( P \) is false, then \( P \to Q \) is true" has to be accepted as a convention, and it looks arbitrary. Here, that fact comes out of how proofs work (Section 2.1), and the tables arrive in Chapter 3, which proves that the rules and the tables agree (@cor-derivable-iff-valid).
 
-We can now say what we will make of Argument B. Its claim has the form \( Q \to P \), with \( Q \): "\( n^2 \) is even" and \( P \): "\( n \) is even", and B's reasoning runs from \( P \) to \( Q \). Section 1.5 names the error as a misuse of the rule for proving an implication: B began from the conclusion \( P \) where the rule asks it to begin from the hypothesis \( Q \). And to repair B without new ideas, one would have to pass from "if \( n \) is even, then \( n^2 \) is even" and "\( n^2 \) is even" to "\( n \) is even", the form \( P \to Q, \ Q \vdash P \) of the Quick check above. Chapter 3 proves that this pattern cannot be derived from the rules at all: no derivation leads from \( P \to Q \) and \( Q \) to \( P \).
+We can now say what we will make of Argument B. Its claim has the form \( Q \to P \), with \( Q \): "\( n^2 \) is even" and \( P \): "\( n \) is even", and B's reasoning runs from \( P \) to \( Q \). Section 1.5 names the error as a misuse of the rule for proving an implication: B began from the conclusion \( P \) where the rule asks it to begin from the hypothesis \( Q \). And to repair B without new ideas, one would have to pass from "if \( n \) is even, then \( n^2 \) is even" and "\( n^2 \) is even" to "\( n \) is even", the form \( P \to Q, \ Q \vdash P \) of the Quick check above. Chapter 3 proves that this pattern cannot be derived from the rules at all: no derivation leads from \( P \to Q \) and \( Q \) to \( P \) (@cor-refuting-row).
 
 ## What comes next
 

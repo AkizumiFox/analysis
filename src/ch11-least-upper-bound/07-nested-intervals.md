@@ -49,7 +49,7 @@ Now assume the shrinking hypothesis, and let \( x \in \bigcap_n I_n \). Suppose 
 
 Closedness is what lets \( \alpha \) belong to \( I_n \). The proof gives only \( a_n \le \alpha \le b_n \), with non-strict inequalities, and \( \alpha \) may well equal an endpoint. An open interval would exclude it.
 
-Now back to the bisection. Its intervals have length \( 1/2^{n-1} \), and \( 2^{n-1} \ge n \) for every \( n \in \nN \) (induction), so \( 1/2^{n-1} \le 1/n \). Given \( \varepsilon > 0 \), @cor-archimedean-epsilon gives \( n \) with \( 1/n < \varepsilon \), and then the \( n \)-th interval is shorter than \( \varepsilon \). The rule keeps \( a_n^2 < 2 < b_n^2 \) at every step, so \( a_n < \sqrt{2} < b_n \) by @thm-ordered-field-rules (g), and every interval contains \( \sqrt{2} \). By @thm-nested-intervals the intersection is exactly \( \{ \sqrt{2} \} \). The bisection traps \( \sqrt{2} \) and nothing else.
+Now back to the bisection. Its intervals have length \( 1/2^{n-1} \), and \( 2^{n-1} \ge n \) for every \( n \in \nN \) (by @ax-induction), so \( 1/2^{n-1} \le 1/n \). Given \( \varepsilon > 0 \), @cor-archimedean-epsilon gives \( n \) with \( 1/n < \varepsilon \), and then the \( n \)-th interval is shorter than \( \varepsilon \). The rule keeps \( a_n^2 < 2 < b_n^2 \) at every step, so \( a_n < \sqrt{2} < b_n \) by @thm-ordered-field-rules (g), and every interval contains \( \sqrt{2} \). By @thm-nested-intervals the intersection is exactly \( \{ \sqrt{2} \} \). The bisection traps \( \sqrt{2} \) and nothing else.
 
 ## What each hypothesis does
 
@@ -476,16 +476,16 @@ The look-alike tools work less well. Proof by cases, as in @exm-triangle-inequal
 :::
 
 <!-- dependency ledger
-thm-nested-intervals (claim): I_k is contained in I_m for m <= k, from I_(j+1) contained in I_j | inline, by induction on k - m (ch03 (promised))
-thm-nested-intervals (example): 2^(n-1) >= n for n in N (the bisection intervals shrink) | inline, by induction (ch03 (promised))
+thm-nested-intervals (claim): I_k is contained in I_m for m <= k, from I_(j+1) contained in I_j | inline, by induction on k - m (ax-induction)
+thm-nested-intervals (example): 2^(n-1) >= n for n in N (the bisection intervals shrink) | inline, by induction (ax-induction)
 thm-reals-uncountable (proof): a family defined by recursion from an explicit rule exists | definition by recursion, ch07 (promised); prose pointer in the proof
 thm-reals-uncountable (proof): countable means listable, i.e. the image of a function from N | ch08 (promised); prose pointer before the theorem
 thm-reals-uncountable (example): Q is countable; a union of two countable sets is countable; a subset of a countable set is countable (remark and table) | ch08 (promised); used only in a remark and the table, never in a proof
 thm-reals-uncountable (example): (p/q)^2 = x is impossible in R(x), since p^2 and x q^2 have degrees of different parity (table) | inline
 exr-nested-intervals-b1 (solution): 14^2 = 196, 15^2 = 225, 141^2 = 19881, 142^2 = 20164; an integer k <= z satisfies k <= floor(z) | arithmetic and lem-integer-part, shown inline
 exr-nested-intervals-b1 (solution): no integer lies strictly between k and k + 1 | ch07 (promised), recalled in the remark on N in 05-archimedean-property
-exr-nested-intervals-c1 (solution): 2^(n-1) >= n | inline, by induction (ch03 (promised))
-exr-nested-intervals-c1 (solution): the one induction of (b), in F | inline, by induction (ch03 (promised))
+exr-nested-intervals-c1 (solution): 2^(n-1) >= n | inline, by induction (ax-induction)
+exr-nested-intervals-c1 (solution): the one induction of (b), in F | inline, by induction (ax-induction)
 exr-nested-intervals-c1 (solution): N inside F; 2 > 0 in F | exr-ordered-fields-c1, thm-ordered-field-rules (h)
 exr-nested-intervals-c2 (solution): Q is countable; a subset of a countable set is countable | ch08 (promised); the item states them as usable facts
 exr-nested-intervals-c4 (solution): the expansions of (s + h)^3 + (s + h) and (s - h)^3 + (s - h); 0.68^3 = 0.314432 and 0.69^3 = 0.328509 | lem-field-algebra; arithmetic, shown inline

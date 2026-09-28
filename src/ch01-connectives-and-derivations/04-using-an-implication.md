@@ -73,13 +73,13 @@ Read the schema clause by clause, as we read those of @def-rules-conjunction.
 \]
 We know \( \sqrt{2} < 1.5 \), because \( 1.5^2 = 2.25 > 2 \), and we know \( 1.5 < 2 \). Then \( \rulename{\wedge I} \) builds the hypothesis \( (\sqrt{2} < 1.5) \wedge (1.5 < 2) \), and \( \rulename{{\to}E} \) gives \( \sqrt{2} < 2 \). Every application of a theorem has this shape: check the theorem's hypotheses, assemble them into exactly the theorem's hypothesis, and fire.
 
-*Why it is safe.* If \( \varphi \to \psi \) is true and \( \varphi \) is true, then \( \psi \) is true; that is what "if \( \varphi \), then \( \psi \)" asserts. Chapter 3 proves this for the rule as part of the soundness theorem.
+*Why it is safe.* If \( \varphi \to \psi \) is true and \( \varphi \) is true, then \( \psi \) is true; that is what "if \( \varphi \), then \( \psi \)" asserts. Chapter 3 proves this for the rule as part of the soundness theorem (@thm-soundness).
 
 *Why nothing more.* From \( \varphi \to \psi \) alone, \( \rulename{{\to}E} \) cannot fire: an implication by itself asserts neither its hypothesis nor its conclusion. And \( \rulename{{\to}E} \) does not run backwards: from \( \varphi \to \psi \) together with its conclusion \( \psi \), it gives nothing about \( \varphi \). That pattern,
 \[
 \varphi \to \psi, \ \psi \ \text{ therefore } \ \varphi ,
 \]
-is called **affirming the consequent**, and it is the red card of the puzzle. It is not an instance of \( \rulename{{\to}E} \), because the second given line of \( \rulename{{\to}E} \) must be the hypothesis \( \varphi \), and here it is the conclusion \( \psi \). It can lead from true premises to a false conclusion: the Quick check on the form of an argument in Section 1.1 took "if \( n \) is divisible by \( 4 \), then \( n \) is even" and "\( n \) is even" at \( n = 2 \), both true, where "\( n \) is divisible by \( 4 \)" is false. It is also the step that would repair Argument B of Section 1.1. Chapter 3 proves more: no derivation of \( P \to Q, \ Q \vdash P \) exists at all, whichever rules of Chapters 1 and 2 it uses.
+is called **affirming the consequent**, and it is the red card of the puzzle. It is not an instance of \( \rulename{{\to}E} \), because the second given line of \( \rulename{{\to}E} \) must be the hypothesis \( \varphi \), and here it is the conclusion \( \psi \). It can lead from true premises to a false conclusion: the Quick check on the form of an argument in Section 1.1 took "if \( n \) is divisible by \( 4 \), then \( n \) is even" and "\( n \) is even" at \( n = 2 \), both true, where "\( n \) is divisible by \( 4 \)" is false. It is also the step that would repair Argument B of Section 1.1. Chapter 3 proves more: no derivation of \( P \to Q, \ Q \vdash P \) exists at all, whichever rules of Chapters 1 and 2 it uses (@cor-refuting-row).
 
 ::: {.warning}
 Affirming the consequent looks like modus ponens and is not. Let \( x \) be a real number. "If \( x > 2 \), then \( x^2 > 4 \)" is true for every \( x \), and at \( x = -3 \) we have \( x^2 = 9 > 4 \); but \( x > 2 \) is false there. From an implication and its **conclusion**, nothing follows about the hypothesis.

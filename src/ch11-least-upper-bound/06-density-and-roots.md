@@ -416,7 +416,7 @@ A **dyadic rational** is a number of the form \( m/2^k \) with \( m \in \nZ \) a
 :::
 
 ::: {.solution}
-First, \( 2^k > k \) for every \( k \in \nN \), by induction: \( 2^1 = 2 > 1 \), and if \( 2^k > k \), then \( 2^{k+1} = 2^k + 2^k > k + 1 \), since \( 2^k \ge 1 \).
+First, \( 2^k > k \) for every \( k \in \nN \), by induction (@ax-induction; @exr-induction-b1 even gives \( 2^k \ge k + 1 \)): \( 2^1 = 2 > 1 \), and if \( 2^k > k \), then \( 2^{k+1} = 2^k + 2^k > k + 1 \), since \( 2^k \ge 1 \).
 
 Let \( x < y \). By @cor-archimedean-epsilon there is \( k \in \nN \) with \( 1/k < y - x \); the \( k \) depends on \( y - x \). Then \( 1/2^k < 1/k < y - x \). By @lem-integer-part, let \( m \coloneqq \floor{2^k x} + 1 \). Then \( m - 1 \le 2^k x < m \), and
 \[
@@ -453,10 +453,10 @@ Line (2) fails. Well-ordering says that a non-empty subset of \( \nN \) has a le
 
 <!-- dependency ledger
 thm-sqrt2-exists (proof): the two values of h and their arithmetic | inline, the same computation as thm-no-rational-sup-sqrt2
-thm-nth-root (claim): powers are defined by recursion; the claim is proved by induction on k | recursion, ch07 (promised), and induction, ch03 (promised); prose pointer in the text
+thm-nth-root (claim): powers are defined by recursion; the claim is proved by induction on k | recursion, ch07 (promised), and induction, ax-induction; prose pointer in the text
 thm-nth-root (claim): the finite sum Sigma is defined by recursion on its number of terms | definition by recursion, ch07 (promised)
 thm-nth-root (claim): the telescoping of the two sums in (y - x) * Sigma | inline
-thm-nth-root (proof): x0^n <= x0 for 0 < x0 < 1, and x^n >= x for x >= 1 | inline, by induction on n (ch03 (promised))
+thm-nth-root (proof): x0^n <= x0 for 0 < x0 < 1, and x^n >= x for x >= 1 | inline, by induction on n (ax-induction)
 exm-cube-root-bounds (solution): 1.25^3 = 1.953125 and 1.26^3 = 2.000376 | arithmetic, shown inline
 lem-integer-part (proof): well-ordering of N; differences of integers are integers; j - 1 in N for j >= 2 in N | ch07 (promised), recalled in the remark on N in 05-archimedean-property
 lem-integer-part (proof): a positive integer is a natural number | inline in the remark on N in 05-archimedean-property (pointer in the proof)
@@ -465,5 +465,5 @@ cor-irrationals-dense (proof): the difference of two rationals is rational | exm
 exr-density-and-roots-a1 (solution): if z/2 were rational, z = 2(z/2) would be rational | exm-ordered-fields-q-r
 exr-density-and-roots-a1 (solution): 267^2 = 71289 and 2 * 190^2 = 72200 | arithmetic, shown inline
 exr-density-and-roots-b3 (solution): 1.70^3 = 4.913 and 1.71^3 = 5.000211 | arithmetic, shown inline
-exr-density-and-roots-c2 (solution): 2^k > k for every k in N | inline, by induction (ch03 (promised))
+exr-density-and-roots-c2 (solution): 2^k > k for every k in N | inline, by induction (ax-induction)
 -->

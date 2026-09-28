@@ -647,6 +647,15 @@ items:
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S8-seam.md rows 3, 22, 24: scaffolding, exit checks, R items and
       rule order checked; no regression of v2 findings'
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: ccb9bdf0ebd9
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: 'cross-chapter cleanup 2026-09-28: a Chapter 3 @ref added to an existing prose pointer (signpost
+      in a solution/example, not a step); text otherwise unchanged; check_forward_deps and check_optional
+      pass'
 - key: exr-derivations-b1
   kind: exr
   file: 02-derivations.md
@@ -767,6 +776,15 @@ items:
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S8-seam.md rows 3, 22, 24: scaffolding, exit checks, R items and
       rule order checked; no regression of v2 findings'
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: 9ba5028296c6
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: 'cross-chapter cleanup 2026-09-28: a Chapter 3 @ref added to an existing prose pointer (signpost
+      in a solution/example, not a step); text otherwise unchanged; check_forward_deps and check_optional
+      pass'
 - key: exr-derivations-c1
   kind: exr
   file: 02-derivations.md
@@ -802,6 +820,15 @@ items:
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S8-seam.md rows 3, 22, 24: scaffolding, exit checks, R items and
       rule order checked; no regression of v2 findings'
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: 99c665827880
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: 'cross-chapter cleanup 2026-09-28: a Chapter 3 @ref added to an existing prose pointer (signpost
+      in a solution/example, not a step); text otherwise unchanged; check_forward_deps and check_optional
+      pass'
 - key: exr-derivations-c2
   kind: exr
   file: 02-derivations.md
@@ -3344,6 +3371,15 @@ items:
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S8-seam.md rows 3, 22, 24: scaffolding, exit checks, R items and
       rule order checked; no regression of v2 findings'
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: 25e7dbc0ba90
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: 'cross-chapter cleanup 2026-09-28: a Chapter 3 @ref added to an existing prose pointer (signpost
+      in a solution/example, not a step); text otherwise unchanged; check_forward_deps and check_optional
+      pass'
 - key: exr-disjunction-and-cases-b1
   kind: exr
   file: 07-disjunction-and-cases.md
