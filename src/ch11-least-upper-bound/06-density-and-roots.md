@@ -73,7 +73,7 @@ The template does not care that the exponent is \( 2 \) or that the number is \(
 Let \( a > 0 \) and \( n \in \nN \). There is exactly one real number \( s > 0 \) with \( s^n = a \).
 :::
 
-We write this number \( a^{1/n} \), or \( \sqrt[n]{a} \).
+We write this number \( a^{1/n} \), or \( \sqrt[n]{a} \). For \( a = 0 \) the only real \( s \ge 0 \) with \( s^n = 0 \) is \( s = 0 \) (a product of positive numbers is positive), so we also set \( \sqrt[n]{0} \coloneqq 0 \); every \( a \ge 0 \) then has exactly one non-negative \( n \)-th root.
 
 ::: {.idea}
 Take \( S = \{ x > 0 : x^n < a \} \) and \( s = \sup S \), as before, and rule out \( s^n < a \) and \( s^n > a \). The new difficulty is the estimate. For \( n = 2 \) we expanded \( (s + h)^2 \) and bounded \( h^2 \) by \( h \). For general \( n \), expanding \( (s + h)^n \) is messy. We work backwards from what we need instead.
@@ -102,7 +102,7 @@ Let \( 0 \le x < y \) and \( k \in \nN \). Then \( x^k < y^k \): the map \( x \m
 :::
 
 ::: {.proofofclaim}
-Powers are defined by recursion (Chapter 7): \( u^1 \coloneqq u \) and \( u^{k+1} \coloneqq u^k u \).
+Powers are defined by recursion (Chapter 7): \( u^0 \coloneqq 1 \) and \( u^{k+1} \coloneqq u^k u \), so that \( u^1 = u \); here only \( k \ge 1 \) is needed.
 
 We first show \( 0 \le x^k < y^k \) by induction on \( k \). For \( k = 1 \) this is the hypothesis. If \( 0 \le x^k < y^k \), then \( x^{k+1} = x^k x \ge 0 \), and
 \[

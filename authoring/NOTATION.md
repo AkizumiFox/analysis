@@ -57,6 +57,9 @@ These are book-independent. Keep them.
 | `-A \coloneqq \{ -a : a \in A \}` | reflection of a set of numbers (Ch 11); \( \inf A = -\sup(-A) \) |
 | `cA \coloneqq \{ ca : a \in A \}` | scaling of a set of numbers by \( c \in \nR \) (Ch 11) |
 | `A + B \coloneqq \{ a + b : a \in A, \ b \in B \}` | sum of two sets of numbers (Ch 11); later also for subsets of a vector space |
+| `U(A)` | the set of all upper bounds of \( A \) in the ambient ordered field (Ch 11, local to exercises: §02 C2 in \( F \), §03 C2 in \( \nR \); restated where used). Always written with its argument, so it does not clash with \( U \) for an open set |
+| `\sqrt[n]{a}`, `a^{1/n}` | for \( a > 0 \) and \( n \in \nN \), the unique \( s > 0 \) with \( s^n = a \) (Ch 11 `thm-nth-root`); `\sqrt{a}` is \( n = 2 \). In Chapters 1–10, \( \sqrt{a} \) for \( a \ge 0 \) is a school fact. `a^{m/n} \coloneqq (a^{1/n})^m` for \( a > 0 \) (Ch 11 §06); \( a^x \) for irrational \( x \) from Ch 20 |
+| `\nR(x)` | the field of rational functions \( p/q \) with real coefficients in one indeterminate \( x \), ordered by the signs of the leading coefficients (Ch 11 §05, `exm-nonarchimedean-field`): the book's non-Archimedean ordered field. Here \( x \) is the indeterminate, not a real number |
 | `\limsup_{n \to \infty} a_n`, `\liminf` | upper and lower limits |
 | `\floor{x}`, `\ceil{x}` | floor and ceiling |
 | `(a_n)_{n \ge 1}` or `(a_n)` | a sequence (parentheses: ordered); `\{a_n : n \in \nN\}` is its set of values |
@@ -109,6 +112,7 @@ Typesetting rules for logic (learned in the Chapter 1 pilot):
 | `\supp f` | support |
 | `\esssup` | essential supremum |
 | `\osc` | oscillation |
+| `\operatorname{lc}(p)`, `\deg p` | leading coefficient and degree of a non-zero polynomial \( p \) (Ch 11 §05 C2 and §07 C3 solutions, defined where used); \( \operatorname{lc}(pq) = \operatorname{lc}(p)\operatorname{lc}(q) \) |
 | `Df(a)`, `f'(a)` | Fréchet derivative at a; the derivative on ℝ |
 | `\pd{f}{x_i}` | partial derivative |
 | `C[a,b]`, `C(K)`, `C^k`, `C_c` | continuous, k-times continuously differentiable, compactly supported functions |
