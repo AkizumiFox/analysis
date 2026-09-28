@@ -76,11 +76,11 @@ Dropping a hypothesis removes the guarantee. It does not force the conclusion to
 :::
 
 ::: {.check}
-Why must the intervals in @thm-nested-intervals be closed? Give a one-line witness.
+The table's witness for "closed" uses the open intervals \( (0, 1/n) \). Do the half-open intervals \( (0, 1/n] \) witness it too? And the half-open intervals \( [0, 1/n) \)? Give a reason for each.
 :::
 
 ::: {.solution}
-The half-open intervals \( (0, 1/n] \) are nested and bounded, but no real number lies in all of them: \( x \le 0 \) is not in \( (0, 1] \), and for \( x > 0 \) some \( n \) has \( 1/n < x \) (@cor-archimedean-epsilon). The supremum of the left endpoints is \( 0 \), which is excluded from every interval. Closing the intervals at the left end, \( [0, 1/n] \), puts \( 0 \) back in all of them.
+The half-open intervals \( (0, 1/n] \) are nested and bounded, but no real number lies in all of them: \( x \le 0 \) is not in \( (0, 1] \), and for \( x > 0 \) some \( n \) has \( 1/n < x \) (@cor-archimedean-epsilon). The supremum of the left endpoints is \( 0 \), which is excluded from every interval. So \( (0, 1/n] \) is a witness too. The intervals \( [0, 1/n) \) are not: \( 0 \) lies in all of them, so their intersection \( \{ 0 \} \) is not empty. Closing the left end puts the supremum \( 0 \) of the left endpoints back in.
 :::
 
 ## The real numbers cannot be listed
@@ -135,7 +135,7 @@ The answer to the prompt: halves share their midpoint. If \( x_{n+1} \) were exa
 Only the existence half of @thm-nested-intervals was used; the intervals need not shrink.
 
 ::: {.remark}
-Since \( \nQ \) is countable, and a union of two countable sets is countable (both from Chapter 8), the set \( \nR \setminus \nQ \) of irrational numbers is uncountable. Otherwise \( \nR = \nQ \cup (\nR \setminus \nQ) \) would be countable. In this sense most real numbers are irrational, although so far we have named only a few of them, such as \( \sqrt{2} \) and \( \sqrt[3]{2} \).
+Since \( \nQ \) is countable, and a union of two countable sets is countable (both from Chapter 8), the set \( \nR \setminus \nQ \) of irrational numbers is uncountable. Otherwise \( \nR = \nQ \cup (\nR \setminus \nQ) \) would be countable. In this sense most real numbers are irrational, although so far we have named only a few of them, such as \( \sqrt{2} \) and \( \sqrt2 + q \) for rational \( q \) (the proof of @cor-irrationals-dense).
 :::
 
 The decimal proof of Chapter 8 is secretly a nested interval proof too: the first \( n \) digits of a number place it in an interval of length \( 10^{-n} \). The version above avoids the digits, and with them the numbers that have two expansions.
@@ -146,7 +146,7 @@ Here is the chapter so far in one table. Each row is a property that \( \nR \) h
 
 | Property | \( \nR \) | \( \nQ \) | \( \nR(x) \) |
 |---|---|---|---|
-| non-empty sets bounded above have suprema | yes (axiom) | no: positive \( x \) with \( x^2 < 2 \) | no: \( \nN \) |
+| non-empty sets bounded above have suprema | yes (axiom) | no: positive \( q \) with \( q^2 < 2 \) | no: \( \nN \) |
 | Archimedean property | yes | yes | no: \( x > n \) for all \( n \) |
 | \( \nQ \) is dense | yes | yes | no: nothing rational in \( (x, x + 1) \) |
 | positive elements have square roots | yes | no: \( 2 \) | no: \( x \) |
@@ -251,7 +251,7 @@ In (c), prove the two properties of a supremum separately, each by contradiction
 ::: {.solution}
 [Hint 2]
 
-For "\( s \) is an upper bound" in (c): suppose some \( y \in A \) has \( y > s \), and choose \( n \) with \( b_n - a_n < y - s \).
+For "\( s \) is an upper bound" in (c), argue by contradiction: what does an element \( y \in A \) with \( y > s \) give you, and what do you know about \( b_n \)?
 :::
 
 ::: {.solution}
@@ -272,7 +272,7 @@ So \( s = \sup A \). Every non-empty subset of \( F \) that is bounded above has
 - 2: (c) shows no \( u < s \) is an upper bound, choosing \( n \) with \( b_n - a_n < s - u \) and using the element of \( A \) that is at least \( a_n \).
 - 1: (c) concludes that \( F \) has the least upper bound property, and says where each of the two assumed properties was used.
 Fatal errors (0 for the step): using @ax-least-upper-bound, or any supremum, in (b) or (c); choosing \( n \) before the gap \( y - s \) or \( s - u \) is known; assuming \( A \) has a maximum.
-A proof of (c) that shows \( \sup A = s \) through @thm-sup-epsilon instead of (S2) earns the same points.
+A proof of (c) that shows \( \sup A = s \) through the backward direction of @thm-sup-epsilon, rerun in \( F \), instead of (S2) earns the same points; the theorem is stated for \( \nR \), so citing it without rerunning its proof in \( F \) is not enough.
 :::
 
 ::: {#exr-nested-intervals-c2}
@@ -281,6 +281,7 @@ A proof of (c) that shows \( \sup A = s \) through @thm-sup-epsilon instead of (
 ::: {.enumerate options="label=(\alph*)"}
 1. Let \( x < y \). Prove that the interval \( (x, y) \) is not countable.
 2. Deduce that \( (x, y) \) contains an irrational number, without using \( \sqrt{2} \) or any other named irrational. You may use the facts from Chapter 8 that \( \nQ \) is countable, and that a subset of a countable set is countable.
+3. Let \( C \subseteq \nR \) be countable. Show that the real numbers not in \( C \) are dense: every interval \( (x, y) \) with \( x < y \) contains a real number that is not in \( C \).
 :::
 :::
 
@@ -288,6 +289,8 @@ A proof of (c) that shows \( \sup A = s \) through @thm-sup-epsilon instead of (
 (a) Let \( z_1, z_2, \dots \) be any list of real numbers. Run the construction in the proof of @thm-reals-uncountable, but start from a closed interval inside \( (x, y) \) that avoids \( z_1 \). Let \( d \coloneqq y - x \), and let \( L \coloneqq [x + d/4, x + d/3] \) and \( R \coloneqq [y - d/3, y - d/4] \). They are disjoint, closed, of positive length, and inside \( (x, y) \). Let \( I_1 \) be \( L \) if \( z_1 \notin L \), and \( R \) otherwise. Then define \( I_2, I_3, \dots \) by the outer-thirds rule from the proof. The intervals are nested, closed and bounded, \( z_n \notin I_n \) for every \( n \), and by @thm-nested-intervals some \( c \) lies in all of them. Then \( c \in I_1 \subseteq (x, y) \), and \( c \ne z_n \) for every \( n \). So no list exhausts \( (x, y) \), and \( (x, y) \), which is non-empty, is not countable.
 
 (b) Suppose every element of \( (x, y) \) were rational. Then \( (x, y) \subseteq \nQ \), and a subset of the countable set \( \nQ \) is countable, contradicting (a). So \( (x, y) \) contains an irrational number. This reproves @cor-irrationals-dense by counting: there are too many reals in \( (x, y) \) for all of them to be rational.
+
+(c) As in (b): if \( (x, y) \subseteq C \), then \( (x, y) \) is countable, contradicting (a). Part (b) is the case \( C = \nQ \).
 :::
 
 ::: {#exr-nested-intervals-c3}
@@ -313,7 +316,7 @@ Positivity in \( \nR(x) \) is decided by leading coefficients. Write each differ
 ::: {.solution}
 [Hint 2]
 
-For (b): since \( f \ge 1 \), the leading coefficient of \( p \) is positive. Suppose \( \deg p \le \deg q \), choose \( N \in \nN \) with \( N > \operatorname{lc}(p)/\operatorname{lc}(q) \), and look at \( N - f = (Nq - p)/q \).
+For (b): suppose \( \deg p \le \deg q \), and look for an \( N \in \nN \) with \( f < N \).
 :::
 
 ::: {.solution}
@@ -321,13 +324,13 @@ Write \( \operatorname{lc} \) for the leading coefficient, and recall from @exr-
 
 (a) \( x/n - n = (x - n^2)/n \) has numerator with leading coefficient \( 1 > 0 \) and positive denominator, so \( n < x/n \). Nesting: \( n + 1 > n \), and \( x/n - x/(n+1) = x/(n(n+1)) > 0 \). So \( I_{n+1} \subseteq I_n \).
 
-(b) Since \( f \ge 1 > 0 \), \( \operatorname{lc}(p) > 0 \). Suppose \( \deg p \le \deg q \). Pick \( N \in \nN \) with \( N > \operatorname{lc}(p)/\operatorname{lc}(q) \). Then \( N - f = (Nq - p)/q \). If \( \deg p < \deg q \), the leading coefficient of \( Nq - p \) is \( N \operatorname{lc}(q) > 0 \); if \( \deg p = \deg q \), it is \( N \operatorname{lc}(q) - \operatorname{lc}(p) > 0 \). Either way \( f < N \), so \( f \notin I_N \), a contradiction. Hence \( \deg p > \deg q \).
+(b) Since \( f \ge 1 > 0 \), \( \operatorname{lc}(p) > 0 \). Suppose \( \deg p \le \deg q \). By @thm-naturals-unbounded, pick \( N \in \nN \) with \( N > \operatorname{lc}(p)/\operatorname{lc}(q) \), a real number. Then \( N - f = (Nq - p)/q \). If \( \deg p < \deg q \), the leading coefficient of \( Nq - p \) is \( N \operatorname{lc}(q) > 0 \); if \( \deg p = \deg q \), it is \( N \operatorname{lc}(q) - \operatorname{lc}(p) > 0 \). Either way \( f < N \), so \( f \notin I_N \), a contradiction. Hence \( \deg p > \deg q \).
 
 (c) For each \( n \),
 \[
     \frac{x}{n} - f = \frac{x q - n p}{n q}, \qquad \operatorname{lc}(nq) = n \operatorname{lc}(q) > 0 .
 \]
-If \( \deg p \ge \deg q + 2 \), then \( \deg(np) > \deg(xq) \), so the numerator has leading coefficient \( -n \operatorname{lc}(p) < 0 \). Thus \( f > x/n \) for every \( n \), and \( f \notin I_1 \). If \( \deg p = \deg q + 1 \), both \( xq \) and \( np \) have degree \( \deg q + 1 \), and the numerator has leading coefficient \( \operatorname{lc}(q) - n \operatorname{lc}(p) \). Choosing \( n > \operatorname{lc}(q)/\operatorname{lc}(p) \) makes it negative, so \( f > x/n \) and \( f \notin I_n \). Both cases contradict \( f \in \bigcap_n I_n \). With (b), no \( f \) lies in every \( I_n \), and the intersection is empty.
+If \( \deg p \ge \deg q + 2 \), then \( \deg(np) > \deg(xq) \), so the numerator has leading coefficient \( -n \operatorname{lc}(p) < 0 \). Thus \( f > x/n \) for every \( n \), and \( f \notin I_1 \). If \( \deg p = \deg q + 1 \), both \( xq \) and \( np \) have degree \( \deg q + 1 \), and the numerator has leading coefficient \( \operatorname{lc}(q) - n \operatorname{lc}(p) \). Choosing \( n > \operatorname{lc}(q)/\operatorname{lc}(p) \), which @thm-naturals-unbounded allows, makes it negative, so \( f > x/n \) and \( f \notin I_n \). Both cases contradict \( f \in \bigcap_n I_n \). With (b), no \( f \) lies in every \( I_n \), and the intersection is empty.
 
 (d) The line "\( \alpha \coloneqq \sup \{ a_n \} \) exists by @ax-least-upper-bound". Here the left endpoints are \( a_n = n \), and \( \{ a_n \} = \nN \) is bounded above (by \( x/1 \), for instance) but has no supremum in \( \nR(x) \), as shown in the section on the Archimedean property. The claim \( a_m \le b_n \) and every other line survive.
 :::
@@ -451,7 +454,7 @@ Suppose, for a contradiction, that \( r \coloneqq \sqrt2 + \sqrt3 \) is rational
 \[
 r^2 = 2 + 2\sqrt2 \sqrt3 + 3 = 5 + 2\sqrt6 ,
 \]
-so \( \sqrt6 = (r^2 - 5)/2 \) is rational, because the rationals are closed under the field operations. But no rational number has square \( 6 \) (@exr-negation-and-contradiction-c1). Hence \( r \) is irrational \( [\rulename{\neg I}] \).
+so \( \sqrt6 = (r^2 - 5)/2 \) is rational, because the rationals are closed under the field operations (@exm-ordered-fields-q-r). But no rational number has square \( 6 \) (@exr-negation-and-contradiction-c1). Hence \( r \) is irrational \( [\rulename{\neg I}] \).
 
 Chapter 2 could prove only the negative half: no rational squares to \( 6 \) (@exr-negation-and-contradiction-c1). With @thm-nth-root the number \( \sqrt6 \) exists in \( \nR \), and the negative statement becomes the positive one, "\( \sqrt6 \) is irrational", which is what the argument uses.
 :::
@@ -473,16 +476,22 @@ The look-alike tools work less well. Proof by cases, as in @exm-triangle-inequal
 :::
 
 <!-- dependency ledger
-thm-nested-intervals (claim): I_k is contained in I_m for m <= k, from I_(j+1) contained in I_j | inline, by induction on k - m (ch07 (promised))
-thm-nested-intervals (example): 2^(n-1) >= n for n in N (the bisection intervals shrink) | inline, by induction (ch07 (promised))
+thm-nested-intervals (claim): I_k is contained in I_m for m <= k, from I_(j+1) contained in I_j | inline, by induction on k - m (ch03 (promised))
+thm-nested-intervals (example): 2^(n-1) >= n for n in N (the bisection intervals shrink) | inline, by induction (ch03 (promised))
 thm-reals-uncountable (proof): a family defined by recursion from an explicit rule exists | definition by recursion, ch07 (promised); prose pointer in the proof
 thm-reals-uncountable (proof): countable means listable, i.e. the image of a function from N | ch08 (promised); prose pointer before the theorem
 thm-reals-uncountable (example): Q is countable; a union of two countable sets is countable; a subset of a countable set is countable (remark and table) | ch08 (promised); used only in a remark and the table, never in a proof
 thm-reals-uncountable (example): (p/q)^2 = x is impossible in R(x), since p^2 and x q^2 have degrees of different parity (table) | inline
 exr-nested-intervals-b1 (solution): 14^2 = 196, 15^2 = 225, 141^2 = 19881, 142^2 = 20164; an integer k <= z satisfies k <= floor(z) | arithmetic and lem-integer-part, shown inline
-exr-nested-intervals-c1 (solution): 2^(n-1) >= n | inline, by induction (ch07 (promised))
+exr-nested-intervals-b1 (solution): no integer lies strictly between k and k + 1 | ch07 (promised), recalled in the remark on N in 05-archimedean-property
+exr-nested-intervals-c1 (solution): 2^(n-1) >= n | inline, by induction (ch03 (promised))
+exr-nested-intervals-c1 (solution): the one induction of (b), in F | inline, by induction (ch03 (promised))
+exr-nested-intervals-c1 (solution): N inside F; 2 > 0 in F | exr-ordered-fields-c1, thm-ordered-field-rules (h)
 exr-nested-intervals-c2 (solution): Q is countable; a subset of a countable set is countable | ch08 (promised); the item states them as usable facts
 exr-nested-intervals-c4 (solution): the expansions of (s + h)^3 + (s + h) and (s - h)^3 + (s - h); 0.68^3 = 0.314432 and 0.69^3 = 0.328509 | lem-field-algebra; arithmetic, shown inline
 exr-nested-intervals-r2 (solution): a product of rationals is rational | exm-ordered-fields-q-r
+exr-nested-intervals-r2 (solution): (t^2)^2 = t^4 | power laws, ch07 (promised)
+exr-nested-intervals-r3 (solution): (r^2 - 5)/2 is rational | exm-ordered-fields-q-r
+exr-nested-intervals-c3 (solution): degree and leading coefficient of sums, differences and products of polynomials | algebra of polynomials, taken as known (exm-nonarchimedean-field)
 exr-nested-intervals-r3 (solution): sqrt(2) sqrt(3) = sqrt(6), by uniqueness of positive square roots | inline, from thm-nth-root
 -->

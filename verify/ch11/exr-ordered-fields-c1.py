@@ -1,4 +1,4 @@
-"""exr-ordered-fields-c1 (Ch 10, 01): Z/3 admits no order satisfying (O1)-(O4); n*1 > 0 and
+"""exr-ordered-fields-c1 (Ch 11, 01): Z/3 admits no order satisfying (O1)-(O4); n*1 > 0 and
 strictly increasing in Q (first 200 terms)."""
 from itertools import permutations
 from fractions import Fraction as F

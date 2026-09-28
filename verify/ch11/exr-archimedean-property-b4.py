@@ -1,4 +1,4 @@
-"""exr-archimedean-property-b4 (Ch 10, 05): n/(n+1) = 1 - 1/(n+1) < 1 and 1/(n+1) < 1/n;
+"""exr-archimedean-property-b4 (Ch 11, 05): n/(n+1) = 1 - 1/(n+1) < 1 and 1/(n+1) < 1/n;
 line (ix): with eps = 1/n, n/(n+1) > 1 - eps."""
 from fractions import Fraction as F
 

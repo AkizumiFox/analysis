@@ -1,4 +1,4 @@
-"""exr-archimedean-property-a1 (Ch 10, 05): [1/2, oo) is inductive (x >= 1/2 gives x + 1 >= 3/2);
+"""exr-archimedean-property-a1 (Ch 11, 05): [1/2, oo) is inductive (x >= 1/2 gives x + 1 >= 3/2);
 [0, 10] is not (10 -> 11); N u {1/2} is not (1/2 -> 3/2, strictly between 1 and 2)."""
 from fractions import Fraction as F
 

@@ -1,4 +1,4 @@
-"""exr-density-and-roots-c1 (Ch 10, 06): the marking scheme's alternative Case 1 constant
+"""exr-density-and-roots-c1 (Ch 11, 06): the marking scheme's alternative Case 1 constant
 h = min{1, (2 - s^2)/6} works for 1 <= s <= 2 with s^2 < 2 (since 2s + 1 <= 5)."""
 from fractions import Fraction as F
 

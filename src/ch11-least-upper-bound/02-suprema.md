@@ -1,10 +1,10 @@
 # Upper Bounds, Maxima and Suprema
 
-The previous section ended with a puzzle. The rationals and the reals obey the same rules of arithmetic and the same rules of order (@def-ordered-field), yet \( x^2 - 2 \) has a zero in one and not in the other. The difference lies in how **sets** of numbers behave: in \( \nQ \), a set can press against a point that is not there. This section builds the vocabulary to say that precisely. Everything happens in an arbitrary ordered field \( F \), because we need to compare \( F = \nQ \) with \( F = \nR \), and the definitions must not already take a side.
+The previous section ended with a puzzle. The rationals and the reals obey the same rules of arithmetic and the same rules of order (@def-ordered-field), yet \( x^2 - 2 \) has a zero in one (as @thm-sqrt2-exists will prove) and not in the other. The difference lies in how **sets** of numbers behave: in \( \nQ \), a set can press against a point that is not there. This section builds the vocabulary to say that precisely. Everything happens in an arbitrary ordered field \( F \), because we need to compare \( F = \nQ \) with \( F = \nR \), and the definitions must not already take a side.
 
 ## A largest element that is not there
 
-Ask for the largest element of the open interval \( (0, 1) \) in \( \nR \). There is none. Whatever \( a \in (0, 1) \) you propose, the midpoint \( \frac{a + 1}{2} \) lies strictly between \( a \) and \( 1 \) by @thm-ordered-field-rules (h), so it belongs to \( (0, 1) \) and beats \( a \). The same happens, less visibly, for the set of positive rationals whose square is less than \( 2 \); we prove it at the end of this section.
+Ask for the largest element of the open interval \( (0, 1) \) in \( \nR \). There is none. Whatever \( a \in (0, 1) \) you propose, the midpoint \( \frac{a + 1}{2} \) lies strictly between \( a \) and \( 1 \) by @thm-ordered-field-rules (h), so it belongs to \( (0, 1) \) and beats \( a \). The same happens, less visibly, for the set of positive rationals whose square is less than \( 2 \); Case 1 of the proof at the end of this section is the reason, and @exr-suprema-c1 writes it out.
 
 And yet both sets are heading somewhere. The interval \( (0, 1) \) is pressed against \( 1 \): nothing in it reaches \( 1 \), and nothing smaller than \( 1 \) stays above it. "Largest element" is the wrong notion, because it demands that the target belong to the set. What survives is the smallest number that sits above the whole set. To define it we first need words for "sits above".
 
@@ -114,7 +114,7 @@ Let \( F \) be an ordered field and \( A \subseteq F \). If \( s \) and \( s' \)
 By (S1) for \( s' \), the element \( s' \) is an upper bound of \( A \). So (S2) for \( s \) gives \( s \le s' \). Swapping the roles of \( s \) and \( s' \) gives \( s' \le s \). By trichotomy, \( s = s' \).
 :::
 
-The proof is the standard uniqueness move: suppose there are two, use the first property of one against the second property of the other, and then swap. From now on, when \( A \) has a supremum in \( F \), we call it **the** supremum and write \( \sup A \). Existence is a different matter, and nothing so far guarantees it; the rest of this section shows three ways it can fail.
+The proof is the standard uniqueness move: suppose there are two, use the first property of one against the second property of the other, and then swap. From now on, when \( A \) has a supremum in \( F \), we call it **the** supremum and write \( \sup A \). Existence is a different matter, and nothing so far guarantees it. It can fail in three ways: the set may have no upper bound at all, like \( [0, \infty) \) above; it may have no elements; or it may press against a gap in the field. The rest of this section shows the last two.
 
 The mirror-image notion comes with its own definition, since we use it as often.
 
@@ -166,7 +166,7 @@ Let \( A = \{ 1 - \frac1n : n \in \nN \} = \{ 0, \frac12, \frac23, \frac34, \dot
 :::
 
 ::: {.solution}
-Each \( n \in \nN \) is positive, by induction on \( n \) (Chapter 7): \( 1 > 0 \) by @thm-ordered-field-rules (e), and if \( n > 0 \), then \( n + 1 > n > 0 \) by (O3) and (O2). So \( \frac1n > 0 \) by @thm-ordered-field-rules (f), and hence \( 1 - \frac1n < 1 \) by @thm-ordered-field-rules (a). So \( 1 \) is an upper bound, and \( 1 \notin A \). No element is a maximum either: \( 1 - \frac1n < 1 - \frac1{n + 1} \), because \( \frac1{n + 1} < \frac1n \) by @thm-ordered-field-rules (f), so every element is beaten by the next one.
+Each \( n \in \nN \) is positive, by induction on \( n \) (Chapter 3): \( 1 > 0 \) by @thm-ordered-field-rules (e), and if \( n > 0 \), then \( n + 1 > n > 0 \) by (O3) and (O2). So \( \frac1n > 0 \) by @thm-ordered-field-rules (f), and hence \( 1 - \frac1n < 1 \) by @thm-ordered-field-rules (a). So \( 1 \) is an upper bound, and \( 1 \notin A \). No element is a maximum either: \( 1 - \frac1n < 1 - \frac1{n + 1} \), because \( \frac1{n + 1} < \frac1n \) by @thm-ordered-field-rules (f), so every element is beaten by the next one.
 
 It is true that \( \sup A = 1 \), but (S2) is harder than it looks. It says that no \( M < 1 \) is an upper bound, that is, for every \( M < 1 \) some \( 1 - \frac1n \) exceeds \( M \). That requires \( \frac1n < 1 - M \) for some \( n \). The existence of such an \( n \) says, in effect, that the natural numbers are not bounded above, and that does not follow from the ordered-field axioms. We prove it later in this chapter, from the axiom of the next section, and prove \( \sup A = 1 \) right after it.
 :::
@@ -404,7 +404,7 @@ Let \( F \) be an ordered field, \( A \subseteq F \), and let \( U(A) \) be the 
 def-upper-bound (example): negating "for every a in A, a <= M" to "there exists a in A with a > M" | quantifier negation, ch04 (promised); prose pointer in the text
 def-bounded-above (example): max{M, 0} + 1 > M for every real M | thm-ordered-field-rules and (O3), shown inline
 exm-sup-finite-and-closed (solution): every non-empty finite subset of an ordered field has a maximum | induction on the number of elements, ch07 (promised); prose pointer in the text; not used in any proof
-exm-sup-one-minus-reciprocal (solution): n > 0 for every n in N | inline, by induction on n; the principle is ch07 (promised)
+exm-sup-one-minus-reciprocal (solution): n > 0 for every n in N | inline, by induction on n; the principle is ch03 (promised)
 thm-no-rational-sup-sqrt2 (proof): Q is closed under the field operations, so h and s + h, s - h are rational | exm-ordered-fields-q-r
 thm-no-rational-sup-sqrt2 (proof): the arithmetic of the two values of h ((s + h)^2 bound, (s - h)^2 = 2 + h^2) | inline; lem-field-algebra
 exr-suprema-a1 (solution): 577^2 = 332929 = 2 * 408^2 + 1 | arithmetic, shown inline

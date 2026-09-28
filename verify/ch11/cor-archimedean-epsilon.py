@@ -1,4 +1,4 @@
-"""cor-archimedean-epsilon (Ch 10, 05): the Quick check: the least n with 1/n < 0.003 is 334
+"""cor-archimedean-epsilon (Ch 11, 05): the Quick check: the least n with 1/n < 0.003 is 334
 (1/333 = 0.003003... is too big); for 0.0003 it is 3334."""
 from fractions import Fraction as F
 

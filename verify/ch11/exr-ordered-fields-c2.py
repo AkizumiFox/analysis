@@ -1,4 +1,4 @@
-"""exr-ordered-fields-c2 (Ch 10, 01): max/min by the absolute-value formulas; the
+"""exr-ordered-fields-c2 (Ch 11, 01): max/min by the absolute-value formulas; the
 inequality |max{a,b} - max{c,d}| <= max{|a-c|, |b-d|}."""
 from _grid import grid
 

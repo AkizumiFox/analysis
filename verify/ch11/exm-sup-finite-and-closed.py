@@ -1,4 +1,4 @@
-"""exm-sup-finite-and-closed (Ch 10, 02): max{-1, 3, 7/2} = 7/2 is an upper bound in the set."""
+"""exm-sup-finite-and-closed (Ch 11, 02): max{-1, 3, 7/2} = 7/2 is an upper bound in the set."""
 from fractions import Fraction as F
 
 QUOTED = {"max": F(7, 2), "sup B": 1}

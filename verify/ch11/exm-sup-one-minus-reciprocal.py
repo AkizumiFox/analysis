@@ -1,4 +1,4 @@
-"""exm-sup-one-minus-reciprocal (Ch 10, 02): A = {0, 1/2, 2/3, 3/4, ...}; 1 - 1/n < 1 and
+"""exm-sup-one-minus-reciprocal (Ch 11, 02): A = {0, 1/2, 2/3, 3/4, ...}; 1 - 1/n < 1 and
 strictly increasing in n."""
 from fractions import Fraction as F
 

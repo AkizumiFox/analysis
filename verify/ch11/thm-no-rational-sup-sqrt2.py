@@ -1,4 +1,4 @@
-"""thm-no-rational-sup-sqrt2 (Ch 10, 02): the two values of h, the bounds used in each case,
+"""thm-no-rational-sup-sqrt2 (Ch 11, 02): the two values of h, the bounds used in each case,
 and the worked constants after the proof: s = 3/2 gives h = 1/12, s - h = 17/12,
 (17/12)^2 = 289/144 = 2 + 1/144; s = 1 gives h = 1/6, s + h = 7/6, 49/36 < 2."""
 from fractions import Fraction as F

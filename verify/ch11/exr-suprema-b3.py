@@ -1,4 +1,4 @@
-"""exr-suprema-b3 (Ch 10, 02): for 1/2 <= M < 1, x = M/(1 - M) + 1 > 0 has x(1 - M) = 1 and
+"""exr-suprema-b3 (Ch 11, 02): for 1/2 <= M < 1, x = M/(1 - M) + 1 > 0 has x(1 - M) = 1 and
 x/(x + 1) > M; x/(x + 1) < 1 for x > 0."""
 from fractions import Fraction as F
 

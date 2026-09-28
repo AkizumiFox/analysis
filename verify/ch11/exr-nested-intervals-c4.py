@@ -1,4 +1,4 @@
-"""exr-nested-intervals-c4 (Ch 10, 07): g(x) = x^3 + x; the two expansions; with 0 <= s <= 1:
+"""exr-nested-intervals-c4 (Ch 11, 07): g(x) = x^3 + x; the two expansions; with 0 <= s <= 1:
 Case 1 h = (1 - g(s))/16 gives g(s + h) - g(s) <= 8h < 1 - g(s); Case 2 h = (g(s) - 1)/10 gives
 0 < h < s/5, g(s) - g(s - h) <= 5h < g(s) - 1; g(0.68) = 0.994432, g(0.69) = 1.018509."""
 from fractions import Fraction as F

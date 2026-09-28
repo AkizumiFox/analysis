@@ -1,4 +1,4 @@
-"""exm-rational-between (Ch 10, 06): n = 12 is the least n with 1/n < 3/2 - sqrt 2
+"""exm-rational-between (Ch 11, 06): n = 12 is the least n with 1/n < 3/2 - sqrt 2
 ((17/12)^2 = 289/144 > 2, (31/22)^2 = 961/484 < 2); floor(12 sqrt 2) = 16 since
 256 <= 288 < 289; m = 17 and sqrt 2 < 17/12 < 3/2."""
 from fractions import Fraction as F

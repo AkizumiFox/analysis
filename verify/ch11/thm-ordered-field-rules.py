@@ -1,4 +1,4 @@
-"""thm-ordered-field-rules (Ch 10, 01): the warning's witness a = c = -3, b = d = -1
+"""thm-ordered-field-rules (Ch 11, 01): the warning's witness a = c = -3, b = d = -1
 (ac = 9 > 1 = bd); rules (c)-(h) spot-checked on a grid; the Quick check that Z/2 admits no
 order (brute force over all strict total orders on {0, 1} checking (O3) and (O4))."""
 from fractions import Fraction as F

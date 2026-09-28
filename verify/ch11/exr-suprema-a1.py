@@ -1,4 +1,4 @@
-"""exr-suprema-a1 (Ch 10, 02): (e) Case 2 at s = 17/12 gives h = 1/408, s - h = 577/408,
+"""exr-suprema-a1 (Ch 11, 02): (e) Case 2 at s = 17/12 gives h = 1/408, s - h = 577/408,
 (s - h)^2 = 2 + 1/166464; 577^2 = 332929 = 2 * 408^2 + 1. (c) x^2 <= 4 iff -2 <= x <= 2."""
 from fractions import Fraction as F
 from _grid import grid

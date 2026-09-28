@@ -1,4 +1,4 @@
-"""exr-nested-intervals-a1 (Ch 10, 07): (b) I_2 = [2, 5/2], I_3 = [3, 10/3]; (e) for the list
+"""exr-nested-intervals-a1 (Ch 11, 07): (b) I_2 = [2, 5/2], I_3 = [3, 10/3]; (e) for the list
 0, 1, 2: I_1 = [1, 2], L = [1, 4/3], R = [5/3, 2], I_2 = [5/3, 2], then L = [5/3, 16/9],
 R = [17/9, 2], I_3 = [5/3, 16/9]."""
 from fractions import Fraction as F

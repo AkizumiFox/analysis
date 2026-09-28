@@ -149,3 +149,14 @@
 | 07:424 | `exr-nested-intervals-r2` | correct | t^2 positive root of 2 by uniqueness |
 | 07:441 | `exr-nested-intervals-r3` | correct | negI correctly labelled (irrational = not rational); sqrt2 sqrt3 = sqrt6 by uniqueness |
 | 07:459 | `exr-nested-intervals-r4` | correct | equality iff (1-x)(1+x)>=0 iff x in [-1,1]; own grid check |
+
+## Resolution (S7, reviser, 2026-09-28)
+
+The chapter is now `src/ch11-least-upper-bound/` (ledger `authoring/ledger/ch11.yaml`). Ledger: each item below has an S7 verdict `correct` by `reviser`, awaiting the S7 re-referee.
+
+| Finding | Resolution |
+|---|---|
+| 05:86 `thm-naturals-unbounded` (error) | Preferred fix taken. The proof's middle paragraph is now the direct step of 05:179: for every \( n \), \( n + 1 \in \nN \) and \( n + 1 \le s \), so \( n \le s - 1 \); hence \( s - 1 \) is an upper bound and (S2) gives \( s \le s - 1 \). The Idea says the same. The remark now says every step inside the \( \neg I \) box is direct, and that the proof does not use "s − 1 is not an upper bound, so some n exceeds it", which would need the classical law; the one classical step is the last paragraph. The §05 list "The line of the proof that fails" and the sentence after it match (the ℝ(x) argument is now literally the middle paragraph with \( M \) for \( s \)). |
+| 05:300/311 C1(a) model solution and scheme | Model solution uses the direct step. Scheme: "2: shows \( s - 1 \) is an upper bound (inductive + (S1), for every n)"; "1: applies (S2) to \( s - 1 \), contradiction, concludes". New fatal error: dropping "for every n". The classical variant ("by (S2) or @thm-sup-epsilon with ε = 1, some n > s − 1") is accepted explicitly for the same 3 points, with a note that it adds a classical step inside the box. |
+| 05:157 `exm-nonarchimedean-field` (minor) | The text before the example now says that the example uses the ordered-field rules in ℝ(x) and so rests on @exr-archimedean-property-c2; ledgered. |
+| 01:381 `exr-ordered-fields-c1` (minor) | (c) now proves \( (m + n)\cdot 1 = m\cdot 1 + n\cdot 1 \) by induction on \( n \). |

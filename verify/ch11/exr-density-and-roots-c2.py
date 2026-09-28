@@ -1,4 +1,4 @@
-"""exr-density-and-roots-c2 (Ch 10, 06): 2^k > k; m = floor(2^k x) + 1 gives x < m/2^k < y
+"""exr-density-and-roots-c2 (Ch 11, 06): 2^k > k; m = floor(2^k x) + 1 gives x < m/2^k < y
 once 1/k < y - x."""
 from fractions import Fraction as F
 import math

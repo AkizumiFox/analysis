@@ -1,4 +1,4 @@
-"""exr-nested-intervals-r4 (Ch 10, 07): |x - 1| + |x + 1| >= 2, with equality exactly on
+"""exr-nested-intervals-r4 (Ch 11, 07): |x - 1| + |x + 1| >= 2, with equality exactly on
 [-1, 1]; (1 - x)(x + 1) = 1 - x^2; the squared form has cross term 2|x^2 - 1|."""
 from _grid import grid
 

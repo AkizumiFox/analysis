@@ -1,4 +1,4 @@
-"""exm-sup-squares-epsilon (Ch 10, 04): h = min{1/2, eps/2}, x = 1 - h in [1/2, 1), and
+"""exm-sup-squares-epsilon (Ch 11, 04): h = min{1/2, eps/2}, x = 1 - h in [1/2, 1), and
 x^2 > 1 - 2h >= 1 - eps."""
 from fractions import Fraction as F
 from _grid import eps_values

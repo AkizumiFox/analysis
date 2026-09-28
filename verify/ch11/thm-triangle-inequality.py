@@ -1,4 +1,4 @@
-"""thm-triangle-inequality (Ch 10, 01): (a), (b) on a grid; the remark's
+"""thm-triangle-inequality (Ch 11, 01): (a), (b) on a grid; the remark's
 |1 + (-1)| = 0 < 2; equality in (a) iff xy >= 0 (also exr-ordered-fields-b2 (b))."""
 from _grid import grid
 

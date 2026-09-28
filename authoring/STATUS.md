@@ -52,12 +52,13 @@ Chapter 1 rows use the rewritten chapter's section numbers (2026-09-28, S7); its
 | Ch 1 §03, §04, §05, §06, index | facts about ≤ and absolute value from the ordered-field axioms; existence of square roots of non-negative reals; `thm-sqrt2-irrational` used as is | Ch 11 (paid) |
 | Ch 1 §05 | differentiable ⇒ continuous | Ch 17 |
 | Ch 11 §02, §05 | the quantifier law "not all" ⇒ "some not" (uses RAA); quantifier negation | Ch 4 |
-| Ch 11 index | sets, images, −A, A + B as images | Ch 6 |
-| Ch 11 §01 C1, §02, §04, §05, §06 | induction (used for n > 0 in exm-sup-one-minus-reciprocal and cor-sup-approximation, and in §06); every non-empty finite set has a maximum; ℕ closed under + and ·; n ≥ 2 ⇒ n − 1 ∈ ℕ; nothing between n and n + 1; well-ordering (used in lem-integer-part); definition by recursion (powers uⁿ in thm-nth-root) | Ch 7 |
-| Ch 11 §05 remark, §06 lem-integer-part | ℤ closed under +, − and · (used for m = j₀ − p − 1 and for m′ − m in lem-integer-part; "positive integer ⇒ natural number" is proved in the §05 remark) | Ch 7 |
-| Ch 11 index, §07 | countable = listable with repetitions (image of ℕ); ℕ, ℤ, ℚ countable; diagonal proof via decimals, 0.4999… = 0.5 flagged | Ch 8 (match the definition there) |
+| Ch 11 §01 C1, §02, §04, §05, §06, §07, index | induction on ℕ (`ax-induction`): n > 0 in exm-sup-one-minus-reciprocal and cor-sup-approximation; the copy of ℕ in an ordered field, and (m + n)·1 = m·1 + n·1 (§01 C1); "ℕ is the smallest inductive set" (§05 remark); x₀ⁿ ≤ x₀ and the claim of thm-nth-root, 2ᵏ > k (§06); I_k ⊆ I_m, 2ⁿ⁻¹ ≥ n, and the one induction of C1 (b) (§07) | Ch 3 |
+| Ch 11 index, §05 | sets, images, −A, A + B as images; the intersection of a family of sets (ℕ as the intersection of all inductive subsets of ℝ, §05) | Ch 6 |
+| Ch 11 §01, §02, §03, §05, §06, §07, index | every non-empty finite set has a maximum (§02); ℕ closed under + and ·, and (m + n) + 1 = m + (n + 1) (§01 C1); n ≥ 2 ⇒ n − 1 ∈ ℕ; nothing between n and n + 1 (§03 Quick check, §05 A1, §07 B1); well-ordering (lem-integer-part, §05 C1); definition by recursion (powers uⁿ and the finite sum Σ in thm-nth-root; the intervals of thm-reals-uncountable); the power law (t²)² = t⁴ (§07 R2); the arithmetic of ℤ, e.g. no integer m has 2m = 1 (§01 exm-integers-not-a-field, A1) | Ch 7 |
+| Ch 11 §05 remark, §06 lem-integer-part, thm-rationals-dense | ℤ closed under +, − and · (used for m = j₀ − p − 1 and for m′ − m in lem-integer-part, and ⌊nx⌋ + 1 in thm-rationals-dense; "positive integer ⇒ natural number" is proved in the §05 remark) | Ch 7 |
+| Ch 11 index, §07 | countable = listable with repetitions (image of ℕ); ℕ, ℤ, ℚ countable; a union of two countable sets is countable, and a subset of a countable set is countable (§07 remark after thm-reals-uncountable, the table, C2); diagonal proof via decimals, 0.4999… = 0.5 flagged | Ch 8 (match the definition there) |
 | Ch 11 §01, §03, §04, §05 | @eq-abs-interval is the move of limits; sup approximation becomes a limit; "complete" acquires a second meaning | Ch 12 |
-| Ch 11 §06, §07 | Heine–Borel and the IVT proved by "construct a point as a sup" | Ch 14, Ch 16 |
+| Ch 11 §06, §07 (C4 solution), index | Heine–Borel and the IVT proved by "construct a point as a sup" | Ch 14, Ch 16 |
 | Ch 11 §06 | aˣ for irrational x | Ch 20 |
 | Ch 11 index, §03, §05, §07 | equivalent forms of completeness | Ch 21 |
 | Ch 11 index, §03 | constructing ℝ; uniqueness (prose only, optional) | Ch 22, Ch 23 |
@@ -65,6 +66,10 @@ Chapter 1 rows use the rewritten chapter's section numbers (2026-09-28, S7); its
 ## Blueprint deviations
 
 - Ch 1 (recorded at S7 from S5 Referee B, R4; for S2a to confirm): six labels not in the frozen blueprint's label list carry content the blueprint asks for: `exm-disjunction-first-derivations`, `exm-disjunction-regroup`, `exm-cases-on-hypothesis` (§03); `exm-double-negation-introduction`, `exm-modus-tollens-instance` (§04); `prp-provable-equivalence-basics` (§05).
+
+- Ch 11 (recorded at S7 from S5 Referee B, R6; for S2a to confirm): `lem-field-algebra`, `prp-absolute-value-rules` and `lem-integer-part` are not in the frozen blueprint's label list (they carry facts the blueprint's results need; `lem-field-algebra` now cites `@la:thm-field-basic-properties` for the parts the companion has and proves only −(−a) = a, (c) and (e)). The blueprint's §07 task "the reals not in a given countable set are dense" is now §07 C2 (c). The blueprint names no key proofs (STYLE §11.2).
+- Ch 11 (for NOTATION, from S5 Referee B, R5 (b); not changed at S7): rows are wanted for ℝ(x) (the rational functions, §05), \( \sqrt[n]{a} \) / \( a^{1/n} \) (§06), \( U(A) \) (the set of upper bounds, §02 C2, §03 C2) and \( \operatorname{lc} \) (leading coefficient; defined where used in §05 C2 and §07 C3).
+- Ch 11 → Ch 7 blueprint (from S5 Referee B, R2): the Ch 7 blueprint opens a promise to Ch 11, that `@def-supremum` gains a clause pointing back to `def-order-supremum`; schedule it when Ch 7 is drafted.
 
 ## Engine and convention notes from the pilot
 

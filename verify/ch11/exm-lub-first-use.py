@@ -1,4 +1,4 @@
-"""exm-lub-first-use (Ch 10, 03): 1 is in S; 2 bounds S; the warning's smaller bound 3/2
+"""exm-lub-first-use (Ch 11, 03): 1 is in S; 2 bounds S; the warning's smaller bound 3/2
 (9/4 > 2); and the Quick check: the integers up to 3.5 have maximum 3."""
 from fractions import Fraction as F
 

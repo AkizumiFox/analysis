@@ -1,4 +1,4 @@
-"""exr-density-and-roots-a1 (Ch 10, 06): (f) Case 1 at s = 7/5: 2 - s^2 = 1/25, 4s + 2 = 38/5,
+"""exr-density-and-roots-a1 (Ch 11, 06): (f) Case 1 at s = 7/5: 2 - s^2 = 1/25, 4s + 2 = 38/5,
 h = 1/190, s + h = 267/190, (267/190)^2 = 71289/36100 < 72200/36100 = 2, bound 1 + s^2/2 = 99/50."""
 from fractions import Fraction as F
 

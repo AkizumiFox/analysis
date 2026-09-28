@@ -59,3 +59,33 @@ I read the chapter bottom-up: §07 (R, C, B, A, then the text), then back to §0
 ## Summary
 
 **0 errors. 1 gap**: the STATUS promise table misses §07 → Ch 15, and several `ch05`/`ch06`/`ch07 (promised)` ledger sources are not listed by section. **18 minor**: 7 chapter-level (R2–R7, the 03:139 pattern claim) and 11 item or meta-claim level (the 10 ledger items above, plus 02:7). **8 nits** (three in R9, one in R10, 02:3, two at 01:285/167, 01:252). No false mathematical statement was found. Every false sentence is a meta-claim (02:7, 02:117, 03:26, 03:139, 07:138, 01:285) or a claim about another chapter's plan (05:58, 04:123, 03:28). The ledger items listed above as minor carry an S5b `minor` verdict; all others carry `correct` (`--by refereeB`).
+
+## Resolution (S7, reviser, 2026-09-28)
+
+Chapter numbers below are post-renumbering (Ch 3 = truth, soundness and completeness, holding `ax-induction`; Ch 6 = sets; Ch 7 = relations and induction; Ch 8 = cardinality; Ch 12 = sequences; Ch 16 = IVT). Ledger: S7 `correct` by `reviser` on each touched item; `ledger.py stale 11` reports 0.
+
+| Finding | Resolution |
+|---|---|
+| R1 (gap) promise bookkeeping | STATUS: new row Ch 11 → Ch 3 for induction (lists §01 C1, §02, §04, §05, §06, §07, index, with the uses). Ch 7 row now lists §01 (arithmetic of ℤ, (m + n) + 1), §03 (Quick check), §05, §06 (recursion for Σ), §07 (recursion in thm-reals-uncountable, B1, R2 power law). Ch 6 row now lists §05 (intersection of a family). Ch 8 row lists "union of two countable sets", "subset of a countable set" (§07 remark, table, C2). Ch 16 row lists §07 (C4 solution). `promises.py --reconcile`: 0 unrecorded. |
+| R2 induction credited to Ch 7 | §05 remark: "Chapter 3 takes induction as a basic property of ℕ, and Chapter 7 proves well-ordering and the arithmetic below from it"; the smallest-inductive-set clause points to Chapter 3. index: "induction (Chapter 3)". §01 C1 hint and §02:169 now say Chapter 3. Induction ledger sources are `ch03 (promised)`; recursion/arithmetic stay `ch07`. The Ch 7 → Ch 11 promise (`def-supremum` clause) is recorded in STATUS. |
+| R3 promises to Ch 12 | 04:123 now "Once limits are defined in Chapter 12, this says that sup A is the limit of a sequence from A" (the Ch 12 blueprint names sup approximation as a skill). 03:28 kept: the Ch 12 blueprint now says it proves "Cauchy completeness". |
+| R4 `lem-field-algebra` | Cites @la:thm-field-basic-properties (LA 0.7.1: uniqueness of 0, 1, −a, a⁻¹; 0·a = 0; ab = 0 ⇒ a = 0 or b = 0) for (a), (b), (d); proves only −(−a) = a, (c) and (e). Lead-in and index "What you need" say so. `./build.py check` resolves it ("Linear Algebra, Theorem 0.7.1"). |
+| R5 notation | (a) Table row now "positive q with q² < 2". (b) NOTATION rows for ℝ(x), ⁿ√a, U(A), lc recorded in STATUS for the coordinator (NOTATION not edited at S7); lc is defined where it is used. |
+| R6 blueprint deviations | Recorded in STATUS "Blueprint deviations". §07 C2 gains (c): the reals not in a given countable set are dense. |
+| R7 roadmap | §05 bullet now "The Archimedean property." |
+| R9 nits | Exit-check titles now "C2: Exit check: sums of sets" and "C1: Exit check: the Archimedean property, and a circular proof". Single-hint C items (ii) and scheme-less C items (iii) left as is (optional by §11.6/§11.7; a nit). |
+| 07:454 R3 | Cites @exm-ordered-fields-q-r; ledgered. R2's \( (t^2)^2 = t^4 \) ledgered (power laws, ch07). |
+| 07:324, 330 C3 | Both choices cite @thm-naturals-unbounded; degree/leading-coefficient facts ledgered. |
+| 07:260 C1 | Ledger adds the induction of (b) (ch03) and ℕ inside F (@exr-ordered-fields-c1). |
+| 07:211 B1 | Ledger adds "no integer strictly between k and k + 1" (ch07, recalled in the §05 remark). |
+| 07:138 remark | "such as √2 and √2 + q for rational q (the proof of @cor-irrationals-dense)". |
+| 06:204 and related | Pointer to the §05 remark for "positive integer ⇒ natural"; "⌊nx⌋ + 1, an integer, since sums of integers are integers"; Σ by recursion ledgered. |
+| 05:155 naturals of ℝ(x) | Now proved inline (constants form an inductive set; every inductive subset contains each constant, by induction in ℝ); ledger source updated. |
+| 03:26 | "…proved from these assumptions, together with the logic and set theory of Part 0 (including, where it is flagged, a choice principle)." |
+| 02:117 | "It can fail in three ways: no upper bound, like [0, ∞) above; no elements; or a gap in the field. The rest of this section shows the last two." |
+| 01:398 | Addition now proved (see S6 resolution). |
+| 03:139 | The test holds in every ordered field; the sup pattern is claimed only for the Archimedean property, roots and nested intervals; density follows from Archimedes with no new supremum. |
+| 02:7 | Now points to Case 1 of the proof at the end of the section and to @exr-suprema-c1. |
+| Nits 02:3, 01:285, 01:167, 01:252 | "(as @thm-sqrt2-exists will prove)"; "can be strict"; "in this chapter"; rules (b) cited. |
+
+Note: §07 now has 5,193 words by `check_structure.py` (advisory; the aim is ≤ 5,000), mostly from the added ledger lines and C2 (c).

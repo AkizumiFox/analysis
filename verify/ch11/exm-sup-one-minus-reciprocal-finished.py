@@ -1,4 +1,4 @@
-"""exm-sup-one-minus-reciprocal-finished (Ch 10, 05): eps = 0.01 needs n > 100; n = 101 gives
+"""exm-sup-one-minus-reciprocal-finished (Ch 11, 05): eps = 0.01 needs n > 100; n = 101 gives
 1 - 1/101 = 100/101 > 0.99."""
 from fractions import Fraction as F
 

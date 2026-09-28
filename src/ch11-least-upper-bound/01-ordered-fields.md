@@ -54,7 +54,7 @@ In words, the four order axioms say:
 
 From (O1) and (O2), the relation \( \le \) is transitive as well, and a mixed chain \( a \le b < c \) gives \( a < c \): if \( a = b \) this is the hypothesis \( b < c \), and otherwise it is (O2).
 
-**Field algebra.** The field axioms alone imply the familiar algebraic identities. Their proofs use no order at all and are short, so we give them once.
+**Field algebra.** The field axioms alone imply the familiar algebraic identities. Their proofs use no order at all. Most of them are already proved in the linear-algebra companion, from the same axioms, and we cite those; the few that are not there are short, and we prove them here.
 
 ::: {#lem-field-algebra}
 [Field Algebra]
@@ -71,21 +71,13 @@ Let \( F \) be an ordered field (only (F1)–(F9) are used) and let \( a, b \in 
 :::
 
 ::: {.idea}
-Each identity is forced by uniqueness. An element is pinned down by the equation it satisfies, so to show that \( (-a)b \) is \( -(ab) \), we show that it satisfies the equation defining \( -(ab) \), namely that it adds to \( ab \) to give \( 0 \). Part (a) proves the uniqueness, and the other parts use it.
+Each identity is forced by uniqueness. An element is pinned down by the equation it satisfies, so to show that \( (-a)b \) is \( -(ab) \), we show that it satisfies the equation defining \( -(ab) \), namely that it adds to \( ab \) to give \( 0 \). Part (a) is the uniqueness, and the other parts use it.
 :::
 
 ::: {.proof}
-(a) If \( 0' \) also has the property (F3), then \( 0' = 0' + 0 = 0 + 0' = 0 \) by (F3) for \( 0 \), (F1), and (F3) for \( 0' \). If \( a + b = 0 \) and \( a + c = 0 \), then
-\[
-b = b + (a + c) = (b + a) + c = 0 + c = c
-\]
-by (F3), (F2), (F1) and (F3). The same arguments with (F5)–(F8) in place of (F1)–(F4) give the uniqueness of \( 1 \) and of \( a^{-1} \). Finally \( (-a) + a = 0 \) by (F1) and (F4), so \( a \) is an additive inverse of \( -a \), and \( -(-a) = a \) by uniqueness.
-
-(b) By (F3) and (F9), \( a \cdot 0 = a(0 + 0) = a \cdot 0 + a \cdot 0 \). Adding \( -(a \cdot 0) \) to both sides and using (F2), (F4) and (F3) gives \( 0 = a \cdot 0 \).
+(a), (b) and (d). Apart from \( -(-a) = a \), these are parts of @la:thm-field-basic-properties: the uniqueness of \( 0 \), \( 1 \), \( -a \) and \( a^{-1} \); the rule \( 0 \cdot a = 0 \), which gives \( a \cdot 0 = 0 \) by (F6); and "if \( ab = 0 \), then \( a = 0 \) or \( b = 0 \)". The field axioms there are (F1)–(F9) of @def-ordered-field, in the same numbering, so the proofs there apply verbatim, and we do not repeat them. For \( -(-a) = a \): \( (-a) + a = 0 \) by (F1) and (F4), so \( a \) is an additive inverse of \( -a \), and \( -(-a) = a \) by the uniqueness of additive inverses.
 
 (c) By (F6), (F9), (F4) and (b), \( ab + (-a)b = (a + (-a))b = 0 \cdot b = 0 \), so \( (-a)b \) is an additive inverse of \( ab \), and \( (-a)b = -(ab) \) by (a). Using this twice, with (F6), and then (a), \( (-a)(-b) = -(a(-b)) = -(-(ab)) = ab \).
-
-(d) Suppose \( ab = 0 \) and \( a \ne 0 \). Then \( b = 1 \cdot b = (a^{-1} a) b = a^{-1}(ab) = a^{-1} \cdot 0 = 0 \), by (F7), (F6), (F8), (F5) and (b).
 
 (e) By (F9) and (F6), \( (a + b)(a + b) = a^2 + ba + ab + b^2 \), and \( ba + ab = ab \cdot 1 + ab \cdot 1 = ab(1 + 1) = 2ab \) by (F6), (F7) and (F9).
 :::
@@ -164,7 +156,7 @@ Every rule is proved by the same move: turn a comparison into a statement about 
 (h) By (e) and (O3), \( 1 + 1 > 0 + 1 = 1 > 0 \), so \( 2 > 0 \) by (O2); in particular \( 2 \ne 0 \) and \( \frac12 > 0 \) by (f). If \( a < b \), then (O3) gives \( a + a < a + b \) and \( a + b < b + b \), that is, \( 2a < a + b < 2b \), where \( a + a = (1 + 1)a = 2a \) by (F9). Multiplying by \( \frac12 > 0 \) using (c) gives \( a < \frac{a + b}{2} < b \). This proves the theorem.
 :::
 
-Three more rules of the same kind are @exr-ordered-fields-b1. With (a)–(h) in hand, every inequality manipulation in this book is justified by name. Part (h) looks modest, but it already tells us something structural: between any two elements of an ordered field there is a third, so an ordered field has no "next" element after any given one.
+Three more rules of the same kind are @exr-ordered-fields-b1. With (a)–(h) in hand, every inequality manipulation in this chapter is justified by name. Part (h) looks modest, but it already tells us something structural: between any two elements of an ordered field there is a third, so an ordered field has no "next" element after any given one.
 
 The first payoff is a non-example. The complex numbers form a field, but no relation \( < \) on \( \nC \) satisfies (O1)–(O4). Indeed, if one did, then \( i \ne 0 \) would give \( i^2 > 0 \) by (e), that is, \( -1 > 0 \). But (e) also gives \( 1 > 0 \), and then (a) gives \( -1 < 0 \). Having both \( -1 > 0 \) and \( -1 < 0 \) contradicts trichotomy. So \( \nC \) is a field that cannot be ordered, and this is why the book compares real numbers and never complex ones.
 
@@ -249,7 +241,7 @@ Find all real \( x \) with \( \abs{4 - 3x} < 2 \).
 ::: {.solution}
 By @prp-absolute-value-rules (d), \( \abs{4 - 3x} < 2 \) holds if and only if \( -2 < 4 - 3x < 2 \). Subtracting \( 4 \) throughout (O3) gives \( -6 < -3x < -2 \). Multiplying by the negative number \( -\frac13 \) reverses both inequalities, by @thm-ordered-field-rules (d): \( 2 > x > \frac23 \). Every step was an equivalence, so the solution set is the interval \( \left( \frac23, 2 \right) \).
 
-As a check against @eq-abs-interval: \( \abs{4 - 3x} = 3 \abs{x - \frac43} \), so the condition says \( \abs{x - \frac43} < \frac23 \), the interval of radius \( \frac23 \) about \( \frac43 \), which is \( \left( \frac23, 2 \right) \) again.
+As a check against @eq-abs-interval: \( \abs{4 - 3x} = \abs{-3} \abs{x - \frac43} = 3 \abs{x - \frac43} \) by @prp-absolute-value-rules (b), so the condition says \( \abs{x - \frac43} < \frac23 \), the interval of radius \( \frac23 \) about \( \frac43 \), which is \( \left( \frac23, 2 \right) \) again.
 :::
 
 Distance should satisfy one more law: going from \( x \) to \( z \) directly is never longer than going via a third point \( y \). For numbers, that law is the triangle inequality.
@@ -282,8 +274,10 @@ By @prp-absolute-value-rules (d) with \( r = \abs{x} + \abs{y} \), this says \( 
 The case-free proof is typical of what the axioms buy: once a fact such as \( -\abs{x} \le x \le \abs{x} \) is proved, it can be added, multiplied and chained without redoing sign cases. The triangle inequality is the engine of every estimate in Part I. Its standard use is "insert a third point": to bound \( \abs{x - z} \), write \( x - z = (x - y) + (y - z) \) for a well-chosen \( y \), and bound the two pieces separately (@exr-ordered-fields-b2).
 
 ::: {.remark}
-The inequality in (a) is usually strict: \( \abs{1 + (-1)} = 0 < 2 = \abs{1} + \abs{-1} \). Equality holds exactly when \( x \) and \( y \) do not have strictly opposite signs, that is, when \( xy \ge 0 \) (@exr-ordered-fields-b2).
+The inequality in (a) can be strict: \( \abs{1 + (-1)} = 0 < 2 = \abs{1} + \abs{-1} \). Equality holds exactly when \( x \) and \( y \) do not have strictly opposite signs, that is, when \( xy \ge 0 \) (@exr-ordered-fields-b2).
 :::
+
+**Comparing by squaring.** Two absolute values can often be compared without any case split, by squaring. For non-negative \( a \) and \( b \), @thm-ordered-field-rules (g) says that \( a < b \) holds exactly when \( a^2 < b^2 \), and @prp-absolute-value-rules (b) gives \( \abs{u}^2 = u^2 \). For example, which \( x \) satisfy \( \abs{x - 2} < \abs{x} \)? Both sides are non-negative, so the inequality holds if and only if \( (x - 2)^2 < x^2 \), that is, \( x^2 - 4x + 4 < x^2 \). By (O3) this is \( 4 < 4x \), and multiplying by \( \frac14 > 0 \) gives \( x > 1 \). Every step was an equivalence, so the solution set is \( (1, \infty) \): the points closer to \( 2 \) than to \( 0 \).
 
 ## Where this leaves us
 
@@ -387,7 +381,7 @@ Find all real \( x \) satisfying each inequality. Hence write each solution set 
 3. Deduce that the elements \( 1, 1 + 1, 1 + 1 + 1, \dots \) of an ordered field are all different, so every ordered field contains a copy of \( \nN \) (and in particular is infinite).
 :::
 
-*Hint: for (b), use induction on \( n \) (Chapter 7).*
+*Hint: for (b), use induction on \( n \) (Chapter 3).*
 :::
 
 ::: {.solution}
@@ -395,7 +389,7 @@ Find all real \( x \) satisfying each inequality. Hence write each solution set 
 
 (b) We prove \( n \cdot 1 > 0 \) by induction on \( n \). For \( n = 1 \), \( 1 \cdot 1 = 1 > 0 \) by @thm-ordered-field-rules (e). If \( n \cdot 1 > 0 \), then by (O3), \( (n + 1) \cdot 1 = n \cdot 1 + 1 > n \cdot 1 \), and (O2) gives \( (n + 1) \cdot 1 > 0 \). The same step shows \( (k + 1) \cdot 1 > k \cdot 1 \) for every \( k \). Now fix \( m \) and prove \( m \cdot 1 < n \cdot 1 \) for every \( n > m \) by induction on \( n \), starting at \( n = m + 1 \): the base case is the step just shown with \( k = m \), and if \( m \cdot 1 < n \cdot 1 \), then \( m \cdot 1 < n \cdot 1 < (n + 1) \cdot 1 \), so (O2) gives \( m \cdot 1 < (n + 1) \cdot 1 \).
 
-(c) If \( m \ne n \), say \( m < n \), then \( m \cdot 1 < n \cdot 1 \) by (b), so \( m \cdot 1 \ne n \cdot 1 \) by trichotomy. Hence \( n \mapsto n \cdot 1 \) is injective from \( \nN \) into \( F \), and it respects addition and order. This is the sense in which \( F \) contains a copy of \( \nN \). The section on the natural numbers inside \( \nR \), later in this chapter, starts from exactly this copy.
+(c) If \( m \ne n \), say \( m < n \), then \( m \cdot 1 < n \cdot 1 \) by (b), so \( m \cdot 1 \ne n \cdot 1 \) by trichotomy. Hence \( n \mapsto n \cdot 1 \) is injective from \( \nN \) into \( F \), and by (b) it respects order. It also respects addition: \( (m + n) \cdot 1 = m \cdot 1 + n \cdot 1 \), by induction on \( n \) with \( m \) fixed. For \( n = 1 \) this is the definition of \( (m + 1) \cdot 1 \). If it holds for \( n \), then \( (m + (n + 1)) \cdot 1 = ((m + n) + 1) \cdot 1 = (m + n) \cdot 1 + 1 = m \cdot 1 + n \cdot 1 + 1 = m \cdot 1 + (n + 1) \cdot 1 \), using the definition twice and (F2). This is the sense in which \( F \) contains a copy of \( \nN \). The section on the natural numbers inside \( \nR \), later in this chapter, starts from exactly this copy.
 :::
 
 ::: {#exr-ordered-fields-c2}
@@ -424,6 +418,7 @@ exm-ordered-fields-q-r (example): R is an ordered field containing Q, N and Z | 
 lem-field-algebra (proof): the rules of fraction arithmetic (a/b + c/d = (ad + bc)/bd and the like) | inline: derived from (F1)-(F9) as in lem-field-algebra, stated in the sentence after the proof and not written out
 exm-integers-not-a-field (example): no integer m satisfies 2m = 1 | arithmetic of Z, ch07 (promised)
 exr-ordered-fields-a1 (solution): no integer m satisfies 2m = 1 | arithmetic of Z, ch07 (promised)
-exr-ordered-fields-c1 (solution): proof by induction on n, and a second induction starting at m + 1 | induction, ch07 (promised)
+exr-ordered-fields-c1 (solution): proof by induction on n, a second induction starting at m + 1, and a third for (m + n) 1 = m 1 + n 1 | induction, ch03 (promised)
+exr-ordered-fields-c1 (solution): (m + n) + 1 = m + (n + 1) in N | arithmetic of N, ch07 (promised)
 thm-ordered-field-rules (example): C is a field with i^2 = -1 (the non-example of C after the theorem) | school algebra of complex numbers; companion ch 0
 -->

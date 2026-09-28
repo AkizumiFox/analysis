@@ -1,4 +1,4 @@
-"""exr-epsilon-characterization-b1 (Ch 10, 04): x^2 < 4 on (-1, 2); h = min{1, eps/4},
+"""exr-epsilon-characterization-b1 (Ch 11, 04): x^2 < 4 on (-1, 2); h = min{1, eps/4},
 x = 2 - h in [1, 2), x^2 > 4 - 4h >= 4 - eps."""
 from fractions import Fraction as F
 from _grid import eps_values

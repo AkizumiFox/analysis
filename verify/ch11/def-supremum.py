@@ -1,4 +1,4 @@
-"""def-supremum (Ch 10, 02): the Quick check after the warnings, A = {(-1)^n / n}: max A = 1/2
+"""def-supremum (Ch 11, 02): the Quick check after the warnings, A = {(-1)^n / n}: max A = 1/2
 (at n = 2) and min A = -1 (at n = 1), checked on the first 10^4 terms (the tail is trapped in
 [-1/n, 1/n])."""
 from fractions import Fraction as F

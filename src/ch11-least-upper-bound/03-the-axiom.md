@@ -23,7 +23,7 @@ In symbols: for every \( A \subseteq \nR \),
 \exists s \in \nR : s = \sup A .
 \]
 
-**Standing assumption.** From now on, \( \nR \) is an ordered field (@def-ordered-field), containing \( \nQ \), that satisfies @ax-least-upper-bound. Every theorem about real numbers in this book is proved from these assumptions and nothing else.
+**Standing assumption.** From now on, \( \nR \) is an ordered field (@def-ordered-field), containing \( \nQ \), that satisfies @ax-least-upper-bound. Every theorem about real numbers in this book is proved from these assumptions, together with the logic and set theory of Part 0 (including, where it is flagged, a choice principle).
 
 In words, the axiom has two hypotheses and one conclusion. The hypotheses are about the set \( A \): it has at least one element, and at least one upper bound. The conclusion is about \( \nR \): among the upper bounds of \( A \) there is a least one, and it is a real number. By @thm-sup-unique it is unique, so the notation \( \sup A \) is justified whenever the two hypotheses hold. The axiom is also called the **completeness axiom**; "complete" will acquire a second, related meaning in Chapter 12, and the two are reconciled in Chapter 21.
 
@@ -32,7 +32,7 @@ Each hypothesis is there because without it the conclusion is false.
 - **Non-empty.** The empty set is bounded above, by every real number, and it has no supremum (shown in the section on suprema). Without "non-empty", the axiom would be false.
 - **Bounded above.** The interval \( [0, \infty) \) contains \( 0 \), but no real number sits above all of it, so there is no least such number either. The set \( \nN \) is a subtler example of the same failure; that it is not bounded above in \( \nR \) is proved later in this chapter, from this very axiom.
 
-The axiom is a statement about \( \nR \) and not about ordered fields in general. It fails in \( \nQ \): @thm-no-rational-sup-sqrt2 exhibits a non-empty subset of \( \nQ \), bounded above in \( \nQ \), with no supremum in \( \nQ \) (@exr-the-axiom-c1). So the axiom is exactly the property that separates the two fields we have been comparing.
+The axiom is a statement about \( \nR \) and not about ordered fields in general. It fails in \( \nQ \): some non-empty subset of \( \nQ \), bounded above in \( \nQ \), has no supremum in \( \nQ \). Which result of the previous section shows this, and whether it needs adapting, is @exr-the-axiom-c1 (a). So the axiom is exactly the property that separates the two fields we have been comparing.
 
 ::: {.remark}
 Why is this an axiom and not a theorem? Because we have not said what a real number is. One can **construct** \( \nR \) from \( \nQ \), for instance by Dedekind cuts, and then prove the least upper bound property as a theorem; the optional Chapter 22 does this. The optional Chapter 23 shows that any two ordered fields satisfying the axiom are the same up to relabeling, so the axiom pins \( \nR \) down completely. Nothing else in the book uses those chapters: everything we need follows from the axiom.
@@ -136,7 +136,7 @@ These are conventions of notation, and \( \pm\infty \) are **not** real numbers:
 
 ## What the axiom will do
 
-With the axiom in place, the rest of the chapter extracts its first consequences: a practical test for recognizing a supremum, the Archimedean property, the density of the rationals, the existence of roots, and the nested interval property. Each of them fails in \( \nQ \) or in some other ordered field, and each is proved by the same pattern: define a set, check the two hypotheses, take its supremum, and extract what is needed from (S1) and (S2).
+With the axiom in place, the rest of the chapter extracts its first consequences: a practical test for recognizing a supremum, the Archimedean property, the density of the rationals, the existence of roots, and the nested interval property. The first, the test, holds in every ordered field; it is the tool for the others. Each of the rest fails in \( \nQ \) or in some other ordered field. Three of them, the Archimedean property, the roots and the nested interval property, are proved by the same pattern: define a set, check the two hypotheses, take its supremum, and extract what is needed from (S1) and (S2). The density of the rationals then follows from the Archimedean property, with no new supremum.
 
 ## Exercises
 

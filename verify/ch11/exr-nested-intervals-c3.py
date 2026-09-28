@@ -1,4 +1,4 @@
-"""exr-nested-intervals-c3 (Ch 10, 07): in R(x), n < x/n and the intervals [n, x/n] are nested;
+"""exr-nested-intervals-c3 (Ch 11, 07): in R(x), n < x/n and the intervals [n, x/n] are nested;
 sample elements f are excluded from some I_n, as the degree argument predicts."""
 from _grid import RF, X, const
 

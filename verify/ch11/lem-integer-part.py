@@ -1,4 +1,4 @@
-"""lem-integer-part (Ch 10, 06): floor(2.7) = 2 and floor(-2.7) = -3."""
+"""lem-integer-part (Ch 11, 06): floor(2.7) = 2 and floor(-2.7) = -3."""
 from fractions import Fraction as F
 import math
 

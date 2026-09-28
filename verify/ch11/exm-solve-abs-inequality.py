@@ -1,4 +1,4 @@
-"""exm-solve-abs-inequality (Ch 10, 01): |4 - 3x| < 2 iff 2/3 < x < 2; |4 - 3x| = 3|x - 4/3|."""
+"""exm-solve-abs-inequality (Ch 11, 01): |4 - 3x| < 2 iff 2/3 < x < 2; |4 - 3x| = 3|x - 4/3|."""
 from fractions import Fraction as F
 from _grid import grid
 

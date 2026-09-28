@@ -1,4 +1,4 @@
-"""exr-nested-intervals-r3 (Ch 10, 07): (sqrt2 + sqrt3)^2 = 5 + 2 sqrt6, computed exactly in the
+"""exr-nested-intervals-r3 (Ch 11, 07): (sqrt2 + sqrt3)^2 = 5 + 2 sqrt6, computed exactly in the
 basis 1, sqrt2, sqrt3, sqrt6 of Q(sqrt2, sqrt3); and (sqrt2 sqrt3)^2 = 6."""
 from fractions import Fraction as F
 

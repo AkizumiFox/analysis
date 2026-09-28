@@ -1,4 +1,4 @@
-"""thm-sqrt2-exists (Ch 10, 06): the two nudges on real-like (rational) s in [1, 2]:
+"""thm-sqrt2-exists (Ch 11, 06): the two nudges on real-like (rational) s in [1, 2]:
 Case 1 (s^2 < 2): h = (2 - s^2)/(4s + 2), 0 < h <= 1/6, (s + h)^2 <= 1 + s^2/2 < 2;
 Case 2 (s^2 > 2): h = (s^2 - 2)/(2s), s - h = (s^2 + 2)/(2s) > 0, (s - h)^2 = 2 + h^2."""
 from fractions import Fraction as F

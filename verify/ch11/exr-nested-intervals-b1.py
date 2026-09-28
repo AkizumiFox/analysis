@@ -1,4 +1,4 @@
-"""exr-nested-intervals-b1 (Ch 10, 07): m_1 = 14 (196 <= 200 < 225), m_2 = 141
+"""exr-nested-intervals-b1 (Ch 11, 07): m_1 = 14 (196 <= 200 < 225), m_2 = 141
 (19881 <= 20000 < 20164); the truncation intervals are nested for n <= 12 (integer square
 roots of 2 * 10^(2n))."""
 from math import isqrt

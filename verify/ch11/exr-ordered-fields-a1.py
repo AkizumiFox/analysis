@@ -1,4 +1,4 @@
-"""exr-ordered-fields-a1 (Ch 10, 01): (b) a = -2 < 1 = b but a^2 = 4 > 1; (c) |x| = max{x, -x}."""
+"""exr-ordered-fields-a1 (Ch 11, 01): (b) a = -2 < 1 = b but a^2 = 4 > 1; (c) |x| = max{x, -x}."""
 from _grid import grid
 
 QUOTED = {"(b)": (-2, 1, 4, 1)}

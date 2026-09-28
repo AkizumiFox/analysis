@@ -1,4 +1,4 @@
-"""thm-nth-root (Ch 10, 06): the claim 0 < y^k - x^k <= k y^(k-1) (y - x) for 0 <= x < y;
+"""thm-nth-root (Ch 11, 06): the claim 0 < y^k - x^k <= k y^(k-1) (y - x) for 0 <= x < y;
 x0 = a/(1 + a) is in S and 1 + a bounds S; with C = n (s + 1)^(n-1) and
 h = min{1/2, |s^n - a| / (2C)}, Case 1 gives (s + h)^n < a and Case 2 gives s - h > 0,
 (s - h)^n > a; for n = 2 the constant C = 2(s + 1)."""

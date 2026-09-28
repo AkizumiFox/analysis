@@ -1,4 +1,4 @@
-"""thm-sup-epsilon (Ch 10, 04): the witness a = max{1/2, 1 - eps/2} for (0, 1): it lies in
+"""thm-sup-epsilon (Ch 11, 04): the witness a = max{1/2, 1 - eps/2} for (0, 1): it lies in
 (0, 1) and exceeds 1 - eps; eps = 1/10 gives 19/20; for eps = 1/1000, 19/20 is not above
 999/1000."""
 from fractions import Fraction as F

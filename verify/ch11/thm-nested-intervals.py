@@ -1,4 +1,4 @@
-"""thm-nested-intervals (Ch 10, 07): the bisection toward sqrt 2 from [1, 2]:
+"""thm-nested-intervals (Ch 11, 07): the bisection toward sqrt 2 from [1, 2]:
 [1, 2], [1, 3/2], [5/4, 3/2], [11/8, 3/2], [11/8, 23/16]; each keeps a^2 < 2 < b^2 and has
 length 1/2^(n-1) <= 1/n; midpoints never square to 2."""
 from fractions import Fraction as F

@@ -1,4 +1,4 @@
-"""exr-epsilon-characterization-a1 (Ch 10, 04): witnesses (a) max{0, 5 - eps/2} for [0, 5),
+"""exr-epsilon-characterization-a1 (Ch 11, 04): witnesses (a) max{0, 5 - eps/2} for [0, 5),
 (c) max{3, 4 - eps/2} for (2, 4); (e) eps = 1/10: a = 24/25 > 19/20, b = 5,
 a + b = 149/25 = 5.96 > 5.9."""
 from fractions import Fraction as F

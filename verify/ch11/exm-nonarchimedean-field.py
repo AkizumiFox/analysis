@@ -1,4 +1,4 @@
-"""exm-nonarchimedean-field (Ch 10, 05) and exr-archimedean-property-c2: in R(x) with the
+"""exm-nonarchimedean-field (Ch 11, 05) and exr-archimedean-property-c2: in R(x) with the
 leading-coefficient order, n < x and 1/x < 1/n for n in N; positivity does not depend on the
 representation; the order axioms hold on a sample; lc(3 - 2x^2) = -2."""
 from fractions import Fraction as F

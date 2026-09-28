@@ -1,4 +1,4 @@
-"""exr-nested-intervals-c1 (Ch 10, 07): the bisection of (b) run on A = {x in Q : x > 0,
+"""exr-nested-intervals-c1 (Ch 11, 07): the bisection of (b) run on A = {x in Q : x > 0,
 x^2 < 2} with a = 1, M = 2: b_n is an upper bound, some element of A is >= a_n, and
 b_n - a_n = (M - a)/2^(n-1)."""
 from fractions import Fraction as F

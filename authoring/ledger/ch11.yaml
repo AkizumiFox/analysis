@@ -37,6 +37,13 @@ items:
     hash: acc8d91b2dc6
     date: '2026-09-28'
     evidence: 'S5b: claims, meta-claims, ledger lines and refs checked; see authoring/reviews/ch10-S5-B.md'
+  - stage: S7
+    verdict: correct
+    by: reviser
+    hash: acc8d91b2dc6
+    date: '2026-09-28'
+    evidence: 'S5b R4: (a),(b),(d) cited to @la:thm-field-basic-properties (same axioms F1-F9); lead-in
+      says so'
 - key: proof:lem-field-algebra
   kind: proof
   file: 01-ordered-fields.md
@@ -55,6 +62,12 @@ items:
     hash: 3602364f670a
     date: '2026-09-28'
     evidence: 'S5b: claims, meta-claims, ledger lines and refs checked; see authoring/reviews/ch10-S5-B.md'
+  - stage: S7
+    verdict: correct
+    by: reviser
+    hash: a5be3eff16bc
+    date: '2026-09-28'
+    evidence: proof now cites @la:thm-field-basic-properties and proves only -(-a)=a, (c), (e)
 - key: exm-ordered-fields-q-r
   kind: exm
   file: 01-ordered-fields.md
@@ -225,6 +238,13 @@ items:
     hash: 779f465ef153
     date: '2026-09-28'
     evidence: 'S5b: claims, meta-claims, ledger lines and refs checked; see authoring/reviews/ch10-S5-B.md'
+  - stage: S7
+    verdict: correct
+    by: reviser
+    hash: ce7764716ca4
+    date: '2026-09-28'
+    evidence: 'nit: |4-3x| = |-3||x-4/3| now cites prp-absolute-value-rules (b); ''Comparing by squaring''
+      worked paragraph added after triangle-inequality remark (S6 #2, models B2(b), B3(b))'
 - key: thm-triangle-inequality
   kind: thm
   file: 01-ordered-fields.md
@@ -243,6 +263,12 @@ items:
     hash: a6dd27983b6d
     date: '2026-09-28'
     evidence: 'S5b: claims, meta-claims, ledger lines and refs checked; see authoring/reviews/ch10-S5-B.md'
+  - stage: S7
+    verdict: correct
+    by: reviser
+    hash: a6dd27983b6d
+    date: '2026-09-28'
+    evidence: 'nit: remark now ''can be strict'''
 - key: proof:thm-triangle-inequality
   kind: proof
   file: 01-ordered-fields.md
@@ -364,6 +390,12 @@ items:
     hash: 71cfca5b90f1
     date: '2026-09-28'
     evidence: 'S5b: claims, meta-claims, ledger lines and refs checked; see authoring/reviews/ch10-S5-B.md'
+  - stage: S7
+    verdict: correct
+    by: reviser
+    hash: 71cfca5b90f1
+    date: '2026-09-28'
+    evidence: 'S6 #2: squaring move now has a worked example (|x-2|<|x| iff x>1) in the section'
 - key: exr-ordered-fields-c1
   kind: exr
   file: 01-ordered-fields.md
@@ -390,6 +422,12 @@ items:
     hash: 5c7242d389de
     date: '2026-09-28'
     evidence: 01:398 (c) 'respects addition' never proved ((m+n).1 = m.1 + n.1)
+  - stage: S7
+    verdict: correct
+    by: reviser
+    hash: b7c8c5798698
+    date: '2026-09-28'
+    evidence: (c) 'respects addition' now proved by induction on n; hint points to Chapter 3 (induction)
 - key: exr-ordered-fields-c2
   kind: exr
   file: 01-ordered-fields.md
@@ -469,6 +507,12 @@ items:
     hash: 52587f5ff130
     date: '2026-09-28'
     evidence: 'S5b: claims, meta-claims, ledger lines and refs checked; see authoring/reviews/ch10-S5-B.md'
+  - stage: S7
+    verdict: correct
+    by: reviser
+    hash: 52587f5ff130
+    date: '2026-09-28'
+    evidence: 02:7 now points to Case 1 of thm-no-rational-sup-sqrt2 and exr-suprema-c1
 - key: def-supremum
   kind: def
   file: 02-suprema.md
@@ -506,6 +550,13 @@ items:
     date: '2026-09-28'
     evidence: 02:117 'the rest of this section shows three ways it can fail' - only two follow (empty
       set 02:174, Q gap); [0,inf) was at 02:47
+  - stage: S7
+    verdict: correct
+    by: reviser
+    hash: 86ae0c290d3d
+    date: '2026-09-28'
+    evidence: '02:117 meta-claim fixed: three failures named ([0,inf) above, empty set, gap); ''rest of
+      section shows the last two'''
 - key: proof:thm-sup-unique
   kind: proof
   file: 02-suprema.md
@@ -560,6 +611,12 @@ items:
     hash: 97491875353e
     date: '2026-09-28'
     evidence: 'S5b: claims, meta-claims, ledger lines and refs checked; see authoring/reviews/ch10-S5-B.md'
+  - stage: S7
+    verdict: correct
+    by: reviser
+    hash: 5da9f79e435a
+    date: '2026-09-28'
+    evidence: text unchanged in item; hash moved with section edits
 - key: exm-sup-open-interval
   kind: exm
   file: 02-suprema.md
@@ -596,6 +653,12 @@ items:
     hash: 8d05f2d57c0c
     date: '2026-09-28'
     evidence: 'S5b: claims, meta-claims, ledger lines and refs checked; see authoring/reviews/ch10-S5-B.md'
+  - stage: S7
+    verdict: correct
+    by: reviser
+    hash: f3f675f9ee34
+    date: '2026-09-28'
+    evidence: induction pointer now Chapter 3 (ax-induction)
 - key: check:02-suprema:1
   kind: check
   file: 02-suprema.md
@@ -831,6 +894,13 @@ items:
     date: '2026-09-28'
     evidence: 03:26 'Every theorem about real numbers in this book is proved from these assumptions and
       nothing else' false; contradicts 04:123 (countable choice)
+  - stage: S7
+    verdict: correct
+    by: reviser
+    hash: 4c231fee6882
+    date: '2026-09-28'
+    evidence: 03:26 standing assumption now 'with the logic and set theory of Part 0 (incl. flagged choice)';
+      03:35 no longer names the C1(a) witness
 - key: exm-lub-first-use
   kind: exm
   file: 03-the-axiom.md
@@ -874,6 +944,12 @@ items:
     hash: 99955767a2d9
     date: '2026-09-28'
     evidence: 'S5b: claims, meta-claims, ledger lines and refs checked; see authoring/reviews/ch10-S5-B.md'
+  - stage: S7
+    verdict: correct
+    by: reviser
+    hash: b4d4416ed968
+    date: '2026-09-28'
+    evidence: unchanged; hash moved
 - key: thm-inf-neg-sup
   kind: thm
   file: 03-the-axiom.md
@@ -1049,6 +1125,12 @@ items:
     hash: 0d7d8caf2ed1
     date: '2026-09-28'
     evidence: 'S5b: claims, meta-claims, ledger lines and refs checked; see authoring/reviews/ch10-S5-B.md'
+  - stage: S7
+    verdict: correct
+    by: reviser
+    hash: 0d7d8caf2ed1
+    date: '2026-09-28'
+    evidence: 'S6 #3: prose at 03:35 no longer answers (a)'
 - key: exr-the-axiom-c2
   kind: exr
   file: 03-the-axiom.md
@@ -1092,6 +1174,13 @@ items:
     hash: a3e2396258f9
     date: '2026-09-28'
     evidence: 'S5b: claims, meta-claims, ledger lines and refs checked; see authoring/reviews/ch10-S5-B.md'
+  - stage: S7
+    verdict: correct
+    by: reviser
+    hash: a3e2396258f9
+    date: '2026-09-28'
+    evidence: '03:139 meta-claim fixed: test holds in every ordered field; pattern claimed only for Archimedes,
+      roots, nested intervals; density via Archimedes'
 - key: proof:thm-sup-epsilon
   kind: proof
   file: 04-epsilon-characterization.md
@@ -1173,6 +1262,13 @@ items:
     hash: 52042161015d
     date: '2026-09-28'
     evidence: 'S5b: claims, meta-claims, ledger lines and refs checked; see authoring/reviews/ch10-S5-B.md'
+  - stage: S7
+    verdict: correct
+    by: reviser
+    hash: 52042161015d
+    date: '2026-09-28'
+    evidence: 04:123 softened to 'once limits are defined in Chapter 12, sup A is the limit of a sequence
+      from A'
 - key: proof:cor-sup-approximation
   kind: proof
   file: 04-epsilon-characterization.md
@@ -1428,6 +1524,12 @@ items:
     hash: be33bd2e9def
     date: '2026-09-28'
     evidence: 'S5b: claims, meta-claims, ledger lines and refs checked; see authoring/reviews/ch10-S5-B.md'
+  - stage: S7
+    verdict: correct
+    by: reviser
+    hash: be33bd2e9def
+    date: '2026-09-28'
+    evidence: 'S6 #4: Hint 2 now names the tools as questions, no longer executes the >= step'
 - key: exr-epsilon-characterization-c2
   kind: exr
   file: 04-epsilon-characterization.md
@@ -1454,6 +1556,12 @@ items:
     hash: b24432e06e6f
     date: '2026-09-28'
     evidence: 'S5b: claims, meta-claims, ledger lines and refs checked; see authoring/reviews/ch10-S5-B.md'
+  - stage: S7
+    verdict: correct
+    by: reviser
+    hash: ec73b8d21b08
+    date: '2026-09-28'
+    evidence: 'title ''C2: Exit check: sums of sets'' (S5b R9 nit)'
 - key: exr-epsilon-characterization-c3
   kind: exr
   file: 04-epsilon-characterization.md
@@ -1500,6 +1608,13 @@ items:
     hash: 4fcc023baf50
     date: '2026-09-28'
     evidence: 'S5b: claims, meta-claims, ledger lines and refs checked; see authoring/reviews/ch10-S5-B.md'
+  - stage: S7
+    verdict: correct
+    by: reviser
+    hash: 4fcc023baf50
+    date: '2026-09-28'
+    evidence: '05:58 remark: induction is Chapter 3''s, Chapter 7 proves well-ordering and arithmetic
+      (S5b R2)'
 - key: exm-naturals-at-least-one
   kind: exm
   file: 05-archimedean-property.md
@@ -1541,6 +1656,13 @@ items:
     hash: 616e9e46ed01
     date: '2026-09-28'
     evidence: 'S5b: claims, meta-claims, ledger lines and refs checked; see authoring/reviews/ch10-S5-B.md'
+  - stage: S7
+    verdict: correct
+    by: reviser
+    hash: 616e9e46ed01
+    date: '2026-09-28'
+    evidence: 'S5a error fixed: proof''s middle step now direct (n+1<=s for every n, so s-1 is an upper
+      bound, (S2) gives s<=s-1); remark now true: only classical step is the last paragraph, after negI'
 - key: proof:thm-naturals-unbounded
   kind: proof
   file: 05-archimedean-property.md
@@ -1559,6 +1681,12 @@ items:
     hash: 3597782692c3
     date: '2026-09-28'
     evidence: 'S5b: claims, meta-claims, ledger lines and refs checked; see authoring/reviews/ch10-S5-B.md'
+  - stage: S7
+    verdict: correct
+    by: reviser
+    hash: 84e7d7080e2e
+    date: '2026-09-28'
+    evidence: 'rewritten per S5a: no ''not an upper bound => some n'' step inside the negI box; Idea matches'
 - key: cor-archimedean-epsilon
   kind: cor
   file: 05-archimedean-property.md
@@ -1660,6 +1788,13 @@ items:
     date: '2026-09-28'
     evidence: 05:155 'natural numbers of R(x) are the constants' asserted without argument; ledger 05:389
       says inline but nothing on page, source an exercise
+  - stage: S7
+    verdict: correct
+    by: reviser
+    hash: f319681d79ca
+    date: '2026-09-28'
+    evidence: 'S5a minor: text states the example rests on exr C2 (ordered field) for rules (f); S5b minor:
+      naturals of R(x) = constants now proved inline (two inclusions)'
 - key: exr-archimedean-property-a1
   kind: exr
   file: 05-archimedean-property.md
@@ -1816,6 +1951,13 @@ items:
     hash: 57b5c705faf0
     date: '2026-09-28'
     evidence: 'S5b: claims, meta-claims, ledger lines and refs checked; see authoring/reviews/ch10-S5-B.md'
+  - stage: S7
+    verdict: correct
+    by: reviser
+    hash: 0012c44772d1
+    date: '2026-09-28'
+    evidence: '(a) model solution and scheme now use the direct step (s-1 is an upper bound); classical
+      variant accepted explicitly; title ''Exit check: ...'' (S5b R9)'
 - key: exr-archimedean-property-c2
   kind: exr
   file: 05-archimedean-property.md
@@ -1940,6 +2082,12 @@ items:
     hash: f747708b8b1f
     date: '2026-09-28'
     evidence: 'S5b: claims, meta-claims, ledger lines and refs checked; see authoring/reviews/ch10-S5-B.md'
+  - stage: S7
+    verdict: correct
+    by: reviser
+    hash: 6feeadc044fb
+    date: '2026-09-28'
+    evidence: 'ledger: finite sum Sigma by recursion (ch07); induction ch03'
 - key: exm-cube-root-bounds
   kind: exm
   file: 06-density-and-roots.md
@@ -1995,6 +2143,12 @@ items:
     date: '2026-09-28'
     evidence: 06:204 'positive integer, hence natural' (05 remark) unpointed, not in ledger 06:460; also
       floor(nx)+1 integer, Sigma by recursion
+  - stage: S7
+    verdict: correct
+    by: reviser
+    hash: f38b6d5ea1c6
+    date: '2026-09-28'
+    evidence: pointer to the remark on N for 'positive integer is natural'; ledgered
 - key: thm-rationals-dense
   kind: thm
   file: 06-density-and-roots.md
@@ -2031,6 +2185,12 @@ items:
     hash: bc7a04e442f9
     date: '2026-09-28'
     evidence: 'S5b: claims, meta-claims, ledger lines and refs checked; see authoring/reviews/ch10-S5-B.md'
+  - stage: S7
+    verdict: correct
+    by: reviser
+    hash: 02d7625280c0
+    date: '2026-09-28'
+    evidence: '''floor(nx)+1 an integer'' now cites sums of integers (remark on N); ledgered'
 - key: exm-rational-between
   kind: exm
   file: 06-density-and-roots.md
@@ -2356,6 +2516,12 @@ items:
     hash: 86b01a64af03
     date: '2026-09-28'
     evidence: 'S5b: claims, meta-claims, ledger lines and refs checked; see authoring/reviews/ch10-S5-B.md'
+  - stage: S7
+    verdict: correct
+    by: reviser
+    hash: dbf7849432b5
+    date: '2026-09-28'
+    evidence: 'S6 #5: check now asks about (0,1/n] and [0,1/n), not answered by the table'
 - key: thm-reals-uncountable
   kind: thm
   file: 07-nested-intervals.md
@@ -2376,6 +2542,13 @@ items:
     date: '2026-09-28'
     evidence: '07:138 remark: ''named ... such as sqrt2 and cbrt2'' - irrationality of cbrt2 proved nowhere
       in the book'
+  - stage: S7
+    verdict: correct
+    by: reviser
+    hash: ffe674b79672
+    date: '2026-09-28'
+    evidence: '07:138 remark: cube root 2 replaced by sqrt2 + q (cor-irrationals-dense); table uses q
+      not x (S5b R5a)'
 - key: proof:thm-reals-uncountable
   kind: proof
   file: 07-nested-intervals.md
@@ -2394,6 +2567,12 @@ items:
     hash: 7dec48d07571
     date: '2026-09-28'
     evidence: 'S5b: claims, meta-claims, ledger lines and refs checked; see authoring/reviews/ch10-S5-B.md'
+  - stage: S7
+    verdict: correct
+    by: reviser
+    hash: 99df08348a80
+    date: '2026-09-28'
+    evidence: unchanged apart from chapter renumbering; hash moved
 - key: exr-nested-intervals-a1
   kind: exr
   file: 07-nested-intervals.md
@@ -2446,6 +2625,12 @@ items:
     date: '2026-09-28'
     evidence: 07:211 'both sides integers => m+1 <= 10m_n+10' uses integer discreteness (ch06/05 remark),
       not in ledger 07:508
+  - stage: S7
+    verdict: correct
+    by: reviser
+    hash: cbcb8c319876
+    date: '2026-09-28'
+    evidence: 'ledger: no integer strictly between k and k+1 (ch07)'
 - key: exr-nested-intervals-b2
   kind: exr
   file: 07-nested-intervals.md
@@ -2500,6 +2685,13 @@ items:
     date: '2026-09-28'
     evidence: 07:260 (b) induction in ordered field F (N in F via exr-ordered-fields-c1) not ledgered;
       ledger 07:509 has only 2^(n-1)>=n
+  - stage: S7
+    verdict: correct
+    by: reviser
+    hash: 9ee5ac01844e
+    date: '2026-09-28'
+    evidence: 'S6 #6 Hint 2 now a question; S6 #7 allowance: backward direction of thm-sup-epsilon rerun
+      in F; ledger: the induction (ch03) and N inside F'
 - key: exr-nested-intervals-c2
   kind: exr
   file: 07-nested-intervals.md
@@ -2525,6 +2717,12 @@ items:
     hash: ab4eb236c570
     date: '2026-09-28'
     evidence: 'S5b: claims, meta-claims, ledger lines and refs checked; see authoring/reviews/ch10-S5-B.md'
+  - stage: S7
+    verdict: correct
+    by: reviser
+    hash: 398da12c2ad6
+    date: '2026-09-28'
+    evidence: 'new part (c): reals not in a countable set are dense (blueprint task, S5b R6)'
 - key: exr-nested-intervals-c3
   kind: exr
   file: 07-nested-intervals.md
@@ -2552,6 +2750,13 @@ items:
     date: '2026-09-28'
     evidence: 07:324,330 Archimedes used for N > lc(p)/lc(q), n > lc(q)/lc(p) without @thm-naturals-unbounded
       or ledger; degree/lc facts unledgered
+  - stage: S7
+    verdict: correct
+    by: reviser
+    hash: 102e8ad04445
+    date: '2026-09-28'
+    evidence: 'S6 #8 Hint 2 cut to the set-up; @thm-naturals-unbounded cited for N and n; polynomial degree
+      facts ledgered'
 - key: exr-nested-intervals-c4
   kind: exr
   file: 07-nested-intervals.md
@@ -2605,6 +2810,12 @@ items:
     hash: df5b6da23e1e
     date: '2026-09-28'
     evidence: 'S5b: claims, meta-claims, ledger lines and refs checked; see authoring/reviews/ch10-S5-B.md'
+  - stage: S7
+    verdict: correct
+    by: reviser
+    hash: 757b3bc164f2
+    date: '2026-09-28'
+    evidence: unchanged apart from renumbering; hash moved
 - key: exr-nested-intervals-r2
   kind: exr
   file: 07-nested-intervals.md
@@ -2630,6 +2841,12 @@ items:
     hash: 27790c3d81ce
     date: '2026-09-28'
     evidence: 'S5b: claims, meta-claims, ledger lines and refs checked; see authoring/reviews/ch10-S5-B.md'
+  - stage: S7
+    verdict: correct
+    by: reviser
+    hash: d61cc22f48e9
+    date: '2026-09-28'
+    evidence: 'ledger: (t^2)^2 = t^4, power laws ch07'
 - key: exr-nested-intervals-r3
   kind: exr
   file: 07-nested-intervals.md
@@ -2657,6 +2874,12 @@ items:
     date: '2026-09-28'
     evidence: 07:454 closure of Q under field ops un-ref'd/unledgered (R2 cites exm-ordered-fields-q-r);
       see ch10-S5-B.md
+  - stage: S7
+    verdict: correct
+    by: reviser
+    hash: 68e26ea13d25
+    date: '2026-09-28'
+    evidence: closure of Q now cites @exm-ordered-fields-q-r; ledgered
 - key: exr-nested-intervals-r4
   kind: exr
   file: 07-nested-intervals.md

@@ -55,7 +55,7 @@ The set \( [1, \infty) \) is inductive, as checked above. Since \( \nN \) is con
 The proof never mentioned a single natural number by name. It found an inductive set containing the property we wanted, and let the definition of \( \nN \) do the rest. That is the whole technique.
 
 ::: {.remark}
-Chapter 7 takes \( \nN \) with induction and well-ordering as its starting point. The set defined here is that same \( \nN \), now located inside \( \nR \); it is also the copy \( 1, 1 + 1, 1 + 1 + 1, \dots \) that every ordered field contains (@exr-ordered-fields-c1), and "\( \nN \) is the smallest inductive set" is exactly the induction principle stated there. From now on we use the familiar arithmetic of \( \nN \), each item proved by induction in Chapter 7: sums and products of natural numbers are natural numbers; if \( n \in \nN \) and \( n \ge 2 \), then \( n - 1 \in \nN \); no natural number lies strictly between \( n \) and \( n + 1 \); and every non-empty subset of \( \nN \) has a least element (**well-ordering**). The integers are \( \nZ \coloneqq \nN \cup \{ 0 \} \cup \{ -n : n \in \nN \} \), and the rationals are \( \nQ \coloneqq \{ m/n : m \in \nZ, \ n \in \nN \} \). We also use, again from Chapter 7, that sums, differences and products of integers are integers. A **positive** integer is a natural number, directly from the definition of \( \nZ \): it is not \( 0 \), and it is not \( -n \) with \( n \in \nN \), since \( -n < 0 \).
+Chapter 3 takes induction as a basic property of \( \nN \), and Chapter 7 proves well-ordering and the arithmetic below from it. The set defined here is that same \( \nN \), now located inside \( \nR \); it is also the copy \( 1, 1 + 1, 1 + 1 + 1, \dots \) that every ordered field contains (@exr-ordered-fields-c1), and "\( \nN \) is the smallest inductive set" is exactly the induction principle of Chapter 3, in the form "every inductive subset of \( \nN \) is all of \( \nN \)". From now on we use the familiar arithmetic of \( \nN \), each item proved by induction in Chapter 7: sums and products of natural numbers are natural numbers; if \( n \in \nN \) and \( n \ge 2 \), then \( n - 1 \in \nN \); no natural number lies strictly between \( n \) and \( n + 1 \); and every non-empty subset of \( \nN \) has a least element (**well-ordering**). The integers are \( \nZ \coloneqq \nN \cup \{ 0 \} \cup \{ -n : n \in \nN \} \), and the rationals are \( \nQ \coloneqq \{ m/n : m \in \nZ, \ n \in \nN \} \). We also use, again from Chapter 7, that sums, differences and products of integers are integers. A **positive** integer is a natural number, directly from the definition of \( \nZ \): it is not \( 0 \), and it is not \( -n \) with \( n \in \nN \), since \( -n < 0 \).
 :::
 
 ## The natural numbers are not bounded
@@ -69,13 +69,13 @@ The set \( \nN \) is not bounded above in \( \nR \); in other words, every real 
 :::
 
 ::: {.idea}
-Suppose \( \nN \) had an upper bound. Then the axiom hands us the least one, \( s = \sup \nN \), and we can use the "least" half of the supremum (the move of @thm-sup-epsilon with \( \varepsilon = 1 \)). The number \( s - 1 \) is too small to be an upper bound, so some natural number \( n \) sits above it. One more step, \( n + 1 \), is still a natural number, and it jumps past \( s \). A supremum that a natural number can overtake is absurd.
+Suppose \( \nN \) had an upper bound. Then the axiom hands us the least one, \( s = \sup \nN \). Every natural number \( n \) has a successor \( n + 1 \) that is still a natural number, and so still at most \( s \). Moving back one step, \( n \le s - 1 \) for every \( n \): the smaller number \( s - 1 \) is an upper bound too. A least upper bound with a smaller upper bound below it is absurd.
 :::
 
 ::: {.proof}
 Suppose, for contradiction, that \( \nN \) is bounded above. The set \( \nN \) is non-empty, since \( 1 \in \nN \). By @ax-least-upper-bound, \( \nN \) has a supremum \( s \coloneqq \sup \nN \in \nR \).
 
-The number \( s - 1 \) is not an upper bound of \( \nN \): if it were, property (S2) of the supremum (@def-supremum) would give \( s \le s - 1 \), which is false. Hence there is \( n \in \nN \) with \( n > s - 1 \). Then \( n + 1 > s \). But \( \nN \) is inductive, so \( n + 1 \in \nN \), and \( s \) is an upper bound of \( \nN \), so \( n + 1 \le s \). This contradicts \( n + 1 > s \).
+Let \( n \in \nN \). Since \( \nN \) is inductive, \( n + 1 \in \nN \), and since \( s \) is an upper bound of \( \nN \), \( n + 1 \le s \), that is, \( n \le s - 1 \). As \( n \) was arbitrary, \( s - 1 \) is an upper bound of \( \nN \). Property (S2) of the supremum (@def-supremum) now gives \( s \le s - 1 \), that is, \( 1 \le 0 \), which contradicts \( 0 < 1 \).
 
 Therefore \( \nN \) is not bounded above. Unwinding the definition (@def-bounded-above), no \( x \in \nR \) is an upper bound of \( \nN \): for every \( x \in \nR \) it is false that \( n \le x \) for all \( n \in \nN \). So for every \( x \) some \( n \in \nN \) has \( n \not\le x \), that is, \( n > x \) by trichotomy. This proves the theorem.
 :::
@@ -83,7 +83,7 @@ Therefore \( \nN \) is not bounded above. Unwinding the definition (@def-bounded
 Each hypothesis of the axiom was used and named: "non-empty" through \( 1 \in \nN \), "bounded above" through the assumption for contradiction. The inductive property of \( \nN \) supplied the jump \( n \mapsto n + 1 \).
 
 ::: {.remark}
-The contradiction step is \( \rulename{\neg I} \) (@def-rules-negation), not \( \rulename{RAA} \) (@def-rule-raa), the classical rule of proof by contradiction: we assumed "\( \nN \) is bounded above", reached a contradiction, and concluded its negation. The proof does contain a classical step, but it comes after the \( \rulename{\neg I} \), in the proof's last paragraph. Passing from "not every \( n \) satisfies \( n \le x \)" to "some \( n \) satisfies \( n > x \)" is the quantifier law "not all" gives "some not" of Chapter 4, and that law is derived there with \( \rulename{RAA} \).
+The contradiction step is \( \rulename{\neg I} \) (@def-rules-negation), not \( \rulename{RAA} \) (@def-rule-raa), the classical rule of proof by contradiction: we assumed "\( \nN \) is bounded above", reached a contradiction, and concluded its negation. Inside that box every step is direct. The proof shows that \( s - 1 \) **is** an upper bound; it does not argue "\( s - 1 \) is not an upper bound, so some \( n \) exceeds \( s - 1 \)", a step that would itself need the classical law described next. The proof's one classical step comes after the \( \rulename{\neg I} \), in its last paragraph. Passing from "not every \( n \) satisfies \( n \le x \)" to "some \( n \) satisfies \( n > x \)" is the quantifier law "not all" gives "some not" of Chapter 4, and that law is derived there with \( \rulename{RAA} \).
 :::
 
 The form we will use most often puts a small number, not a large one, in the role of \( x \).
@@ -150,9 +150,9 @@ Here is the picture behind this definition. For large real \( t \), the value \(
 
 Positivity does not depend on how the fraction is written. Suppose \( p/q = p'/q' \), so that \( p q' = p' q \), and let \( \alpha, \beta, \alpha', \beta' \) be the leading coefficients of \( p, q, p', q' \). The leading coefficient of a product of polynomials is the product of their leading coefficients, so \( \alpha \beta' = \alpha' \beta \). Multiplying both sides by \( \beta \beta' \) gives \( \alpha\beta \cdot \beta'^2 = \alpha'\beta' \cdot \beta^2 \), and \( \beta^2, \beta'^2 > 0 \). Hence \( \alpha\beta \) and \( \alpha'\beta' \) have the same sign: \( p/q \) is positive exactly when \( p'/q' \) is.
 
-With this order \( \nR(x) \) is an ordered field. The key facts are that sums and products of positive elements are positive, and that for each non-zero \( f \) exactly one of \( f \) and \( -f \) is positive. Checking these is routine, and @exr-archimedean-property-c2 walks through them. On the constants, the new order is the old one: the constant \( c \) is positive exactly when \( c > 0 \).
+With this order \( \nR(x) \) is an ordered field. The key facts are that sums and products of positive elements are positive, and that for each non-zero \( f \) exactly one of \( f \) and \( -f \) is positive. Checking these is routine, and @exr-archimedean-property-c2 walks through them. On the constants, the new order is the old one: the constant \( c \) is positive exactly when \( c > 0 \). The example below uses that \( \nR(x) \) is an ordered field, and with it the rules of @thm-ordered-field-rules, which hold in every ordered field; so it rests on @exr-archimedean-property-c2, where that is proved.
 
-The natural numbers of \( \nR(x) \), the smallest inductive subset in the sense of @def-inductive-set, are the constants \( 1, 2, 3, \dots \).
+The natural numbers of \( \nR(x) \), the smallest inductive subset in the sense of @def-inductive-set, are the constants \( 1, 2, 3, \dots \). Indeed, the constant functions \( n \) with \( n \in \nN \) form an inductive subset of \( \nR(x) \): it contains the constant \( 1 \), and the constant \( n \) plus \( 1 \) is the constant \( n + 1 \). So every natural number of \( \nR(x) \) is such a constant. Conversely, let \( I \) be an inductive subset of \( \nR(x) \). The set of \( n \in \nN \) whose constant lies in \( I \) contains \( 1 \) and passes from \( n \) to \( n + 1 \), so it is an inductive subset of \( \nR \) and contains all of \( \nN \). So every constant \( n \) lies in every inductive subset of \( \nR(x) \).
 
 ::: {#exm-nonarchimedean-field}
 [A non-Archimedean field]
@@ -177,9 +177,9 @@ Every step in the proof of @thm-naturals-unbounded, except one, is valid in any 
 - "Suppose \( \nN \) is bounded above." In \( \nR(x) \) this is true, with upper bound \( x \).
 - "\( \nN \) is non-empty." True.
 - "**By @ax-least-upper-bound, \( \nN \) has a supremum \( s \).**" This is the line that fails. In \( \nR(x) \), \( \nN \) has no least upper bound at all. Indeed, let \( M \) be any upper bound of \( \nN \) in \( \nR(x) \). For each \( n \in \nN \), also \( n + 1 \in \nN \), so \( n + 1 \le M \), that is, \( n \le M - 1 \). Hence \( M - 1 \) is also an upper bound, and it is strictly smaller than \( M \). No upper bound is the least one.
-- The remaining lines, "\( s - 1 \) is not an upper bound, so some \( n > s - 1 \), and \( n + 1 > s \)", use only the ordered-field axioms and the fact that \( \nN \) is inductive. They would go through in \( \nR(x) \) if there were an \( s \) to apply them to.
+- The remaining lines, "\( n + 1 \le s \) for every \( n \in \nN \), so \( s - 1 \) is an upper bound, and (S2) gives \( s \le s - 1 \)", use only the ordered-field axioms and the fact that \( \nN \) is inductive. They would go through in \( \nR(x) \) if there were an \( s \) to apply them to.
 
-The argument that shows \( \nN \) has no supremum in \( \nR(x) \) is the proof of @thm-naturals-unbounded read the other way. That proof showed that a supremum of \( \nN \) cannot exist in any ordered field; the axiom then says that, in \( \nR \), a bounded \( \nN \) would have to have one. In \( \nR(x) \) there is no axiom to force it, so no contradiction arises. Two conclusions follow:
+The argument that shows \( \nN \) has no supremum in \( \nR(x) \) is the middle paragraph of the proof of @thm-naturals-unbounded, with \( M \) in place of \( s \). That proof showed that a supremum of \( \nN \) cannot exist in any ordered field; the axiom then says that, in \( \nR \), a bounded \( \nN \) would have to have one. In \( \nR(x) \) there is no axiom to force it, so no contradiction arises. Two conclusions follow:
 
 - \( \nR(x) \) is an ordered field in which @ax-least-upper-bound fails, with witness the non-empty, bounded-above set \( \nN \).
 - In any ordered field, the least upper bound axiom implies the Archimedean property. That is precisely what our proof showed.
@@ -288,7 +288,7 @@ Line (ix) is true, but its \( \varepsilon \) is of the wrong kind: it is chosen 
 ### C. Going deeper
 
 ::: {#exr-archimedean-property-c1}
-[C1: Exit check, and a circular proof]
+[C1: Exit check: the Archimedean property, and a circular proof]
 
 ::: {.enumerate options="label=(\alph*)"}
 1. Without looking back, prove the Archimedean property from the least upper bound axiom. Mark the line that uses the axiom, and explain why that line fails in \( \nR(x) \).
@@ -297,7 +297,7 @@ Line (ix) is true, but its \( \varepsilon \) is of the wrong kind: it is chosen 
 :::
 
 ::: {.solution}
-(a) Suppose \( \nN \) is bounded above in \( \nR \). Since \( 1 \in \nN \), the set is non-empty, so by @ax-least-upper-bound it has a supremum \( s \) (**this line uses the axiom**). By (S2), the smaller number \( s - 1 \) cannot be an upper bound of \( \nN \); hence some \( n \in \nN \) has \( n > s - 1 \). Then \( n + 1 \in \nN \) since \( \nN \) is inductive, and \( n + 1 > s \), contradicting that \( s \) is an upper bound. So \( \nN \) is not bounded above, which means that every \( x \in \nR \) is exceeded by some \( n \in \nN \).
+(a) Suppose \( \nN \) is bounded above in \( \nR \). Since \( 1 \in \nN \), the set is non-empty, so by @ax-least-upper-bound it has a supremum \( s \) (**this line uses the axiom**). For every \( n \in \nN \), also \( n + 1 \in \nN \), since \( \nN \) is inductive, so \( n + 1 \le s \) by (S1), that is, \( n \le s - 1 \). Hence \( s - 1 \) is an upper bound of \( \nN \), and (S2) gives \( s \le s - 1 \), which is false. So \( \nN \) is not bounded above, which means that every \( x \in \nR \) is exceeded by some \( n \in \nN \).
 
 In \( \nR(x) \) the set \( \nN \) is non-empty and bounded above by \( x \) (@exm-nonarchimedean-field), but it has no supremum. Any upper bound \( M \) gives a smaller one, \( M - 1 \), because \( n + 1 \le M \) for every \( n \in \nN \) forces \( n \le M - 1 \). So the marked line has nothing to produce, and there the proof stops.
 
@@ -308,13 +308,13 @@ In \( \nR(x) \), take the element \( x \) and suppose \( k \in \nZ \) satisfies 
 **Marking scheme.** (10 points)
 - 1: (a) supposes, for a contradiction, that \( \nN \) is bounded above, and notes \( 1 \in \nN \).
 - 2: (a) obtains \( s = \sup \nN \) from @ax-least-upper-bound, with both hypotheses checked, and marks this line.
-- 2: (a) uses the "least" property (S2), or @thm-sup-epsilon with \( \varepsilon = 1 \), to find \( n \in \nN \) with \( n > s - 1 \).
-- 1: (a) uses that \( \nN \) is inductive to get \( n + 1 \in \nN \) with \( n + 1 > s \), contradicting (S1), and concludes.
+- 2: (a) shows that \( s - 1 \) is an upper bound of \( \nN \): \( n + 1 \in \nN \) because \( \nN \) is inductive, so \( n + 1 \le s \) by (S1), that is, \( n \le s - 1 \), for every \( n \in \nN \).
+- 1: (a) applies the "least" property (S2) to the upper bound \( s - 1 \), reaches \( s \le s - 1 \), a contradiction, and concludes.
 - 1: (a) explains why the marked line fails in \( \nR(x) \): every upper bound \( M \) of \( \nN \) there has the smaller upper bound \( M - 1 \).
 - 2: (b) names the existence of \( \ceil{x} \) as the gap, and says it already needs an integer at least \( x \), which is what is being proved.
 - 1: (b) shows that no integer is at least \( x \) in \( \nR(x) \).
-Fatal errors (0 for the step): taking \( s \) to be a natural number, or the maximum of \( \nN \); asserting "some \( n > s - 1 \)" with no appeal to (S2); using \( \ceil{x} \), \( \floor{x} \) or the Archimedean property inside (a).
-A proof of (a) that applies the axiom to a bounded set of the form \( \{ n \in \nN : n \le x \} \) instead earns full marks for (a) if it reaches a contradiction from the supremum in the same way.
+Fatal errors (0 for the step): taking \( s \) to be a natural number, or the maximum of \( \nN \); omitting "for every \( n \)" (one \( n \) with \( n \le s - 1 \) does not make \( s - 1 \) an upper bound); using \( \ceil{x} \), \( \floor{x} \) or the Archimedean property inside (a).
+A proof of (a) that argues "by (S2), or @thm-sup-epsilon with \( \varepsilon = 1 \), \( s - 1 \) is not an upper bound, so some \( n > s - 1 \), and then \( n + 1 > s \)" is also correct and earns the same 3 points for those steps; it uses one more classical step, inside the box (the remark after @thm-naturals-unbounded). A proof of (a) that applies the axiom to a bounded set of the form \( \{ n \in \nN : n \le x \} \) instead earns full marks for (a) if it reaches a contradiction from the supremum in the same way.
 :::
 
 ::: {#exr-archimedean-property-c2}
@@ -383,10 +383,11 @@ Both \( p_1 q_2 \) and \( p_2 q_1 \) have positive leading coefficient. If their
 <!-- dependency ledger
 def-inductive-set (example): N is the intersection of all inductive subsets of R (a set defined from a family of sets) | sets and intersections, ch06 (promised)
 exm-naturals-at-least-one (solution): none beyond def-inductive-set and thm-ordered-field-rules | inline
-thm-naturals-unbounded (proof): "not (n <= x for all n)" gives "n > x for some n" | quantifier negation, ch04 (promised); the remark after the proof says so
+thm-naturals-unbounded (proof): "not (n <= x for all n)" gives "n > x for some n" (last paragraph, after the negI; the step inside the box is direct) | quantifier negation, ch04 (promised); the remark after the proof says so
 cor-archimedean-epsilon (proof): none | inline
 exm-nonarchimedean-field (example): R(x) is a field; lc(pq) = lc(p) lc(q) | algebra of polynomials and fractions, taken as known and stated in the text
-exm-nonarchimedean-field (example): the natural numbers of R(x) are the constants 1, 2, 3, ... | inline: the constants form an inductive set, and every inductive set contains them (exr-ordered-fields-c1)
+exm-nonarchimedean-field (example): the natural numbers of R(x) are the constants 1, 2, 3, ... | inline: the constants form an inductive set, and every inductive set contains them (shown in the paragraph before the example)
+exm-nonarchimedean-field (example): R(x) with this order is an ordered field, so thm-ordered-field-rules (f) applies in it | exr-archimedean-property-c2, stated in the text before the example
 exm-sup-one-minus-reciprocal-finished (solution): 100/101 > 0.99 | arithmetic, shown inline
 exr-archimedean-property-a1 (solution): 3/2 lies strictly between the natural numbers 1 and 2, so it is not in N | arithmetic of N stated in the remark on N, ch07 (promised)
 exr-archimedean-property-c1 (solution): a non-empty set of integers bounded below has a least element (for the ceiling) | well-ordering, ch07 (promised)

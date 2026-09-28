@@ -1,4 +1,4 @@
-"""exm-sup-open-interval (Ch 10, 02): for 1/2 <= M < 1 the midpoint (M + 1)/2 lies in (M, 1)."""
+"""exm-sup-open-interval (Ch 11, 02): for 1/2 <= M < 1 the midpoint (M + 1)/2 lies in (M, 1)."""
 from fractions import Fraction as F
 
 QUOTED = {"element used": F(1, 2)}

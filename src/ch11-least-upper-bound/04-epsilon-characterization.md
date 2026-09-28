@@ -120,7 +120,7 @@ Let \( A \subseteq \nR \) be non-empty and bounded above. For every \( n \in \nN
 By @ax-least-upper-bound, \( \sup A \) exists. Let \( n \in \nN \). Then \( n > 0 \), by the induction on \( n \) in @exm-sup-one-minus-reciprocal, and \( \frac1n > 0 \) by @thm-ordered-field-rules (f). By @thm-sup-epsilon (\( \Rightarrow \)) with \( \varepsilon = \frac1n \), there is \( a_n \in A \) with \( a_n > \sup A - \frac1n \), and \( a_n \le \sup A \) by (S1).
 :::
 
-The corollary gives, for each \( n \) separately, an element \( a_n \). Choosing one for every \( n \) at once, so as to form a sequence \( (a_n) \), is a use of the axiom of countable choice; we flag it and move on. In Chapter 12 this becomes the statement that every supremum is the limit of a sequence from the set. We call the move **sup approximation**: "\( \sup A - \frac1n \) is not an upper bound, so some \( a_n \in A \) exceeds it."
+The corollary gives, for each \( n \) separately, an element \( a_n \). Choosing one for every \( n \) at once, so as to form a sequence \( (a_n) \), is a use of the axiom of countable choice; we flag it and move on. Once limits are defined in Chapter 12, this says that \( \sup A \) is the limit of a sequence from \( A \). We call the move **sup approximation**: "\( \sup A - \frac1n \) is not an upper bound, so some \( a_n \in A \) exceeds it."
 
 ## Monotonicity and scaling
 
@@ -333,7 +333,7 @@ For (a), try sets of negative numbers. For (b), the inequality \( \le \) is rout
 ::: {.solution}
 [Hint 2]
 
-For \( \ge \) in (b): fix \( b \in B \). Since \( b > 0 \) and \( bA \subseteq AB \), @thm-sup-scaling and @thm-sup-monotone give \( b \sup A \le \sup(AB) \). Now let \( b \) vary.
+For \( \ge \) in (b): fix \( b \in B \). Which theorem computes \( \sup(bA) \), and which compares the suprema of two sets, one inside the other? What does the inequality you get say about \( b \), once \( b \) varies?
 :::
 
 ::: {.solution}
@@ -349,7 +349,7 @@ By trichotomy, \( \sup(AB) = st \). Positivity was used in (\( \le \)), to multi
 :::
 
 ::: {#exr-epsilon-characterization-c2}
-[C2: Exit check, sums of sets]
+[C2: Exit check: sums of sets]
 
 Let \( A, B \subseteq \nR \) be non-empty.
 

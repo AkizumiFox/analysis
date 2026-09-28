@@ -1,4 +1,4 @@
-"""exr-the-axiom-a1 (Ch 10, 03): (b) x = |M| + 1 gives x^2 > M; (c) for -1 <= M < 0 the
+"""exr-the-axiom-a1 (Ch 11, 03): (b) x = |M| + 1 gives x^2 > M; (c) for -1 <= M < 0 the
 midpoint M/2 lies in (M, 0)."""
 from fractions import Fraction as F
 from _grid import grid

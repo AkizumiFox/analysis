@@ -1,4 +1,4 @@
-"""exr-epsilon-characterization-c3 (Ch 10, 04): A = B = (0, 1): a + b = 2 (the two suprema)
+"""exr-epsilon-characterization-c3 (Ch 11, 04): A = B = (0, 1): a + b = 2 (the two suprema)
 is not in A + B, since every element of A + B is < 2."""
 from fractions import Fraction as F
 

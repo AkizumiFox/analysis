@@ -1,4 +1,4 @@
-"""thm-reals-uncountable (Ch 10, 07): the outer-thirds construction avoids x_n, is nested, and
+"""thm-reals-uncountable (Ch 11, 07): the outer-thirds construction avoids x_n, is nested, and
 L, R are disjoint; run on several finite lists (including adversarial ones that hit endpoints)."""
 from fractions import Fraction as F
 import random
