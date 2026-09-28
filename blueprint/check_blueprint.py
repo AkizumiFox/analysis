@@ -43,6 +43,7 @@ LABEL = re.compile(rf"`(@?)((?:{PREFIXES})-[A-Za-z0-9][\w-]*)`")
 CITE_WORDS = re.compile(
     r"\bcit(?:e|es|ed|ing)\b|\bfrom Chapters? \d+|\bChapter \d+'s\b|\brecall(?:s|ed|ing)?\b"
     r"|\breus(?:e|es|ed|ing)\b|\bpoint(?:s|ing)? back\b|\(from\b", re.I)
+MOVED = re.compile(r"\*\*(?:Moved (?:out|to)|Retired)\b|\bmoves? to Chapter \d", re.I)
 DEF = re.compile(r"\{#([a-z]+-[\w-]+)")
 NOTES = []  # advisory findings, printed with --notes
 
@@ -51,6 +52,9 @@ def mentions(text: str):
     """(line number, label, 'create' | 'cite') for every label mention, in order."""
     out, seen = [], set()
     for n, line in enumerate(text.split("\n"), 1):
+        if MOVED.search(line):
+            continue          # a migration note ("Moved out … → Chapter 2") only records where
+                              # material goes; its labels are neither created nor cited here
         citing_line = bool(CITE_WORDS.search(line))
         for m in LABEL.finditer(line):
             label = m.group(2)
