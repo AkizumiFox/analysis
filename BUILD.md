@@ -29,9 +29,10 @@ pages reload by themselves. Pages built by `serve` contain the reload script; th
 |------|---------|
 | Verify required tools (pandoc, pdflatex, pdftocairo) | `./build.py doctor` |
 | Validate references, links, and web vs PDF numbering | `./build.py check` |
-| Run the engine tests | `python3 -m unittest discover -s tests` |
+| Run the engine tests | `python3 -m pytest tests -q` (or `python3 -m unittest discover -s tests`) |
 
-`check` fails on unresolved `@refs`, duplicate labels, cross-reference links in `_build/html`
+`check` fails on unresolved `@refs` (including `@prefix:label` references into another book
+whose registry does not have the label, or whose prefix is not configured), duplicate labels, cross-reference links in `_build/html`
 that point nowhere, component problems, and any label whose number in the PDFs differs from
 the website. Run it after `./build.py all`, since the numbering comparison reads the LaTeX
 `.aux` files. `deploy` runs `all` and `check` first and stops if either fails.
@@ -52,12 +53,56 @@ the website. Run it after `./build.py all`, since the numbering comparison reads
   it, for both light and dark mode.
 - References: `@thm-name`, `@eq-name`. Numbered targets read "Theorem 1.2.3"; unnumbered
   ones (examples) read "Example (Title)".
+- References into another book: `@la:thm-name` (see "References to other books" below).
 - Equations: `\[ … \]{#eq-name}`.
 - Labeled lists: `::: {.enumerate options="label=(VS\arabic*)"}` around a numbered list.
 - Figures: TikZ or tikz-cd (e.g. exported from quiver) as raw LaTeX. The PDF uses it directly;
   the website gets an SVG compiled once and cached in `_build/cache/tikz/`.
 - Macros: add them to `latex/macros.tex` (`\def`, `\newcommand`, `\providecommand`,
   `\DeclareMathOperator`). The website's MathJax macros are generated from this file.
+
+## References to other books
+
+Books built with this engine can cite each other. Register the other book under a prefix in
+the config:
+
+```json
+"external-books": {
+  "la": {
+    "title": "Linear Algebra",
+    "short": "LA",
+    "url": "https://linear-algebra.example.com/",
+    "labels": "../linear-algebra/_build/crossref_labels.json"
+  }
+}
+```
+
+- `url`: where that book's website is. Absolute (`https://…/`), or relative to this book's
+  site root when the books share an origin (`../linear-algebra/`; see DEPLOY.md, "Several
+  books under one origin").
+- `labels`: that book's label registry: its `_build/crossref_labels.json` as a path relative
+  to this book's directory, or the `labels.json` every build publishes at the root of its
+  website, as a URL (`https://linear-algebra.example.com/labels.json`). A URL is fetched once
+  per build and cached in `_build/cache/external/`, so offline builds keep the last copy.
+- Optional `format` (default `{title}, {ref}`) and `short-format` (default
+  `[{short}, {ref}]`), with the placeholders `{title}`, `{short}` and `{ref}`.
+
+Then `@la:thm-spectral-real` in running text prints **Linear Algebra, Theorem 12.4**, and the
+bracketed `[@la:thm-spectral-real]` prints the short form **[LA, Theorem 12.4]**. That is the
+one rule: in-text citation, full title; bracketed citation, short form. `{ref}` is what a
+local reference prints ("Theorem 12.4", or "Example (Title)" for an unnumbered target).
+
+- Web: a link to the result in the other book, with the usual hover preview, fetched from
+  that book's `theorems/` files. On a shared origin this always works; across origins it
+  needs the other site to allow it (GitHub Pages does), and when the fetch fails the link
+  simply has no preview.
+- PDF: the same text, as a hyperlink when `url` is absolute (plain text when relative).
+- A label the registry does not have is a build warning and makes `check` fail. A registry
+  that cannot be read (the other book not built yet) is only a warning: references print
+  "Linear Algebra, thm-spectral-real" and link to the book's start page.
+- Citations of another book are not dependencies inside this one: the scan keeps them in
+  `external_uses`, apart from `uses`, so the dependency graph, reading paths and the
+  forward-citation gate ignore them. `python3 tools/check_forward_deps.py --external` lists them.
 
 ## Math rendering
 
@@ -168,7 +213,10 @@ the title defaults to the chapter's `index.md` heading), `src` (default `src`), 
 (default `src/index.md`), `macros`, `environment_settings`, `output`, `templates`, `styles`,
 `repo-url` (optional source link in the sidebar), `issues-url` (optional, e.g.
 `https://github.com/USER/REPO/issues/new`, for the "Report it" link), `prerender-math`
-(default true), `deploy-dir`, `deploy-repo`, `deploy-domain`, `deploy-push-url`.
+(default true), `deploy-dir`, `deploy-repo`, `deploy-domain`, `deploy-push-url`,
+`site-url` (optional: the published address when it is not the root of `deploy-domain`, e.g.
+`https://books.example.com/analysis/`; see DEPLOY.md), `external-books` (see "References to
+other books").
 
 ## Automatic deploys
 

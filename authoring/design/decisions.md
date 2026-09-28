@@ -5,7 +5,7 @@ These decisions were made on 2026-09-27, across two planning conversations and t
 ## The book
 - **One book, seven Parts, written in English first.** A Chinese edition comes later; the engine has no CJK support yet (xelatex + ctex, interface strings and spell check all still to do).
 - **The reader** is a motivated student who has never written a proof. By the end of Part VI they reach the level of a graduate qualifying exam in analysis. As benchmarks, the UCLA real and complex quals set the floor and the ceiling, and Fredholm theory, Sobolev spaces and Lax–Milgram are added from Cambridge Part II.
-- **Linear algebra is not re-taught.** Our linear-algebra book (linear-algebra.akizumifox.com) is the companion text. It is cited by chapter, in prose, because the engine cannot `@ref` another book.
+- **Linear algebra is not re-taught.** Our linear-algebra book (linear-algebra.akizumifox.com) is the companion text. It is cited with `@la:<label>` (amended 2026-09-28: the engine now resolves references into another book, config `external-books`; see STYLE §10 "The companion book"). Before that it was cited by chapter in prose, which remains the form for a whole chapter and the fallback when the companion is not built.
 
 | Part | Title (working) | Course stage |
 |---|---|---|

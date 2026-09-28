@@ -18,6 +18,7 @@ from .manifest import (scan_labels, load_scan, generate_theorem_manifest, genera
                        generate_search_index, generate_site_files, page_description)
 from .pandoc import build_pandoc_command, page_metadata, run_pandoc
 from .extras import extra_page_names, generate_extra_pages
+from .external import lookup as lookup_external, publish_labels
 from .math import MATHJAX_VERSION, ensure_mathjax, render_math
 from .tikz import build_tikz_figures
 from .utils import print_step, print_file_action, print_success, print_error
@@ -97,6 +98,11 @@ def page_fingerprint(book: Book, page: Page, metadata: dict, engine: str, scan: 
     digest.update(json.dumps(metadata, sort_keys=True).encode())
     digest.update(json.dumps(referenced, sort_keys=True).encode())
     digest.update(json.dumps(sorted(set(refs) - set(labels))).encode())  # unresolved refs
+    # References into other books: what each resolves to there (None: no such label,
+    # {}: that book's registry could not be read)
+    external = {ref: lookup_external(book, ref) for ref in sorted(set(refs) - set(labels))}
+    digest.update(json.dumps({k: v for k, v in external.items() if v is not None},
+                             sort_keys=True).encode())
     return digest.hexdigest()
 
 
@@ -185,7 +191,7 @@ def build_html(book: Book, specific_file: Optional[Path] = None, dev_reload: boo
         extra["math-prerendered"] = True
         extra["mathjax-version"] = MATHJAX_VERSION
 
-    domain = (book.config.get("deploy-domain") or "").strip()
+    site_url = book.site_url
     tasks = []
     for page in pages:
         output_file = book.html_dir / page.html_path
@@ -193,8 +199,8 @@ def build_html(book: Book, specific_file: Optional[Path] = None, dev_reload: boo
         description = page_description(scan["files"].get(page.html_path, {}).get("description", ""))
         if description:
             page_extra["description"] = description
-        if domain:
-            page_extra["canonical-url"] = f"https://{domain}/{page.html_path}"
+        if site_url:
+            page_extra["canonical-url"] = f"{site_url}{page.html_path}"
         metadata = page_metadata(book, page, "html", page_extra)
         fingerprint = page_fingerprint(book, page, metadata, engine, scan, labels)
         if store.unchanged(page.html_path, fingerprint, output_file):
@@ -219,6 +225,7 @@ def build_html(book: Book, specific_file: Optional[Path] = None, dev_reload: boo
 
     build_tikz_figures(book)
     generate_theorem_manifest(book)
+    publish_labels(book, labels)
     generate_navigation_manifest(book)
     generate_search_index(book)
     generate_site_files(book)

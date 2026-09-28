@@ -270,6 +270,7 @@ Let ...  This proves the theorem.
 - **Environment prefixes:** `thm`, `lem`, `cor`, `prp`, `ax` (shared counter; `ax` is Axiom, used for the least upper bound axiom); `def`; `exm`; `exr`; `cnj`. Small blocks with no label: `.proof`, `.solution`, `.remark`, `.claim`, `.idea`, `.warning`, `.check`, `.algorithm`.
 - **Labels** are lowercase-hyphenated and describe content (`thm-bolzano-weierstrass`, not `thm-3`). They are global across the book and must be unique.
 - **References:** `@thm-bolzano-weierstrass` renders as "Theorem 3.12" with a hover preview; `@eq-slug` works for equations.
+- **References to the linear-algebra companion:** `@la:thm-spectral-real` renders as "Linear Algebra, Theorem 12.4", linked, with the preview; `[@la:thm-spectral-real]` renders as "[LA, Theorem 12.4]". See §10.
 - **Optional results:** `::: {#thm-foo .optional}` marks a result nothing later depends on (§4). Nothing may be proved from one; `./build.py check` enforces it.
 - **Labeled lists:** `::: {.enumerate options="label=(O\arabic*)"}` wraps an ordered list.
 - **Web-only content:** `::: {.content-visible when-format="html"}`.
@@ -295,7 +296,7 @@ none: (write this line alone if the section uses nothing without an @ref)
 -->
 ```
 
-- **Format:** the first line is exactly `<!-- dependency ledger`; then one line per fact, `<label> (<kind>): <fact> | <source>`; the last line is `-->`. The kind is `proof`, `idea`, `claim`, `solution` or `example`. The source is an earlier label, `chNN (promised)` for a fact owed by an earlier chapter that is not yet written, `companion ch N` for linear algebra, or `inline` if the section proves it on the spot.
+- **Format:** the first line is exactly `<!-- dependency ledger`; then one line per fact, `<label> (<kind>): <fact> | <source>`; the last line is `-->`. The kind is `proof`, `idea`, `claim`, `solution` or `example`. The source is an earlier label, `chNN (promised)` for a fact owed by an earlier chapter that is not yet written, `companion ch N` for linear algebra used without an `@la:` citation, or `inline` if the section proves it on the spot.
 - **What it is for.** Referee B checks it against what each proof actually uses, and the seam referee checks that every `chNN (promised)` source is in STATUS's promise table. A fact whose source is a *later* chapter is a forward dependency: fix the proof, do not ledger it.
 - **Keep it short and honest.** Standard facts about the ordered field ℝ after Chapter 10 need no line. Anything the reader could reasonably ask "where was that proved?" about does.
 
@@ -338,7 +339,7 @@ These come from the planning record (`authoring/design/decisions.md`, `curriculu
 - **Self-explanation prompts.** For the three or four hardest proofs of a chapter, the Idea ends with a prompt such as "*Before reading on: where will compactness be used?*" or "*Self-explain lines 3–5.*" (at most one per proof). From Chapter 5 on they remind the reader of a trained habit (§11.1).
 - **Part 0's rule tags.** In Part 0 only, proofs may annotate steps with the natural-deduction rule in small caps in brackets (e.g. `[∀I]`, `[∃E]`). Later Parts do not, but the "what is not allowed" catalogue of Part 0 is cited (`@...`) when a warning concerns one of its errors.
 - **Choice and non-constructive steps are flagged in prose.** Where a proof uses the axiom of choice (countable unions, Vitali, Hahn–Banach, Tychonoff) or a genuinely non-constructive step discussed in the excluded-middle section, one clause says so. Do not dwell on it.
-- **The companion book.** Linear algebra is cited as "the linear-algebra companion, Chapter N" in prose, never re-proved and never `@ref`ed.
+- **The companion book.** Linear algebra is never re-proved. It is cited with `@la:<label>`, the label as it stands in the linear-algebra book (e.g. `@la:thm-spectral-real`; the registry is `../linear-algebra/_build/crossref_labels.json`): in running text `@la:…` prints "Linear Algebra, Theorem 12.4" and links to it with a preview; in brackets, `[@la:…]` prints the short form "[LA, Theorem 12.4]". The config's `external-books` sets this up, and `./build.py check` fails on a label the companion does not have. An `@la:` citation is not a dependency inside this book: it never counts as forward and is not ledgered. When the companion is not built on the machine, the build prints "Linear Algebra, <label>" and check only warns; build it (`./build.py html` in `../linear-algebra`) before checking numbers. For a whole chapter with no single result to point at, the prose form "the linear-algebra companion, Chapter N" is still right.
 
 ## 11. The reader working alone
 

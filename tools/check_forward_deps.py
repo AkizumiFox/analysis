@@ -45,6 +45,11 @@ citation names a label that does not exist.
     python3 tools/check_forward_deps.py
     python3 tools/check_forward_deps.py --signposts   # the allowed forward pointers
     python3 tools/check_forward_deps.py --exercises   # results citing an exercise
+    python3 tools/check_forward_deps.py --external    # citations of other books
+
+Citations of another book (`@la:thm-x`, config `external-books`) are not
+dependencies inside this one: the scan keeps them apart, in `external_uses`, and
+they are never forward, never dangling. `--external` lists them.
 
 Also run as part of `./build.py check`, through `find_violations` and `report`,
 the way `tools/check_optional.py` is.
@@ -179,6 +184,33 @@ def list_results_citing_exercises(labels):
     return 0
 
 
+# `prefix:label`: a citation of another book. The scan files these under
+# `external_uses`; an index written before it did carries them in `uses`.
+EXTERNAL = re.compile(r"^[A-Za-z]\w*:")
+
+
+def external_citations(labels):
+    """(citing label, citing file, cited external reference) for every citation of another book."""
+    rows = []
+    for name, rec in sorted(labels.items()):
+        cited = set(rec.get("external_uses") or ()) | {
+            ref for ref in rec.get("uses") or () if EXTERNAL.match(ref)}
+        for ref in sorted(cited):
+            rows.append((name, rec.get("file", ""), ref))
+    return rows
+
+
+def list_external_citations(labels):
+    """Print every citation of another book, grouped by book prefix. Advisory."""
+    rows = external_citations(labels)
+    for name, where, ref in rows:
+        print(f"{where.replace('.html', '')}: {name} -> {ref}")
+    books = sorted({ref.split(":", 1)[0] for _, _, ref in rows})
+    print(f"\n{len(rows)} citations of other books ({', '.join(books) or 'none'}). They are "
+          f"not dependencies inside this book and are never counted as forward.")
+    return 0
+
+
 def main():
     if not INDEX.exists():
         print(f"{INDEX} not found; run ./build.py html first", file=sys.stderr)
@@ -188,6 +220,8 @@ def main():
 
     if "--exercises" in sys.argv:
         return list_results_citing_exercises(labels)
+    if "--external" in sys.argv:
+        return list_external_citations(labels)
 
     order = place(labels)
     unplaced = [name for name in labels if name not in order]
@@ -195,7 +229,7 @@ def main():
     dangling = [(name, cited)
                 for name, rec in sorted(labels.items())
                 for cited in rec.get("uses") or ()
-                if cited not in labels]
+                if cited not in labels and not EXTERNAL.match(cited)]
     same_section = sum(1 for name, rec in labels.items() if name in order
                        for cited in rec.get("uses") or ()
                        if order.get(cited) == order[name] and cited != name)

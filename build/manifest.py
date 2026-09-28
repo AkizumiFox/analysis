@@ -14,6 +14,7 @@ from html import escape as html_escape, unescape
 from concurrent.futures import ThreadPoolExecutor
 
 from .book import Book, Page
+from .external import resolve as resolve_external, split_ref, write_external_file
 from .utils import print_step, print_success, print_warning, print_error, run_with_crash_retry
 
 
@@ -92,6 +93,7 @@ def scan_labels(book: Book) -> dict:
     scan.json (per-page labels, references and text). Returns the scan data.
     """
     print_step("Scanning labels...")
+    resolve_external(book, refresh=True)
     meta_file = _scan_meta_file(book)
     pages = book.pages
     with ThreadPoolExecutor(max_workers=min(8, len(pages) or 1)) as executor:
@@ -107,9 +109,18 @@ def scan_labels(book: Book) -> dict:
         # owning result's own type for its statement). `uses` keeps its flat-list shape.
         uses_kinds = data.get("uses_kinds") or {}
         for label_id, info in data["labels"].items():
-            info = dict(info, file=page.html_path, shard=page.shard, uses=uses.get(label_id, []),
-                        uses_kinds=uses_kinds.get(label_id, {}),
+            # A citation of another book (@la:thm-x) is not a dependency inside this one:
+            # it goes to `external_uses`, so the graph, the reading paths and the
+            # forward-citation gate see only this book's labels.
+            cited = uses.get(label_id, [])
+            external = [ref for ref in cited if split_ref(book, ref)]
+            info = dict(info, file=page.html_path, shard=page.shard,
+                        uses=[ref for ref in cited if ref not in external],
+                        uses_kinds={ref: kinds for ref, kinds in uses_kinds.get(label_id, {}).items()
+                                    if ref not in external},
                         text=(data.get("block_text") or {}).get(label_id, ""))
+            if external:
+                info["external_uses"] = external
             global_labels.setdefault(label_id, info)
         scan_files[page.html_path] = {
             "source": str(page.source.relative_to(book.root)),
@@ -124,6 +135,7 @@ def scan_labels(book: Book) -> dict:
     add_title_mentions(global_labels, {p: e["refs"] for p, e in scan_files.items()},
                        set(book.config.get("mention-exempt-titles", ())))
     book.build_dir.mkdir(parents=True, exist_ok=True)
+    write_external_file(book, {ref for entry in scan_files.values() for ref in entry["refs"]})
     book.labels_file.write_text(json.dumps({"crossref_labels": global_labels}, indent=2), encoding="utf-8")
     scan = {"files": scan_files}
     book.scan_file.write_text(json.dumps(scan, indent=2), encoding="utf-8")
@@ -420,19 +432,26 @@ def page_description(text: str, limit: int = 160) -> str:
 
 
 def generate_site_files(book: Book):
-    """robots.txt and sitemap.xml (when deploy-domain is set) and a 404 page."""
-    domain = (book.config.get("deploy-domain") or "").strip()
-    if domain:
+    """robots.txt and sitemap.xml (when the site's address is known) and a 404 page.
+
+    A book published under a sub-path (`site-url`, a library of books on one origin)
+    gets its sitemap but no robots.txt, which only counts at the root of a domain: the
+    library's own root carries that.
+    """
+    site_url = book.site_url
+    if site_url:
         from .extras import extra_page_names   # local import: extras imports this module
         paths = [p.html_path for p in book.pages] + extra_page_names(book)
-        urls = "\n".join(f"  <url><loc>https://{domain}/{path}</loc></url>" for path in paths)
+        urls = "\n".join(f"  <url><loc>{site_url}{path}</loc></url>" for path in paths)
         _write_if_changed(book.html_dir / "sitemap.xml",
                           '<?xml version="1.0" encoding="UTF-8"?>\n'
                           '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
                           f"{urls}\n</urlset>\n")
-        _write_if_changed(book.html_dir / "robots.txt", f"User-agent: *\nAllow: /\nSitemap: https://{domain}/sitemap.xml\n")
-    # GitHub Pages serves 404.html for unknown paths at any depth, so links are absolute
-    root = "/"
+        if book.site_path == "/":
+            _write_if_changed(book.html_dir / "robots.txt", f"User-agent: *\nAllow: /\nSitemap: {site_url}sitemap.xml\n")
+    # GitHub Pages serves 404.html for unknown paths at any depth, so links are absolute:
+    # from the book's own path on its origin (site-url), "/" by default
+    root = book.site_path
     title = html_escape(book.title)
     _write_if_changed(book.html_dir / "404.html", f"""<!DOCTYPE html>
 <html lang="en">

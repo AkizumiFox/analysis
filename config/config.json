@@ -126,5 +126,13 @@
     "name": "CC BY-NC-SA 4.0",
     "url": "https://creativecommons.org/licenses/by-nc-sa/4.0/"
   },
-  "mention-exempt-titles": []
+  "mention-exempt-titles": [],
+  "external-books": {
+    "la": {
+      "title": "Linear Algebra",
+      "short": "LA",
+      "url": "https://linear-algebra.akizumifox.com/",
+      "labels": "../linear-algebra/_build/crossref_labels.json"
+    }
+  }
 }
