@@ -51,9 +51,17 @@ def _compile_one(tex_source: Path, macros_file: Path, tex_inputs: str) -> tuple[
     with tempfile.TemporaryDirectory(prefix="tikz-") as tmp:
         tmp_dir = Path(tmp)
         doc = tmp_dir / "picture.tex"
-        doc.write_text(STANDALONE_TEMPLATE % {
+        picture = tex_source.read_text(encoding="utf-8")
+        template = STANDALONE_TEMPLATE
+        if picture.lstrip().startswith("$\\begin{nd}"):
+            # A Fitch derivation (filters/tikz.lua wraps it in $...$) is not a tikzpicture:
+            # standalone's `tikz` option crops only tikzpictures and would leave it on a
+            # full page. Without the option standalone crops to the content, as it should.
+            template = template.replace("\\documentclass[tikz,border=2pt]{standalone}",
+                                        "\\documentclass[border=2pt]{standalone}", 1)
+        doc.write_text(template % {
             "macros": macros_file.as_posix(),
-            "picture": tex_source.read_text(encoding="utf-8"),
+            "picture": picture,
         }, encoding="utf-8")
         result = subprocess.run(
             ["pdflatex", "-interaction=nonstopmode", "-halt-on-error", doc.name],
