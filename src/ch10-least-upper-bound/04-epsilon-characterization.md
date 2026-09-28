@@ -120,7 +120,7 @@ Let \( A \subseteq \nR \) be non-empty and bounded above. For every \( n \in \nN
 By @ax-least-upper-bound, \( \sup A \) exists. Let \( n \in \nN \). Then \( n > 0 \), by the induction on \( n \) in @exm-sup-one-minus-reciprocal, and \( \frac1n > 0 \) by @thm-ordered-field-rules (f). By @thm-sup-epsilon (\( \Rightarrow \)) with \( \varepsilon = \frac1n \), there is \( a_n \in A \) with \( a_n > \sup A - \frac1n \), and \( a_n \le \sup A \) by (S1).
 :::
 
-The corollary gives, for each \( n \) separately, an element \( a_n \). Choosing one for every \( n \) at once, so as to form a sequence \( (a_n) \), is a use of the axiom of countable choice; we flag it and move on. In Chapter 9 this becomes the statement that every supremum is the limit of a sequence from the set. We call the move **sup approximation**: "\( \sup A - \frac1n \) is not an upper bound, so some \( a_n \in A \) exceeds it."
+The corollary gives, for each \( n \) separately, an element \( a_n \). Choosing one for every \( n \) at once, so as to form a sequence \( (a_n) \), is a use of the axiom of countable choice; we flag it and move on. In Chapter 11 this becomes the statement that every supremum is the limit of a sequence from the set. We call the move **sup approximation**: "\( \sup A - \frac1n \) is not an upper bound, so some \( a_n \in A \) exceeds it."
 
 ## Monotonicity and scaling
 

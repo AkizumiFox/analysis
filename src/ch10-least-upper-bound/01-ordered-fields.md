@@ -230,7 +230,7 @@ Part (d), applied to \( x - a \) in place of \( x \), is the single most used eq
 \quad\iff\quad
 a - r < x < a + r .
 \]{#eq-abs-interval}
-In words: *\( x \) is within distance \( r \) of \( a \) exactly when \( x \) lies in the open interval of radius \( r \) centered at \( a \)*. Here, for \( a \le b \) in \( F \), the **intervals** are \( (a, b) \coloneqq \{ x \in F : a < x < b \} \), \( [a, b] \coloneqq \{ x \in F : a \le x \le b \} \), and \( (a, b] \), \( [a, b) \) similarly; in the degenerate case \( a = b \), the closed interval \( [a, a] = \{ a \} \) is a single point and the other three are empty; \( (a, \infty) \coloneqq \{ x \in F : x > a \} \), and the other unbounded intervals are defined in the same way. The symbol \( \infty \) here is part of the name of a set, not an element of \( F \). From Chapter 9 on, every statement "\( a_n \) is close to \( L \)" is turned into two inequalities by @eq-abs-interval, and back.
+In words: *\( x \) is within distance \( r \) of \( a \) exactly when \( x \) lies in the open interval of radius \( r \) centered at \( a \)*. Here, for \( a \le b \) in \( F \), the **intervals** are \( (a, b) \coloneqq \{ x \in F : a < x < b \} \), \( [a, b] \coloneqq \{ x \in F : a \le x \le b \} \), and \( (a, b] \), \( [a, b) \) similarly; in the degenerate case \( a = b \), the closed interval \( [a, a] = \{ a \} \) is a single point and the other three are empty; \( (a, \infty) \coloneqq \{ x \in F : x > a \} \), and the other unbounded intervals are defined in the same way. The symbol \( \infty \) here is part of the name of a set, not an element of \( F \). From Chapter 11 on, every statement "\( a_n \) is close to \( L \)" is turned into two inequalities by @eq-abs-interval, and back.
 
 ::: {#exm-solve-abs-inequality}
 [Reading an absolute-value inequality as an interval]
@@ -379,7 +379,7 @@ Find all real \( x \) satisfying each inequality. Hence write each solution set 
 3. Deduce that the elements \( 1, 1 + 1, 1 + 1 + 1, \dots \) of an ordered field are all different, so every ordered field contains a copy of \( \nN \) (and in particular is infinite).
 :::
 
-*Hint: for (b), use induction on \( n \) (Chapter 4).*
+*Hint: for (b), use induction on \( n \) (Chapter 6).*
 :::
 
 ::: {.solution}

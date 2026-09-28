@@ -34,23 +34,23 @@ Second tranche (use as soon as each lands; until then the manual fallback in bra
 
 ## Order: waves (C4)
 
-**Wave 0, before any new chapter.** Fix the pilot findings (C1); approve the exemplar and name it in STATUS; resolve NOTATION.md against Chapter 1 on reiteration; build the first-tranche tools; apply the accepted route changes to `book.yaml` and re-run `check_order.py`; regenerate the blueprints. Then, if time allows: set up `lean/` and run the anchoring pilot on Chapters 8–10's must-prove lists; plant 10 known errors in a copy of Chapter 8 and measure referee recall.
+**Wave 0, before any new chapter.** Fix the pilot findings (C1); approve the exemplar and name it in STATUS; resolve NOTATION.md against Chapter 1 on reiteration; build the first-tranche tools; apply the accepted route changes to `book.yaml` and re-run `check_order.py`; regenerate the blueprints. Then, if time allows: set up `lean/` and run the anchoring pilot on Chapters 10–12's must-prove lists; plant 10 known errors in a copy of Chapter 10 and measure referee recall.
 
 **Waves 1–N.** A wave is **3–4 chapters whose prerequisites are all approved**. Within a chapter, 3–4 drafting agents take about two sections each. A new wave opens when the previous wave's chapters pass S8; the author's S9 may trail one wave behind. Draft at most one dependency level ahead of approved text, so citations point at reviewed labels.
 
 | Wave | Chapters | Why |
 |---|---|---|
-| 1 | 2, 3 (then 4, 5 as soon as 3 lands) | Part 0's main line; pays Chapter 8's promises; carries the self-explanation training (Ch 2) and Gate 0 (Ch 5) |
-| 2 | 9, 6, 7 | 9 is the next level; 6 and 7 are optional and run beside it |
-| 3 | 10, 11 | same level |
-| 4 | 12, then 13 | a chain |
-| 5 | 14, 19, 20 | 19 and 20 are optional and need only 8 |
-| 6 | 15, then 16, 17, then 18 | Riemann–Darboux has low Mathlib coverage: give it an extra referee |
+| 1 | 1–4, then 5, 6, 7 | Part 0's main line. The four logic chapters first, in order (1 rewritten as `propositional-natural-deduction`; 2 needs 1, 3 needs 1–2, 4 needs 3): the self-explanation training and the excluded-middle section are in Ch 4. Then sets (5), relations and induction (6), cardinality with Gate 0 (7). Pays Chapter 10's promises |
+| 2 | 11, 8, 9 | 11 is the next level; 8 and 9 are optional and run beside it |
+| 3 | 12, 13 | same level |
+| 4 | 14, then 15 | a chain |
+| 5 | 16, 21, 22 | 21 and 22 are optional and need only 10 |
+| 6 | 17, then 18, 19, then 20 | Riemann–Darboux has low Mathlib coverage: give it an extra referee |
 | 7+ | Part II, then Part III | as the blueprint levels allow |
 | … | Parts IV and V **interleaved** | both need only Parts I–III |
 | last | Part VI, then the capstone, then the whole-book pass | |
 
-Chapter numbers are the current `book.yaml`'s; re-read them after the route changes are applied.
+Chapter numbers are the 77-chapter `book.yaml`'s (Part 0's logic expanded to four chapters, 2026-09-28; everything from the old Chapter 3 on moved up by two).
 
 **Part pilots.** The first chapter of each Part goes through the pipeline **alone**, the author approves it, and only then does the Part fan out. At each Part pilot, measure referee recall on seeded errors (target ≥ 0.8).
 
@@ -61,7 +61,7 @@ Chapter numbers are the current `book.yaml`'s; re-read them after the route chan
 Each stage: who, what the brief must contain, what it produces, exit criterion. Every agent in S2–S8 starts in a **fresh context** and never sees another reviewer's verdict unless the stage says so. Every finding carries a verdict (`correct` / `minor` / `gap` / `error`) and evidence: file:line plus a counterexample, a computation, or the quoted text.
 
 ### S1. Blueprint expansion (1 agent)
-**Brief contains:** the stub `authoring/blueprints/chNN.md`; the curriculum node; the earlier chapters' label lists; STATUS's promises due to this chapter; the Chapter 8 blueprint as the model of depth; STYLE §11 (so it places the reader-alone items); the source books, for coverage only.
+**Brief contains:** the stub `authoring/blueprints/chNN.md`; the curriculum node; the earlier chapters' label lists; STATUS's promises due to this chapter; the Chapter 10 blueprint as the model of depth; STYLE §11 (so it places the reader-alone items); the source books, for coverage only.
 **Produces** a blueprint of about 3–4k words: labels; each must-prove statement with **all hypotheses**; a proof route citing specific earlier labels; examples, checks and exercises with intended answers; the 2–3 key proofs (§11.2); where the find-the-error, ordering, faded, try-it-first, R and (if last chapter of a Part) Gate items go; exit checks with marking-scheme outlines; the prerequisite ledger; notation additions; promises paid and opened.
 **Exit:** `blueprint/check_blueprint.py` passes.
 
@@ -72,7 +72,7 @@ Each stage: who, what the brief must contain, what it produces, exit criterion. 
 - "Flag any route that rests on an exercise, on a later chapter, or on an optional result."
 - "Check each statement's hypotheses are all needed: for each, name what fails without it, or say that it is redundant."
 
-**S2b, Mathlib anchoring (optional until `lean/` exists).** One agent writes `lean/Book/ChNN.lean`, one `theorem <label> : <book statement over Mathlib objects> := <Mathlib lemma or short automation>` per must-prove item, with status `anchored` (compiles, no `sorry`), `stated` (compiles with `sorry`) or `n/a` (with a reason). A **third agent that never sees the book text** back-translates each Lean statement into English; `tools/backtranslate_check.py` and a judge compare hypothesis lists with the book's. Every mismatch is a finding. If the anchoring pilot anchors under about 30% of items, run S2b only for the high-coverage Parts (II, IV, VI core). For Riemann-setting chapters (15, 29, Part III's Riemann framing), replace S2b with a second independent statement referee.
+**S2b, Mathlib anchoring (optional until `lean/` exists).** One agent writes `lean/Book/ChNN.lean`, one `theorem <label> : <book statement over Mathlib objects> := <Mathlib lemma or short automation>` per must-prove item, with status `anchored` (compiles, no `sorry`), `stated` (compiles with `sorry`) or `n/a` (with a reason). A **third agent that never sees the book text** back-translates each Lean statement into English; `tools/backtranslate_check.py` and a judge compare hypothesis lists with the book's. Every mismatch is a finding. If the anchoring pilot anchors under about 30% of items, run S2b only for the high-coverage Parts (II, IV, VI core). For Riemann-setting chapters (17, 31, Part III's Riemann framing), replace S2b with a second independent statement referee.
 
 **Exit:** no open finding; `check_blueprint.py` passes; the blueprint is **frozen** and its hash recorded in the ledger. A later change to a frozen blueprint re-opens S2 for the changed items.
 

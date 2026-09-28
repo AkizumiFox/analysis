@@ -288,16 +288,16 @@ Every section file ends with a **dependency ledger**: an HTML comment, which Pan
 
 ```markdown
 <!-- dependency ledger
-lem-integer-part (proof): every non-empty set of integers bounded above has a maximum | ch04 (promised; STATUS)
+lem-integer-part (proof): every non-empty set of integers bounded above has a maximum | ch06 (promised; STATUS)
 thm-archimedean (proof): n + 1 > n for n in N | ax-ordered-field (O1), recalled in prose
-exr-archimedean-properties-c1 (solution): 2^n >= n + 1 | proved inline by induction; Ch 4 not yet available -> flagged
+exr-archimedean-properties-c1 (solution): 2^n >= n + 1 | proved inline by induction; Ch 6 not yet available -> flagged
 none: (write this line alone if the section uses nothing without an @ref)
 -->
 ```
 
 - **Format:** the first line is exactly `<!-- dependency ledger`; then one line per fact, `<label> (<kind>): <fact> | <source>`; the last line is `-->`. The kind is `proof`, `idea`, `claim`, `solution` or `example`. The source is an earlier label, `chNN (promised)` for a fact owed by an earlier chapter that is not yet written, `companion ch N` for linear algebra, or `inline` if the section proves it on the spot.
 - **What it is for.** Referee B checks it against what each proof actually uses, and the seam referee checks that every `chNN (promised)` source is in STATUS's promise table. A fact whose source is a *later* chapter is a forward dependency: fix the proof, do not ledger it.
-- **Keep it short and honest.** Standard facts about the ordered field ℝ after Chapter 8 need no line. Anything the reader could reasonably ask "where was that proved?" about does.
+- **Keep it short and honest.** Standard facts about the ordered field ℝ after Chapter 10 need no line. Anything the reader could reasonably ask "where was that proved?" about does.
 
 ### Meta-claims
 
@@ -344,7 +344,7 @@ These come from the planning record (`authoring/design/decisions.md`, `curriculu
 
 The reader of §1 has no teacher, no marker and no classmates. The rules below give them what a course would: training in how to read a proof, feedback they can apply to themselves, review spaced over months, and a checkpoint at the end of each Part. Most rest on controlled studies; the evidence and the sources are in `authoring/design/research-reader.md` (B2–B4, B7). Where a rule sets a count ("at most two per chapter"), the count is binding; the blueprint says where the items go.
 
-**11.1 Self-explanation is taught once.** The book has exactly one training passage on self-explanation, in Chapter 2 (the section on reading and writing proofs; the blueprint names it). It takes one short proof and shows it explained twice:
+**11.1 Self-explanation is taught once.** The book has exactly one training passage on self-explanation, in Chapter 4, `from-derivations-to-prose` (the self-explanation section; the blueprint names it). It takes one short proof and shows it explained twice:
 - **well:** each line justified by earlier lines, definitions and named results ("line 4 follows from lines 2 and 3 by @def-…; this is where x > 0 is needed");
 - **badly:** each line paraphrased ("so now we know the thing is small").
 
@@ -414,7 +414,7 @@ The Idea that follows **starts from the obstacles such an attempt meets** ("the 
 
 **11.9 The chapter's time line.** Every chapter `index.md` has the **Time** line of §2, after **What you need**. The core track is all of A, one B and one C per section, and the exit checks; the full track is everything. The estimate is a promise to the reader about their week, so round honestly and do not shade it down.
 
-**11.10 Gates.** The last main-line chapter of each Part ends with a **Gate** section: at the time of writing Chapters 5, 18 (its §06 review becomes the Gate), 31, 40, 51, 59 and 72 (§08, the mixed qualifying exam). Renumbering under the route changes may move these; the Gate follows the Part's last main-line chapter. A Gate section contains, in order:
+**11.10 Gates.** The last main-line chapter of each Part ends with a **Gate** section: in the 77-chapter numbering, Chapters 7, 20 (its §06 review becomes the Gate), 32, 41, 53, 61 and 77 (§08, the mixed qualifying exam). Renumbering may move these; the Gate follows the Part's last main-line chapter. A Gate section contains, in order:
 1. **Instructions:** time allowed (2 hours for Gate 0, 3 hours after), closed book, and the pass line: 70% overall, with no *core* problem at 0.
 2. **Definition drill:** every major definition of the Part, to be stated in symbols, answers folded. This is the Part's one retrieval list.
 3. **The problems** (6 for Gate 0 and Gate III, 8 otherwise), each `::: {#exr-<section-slug>-p1}` titled `[P1]`, or `[P1: core]` for a core problem, followed by a folded solution ending in a marking scheme (§11.6).

@@ -20,6 +20,10 @@
    "name": "Hammack - Book of Proof (3rd ed)",
    "role": "problems"
   },
+  "HR": {
+   "name": "Huth & Ryan - Logic in Computer Science (2nd ed)",
+   "role": "scaffolding"
+  },
   "HAL": {
    "name": "Halmos - Naive Set Theory",
    "role": "scaffolding"
@@ -421,6 +425,24 @@
    "title": "Cardinality of Sets",
    "pages": 23,
    "files": "071-076"
+  },
+  "HR.1": {
+   "id": "HR.1",
+   "book": "HR",
+   "ch": "1",
+   "title": "Propositional logic",
+   "pages": 92,
+   "files": null,
+   "pp": "1–92"
+  },
+  "HR.2": {
+   "id": "HR.2",
+   "book": "HR",
+   "ch": "2",
+   "title": "Predicate logic",
+   "pages": 79,
+   "files": null,
+   "pp": "93–171"
   },
   "HAL.1": {
    "id": "HAL.1",
@@ -4482,6 +4504,10 @@
   [
    "SS4.1",
    "SS4.2"
+  ],
+  [
+   "HR.1",
+   "HR.2"
   ]
  ],
  "soft": [
@@ -5466,6 +5492,14 @@
   [
    "LAX.18",
    "KRE.7"
+  ],
+  [
+   "HR.1",
+   "CH.3"
+  ],
+  [
+   "HR.2",
+   "CH.7"
   ]
  ]
 }

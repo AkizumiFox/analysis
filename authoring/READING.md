@@ -3,7 +3,7 @@
 This is the source for a future front-matter page, **"How to read this book"**, and for the reading paths still to be configured. It is written for the author and the coordinator; the page itself will be written from it in the book's voice (second person where it advises, per STYLE §7). It implements roadmap A6, A10, B2, B5 and B6; the evidence is in `authoring/design/research-reader.md` B1–B6.
 
 Two warnings for whoever turns this into the page:
-- **Chapter numbers are those of the 75-chapter `blueprint/book.yaml`**, after the accepted route changes (roadmap A1–A5, A7: linear systems as Ch 29, surfaces and the divergence theorem as Ch 45, probability as Ch 51 at the end of Part IV, topology in one block as Ch 60–61 at the start of Part VI, interpolation as Ch 72; Ch 37 now optional). If `book.yaml` is renumbered again, redo every table below before publishing.
+- **Chapter numbers are those of the 77-chapter `blueprint/book.yaml`**: Part 0's logic became four chapters on 2026-09-28, so every chapter from the old Chapter 3 on moved up by two; the accepted route changes before that (roadmap A1–A5, A7: linear systems as Ch 31, surfaces and the divergence theorem as Ch 47, probability as Ch 53 at the end of Part IV, topology in one block as Ch 62–63 at the start of Part VI, interpolation as Ch 74; Ch 39 now optional). If `book.yaml` is renumbered again, redo every table below before publishing.
 - **Hours are estimates to be replaced by data.** They come from the formula in research-reader B1 (reading at about 15 minutes per 400 words of proof-dense prose; 20–45 minutes per exercise). When test readers log hours, the chapter index pages' **Time** lines and the tables here take the medians.
 
 ## Two tracks
@@ -11,7 +11,7 @@ Two warnings for whoever turns this into the page:
 - **Core track, about 25 hours a chapter:** read every section; do every Quick check and self-explanation prompt; all of A, one B and one C per section, the R group, and the exit checks.
 - **Full track, about 35–45 hours a chapter:** every exercise.
 
-A main-line reading is 68 chapters and **about 1,650–1,700 hours** on the core track; the seven optional chapters (6, 7, 19, 20, 37, 38, 69) add about 175.
+A main-line reading is 70 chapters and **about 1,700–1,750 hours** on the core track; the seven optional chapters (8, 9, 21, 22, 39, 40, 71) add about 175.
 
 ## Schedules
 
@@ -23,41 +23,41 @@ A half-time student's load. 96 study weeks plus about 8 weeks of breaks. **Parts
 
 | Weeks | Part | Chapters | Pace |
 |---|---|---|---|
-| 1–4 | 0, as a bridge | Ch 1–5, selected sections: skip Ch 2's final two sections and the depth of the Lean table; read Ch 4 §01–§04 and Ch 5 §01–§04 | about 1.3 chapters a week |
+| 1–4 | 0, as a bridge | Ch 1–7, selected sections: Ch 1 and Ch 3 in full; in Ch 2 read the statements of soundness and completeness and skip their proofs; skip Ch 4's final two sections and the depth of the Lean table; read Ch 6 §01–§04 and Ch 7 §01–§04 | about 1.75 chapters a week (not yet re-paced for the four logic chapters) |
 | 5 | Gate 0 | | |
-| 6–19 | I | Ch 8–18 | 0.8 a week |
+| 6–19 | I | Ch 10–20 | 0.8 a week |
 | 20 | Gate I | | |
-| 21–33 | II | Ch 21–30 | 0.8 a week |
+| 21–33 | II | Ch 23–32 | 0.8 a week |
 | 34 | Gate II | | |
-| 35–43 | III | Ch 31–36, 39 | 0.8 a week |
+| 35–43 | III | Ch 33–38, 41 | 0.8 a week |
 | 44 | Gate III | | |
-| 45–59 | IV | Ch 40–51 | 0.8 a week |
+| 45–59 | IV | Ch 42–53 | 0.8 a week |
 | 60 | Gate IV | | |
-| 61–70 | V | Ch 52–59 | 0.8 a week |
+| 61–70 | V | Ch 54–61 | 0.8 a week |
 | 71 | Gate V | | |
-| 72–90 | VI | Ch 60–68, 70–75 | 0.8 a week |
+| 72–90 | VI | Ch 62–70, 72–77 | 0.8 a week |
 | 91 | Gate VI (the capstone's mixed qualifying exam) | | |
 | 92–96 | slack, and review for a qualifying exam | | |
 
 ### Three years, about 12–13 hours a week
 
-A working adult's load. All 75 chapters, including the optional ones, over about 160 study weeks: about half a chapter a week (two weeks a chapter, plus a week for each Gate), so a seven-section chapter takes two weeks. The total is close to the two-year route's; the difference is that the three-year reader has time for the **full track in Parts 0 and I**, where the habits form.
+A working adult's load. All 77 chapters, including the optional ones, over about 160 study weeks: about half a chapter a week (two weeks a chapter, plus a week for each Gate), so a seven-section chapter takes two weeks. The total is close to the two-year route's; the difference is that the three-year reader has time for the **full track in Parts 0 and I**, where the habits form.
 
 | Year | Weeks | Content |
 |---|---|---|
-| 1 | 1–14 | Part 0, all 7 chapters, and Gate 0 |
-| 1 | 15–44 | Part I (Ch 8–18, 19–20), and Gate I |
-| 2 | 45–65 | Part II (Ch 21–30), and Gate II |
-| 2 | 66–84 | Part III (Ch 31–39; Ch 37–38 optional), and Gate III |
-| 2–3 | 85–109 | Part IV (Ch 40–51), and Gate IV |
-| 3 | 110–126 | Part V (Ch 52–59), and Gate V |
-| 3–4 | 127–159 | Part VI (Ch 60–75; Ch 69 optional), and the Gate VI capstone |
+| 1 | 1–14 | Part 0, all 9 chapters, and Gate 0 (not yet re-paced for the four logic chapters) |
+| 1 | 15–44 | Part I (Ch 10–20, 21–22), and Gate I |
+| 2 | 45–65 | Part II (Ch 23–32), and Gate II |
+| 2 | 66–84 | Part III (Ch 33–41; Ch 39–40 optional), and Gate III |
+| 2–3 | 85–109 | Part IV (Ch 42–53), and Gate IV |
+| 3 | 110–126 | Part V (Ch 54–61), and Gate V |
+| 3–4 | 127–159 | Part VI (Ch 62–77; Ch 71 optional), and the Gate VI capstone |
 
 ### Measure theory only, about 10–12 hours a week for one long semester
 
 For a reader who already has real analysis, or wants only enough of it. About 320 hours.
 1. **Weeks 0–2, entry test.** Take Gate I and the metric-space half of Gate II. Each failed problem's remediation map names sections; read exactly those, using the `measure-only` path page's list.
-2. **Weeks 3–28: Ch 39 and Part IV** (Ch 40–51), about half a chapter a week. Ch 39 is the motivation; Ch 45 (surfaces) and Ch 51 (probability) can be left for later, but Gate IV's non-core problems test Ch 51.
+2. **Weeks 3–28: Ch 41 and Part IV** (Ch 42–53), about half a chapter a week. Ch 41 is the motivation; Ch 47 (surfaces) and Ch 53 (probability) can be left for later, but Gate IV's non-core problems test Ch 53.
 3. **Weeks 29–30: Gate IV.**
 
 A reader starting from nothing should instead take the two-year schedule through Part II, then Part IV: the path page will show that measure theory's prerequisites pull in most of Parts I–II.
@@ -103,13 +103,13 @@ Three levels, each with feedback the reader can get alone.
 
 | Gate | Where | Size |
 |---|---|---|
-| Gate 0 | Ch 5 §07 (last section) | 2 h, 6 problems |
-| Gate I | Ch 18 §06 (last section) | 3 h, 8 problems |
-| Gate II | Ch 30 §07 (last section) | 3 h, 8 problems |
-| Gate III | Ch 39 §08 (last section) | 3 h, 6 problems |
-| Gate IV | Ch 51 §08 (last section); problems on Ch 51 are non-core | 3 h, 8 problems |
-| Gate V | Ch 59 §08 (last section) | 3 h, 8 problems |
-| Gate VI | Ch 75 §08 (last section) | 3 h, mixed across Parts IV–VI |
+| Gate 0 | Ch 7 §07 (last section) | 2 h, 6 problems |
+| Gate I | Ch 20 §06 (last section) | 3 h, 8 problems |
+| Gate II | Ch 32 §07 (last section) | 3 h, 8 problems |
+| Gate III | Ch 41 §08 (last section) | 3 h, 6 problems |
+| Gate IV | Ch 53 §08 (last section); problems on Ch 53 are non-core | 3 h, 8 problems |
+| Gate V | Ch 61 §08 (last section) | 3 h, 8 problems |
+| Gate VI | Ch 77 §08 (last section) | 3 h, mixed across Parts IV–VI |
 
 **Each Part is a complete course.** Stopping after Part I (a first course in real analysis) or after Part IV (measure and integration) is a legitimate outcome, and the page should say so plainly.
 
@@ -120,7 +120,7 @@ This is the one place the book advises rather than teaches. Write it once, on th
 **The loop.**
 1. Attempt the problem.
 2. Write the proof in full.
-3. Self-explain it line by line, as Chapter 2 teaches: each line by earlier lines, definitions and named results.
+3. Self-explain it line by line, as Chapter 4 teaches: each line by earlier lines, definitions and named results.
 4. Grade it against the marking scheme.
 5. Only then read the book's solution, and compare it with yours line by line.
 6. Log the error type.
@@ -136,11 +136,11 @@ This is the one place the book advises rather than teaches. Write it once, on th
 - A question-and-answer site (Mathematics Stack Exchange) for a pinpointed question: the line, what you tried, why you think it fails.
 - A study partner: exchange proofs and grade each other's with the marking scheme. Practise on a sample first (grade the book's own solution) so your grading is calibrated.
 
-**Certain feedback, Part 0 only (optional).** Proof-assistant games (the Natural Number Game, and the logic worlds of the Lean game server) check a whole proof with certainty. They are optional practice beside Chapters 1–4, shown and never required.
+**Certain feedback, Part 0 only (optional).** Proof-assistant games (the Natural Number Game, and the logic worlds of the Lean game server) check a whole proof with certainty. They are optional practice beside Chapters 1–6, shown and never required.
 
 ## Reading paths to configure
 
-These go into `config.json`'s `reading-paths` **only when every target section exists**; a missing target breaks the build. Targets are provisional, `<chapter dir>/<planned section number>` from the outlines in `blueprint/book.yaml` (75-chapter numbering). When each target chapter is drafted: re-check the target's section number and run `python3 tools/reading_path.py --profile <slug> --verify`.
+These go into `config.json`'s `reading-paths` **only when every target section exists**; a missing target breaks the build. Targets are provisional, `<chapter dir>/<planned section number>` from the outlines in `blueprint/book.yaml` (77-chapter numbering). When each target chapter is drafted: re-check the target's section number and run `python3 tools/reading_path.py --profile <slug> --verify`.
 
 Each target is the section holding the result the reader came for. `two-year` and `three-year` are **not** paths (they are the schedules above) and are removed from `decisions.md`'s list when these are configured.
 
@@ -154,11 +154,12 @@ Each target is the section holding the result the reader came for. `two-year` an
       "name": "Proof and sets: the foundations",
       "description": "Learning to write proofs from nothing: the rules behind every proof step, quantifiers and their negation, sets, functions and preimages, induction, and why the real numbers cannot be listed. For a reader preparing for any proof-based course.",
       "targets": [
-        "ch02-quantifiers-and-proof/06",
-        "ch03-sets-and-functions/06",
-        "ch04-relations-and-induction/06",
-        "ch05-countable-and-uncountable/04",
-        "ch05-countable-and-uncountable/05"
+        "ch03-predicate-logic/05",
+        "ch04-from-derivations-to-prose/05",
+        "ch05-sets-and-functions/06",
+        "ch06-relations-and-induction/06",
+        "ch07-countable-and-uncountable/04",
+        "ch07-countable-and-uncountable/05"
       ]
     },
     {
@@ -166,12 +167,12 @@ Each target is the section holding the result the reader came for. `two-year` an
       "name": "A first course in real analysis",
       "description": "The standard first analysis course and nothing beyond it: continuous functions on closed intervals, the mean value theorem and Taylor's theorem, the Riemann integral and the fundamental theorem of calculus, uniform convergence, and the exponential and trigonometric functions built from power series.",
       "targets": [
-        "ch13-continuity-on-intervals/03",
-        "ch13-continuity-on-intervals/05",
-        "ch14-derivative-and-mean-value/06",
-        "ch15-riemann-darboux-integral/05",
-        "ch16-sequences-of-functions/06",
-        "ch17-power-series/07"
+        "ch15-continuity-on-intervals/03",
+        "ch15-continuity-on-intervals/05",
+        "ch16-derivative-and-mean-value/06",
+        "ch17-riemann-darboux-integral/05",
+        "ch18-sequences-of-functions/06",
+        "ch19-power-series/07"
       ]
     },
     {
@@ -179,13 +180,13 @@ Each target is the section holding the result the reader came for. `two-year` an
       "name": "Metric spaces and differential equations",
       "description": "Why an ODE has a solution and when it is unique: contraction mappings and Picard–Lindelöf, compactness of function families and Peano's theorem, the inverse and implicit function theorems, the Baire category theorem, and linear systems solved by the matrix exponential, with the flow of an autonomous equation.",
       "targets": [
-        "ch24-contraction-picard/05",
-        "ch24-contraction-picard/06",
-        "ch25-arzela-ascoli-peano/06",
-        "ch26-stone-weierstrass-baire/05",
-        "ch28-inverse-implicit/03",
-        "ch29-linear-odes-flows/03",
-        "ch29-linear-odes-flows/07"
+        "ch26-contraction-picard/05",
+        "ch26-contraction-picard/06",
+        "ch27-arzela-ascoli-peano/06",
+        "ch28-stone-weierstrass-baire/05",
+        "ch30-inverse-implicit/03",
+        "ch31-linear-odes-flows/03",
+        "ch31-linear-odes-flows/07"
       ]
     },
     {
@@ -193,11 +194,11 @@ Each target is the section holding the result the reader came for. `two-year` an
       "name": "Classical Fourier analysis",
       "description": "Fourier series and integrals with the Riemann integral: Fejér's theorem, mean-square convergence and Parseval, Fourier inversion and Plancherel on the Schwartz space, the heat and wave equations, and Fourier analysis on finite groups.",
       "targets": [
-        "ch32-good-kernels-summability/03",
-        "ch33-mean-square-pointwise/03",
-        "ch35-fourier-transform-line/03",
-        "ch36-fourier-transform-rd/03",
-        "ch37-finite-fourier-analysis/06"
+        "ch34-good-kernels-summability/03",
+        "ch35-mean-square-pointwise/03",
+        "ch37-fourier-transform-line/03",
+        "ch38-fourier-transform-rd/03",
+        "ch39-finite-fourier-analysis/06"
       ]
     },
     {
@@ -205,11 +206,11 @@ Each target is the section holding the result the reader came for. `two-year` an
       "name": "Measure and integration",
       "description": "The Lebesgue integral and what it buys: the dominated convergence theorem, Fubini–Tonelli, completeness of Lᵖ, the Lebesgue differentiation theorem, and Radon–Nikodym. For a reader who needs measure theory for analysis, probability or PDE.",
       "targets": [
-        "ch41-lebesgue-integral/03",
-        "ch43-fubini-tonelli/03",
-        "ch46-lp-spaces/02",
-        "ch48-lebesgue-differentiation/04",
-        "ch50-signed-measures-radon-nikodym/05"
+        "ch43-lebesgue-integral/03",
+        "ch45-fubini-tonelli/03",
+        "ch48-lp-spaces/02",
+        "ch50-lebesgue-differentiation/04",
+        "ch52-signed-measures-radon-nikodym/05"
       ]
     },
     {
@@ -217,13 +218,13 @@ Each target is the section holding the result the reader came for. `two-year` an
       "name": "Measure theory for probability",
       "description": "Just what a probability course assumes: constructing a measure from its values on intervals and proving it unique, Lebesgue–Stieltjes measures as distribution functions, product measures, uniform integrability and Vitali's theorem, densities by Radon–Nikodym, and then probability itself: independence, the laws of large numbers and the central limit theorem.",
       "targets": [
-        "ch42-abstract-measure/05",
-        "ch42-abstract-measure/06",
-        "ch43-fubini-tonelli/03",
-        "ch47-modes-of-convergence/03",
-        "ch50-signed-measures-radon-nikodym/05",
-        "ch51-probability-measure-spaces/05",
-        "ch51-probability-measure-spaces/07"
+        "ch44-abstract-measure/05",
+        "ch44-abstract-measure/06",
+        "ch45-fubini-tonelli/03",
+        "ch49-modes-of-convergence/03",
+        "ch52-signed-measures-radon-nikodym/05",
+        "ch53-probability-measure-spaces/05",
+        "ch53-probability-measure-spaces/07"
       ]
     },
     {
@@ -231,9 +232,9 @@ Each target is the section holding the result the reader came for. `two-year` an
       "name": "A first course in complex analysis",
       "description": "Cauchy's theorem and integral formula, Liouville and the fundamental theorem of algebra, residues and real integrals, and counting zeros with the argument principle and Rouché's theorem.",
       "targets": [
-        "ch53-cauchy-theorem/04",
-        "ch54-singularities-residues/06",
-        "ch55-global-cauchy-theory/05"
+        "ch55-cauchy-theorem/04",
+        "ch56-singularities-residues/06",
+        "ch57-global-cauchy-theory/05"
       ]
     },
     {
@@ -241,11 +242,11 @@ Each target is the section holding the result the reader came for. `two-year` an
       "name": "Complex analysis to qualifying-exam level",
       "description": "Everything a graduate complex-analysis exam asks: the Riemann mapping theorem, harmonic functions and Harnack, Weierstrass products and Mittag-Leffler, analytic continuation, and Picard's little theorem.",
       "targets": [
-        "ch56-conformal-riemann-mapping/06",
-        "ch57-harmonic-functions/05",
-        "ch58-entire-functions-products/04",
-        "ch59-continuation-and-picard/02",
-        "ch59-continuation-and-picard/06"
+        "ch58-conformal-riemann-mapping/06",
+        "ch59-harmonic-functions/05",
+        "ch60-entire-functions-products/04",
+        "ch61-continuation-and-picard/02",
+        "ch61-continuation-and-picard/06"
       ]
     },
     {
@@ -253,10 +254,10 @@ Each target is the section holding the result the reader came for. `two-year` an
       "name": "Complex analysis straight after metric spaces",
       "description": "Complex analysis taken early, right after real analysis and metric spaces and before Fourier analysis and measure theory: holomorphic functions, Cauchy's theorem, residues, the Riemann mapping theorem, harmonic functions and Picard's little theorem, with nothing from Parts III or IV required.",
       "targets": [
-        "ch55-global-cauchy-theory/05",
-        "ch56-conformal-riemann-mapping/06",
-        "ch57-harmonic-functions/05",
-        "ch59-continuation-and-picard/06"
+        "ch57-global-cauchy-theory/05",
+        "ch58-conformal-riemann-mapping/06",
+        "ch59-harmonic-functions/05",
+        "ch61-continuation-and-picard/06"
       ]
     },
     {
@@ -264,11 +265,11 @@ Each target is the section holding the result the reader came for. `two-year` an
       "name": "Functional analysis",
       "description": "The four theorems of Banach-space theory — Hahn–Banach, uniform boundedness, open mapping and Banach–Alaoglu — then Hilbert spaces, Lax–Milgram, and the spectral theorem for compact self-adjoint operators.",
       "targets": [
-        "ch64-hahn-banach/04",
-        "ch65-baire-category-operators/04",
-        "ch66-weak-topologies-alaoglu/06",
-        "ch67-hilbert-spaces/06",
-        "ch68-compact-operators-spectral/07"
+        "ch66-hahn-banach/04",
+        "ch67-baire-category-operators/04",
+        "ch68-weak-topologies-alaoglu/06",
+        "ch69-hilbert-spaces/06",
+        "ch70-compact-operators-spectral/07"
       ]
     },
     {
@@ -276,10 +277,10 @@ Each target is the section holding the result the reader came for. `two-year` an
       "name": "Toward PDE: the Dirichlet problem",
       "description": "Solving −Δu = f in a bounded domain the modern way: distributions, Sobolev spaces, Plancherel, Rellich compactness, weak solutions by Lax–Milgram, and the eigenbasis of the Dirichlet Laplacian.",
       "targets": [
-        "ch71-tempered-distributions-fourier/03",
-        "ch74-poincare-rellich/05",
-        "ch75-dirichlet-capstone/03",
-        "ch75-dirichlet-capstone/06"
+        "ch73-tempered-distributions-fourier/03",
+        "ch76-poincare-rellich/05",
+        "ch77-dirichlet-capstone/03",
+        "ch77-dirichlet-capstone/06"
       ]
     }
   ]
@@ -288,8 +289,8 @@ Each target is the section holding the result the reader came for. `two-year` an
 
 **Notes.**
 - **`complex-early`** exists to prove a claim: that Part V's closure contains nothing from Parts III and IV. Its `--verify` page must show no Part III or IV section; if one appears, Part V needs the fallback the route report asks for (roadmap A6), not a longer path. If its closure turns out identical to `complex-only`'s, keep one entry, with `complex-early`'s description folded into `complex-only`'s.
-- **`toward-pde`** will close over most of the main line. Keep it only if its page still lists a meaningful set of skippable sections (Part V, Ch 37–38 and 51, much of the topology in Ch 60–61); otherwise drop it and let the two-year schedule stand for it.
+- **`toward-pde`** will close over most of the main line. Keep it only if its page still lists a meaningful set of skippable sections (Part V, Ch 39–40 and 53, much of the topology in Ch 62–63); otherwise drop it and let the two-year schedule stand for it.
 - **`foundations`** is almost all of Part 0's main line. That is acceptable: its reader is narrow (someone who wants a transition-to-proof course).
-- **`measure-only` and `measure-for-probability`** differ mainly by Ch 48–49 (maximal function, bounded variation), Ch 46 §5–§7, and Ch 51 (probability, roadmap A3), which only `measure-for-probability` targets. If the rest of the difference is small, keep both anyway: Ch 51 is the reason for the second path.
+- **`measure-only` and `measure-for-probability`** differ mainly by Ch 50–51 (maximal function, bounded variation), Ch 48 §5–§7, and Ch 53 (probability, roadmap A3), which only `measure-for-probability` targets. If the rest of the difference is small, keep both anyway: Ch 53 is the reason for the second path.
 - **`complex-first-course` and `complex-only`** are split on purpose: a one-semester undergraduate reader should not be sent through normal families and Picard.
-- **Linear-algebra gates** (roadmap A8): the gates are published as external prerequisites of Ch 21 (Part II), Ch 27, Ch 29 and Ch 31 (Part III, needed before Ch 33). Paths whose closure reaches any of them should say in their description which chapters of the linear-algebra companion to finish first.
+- **Linear-algebra gates** (roadmap A8): the gates are published as external prerequisites of Ch 23 (Part II), Ch 29, Ch 31 and Ch 33 (Part III, needed before Ch 35). Paths whose closure reaches any of them should say in their description which chapters of the linear-algebra companion to finish first.

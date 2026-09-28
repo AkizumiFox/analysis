@@ -60,9 +60,11 @@ Every stage has the same fields:
 
 **(h) Time.** About 12 Cambridge lectures, the logic, set, induction and countability part of Numbers and Sets.
 
-**(i) Benchmark texts.** Velleman chapters 1–6 and 8.
+**(i) Benchmark texts.** Velleman chapters 1–6 and 8; for the logic, Huth & Ryan chapters 1–2 (§1.1–1.5, §2.1–2.4).
 
-### Natural deduction content (Part 0, logic chapter)
+### Natural deduction content (Part 0, logic chapters 1–4)
+
+*(Amended 2026-09-28.)* The logic is four chapters, modelled on Huth & Ryan ch. 1–2: `propositional-natural-deduction` (rules, the Fitch technique, derived rules MT, ¬¬i, PBC, LEM, provable equivalence), `semantics-soundness-completeness` (formulas as a formal language, parse trees, truth tables, ⊨ versus ⊢, structural induction, soundness and completeness proved in full, CNF/DNF), `predicate-logic` (terms, free and bound variables, substitution, the ∀/∃/= rules with side conditions, quantifier equivalences, models briefly, the worked example and the catalogue below) and `from-derivations-to-prose` (the rhetoric of each rule, levels of abbreviation, self-explanation, proof verification, and the excluded-middle dispute as its last section).
 
 **Rules.**
 - Introduction and elimination rules for ∧, →, ∨, ¬, ∀, ∃ and =, plus ⊥-elimination and RAA (classical).
@@ -95,7 +97,7 @@ Every stage has the same fields:
 
 **The "strange" parts, made natural.**
 - Vacuous truth follows from ⊥E.
-- Truth tables summarize the rules; soundness is explained informally.
+- Truth tables summarize the rules; soundness and completeness are proved in full (Chapter 2).
 - RAA needs LEM, whereas ¬I does not.
 - The "if" of a definition means "iff".
 

@@ -25,7 +25,7 @@ In symbols: for every \( A \subseteq \nR \),
 
 **Standing assumption.** From now on, \( \nR \) is an ordered field (@def-ordered-field), containing \( \nQ \), that satisfies @ax-least-upper-bound. Every theorem about real numbers in this book is proved from these assumptions and nothing else.
 
-In words, the axiom has two hypotheses and one conclusion. The hypotheses are about the set \( A \): it has at least one element, and at least one upper bound. The conclusion is about \( \nR \): among the upper bounds of \( A \) there is a least one, and it is a real number. By @thm-sup-unique it is unique, so the notation \( \sup A \) is justified whenever the two hypotheses hold. The axiom is also called the **completeness axiom**; "complete" will acquire a second, related meaning in Chapter 9, and the two are reconciled in Chapter 18.
+In words, the axiom has two hypotheses and one conclusion. The hypotheses are about the set \( A \): it has at least one element, and at least one upper bound. The conclusion is about \( \nR \): among the upper bounds of \( A \) there is a least one, and it is a real number. By @thm-sup-unique it is unique, so the notation \( \sup A \) is justified whenever the two hypotheses hold. The axiom is also called the **completeness axiom**; "complete" will acquire a second, related meaning in Chapter 11, and the two are reconciled in Chapter 20.
 
 Each hypothesis is there because without it the conclusion is false.
 
@@ -35,7 +35,7 @@ Each hypothesis is there because without it the conclusion is false.
 The axiom is a statement about \( \nR \) and not about ordered fields in general. It fails in \( \nQ \): @thm-no-rational-sup-sqrt2 exhibits a non-empty subset of \( \nQ \), bounded above in \( \nQ \), with no supremum in \( \nQ \) (@exr-the-axiom-c1). So the axiom is exactly the property that separates the two fields we have been comparing.
 
 ::: {.remark}
-Why is this an axiom and not a theorem? Because we have not said what a real number is. One can **construct** \( \nR \) from \( \nQ \), for instance by Dedekind cuts, and then prove the least upper bound property as a theorem; the optional Chapter 19 does this. The optional Chapter 20 shows that any two ordered fields satisfying the axiom are the same up to relabeling, so the axiom pins \( \nR \) down completely. Nothing else in the book uses those chapters: everything we need follows from the axiom.
+Why is this an axiom and not a theorem? Because we have not said what a real number is. One can **construct** \( \nR \) from \( \nQ \), for instance by Dedekind cuts, and then prove the least upper bound property as a theorem; the optional Chapter 21 does this. The optional Chapter 22 shows that any two ordered fields satisfying the axiom are the same up to relabeling, so the axiom pins \( \nR \) down completely. Nothing else in the book uses those chapters: everything we need follows from the axiom.
 :::
 
 ::: {#exm-lub-first-use}

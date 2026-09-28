@@ -41,7 +41,7 @@ A chapter's `index.md` is exempt from the section rules, but must have (fatal) i
 lead-in (STYLE §2); a missing **Time** line is advisory.
 
     python3 tools/check_structure.py                          # all of src/
-    python3 tools/check_structure.py src/ch08-least-upper-bound
+    python3 tools/check_structure.py src/ch10-least-upper-bound
     python3 tools/check_structure.py --fatal-only             # hide advisories
 
 Exits 1 if any fatal problem is found. Importable:

@@ -59,7 +59,7 @@ The proof is an instance of a move this book uses again and again.
 
 *To construct a point: collect the points where "things are still fine" into a set, take its supremum, and rule out each way the supremum could fail to be the point you want.*
 
-Here "things are still fine" meant \( x^2 < 2 \). In Chapter 13 the Intermediate Value Theorem is proved the same way: the point where a continuous function crosses zero is the supremum of the points where it is still negative. In Chapter 11 the Heine–Borel theorem takes the supremum of the points \( x \) for which \( [a, x] \) is still covered by finitely many of the given open sets.
+Here "things are still fine" meant \( x^2 < 2 \). In Chapter 15 the Intermediate Value Theorem is proved the same way: the point where a continuous function crosses zero is the supremum of the points where it is still negative. In Chapter 13 the Heine–Borel theorem takes the supremum of the points \( x \) for which \( [a, x] \) is still covered by finitely many of the given open sets.
 
 ## Roots of every order
 
@@ -100,7 +100,7 @@ Let \( 0 \le x < y \) and \( k \in \nN \). Then \( x^k < y^k \): the map \( x \m
 :::
 
 ::: {.proofofclaim}
-Powers are defined by recursion (Chapter 4): \( u^1 \coloneqq u \) and \( u^{k+1} \coloneqq u^k u \).
+Powers are defined by recursion (Chapter 6): \( u^1 \coloneqq u \) and \( u^{k+1} \coloneqq u^k u \).
 
 We first show \( 0 \le x^k < y^k \) by induction on \( k \). For \( k = 1 \) this is the hypothesis. If \( 0 \le x^k < y^k \), then \( x^{k+1} = x^k x \ge 0 \), and
 \[
@@ -170,7 +170,7 @@ The claim in the proof of @thm-nth-root says that \( x \mapsto x^3 \) is strictl
 :::
 
 ::: {.remark}
-With \( n \)-th roots we can define \( a^{m/n} \coloneqq (a^{1/n})^m \) for \( a > 0 \), and check that the usual exponent laws hold for rational exponents. The powers \( a^x \) with irrational \( x \) wait for the exponential function, which Chapter 17 builds from power series.
+With \( n \)-th roots we can define \( a^{m/n} \coloneqq (a^{1/n})^m \) for \( a > 0 \), and check that the usual exponent laws hold for rational exponents. The powers \( a^x \) with irrational \( x \) wait for the exponential function, which Chapter 19 builds from power series.
 :::
 
 ## The integer part of a real number
@@ -194,7 +194,7 @@ Picture the integers as marks spaced \( 1 \) apart. The Archimedean property put
 \[
     T \coloneqq \{ j \in \nN : j - p > y \}
 \]
-is non-empty. By well-ordering (Chapter 4), \( T \) has a least element \( j_0 \). Let \( m \coloneqq j_0 - p - 1 \), an integer because differences of integers are integers (the remark on \( \nN \) in the previous section). Then \( m + 1 = j_0 - p > y \), since \( j_0 \in T \). It remains to show \( m \le y \).
+is non-empty. By well-ordering (Chapter 6), \( T \) has a least element \( j_0 \). Let \( m \coloneqq j_0 - p - 1 \), an integer because differences of integers are integers (the remark on \( \nN \) in the previous section). Then \( m + 1 = j_0 - p > y \), since \( j_0 \in T \). It remains to show \( m \le y \).
 
 - If \( j_0 = 1 \), then \( m = -p < y \), by the choice of \( p \).
 - If \( j_0 \ge 2 \), then \( j_0 - 1 \in \nN \) (again from that remark), and \( j_0 - 1 \notin T \) because it is smaller than the least element of \( T \). So \( (j_0 - 1) - p \le y \), that is, \( m \le y \).

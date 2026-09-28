@@ -11,6 +11,7 @@ books:
   FX:   {dir: "00 Logic & Proofs/Magnus et al - forall x", role: bridge, part: "0"}
   VDL:  {dir: "00 Logic & Proofs/van Dalen - Logic and Structure", role: depth, part: "0"}
   VEL:  {dir: "00 Logic & Proofs/Velleman - How to Prove It (3rd ed)", role: scaffolding, part: "0"}
+  HR:   {dir: "00 Logic & Proofs/Huth & Ryan - Logic in Computer Science (2nd ed)", role: scaffolding, part: "0"}
   HAM:  {dir: "00 Logic & Proofs/Hammack - Book of Proof (3rd ed)", role: problems, part: "0"}
   HAL:  {dir: "01 Set Theory/Halmos - Naive Set Theory", role: scaffolding, part: "0"}
   EST:  {dir: "01 Set Theory/Enderton - Elements of Set Theory (1977)", role: depth, part: "0"}

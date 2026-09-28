@@ -230,8 +230,8 @@ exemptions:
   - FX.4
   - FX.6
   why: forall x ch 6 is split. §6.1–6.3 (sentential rules, derived rules) needs only the sentential material and
-    is used in logic-connectives; §6.4–6.6 (quantifier and identity rules) is used in quantifiers-and-proof together
-    with ch 4.
+    is used in propositional-natural-deduction; §6.4–6.6 (quantifier and identity rules) is used in predicate-logic
+    together with ch 4.
 - edge:
   - PMA.2
   - PMA.3
@@ -286,10 +286,11 @@ exemptions:
 external_prerequisites:
 - needs: 'forward hook only, not a prerequisite: Part I (sup of a located set, IVT, Bolzano–Weierstrass) and Part
     II (Cauchy completion) are previewed, and later Parts flag uses of choice (Vitali set, Hahn–Banach, Tychonoff)'
-  for_chapter: quantifiers-and-proof
+  for_chapter: from-derivations-to-prose
   part: '0'
 - needs: quantifiers, their order and negation; proof skeletons (direct, contrapositive, contradiction); natural-deduction
-    reading of ∀/∃ (Part 0 logic chapter, main line)
+    reading of ∀/∃ (Part 0 logic chapters propositional-natural-deduction, predicate-logic and from-derivations-to-prose,
+    main line)
   for_chapter: least-upper-bound
   part: I
 - needs: sets, functions, images and preimages; the sets −A, A+B, cA as images (Part 0 sets chapter, main line)
@@ -756,10 +757,11 @@ coverage_gaps:
 parts:
 - num: '0'
   title: 'Foundations: Logic, Sets, Numbers'
-  summary: Teaches the grammar of proof (natural deduction for connectives, quantifiers and equality), then sets,
-    functions, relations, induction and cardinality as the main-line bridge, and, beside the main line, builds ℕ,
-    ℤ, ℚ and ℝ and proves the complete ordered field unique; forced by a reader who has never written a proof and
-    by Part I's decision to start from the least upper bound axiom.
+  summary: Teaches the grammar of proof (natural deduction for connectives, its truth-table semantics with soundness
+    and completeness, the quantifier and equality rules, and the passage from derivations to mathematical prose),
+    then sets, functions, relations, induction and cardinality as the main-line bridge, and, beside the main line,
+    builds ℕ, ℤ, ℚ and ℝ and proves the complete ordered field unique; forced by a reader who has never written
+    a proof and by Part I's decision to start from the least upper bound axiom.
 - num: I
   title: Analysis on the Real Line
   summary: Starting from the least upper bound axiom alone, Part I builds ε-N and ε-δ fluency on ℝ through sequences,
@@ -802,67 +804,121 @@ parts:
 chapters:
 - num: 1
   part: '0'
-  slug: logic-connectives
-  title: 'The Grammar of Proof I: Connectives and Natural Deduction'
-  pages: 52
+  slug: propositional-natural-deduction
+  title: Propositional Logic and Natural Deduction
+  pages: 55
   sources:
+  - - HR.1
+    - '§1.1–1.2 declarative sentences, natural deduction: the rules, derived rules (MT, ¬¬i, PBC, LEM), provable
+      equivalence (scaffolding: order and depth)'
   - - CH.2
-    - '§2.1–2.7 (scaffolding: each connective by its introduction and elimination rules)'
+    - §2.1–2.7 each connective by its introduction and elimination rules (informal ND)
+  - - CH.3
+    - §3.4 propositional natural deduction
   - - CH.4
     - Wason task (motivation for the conditional)
-  - - CH.3
-    - §3.4 propositional ND, §3.5–3.6 truth tables and equivalence, §3.9 soundness (informal only)
   - - VDL.1
     - '§1.4 natural deduction (depth: rule forms, RAA vs ¬I)'
   - - FX.6
-    - §6.1–6.3 Fitch-style proofs for sentential rules
+    - §6.1–6.3 Fitch-style proofs for sentential rules, derived rules
   - - VEL.1
     - §1.1–1.2, §1.5 (conditional and biconditional laws; alt)
   - - HAM.2
     - §2.1–2.6 (problems)
-  - - HAM.4
-    - §4.3–4.5 direct proof and cases (problems)
-  - - HAM.5
-    - contrapositive outline (problems)
-  - - HAM.6
-    - contradiction outline (problems)
   outline:
-  - 'Why proofs have a grammar: statements, connectives, and a proof as a chain of licensed steps (mathematical
-    English beside symbols)'
+  - 'Why proofs have a grammar: declarative sentences, connectives, and a proof as a chain of licensed steps (mathematical
+    English beside symbols); sequents φ₁, …, φₙ ⊢ ψ'
   - '∧ and →: introduction and elimination; assumptions opened and discharged; Fitch boxes and the scope of an assumption'
-  - '∨, ¬ and ⊥: proof by cases, ¬I (assume and reach ⊥), ⊥-elimination, and vacuous truth derived from ⊥E'
+  - '∨, ¬ and ⊥: proof by cases, ¬I (assume and reach ⊥), ⊥-elimination, ¬¬-elimination; vacuous truth derived from
+    ⊥E'
+  - 'Writing derivations: the Fitch technique of working backwards from the goal and forwards from the premises;
+    which rule to try first'
+  - 'Derived rules: modus tollens, ¬¬-introduction, proof by contradiction (PBC) and the law of the excluded middle;
+    why ¬I is not proof by contradiction and where PBC is needed (¬¬P ⊢ P, contrapositive in reverse)'
   - '↔ and definitions: the ''if'' of a definition means ''iff'' (a convention of language, not a rule of logic)'
-  - 'RAA as a separate rule: why ¬I is not proof by contradiction, and where RAA is needed (¬¬P ⊢ P, contrapositive
-    in reverse)'
-  - Truth tables as a summary of the rules; tautologies, standard equivalences, soundness explained informally
-  - 'Proof skeletons read off the rules: direct, contrapositive, contradiction, cases; the propositional half of
-    the rule / phrase / Lean table'
+  - 'Provable equivalence ⊣⊢: De Morgan, distributivity, contraposition, the standard list proved by derivations;
+    the propositional half of the rule / phrase / Lean table'
   must_prove:
-  - P→Q ⊢ ¬Q→¬P by →I and ¬I; the converse ¬Q→¬P ⊢ P→Q needs RAA
+  - P→Q ⊢ ¬Q→¬P by →I and ¬I (modus tollens as a derived rule); the converse ¬Q→¬P ⊢ P→Q needs PBC
   - ⊥ ⊢ P and ¬P ⊢ P→Q (vacuous truth from ⊥E)
-  - De Morgan laws by natural deduction, flagging that ¬(P∧Q) ⊢ ¬P∨¬Q uses RAA
-  - P∨Q, ¬P ⊢ Q (disjunctive syllogism) and distributivity of ∧ over ∨
+  - ¬¬i, PBC and LEM derived from the basic rules (PBC and LEM from ¬¬e)
+  - De Morgan laws by natural deduction, flagging that ¬(P∧Q) ⊢ ¬P∨¬Q uses PBC
+  - P∨Q, ¬P ⊢ Q (disjunctive syllogism) and distributivity of ∧ over ∨ as a provable equivalence
+  - √2 is irrational (an instance of ¬I, valid intuitionistically)
   - 'for integers n: n² even ⇒ n even (via contrapositive), with each step labelled by its rule'
   key_examples:
   - 'Wason selection task: the conditional is not the biconditional'
   - '''x² < 0 ⇒ x = 7'' is true for every real x (vacuous truth)'
   - definition 'f is increasing if …' used in both directions
-  - a truth table row read as a failed attempt to build a derivation
+  - 'a failed derivation attempt: the goal-directed search stalls, and PBC is what unblocks it'
   exit_checks:
   - Write a Fitch derivation of (P→Q)∧(Q→R) ⊢ P→R and then the same argument as fluent prose
+  - Derive LEM from the basic rules, naming each rule
   - Label each line of a short proof (n² odd ⇒ n odd) with the rule it uses
   optional: false
-  note: 'Follow curriculum Stage 0 ND chapter order items 1–3 (connectives by rules, Fitch boxes, truth tables as
-    summary). Truth tables come AFTER the rules (decisions 2). Every rule gets at least one analysis-flavoured example
-    (decisions 1). The full rule / phrase / Lean table is started here (propositional rows: constructor, .1/.2,
-    intro, apply/exact, left/right, rcases, intro…False, exfalso, by_contra) and completed in the next chapter.
-    Lean is shown, never required.'
+  note: 'Modelled on the depth of Huth & Ryan §1.1–1.2 (Part 0 logic expanded from two chapters to four, 2026-09-28).
+    Rules first, semantics next chapter (decisions 2: truth tables after the rules). Every rule gets at least one
+    analysis-flavoured example (decisions 1). Keeps the labels of the existing pilot (thm-sqrt2-irrational, def-rule-raa,
+    prp-contrapositive), which later chapters cite. The rule / phrase / Lean table is started here (propositional
+    rows) and completed in predicate-logic. Lean is shown, never required.'
 - num: 2
   part: '0'
-  slug: quantifiers-and-proof
-  title: 'The Grammar of Proof II: Quantifiers, Equality, and What Is Not Allowed'
-  pages: 60
+  slug: semantics-soundness-completeness
+  title: Truth, Soundness and Completeness
+  pages: 55
   sources:
+  - - HR.1
+    - §1.3–1.5 formulas as a formal language, parse trees, semantics, soundness and completeness, CNF (scaffolding;
+      §1.5.3 Horn clauses and §1.6 SAT solvers not used)
+  - - CH.3
+    - §3.1–3.3 the language LP and parsing trees, §3.5–3.6 truth tables and logical equivalence, §3.7 substitution,
+      §3.8 DNF and CNF, §3.9 soundness, §3.10 completeness
+  - - VDL.1
+    - §1.1–1.3 propositions, semantics, properties; §1.5 completeness (depth)
+  - - VEL.1
+    - §1.2–1.5 truth tables, equivalence, tautologies (alt)
+  outline:
+  - 'Formulas as a formal language: the inductive definition of well-formed formulas, parse trees, unique readability
+    stated'
+  - 'Structural induction, introduced just in time: proving a property of every formula by following its construction
+    (a first taste of the induction principle of relations-and-induction)'
+  - 'Truth-table semantics: valuations, the meaning of each connective, evaluation along the parse tree'
+  - Semantic entailment ⊨ versus provability ⊢; tautologies, satisfiable and valid formulas; semantic equivalence
+  - 'Soundness: if φ₁, …, φₙ ⊢ ψ then φ₁, …, φₙ ⊨ ψ, proved in full by course-of-values induction on the length
+    of the derivation'
+  - 'Completeness: if φ₁, …, φₙ ⊨ ψ then φ₁, …, φₙ ⊢ ψ, proved in full (reduce to ⊨ η, derive each truth-table line,
+    glue with LEM)'
+  - 'Normal forms: every formula is equivalent to one in CNF and one in DNF; validity of a CNF read off its clauses'
+  - 'What the two theorems buy: a truth table as a certificate that no derivation exists; a failed derivation read
+    as a countervaluation'
+  must_prove:
+  - a property of every formula by structural induction (e.g. equal numbers of left and right brackets)
+  - the soundness theorem for propositional natural deduction
+  - the completeness theorem for propositional natural deduction
+  - every formula is semantically equivalent to one in CNF and to one in DNF
+  - a CNF formula is valid iff every clause contains some atom and its negation
+  key_examples:
+  - parse trees of p → q → r under the right-associative convention and with brackets
+  - ¬(P∧Q) ⊨ ¬P∨¬Q checked by table; ⊢ found via completeness, then by hand
+  - '(P→Q)→P ⊨ P (Peirce''s law): true by table, so derivable, though the derivation needs PBC'
+  - a non-entailment refuted by one valuation, so no derivation exists (soundness)
+  exit_checks:
+  - Prove by structural induction that every formula built from ¬ and ∧ has a parse tree with more nodes than negations
+  - Decide P→(Q→R) ⊨ (P→Q)→R by table, and justify from soundness why no derivation exists
+  - Put (P→Q)→(¬Q→R) into CNF and DNF
+  optional: false
+  note: 'Modelled on Huth & Ryan §1.3–1.5 (proofs of soundness and completeness in full, at H&R depth). No Horn
+    clauses, no SAT solvers. Structural induction is introduced just in time here and cited again when induction
+    on ℕ is set out in relations-and-induction. No metamathematics beyond the two theorems (curriculum: no metamathematics).'
+- num: 3
+  part: '0'
+  slug: predicate-logic
+  title: Predicate Logic and the Quantifier Rules
+  pages: 62
+  sources:
+  - - HR.2
+    - §2.1–2.4 the need for a richer language, predicate logic as a formal language, proof theory, semantics (scaffolding;
+      §2.5–2.8 undecidability, expressiveness, micromodels not used)
   - - CH.7
     - §7.1–7.2 quantifiers and scope, §7.4 natural deduction for first-order logic
   - - CH.5
@@ -881,59 +937,105 @@ chapters:
     - §3.3 proofs involving quantifiers, §3.6 existence and uniqueness
   - - HAM.2
     - §2.7–2.10 quantifiers, translation, negation (problems)
-  - - HAM.9
-    - disproof by counterexample (problems)
   - - HAM.13
     - §13.2–13.3 ε–δ limits and their negation (problems)
-  - - HAM.7
-    - §7.4 constructive vs non-constructive proofs
-  - - VDL.5
-    - §5.1–5.2 constructive reasoning, BHK, intuitionistic ND (depth for the final section)
   outline:
+  - 'Terms and formulas: function and predicate symbols, the inductive definitions, free and bound variables'
+  - Substitution φ[t/x] and when t is free for x in φ; variable capture shown and avoided
   - '∀-introduction and elimination: ''let x be arbitrary'' and the eigenvariable condition; ∃-introduction and
     elimination: ''choose x with …'' and the fresh-name condition'
-  - 'Nested quantifiers: order matters (∀x∃y vs ∃y∀x), negating by pushing ¬ inward, formalizing statements with
-    three nested quantifiers from analysis; existence and uniqueness'
   - 'Equality: reflexivity and substitution; calculation chains; the complete rule / phrase / Lean table (use, obtain,
     intro x, specialize, rw, calc)'
+  - 'Quantifier equivalences: negation laws, order of quantifiers (∀x∃y vs ∃y∀x), distributing over ∧ and ∨; formalizing
+    and negating three-quantifier statements from analysis; existence and uniqueness'
+  - 'Models, briefly: a structure interprets the symbols; ⊨ for predicate logic and the countermodel as a refutation
+    (soundness stated, completeness only mentioned)'
   - 'Worked example: ''uniformly continuous ⇒ continuous'' annotated rule by rule; the converse fails because the
     ∃I witness δ would depend on an x introduced later'
   - 'The ''what is not allowed'' catalogue: one instance for ∀; δ depending on x; the ∃E name treated as arbitrary;
-    proving the converse; a missing case; circularity; using an assumption after its box closes'
-  - 'Reading and writing proofs: annotate informal proofs with rules, turn a rule skeleton into prose, and find
-    the error in student proofs'
-  - 'The dispute over excluded middle: LEM ≡ DNE ≡ RAA as one extra rule; ¬¬(P∨¬P) is intuitionistically provable;
+    capture in substitution; using an assumption after its box closes'
+  must_prove:
+  - quantifier negation laws ¬∀x P ↔ ∃x ¬P and ¬∃x P ↔ ∀x ¬P, flagging that ¬∀ ⊢ ∃¬ needs PBC
+  - ∃y∀x R(x,y) ⊢ ∀x∃y R(x,y), and a countermodel to the converse
+  - ∀x(P(x)∧Q(x)) ⊣⊢ ∀xP(x)∧∀xQ(x), and only one direction for ∃ over ∧
+  - if |a − b| < ε for every ε > 0 then a = b
+  - uniformly continuous ⇒ continuous, annotated with every rule
+  key_examples:
+  - ∀x∃y (x + y = 0) true on ℝ, ∃y∀x (x + y = 0) false
+  - 'f(x) = x² on ℝ (or 1/x on (0,1)) is continuous but not uniformly continuous: the δ must depend on x'
+  - '∃y (y > x)[y/x]: capture turns a truth into a falsehood'
+  - a 'proof' that checks n = 1, 2, 3 and concludes ∀n
+  - the ∃E name reused as if arbitrary
+  exit_checks:
+  - Negate 'f is uniformly continuous on A' and 'fₙ → f uniformly on A'
+  - Formalize and negate a three-quantifier statement, then prove or refute it
+  - Give a model showing ∀x∃y R(x,y) ⊬ ∃y∀x R(x,y)
+  optional: false
+  note: 'Modelled on Huth & Ryan §2.1–2.4. Carries the quantifier material of the former quantifiers-and-proof chapter.
+    Uniform continuity is introduced here only as a quantifier pattern (definition stated, no theory). Models are
+    brief: enough to refute a sequent, no model theory (curriculum: no metamathematics).'
+- num: 4
+  part: '0'
+  slug: from-derivations-to-prose
+  title: From Derivations to Mathematical Prose
+  pages: 50
+  sources:
+  - - VEL.3
+    - '§3.1–3.2, §3.4–3.5, §3.7 proof strategies, negations and conditionals, conjunctions and biconditionals, disjunctions,
+      more examples (scaffolding: scratch work → final proof)'
+  - - HAM.4
+    - §4.3–4.5 direct proof and cases (problems)
+  - - HAM.5
+    - contrapositive outline (problems)
+  - - HAM.6
+    - contradiction outline (problems)
+  - - HAM.7
+    - §7.1–7.4 if-and-only-if, existence and uniqueness, constructive vs non-constructive proofs
+  - - HAM.9
+    - disproof by counterexample (problems)
+  - - VDL.5
+    - §5.1–5.2 constructive reasoning, BHK, intuitionistic ND (depth for the final section)
+  outline:
+  - 'The rhetoric of each rule: ''assume … then …'', ''let x be arbitrary'', ''choose x with …'', ''in either case'',
+    and the rest of the rule / phrase table read as a phrasebook'
+  - 'The derived rules in prose: contrapositive, contradiction, cases, ''without loss of generality'', ''it suffices
+    to show'', existence and uniqueness, disproof by counterexample'
+  - 'Levels of abbreviation: one argument written as a full Fitch derivation, an annotated skeleton, a careful proof
+    and a textbook proof; what each level omits and why a reader can restore it'
+  - 'Reading proofs: self-explanation training (for each line, which rule and which earlier line licenses it)'
+  - 'Proof verification: find the error in student proofs and name the rule each one breaks; circularity, proving
+    the converse, a missing case'
+  - 'The dispute over excluded middle: LEM ≡ DNE ≡ PBC as one extra rule; ¬¬(P∨¬P) is intuitionistically provable;
     BHK reading; aᵇ rational with a, b irrational, with and without a witness'
   - '…continued: Brouwer 1908, Hilbert 1927 and the Grundlagenstreit, Heyting 1930, Gödel–Gentzen translation, Bishop
     1967; consequences for analysis (located sup, Specker sequence, approximate IVT, the non-constructive step in
     Bolzano–Weierstrass); Curry–Howard, Lean''s Classical.em via Diaconescu and `noncomputable`; the main line stays
     classical'
   must_prove:
-  - quantifier negation laws ¬∀x P ↔ ∃x ¬P and ¬∃x P ↔ ∀x ¬P, flagging that ¬∀ ⊢ ∃¬ needs RAA
-  - ∃y∀x R(x,y) ⊢ ∀x∃y R(x,y), and a counterexample to the converse
-  - √2 is irrational (an instance of ¬I, valid intuitionistically)
-  - if |a − b| < ε for every ε > 0 then a = b
-  - uniformly continuous ⇒ continuous, annotated with every rule
-  - LEM, double-negation elimination and RAA are interderivable over the intuitionistic rules
+  - one theorem (e.g. 'n² even ⇒ n even' or 'a sequence has at most one limit') at every level of abbreviation,
+    from full derivation to plain prose
+  - a WLOG argument with the symmetry that licenses it stated
+  - an existence-and-uniqueness proof written as ∃I followed by ∀I on two witnesses
+  - LEM, double-negation elimination and PBC are interderivable over the intuitionistic rules
   - ⊢ ¬¬(P ∨ ¬P) without LEM
   - 'there are irrational a, b with aᵇ rational: non-constructively via √2^√2, and with a witness √2^(log₂9) = 3'
   key_examples:
-  - ∀x∃y (x + y = 0) true on ℝ, ∃y∀x (x + y = 0) false
-  - 'f(x) = x² on ℝ (or 1/x on (0,1)) is continuous but not uniformly continuous: the δ must depend on x'
-  - a 'proof' that checks n = 1, 2, 3 and concludes ∀n
-  - the ∃E name reused as if arbitrary
+  - the same proof as a Fitch derivation and as three lines of prose
+  - a WLOG that is not justified (the cases are not symmetric)
+  - '''it suffices to show'' used backwards (proving the converse)'
+  - a proof by contradiction that is really a proof of a negation (¬I), and one that needs PBC
   exit_checks:
-  - Negate 'f is uniformly continuous on A' and 'fₙ → f uniformly on A'
+  - Turn a given Fitch derivation into prose, and a given prose proof into an annotated skeleton
   - Judge four student proofs and locate the error in each, naming the rule each one breaks (Selden & Selden style)
-  - Formalize and negate a three-quantifier statement, then prove or refute it
+  - Say which steps of a given proof use excluded middle, and give a witness-producing proof where one exists
   optional: false
-  note: 'Curriculum Stage 0 ND order items 4–8. The excluded-middle dispute MUST be the last section (decisions
+  note: 'No single reference book covers this chapter; Velleman ch 3 (scratch work → final proof) is the nearest
+    scaffolding and the rest is original synthesis. The excluded-middle dispute MUST be the last section (decisions
     3), here split over the final two outline lines as one section with two halves; the drafter may merge them.
     The analysis consequences (located sup, Specker, approximate IVT, Bolzano–Weierstrass) are previews stated informally,
-    since Part I has not yet been read; Part I should point back here where those theorems are proved. Uniform continuity
-    is introduced here only as a quantifier pattern (definition stated, no theory). Keep the chapter usable in the
-    two-year bridge: the final section can be read quickly.'
-- num: 3
+    since Part I has not yet been read; Part I should point back here where those theorems are proved. Keep the
+    chapter usable in the two-year bridge: the final section can be read quickly.'
+- num: 5
   part: '0'
   slug: sets-and-functions
   title: Sets, Functions, Images and Preimages
@@ -1007,7 +1109,7 @@ chapters:
     Relations are introduced only as far as functions need (Velleman §4.1–4.2, Hammack §11.1); equivalence relations
     and orders come next chapter. ℕ, ℤ, ℚ, ℝ are used as familiar sets in examples; no main-line proof depends on
     their construction (decisions 4).
-- num: 4
+- num: 6
   part: '0'
   slug: relations-and-induction
   title: Equivalence Relations, Orders, and Induction
@@ -1048,7 +1150,7 @@ chapters:
   note: ℕ with induction and the well-ordering principle is taken as given here; its construction is optional (zf-and-natural-numbers).
     The orders section plants upper bounds and greatest elements so that Part I ch 1 (sup, LUB axiom) can recall
     them.
-- num: 5
+- num: 7
   part: '0'
   slug: countable-and-uncountable
   title: 'Cardinality: Countable and Uncountable Sets'
@@ -1099,7 +1201,7 @@ chapters:
     must cite it; its equivalents (Zorn, well-ordering) and ZF context are in the optional zf-and-natural-numbers.
     Zorn''s lemma is proved just in time in Part VI''s hahn-banach chapter. Last main-line chapter of Part 0: it
     ends with Gate 0 (reader B2).'
-- num: 6
+- num: 8
   part: '0'
   slug: zf-and-natural-numbers
   title: The ZF Axioms, Choice, and the Natural Numbers
@@ -1166,7 +1268,7 @@ chapters:
     becoming Landau. The axiom of choice itself is stated on the main line (countable-and-uncountable, ax-choice);
     here it is placed among the ZF axioms, and Zorn and well-ordering are stated as equivalents with a pointer to
     Part VI, where Zorn is proved from choice.
-- num: 7
+- num: 9
   part: '0'
   slug: integers-and-rationals
   title: Building ℤ and ℚ from Equivalence Classes
@@ -1205,7 +1307,7 @@ chapters:
   optional: true
   note: Optional (decisions 4). Most field and order axioms are left as exercises. The gaps section is the motivation
     for the next two chapters and mirrors Part I ch 1's example, which Part I proves independently.
-- num: 8
+- num: 10
   part: I
   slug: least-upper-bound
   title: Ordered Fields and the Least Upper Bound Axiom
@@ -1269,7 +1371,7 @@ chapters:
     that the a in the ε-characterization depends on ε; proving one inequality only. Introduces the skills ''sup
     approximation'', ''equality by two inequalities'', ''constructing a point as a sup'' (reused in IVT and Heine–Borel).
     Rational exponents only here; real exponents a^x wait for the power-series chapter.'
-- num: 9
+- num: 11
   part: I
   slug: sequences-and-limits
   title: Sequences, Subsequences and Cauchy Sequences
@@ -1323,7 +1425,7 @@ chapters:
   note: 'Proves MCT, BW and Cauchy completeness FROM the LUB axiom only; their converses belong to forms-of-completeness.
     Skills named here: ε allocation (ε/2), extracting subsequences (trigger: bounded sequence → extract), sup approximation.
     Rudin''s chapter 3 works in metric spaces; specialize to ℝ (see exemption for PMA.2 → PMA.3).'
-- num: 10
+- num: 12
   part: I
   slug: infinite-series
   title: Infinite Series
@@ -1389,7 +1491,7 @@ chapters:
     identity for Σ sin(kx) (which uses nothing but trig addition formulas, stated as provisional). ln 2 values of
     alternating-harmonic rearrangements are identified later by Abel''s theorem. Skills: telescoping and comparison.
     Integral test waits for the Riemann integral chapter.'
-- num: 11
+- num: 13
   part: I
   slug: topology-of-the-real-line
   title: Open, Closed and Compact Subsets of ℝ
@@ -1445,7 +1547,7 @@ chapters:
     version only as a forward pointer. The Baire section is a preview (no successor in Part I depends on it except
     the optional remark in limits-and-continuity). Skill: ''from a cover to a finite subcover''. The Lebesgue number
     lemma is needed for the second Heine–Cantor proof in continuity-on-intervals.'
-- num: 12
+- num: 14
   part: I
   slug: limits-and-continuity
   title: Limits of Functions and Continuity
@@ -1496,7 +1598,7 @@ chapters:
   optional: false
   note: 'sin, cos, exp appear as provisional examples (flag them; they are constructed in power-series). Quantifier-order
     drill: continuity at every point vs uniform continuity is set up here and resolved in the next chapter.'
-- num: 13
+- num: 15
   part: I
   slug: continuity-on-intervals
   title: Continuous Functions on Compact Sets and Intervals
@@ -1553,7 +1655,7 @@ chapters:
     ''uniformly continuous ⇒ continuous'' and the ∃-intro witness failure. Skills: ε/3 allocation, from a cover
     to a finite subcover. Spiral hook: the metric version of Heine–Cantor (Part II) and the BLT principle (Part
     VI) generalize the extension section.'
-- num: 14
+- num: 16
   part: I
   slug: derivative-and-mean-value
   title: The Derivative and the Mean Value Theorem
@@ -1616,7 +1718,7 @@ chapters:
   note: Taylor with Lagrange remainder is proved here (Stage S1 (c)); the integral remainder and Taylor series come
     later. Elementary functions remain provisional examples. The continuous nowhere-differentiable function is deferred
     to sequences-of-functions, where the M-test is available.
-- num: 15
+- num: 17
   part: I
   slug: riemann-darboux-integral
   title: The Riemann–Darboux Integral
@@ -1684,7 +1786,7 @@ chapters:
     criterion is stated and proved in outline; it seeds the ''what the Riemann integral lacks'' list that Part III
     completes. The sup/inf description of the integral is a long-range descendant of the least-upper-bound chapter:
     recall it.'
-- num: 16
+- num: 18
   part: I
   slug: sequences-of-functions
   title: Sequences and Series of Functions
@@ -1749,7 +1851,7 @@ chapters:
     which is not a pointwise limit of continuous functions (Baire class 2, mention only). The Weierstrass approximation
     theorem (ABB §6.7) is NOT here: it goes to Part II with Stone–Weierstrass (curriculum S2). Arzelà–Ascoli and
     equicontinuity (PMA 7.19–7.25) are Part II. Named skill: the checklist for exchanging limits.'
-- num: 17
+- num: 19
   part: I
   slug: power-series
   title: Power Series, Taylor Series and the Elementary Functions
@@ -1811,7 +1913,7 @@ chapters:
     provisional use in a closing remark. ℂ is introduced here (section 1) because Parts III and V need it; power
     series are stated for complex coefficients and arguments where nothing changes, and the theory of complex differentiation
     is left to Part V; complex power series and radius-1 obstruction of 1/(1+x²) are a hook to Part V.'
-- num: 18
+- num: 20
   part: I
   slug: forms-of-completeness
   title: The Forms of Completeness
@@ -1870,7 +1972,7 @@ chapters:
     the axiom; re-prove what is needed (e.g. BW in F from MCT in F). The uniqueness theorem is stated in prose only;
     its proof is the optional complete-ordered-field chapter that follows. Forward pointer: completion (Part II,
     decisions.md 5). Last main-line chapter of Part I: its final section is Gate I (reader B2).'
-- num: 19
+- num: 21
   part: I
   slug: reals-dedekind-cuts
   title: Constructing ℝ by Dedekind Cuts
@@ -1914,7 +2016,7 @@ chapters:
     is the optional integers-and-rationals in Part 0). Dedekind cuts give the LUB property directly; the Cauchy
     construction appears only as a comparison (it returns in Part II as completion, decisions 5). No main-line result
     may cite this chapter.
-- num: 20
+- num: 22
   part: I
   slug: complete-ordered-field
   title: The Complete Ordered Field Is Unique
@@ -1950,7 +2052,7 @@ chapters:
   note: 'Optional closing chapter of Part I (decisions 4): the bridge between ''assume the axiom'' (ax-least-upper-bound)
     and ''build a model'' (reals-dedekind-cuts). May cite forms-of-completeness. No main-line result may cite it;
     Part II''s completion chapter points to it in prose only.'
-- num: 21
+- num: 23
   part: II
   slug: metric-spaces
   title: Metric Spaces, Open Sets and Continuity
@@ -2008,7 +2110,7 @@ chapters:
   note: Opens Part II; recall the Part I definitions explicitly (spiral, decisions.md 6). Norms are defined here
     only as a source of metrics; norm equivalence is proved in compactness-connectedness and the operator norm in
     derivative-rn. Keep ℓ² here because the non-compact unit ball (ch 3) needs it.
-- num: 22
+- num: 24
   part: II
   slug: complete-metric-spaces
   title: Completeness and the Completion of a Metric Space
@@ -2070,7 +2172,7 @@ chapters:
     ℚ-valued and ε ranges over positive rationals; follow PUG §2.10''s ''second construction'' in spirit, not text.
     May cite Part 0 constructions only as optional commentary (they are .optional). Baire is placed in stone-weierstrass-baire
     so that its main application (C[0,1]) sits beside the density theorems.'
-- num: 23
+- num: 25
   part: II
   slug: compactness-connectedness
   title: Compactness and Connectedness in Metric Spaces
@@ -2142,7 +2244,7 @@ chapters:
     uses compactness of the unit sphere in ℝⁿ and a basis (cite companion LA book for bases). The metric Urysohn
     and Tietze section (route R2) is all that Part IV needs from topology (Lusin, C_c density in ℝᵈ); the normal-space
     versions wait for separation-urysohn-lch in Part VI.'
-- num: 24
+- num: 26
   part: II
   slug: contraction-picard
   title: Contraction Mappings and the Picard–Lindelöf Theorem
@@ -2192,7 +2294,7 @@ chapters:
   note: 'Decisions.md 7: ODE existence forces contraction maps (this chapter) and Arzelà–Ascoli (next). The contraction
     theorem is reused by the inverse function theorem (inverse-implicit). Linear systems, the matrix exponential,
     differentiable dependence and the flow are linear-odes-flows, after inverse-implicit.'
-- num: 25
+- num: 27
   part: II
   slug: arzela-ascoli-peano
   title: Equicontinuity, the Arzelà–Ascoli Theorem and Peano's Theorem
@@ -2238,7 +2340,7 @@ chapters:
   optional: false
   note: 'Skill focus: diagonal extraction (decisions.md 14). Place the forward hooks (normal families, compact operators)
     as short remarks only.'
-- num: 26
+- num: 28
   part: II
   slug: stone-weierstrass-baire
   title: 'Density and Category in C(K): Stone–Weierstrass and Baire'
@@ -2294,7 +2396,7 @@ chapters:
     Decisions.md 7: polynomial approximation forces Stone–Weierstrass. Part III gives Fejér as a second proof of
     trig density; keep the approximate-identity proof here short so Part III can develop kernels. Baire skill named
     (decisions.md 14); UBP is Part VI.'
-- num: 27
+- num: 29
   part: II
   slug: derivative-rn
   title: The Derivative in ℝⁿ
@@ -2346,7 +2448,7 @@ chapters:
     (Part VI). Linear-algebra gate (route R8): the companion book through determinants and eigenvalues is done before
     this chapter, and its spectral theorem for symmetric matrices before the second-derivative test; the Part II
     opener states this.'
-- num: 28
+- num: 30
   part: II
   slug: inverse-implicit
   title: Inverse and Implicit Functions, and Lagrange Multipliers
@@ -2390,7 +2492,7 @@ chapters:
     (decisions.md 12): keep ''submanifold'' to regular level sets and local graphs in ℝⁿ. Forward hooks: linear-odes-flows
     uses the inverse function theorem for the flow maps, and surfaces-divergence-theorem (Part IV) builds surface
     measure on regular level sets.'
-- num: 29
+- num: 31
   part: II
   slug: linear-odes-flows
   title: Linear Systems, the Matrix Exponential and the Flow
@@ -2444,7 +2546,7 @@ chapters:
     Linear algebra (eigenvalues, Jordan form) is cited from the companion book by chapter in prose, not taught (linear-algebra
     gate, route R8). The Sturm–Liouville section is a preview only; the spectral theory is compact-operators-spectral.
     Characteristics and transport equations (PDE branch) are named as users of the flow.
-- num: 30
+- num: 32
   part: II
   slug: riemann-integral-rn
   title: The Riemann Integral on ℝⁿ
@@ -2502,7 +2604,7 @@ chapters:
     has moved to surfaces-divergence-theorem in Part IV (route R1, decision 12 amended). Polar coordinates (hence
     ∫e^{−x²}) must wait for Part IV or use a one-variable argument. Last main-line chapter of Part II, so it ends
     with Gate II (reader B2).'
-- num: 31
+- num: 33
   part: III
   slug: fourier-series-foundations
   title: 'Fourier Series: Origins and Basic Properties'
@@ -2549,7 +2651,7 @@ chapters:
   optional: false
   note: Stay strictly with Riemann-integrable functions. Complex exponentials from Part I. Convolution defined here
     is reused as the model for Part IV's convolution (lp-spaces).
-- num: 32
+- num: 34
   part: III
   slug: good-kernels-summability
   title: Good Kernels, Summability and Fejér's Theorem
@@ -2595,7 +2697,7 @@ chapters:
   optional: false
   note: Name the skills 'approximate identities' and 'summability in place of convergence'. Stone–Weierstrass (Part
     II) may be recalled but Fejér's route must stand alone.
-- num: 33
+- num: 35
   part: III
   slug: mean-square-pointwise
   title: Mean-Square and Pointwise Convergence
@@ -2661,7 +2763,7 @@ chapters:
     Parseval gives an isometry into ℓ² that is not onto. Linear-algebra gate (route R8): inner products, orthogonal
     projection, the spectral theorem and SVD from the companion book are done before this chapter; the Part III
     opener states this.'
-- num: 34
+- num: 36
   part: III
   slug: fourier-series-applications
   title: Applications of Fourier Series
@@ -2705,7 +2807,7 @@ chapters:
   optional: false
   note: Weyl's criterion uses the characters of ℝ/ℤ concretely; the optional finite-fourier-analysis recasts them
     in group language (decisions.md 13).
-- num: 35
+- num: 37
   part: III
   slug: fourier-transform-line
   title: The Fourier Transform on ℝ
@@ -2768,7 +2870,7 @@ chapters:
   optional: false
   note: 'The Riemann framework is felt here: every exchange of limits needs its own ad hoc hypothesis; record these
     on the ''what we need'' list for riemann-limits.'
-- num: 36
+- num: 38
   part: III
   slug: fourier-transform-rd
   title: The Fourier Transform on ℝᵈ and the Wave Equation
@@ -2811,7 +2913,7 @@ chapters:
     is not used; Part IV proves it in full. Route R7 (roadmap A7): the Kirchhoff/descent/Huygens section and the
     Radon section are optional; the main line is integration on ℝᵈ, 𝒮(ℝᵈ) with inversion and Plancherel, the wave
     equation by Fourier transform with energy, and radial functions (about 35 pp.).'
-- num: 37
+- num: 39
   part: III
   slug: finite-fourier-analysis
   title: Fourier Analysis on Finite Abelian Groups
@@ -2858,7 +2960,7 @@ chapters:
     only users, dirichlet-theorem and gelfand-theory, are optional too. decisions.md 13: this is where groups and
     characters are introduced for readers who take it; keep the group theory minimal and only what the Fourier theory
     uses. The linear-algebra companion is cited for simultaneous diagonalization of commuting unitary operators.'
-- num: 38
+- num: 40
   part: III
   slug: dirichlet-theorem
   title: Dirichlet's Theorem on Primes in Arithmetic Progressions
@@ -2898,7 +3000,7 @@ chapters:
   optional: true
   note: 'Optional (curriculum: ''optionally, Dirichlet''s theorem''). Uses only series, logarithms and the optional
     finite-fourier-analysis; no main-line proof may cite it.'
-- num: 39
+- num: 41
   part: III
   slug: riemann-limits
   title: What the Riemann Integral Lacks
@@ -2968,7 +3070,7 @@ chapters:
     is given in Part IV as a corollary of the bounded convergence theorem (BRL §4.3 has an elementary proof the
     drafter may include as optional). Volterra''s function may be sketched with its key properties proved. Last
     main-line chapter of Part III: it ends with Gate III, after ''The list'' (reader B2).'
-- num: 40
+- num: 42
   part: IV
   slug: lebesgue-measure
   title: Lebesgue Measure on ℝᵈ and Measurable Functions
@@ -3033,7 +3135,7 @@ chapters:
   note: 'Opens by quoting the riemann-limits list (decisions.md 7). SS3''s concrete route on ℝᵈ is the scaffold;
     the abstract Carathéodory theory comes in abstract-measure (spiral). Lusin cites the metric Tietze extension
     theorem of compactness-connectedness (Part II): no general topology is needed on ℝᵈ (route R2).'
-- num: 41
+- num: 43
   part: IV
   slug: lebesgue-integral
   title: The Lebesgue Integral and the Convergence Theorems
@@ -3088,7 +3190,7 @@ chapters:
   optional: false
   note: Write the convergence-theorem proofs using only countable additivity and the definition as a sup, so abstract-measure
     can transfer them verbatim. Ticks off items 'limits' and 'L¹ completeness' from the Part III list.
-- num: 42
+- num: 44
   part: IV
   slug: abstract-measure
   title: Abstract Measure Spaces and Carathéodory's Construction
@@ -3137,7 +3239,7 @@ chapters:
   optional: false
   note: 'Spiral return (decisions.md 6): the ℝᵈ construction of lebesgue-measure is recalled and reframed. π-λ is
     written originally (FOL and MIRA use the monotone class theorem; include both, π-λ as the main tool).'
-- num: 43
+- num: 45
   part: IV
   slug: fubini-tonelli
   title: Product Measures and the Fubini–Tonelli Theorem
@@ -3187,7 +3289,7 @@ chapters:
   optional: false
   note: 'decisions.md 10: full proofs. Part II supplied Fubini for continuous functions on rectangles; recall it
     explicitly and show it is a special case. KOR 47–48 examples from Part III are resolved here.'
-- num: 44
+- num: 46
   part: IV
   slug: change-of-variables
   title: Linear Maps, Change of Variables and Polar Coordinates
@@ -3230,7 +3332,7 @@ chapters:
   note: decisions.md 10 requires a full proof (curriculum S3-A says 'outline'; decisions.md governs). Uses the inverse
     function theorem from Part II. Rademacher (WZ §7.7) is not in the main line. The next chapter, surfaces-divergence-theorem,
     extends σ on S^{d−1} to surface measure on C¹ hypersurfaces.
-- num: 45
+- num: 47
   part: IV
   slug: surfaces-divergence-theorem
   title: Surfaces, Surface Measure and the Divergence Theorem
@@ -3295,7 +3397,7 @@ chapters:
     disc case there), distributions (ΔΦ = δ), poincare-rellich (traces on C¹ domains) and the capstone (Green''s
     identities, back to classical solutions). Bump functions are built by hand from e^{−1/t}, so mollifiers (lp-spaces)
     are not needed. The target is the vector-calculus form of Evans App. C; no forms.'
-- num: 46
+- num: 48
   part: IV
   slug: lp-spaces
   title: Lᵖ Spaces, Convolution and Mollifiers
@@ -3347,7 +3449,7 @@ chapters:
   note: Only concrete L² (completeness, Parseval on 𝕋) appears; abstract Hilbert space theory is Part VI (decisions.md
     9). Lᵖ duality is Part VI; state no duality theorem here. Pointwise convergence of approximate identities at
     Lebesgue points waits for lebesgue-differentiation.
-- num: 47
+- num: 49
   part: IV
   slug: modes-of-convergence
   title: Modes of Convergence, Uniform Integrability and Weak Lᵖ
@@ -3397,7 +3499,7 @@ chapters:
   note: Uniform integrability and the Vitali convergence theorem are original writing (no assigned source treats
     them beyond exercises). Weak L¹ is set up here because lebesgue-differentiation's maximal inequality is a weak-(1,1)
     statement.
-- num: 48
+- num: 50
   part: IV
   slug: lebesgue-differentiation
   title: The Maximal Function and Lebesgue Differentiation
@@ -3447,7 +3549,7 @@ chapters:
   note: Name and drill the maximal-function argument skill. Uses weak L¹ and the layer-cake formula from modes-of-convergence.
     Marcinkiewicz (route R5a) replaces the ad hoc layer-cake proof of the Lᵖ bound and returns beside Riesz–Thorin
     in interpolation (Part VI). The last part of FOL §3.4 (differentiating regular measures) is deferred to signed-measures-radon-nikodym.
-- num: 49
+- num: 51
   part: IV
   slug: bv-and-absolute-continuity
   title: Bounded Variation, Absolute Continuity and the Fundamental Theorem
@@ -3498,7 +3600,7 @@ chapters:
   optional: false
   note: 'Answers the Part III item ''the FTC fails'' (Volterra). WZ ch 7 is split: §7.1–7.3 went to lebesgue-differentiation,
     §7.4–7.6 are here with WZ ch 2 (see exemptions).'
-- num: 50
+- num: 52
   part: IV
   slug: signed-measures-radon-nikodym
   title: Signed Measures, Radon–Nikodym and Lebesgue Decomposition
@@ -3552,7 +3654,7 @@ chapters:
     this as its first instance (spiral). No Lᵖ duality here even though RN makes it one step away — flag it as the
     Part VI forward hook. The Part IV qualifying-exam check has moved to Gate IV at the end of probability-measure-spaces,
     the Part''s last chapter.'
-- num: 51
+- num: 53
   part: IV
   slug: probability-measure-spaces
   title: Probability on Measure Spaces
@@ -3611,7 +3713,7 @@ chapters:
     of probability measures, Lévy continuity and Prokhorov are the optional last section of tempered-distributions-fourier.
     Conditional expectation (via Radon–Nikodym) and martingales are named as the next steps of the probability branch,
     stated only. Gate IV ends this chapter because the gate belongs to the Part''s end (reader B2).'
-- num: 52
+- num: 54
   part: V
   slug: holomorphic-functions
   title: Holomorphic Functions and Power Series
@@ -3662,7 +3764,7 @@ chapters:
   optional: false
   note: Complex numbers themselves are assumed from earlier Parts; this chapter recalls, it does not re-teach. Möbius
     maps are postponed to conformal-riemann-mapping, where they are used.
-- num: 53
+- num: 55
   part: V
   slug: cauchy-theorem
   title: Cauchy's Theorem and Its First Consequences
@@ -3707,7 +3809,7 @@ chapters:
   optional: false
   note: 'Complex quantities first meet the spiral here: locally uniform convergence is the C(K) sup-metric on each
     compact set. Green''s theorem is mentioned only to explain why Goursat avoids assuming f′ continuous.'
-- num: 54
+- num: 56
   part: V
   slug: singularities-residues
   title: Laurent Series, Singularities and Residues
@@ -3751,7 +3853,7 @@ chapters:
   - Evaluate ∫_{−∞}^{∞} cos x/(x²+1) dx with a full contour estimate
   optional: false
   note: Only the local (disc and toy-contour) residue theorem is proved here; the homology version waits for global-cauchy-theory.
-- num: 55
+- num: 57
   part: V
   slug: global-cauchy-theory
   title: Winding Numbers, the Global Cauchy Theorem and Counting Zeros
@@ -3805,7 +3907,7 @@ chapters:
     Hurwitz is placed here so that the Riemann mapping proof can use it. Homotopy of closed paths is defined and
     used here: no topology chapter covers it (the general topology block is in Part VI). Phragmén–Lindelöf on a
     strip is cited by interpolation (Part VI) for the three-lines lemma.'
-- num: 56
+- num: 58
   part: V
   slug: conformal-riemann-mapping
   title: Conformal Maps, Normal Families and the Riemann Mapping Theorem
@@ -3854,7 +3956,7 @@ chapters:
   optional: false
   note: 'Normal families enter here with explicit recall of Arzelà–Ascoli from Part II (spiral: compact in metric/C(K)).
     Schwarz–Christoffel and elliptic integrals (SS2 §8.4) are cut.'
-- num: 57
+- num: 59
   part: V
   slug: harmonic-functions
   title: Harmonic and Subharmonic Functions
@@ -3910,7 +4012,7 @@ chapters:
     On the complex-early path (Parts 0, I, II, V, with Part IV not yet read) the chapter keeps a short self-contained
     proof of Green''s theorem on the disc, so Part V stays readable before Part IV. Perron''s method is outline-level;
     the disc case is proved in full.'
-- num: 58
+- num: 60
   part: V
   slug: entire-functions-products
   title: Infinite Products and Entire Functions
@@ -3954,7 +4056,7 @@ chapters:
   optional: false
   note: Hadamard is outline-only per curriculum. Runge is kept as an optional section because the general Mittag-Leffler
     theorem uses it; the main line proves Mittag-Leffler for ℂ only.
-- num: 59
+- num: 61
   part: V
   slug: continuation-and-picard
   title: Analytic Continuation, Monodromy and Picard's Theorem
@@ -3999,7 +4101,7 @@ chapters:
   optional: false
   note: Riemann surfaces, sheaves and covering spaces (CON §IX.4–7) are cut; monodromy is proved directly for paths
     in a region. The Part V exit exam is Gate V, the last section of this chapter (reader B2).
-- num: 60
+- num: 62
   part: VI
   slug: topological-spaces-compactness
   title: Topological Spaces, Products and Compactness
@@ -4093,7 +4195,7 @@ chapters:
     explicitly (spiral). Products are arbitrary, so that weak-topologies-alaoglu can state Tychonoff directly; Tychonoff
     itself stays there with Zorn. The quotient-gluing material is an optional section: nothing in analysis uses
     it. Homotopy is not needed (global-cauchy-theory defines it).'
-- num: 61
+- num: 63
   part: VI
   slug: separation-urysohn-lch
   title: Separation, Urysohn–Tietze and Locally Compact Spaces
@@ -4141,7 +4243,7 @@ chapters:
     urysohn-tietze: Part IV now uses only the metric Urysohn function and metric Tietze theorem of compactness-connectedness
     (Lusin, C_c density in ℝᵈ). Keep it lean: no Tychonoff (weak-topologies-alaoglu), metrization stated only. riesz-markov
     reuses the LCH Urysohn lemma and partitions of unity.'
-- num: 62
+- num: 64
   part: VI
   slug: banach-spaces-lp-duality
   title: Banach Spaces, Dual Spaces and the Dual of Lᵖ
@@ -4184,7 +4286,7 @@ chapters:
   note: Opens the Part with Lᵖ duality as decided (decisions.md 9). Proof via Radon–Nikodym ties directly to Part
     IV; Brezis's uniform-convexity proof appears later in weak-topologies-alaoglu as a second proof. Folland §6.2
     is the natural extra reference, but FOL.6 is a Part IV node.
-- num: 63
+- num: 65
   part: VI
   slug: riesz-markov
   title: Radon Measures and the Dual of C₀(X)
@@ -4220,7 +4322,7 @@ chapters:
   note: Riesz–Markov is placed in Part VI per decisions.md 9. It uses Part IV's measure construction and the LCH
     Urysohn lemma and partitions of unity of separation-urysohn-lch, not Hahn–Banach, so it can precede hahn-banach;
     outline-level proof is allowed by the curriculum but the C(K), K compact metric case should be complete.
-- num: 64
+- num: 66
   part: VI
   slug: hahn-banach
   title: The Hahn–Banach Theorems
@@ -4270,7 +4372,7 @@ chapters:
   optional: false
   note: 'Duality arguments (decisions.md 14) are named here: test against functionals. Zorn''s lemma is proved here
     from ax-choice (Part 0 main line) and is then cited by Tychonoff in weak-topologies-alaoglu.'
-- num: 65
+- num: 67
   part: VI
   slug: baire-category-operators
   title: Baire Category and the Fundamental Theorems for Operators
@@ -4313,7 +4415,7 @@ chapters:
   optional: false
   note: Second appearance of Baire (first in Part II with nowhere-differentiable functions); the text explicitly
     recalls it. Placed before weak topologies because weakly convergent sequences are bounded only by the UBP.
-- num: 66
+- num: 68
   part: VI
   slug: weak-topologies-alaoglu
   title: Weak Topologies, Tychonoff and Banach–Alaoglu
@@ -4374,7 +4476,7 @@ chapters:
     (decision 8 amended: general topology is the Part VI block topological-spaces-compactness and separation-urysohn-lch,
     and Tychonoff joins it here because it needs Zorn). Closes the ''moved out of measure theory'' block (Lᵖ duality,
     Riesz–Markov, weak/weak*). Spiral: compactness row, Lᵖ/weak* column.'
-- num: 67
+- num: 69
   part: VI
   slug: hilbert-spaces
   title: Hilbert Spaces
@@ -4421,7 +4523,7 @@ chapters:
   note: 'Abstract Hilbert space theory lives here (decisions.md 9); Part IV used only the L² projection. Lax–Milgram
     is proved here and applied in the capstone. Placed after the Banach-space chapters so Hilbert spaces are seen
     as the reflexive, self-dual special case (spiral: Hilbert column).'
-- num: 68
+- num: 70
   part: VI
   slug: compact-operators-spectral
   title: Compact Operators, the Fredholm Alternative and the Spectral Theorem
@@ -4484,7 +4586,7 @@ chapters:
     operators, Hille–Yosida and the general spectral theorem are out of scope (see cut). The vibrating-string example
     is the one-dimensional rehearsal of the capstone. The Sturm–Liouville preview of linear-odes-flows (Part II)
     is recalled here and answered.
-- num: 69
+- num: 71
   part: VI
   slug: gelfand-theory
   title: Banach Algebras and Gelfand Theory
@@ -4522,7 +4624,7 @@ chapters:
   note: 'Optional chapter (decisions.md 13): ideals and quotients are introduced here just in time. Placed after
     compact-operators-spectral (spectrum, resolvent) so the main line from there to the capstone is uninterrupted;
     nothing later depends on it.'
-- num: 70
+- num: 72
   part: VI
   slug: distributions
   title: Distributions
@@ -4579,7 +4681,7 @@ chapters:
     through sequential convergence plus a short appendix-style section. Tensor products and convolution of two general
     distributions (FJ ch. 4, 5.3) are cut. ΔΦ = δ uses the divergence theorem and Green's identities of surfaces-divergence-theorem
     (Part IV).
-- num: 71
+- num: 73
   part: VI
   slug: tempered-distributions-fourier
   title: Tempered Distributions, the Fourier Transform and Plancherel
@@ -4631,7 +4733,7 @@ chapters:
   note: 'Spiral from Part III: Fourier on 𝒮 is recalled, not redone; the new content is L¹/L² in the Lebesgue setting
     and the extension to 𝒮′. The optional last section (route R3) is the characteristic-function half of probability:
     it uses probability-measure-spaces (Part IV), riesz-markov and the weak* topology of weak-topologies-alaoglu.'
-- num: 72
+- num: 74
   part: VI
   slug: interpolation
   title: 'Interpolation: Riesz–Thorin, Young and Hausdorff–Young'
@@ -4670,7 +4772,7 @@ chapters:
     because Hausdorff–Young completes the Lᵖ story of Plancherel; nothing later in Part VI depends on it, so a reader
     aiming only at the capstone may postpone it. Cross-links: Phragmén–Lindelöf (Part V) and Marcinkiewicz (Part
     IV). Calderón–Zygmund theory and the Lᵖ bounds of the Hilbert transform are stated only (branch).'
-- num: 73
+- num: 75
   part: VI
   slug: sobolev-spaces
   title: Sobolev Spaces
@@ -4711,7 +4813,7 @@ chapters:
   optional: false
   note: Traces, Poincaré, H¹₀ and compactness are the next chapter. Brezis's one-dimensional chapter is the gentle
     entry; Evans supplies the n-dimensional statements.
-- num: 74
+- num: 76
   part: VI
   slug: poincare-rellich
   title: H¹₀, the Poincaré Inequality and Rellich Compactness
@@ -4751,7 +4853,7 @@ chapters:
     no boundary regularity; the W^{1,p}(Ω) version with extension operators is stated. Spiral table: compactness
     row, Lᵖ column (Alaoglu; Kolmogorov–Riesz; Rellich). Traces use surface measure on ∂Ω from surfaces-divergence-theorem
     (Part IV), which is what makes the trace statement precise.'
-- num: 75
+- num: 77
   part: VI
   slug: dirichlet-capstone
   title: 'Capstone: The Dirichlet Problem and the Dirichlet-Laplacian Eigenbasis'

@@ -22,7 +22,7 @@ In symbols, \( M \) is an upper bound of \( A \) when
 \]
 The bound is an element of \( F \), and nothing requires it to belong to \( A \).
 
-For the interval \( (0, 1) \) in \( \nR \), the numbers \( 1 \), \( \frac32 \) and \( 2026 \) are all upper bounds, and \( 0 \) and \( -17 \) are lower bounds. Upper bounds are never unique: if \( M \) is one, so is every \( M' \ge M \), by transitivity. A minimal change gives a non-example: \( \frac12 \) is **not** an upper bound of \( (0, 1) \), because \( \frac34 \in (0, 1) \) and \( \frac34 > \frac12 \). One element above \( M \) is enough to spoil it. Negating the definition quantifier by quantifier (the negation rules are the subject of Chapter 2),
+For the interval \( (0, 1) \) in \( \nR \), the numbers \( 1 \), \( \frac32 \) and \( 2026 \) are all upper bounds, and \( 0 \) and \( -17 \) are lower bounds. Upper bounds are never unique: if \( M \) is one, so is every \( M' \ge M \), by transitivity. A minimal change gives a non-example: \( \frac12 \) is **not** an upper bound of \( (0, 1) \), because \( \frac34 \in (0, 1) \) and \( \frac34 > \frac12 \). One element above \( M \) is enough to spoil it. Negating the definition quantifier by quantifier (the negation rules are the subject of Chapter 3),
 \[
 M \text{ is not an upper bound of } A
 \quad\iff\quad
@@ -142,7 +142,7 @@ For \( A \): the element \( \frac72 \) is an upper bound, as checked above, so (
 
 For \( B \): the same two lines work with \( 1 \) in place of \( \frac72 \). It bounds \( (0, 1] \) from above by the definition of that interval, and it is least because \( 1 \in B \), so every upper bound \( M \) satisfies \( 1 \le M \). So \( \sup B = 1 = \max B \).
 
-The argument used only that the candidate is a maximum. It shows that **a maximum, when it exists, is the supremum** (@exr-suprema-b1). Every non-empty finite set has a maximum, by an induction on the number of elements of the kind practiced in Chapter 4, so for finite sets the supremum is nothing new.
+The argument used only that the candidate is a maximum. It shows that **a maximum, when it exists, is the supremum** (@exr-suprema-b1). Every non-empty finite set has a maximum, by an induction on the number of elements of the kind practiced in Chapter 6, so for finite sets the supremum is nothing new.
 :::
 
 ::: {#exm-sup-open-interval}
@@ -166,7 +166,7 @@ Let \( A = \{ 1 - \frac1n : n \in \nN \} = \{ 0, \frac12, \frac23, \frac34, \dot
 :::
 
 ::: {.solution}
-Each \( n \in \nN \) is positive, by induction on \( n \) (Chapter 4): \( 1 > 0 \) by @thm-ordered-field-rules (e), and if \( n > 0 \), then \( n + 1 > n > 0 \) by (O3) and (O2). So \( \frac1n > 0 \) by @thm-ordered-field-rules (f), and hence \( 1 - \frac1n < 1 \) by @thm-ordered-field-rules (a). So \( 1 \) is an upper bound, and \( 1 \notin A \). No element is a maximum either: \( 1 - \frac1n < 1 - \frac1{n + 1} \), because \( \frac1{n + 1} < \frac1n \) by @thm-ordered-field-rules (f), so every element is beaten by the next one.
+Each \( n \in \nN \) is positive, by induction on \( n \) (Chapter 6): \( 1 > 0 \) by @thm-ordered-field-rules (e), and if \( n > 0 \), then \( n + 1 > n > 0 \) by (O3) and (O2). So \( \frac1n > 0 \) by @thm-ordered-field-rules (f), and hence \( 1 - \frac1n < 1 \) by @thm-ordered-field-rules (a). So \( 1 \) is an upper bound, and \( 1 \notin A \). No element is a maximum either: \( 1 - \frac1n < 1 - \frac1{n + 1} \), because \( \frac1{n + 1} < \frac1n \) by @thm-ordered-field-rules (f), so every element is beaten by the next one.
 
 It is true that \( \sup A = 1 \), but (S2) is harder than it looks. It says that no \( M < 1 \) is an upper bound, that is, for every \( M < 1 \) some \( 1 - \frac1n \) exceeds \( M \). That requires \( \frac1n < 1 - M \) for some \( n \), and the existence of such an \( n \) is the Archimedean property. It does not follow from the ordered-field axioms. We prove \( \sup A = 1 \) later in this chapter, right after the Archimedean property itself.
 :::
