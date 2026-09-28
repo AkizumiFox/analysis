@@ -296,7 +296,7 @@ Let \( n \) be an integer. Prove that if \( n^2 \) is even, then \( n \) is even
 ::: {.solution}
 *Idea.* The hypothesis "\( n^2 \) is even" hands us nothing to compute with, while "\( n \) is odd" hands us \( n = 2k + 1 \). So we turn (E3) round by \( \rulename{CP} \): a number whose square is not odd is not odd itself. Then (E1), with one side refuted, leaves "even" by \( \rulename{DS} \).
 
-Suppose \( n^2 \) is even \( [\text{assumption for } \rulename{{\to}I}] \). If \( n^2 \) were odd \( [\text{assumption for } \rulename{\neg I}] \), it would be both even and odd \( [\rulename{\wedge I}] \), contradicting (E2) \( [\rulename{\neg E}] \); hence \( n^2 \) is not odd \( [\rulename{\neg I}] \). By (E3), if \( n \) is odd then \( n^2 \) is odd, so by contraposition, if \( n^2 \) is not odd then \( n \) is not odd \( [\rulename{CP}] \). Hence \( n \) is not odd \( [\rulename{{\to}E}] \). By (E1), \( n \) is even or odd, so \( n \) is odd or even (the exchange of disjuncts of @exm-disjunction-first-derivations, used as a derived rule). Since \( n \) is not odd, \( n \) is even \( [\rulename{DS}] \). This proves that if \( n^2 \) is even, then \( n \) is even \( [\rulename{{\to}I}] \).
+Suppose \( n^2 \) is even \( [\text{assumption for } \rulename{{\to}I}] \). If \( n^2 \) were odd \( [\text{assumption for } \rulename{\neg I}] \), it would be both even and odd \( [\rulename{\wedge I}] \), contradicting (E2) \( [\rulename{\neg E}] \); hence \( n^2 \) is not odd \( [\rulename{\neg I}] \). By (E3), if \( n \) is odd then \( n^2 \) is odd, so by contraposition, if \( n^2 \) is not odd then \( n \) is not odd \( [\rulename{CP}] \). Hence \( n \) is not odd \( [\rulename{{\to}E}] \). By (E1), \( n \) is even or odd, so \( n \) is odd or even \( [\text{or commutes}] \), by the exchange of disjuncts of @exm-disjunction-first-derivations used as a derived rule. Since \( n \) is not odd, \( n \) is even \( [\rulename{DS}] \). This proves that if \( n^2 \) is even, then \( n \) is even \( [\rulename{{\to}I}] \).
 
 With \( E \): "\( n \) is even", \( O \): "\( n \) is odd", \( S \): "\( n^2 \) is even", \( T \): "\( n^2 \) is odd", and the three facts as premises, the skeleton is this derivation.
 
@@ -316,7 +316,7 @@ $\begin{nd}
   \have {8} {\neg T} \ni{5-7}
   \have {9} {\neg T \to \neg O} \ctp{3}
   \have {10} {\neg O} \ie{9,8}
-  \have {11} {O \vee E} \by{comm.\ of $\vee$}{1}
+  \have {11} {O \vee E} \by{or commutes}{1}
   \have {12} {E} \ds{11,10}
   \close
   \have {13} {S \to E} \ii{4-12}

@@ -218,7 +218,7 @@ $\begin{nd}
 Line 5 may cite line 2 because line 2 lies in a box that is still open. \( \rulename{RAA} \) enters at line 6. This proves the proposition.
 :::
 
-So contraposition behaves like double negation: going from \( P \to Q \) to \( \neg Q \to \neg P \) needs only the rules for \( \neg \), and our derivation of the way back uses one \( \rulename{RAA} \). That no derivation of the way back can avoid it is true, but we state it without proof. When \( Q \) is itself a negation, the inner goal is a negation, and by the paragraph after @def-rule-raa that \( \rulename{RAA} \) can be replaced by \( \rulename{\neg I} \).
+So contraposition behaves like double negation: going from \( P \to Q \) to \( \neg Q \to \neg P \) needs no \( \rulename{RAA} \), and our derivation of the way back uses one \( \rulename{RAA} \). That no derivation of the way back can avoid it is true, but we state it without proof. When \( Q \) is itself a negation, the inner goal is a negation, and by the paragraph after @def-rule-raa that \( \rulename{RAA} \) can be replaced by \( \rulename{\neg I} \).
 
 **Excluded middle.** Every integer is even or odd. Every real number is \( \ge 0 \) or \( < 0 \). The purely logical form of such facts is the law \( P \vee \neg P \), which the next result derives from no premises at all.
 
@@ -306,7 +306,7 @@ $\begin{nd}
 The derivation has no premises, and \( \rulename{RAA} \) enters at line 9. This proves the proposition.
 :::
 
-The assumption \( \neg P \) of line 2 is used twice: at line 4 it makes the innermost box contradictory, and at line 8 it clashes with the \( P \) that line 7 obtained. Notice where the new box went: around the stalled box, not inside it. An assumption made one level out is available in every gap inside its box, and so it could give the stalled gap the line it lacked. Peirce's law contains no \( \neg \), yet our derivation uses \( \rulename{RAA} \): the classical rule is about more than negation. (That every derivation of it must use \( \rulename{RAA} \), or one of the two rules this section shows equivalent to it, is true; we do not prove it.)
+The assumption \( \neg P \) of line 2 is used twice: at line 4 it makes the innermost box contradictory, and at line 8 it clashes with the \( P \) that line 7 obtained. Notice where the new box went: around the stalled box, not inside it. An assumption made one level out is available in every gap inside its box, and so it could give the stalled gap the line it lacked. Peirce's law contains no \( \neg \), yet our derivation uses \( \rulename{RAA} \): the classical rule is about more than negation. (That every derivation of it must use \( \rulename{RAA} \), or one of the two rules this section shows equivalent to it, is true, and Chapter 3 proves it, by the same reading with more than two truth values that settles \( \neg\neg P \vdash P \).)
 
 ## De Morgan's laws
 
@@ -330,7 +330,7 @@ For all statements \( P \) and \( Q \):
 ::: {.idea}
 Parts (a)–(c) yield to their goals. In (a) the goal is a conjunction of negations: two \( \rulename{\neg I} \) boxes, one per conjunct. In (b) and (c) the goal is a negation: one \( \rulename{\neg I} \) box, with the disjunction used inside it by \( \rulename{\vee E} \).
 
-Part (d) resists. Its goal is a disjunction, so the natural last line is \( \rulename{\vee I} \), from \( \neg P \) or from \( \neg Q \). But neither follows from the premise alone: with \( P \) true and \( Q \) false the premise is true and \( \neg P \) false; with \( P \) false and \( Q \) true the premise is true and \( \neg Q \) false; and the rules never lead from true premises to a false conclusion (Chapter 3 proves this). The premise itself can be used only by \( \rulename{\neg E} \), against \( P \wedge Q \), which we do not have. We are stuck at the whole goal, so we assume its negation, \( \neg(\neg P \vee \neg Q) \), which says that neither \( \neg P \) nor \( \neg Q \) holds. It should give \( P \) and \( Q \). Each is a letter, so each needs a small \( \rulename{RAA} \) box of its own, whose clash is manufactured by \( \rulename{\vee I} \). Together \( P \) and \( Q \) clash with the premise.
+Part (d) resists. Its goal is a disjunction, so the natural last line is \( \rulename{\vee I} \), from \( \neg P \) or from \( \neg Q \). But neither follows from the premise alone: with \( P \) true and \( Q \) false the premise is true and \( \neg P \) false; with \( P \) false and \( Q \) true the premise is true and \( \neg Q \) false; and the rules never lead from true premises to a false conclusion (Chapter 3 proves this). The premise itself can be used only by \( \rulename{\neg E} \), against \( P \wedge Q \), which we do not have. We are stuck at the whole goal, so we assume its negation, \( \neg(\neg P \vee \neg Q) \), which says that neither \( \neg P \) nor \( \neg Q \) holds. It should give \( P \) and \( Q \). Each is a letter, so each gets a small \( \rulename{RAA} \) box of its own, whose clash is manufactured by \( \rulename{\vee I} \). Together \( P \) and \( Q \) clash with the premise.
 :::
 
 ::: {.proof}
@@ -621,7 +621,7 @@ Return to @exm-raa-zero, and read its solution one sentence at a time, with the 
 6. "This contradicts \( x > 0 \)." [\( \rulename{\neg E} \): for real numbers \( x > 0 \) is \( \neg(x \le 0) \), the negation of the line \( x \le 0 \).]
 7. "Hence \( x = 0 \)." [\( \rulename{RAA} \) closes the box.]
 
-The words "for a contradiction" do not by themselves tell \( \rulename{\neg I} \) from \( \rulename{RAA} \). Look at what is assumed and what is concluded. Here the box assumes a negation, \( x \ne 0 \), and the conclusion is the positive statement \( x = 0 \), so the step is \( \rulename{RAA} \). The proof of @thm-sqrt2-irrational assumes the positive statement \( r^2 = 2 \) and concludes its negation, so it is \( \rulename{\neg I} \). Chapter 11 opens its proof that the natural numbers are not bounded above with "suppose, for contradiction, that they are bounded above" and concludes that they are not: that is \( \rulename{\neg I} \) too, despite the phrase.
+The words "for a contradiction" do not by themselves tell \( \rulename{\neg I} \) from \( \rulename{RAA} \). Look at what is assumed and what is concluded. Here the box assumes a negation, \( x \ne 0 \), and the conclusion is the positive statement \( x = 0 \), so the step is \( \rulename{RAA} \). The proof of @thm-sqrt2-irrational assumes the positive statement \( r^2 = 2 \) and concludes its negation, so it is \( \rulename{\neg I} \). Chapter 11 opens its proof that the natural numbers are not bounded above by supposing, for contradiction, that they are bounded above, and concludes that they are not: that is \( \rulename{\neg I} \) too, despite the phrase.
 
 ::: {.warning}
 An \( \rulename{RAA} \) box on \( \neg\varphi \) whose assumption is used **only at its last step**, against a \( \varphi \) derived without it, is legal, but it is a direct proof in disguise: the lines before the clash already derive \( \varphi \), so the box can be deleted. The degenerate derivation of \( P \vdash P \) above is the smallest case. Chapter 5 shows how to spot this costume in written proofs and take it off. (A box that reaches \( \bot \) without using its assumption at all is a different matter: the same lines, written before the box, derive \( \bot \) without it, and \( \rulename{\bot E} \) then gives the goal at once.)
@@ -827,7 +827,7 @@ Let \( P \) be the statement "\( x \le 1 \)".
 
 (c) Line \( k \) is \( \rulename{\neg I} \), closing the box that opened with \( \neg P \); the next line is \( \rulename{\neg\neg E} \), citing line \( k \).
 
-(d) Every line of the box is unchanged: the assumption \( x > 1 \), the steps \( x > 0 \) and \( x^2 > x \), and the clash. Only the closing step becomes two lines. For real numbers "not not \( x \le 1 \)" and "\( x \le 1 \)" mean the same, but for the rules they are different statements, joined by \( \rulename{\neg\neg E} \).
+(d) Every line of the box is unchanged: the assumption \( \neg P \) ("\( x \le 1 \) fails", that is \( x > 1 \)), the steps \( x > 0 \) and \( x^2 > x \), and the clash. Only the closing step becomes two lines. For real numbers "not not \( x \le 1 \)" and "\( x \le 1 \)" mean the same, but for the rules they are different statements, joined by \( \rulename{\neg\neg E} \).
 :::
 
 ### C. Going deeper
@@ -879,7 +879,7 @@ $\begin{nd}[schema]
 
 Here \( i = h + 2 \). The first case is a one-line box that already ends with the goal. The second case is the given box with one more line, \( \rulename{\bot E} \) on its \( \bot \); its lines are unchanged and cite what they cited before, since the box has not moved into or out of any other box. No \( \rulename{RAA} \) and no \( \rulename{\neg\neg E} \) is used.
 
-(b) It shortcuts ② followed by ③. Part ② closes the box by \( \rulename{\neg I} \), giving \( \neg\neg\varphi \), then applies \( \rulename{\neg\neg E} \); part ③ replaces that \( \rulename{\neg\neg E} \) by a split on \( \varphi \vee \neg\varphi \) whose \( \neg\varphi \) case is a new box that clashes with the line \( \neg\neg\varphi \). The fragment in (a) uses the given box itself as the \( \neg\varphi \) case, so it never writes \( \neg\neg\varphi \): it saves that line and the separate \( \neg\varphi \) box of ③, with its \( \rulename{\neg E} \) line.
+(b) It shortcuts ② followed by ③. Part ② closes the box by \( \rulename{\neg I} \), giving \( \neg\neg\varphi \), then applies \( \rulename{\neg\neg E} \); part ③ replaces that \( \rulename{\neg\neg E} \) by a split on \( \varphi \vee \neg\varphi \) whose \( \neg\varphi \) case is a new box that clashes with the line \( \neg\neg\varphi \). The fragment in (a) uses the given box itself as the \( \neg\varphi \) case, so it never writes \( \neg\neg\varphi \). Counted exactly, it saves three lines: the line \( \neg\neg\varphi \) of ②, and in ③ the assumption \( \neg\varphi \) at line \( k + 2 \) and the \( \rulename{\neg E} \) line \( k + 3 \). The \( \rulename{\bot E} \) line \( k + 4 \) of ③ survives, moved to the end of the given box.
 :::
 
 ::: {#exr-reductio-and-classical-rules-c2}
@@ -955,7 +955,7 @@ Line 7 cites line 5, the assumption of the enclosing case box, which is still op
 ::: {#exr-reductio-and-classical-rules-c3}
 [C3: Exit check: a classical disjunction]
 
-Derive \( \vdash P \vee (P \to Q) \) using the **primitive** rules only (those of Chapter 1, \( \rulename{\neg E} \), \( \rulename{\bot E} \), \( \rulename{\neg I} \) and \( \rulename{RAA} \)), with no derived rule, so neither \( \rulename{LEM} \) nor \( \rulename{\neg\neg E} \) as a single line. Name the rule on every line, and say which line is classical.
+Derive \( \vdash P \vee (P \to Q) \) using the **primitive** rules only (those of Chapter 1, \( \rulename{\neg E} \), \( \rulename{\bot E} \), \( \rulename{\neg I} \), \( \rulename{{\leftrightarrow}I} \), \( \rulename{{\leftrightarrow}E} \) and \( \rulename{RAA} \)), with no derived rule, so neither \( \rulename{LEM} \) nor \( \rulename{\neg\neg E} \) as a single line. Name the rule on every line, and say which line is classical.
 :::
 
 ::: {.solution}
@@ -1004,7 +1004,7 @@ def-rule-raa (claim): the other two stalls (exr-derived-rules-c1 (b), the conver
 def-rule-raa (claim): the last step of a derivation of a negation never needs RAA (replace the RAA box on not-not-psi by a not-I box on psi) | inline (argued in the paragraph, using exm-double-negation-introduction)
 prp-contrapositive-converse (claim): no derivation of the converse avoids RAA | stated without proof and marked so; nothing depends on it
 prp-excluded-middle (idea): neither P nor not-P is derivable from no premises | informal, flagged "Chapter 3 makes this exact"; motivation only
-prp-peirce (claim): every derivation of Peirce's law uses RAA or one of its equivalents | stated without proof and marked so; nothing depends on it
+prp-peirce (claim): every derivation of Peirce's law uses RAA or one of its equivalents | ch03 (promised; the remark after thm-raa-independent, optional there: value 1/2 at p = 1/2, q = 0), prose pointer; nothing depends on it
 prp-de-morgan (idea): no derivation reaches not-P (or not-Q) from not(P and Q) alone, because a row makes the premise true and the disjunct false | ch03 (promised; thm-soundness), flagged as proved there; motivation only, the proof does not use it
 prp-de-morgan (claim): the LEM route to (d) is 11 lines; no derivation of (d) avoids a classical rule | the route is described inline; the necessity is stated without proof and marked so; nothing depends on it
 thm-classical-rules-interderivable (proof): replacing a line by a fragment keeps every citation available and the premises and last line unchanged | inline (argued in the proof)

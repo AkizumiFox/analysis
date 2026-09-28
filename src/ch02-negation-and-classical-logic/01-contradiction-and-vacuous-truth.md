@@ -4,7 +4,7 @@ Chapter 1 gave rules for "and", "implies" and "or", and not one of them mentions
 
 ## A case that cannot occur
 
-Here is the argument of Argument A in Section 1.1, told as a proof by cases. Let \( n \) be an integer whose square is even. Every integer is even or odd, so there are two cases. If \( n \) is even, we are done. If \( n \) is odd, then \( n^2 \) is odd; but \( n^2 \) is even, and no integer is both, so this case cannot occur. Hence \( n \) is even.
+Here is Argument A of Section 1.1, told as a proof by cases. Let \( n \) be an integer whose square is even. Every integer is even or odd, so there are two cases. If \( n \) is even, we are done. If \( n \) is odd, then \( n^2 \) is odd; but \( n^2 \) is even, and no integer is both, so this case cannot occur. Hence \( n \) is even.
 
 Chapter 1 has a rule for a proof by cases: \( \rulename{\vee E} \) of @def-rules-disjunction. It asks for a disjunction and two boxes, one opened by each disjunct, and **both boxes must end on the same line**, the goal. In the argument above the goal is "\( n \) is even". The first box reaches it at once. The second box does not reach it at all. It reaches "impossible", and then simply declares itself finished.
 
@@ -55,9 +55,9 @@ As with every rule of Chapter 1, the letters \( \varphi \) and \( i, j, k \) fol
 
 **\( \rulename{\bot E} \), the new line.** **Any** statement at all, chosen by the writer. Like the second disjunct in \( \rulename{\vee I} \) (@def-rule-disjunction-introduction), the statement \( \varphi \) occurs in no given line: it need not be related to anything above, and it may itself be a negation, or \( \bot \) again.
 
-Two more observations complete the reading. First, \( \rulename{\bot E} \) is the **elimination** rule of \( \bot \): it says how a line \( \bot \) is used. There is no introduction rule of its own for \( \bot \). The only way a line \( \bot \) is ever written, apart from being assumed, is by \( \rulename{\neg E} \). So \( \rulename{\neg E} \) plays two parts at once: it is the way a negation is used, and it is the way \( \bot \) is produced.
+Two more observations complete the reading. First, \( \rulename{\bot E} \) is the **elimination** rule of \( \bot \): it says how a line \( \bot \) is used. There is no introduction rule of its own for \( \bot \). Other rules can pass a \( \bot \) along (\( \rulename{\bot E} \) may write it again, and \( \rulename{{\to}E} \) writes it from \( \varphi \to \bot \) and \( \varphi \)), but each of them needs \( \bot \) already written in a line it uses. Apart from being assumed, the only way a line \( \bot \) first appears is by \( \rulename{\neg E} \): it is the one rule whose new line is always \( \bot \), from lines in which \( \bot \) need not occur. So \( \rulename{\neg E} \) plays two parts at once: it is the way a negation is used, and it is the way \( \bot \) is produced.
 
-Second, why is \( \rulename{\bot E} \) honest? A rule should never lead from lines that hold to a line that fails. A line \( \bot \) can stand only in a part of a derivation where the premises and the open assumptions cannot all hold together, because \( \bot \) was written from some \( \varphi \) and \( \neg\varphi \) that were both available there. In such a place there is no situation in which the conclusion of \( \rulename{\bot E} \) would have to be checked, so it cannot be caught failing. Chapter 3's soundness theorem turns this remark into a proof.
+Second, why is \( \rulename{\bot E} \) honest? A rule should never lead from lines that hold to a line that fails. A line \( \bot \) can stand only in a part of a derivation where the premises and the open assumptions cannot all hold together, at least when the \( \bot \) was written by \( \rulename{\neg E} \), from some \( \varphi \) and \( \neg\varphi \) that were both available there; that the rules which only pass a \( \bot \) along keep this property is part of what Chapter 3 checks. In such a place there is no situation in which the conclusion of \( \rulename{\bot E} \) would have to be checked, so it cannot be caught failing. Chapter 3's soundness theorem turns this remark into a proof.
 
 ::: {.check}
 Which of these pairs of lines are, as written, an instance of the given lines of \( \rulename{\neg E} \), and in which order must each be cited? The pairs are (i) \( Q \wedge R \) and \( \neg(Q \wedge R) \); (ii) \( \neg P \) and \( \neg\neg P \); (iii) \( P \to Q \) and \( \neg P \to Q \).
@@ -436,7 +436,7 @@ In Lean the two steps are often taken together: `absurd hp hn` closes any goal f
 
 (b) The first is \( \rulename{\neg E} \): "odd" and "even" clash through (E2), and the sentence records the clash. The second is \( \rulename{\bot E} \): "impossible" records a clash (an \( \rulename{\neg E} \) against \( x^2 \ge 0 \), left unsaid), and "there is nothing to prove" closes the case with whatever the case needs.
 
-(c) False. \( \rulename{\bot E} \) runs from \( \bot \) to any statement, not from any statement to \( \bot \). The only rule so far that writes \( \bot \) is \( \rulename{\neg E} \), and it needs two lines \( \varphi \) and \( \neg\varphi \).
+(c) False. \( \rulename{\bot E} \) runs from \( \bot \) to any statement, not from any statement to \( \bot \). \( \rulename{\bot E} \) needs a line \( \bot \) to start from. The rule that records a clash as \( \bot \) is \( \rulename{\neg E} \), and it needs two lines \( \varphi \) and \( \neg\varphi \).
 
 (d) The box is opened by \( Q \), and \( Q \) is already the goal of both boxes. So the box's first line is also its last line, which is all \( \rulename{\vee E} \) asks of it.
 

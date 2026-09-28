@@ -589,7 +589,7 @@ We prove (i) \( \Rightarrow \) (iii) \( \Rightarrow \) (ii) \( \Rightarrow \) (i
 - 1: names a cycle through all three conditions and cites @prp-equivalence-cycle (or proves the needed implications explicitly).
 - 2: (i) \( \Rightarrow \) (iii) by computation.
 - 3: (iii) \( \Rightarrow \) (ii), citing @thm-square-even-implies-even for the factor \( 2 \) and part (a) of @exr-negation-and-contradiction-b3 for the factor \( 3 \).
-- 4: (ii) \( \Rightarrow \) (i), with the odd case for \( b \) ruled out by a correct parity computation.
+- 4: (ii) \( \Rightarrow \) (i), combining the two factors correctly (ruling out \( b \) odd, or \( n = 3n - 2n \), or otherwise).
 
 Fatal errors (0 for the step): a "cycle" that omits a condition; using "\( 2 \mid n \) and \( 3 \mid n \) gives \( 6 \mid n \)" without proof; using "\( 6 \mid n^2 \) implies \( 6 \mid n \)" as known.
 Any other cycle through the three conditions earns full marks if each of its arrows is proved: 1 point for the cycle and its citation, and 3 points for each of its three arrows.
@@ -599,7 +599,7 @@ Any other cycle through the three conditions earns full marks if each of its arr
 [C2: Dropping a hypothesis, and repairing the statement]
 
 ::: {.enumerate options="label=(\alph*)"}
-1. Suppose only \( y \ge 0 \) is assumed in @thm-squares-order, and \( x \) is an arbitrary real number. Which direction of the equivalence remains true? Justify your answer.
+1. Suppose only \( y \ge 0 \) is assumed in @thm-squares-order, and \( x \) is an arbitrary real number. The remark after it says that \( (\Leftarrow) \) survives. Which steps of its proof use \( y \ge 0 \), and why is \( x \ge 0 \) never needed? Refute \( (\Rightarrow) \) with a new pair.
 2. Prove that for **all** real numbers \( x \) and \( y \), \( \abs{x} \le \abs{y} \) if and only if \( x^2 \le y^2 \).
 :::
 
@@ -607,7 +607,7 @@ Any other cycle through the three conditions earns full marks if each of its arr
 :::
 
 ::: {.solution}
-(a) The direction \( (\Leftarrow) \) remains true. Its proof in @thm-squares-order used \( y \ge 0 \), to get \( x > 0 \) from \( x > y \) and to multiply \( y < x \) by \( y \), but never used \( x \ge 0 \). So the same proof shows: if \( y \ge 0 \) and \( x^2 \le y^2 \), then \( x \le y \). The direction \( (\Rightarrow) \) fails, with \( x = -2 \) and \( y = 1 \): here \( x \le y \) and \( y \ge 0 \), but \( x^2 = 4 > 1 = y^2 \).
+(a) The proof of \( (\Leftarrow) \) uses \( y \ge 0 \) twice: for \( x > 0 \) from \( x > y \), and for \( y^2 \le xy \). Its other multiplication is by the derived \( x > 0 \), so \( x \ge 0 \) is never used. For \( (\Rightarrow) \), take \( x = -3 \), \( y = 1 \): \( x \le y \) and \( y \ge 0 \), but \( x^2 = 9 > 1 = y^2 \).
 
 (b) Let \( x \) and \( y \) be real numbers. Then \( \abs{x} \ge 0 \) and \( \abs{y} \ge 0 \), so @thm-squares-order applies to the pair \( \abs{x} \), \( \abs{y} \) and gives \( \abs{x} \le \abs{y} \) if and only if \( \abs{x}^2 \le \abs{y}^2 \). Finally \( \abs{x}^2 = x^2 \), since \( \abs{x} \) is \( x \) or \( -x \) and \( (-x)^2 = x^2 \), and likewise \( \abs{y}^2 = y^2 \). This proves that \( \abs{x} \le \abs{y} \) if and only if \( x^2 \le y^2 \).
 :::

@@ -465,8 +465,6 @@ So \( p \) and \( q \) are both even \( [\rulename{\wedge I}] \); this contradic
 - 1: rules named at the logical steps, and the passage from the arbitrary \( r \) to every rational number.
 
 Fatal errors (0 for the step): applying @thm-square-even-implies-even to \( q \) with only \( 3q^2 \) known to be even; using "if \( 6 \) divides \( n^2 \), then \( 6 \) divides \( n \)" without proof.
-
-A proof that works with divisibility by \( 3 \) instead, using the facts of @exr-negation-and-contradiction-b3, earns full marks if every step is justified from facts it states.
 :::
 
 ::: {#exr-negation-and-contradiction-c2}
