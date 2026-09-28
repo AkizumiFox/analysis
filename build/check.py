@@ -277,7 +277,7 @@ def check(book: Book, quiet: bool = False) -> bool:
     # exr-finding-derivations-b1) QUOTE three-valued countermodel values the text does
     # not print. Once `tools/check_numbers.py` is clean, set this True. Its advisories
     # (blocks with numbers but no sidecar) are summarized in one line.
-    NUMBERS_FATAL = False
+    NUMBERS_FATAL = True
     if has_style and (book.root / "verify").is_dir():
         numbers_checker = _tool("check_numbers")
         num_fatal, num_advisory = numbers_checker.find_violations(

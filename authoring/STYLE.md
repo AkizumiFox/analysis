@@ -381,6 +381,7 @@ The flawed argument is written to be plausible: the error sits in one line, and 
 
 Rules:
 - The problem text **never names its source chapter**; the solution does, with `@ref`.
+- **Chapters that end in a Gate.** The R group sits in the last section that has an exercise set, just before the Gate section.
 - **Early chapters.** Where the book has too few earlier chapters (Chapter 1 has none; Chapters 2–4 have no earlier Part), R items reach back as far as the book allows, within the chapter if need be, spaced as far apart as possible.
 - Each item takes at most 20 minutes.
 - Prefer results that later chapters rarely cite in proofs: a heavily cited result is reviewed for free, a dormant one is forgotten.
