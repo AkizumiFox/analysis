@@ -266,14 +266,14 @@ The rest of this chapter is built to a pattern, and knowing the pattern in advan
 
 Section 1.2 says what a derivation looks like and how to read one. It uses no logic at all. Its only rules are two facts about inequalities, borrowed for practice, so that the **format** can be seen on its own: numbered lines, premises at the top, and a justification on every line.
 
-Each of Sections 1.3 to 1.7 then introduces **one** rule, or one half of a pair. The rule is defined by its **pattern**, a small picture of the lines it needs and the line it writes. The pattern is read clause by clause, since each clause is there for a reason and each is broken by some tempting mistake. Then come several derivations with the new rule, from the smallest possible to a few lines longer, and each is preceded by an *Idea* that says why each rule was chosen. Each section also shows its rule at work in a proof about numbers, where the rule is usually invisible.
+Each of Sections 1.3 to 1.7 then introduces **one** rule, except that Section 1.3 introduces the pair of rules for "and", which are so simple that the two are one idea. The rule is defined by its **pattern**, a small picture of the lines it needs and the line it writes. The pattern is read clause by clause, since each clause is there for a reason and each is broken by some tempting mistake. Then come several derivations with the new rule, from the smallest possible to a few lines longer, and each is preceded by an *Idea* that says why each rule was chosen. Each section also shows its rule at work in a proof about numbers, where the rule is usually invisible.
 
 The Ideas ask two questions, again and again, and it is worth learning them now.
 
 - *What does the goal's main connective ask for?* The statement we are trying to reach decides the last step of the derivation, and so its overall shape.
 - *What does an available line's main connective let me do?* A statement we already have decides what we can get out of it.
 
-The first question works backwards, from the bottom of a derivation; the second works forwards, from the top. Section 1.3 gives the two directions their names, and every later section adds its rule to both.
+The first question works backwards, from the bottom of a derivation; the second works forwards, from the top. Section 1.3 gives the two directions their names, and every later section adds its rule to one of them: an introduction rule answers the first question, an elimination rule the second.
 
 ## Exercises
 
@@ -283,30 +283,27 @@ The first question works backwards, from the bottom of a derivation; the second 
 [A1]
 
 ::: {.enumerate options="label=(\alph*)"}
-1. State the definition of a statement. Is "\( 10^{100} + 1 \) is prime" a statement?
-2. Let \( x \) be a real number. Is "\( x^2 - 1 = 0 \)" a statement? Is "\( 0^2 - 1 = 0 \)"?
-3. With \( P \): "\( n \) is even" and \( Q \): "\( n \) is prime", write "\( n \) is prime but not even" in symbols.
-4. Find the main connective of \( P \wedge Q \to \neg R \), and write the statement with all its parentheses.
-5. True or false, with a reason: if \( P \) and \( Q \) are both true, then \( P \vee Q \) is false.
-6. Let \( x \) and \( y \) be real numbers. Write the form of the argument "\( x > 0 \) and \( y > 0 \); so \( y > 0 \) and \( x > 0 \)" as a sequent, saying what each letter stands for.
-7. Which of \( \wedge \), \( \vee \), \( \to \) is the main connective of \( (P \vee Q) \wedge (Q \to R) \)? Using the preview table of "Each connective, two rules", say what a proof of this statement must do, and name the rule that Section 1.3 will state for it.
+1. State the definition of a statement. Is "\( 10^{100} + 1 \) is prime" a statement? For a real number \( x \), is "\( x^2 - 1 = 0 \)" a statement? Is "\( 0^2 - 1 = 0 \)"?
+2. With \( P \): "\( n \) is even" and \( Q \): "\( n \) is prime", write "\( n \) is prime but not even" in symbols.
+3. Find the main connective of \( P \wedge Q \to \neg R \), and write the statement with all its parentheses.
+4. True or false, with a reason: if \( P \) and \( Q \) are both true, then \( P \vee Q \) is false.
+5. Let \( x \) and \( y \) be real numbers. Write the form of the argument "\( x > 0 \) and \( y > 0 \); so \( y > 0 \) and \( x > 0 \)" as a sequent, saying what each letter stands for.
+6. Which of \( \wedge \), \( \vee \), \( \to \) is the main connective of \( (P \vee Q) \wedge (Q \to R) \)? Using the preview table of "Each connective, two rules", say what a proof of this statement must do, and name the rule that Section 1.3 will state for it.
 :::
 :::
 
 ::: {.solution}
-(a) A statement is a declarative sentence that is either true or false, and not both (@def-statement). Yes: \( 10^{100} + 1 \) is a definite integer, so it either is prime or is not. The definition does not ask us to know which.
+(a) A statement is a declarative sentence that is either true or false, and not both (@def-statement). Yes: \( 10^{100} + 1 \) is a definite integer, so it either is prime or is not. The definition does not ask us to know which. With \( x \) fixed, as in this chapter's convention, "\( x^2 - 1 = 0 \)" is a statement about that one number: true if \( x \) is \( 1 \) or \( -1 \), false otherwise. Without the convention it would be an open sentence. The sentence "\( 0^2 - 1 = 0 \)" is a statement outright, and it is false, since \( 0^2 - 1 = -1 \).
 
-(b) With \( x \) fixed, as in this chapter's convention, "\( x^2 - 1 = 0 \)" is a statement about that one number: true if \( x \) is \( 1 \) or \( -1 \), false otherwise. Without the convention it would be an open sentence. The sentence "\( 0^2 - 1 = 0 \)" is a statement outright, and it is false, since \( 0^2 - 1 = -1 \).
+(b) \( Q \wedge \neg P \). The word "but" is a conjunction.
 
-(c) \( Q \wedge \neg P \). The word "but" is a conjunction.
+(c) Convention (2) groups \( P \wedge Q \) before \( \to \) acts, and convention (1) lets \( \neg \) take only \( R \). So the statement is \( (P \wedge Q) \to (\neg R) \), and its main connective is \( \to \) (@def-main-connective).
 
-(d) Convention (2) groups \( P \wedge Q \) before \( \to \) acts, and convention (1) lets \( \neg \) take only \( R \). So the statement is \( (P \wedge Q) \to (\neg R) \), and its main connective is \( \to \) (@def-main-connective).
+(d) False. The mathematical "or" is inclusive, so \( P \vee Q \) is true when both parts are true.
 
-(e) False. The mathematical "or" is inclusive, so \( P \vee Q \) is true when both parts are true.
+(e) With \( P \): "\( x > 0 \)" and \( Q \): "\( y > 0 \)", the form is \( P \wedge Q \vdash Q \wedge P \) (@def-sequent). Section 1.3 derives it.
 
-(f) With \( P \): "\( x > 0 \)" and \( Q \): "\( y > 0 \)", the form is \( P \wedge Q \vdash Q \wedge P \) (@def-sequent). Section 1.3 derives it.
-
-(g) \( \wedge \): each parenthesized part is complete, and the last step joins them with "and". So a proof of it has two parts: it proves \( P \vee Q \), and it proves \( Q \to R \). The rule that puts the two parts together is \( \rulename{\wedge I} \). This is the first question of "What comes next", asked before any rule has been stated exactly: the goal's main connective decides the last step.
+(f) \( \wedge \): each parenthesized part is complete, and the last step joins them with "and". So a proof of it has two parts: it proves \( P \vee Q \), and it proves \( Q \to R \). The rule that puts the two parts together is \( \rulename{\wedge I} \). This is the first question of "What comes next", asked before any rule has been stated exactly: the goal's main connective decides the last step.
 :::
 
 ### B. Practice
@@ -415,9 +412,10 @@ Let \( x \) be a real number.
 <!-- dependency ledger
 exm-statements (example): 2^11 - 1 = 2047 = 23 * 89, and 0.999 < 1 | inline arithmetic (checked by verify/ch01/exm-statements.py)
 exm-statements (example): the twin prime conjecture is open | status of an open problem at the time of writing; not used in any argument
-hook-two-arguments (example): Argument A uses that every integer is even or odd, and that no integer is both | school algebra, allowed as a fact in examples by the Chapter 1 blueprint (Allowed prerequisites); ch07 (promised); the hook is an illustration, and no proof here uses it
-connectives-table (example): every real number is positive or less than 1; 0 < 1/2 < 1; 2 > 1 | school algebra (Allowed prerequisites); ch11 (promised)
+def-statement (example): the opening's Argument A uses that every integer is even or odd, and that no integer is both | school algebra, allowed as a fact in examples by the Chapter 1 blueprint (Allowed prerequisites); ch07 (promised); the hook is an illustration, and no proof here uses it
+def-main-connective (example): the connective table before it: every real number is positive or less than 1; 0 < 1/2 < 1; 2 > 1 | school algebra (Allowed prerequisites); ch11 (promised)
 def-sequent (example): the Quick check's witness n = 2 (2 is even and not divisible by 4; a multiple of 4 is even) | inline arithmetic (checked by verify/ch01/def-sequent.py)
+exr-statements-and-connectives-a1 (solution): x^2 - 1 = 0 exactly when x = 1 or x = -1; 0^2 - 1 = -1 | school algebra (Allowed prerequisites); ch11 (promised)
 exr-statements-and-connectives-b2 (solution): a product of two positive reals is positive | school algebra (Allowed prerequisites); ch11 (promised)
 exr-statements-and-connectives-c1 (solution): the square of a non-zero real is positive; (-2)^2 = 4 | school algebra (Allowed prerequisites); ch11 (promised); checked by verify/ch01/exr-statements-and-connectives-c1.py
 exr-statements-and-connectives-c2 (solution): multiplying an inequality by a positive number keeps it; x^2 > 1 iff |x| > 1 (given in the item) | school algebra (Allowed prerequisites); ch11 (promised); checked by verify/ch01/exr-statements-and-connectives-c2.py

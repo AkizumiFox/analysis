@@ -2,7 +2,7 @@
 x < 3 gives x <= 3 = (x < 3 or x = 3); |x - 2| < 1 implies 1 < x < 3; 0 < x < 1 gives x < 1."""
 from _grid import grid
 
-QUOTED = {"(b) fourth sentence": "|x - 2| < 1 -> 1 < x < 3"}
+QUOTED = {"(b) fourth sentence": r"\abs{x - 2} < 1 \) implies \( 1 < x < 3"}
 
 for x in grid():
     assert (x <= 3) == (x < 3 or x == 3)

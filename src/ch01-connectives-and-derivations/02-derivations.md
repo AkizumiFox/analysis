@@ -1,6 +1,6 @@
 # Derivations: Premises, Lines and Justifications
 
-The previous section ended with a slogan: a proof is a chain in which every line is a premise, an assumption, or one application of a rule. This section makes part of that slogan exact, the premises and the lines that apply a rule; assumptions wait until Section 1.5. It says what such a chain looks like on the page, how each line carries its reason, and how anyone can check the chain without understanding its subject. It introduces no rule of logic. Its only rules are two facts about inequalities, borrowed for practice, so that the **format** of a derivation can be learned on its own.
+The previous section stated a slogan: a proof is a chain in which every line is a premise, an assumption, or one application of a rule. This section makes part of that slogan exact, the premises and the lines that apply a rule; assumptions wait until Section 1.5. It says what such a chain looks like on the page, how each line carries its reason, and how anyone can check the chain without understanding its subject. It introduces no rule of logic. Its only rules are two facts about inequalities, borrowed for practice, so that the **format** of a derivation can be learned on its own.
 
 ## Checking a chain without understanding it
 
@@ -75,7 +75,7 @@ $\begin{nd}[schema]
 \end{center}
 ```
 
-Its letter \( c \) occurs only in the new line, so it may be replaced by **any** expression; consistency asks only that the **same** expression is added on both sides. From \( x < 3 \) the rule may write \( x + 1 < 3 + 1 \) or \( x + y < 3 + y \), but not \( x + 1 < 3 + 2 \). Nor does it write \( x + 1 < 4 \): that is a different string of symbols. A logical rule with a letter that occurs only in its new line appears in Section 1.6.
+Its letter \( c \) occurs only in the new line, so it may be replaced by **any** expression; consistency asks only that the **same** expression is added on both sides. From \( y < 5 \) the rule may write \( y + 1 < 5 + 1 \) or \( y + x < 5 + x \), but not \( y + 1 < 5 + 2 \). Nor does it write \( y + 1 < 6 \): that is a different string of symbols. A logical rule with a letter that occurs only in its new line appears in Section 1.6.
 
 *Why define rules this way?* Because a rule applied by matching can be checked by someone who knows nothing about the subject. The schema turns "this step is obviously fine" into "this step matches that pattern", a claim anyone can test. Every rule of logic in the following sections is given in this form, and the definition was worded so that none of them needs a new one: Section 1.5 adds given **boxes**, cited as ranges of lines, and a rule of Chapter 4 has no given lines at all.
 
@@ -533,7 +533,7 @@ def-rule-schema (example): 2/4 = 1/2 | inline arithmetic
 exm-chaining-derivation (example): none beyond the toy rule Tr | inline; checked by verify/ch01/exm-chaining-derivation.py
 exm-derivations (solution): every rule met before boxes cites at least one line (and-I, and-E, ->E) | the third and fourth sections of this chapter (later sections, stated as a meta-claim, not used in a proof; blueprint ch01.md, Rule system)
 exm-not-a-derivation (solution): the instance and earlier-line claims for both changes | inline; checked by verify/ch01/exm-not-a-derivation.py
-how-this-looks (example): 0 < 1/(n+1) < 1/n <= 1 for n in N; from a < b and b <= c infer a < c | school algebra; ch11 (promised)
+exm-not-a-derivation (example): the "How this looks" chain after it: 0 < 1/(n+1) < 1/n <= 1 for n in N; from a < b and b <= c infer a < c | school algebra; ch11 (promised)
 exr-derivations-a1 (solution): Tr and Sh lead from true lines to true lines; going down the derivation line by line is an induction | school algebra, ch11 (promised); the induction is ch03 (promised)
 exr-derivations-b3 (solution): 0 < 1/4 < 1/3 < 1/2; m - 1 joins; the lower bound m - 1 is stated, not proved or used | inline arithmetic, checked by verify/ch01/exr-derivations-b3.py (which also confirms the lower bound for m <= 5); proof by induction ch03 (promised)
 exr-derivations-c1 (solution): 0 < 1 is true and 1 < 0 is false | inline arithmetic

@@ -159,7 +159,7 @@ Section 1.2 defined a derivation without boxes (@def-box-free-derivation): every
 
 Fix a list of rules. A **derivation** is a finite list of numbered lines \( 1, 2, \dots, n \), each carrying one statement and a justification, together with a set of **boxes**. A box is a block of consecutive lines whose first line is an assumption. Any two boxes are either disjoint or **one inside the other**. A box ends at one of its lines and is **closed** after it. The **last line** of the derivation lies outside every box.
 
-**The scope rule.** Line \( i \) is **available** at line \( k \) if \( i < k \) and **every** box containing line \( i \) also contains line \( k \). A box is **available** at line \( k \) if it ends before line \( k \) and the boxes containing it are **exactly** the boxes containing line \( k \). A line may cite only lines and boxes available at it.
+**The scope rule.** Line \( i \) is **available** at line \( k \) if \( i < k \) and **every** box containing line \( i \) also contains line \( k \). A box is **available** at line \( k \) if it ends before line \( k \) and the boxes other than itself that contain it are **exactly** the boxes containing line \( k \). A line may cite only lines and boxes available at it.
 
 Every line is exactly one of the following:
 
@@ -193,6 +193,8 @@ The scope rule is the definition's real content. Line \( i \) is available at li
 - a line in no box is available at every later line;
 - a line inside a box is available further down that box, and inside every box opened within it;
 - once its box closes, the line is available nowhere.
+
+*Open a box, close a box: an assumption lives exactly as long as its box.*
 
 A closed box, cited as a whole by \( \rulename{{\to}I} \), must sit directly in the part of the derivation where the citing line is. The citing line may not lie outside a box that contains the cited box (that box has closed too), nor inside a further box opened after the cited box ended.
 
@@ -449,7 +451,7 @@ Every line cites line 1, which lies in no box, or lines of the box \( \lines{2}{
 
 In the first derivation the boxes are nested, and the inner one closes first: an assumption made later is discharged earlier. That is the general pattern, forced by @def-derivation, since two boxes are either disjoint or one inside the other.
 
-Read mathematically, the first claim turns "if \( x > 0 \) and \( y > 0 \), then \( xy > 0 \)" into "if \( x > 0 \), then (if \( y > 0 \), then \( xy > 0 \))", and the second turns it back. The two forms say the same thing, one hypothesis at a time or both at once. Chapter 2 §04 gives a name and a symbol to a pair of statements that, like these two, can each be derived from the other.
+Read mathematically, the first claim turns "if \( x > 0 \) and \( y > 0 \), then \( xy > 0 \)" into "if \( x > 0 \), then (if \( y > 0 \), then \( xy > 0 \))", and the second turns it back. The two forms say the same thing, one hypothesis at a time or both at once. Section 2.4 gives a name and a symbol to a pair of statements that, like these two, can each be derived from the other.
 
 ::: {.check}
 To show \( Q \wedge R \vdash (P \to Q) \wedge (S \to R) \), does the derivation need one box or two?
@@ -491,7 +493,7 @@ Every rule is something mathematicians already say. The table adds the rules of 
 
 The sentence for \( \rulename{{\to}I} \) is the one to watch. "Assume \( P \)" opens a box, and "hence \( Q \)" is its last line. The closing line, "so \( P \) implies \( Q \)", is usually left unsaid in written mathematics. It is still there: the box closes whether or not anyone says so. It is also the line Argument B got wrong. Chapter 5 turns sentences like these into a dictionary between derivations and prose.
 
-Every derivation in this section was built from the rules alone, and each repeated in full whatever it needed. Chapter 2 §03 lets a sequent already derived be used as a single line of a later derivation; until then, a derivation that needs an earlier result must repeat its steps.
+Every derivation in this section was built from the rules alone, and each repeated in full whatever it needed. Section 2.3 lets a sequent already derived be used as a single line of a later derivation; until then, a derivation that needs an earlier result must repeat its steps.
 
 ## Exercises
 
@@ -522,7 +524,7 @@ $\begin{nd}
 2. Fill in the justifications (i), (ii), (iii), and say what the derivation shows, written with \( \vdash \).
 3. Which of lines 1–5 are available at line 6? What is the context of line 5?
 4. Someone extends the derivation by a line 7, the statement \( R \) justified by \( \rulename{{\to}E} \) 6, 3. Is the result a derivation? If not, name the clause of @def-derivation that line 7 breaks.
-5. In the first derivation in the proof of @prp-curry, why may line 4 cite line 2, and why is the inner box closed before the outer one?
+5. In the first derivation in the proof of @prp-curry, why is line 4 available at line 5? And why is the inner box closed before the outer one?
 6. In the same derivation, which rule produces line 5, and which lines does it cite?
 :::
 :::
@@ -536,7 +538,7 @@ $\begin{nd}
 
 (d) No. Line 6 is available at line 7, but line 3 is not: it lies in the box \( \lines{3}{5} \), which does not contain line 7. So line 7 applies a rule to a line that is not available, which (D4) forbids.
 
-(e) Line 2 lies in exactly one box, \( \lines{2}{6} \), and that box contains line 4; so by the scope rule line 2 is available at line 4. The inner box \( \lines{3}{5} \) lies inside the outer box \( \lines{2}{6} \), and two boxes are either disjoint or one inside the other, so the inner box must end first. Read off the goal: the inner box proves \( Q \to R \), which is the last line the outer box needs.
+(e) Line 4 lies in two boxes, \( \lines{2}{6} \) and \( \lines{3}{5} \), and both contain line 5; so by the scope rule line 4 is available at line 5. The inner box \( \lines{3}{5} \) lies inside the outer box \( \lines{2}{6} \), and two boxes are either disjoint or one inside the other, so the inner box must end first. Read off the goal: the inner box proves \( Q \to R \), which is the last line the outer box needs.
 
 (f) \( \rulename{{\to}E} \), citing line 1, the implication \( (P \wedge Q) \to R \), and line 4, its hypothesis \( P \wedge Q \).
 :::

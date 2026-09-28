@@ -1,6 +1,6 @@
 # Or, Introduced
 
-Sections 1.3 to 1.5 gave the rules for "and" and "implies". With them we can take a conjunction apart, fire an implication on its hypothesis, and prove an implication by opening a box. This section starts on the third connective of the chapter, "or". It gives the rule that **proves** a disjunction, \( \rulename{\vee I} \), and a habit that goes with it: when the goal is a disjunction, commit to one of its sides only when that side is in hand. It ends with a goal that the rules still cannot reach, and that goal is the question the next section answers.
+Sections 1.3 to 1.5 gave the rules for "and" and "implies". With them we can take a conjunction apart, fire an implication on its hypothesis, and prove an implication by opening a box. This section starts on the third connective of the chapter, "or". It gives the rule that **proves** a disjunction, \( \rulename{\vee I} \), and a habit that goes with it: when the goal is a disjunction, commit to one of its sides only when that side is in hand. Near its end it meets a goal that the rules still cannot reach, and that goal is the question the next section answers.
 
 ## Throwing information away on purpose
 
@@ -64,14 +64,14 @@ Now three non-examples, each a small change of an instance. Take line 1 to be th
 - From \( Q \vee P \), the line "\( P \vee Q \) — \( \rulename{\vee I} \) 1" is not an instance. With \( \varphi \) replaced by \( Q \vee P \), the two schemas give \( (Q \vee P) \vee \psi \) and \( \psi \vee (Q \vee P) \). In both, the cited statement is one whole side of the new line, and \( Q \vee P \) is not a side of \( P \vee Q \). Whether \( P \vee Q \) follows from \( Q \vee P \) at all is the question at the end of this section.
 - From \( P \vee Q \), the line "\( P \) — \( \rulename{\vee I} \) 1" is not an instance. It runs the rule backwards, from a disjunction to one of its sides.
 
-**Why this rule.** In mathematics "or" is inclusive (Section 1.1): \( \varphi \vee \psi \) is true when \( \varphi \) is true, when \( \psi \) is true, and when both are. So \( \varphi \vee \psi \) is true whenever \( \varphi \) is, whatever \( \psi \) says. The rule is this first clause read as a permission. It is also the only rule of the chapter so far whose new line is a disjunction built on the spot. The other rules can produce a disjunction only by copying a line that already is one (R), or by cutting one out of a bigger line, as \( \rulename{\wedge E} \) cuts a side out of a conjunction and \( \rulename{{\to}E} \) the conclusion out of an implication. That is why, below, every derivation that needs a disjunction it cannot cut out of a line reaches for \( \rulename{\vee I} \).
+**Why this rule.** In mathematics "or" is inclusive (Section 1.1): \( \varphi \vee \psi \) is true when \( \varphi \) is true, when \( \psi \) is true, and when both are. So \( \varphi \vee \psi \) is true whenever \( \varphi \) is, whatever \( \psi \) says. The rule is this first clause read as a permission. It is also the only rule of the chapter so far whose new line is a disjunction built on the spot. The other rules can produce a disjunction only by copying a line that already is one (\( \rulename{R} \)), or by cutting one out of a bigger line, as \( \rulename{\wedge E} \) cuts a side out of a conjunction and \( \rulename{{\to}E} \) the conclusion out of an implication. That is why, below, every derivation that needs a disjunction it cannot cut out of a line reaches for \( \rulename{\vee I} \).
 
 **Why it is safe.** If the given line is true, the new line is true, whatever \( \psi \) is, by the inclusive reading. What the step loses is information: a reader of \( \varphi \vee \psi \) can no longer tell which side holds. Chapter 3 proves that derivations built from the rules of this chapter and the next never lead from true premises to a false conclusion; for \( \rulename{\vee I} \) the reason is the sentence just given.
 
 *\( \rulename{\vee I} \) loses information, never truth.*
 
 ::: {.warning}
-\( \rulename{\vee I} \) runs one way only. From \( \varphi \) it gives \( \varphi \vee \psi \); from \( \varphi \vee \psi \) no rule of the book gives \( \varphi \) in one step. The phrase "in particular" belongs to \( \rulename{\wedge E} \), not to "or". For a concrete failure, let \( x \) be a real number: "\( x \ge 0 \) or \( x < 0 \)" is true whatever \( x \) is, and "in particular \( x \ge 0 \)" is false at \( x = -1 \).
+\( \rulename{\vee I} \) runs one way only. From \( \varphi \) it gives \( \varphi \vee \psi \); from \( \varphi \vee \psi \) it gives nothing, and in general \( \varphi \) does not follow from \( \varphi \vee \psi \) at all. The phrase "in particular" belongs to \( \rulename{\wedge E} \), not to "or". For a concrete failure, let \( x \) be a real number: "\( x \ge 0 \) or \( x < 0 \)" is true whatever \( x \) is, and "in particular \( x \ge 0 \)" is false at \( x = -1 \).
 :::
 
 ::: {.warning}
@@ -97,7 +97,7 @@ Let \( x \) be a real number, and suppose line 1 of a derivation is \( x = 2 \).
 
 Section 1.3 asked two questions before writing any line: *what is the goal's main connective?* (goal-directed reasoning, from the bottom up) and *what are the available lines' main connectives?* (premise-directed reasoning, from the top down). Each rule so far added an answer. A conjunction as a goal splits into two subgoals, both needed (\( \rulename{\wedge I} \)); an implication as a goal opens a box (\( \rulename{{\to}I} \), @def-rules-implication).
 
-Now \( \vee \) joins the list of goals. If the goal is \( \varphi \vee \psi \), its last line can be \( \rulename{\vee I} \), and then the subgoal is \( \varphi \) **or** \( \psi \): one of the two, of our choosing. That choice is new. A conjunction's two subgoals are both needed, so there is nothing to choose; here only one side is needed, and a wrong choice can leave us working towards a statement that does not follow from what we have. A goal \( P \vee Q \) from the premise \( Q \) shows the danger in miniature: choose \( P \), and the new subgoal \( P \) cannot be reached from \( Q \) at all (take \( P \) false and \( Q \) true).
+Now \( \vee \) joins the list of goals. If the goal is \( \varphi \vee \psi \), its last line can be \( \rulename{\vee I} \), and then the subgoal is \( \varphi \) **or** \( \psi \): one of the two, of our choosing. That choice is new. A conjunction's two subgoals are both needed, so there is nothing to choose; here only one side is needed, and a wrong choice can leave us working towards a statement that does not follow from what we have. A goal \( P \vee Q \) from the premise \( Q \) shows the danger in miniature: choose \( P \), and the new subgoal \( P \) cannot be reached from \( Q \) at all: with \( P \) false and \( Q \) true, a derivation would lead from a true premise to a false conclusion, and Chapter 3 proves that no derivation does.
 
 So the goal-directed step for \( \vee \) comes with a caution:
 
@@ -198,10 +198,10 @@ $\begin{nd}
 \end{center}
 ```
 
-This derivation uses every rule of the chapter so far except \( \rulename{\wedge E} \) and R. Line 4 cites line 2, from the outer box, which is still open at line 4. Line 5 cites line 1 from inside two boxes: a line in no box is available everywhere below it. Line 7 is a line of the outer box itself, which is why \( \rulename{{\to}I} \) at line 8 may cite \( \lines{2}{7} \).
+This derivation uses every rule of the chapter so far except \( \rulename{\wedge E} \) and \( \rulename{R} \). Line 4 cites line 2, from the outer box, which is still open at line 4. Line 5 cites line 1 from inside two boxes: a line in no box is available everywhere below it. Line 7 is a line of the outer box itself, which is why \( \rulename{{\to}I} \) at line 8 may cite \( \lines{2}{7} \).
 :::
 
-Derivation (c) is where the habit of postponing pays. Suppose that, inside the box, we had committed at once to the goal's right side, planning to reach \( Q \vee R \) from \( R \). The box would then need \( R \) itself, and nothing supplies it: neither the premise \( P \to Q \) nor the assumption \( P \) mentions \( R \), so no rule can take \( R \) out of them. The plan was dead from its first step, as the instance in the next warning confirms.
+Derivation (c) is where the habit of postponing pays. Suppose that, inside the box, we had committed at once to the goal's right side, planning to reach \( Q \vee R \) from \( R \). The box would then need \( R \) itself, from the premise \( P \to Q \) and the assumption \( P \) alone. The instance in the next warning makes both of these true and \( R \) false, so no derivation reaches \( R \) from them (a derivation never leads from true lines to a false one, which Chapter 3 proves). The plan was dead from its first step.
 
 ::: {.warning}
 Choosing a side of a disjunctive goal too early turns a reachable goal into an unreachable one. In (c), the goal inside the box is \( Q \vee R \). A writer who opens with "we show \( R \)" has set out to prove, from \( P \to Q \) and \( P \), the statement \( R \); with \( x \) a real number, \( P \): "\( x > 2 \)", \( Q \): "\( x > 1 \)" and \( R \): "\( x > 3 \)", the premise and the assumption hold at \( x = 2.5 \), and \( R \) fails there. Keep the goal as the whole disjunction until one side appears on a line.
@@ -260,7 +260,7 @@ In the derivation of @exm-or-hypothesis-split, line 3 could not have been skippe
 
 The most obvious fact about "or" is that the order of its sides does not matter: \( P \vee Q \vdash Q \vee P \). Try to derive it with the rules so far.
 
-The goal \( Q \vee P \) is a disjunction, so we postpone it and look at the premise. Its main connective is \( \vee \), and no rule so far takes a disjunction apart. \( \rulename{\wedge E} \) needs a conjunction and \( \rulename{{\to}E} \) an implication; \( \rulename{\wedge I} \), \( \rulename{\vee I} \) and R may cite \( P \vee Q \), but only to copy it or to build something larger around it. So the premise gives us nothing, and neither side of the goal ever comes into hand.
+The goal \( Q \vee P \) is a disjunction, so we postpone it and look at the premise. Its main connective is \( \vee \), and no rule so far takes a disjunction apart. \( \rulename{\wedge E} \) needs a conjunction and \( \rulename{{\to}E} \) an implication; \( \rulename{\wedge I} \), \( \rulename{\vee I} \) and \( \rulename{R} \) may cite \( P \vee Q \), but only to copy it or to build something larger around it. So the premise gives us nothing, and neither side of the goal ever comes into hand.
 
 We can get this far, though. Each side of the premise, **assumed** in a box, leads to the goal:
 
@@ -360,7 +360,7 @@ The phrase is different from the "in particular" of \( \rulename{\wedge E} \) on
     - "Since \( 0 < x < 1 \), in particular \( x < 1 \)."
     - "Since \( \abs{x - 2} < 1 \) implies \( 1 < x < 3 \), and \( \abs{x - 2} < 1 \), we get \( 1 < x < 3 \)."
 3. True or false, with a reason: \( \rulename{\vee I} \) may introduce a side that is false.
-4. In the derivation of @exm-or-hypothesis-split, the goal is not a disjunction. Why is \( \rulename{\vee I} \) used at all?
+4. To show \( Q, \ (P \vee Q) \to (Q \to R) \vdash R \), which rule writes the first line after the premises, and what is that line? Why is that rule used, although the goal is not a disjunction?
 :::
 :::
 
@@ -371,7 +371,7 @@ The phrase is different from the "in particular" of \( \rulename{\wedge E} \) on
 
 (c) True. The added side \( \psi \) may be any statement, false ones included, as in the line \( (x = 2) \vee (1 = 0) \) of the Quick check after the definition. The new line is still true whenever the cited line is, because "or" is inclusive: one true side is enough.
 
-(d) Because a premise's hypothesis is a disjunction. The premise \( (P \vee Q) \to R \) is the only line that mentions \( R \), and \( \rulename{{\to}E} \) fires on it only when \( P \vee Q \) itself stands on a line. Inside the box of \( P \), only \( P \) is on a line; \( \rulename{\vee I} \) turns it into \( P \vee Q \) (line 3), and likewise \( Q \) in the second box (line 7).
+(d) The rule is \( \rulename{\vee I} \), by its second schema, and line 3 is \( P \vee Q \), from line 1. It is used because a premise's hypothesis is a disjunction. The goal \( R \) occurs only in the premise \( (P \vee Q) \to (Q \to R) \), and \( \rulename{{\to}E} \) fires on that premise only when \( P \vee Q \) itself stands on a line. Only its right side \( Q \) is on a line, and \( \rulename{\vee I} \) turns it into \( P \vee Q \). Then \( Q \to R \) follows by \( \rulename{{\to}E} \) 2, 3, and \( R \) by \( \rulename{{\to}E} \) 4, 1. The move is the one of @exm-or-hypothesis-split, where \( \rulename{\vee I} \) builds a premise's hypothesis.
 :::
 
 ### B. Practice

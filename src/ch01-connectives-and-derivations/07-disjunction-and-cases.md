@@ -1,6 +1,6 @@
 # Using Or: Proof by Cases
 
-The previous section ended at a goal the rules could not reach: from \( P \vee Q \), derive \( Q \vee P \). The rules could build a disjunction (\( \rulename{\vee I} \), @def-rule-disjunction-introduction), but none of them could use one. This section gives the rule that uses a disjunction, \( \rulename{\vee E} \). It is the most familiar move in mathematics after "suppose": the split into cases, "if \( x \ge 0 \), then …; if \( x < 0 \), then …". It is also the last rule of this chapter. We use it to reach the stalled goal, to prove the laws that let "and" and "or" be rearranged, and to prove three facts about absolute values; the section ends with all the rules of the chapter on one page.
+The previous section met a goal the rules could not reach: from \( P \vee Q \), derive \( Q \vee P \). The rules could build a disjunction (\( \rulename{\vee I} \), @def-rule-disjunction-introduction), but none of them could use one. This section gives the rule that uses a disjunction, \( \rulename{\vee E} \). It is the most familiar move in mathematics after "suppose": the split into cases, "if \( x \ge 0 \), then …; if \( x < 0 \), then …". It is also the last rule of this chapter. We use it to reach the stalled goal, to prove the laws that let "and" and "or" be rearranged, and to prove three facts about absolute values; the section ends with all the rules of the chapter on one page.
 
 ## A proof that needs two cases
 
@@ -349,7 +349,7 @@ The first example is the smallest, and it is written twice: as a proof in which 
 ::: {#exm-abs-at-least-x}
 [A number is at most its absolute value]
 
-Let \( x \) be a real number. Prove that \( \abs{x} \ge x \), by cases, labelling each step with its rule.
+Let \( x \) be a real number. Prove that \( \abs{x} \ge x \), by cases, labeling each step with its rule.
 :::
 
 ::: {.solution}
@@ -475,7 +475,7 @@ The phrase has three parts, and a written proof often drops the first: "we argue
 
 ## The rules of this chapter
 
-This chapter has introduced six rules, one or two at a time, and the structural clause R. Here they are on one page, as schemas. Letters in the number column stand for line numbers; every cited line must be available (@def-derivation), and each box rule needs the box's last line as a line of that box itself.
+This chapter has introduced six rules, one or two at a time, and the structural clause \( \rulename{R} \). Here they are on one page, as schemas. Letters in the number column stand for line numbers; every cited line must be available (@def-derivation), and each box rule needs the box's last line as a line of that box itself.
 
 **Conjunction** (@def-rules-conjunction): \( \rulename{\wedge I} \), and the two forms of \( \rulename{\wedge E} \).
 
@@ -560,7 +560,7 @@ $\begin{nd}[schema]
 \end{center}
 ```
 
-Each rule is also a move in the search for a derivation. Read by the goal's main connective, the introduction rules say how a goal is built; read by an available line's main connective, the elimination rules say how that line is used.
+Each rule is also a move in the search for a derivation. Read by the goal's main connective, the introduction rules say how a goal is built: that is the move *read the skeleton off the goal*. Read by an available line's main connective, the elimination rules say how that line is used: *use a premise by its main connective*.
 
 | Main connective | As the goal (goal-directed) | As an available line (premise-directed) |
 |---|---|---|
@@ -576,7 +576,7 @@ And here is the full rule, phrase and Lean table for the chapter, assembled from
 | \( \rulename{\wedge E} \) | "In particular, \( P \)." | `h.1` (and `h.2`) |
 | \( \rulename{{\to}E} \) | "Since \( P \) implies \( Q \), and \( P \) holds, \( Q \)." | `exact h hp` |
 | \( \rulename{{\to}I} \) | "Assume \( P \). … Hence \( Q \)." | `intro hp` |
-| R | "As shown above, \( P \)." | `exact hp` |
+| \( \rulename{R} \) | "As shown above, \( P \)." | `exact hp` |
 | \( \rulename{\vee I} \) | "So \( P \) or \( Q \) holds." | `left` (or `Or.inl hp`); `right` |
 | \( \rulename{\vee E} \) | "Case 1: \( P \). … so \( R \). Case 2: \( Q \). … so \( R \). In either case, \( R \)." | `Or.elim h` (or `cases h`) |
 
@@ -594,7 +594,7 @@ The rules for "not", for \( \bot \) and for "if and only if", the rule for proof
 2. For each sentence, taken from a proof, name the disjunction that supplies the cases and the statement both cases end in.
     - "If \( n \) is even, then \( n^2 + n = n(n + 1) \) is even; if \( n \) is odd, then \( n + 1 \) is even and so is \( n(n + 1) \). Either way, \( n^2 + n \) is even."
     - "Both possibilities for the sign of \( t \) give \( t^2 \ge 0 \)."
-3. True or false, with a reason: to prove \( R \) from \( P \vee Q \) by cases, it is enough to derive \( R \) from \( P \).
+3. Let \( n \) be an integer. True or false, with a reason: "If \( n \) is even, then \( n^2 \) is even. Since every integer is even or odd, \( n^2 \) is even" is a correct proof by cases that \( n^2 \) is even.
 4. The following is offered as a derivation of \( P \vee Q, \; P \to R \vdash R \). Name the line that is not justified and the clause of @def-rules-disjunction it violates.
    ```{=latex}
    % expect-invalid
@@ -620,7 +620,7 @@ The rules for "not", for \( \bot \) and for "if and only if", the rule for proof
 
 (b) In the first, the disjunction is "\( n \) is even or \( n \) is odd", and both cases end in "\( n^2 + n \) is even". In the second, it is "\( t \ge 0 \) or \( t < 0 \)" (the sentence does not say it, and a careful reader supplies it), and both cases end in \( t^2 \ge 0 \).
 
-(c) False. \( P \vee Q \) does not say which of \( P \), \( Q \) holds, so \( R \) must also be derived from \( Q \). For example, with \( x \) real, from "\( x \ge 0 \) or \( x < 0 \)" and a derivation of \( \abs{x} = x \) from \( x \ge 0 \), we may not conclude \( \abs{x} = x \): it fails at \( x = -1 \).
+(c) False. The disjunction "\( n \) is even or \( n \) is odd" does not say which side holds, so \( \rulename{\vee E} \) needs a second case, reaching "\( n^2 \) is even" from "\( n \) is odd", and the argument has none. Here the second case cannot be supplied: at \( n = 1 \) the number \( n^2 = 1 \) is odd, so the claim itself is false.
 
 (d) Line 5. \( \rulename{\vee E} \) needs two boxes, one opened by each side of the disjunction (the clause "two boxes"); line 5 cites only the box opened by \( P \), and no box opened by \( Q \) exists. Nothing available reaches \( R \) from \( Q \) either, so the gap cannot be filled from these premises. An instance shows the claim itself fails (informally: a derivation never leads from true premises to a false conclusion, which Chapter 3 proves): for a real number \( x \), take \( P \): "\( x > 1 \)", \( Q \): "\( x < 1 \)", \( R \): "\( x > 0 \)". At \( x = -1 \) both premises hold and \( R \) does not.
 
@@ -810,7 +810,7 @@ Here is a proof, by four cases, that \( \abs{x - y} \le \abs{x} + \abs{y} \) for
 :::
 
 ::: {.solution}
-(a) Yes. For instance, it follows from @exm-triangle-inequality-cases applied to \( x \) and \( -y \), since \( \abs{-y} = \abs{y} \). So the question is not whether the conclusion holds but whether this argument proves it.
+(a) Yes. For instance, it follows from @exm-triangle-inequality-cases applied to \( x \) and \( -y \), since \( \abs{-y} = \abs{y} \) (shown in the solution of @exr-disjunction-and-cases-c1). So the question is not whether the conclusion holds but whether this argument proves it.
 
 (b) The sentence "Since \( x \ge 0 \) and \( y < 0 \), we have \( x - y > 0 \)" in Case 2b. The assumption \( x \ge 0 \) is the assumption of Case 1. In derivation terms, it opens the first box of the outer \( \rulename{\vee E} \), and Case 2b lies inside the **second** box, which is opened by \( x < 0 \). Once the first box has closed, its lines are not available (the scope rule of @def-derivation), so Case 2b may not cite \( x \ge 0 \): the rule broken is \( \rulename{\vee E} \), whose second box may use only its own assumption and the lines available outside both boxes. The sentence is the reasoning of Case 1b copied into Case 2b, where its assumption is no longer in force. So the box of Case 2 does not reach the goal from the lines available to it, and the final \( \rulename{\vee E} \) has no right to cite it.
 
@@ -898,7 +898,7 @@ Inside the box, what is the current goal, and which available line is a disjunct
 ::: {.solution}
 [Hint 2]
 
-Line 5 is the assumption \( Q \), opening the first box of a case split on line 1.
+Inside the box the goal is \( S \), and no available line gives \( S \) at once. What can you do with the one disjunction available?
 :::
 
 ::: {.solution}
@@ -1019,7 +1019,7 @@ exm-abs-product-cases (example): every real a satisfies a >= 0 or a < 0; sign ru
 exm-triangle-inequality-cases (example): adding two inequalities of the same direction; -a <= 0 <= a for a >= 0 | school algebra, taken as known; ch11 (promised)
 exm-cases-on-hypothesis (example): an integer of the form 4k + 1 or 4k + 3 is odd (a reading, not a step) | school fact; ch07 (promised)
 prp-distributivity (example): the reading with x != 0, x > 0, x < 0; "and" and "or" become intersection and union in the laws of sets | school algebra; the set reading is a prose pointer only, nothing depends on it
-exr-disjunction-and-cases-a1 (solution): n^2 + n = n(n + 1); every integer is even or odd; t >= 0 or t < 0; t^2 >= 0 | school facts; ch07 (promised) for even or odd; ch11 (promised)
+exr-disjunction-and-cases-a1 (solution): n^2 + n = n(n + 1); every integer is even or odd; t >= 0 or t < 0; t^2 >= 0; 1^2 = 1 is odd | school facts; ch07 (promised) for even or odd; ch11 (promised)
 exr-disjunction-and-cases-a1 (solution): (d) a derivation never leads from true premises to a false conclusion | ch03 (promised), flagged in the text as proved there; the answer (line 5) does not use it
 exr-disjunction-and-cases-b2 (solution): a >= b or a < b; dividing an inequality by 2 > 0; adding inequalities | school algebra, taken as known; ch11 (promised)
 exr-disjunction-and-cases-b3 (solution): every integer is even or odd (stated in the item); n = 2k or n = 2k + 1 with k an integer (naming k is a quantifier step, Chapter 4) | stated in the item; school fact; ch07 (promised)

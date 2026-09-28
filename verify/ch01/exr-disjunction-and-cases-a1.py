@@ -1,9 +1,9 @@
-"""exr-disjunction-and-cases-a1 (Ch 1, Section 1.7): (c) |x| = x fails at x = -1;
+"""exr-disjunction-and-cases-a1 (Ch 1, Section 1.7): (c) the one-case "proof" that n^2 is even fails at n = 1;
 (d) instance P: x > 1, Q: x < 1, R: x > 0 refuted at x = -1; the quick check on x^2 >= 0 splits."""
-QUOTED = {"(c) witness": -1, "(d) witness": -1}
+QUOTED = {"(c) witness": 1, "(d) witness": -1}
 
-x = QUOTED["(c) witness"]
-assert x < 0 and abs(x) != x
+n = QUOTED["(c) witness"]
+assert n % 2 == 1 and (n * n) % 2 == 1  # n odd (the missing case) and n^2 odd
 x = QUOTED["(d) witness"]
 P, Q, R = x > 1, x < 1, x > 0
 assert (P or Q) and ((not P) or R) and not R

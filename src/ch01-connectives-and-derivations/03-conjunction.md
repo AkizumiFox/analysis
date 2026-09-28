@@ -47,24 +47,24 @@ The first schema is the rule \( \rulename{\wedge I} \) (**and-introduction**). T
 
 Read the schemas clause by clause.
 
-**\( \wedge \)I, the given lines.** Two lines, \( \varphi \) and \( \psi \), must stand earlier in the derivation. They may be anywhere above line \( k \), in either order, with other lines between them; the schema draws them next to each other only to save space.
+**\( \rulename{\wedge I} \), the given lines.** Two lines, \( \varphi \) and \( \psi \), must stand earlier in the derivation. They may be anywhere above line \( k \), in either order, with other lines between them; the schema draws them next to each other only to save space.
 
-**\( \wedge \)I, the order of the citation.** The justification "\( \rulename{\wedge I} \) \( i, j \)" puts the statement of line \( i \) on the **left** of the new conjunction and the statement of line \( j \) on the right. So the citation, not the position of the lines, decides the order of the conjuncts: if line 3 is \( Q \) and line 2 is \( P \), then "\( \rulename{\wedge I} \) 3, 2" writes \( Q \wedge P \), and "\( \rulename{\wedge I} \) 2, 3" writes \( P \wedge Q \).
+**\( \rulename{\wedge I} \), the order of the citation.** The justification "\( \rulename{\wedge I} \) \( i, j \)" puts the statement of line \( i \) on the **left** of the new conjunction and the statement of line \( j \) on the right. So the citation, not the position of the lines, decides the order of the conjuncts: if line 3 is \( Q \) and line 2 is \( P \), then "\( \rulename{\wedge I} \) 3, 2" writes \( Q \wedge P \), and "\( \rulename{\wedge I} \) 2, 3" writes \( P \wedge Q \).
 
-**\( \wedge \)I, the degenerate case.** Nothing says that \( i \) and \( j \) are different lines. With \( i = j \), the letters \( \varphi \) and \( \psi \) are replaced by the same statement, and the rule writes \( \varphi \wedge \varphi \). It is a silly line, and a legal one.
+**\( \rulename{\wedge I} \), the degenerate case.** Nothing says that \( i \) and \( j \) are different lines. With \( i = j \), the letters \( \varphi \) and \( \psi \) are replaced by the same statement, and the rule writes \( \varphi \wedge \varphi \). It is a silly line, and a legal one.
 
-**\( \wedge \)E, one conjunction, either conjunct.** One given line, whose statement is a conjunction \( \varphi \wedge \psi \). The rule writes one conjunct per application: to get both halves, apply it twice, on two lines, each citing the same conjunction. That is why the rule has two schemas and not one schema with two new lines.
+**\( \rulename{\wedge E} \), one conjunction, either conjunct.** One given line, whose statement is a conjunction \( \varphi \wedge \psi \). The rule writes one conjunct per application: to get both halves, apply it twice, on two lines, each citing the same conjunction. That is why the rule has two schemas and not one schema with two new lines.
 
-**\( \wedge \)E looks only at the main connective.** To apply \( \wedge \)E to a line, we must see the line's statement as \( \varphi \wedge \psi \), and that means its main connective (@def-main-connective) must be \( \wedge \). The two conjuncts are then the two parts that this \( \wedge \) joins, and nothing smaller. Take \( (P \wedge Q) \wedge R \). Its main connective is the second \( \wedge \), so the replacement is
+**\( \rulename{\wedge E} \) looks only at the main connective.** To apply \( \rulename{\wedge E} \) to a line, we must see the line's statement as \( \varphi \wedge \psi \), and that means its main connective (@def-main-connective) must be \( \wedge \). The two conjuncts are then the two parts that this \( \wedge \) joins, and nothing smaller. Take \( (P \wedge Q) \wedge R \). Its main connective is the second \( \wedge \), so the replacement is
 \[
 \varphi \coloneqq P \wedge Q, \qquad \psi \coloneqq R ,
 \]
-and one application of \( \wedge \)E writes \( P \wedge Q \) or \( R \). It does not write \( P \), and it does not write \( Q \). Getting to \( Q \) takes a second application, to the new line \( P \wedge Q \).
+and one application of \( \rulename{\wedge E} \) writes \( P \wedge Q \) or \( R \). It does not write \( P \), and it does not write \( Q \). Getting to \( Q \) takes a second application, to the new line \( P \wedge Q \).
 
-**What the rules do not say.** They say nothing about what \( \varphi \) and \( \psi \) mean. A line is justified by \( \wedge \)I or \( \wedge \)E when it and the lines it cites are an **instance** of a schema (@def-rule-schema), and that can be seen by looking at symbols.
+**What the rules do not say.** They say nothing about what \( \varphi \) and \( \psi \) mean. A line is justified by \( \rulename{\wedge I} \) or \( \rulename{\wedge E} \) when it and the lines it cites are an **instance** of a schema (@def-rule-schema), and that can be seen by looking at symbols.
 
 ::: {.warning}
-\( \wedge \)E reaches one layer at a time. From line 1, \( (P \wedge Q) \wedge R \), the line "\( Q \) — \( \rulename{\wedge E} \) 1" is not an instance of either \( \wedge \)E schema, because line 1's conjuncts are \( P \wedge Q \) and \( R \). The line is wrong as a justification even though \( Q \) does follow; the repair costs one line, \( P \wedge Q \) by \( \rulename{\wedge E} \) 1 first, then \( Q \) from it.
+\( \rulename{\wedge E} \) reaches one layer at a time. From line 1, \( (P \wedge Q) \wedge R \), the line "\( Q \) — \( \rulename{\wedge E} \) 1" is not an instance of either \( \rulename{\wedge E} \) schema, because line 1's conjuncts are \( P \wedge Q \) and \( R \). The line is wrong as a justification even though \( Q \) does follow; the repair costs one line, \( P \wedge Q \) by \( \rulename{\wedge E} \) 1 first, then \( Q \) from it.
 :::
 
 ::: {.check}
@@ -80,10 +80,10 @@ Line 2 is \( P \wedge Q \) and line 5 is \( R \). Which line does "\( \rulename{
 :::
 
 ::: {.solution}
-"\( \wedge \)I 5, 2" justifies \( R \wedge (P \wedge Q) \), and "\( \wedge \)I 2, 5" justifies \( (P \wedge Q) \wedge R \). The first line cited becomes the left conjunct, and a compound statement placed inside a conjunction keeps its brackets.
+"\( \rulename{\wedge I} \) 5, 2" justifies \( R \wedge (P \wedge Q) \), and "\( \rulename{\wedge I} \) 2, 5" justifies \( (P \wedge Q) \wedge R \). The first line cited becomes the left conjunct, and a compound statement placed inside a conjunction keeps its brackets.
 :::
 
-**Why these rules.** They are exactly the two moves of the opening paragraph, "prove both" and "use either", and nothing more. Section 1.1's slogan said that each connective comes with a way to prove it and a way to use it; for \( \wedge \), the way to prove it is \( \wedge \)I and the way to use it is \( \wedge \)E.
+**Why these rules.** They are exactly the two moves of the opening paragraph, "prove both" and "use either", and nothing more. Section 1.1's slogan said that each connective comes with a way to prove it and a way to use it; for \( \wedge \), the way to prove it is \( \rulename{\wedge I} \) and the way to use it is \( \rulename{\wedge E} \).
 
 **Why they are safe.** If the given lines are true statements, so is the new line: if \( \varphi \) and \( \psi \) are both true, so is \( \varphi \wedge \psi \), and if \( \varphi \wedge \psi \) is true, so is each conjunct. Chapter 3 proves this property for every rule of the calculus at once, and calls it soundness.
 
@@ -91,13 +91,13 @@ Line 2 is \( P \wedge Q \) and line 5 is \( R \). Which line does "\( \rulename{
 
 A derivation has premises at the top and its goal, the conclusion we want, at the bottom. Between them is a gap, and finding a derivation means filling the gap. There are two places to start.
 
-*From the goal.* Ask: **what is the goal's main connective?** If it is \( \wedge \), the last line can be written by \( \wedge \)I, and then the goal \( \varphi \wedge \psi \) splits into two **subgoals**, \( \varphi \) and \( \psi \), each to be reached on some line above. This is **goal-directed** reasoning. It works backwards, from the bottom of the gap upwards, and its first question is which **introduction** rule builds the goal's main connective.
+*From the goal.* Ask: **what is the goal's main connective?** If it is \( \wedge \), the last line can be written by \( \rulename{\wedge I} \), and then the goal \( \varphi \wedge \psi \) splits into two **subgoals**, \( \varphi \) and \( \psi \), each to be reached on some line above. This is **goal-directed** reasoning. It works backwards, from the bottom of the gap upwards, and its first question is which **introduction** rule builds the goal's main connective.
 
-*From the premises.* Ask: **what are the main connectives of the lines we already have?** A line whose main connective is \( \wedge \) can be taken apart by \( \wedge \)E, and each conjunct becomes a new line to work with. This is **premise-directed** reasoning. It works forwards, from the top of the gap downwards, and its first question is which **elimination** rule uses the line's main connective.
+*From the premises.* Ask: **what are the main connectives of the lines we already have?** A line whose main connective is \( \wedge \) can be taken apart by \( \rulename{\wedge E} \), and each conjunct becomes a new line to work with. This is **premise-directed** reasoning. It works forwards, from the top of the gap downwards, and its first question is which **elimination** rule uses the line's main connective.
 
 *Work from both ends: take the premises apart, and build the goal from its parts.*
 
-The derivation is finished when the two ends meet: when every subgoal read off the goal is a line obtained from the premises. Section 1.2 already found one derivation backwards, from the goal \( a < d \) of @exm-chaining-derivation; the toy rule Tr played the part that introduction rules play from now on. Each later section of this chapter adds one rule to one of the two lists (an introduction rule to the goal-directed list, an elimination rule to the premise-directed one), and Section 2.6 collects the lists into a method.
+The derivation is finished when the two ends meet: when every subgoal read off the goal is a line obtained from the premises. Section 1.2 already found one derivation backwards, from the goal \( u < z \) of part (c) of @exm-chaining-derivation; the toy rule Tr played the part that introduction rules play from now on. Each later section of this chapter adds one rule to one of the two lists (an introduction rule to the goal-directed list, an elimination rule to the premise-directed one), and Section 2.6 collects the lists into a method.
 
 ## First derivations
 
@@ -141,7 +141,7 @@ $\begin{nd}
 \end{center}
 ```
 
-This is the degenerate case \( i = j \) of \( \wedge \)I.
+This is the degenerate case \( i = j \) of \( \rulename{\wedge I} \).
 
 (c) *Idea.* The goal \( Q \) is a letter, with no main connective, so the goal suggests no rule. The premise has main connective \( \wedge \), so, premise-directed, take it apart; its right conjunct is the goal.
 
@@ -154,10 +154,10 @@ $\begin{nd}
 \end{center}
 ```
 
-Line 2 is the second form of \( \wedge \)E, with \( \varphi \coloneqq P \) and \( \psi \coloneqq Q \).
+Line 2 is the second form of \( \rulename{\wedge E} \), with \( \varphi \coloneqq P \) and \( \psi \coloneqq Q \).
 :::
 
-The three derivations are box-free derivations in the sense of @def-box-free-derivation, with \( \wedge \)I and \( \wedge \)E as the list of rules: premises first, and every later line an instance of a schema whose given lines are earlier. By @def-derivable they show the three sequents. When the goal is a letter, as in (c), only the premises can suggest a step. When every subgoal is a premise, as in (a) and (b), the premises need no taking apart. The next derivation needs both ends.
+The three derivations are box-free derivations in the sense of @def-box-free-derivation, with \( \rulename{\wedge I} \) and \( \rulename{\wedge E} \) as the list of rules: premises first, and every later line an instance of a schema whose given lines are earlier. By @def-derivable they show the three sequents. When the goal is a letter, as in (c), only the premises can suggest a step. When every subgoal is a premise, as in (a) and (b), the premises need no taking apart. The next derivation needs both ends.
 
 The first result is that the order of a conjunction does not matter.
 
@@ -204,10 +204,10 @@ $\begin{nd}
 \end{center}
 ```
 
-Lines 2 and 3 are the two forms of \( \wedge \)E applied to line 1, and line 4 is \( \wedge \)I applied to lines 3 and 2, in that order, so line 3 becomes the left half. By @def-derivable, \( P \wedge Q \vdash Q \wedge P \).
+Lines 2 and 3 are the two forms of \( \rulename{\wedge E} \) applied to line 1, and line 4 is \( \rulename{\wedge I} \) applied to lines 3 and 2, in that order, so line 3 becomes the left half. By @def-derivable, \( P \wedge Q \vdash Q \wedge P \).
 :::
 
-Read back in words, the derivation is a short paragraph: *We are given that \( P \) and \( Q \). In particular \( P \) holds, and in particular \( Q \) holds. So \( Q \) and \( P \) both hold.* Each sentence is one line, and each "in particular" is one application of \( \wedge \)E.
+Read back in words, the derivation is a short paragraph: *We are given that \( P \) and \( Q \). In particular \( P \) holds, and in particular \( Q \) holds. So \( Q \) and \( P \) both hold.* Each sentence is one line, and each "in particular" is one application of \( \rulename{\wedge E} \).
 
 Nothing in the derivation looks at what \( P \) and \( Q \) say. With \( P \): "\( 0 < x \)" and \( Q \): "\( x < 1 \)" it turns "\( 0 < x \) and \( x < 1 \)" into "\( x < 1 \) and \( 0 < x \)"; with any other two statements it does the same. Because the letters stand for arbitrary statements, one derivation written with letters proves every such instance at once.
 
@@ -222,7 +222,7 @@ The second result is that the grouping of a conjunction does not matter either. 
 ::: {.idea}
 From the goal: its main connective is the **outer** \( \wedge \), so the last line is \( \rulename{\wedge I} \) with the subgoals \( P \) and \( Q \wedge R \). The second subgoal is itself a conjunction, so it is again \( \rulename{\wedge I} \), with the subgoals \( Q \) and \( R \). The goal-directed search stops at the letters \( P \), \( Q \), \( R \).
 
-From the premise: its main connective is also an outer \( \wedge \), so \( \rulename{\wedge E} \) gives \( P \wedge Q \) and \( R \). The line \( P \wedge Q \) is a conjunction, so \( \rulename{\wedge E} \) again gives \( P \) and \( Q \). The premise-directed search also stops at the three letters, and the ends meet there. Since \( \wedge \)E reaches one layer at a time, the premise must be peeled in two rounds.
+From the premise: its main connective is also an outer \( \wedge \), so \( \rulename{\wedge E} \) gives \( P \wedge Q \) and \( R \). The line \( P \wedge Q \) is a conjunction, so \( \rulename{\wedge E} \) again gives \( P \) and \( Q \). The premise-directed search also stops at the three letters, and the ends meet there. Since \( \rulename{\wedge E} \) reaches one layer at a time, the premise must be peeled in two rounds.
 :::
 
 ::: {.proof}
@@ -242,10 +242,10 @@ $\begin{nd}
 \end{center}
 ```
 
-Lines 2 and 3 apply \( \wedge \)E to line 1, with \( \varphi \coloneqq P \wedge Q \) and \( \psi \coloneqq R \). Lines 4 and 5 apply \( \wedge \)E to line 2, with \( \varphi \coloneqq P \) and \( \psi \coloneqq Q \). Line 6 applies \( \wedge \)I to lines 5 and 3, and line 7 applies \( \wedge \)I to lines 4 and 6, with \( \varphi \coloneqq P \) and \( \psi \coloneqq Q \wedge R \). By @def-derivable, \( (P \wedge Q) \wedge R \vdash P \wedge (Q \wedge R) \).
+Lines 2 and 3 apply \( \rulename{\wedge E} \) to line 1, with \( \varphi \coloneqq P \wedge Q \) and \( \psi \coloneqq R \). Lines 4 and 5 apply \( \rulename{\wedge E} \) to line 2, with \( \varphi \coloneqq P \) and \( \psi \coloneqq Q \). Line 6 applies \( \rulename{\wedge I} \) to lines 5 and 3, and line 7 applies \( \rulename{\wedge I} \) to lines 4 and 6, with \( \varphi \coloneqq P \) and \( \psi \coloneqq Q \wedge R \). By @def-derivable, \( (P \wedge Q) \wedge R \vdash P \wedge (Q \wedge R) \).
 :::
 
-The lines could come in other orders. Line 3 could come after lines 4 and 5, for instance, since it is used only at line 6. What cannot move is the dependence: lines 4 and 5 cite line 2, so they must come after it, and line 7 cites line 6, so it comes last.
+The lines could come in other orders. Line 3 could come after lines 4 and 5, for instance, since it is used only at line 6. What cannot move is the dependence: every line must come after each line it cites.
 
 ::: {.remark}
 The converse, \( P \wedge (Q \wedge R) \vdash (P \wedge Q) \wedge R \), is derived the same way, peeling the premise's inner conjunction on the right instead of the left; Exercise B1 asks you to write it out. With both directions, the brackets in a chain of conjunctions carry no information, which is why the chain \( 0 < x < 1 < y \) is written without any.
@@ -300,7 +300,7 @@ $\begin{nd}
 \end{center}
 ```
 
-The recipe visibly does not depend on these particular letters or brackets. Take the premise apart with \( \wedge \)E until only letters remain, then build the goal from the letters with \( \wedge \)I, inside out. It works whenever the premise and the goal are both built from letters by \( \wedge \) alone and every letter of the goal occurs in the premise, whatever the bracketing and the order on either side. So "\( \wedge \) is commutative and associative" is, in the end, the observation that \( \wedge \)E can always take a conjunction down to its letters and \( \wedge \)I can always build one back up. (Chapter 3's completeness theorem gives another reason, from the truth tables.)
+The recipe visibly does not depend on these particular letters or brackets. Take the premise apart with \( \rulename{\wedge E} \) until only letters remain, then build the goal from the letters with \( \rulename{\wedge I} \), inside out. It works whenever the premise and the goal are both built from letters by \( \wedge \) alone and every letter of the goal occurs in the premise, whatever the bracketing and the order on either side. So "\( \wedge \) is commutative and associative" is, in the end, the observation that \( \rulename{\wedge E} \) can always take a conjunction down to its letters and \( \rulename{\wedge I} \) can always build one back up. (Chapter 3's completeness theorem gives another reason, from the truth tables.)
 
 ## How this looks in a mathematical proof
 
@@ -344,10 +344,10 @@ The facts about numbers supply the content of the solution; the rules supply the
 
 ## Common errors
 
-The warning above covered \( \wedge \)E applied through a layer. Two more errors are common.
+The warning above covered \( \rulename{\wedge E} \) applied through a layer. Two more errors are common.
 
 ::: {.warning}
-\( \wedge \)E applies only to a line whose **main connective** is \( \wedge \). The line \( (P \wedge Q) \to R \) contains a \( \wedge \), but its main connective is \( \to \), so "\( P \) — \( \rulename{\wedge E} \) 1" is illegal. With \( x \) a real number, \( P \): "\( x > 0 \)", \( Q \): "\( x > 1 \)" and \( R \): "\( x^2 > 1 \)", the premise "if \( x > 0 \) and \( x > 1 \), then \( x^2 > 1 \)" is true for every \( x \), yet at \( x = -1 \) the line \( x > 0 \) is false.
+\( \rulename{\wedge E} \) applies only to a line whose **main connective** is \( \wedge \). The line \( (P \wedge Q) \to R \) contains a \( \wedge \), but its main connective is \( \to \), so "\( P \) — \( \rulename{\wedge E} \) 1" is illegal. With \( x \) a real number, \( P \): "\( x > 0 \)", \( Q \): "\( x > 1 \)" and \( R \): "\( x^2 > 1 \)", the premise "if \( x > 0 \) and \( x > 1 \), then \( x^2 > 1 \)" is true for every \( x \), yet at \( x = -1 \) the line \( x > 0 \) is false.
 :::
 
 ```{=latex}
@@ -362,7 +362,7 @@ $\begin{nd}
 
 The illegal step leads from a true premise to a false line, so no rule that allowed it could be safe.
 
-The third error is a mismatch between the citation and the line. Suppose line 3 is \( Q \) and line 2 is \( P \), and someone writes "\( P \wedge Q \) — \( \rulename{\wedge I} \) 3, 2". The statement \( P \wedge Q \) is fine, and it does follow from lines 2 and 3. But "\( \wedge \)I 3, 2" names line 3 as the left conjunct, so the line it justifies is \( Q \wedge P \). A checker compares the line with the citation and rejects it; the repair is to write "2, 3". This looks pedantic, and it is the point: a justification that says something false about the line it justifies cannot be checked by matching, and then nothing can be checked by matching.
+The third error is a mismatch between the citation and the line. Suppose line 3 is \( Q \) and line 2 is \( P \), and someone writes "\( P \wedge Q \) — \( \rulename{\wedge I} \) 3, 2". The statement \( P \wedge Q \) is fine, and it does follow from lines 2 and 3. But "\( \rulename{\wedge I} \) 3, 2" names line 3 as the left conjunct, so the line it justifies is \( Q \wedge P \). A checker compares the line with the citation and rejects it; the repair is to write "2, 3". This looks pedantic, and it is the point: a justification that says something false about the line it justifies cannot be checked by matching, and then nothing can be checked by matching.
 
 ## What the rules sound like
 
@@ -373,7 +373,7 @@ Every rule is something mathematicians already say. The table pairs each rule of
 | \( \rulename{\wedge I} \) | "We show \( P \), and we show \( Q \)." | `constructor` |
 | \( \rulename{\wedge E} \) | "In particular, \( P \)." | `h.1` (and `h.2`) |
 
-Section 1.4 adds the first rule for "implies", and the table grows by one row in each section of the chapter.
+Section 1.4 adds the first rule for "implies", and the table grows with each new rule.
 
 ## Exercises
 
@@ -404,7 +404,7 @@ Section 1.4 adds the first rule for "implies", and the table grows by one row in
 :::
 
 ::: {.solution}
-(a) See @def-rules-conjunction: \( \rulename{\wedge I} \) has given lines \( i \): \( \varphi \) and \( j \): \( \psi \) and new line \( k \): \( \varphi \wedge \psi \), cited "\( \wedge \)I \( i, j \)"; the two forms of \( \rulename{\wedge E} \) each have the given line \( i \): \( \varphi \wedge \psi \) and the new line \( k \): \( \varphi \), respectively \( \psi \), cited "\( \wedge \)E \( i \)".
+(a) See @def-rules-conjunction: \( \rulename{\wedge I} \) has given lines \( i \): \( \varphi \) and \( j \): \( \psi \) and new line \( k \): \( \varphi \wedge \psi \), cited "\( \rulename{\wedge I} \) \( i, j \)"; the two forms of \( \rulename{\wedge E} \) each have the given line \( i \): \( \varphi \wedge \psi \) and the new line \( k \): \( \varphi \), respectively \( \psi \), cited "\( \rulename{\wedge E} \) \( i \)".
 
 (b) \( P \), or \( Q \wedge R \). The main connective is the first \( \wedge \), so \( \varphi \) is \( P \) and \( \psi \) is \( Q \wedge R \).
 
@@ -458,7 +458,7 @@ The hypotheses are the conjunctions \( (1 < x) \wedge (x < 2) \) and \( (3 < y) 
 
 By \( \rulename{\wedge E} \), four times, we have \( 1 < x \), \( x < 2 \), \( 3 < y \) and \( y < 4 \) separately. Adding \( 1 < x \) and \( 3 < y \) gives \( 1 + 3 < x + y \), that is, \( 4 < x + y \) (school algebra: two inequalities in the same direction may be added). Adding \( x < 2 \) and \( y < 4 \) gives \( x + y < 6 \) (school algebra again). Finally \( \rulename{\wedge I} \) joins \( 4 < x + y \) and \( x + y < 6 \) into \( 4 < x + y < 6 \).
 
-As a derivation it has the same shape as the one in @exm-product-in-unit-interval: two premises, four \( \wedge \)E lines, two lines justified "algebra", and one \( \wedge \)I line.
+As a derivation it has the same shape as the one in @exm-product-in-unit-interval: two premises, four \( \rulename{\wedge E} \) lines, two lines justified "algebra", and one \( \rulename{\wedge I} \) line.
 :::
 
 ::: {#exr-conjunction-b3}
@@ -488,15 +488,15 @@ Determine which of the following candidates for line 4 are correct. Justify your
 :::
 
 ::: {.solution}
-(a) Correct: the first form of \( \wedge \)E with \( \varphi \coloneqq P \) and \( \psi \coloneqq Q \wedge R \).
+(a) Correct: the first form of \( \rulename{\wedge E} \) with \( \varphi \coloneqq P \) and \( \psi \coloneqq Q \wedge R \).
 
 (b) Incorrect. Line 1's conjuncts are \( P \) and \( Q \wedge R \); \( R \) lies one layer deeper. "\( R \) — \( \rulename{\wedge E} \) 3" would be correct.
 
-(c) Correct: \( \wedge \)I with line 3 on the left and line 2 on the right, \( \varphi \coloneqq Q \wedge R \) and \( \psi \coloneqq S \).
+(c) Correct: \( \rulename{\wedge I} \) with line 3 on the left and line 2 on the right, \( \varphi \coloneqq Q \wedge R \) and \( \psi \coloneqq S \).
 
 (d) Incorrect. The citation "3, 2" puts line 3 on the left, so it justifies \( (Q \wedge R) \wedge S \), not \( S \wedge (Q \wedge R) \). "\( \rulename{\wedge I} \) 2, 3" would be correct.
 
-(e) Correct: the first form of \( \wedge \)E with \( \varphi \coloneqq Q \) and \( \psi \coloneqq R \).
+(e) Correct: the first form of \( \rulename{\wedge E} \) with \( \varphi \coloneqq Q \) and \( \psi \coloneqq R \).
 :::
 
 ### C. Going deeper
@@ -534,10 +534,10 @@ The argument, "look at the first bad line; it cannot be a premise, and no rule c
 
 **Marking scheme.** (10 points)
 
-- 2: considers a first line containing \( R \), and says why a first one exists (finitely many lines).
+- 2: considers a first line containing \( R \), and says why a first one exists (finitely many lines); or, equally, goes down the derivation line by line, showing each line free of \( R \) because every line it cites is.
 - 2: rules out a premise.
-- 2: \( \wedge \)I case: the new line is built from the statements of two earlier, \( R \)-free lines.
-- 2: \( \wedge \)E case: the new line is part of an earlier, \( R \)-free line.
+- 2: \( \rulename{\wedge I} \) case: the new line is built from the statements of two earlier, \( R \)-free lines.
+- 2: \( \rulename{\wedge E} \) case: the new line is part of an earlier, \( R \)-free line.
 - 2: concludes that no line contains \( R \), and so that \( P \wedge R \) is never a last line.
 
 Fatal errors (0 for the step): arguing about one particular derivation instead of every derivation; arguing that \( R \) is "not true" instead of about which symbols the rules can write.
@@ -569,7 +569,7 @@ $\begin{nd}
 :::
 
 ::: {.solution}
-(a) No. To match line 1 with \( \varphi \wedge \psi \), we must read \( \varphi \) and \( \psi \) off line 1's main connective, which is the first \( \wedge \): \( \varphi \) is \( P \) and \( \psi \) is \( Q \wedge R \). So \( \wedge \)E writes \( P \) or \( Q \wedge R \), and \( Q \) is neither.
+(a) No. To match line 1 with \( \varphi \wedge \psi \), we must read \( \varphi \) and \( \psi \) off line 1's main connective, which is the first \( \wedge \): \( \varphi \) is \( P \) and \( \psi \) is \( Q \wedge R \). So \( \rulename{\wedge E} \) writes \( P \) or \( Q \wedge R \), and \( Q \) is neither.
 
 (b) Yes. Insert the missing layer.
 
@@ -599,7 +599,7 @@ $\begin{nd}[schema]
 \end{center}
 ```
 
-Suppose line \( k \) of a derivation is \( \psi \), justified "\( \wedge\mathrm{E}^{*} \) \( i \)", with line \( i \) the statement \( \varphi \wedge (\psi \wedge \chi) \). Replace line \( k \) by two lines: first \( \psi \wedge \chi \), justified \( \rulename{\wedge E} \) \( i \) (the second form, with the conjuncts \( \varphi \) and \( \psi \wedge \chi \)), then \( \psi \), justified by \( \rulename{\wedge E} \) citing that new line (the first form, with the conjuncts \( \psi \) and \( \chi \)). Renumber the later lines, and every citation of them, up by one; a later citation of line \( k \) now cites the second new line, which carries the same statement \( \psi \). Every other line is unchanged and still cites earlier lines. Doing this for each \( \wedge\mathrm{E}^{*} \) line, one at a time, gives a derivation with the same premises and last line that uses only \( \wedge \)E and \( \wedge \)I. A rule that can always be replaced in this way adds convenience and no new power; Section 2.3 calls such a rule a derived rule.
+Suppose line \( k \) of a derivation is \( \psi \), justified "\( \wedge\mathrm{E}^{*} \) \( i \)", with line \( i \) the statement \( \varphi \wedge (\psi \wedge \chi) \). Replace line \( k \) by two lines: first \( \psi \wedge \chi \), justified \( \rulename{\wedge E} \) \( i \) (the second form, with the conjuncts \( \varphi \) and \( \psi \wedge \chi \)), then \( \psi \), justified by \( \rulename{\wedge E} \) citing that new line (the first form, with the conjuncts \( \psi \) and \( \chi \)). Renumber the later lines, and every citation of them, up by one; a later citation of line \( k \) now cites the second new line, which carries the same statement \( \psi \). Every other line is unchanged and still cites earlier lines. Doing this for each \( \wedge\mathrm{E}^{*} \) line, one at a time, gives a derivation with the same premises and last line that uses only \( \rulename{\wedge E} \) and \( \rulename{\wedge I} \). A rule that can always be replaced in this way adds convenience and no new power; Section 2.3 calls such a rule a derived rule.
 
 **Marking scheme.** (10 points)
 
@@ -607,14 +607,14 @@ Suppose line \( k \) of a derivation is \( \psi \), justified "\( \wedge\mathrm{
 - 2: (b) yes, with a correct derivation.
 - 2: (c) checking is by matching the schemas; a step that is not an instance is rejected, whether or not it is true.
 - 2: (d) a correct schema, one given line and one new line.
-- 2: (d) the replacement by two \( \wedge \)E lines, with the renumbering of later citations.
+- 2: (d) the replacement by two \( \rulename{\wedge E} \) lines, with the renumbering of later citations.
 
 Fatal errors (0 for the step): claiming the conclusion is not derivable; offering a counterexample to line 2.
 :::
 
 <!-- dependency ledger
 exm-product-in-unit-interval (solution): a product of two positive reals is positive; multiplying an inequality by a positive number keeps its direction; transitivity of < | school algebra (blueprint, Allowed prerequisites) -> ch11 (promised); checked by verify/ch01/exm-product-in-unit-interval.py
-exm-product-in-unit-interval (example): the warning's instance: (x > 0 and x > 1) implies x^2 > 1 for every real x, and x > 0 fails at x = -1 | school algebra -> ch11 (promised); checked by verify/ch01/exm-product-in-unit-interval.py
+def-rules-conjunction (example): the Common-errors warning's instance: (x > 0 and x > 1) implies x^2 > 1 for every real x, and x > 0 fails at x = -1 | school algebra -> ch11 (promised); checked by verify/ch01/exm-product-in-unit-interval.py
 exr-conjunction-b2 (solution): two inequalities in the same direction may be added | school algebra -> ch11 (promised); checked by verify/ch01/exm-product-in-unit-interval.py
 exr-conjunction-a1 (solution): the precedence convention (and binds more tightly than implies) | Section 1.1 (the four conventions, before def-main-connective), recalled in prose
 exr-conjunction-c1 (solution): a finite non-empty set of line numbers has a first element (least-number principle, "first bad line") | school fact about finite lists; induction (ch03) named in prose as the exact version, not used

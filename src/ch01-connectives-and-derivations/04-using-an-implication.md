@@ -59,11 +59,11 @@ Read the schema clause by clause, as we read those of @def-rules-conjunction.
 
 **Reading the implication.** To see a line as \( \varphi \to \psi \), its **main connective** (@def-main-connective) must be \( \to \). Then \( \varphi \), the **hypothesis**, is everything that this \( \to \) joins on its left, and \( \psi \), the **conclusion**, is everything on its right. In \( (P \wedge Q) \to R \), the hypothesis is \( P \wedge Q \) and the conclusion is \( R \). In \( P \to (Q \to R) \), the hypothesis is \( P \) and the conclusion is \( Q \to R \), itself an implication.
 
-**The hypothesis must match exactly.** Line \( j \) must be the statement \( \varphi \), symbol for symbol: the letter \( \varphi \) occurs in both given lines, and a use of the rule replaces it by the same statement in both (@def-rule-schema). A part of \( \varphi \) will not do, and neither will a statement that "says the same thing". From \( (P \wedge Q) \to R \) and \( Q \wedge P \), the rule gives nothing, although \( Q \wedge P \) and \( P \wedge Q \) are each derivable from the other (@prp-and-commutes); the hypothesis must first be rebuilt, in the right order, by \( \wedge \)E and \( \wedge \)I.
+**The hypothesis must match exactly.** Line \( j \) must be the statement \( \varphi \), symbol for symbol: the letter \( \varphi \) occurs in both given lines, and a use of the rule replaces it by the same statement in both (@def-rule-schema). A part of \( \varphi \) will not do, and neither will a statement that "says the same thing". From \( (P \wedge Q) \to R \) and \( Q \wedge P \), the rule gives nothing, although \( Q \wedge P \) and \( P \wedge Q \) are each derivable from the other (@prp-and-commutes); the hypothesis must first be rebuilt, in the right order, by \( \rulename{\wedge E} \) and \( \rulename{\wedge I} \).
 
-**The new line is the conclusion, and only the conclusion.** The rule writes \( \psi \), the whole of what stands right of the main \( \to \). If \( \psi \) is \( Q \wedge R \), the rule writes \( Q \wedge R \), and getting \( Q \) takes one more line, by \( \wedge \)E.
+**The new line is the conclusion, and only the conclusion.** The rule writes \( \psi \), the whole of what stands right of the main \( \to \). If \( \psi \) is \( Q \wedge R \), the rule writes \( Q \wedge R \), and getting \( Q \) takes one more line, by \( \rulename{\wedge E} \).
 
-**The citation.** We cite the implication first and the hypothesis second: "\( \rulename{{\to}E} \) \( i, j \)", as in the schema. Unlike the citation of \( \wedge \)I, the order here cannot change the new line, since only \( \psi \) can come out; the fixed order just makes every \( \to \)E line read the same way.
+**The citation.** We cite the implication first and the hypothesis second: "\( \rulename{{\to}E} \) \( i, j \)", as in the schema. Unlike the citation of \( \rulename{\wedge I} \), the order here cannot change the new line, since only \( \psi \) can come out; the fixed order just makes every \( \rulename{{\to}E} \) line read the same way.
 
 **A degenerate case.** The statements \( \varphi \) and \( \psi \) may be the same. From \( P \to P \) and \( P \), the rule writes \( P \), which was already there. The line is legal and useless.
 
@@ -71,15 +71,15 @@ Read the schema clause by clause, as we read those of @def-rules-conjunction.
 \[
 \bigl( (\sqrt{2} < 1.5) \wedge (1.5 < 2) \bigr) \to \sqrt{2} < 2 .
 \]
-We know \( \sqrt{2} < 1.5 \), because \( 1.5^2 = 2.25 > 2 \), and we know \( 1.5 < 2 \). Then \( \wedge \)I builds the hypothesis \( (\sqrt{2} < 1.5) \wedge (1.5 < 2) \), and \( \to \)E gives \( \sqrt{2} < 2 \). Every application of a theorem has this shape: check the theorem's hypotheses, assemble them into exactly the theorem's hypothesis, and fire.
+We know \( \sqrt{2} < 1.5 \), because \( 1.5^2 = 2.25 > 2 \), and we know \( 1.5 < 2 \). Then \( \rulename{\wedge I} \) builds the hypothesis \( (\sqrt{2} < 1.5) \wedge (1.5 < 2) \), and \( \rulename{{\to}E} \) gives \( \sqrt{2} < 2 \). Every application of a theorem has this shape: check the theorem's hypotheses, assemble them into exactly the theorem's hypothesis, and fire.
 
 *Why it is safe.* If \( \varphi \to \psi \) is true and \( \varphi \) is true, then \( \psi \) is true; that is what "if \( \varphi \), then \( \psi \)" asserts. Chapter 3 proves this for the rule as part of the soundness theorem.
 
-*Why nothing more.* From \( \varphi \to \psi \) alone, \( \to \)E cannot fire: an implication by itself asserts neither its hypothesis nor its conclusion. And \( \to \)E does not run backwards: from \( \varphi \to \psi \) together with its conclusion \( \psi \), it gives nothing about \( \varphi \). That pattern,
+*Why nothing more.* From \( \varphi \to \psi \) alone, \( \rulename{{\to}E} \) cannot fire: an implication by itself asserts neither its hypothesis nor its conclusion. And \( \rulename{{\to}E} \) does not run backwards: from \( \varphi \to \psi \) together with its conclusion \( \psi \), it gives nothing about \( \varphi \). That pattern,
 \[
 \varphi \to \psi, \ \psi \ \text{ therefore } \ \varphi ,
 \]
-is called **affirming the consequent**, and it is the red card of the puzzle. It is not an instance of \( \to \)E, because the second given line of \( \to \)E must be the hypothesis \( \varphi \), and here it is the conclusion \( \psi \). It can lead from true premises to a false conclusion: the Quick check on the form of an argument in Section 1.1 took "if \( n \) is divisible by \( 4 \), then \( n \) is even" and "\( n \) is even" at \( n = 2 \), both true, where "\( n \) is divisible by \( 4 \)" is false. It is also the step that would repair Argument B of Section 1.1. Chapter 3 proves more: no derivation of \( P \to Q, \ Q \vdash P \) exists at all, whichever rules of Chapters 1 and 2 it uses.
+is called **affirming the consequent**, and it is the red card of the puzzle. It is not an instance of \( \rulename{{\to}E} \), because the second given line of \( \rulename{{\to}E} \) must be the hypothesis \( \varphi \), and here it is the conclusion \( \psi \). It can lead from true premises to a false conclusion: the Quick check on the form of an argument in Section 1.1 took "if \( n \) is divisible by \( 4 \), then \( n \) is even" and "\( n \) is even" at \( n = 2 \), both true, where "\( n \) is divisible by \( 4 \)" is false. It is also the step that would repair Argument B of Section 1.1. Chapter 3 proves more: no derivation of \( P \to Q, \ Q \vdash P \) exists at all, whichever rules of Chapters 1 and 2 it uses.
 
 ::: {.warning}
 Affirming the consequent looks like modus ponens and is not. Let \( x \) be a real number. "If \( x > 2 \), then \( x^2 > 4 \)" is true for every \( x \), and at \( x = -3 \) we have \( x^2 = 9 > 4 \); but \( x > 2 \) is false there. From an implication and its **conclusion**, nothing follows about the hypothesis.
@@ -94,16 +94,16 @@ From line 1 and \( Q \): nothing. The main connective of line 1 is the first \( 
 :::
 
 ::: {.remark}
-At this point an implication can be **used** but not **proved**. A derivation can write an implication only by taking it out of a line that already contains it: \( \wedge \)E applied to \( (P \to Q) \wedge R \), or \( \to \)E applied to \( P \to (Q \to R) \) and \( P \). No rule so far builds a new \( \to \). Section 1.5 gives the rule that does.
+At this point an implication can be **used** but not **proved**. A derivation can write an implication only by taking it out of a line that already contains it: \( \rulename{\wedge E} \) applied to \( (P \to Q) \wedge R \), or \( \rulename{{\to}E} \) applied to \( P \to (Q \to R) \) and \( P \). No rule so far builds a new \( \to \). Section 1.5 gives the rule that does.
 :::
 
 ## Chains of implications
 
-With \( \to \)E, a derivation can pass along a chain: from \( P \) and \( P \to Q \) to \( Q \), from \( Q \) and \( Q \to R \) to \( R \), and so on. Such a chain can be found from either end.
+With \( \rulename{{\to}E} \), a derivation can pass along a chain: from \( P \) and \( P \to Q \) to \( Q \), from \( Q \) and \( Q \to R \) to \( R \), and so on. Such a chain can be found from either end.
 
-*Forwards, from the premises.* An available implication (for now, one on an earlier line) whose hypothesis is also available can **fire**: \( \to \)E writes its conclusion, which becomes available in turn and may be the hypothesis of another implication. Keep firing until the goal appears. This is premise-directed reasoning, as in Section 1.3: the premise's main connective, \( \to \), picks the elimination rule that uses it.
+*Forwards, from the premises.* An available implication (for now, one on an earlier line) whose hypothesis is also available can **fire**: \( \rulename{{\to}E} \) writes its conclusion, which becomes available in turn and may be the hypothesis of another implication. Keep firing until the goal appears. This is premise-directed reasoning, as in Section 1.3: the premise's main connective, \( \to \), picks the elimination rule that uses it.
 
-*Backwards, from the goal.* Suppose the goal is \( \psi \). Look among the available lines for an implication whose **conclusion** is \( \psi \), say \( \varphi \to \psi \). If there is one, it is enough to reach \( \varphi \): then \( \to \)E writes \( \psi \). So \( \varphi \) becomes the new goal, and we repeat. This is goal-directed reasoning, but of a new kind. In Section 1.3 the goal's main connective chose an introduction rule. Here the goal may be a letter, with no main connective at all, and it still directs the search: it tells us which implication to look for.
+*Backwards, from the goal.* Suppose the goal is \( \psi \). Look among the available lines for an implication whose **conclusion** is \( \psi \), say \( \varphi \to \psi \). If there is one, it is enough to reach \( \varphi \): then \( \rulename{{\to}E} \) writes \( \psi \). So \( \varphi \) becomes the new goal, and we repeat. This is goal-directed reasoning, but of a new kind. In Section 1.3 the goal's main connective chose an introduction rule. Here the goal may be a letter, with no main connective at all, and it still directs the search: it tells us which implication to look for.
 
 The two directions meet in the middle, when a line reached forwards is a goal reached backwards. In written mathematics the backward step has a standard phrase, "to show \( \psi \), it suffices to show \( \varphi \)", and Chapter 5 collects it with the other phrases that stand for rules.
 
@@ -112,7 +112,7 @@ The premises are \( P \), \( P \to R \), \( Q \to S \) and \( R \to S \), and th
 :::
 
 ::: {.solution}
-Two premises have conclusion \( S \): \( Q \to S \) and \( R \to S \). The first makes \( Q \) the new goal, and no line is \( Q \) or has conclusion \( Q \), so that branch is a dead end. The second makes \( R \) the new goal; \( P \to R \) has conclusion \( R \), and its hypothesis \( P \) is a premise. So the derivation is \( R \) by \( \to \)E from \( P \to R \) and \( P \), then \( S \) by \( \to \)E from \( R \to S \) and \( R \). A backward search may branch, and a branch that stalls is abandoned for the next one.
+Two premises have conclusion \( S \): \( Q \to S \) and \( R \to S \). The first makes \( Q \) the new goal, and no line is \( Q \) or has conclusion \( Q \), so that branch is a dead end. The second makes \( R \) the new goal; \( P \to R \) has conclusion \( R \), and its hypothesis \( P \) is a premise. So the derivation is \( R \) by \( \rulename{{\to}E} \) from \( P \to R \) and \( P \), then \( S \) by \( \rulename{{\to}E} \) from \( R \to S \) and \( R \). A backward search may branch, and a branch that stalls is abandoned for the next one.
 :::
 
 ::: {#exm-implication-chains}
@@ -142,7 +142,7 @@ $\begin{nd}
 \end{center}
 ```
 
-This is the sequent that Section 1.1 said \( \to \)E makes true, and now it is shown: a derivation with these premises and this last line exists.
+This is the sequent that Section 1.1 said \( \rulename{{\to}E} \) makes true, and now it is shown: a derivation with these premises and this last line exists.
 
 (b) *Idea, forwards.* The premise \( P \to Q \) has its hypothesis \( P \) available, so it fires and gives \( Q \). Now \( Q \to R \) has its hypothesis available, so it fires and gives \( R \), the goal.
 
@@ -184,7 +184,7 @@ $\begin{nd}
 
 Both searches write the same five lines. The forward search wrote each line as soon as it could; the backward one wrote the last line first and worked up. In a derivation this small they cost the same. Exercise B3 has a case where they do not.
 
-(c) *Idea.* The goal \( R \) is a letter. From the goal: the only line that mentions \( R \) is \( P \to (Q \to R) \), but its conclusion is \( Q \to R \), not \( R \); the \( R \) sits one implication deeper. From the premises: \( P \wedge Q \) is a conjunction, so take it apart by \( \wedge \)E, giving \( P \) and \( Q \). Now \( P \) is exactly the hypothesis of \( P \to (Q \to R) \), whose main connective is the first \( \to \), so it fires and gives \( Q \to R \). This new line is an implication whose hypothesis \( Q \) is available, so it fires too.
+(c) *Idea.* The goal \( R \) is a letter. From the goal: the only line that mentions \( R \) is \( P \to (Q \to R) \), but its conclusion is \( Q \to R \), not \( R \); the \( R \) sits one implication deeper. From the premises: \( P \wedge Q \) is a conjunction, so take it apart by \( \rulename{\wedge E} \), giving \( P \) and \( Q \). Now \( P \) is exactly the hypothesis of \( P \to (Q \to R) \), whose main connective is the first \( \to \), so it fires and gives \( Q \to R \). This new line is an implication whose hypothesis \( Q \) is available, so it fires too.
 
 ```{=latex}
 \begin{center}
@@ -199,7 +199,7 @@ $\begin{nd}
 \end{center}
 ```
 
-Line 6 is the first line in this chapter where \( \to \)E fires on an implication that was itself **written by** \( \to \)E, not given as a premise. A line is a line, however it was obtained.
+Line 6 is the first line in this chapter where \( \rulename{{\to}E} \) fires on an implication that was itself **written by** \( \rulename{{\to}E} \), not given as a premise. A line is a line, however it was obtained.
 
 (d) *Idea.* This time the goal leads. The goal \( R \) is the conclusion of \( (P \wedge Q) \to R \), so it suffices to reach its hypothesis \( P \wedge Q \). That subgoal is a conjunction, so, goal-directed as in Section 1.3, it comes from \( \rulename{\wedge I} \) with subgoals \( P \) and \( Q \), and both are premises.
 
@@ -217,7 +217,7 @@ $\begin{nd}
 
 Compare (c). There the implication took its two hypotheses one at a time, \( P \to (Q \to R) \), and the conjunction was a premise to be taken apart. Here the implication takes both hypotheses at once, \( (P \wedge Q) \to R \), and the conjunction is a subgoal to be built. The content is the same; the brackets decide which rules the derivation uses. (Section 1.5 shows that each of the two implications is derivable from the other.)
 
-(e) *Idea.* Both ends at once. From the goal: \( Q \wedge S \) is a conjunction, so its last line is \( \rulename{\wedge I} \), with subgoals \( Q \) and \( S \). From the premises: both are conjunctions, so \( \rulename{\wedge E} \) takes each apart, giving \( P \to Q \), \( R \to S \), \( P \) and \( R \). The two ends meet through \( \to \)E: \( P \to Q \) fires on \( P \) and gives the subgoal \( Q \), and \( R \to S \) fires on \( R \) and gives the subgoal \( S \).
+(e) *Idea.* Both ends at once. From the goal: \( Q \wedge S \) is a conjunction, so its last line is \( \rulename{\wedge I} \), with subgoals \( Q \) and \( S \). From the premises: both are conjunctions, so \( \rulename{\wedge E} \) takes each apart, giving \( P \to Q \), \( R \to S \), \( P \) and \( R \). The two ends meet through \( \rulename{{\to}E} \): \( P \to Q \) fires on \( P \) and gives the subgoal \( Q \), and \( R \to S \) fires on \( R \) and gives the subgoal \( S \).
 
 ```{=latex}
 \begin{center}
@@ -238,7 +238,7 @@ $\begin{nd}
 Lines 3–6 came from the premises, line 9 from the goal, and lines 7–8 are where the two searches met.
 :::
 
-Each derivation in the example is a box-free derivation (@def-box-free-derivation) with \( \wedge \)I, \( \wedge \)E and \( \to \)E as its rules, so by @def-derivable each shows its sequent. In each, the Idea chose a rule for a reason that can be stated: the goal's main connective, an available line's main connective, or an available implication whose conclusion is the goal.
+Each derivation in the example is a box-free derivation (@def-box-free-derivation) with \( \rulename{\wedge I} \), \( \rulename{\wedge E} \) and \( \rulename{{\to}E} \) as its rules, so by @def-derivable each shows its sequent. In each, the Idea chose a rule for a reason that can be stated: the goal's main connective, an available line's main connective, or an available implication whose conclusion is the goal.
 
 ## Checking a line of modus ponens
 
@@ -249,7 +249,7 @@ Finding a chain can take some searching; checking one never does. For a line jus
 3. Is line \( j \) exactly \( \varphi \), symbol for symbol?
 4. Is this line exactly \( \psi \)?
 
-Here is the check run on the lines of (c) above that use \( \to \)E, and on a tempting wrong line, "\( R \) — \( \rulename{{\to}E} \) 2, 4", that a hurried reader might write instead of lines 5 and 6.
+Here is the check run on the lines of (c) above that use \( \rulename{{\to}E} \), and on a tempting wrong line, "\( R \) — \( \rulename{{\to}E} \) 2, 4", that a hurried reader might write instead of lines 5 and 6.
 
 | Line | Cites | \( \varphi \), \( \psi \) read off line \( i \) | Line \( j \) is \( \varphi \)? | Line is \( \psi \)? |
 |---|---|---|---|---|
@@ -285,20 +285,20 @@ Each piece of the sentence is one line.
 | Line | Sentence |
 |---|---|
 | 3 | "Since \( x > 2 \), …" (the hypothesis) |
-| 4 | "… we have \( x^2 > 4 \), …" (\( \to \)E, firing the first fact) |
-| 5 | "… and so \( x^2 + 1 > 5 \)." (\( \to \)E, firing the second fact) |
+| 4 | "… we have \( x^2 > 4 \), …" (\( \rulename{{\to}E} \), firing the first fact) |
+| 5 | "… and so \( x^2 + 1 > 5 \)." (\( \rulename{{\to}E} \), firing the second fact) |
 
-The sentence never mentions lines 1 and 2. That is normal: when an implication is a known theorem or a fact of school algebra, writers leave it unstated and write only "since … we get …". Each "since \( \varphi \), \( \psi \)" in a proof is one application of \( \to \)E to an implication that the reader is trusted to supply. When a proof is hard to follow, writing the unstated implications down is often how one finds a gap: either the implication is false, or its hypothesis was never established.
+The sentence never mentions lines 1 and 2. That is normal: when an implication is a known theorem or a fact of school algebra, writers leave it unstated and write only "since … we get …". Each "since \( \varphi \), \( \psi \)" in a proof is one application of \( \rulename{{\to}E} \) to an implication that the reader is trusted to supply. When a proof is hard to follow, writing the unstated implications down is often how one finds a gap: either the implication is false, or its hypothesis was never established.
 
 ## Common errors
 
 The warning above was about the wrong given line: the conclusion in place of the hypothesis. The other common error is a hypothesis that is only partly there.
 
 ::: {.warning}
-\( \to \)E needs the **whole** hypothesis. From \( (P \wedge Q) \to R \) and \( P \) alone, it gives nothing. This is the commonest slip in analysis: "\( f \) is continuous, so by the theorem \( f \) attains a maximum". The theorem meant (proved in Part I) has a second hypothesis, that \( f \) is defined on a closed bounded interval, and without it the conclusion fails: \( f(x) = x \) on the open interval \( (0, 1) \) is continuous and has no largest value, since \( \frac{a + 1}{2} \) is a larger value than \( a \) for every \( a \) in \( (0, 1) \).
+\( \rulename{{\to}E} \) needs the **whole** hypothesis. From \( (P \wedge Q) \to R \) and \( P \) alone, it gives nothing. This is the commonest slip in analysis: "\( f \) is continuous, so by the theorem \( f \) attains a maximum". The theorem meant (proved in Part I) has a second hypothesis, that \( f \) is defined on a closed bounded interval, and without it the conclusion fails: \( f(x) = x \) on the open interval \( (0, 1) \) is continuous and has no largest value, since \( \frac{a + 1}{2} \) is a larger value than \( a \) for every \( a \) in \( (0, 1) \).
 :::
 
-A near relative is a hypothesis in the wrong order, as in the clause-by-clause reading: \( Q \wedge P \) is not the hypothesis of \( (P \wedge Q) \to R \). The repair is two \( \wedge \)E lines and one \( \wedge \)I line, and Exercise B1 asks for it.
+A near relative is a hypothesis in the wrong order, as in the clause-by-clause reading: \( Q \wedge P \) is not the hypothesis of \( (P \wedge Q) \to R \). The repair is two \( \rulename{\wedge E} \) lines and one \( \rulename{\wedge I} \) line, and Exercise B1 asks for it.
 
 ## What the rules sound like
 
@@ -328,13 +328,13 @@ In the Lean column, `h` is the implication and `hp` the proof of its hypothesis;
 :::
 
 ::: {.solution}
-(a) Given lines \( i \): \( \varphi \to \psi \) and \( j \): \( \varphi \); new line \( k \): \( \psi \), justified "\( \to \)E \( i, j \)" (@def-rule-implication-elimination).
+(a) Given lines \( i \): \( \varphi \to \psi \) and \( j \): \( \varphi \); new line \( k \): \( \psi \), justified "\( \rulename{{\to}E} \) \( i, j \)" (@def-rule-implication-elimination).
 
-(b) Only \( Q \wedge R \), the conclusion of line 1. The line \( Q \) needs a further \( \wedge \)E, and \( R \wedge Q \) two further \( \wedge \)E lines and a \( \wedge \)I line. The line \( P \to Q \) is not the conclusion of line 1, so \( \to \)E cannot write it.
+(b) Only \( Q \wedge R \), the conclusion of line 1. The line \( Q \) needs a further \( \rulename{\wedge E} \), and \( R \wedge Q \) two further \( \rulename{\wedge E} \) lines and a \( \rulename{\wedge I} \) line. The line \( P \to Q \) is not the conclusion of line 1, so \( \rulename{{\to}E} \) cannot write it.
 
 (c) The claim is "even \( \to \) red", and the red card shows the conclusion. An odd number behind it would not contradict the claim, which says nothing about which cards are red; an even number would fit it. Inferring anything about its number from its color would be affirming the consequent.
 
-(d) False. \( \to \)E needs an implication and a line that is its hypothesis. The hypothesis of \( Q \to R \) is \( Q \), and \( P \to Q \) is not \( Q \); the hypothesis of \( P \to Q \) is \( P \), which is not a line. So \( \to \)E does not apply at all. (The sequent \( P \to Q, \ Q \to R \vdash P \to R \) does hold, but its derivation needs the rule of Section 1.5.)
+(d) False. \( \rulename{{\to}E} \) needs an implication and a line that is its hypothesis. The hypothesis of \( Q \to R \) is \( Q \), and \( P \to Q \) is not \( Q \); the hypothesis of \( P \to Q \) is \( P \), which is not a line. So \( \rulename{{\to}E} \) does not apply at all. (The sequent \( P \to Q, \ Q \to R \vdash P \to R \) does hold, but its derivation needs the rule of Section 1.5.)
 :::
 
 ### B. Practice
@@ -351,7 +351,7 @@ Give a derivation of each sequent. For each, say which step you found first, and
 :::
 
 ::: {.solution}
-(a) The first step found was from the goal: \( S \wedge Q \) is a conjunction, so the last line is \( \wedge \)I with subgoals \( S \) and \( Q \). Then from the premises: \( P \to Q \) fires on \( P \) and gives \( Q \), and \( Q \to (R \wedge S) \) fires on \( Q \) and gives \( R \wedge S \), which \( \wedge \)E takes apart.
+(a) The first step found was from the goal: \( S \wedge Q \) is a conjunction, so the last line is \( \rulename{\wedge I} \) with subgoals \( S \) and \( Q \). Then from the premises: \( P \to Q \) fires on \( P \) and gives \( Q \), and \( Q \to (R \wedge S) \) fires on \( Q \) and gives \( R \wedge S \), which \( \rulename{\wedge E} \) takes apart.
 
 ```{=latex}
 \begin{center}
@@ -476,7 +476,7 @@ $\begin{nd}
 
 (b) This instance already does. The first premise is true, because every multiple of \( 6 \) is even (\( 6k = 2(3k) \)); the second is true, since \( 10 = 2 \cdot 5 \); and the conclusion is false, since \( 10 = 6 \cdot 1 + 4 \) leaves remainder \( 4 \) on division by \( 6 \). So the step at line 3 leads from two true premises to a false line, and no safe rule can allow it.
 
-(c) None. \( \to \)E cannot fire, since no line is the hypothesis \( D \); \( \wedge \)E has no conjunction to take apart; and \( \wedge \)I only joins the premises into conjunctions such as \( (D \to E) \wedge E \), which say nothing the premises did not. The premises tell us nothing about whether \( 10 \) is divisible by \( 6 \), which is why the conclusion had to be smuggled in.
+(c) None. \( \rulename{{\to}E} \) cannot fire, since no line is the hypothesis \( D \); \( \rulename{\wedge E} \) has no conjunction to take apart; and \( \rulename{\wedge I} \) only joins the premises into conjunctions such as \( (D \to E) \wedge E \), which say nothing the premises did not. The premises tell us nothing about whether \( 10 \) is divisible by \( 6 \), which is why the conclusion had to be smuggled in.
 :::
 
 ::: {#exr-using-an-implication-c2}
@@ -506,7 +506,7 @@ The goal splits into \( R \) and \( S \). Which available implication could end 
 :::
 
 ::: {.solution}
-(a) *From the goal:* \( R \wedge S \) is a conjunction, so the last line is \( \wedge \)I with subgoals \( R \) and \( S \). The only line mentioning \( R \) is \( P \to (Q \to R) \), whose conclusion is \( Q \to R \); so \( R \) needs \( Q \to R \) and \( Q \), and \( Q \to R \) needs \( P \). *From the premises:* \( S \wedge Q \) splits by \( \wedge \)E into \( S \) and \( Q \); then \( S \to P \) fires on \( S \) and gives \( P \). *Where they meet:* \( S \) is at once a subgoal and a piece of the premise; \( P \), reached forwards, is the hypothesis the backward search asked for; and \( Q \), from \( \wedge \)E, is the last hypothesis \( R \) needs.
+(a) *From the goal:* \( R \wedge S \) is a conjunction, so the last line is \( \rulename{\wedge I} \) with subgoals \( R \) and \( S \). The only line mentioning \( R \) is \( P \to (Q \to R) \), whose conclusion is \( Q \to R \); so \( R \) needs \( Q \to R \) and \( Q \), and \( Q \to R \) needs \( P \). *From the premises:* \( S \wedge Q \) splits by \( \rulename{\wedge E} \) into \( S \) and \( Q \); then \( S \to P \) fires on \( S \) and gives \( P \). *Where they meet:* \( S \) is at once a subgoal and a piece of the premise; \( P \), reached forwards, is the hypothesis the backward search asked for; and \( Q \), from \( \rulename{\wedge E} \), is the last hypothesis \( R \) needs.
 
 (b) The derivation, with the rule on every line:
 
@@ -530,13 +530,13 @@ Line 4 is cited twice, by line 6 and by line 9.
 
 **Marking scheme.** (10 points)
 
-- 2: from the goal, splits \( R \wedge S \) into the subgoals \( R \) and \( S \) for a final \( \wedge \)I.
-- 2: takes \( S \wedge Q \) apart by \( \wedge \)E.
-- 3: fires \( S \to P \), then \( P \to (Q \to R) \), then \( Q \to R \), each \( \to \)E citing an implication and exactly its hypothesis.
-- 2: the final \( \wedge \)I, with the citation order giving \( R \wedge S \).
+- 2: from the goal, splits \( R \wedge S \) into the subgoals \( R \) and \( S \) for a final \( \rulename{\wedge I} \).
+- 2: takes \( S \wedge Q \) apart by \( \rulename{\wedge E} \).
+- 3: fires \( S \to P \), then \( P \to (Q \to R) \), then \( Q \to R \), each \( \rulename{{\to}E} \) citing an implication and exactly its hypothesis.
+- 2: the final \( \rulename{\wedge I} \), with the citation order giving \( R \wedge S \).
 - 1: the three-part description names where the searches meet.
 
-Any other correct derivation earns the same points step for step (its lines may come in another order, as long as each cites only earlier lines). Fatal errors (0 for the step): \( \to \)E on \( P \to (Q \to R) \) with \( Q \) (the wrong hypothesis); affirming the consequent anywhere.
+Any other correct derivation earns the same points step for step (its lines may come in another order, as long as each cites only earlier lines). Fatal errors (0 for the step): \( \rulename{{\to}E} \) on \( P \to (Q \to R) \) with \( Q \) (the wrong hypothesis); affirming the consequent anywhere.
 :::
 
 <!-- dependency ledger
