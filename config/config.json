@@ -102,6 +102,7 @@
       "part": "Part 0 · Foundations"
     },
     "src/ch02-negation-and-classical-logic",
+    "src/ch03-semantics-soundness-completeness",
     {
       "dir": "src/ch11-least-upper-bound",
       "part": "Part I · Analysis on the Real Line"

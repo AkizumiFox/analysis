@@ -237,3 +237,7 @@
 % A range of cited lines in a derivation's justification column: \lines{2}{5} prints 2–5.
 % (Kept here so that no source file carries a non-ASCII character inside math.)
 \providecommand{\lines}[2]{#1\text{–}#2}
+% Formulas as objects (Chapter 3): height and set of atoms of a formula. The height macro is
+% \hgt, not \height: a package loaded by the PDF preamble defines \height as a length.
+\providecommand{\hgt}{\operatorname{ht}}
+\providecommand{\atoms}{\operatorname{atoms}}

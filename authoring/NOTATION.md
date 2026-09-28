@@ -112,7 +112,7 @@ The main characters: what letter each kind of object gets.
 | `\Gamma_k`, `\varphi_k`; `\Delta \subseteq \Delta'` | the context of line k of a derivation (Ch 1 `def-derivation`) and the formula on line k (Ch 3 §05); for lists, every formula of Δ occurs in Δ' (Ch 3 §05, before `lem-context-inclusion`) |
 | `u`, `\models_3` | a three-valued valuation (values 0 < ½ < 1) and its entailment (local to Ch 3 §05, the optional `thm-raa-independent`) |
 | `v_{\mathrm{T}}` | the all-T valuation: every atom true (local to Ch 3 §03 C2, §07 `thm-adequate-connectives` (b) and C2 (a)); not \( u \), which is three-valued |
-| `\varphi^{v}`, `p^{v}` | the formula signed by a valuation: φ if v(φ) = T, ¬φ if v(φ) = F (Ch 3 §06, before `lem-connective-rows`; the literals of §07 rows) |
+| `\varphi^{v}`, `p^{v}` | the formula signed by a valuation: φ if v(φ) = T, ¬φ if v(φ) = F (Ch 3 §06, before `lem-truth-table-line`; the literals of §07 rows) |
 | `\mathbin{\vert}`, `\downarrow`, `\mathsf{M}` | NAND ("not both"; the source writes `\mathbin{|}`, which a pipe table cannot show), NOR ("neither"), and the three-place majority connective (local to Ch 3 §04 C1 and §07 exercises C1, C2) |
 | `\mathrm{occ}(\varphi)`, `\mathrm{bin}(\varphi)` | number of atom occurrences; number of binary connectives (local to Ch 3 §03 exercise B2) |
 
