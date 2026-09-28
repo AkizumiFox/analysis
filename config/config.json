@@ -98,9 +98,10 @@
   "reading-paths": [],
   "chapters": [
     {
-      "dir": "src/ch01-propositional-natural-deduction",
+      "dir": "src/ch01-connectives-and-derivations",
       "part": "Part 0 · Foundations"
     },
+    "src/ch02-negation-and-classical-logic",
     {
       "dir": "src/ch11-least-upper-bound",
       "part": "Part I · Analysis on the Real Line"
