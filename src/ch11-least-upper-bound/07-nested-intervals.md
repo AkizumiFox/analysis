@@ -13,14 +13,14 @@ Here is a way to hunt for \( \sqrt{2} \) using nothing but rational arithmetic. 
 \]
 each interval half as long as the one before, each with rational endpoints, and each containing \( \sqrt{2} \). Is there a number lying in all of them?
 
-In \( \nR \) the answer should be "yes, \( \sqrt{2} \)". In \( \nQ \) the answer is "no": the only candidate is \( \sqrt{2} \), and it is not rational. We make both answers precise below. First, a name for the shape of this data. A family of sets \( I_1, I_2, I_3, \dots \) is **nested** if \( I_{n+1} \subseteq I_n \) for every \( n \in \nN \).
+In \( \nR \) the answer should be "yes, \( \sqrt{2} \)". In \( \nQ \) the answer is "no": the only candidate is \( \sqrt{2} \), and it is not rational. We make both answers precise below. First, a name for the shape of this data. A family of sets \( I_1, I_2, I_3, \dots \) is **nested** if \( I_{n+1} \subseteq I_n \) for every \( n \ge 1 \).
 
 ::: {#thm-nested-intervals}
 [Nested Interval Theorem]
 
-For each \( n \in \nN \), let \( I_n = [a_n, b_n] \) be a closed bounded interval with \( a_n \le b_n \), and suppose the family is nested: \( I_{n+1} \subseteq I_n \) for every \( n \in \nN \). Then \( \bigcap_{n \in \nN} I_n \ne \emptyset \). More precisely, \( \alpha \coloneqq \sup \{ a_n : n \in \nN \} \) exists and lies in every \( I_n \).
+For each \( n \ge 1 \), let \( I_n = [a_n, b_n] \) be a closed bounded interval with \( a_n \le b_n \), and suppose the family is nested: \( I_{n+1} \subseteq I_n \) for every \( n \ge 1 \). Then \( \bigcap_{n \ge 1} I_n \ne \emptyset \). More precisely, \( \alpha \coloneqq \sup \{ a_n : n \ge 1 \} \) exists and lies in every \( I_n \).
 
-If moreover for every \( \varepsilon > 0 \) there is \( n \in \nN \) with \( b_n - a_n < \varepsilon \), then \( \bigcap_{n \in \nN} I_n = \{ \alpha \} \).
+If moreover for every \( \varepsilon > 0 \) there is \( n \ge 1 \) with \( b_n - a_n < \varepsilon \), then \( \bigcap_{n \ge 1} I_n = \{ \alpha \} \).
 :::
 
 ::: {.idea}
@@ -33,23 +33,23 @@ For uniqueness: two different common points \( x < y \) would force every interv
 We first compare endpoints with different indices.
 
 ::: {.claim}
-\( a_m \le b_n \) for all \( m, n \in \nN \).
+\( a_m \le b_n \) for all \( m, n \ge 1 \).
 :::
 
 ::: {.proofofclaim}
-From \( I_{j+1} \subseteq I_j \) for every \( j \), induction on \( k - m \) gives \( I_k \subseteq I_m \) whenever \( m \le k \). Let \( m, n \in \nN \) and \( k \coloneqq \max\{ m, n \} \). Then \( I_k \subseteq I_m \) and \( I_k \subseteq I_n \). Since \( a_k \in I_k \subseteq I_m \), we have \( a_m \le a_k \). Since \( b_k \in I_k \subseteq I_n \), we have \( b_k \le b_n \). Hence \( a_m \le a_k \le b_k \le b_n \).
+From \( I_{j+1} \subseteq I_j \) for every \( j \), induction on \( k - m \) gives \( I_k \subseteq I_m \) whenever \( m \le k \). Let \( m, n \ge 1 \) and \( k \coloneqq \max\{ m, n \} \). Then \( I_k \subseteq I_m \) and \( I_k \subseteq I_n \). Since \( a_k \in I_k \subseteq I_m \), we have \( a_m \le a_k \). Since \( b_k \in I_k \subseteq I_n \), we have \( b_k \le b_n \). Hence \( a_m \le a_k \le b_k \le b_n \).
 :::
 
-Let \( A \coloneqq \{ a_n : n \in \nN \} \). It is nonempty, since \( a_1 \in A \), and by the claim it is bounded above by \( b_1 \). By @ax-least-upper-bound, \( \alpha \coloneqq \sup A \) exists.
+Let \( A \coloneqq \{ a_n : n \ge 1 \} \). It is nonempty, since \( a_1 \in A \), and by the claim it is bounded above by \( b_1 \). By @ax-least-upper-bound, \( \alpha \coloneqq \sup A \) exists.
 
-Fix \( n \in \nN \). Since \( \alpha \) is an upper bound of \( A \), \( a_n \le \alpha \). By the claim, \( b_n \) is an upper bound of \( A \), so (S2) of @def-supremum gives \( \alpha \le b_n \). Hence \( \alpha \in [a_n, b_n] = I_n \). As \( n \) was arbitrary, \( \alpha \in \bigcap_{n} I_n \), and the intersection is nonempty.
+Fix \( n \ge 1 \). Since \( \alpha \) is an upper bound of \( A \), \( a_n \le \alpha \). By the claim, \( b_n \) is an upper bound of \( A \), so (S2) of @def-supremum gives \( \alpha \le b_n \). Hence \( \alpha \in [a_n, b_n] = I_n \). As \( n \) was arbitrary, \( \alpha \in \bigcap_{n} I_n \), and the intersection is nonempty.
 
 Now assume the shrinking hypothesis, and let \( x \in \bigcap_n I_n \). Suppose \( x \ne \alpha \), and let \( u \coloneqq \min\{ x, \alpha \} \) and \( v \coloneqq \max\{ x, \alpha \} \), so \( u < v \) and both lie in every \( I_n \). For every \( n \), \( a_n \le u < v \le b_n \), so \( b_n - a_n \ge v - u \). But \( \varepsilon \coloneqq v - u > 0 \), and by hypothesis some \( n \) has \( b_n - a_n < v - u \). This is a contradiction, so \( x = \alpha \). Hence \( \bigcap_n I_n = \{ \alpha \} \).
 :::
 
 Closedness is what lets \( \alpha \) belong to \( I_n \). The proof gives only \( a_n \le \alpha \le b_n \), with nonstrict inequalities, and \( \alpha \) may well equal an endpoint. An open interval would exclude it.
 
-Now back to the bisection. Its intervals have length \( 1/2^{n-1} \), and \( 2^{n-1} \ge n \) for every \( n \in \nN \) (by @ax-induction), so \( 1/2^{n-1} \le 1/n \). Given \( \varepsilon > 0 \), @cor-archimedean-epsilon gives \( n \) with \( 1/n < \varepsilon \), and then the \( n \)-th interval is shorter than \( \varepsilon \). The rule keeps \( a_n^2 < 2 < b_n^2 \) at every step, so \( a_n < \sqrt{2} < b_n \) by @thm-ordered-field-rules (g), and every interval contains \( \sqrt{2} \). By @thm-nested-intervals the intersection is exactly \( \{ \sqrt{2} \} \). The bisection traps \( \sqrt{2} \) and nothing else.
+Now back to the bisection. Its intervals have length \( 1/2^{n-1} \), and \( 2^{n-1} \ge n \) for every \( n \ge 1 \) (by @ax-induction), so \( 1/2^{n-1} \le 1/n \). Given \( \varepsilon > 0 \), @cor-archimedean-epsilon gives \( n \) with \( 1/n < \varepsilon \), and then the \( n \)-th interval is shorter than \( \varepsilon \). The rule keeps \( a_n^2 < 2 < b_n^2 \) at every step, so \( a_n < \sqrt{2} < b_n \) by @thm-ordered-field-rules (g), and every interval contains \( \sqrt{2} \). By @thm-nested-intervals the intersection is exactly \( \{ \sqrt{2} \} \). The bisection traps \( \sqrt{2} \) and nothing else.
 
 ## What each hypothesis does
 
@@ -66,7 +66,7 @@ Now back to the bisection. Its intervals have length \( 1/2^{n-1} \), and \( 2^{
 We check each row.
 
 - **Closed.** The intervals \( (0, 1/n) \) are nested and bounded. A real \( x \le 0 \) is not in \( (0, 1) \). For \( x > 0 \), @cor-archimedean-epsilon gives \( n \) with \( 1/n < x \), so \( x \notin (0, 1/n) \). Hence no real number is in every interval. Here the supremum of the left endpoints is \( \alpha = 0 \), and it lies in none of the intervals: exactly the step that closedness secured.
-- **Bounded.** The intervals \( [n, \infty) \) are closed and nested. For any \( x \in \nR \), @thm-naturals-unbounded gives \( n > x \), and then \( x \notin [n, \infty) \). The proof breaks earlier here: the left endpoints form \( \nN \), which has no upper bound, so \( \alpha \) does not exist.
+- **Bounded.** The intervals \( [n, \infty) \) are closed and nested. For any \( x \in \nR \), @thm-naturals-unbounded gives \( n > x \), and then \( x \notin [n, \infty) \). The proof breaks earlier here: the left endpoints form \( \nZ_{>0} \), which has no upper bound, so \( \alpha \) does not exist.
 - **Nested.** The intervals \( [n, n + 1] \) are closed and bounded, but \( [1, 2] \cap [3, 4] = \emptyset \) already.
 - **The field is \( \nR \).** In \( \nQ \), a closed interval means \( \{ q \in \nQ : a \le q \le b \} \). Take the bisection intervals \( [a_n, b_n] \) from the start of this section. They are defined by rational arithmetic alone, because each midpoint \( c \) is rational, and \( c^2 \ne 2 \) by @thm-sqrt2-irrational, so the rule "keep the half whose endpoints' squares straddle \( 2 \)" always applies. We showed that the real intervals \( [a_n, b_n] \) have intersection \( \{ \sqrt{2} \} \). So their rational parts have intersection \( \nQ \cap \{ \sqrt{2} \} = \emptyset \).
 - **Shrinking.** The intervals \( [-1/n, 1 + 1/n] \) are closed, bounded, and nested, and their intersection is \( [0, 1] \): every point of \( [0, 1] \) lies in all of them, and a point outside \( [0, 1] \) is excluded from some interval by @cor-archimedean-epsilon (@exr-nested-intervals-b2 writes this out). The intersection is nonempty, but it is not a single point. Their lengths \( 1 + 2/n \) never drop below \( 1 \).
@@ -85,14 +85,14 @@ The half-open intervals \( (0, 1/n] \) are nested and bounded, but no real numbe
 
 ## The real numbers cannot be listed
 
-Chapter 8 calls a set **countable** if its elements can be listed as \( x_1, x_2, x_3, \dots \), repetitions allowed; for a nonempty set this means that it is the image of some function from \( \nN \). That chapter shows that \( \nN \), \( \nZ \), and \( \nQ \) are countable. It also shows that \( \nR \) is not, by Cantor's diagonal argument with decimal expansions. Decimal expansions were taken there as a fact from school: every real number has one, and two different expansions such as \( 0.4999\ldots \) and \( 0.5000\ldots \) can name the same number. Neither fact has been proved from our axioms.
+Chapter 8 calls a set **countable** if its elements can be listed as \( x_0, x_1, x_2, \dots \), repetitions allowed; for a nonempty set this means that it is the image of some function from \( \nN \). That chapter shows that \( \nN \), \( \nZ \), and \( \nQ \) are countable. It also shows that \( \nR \) is not, by Cantor's diagonal argument with decimal expansions. Decimal expansions were taken there as a fact from school: every real number has one, and two different expansions such as \( 0.4999\ldots \) and \( 0.5000\ldots \) can name the same number. Neither fact has been proved from our axioms.
 
 Here is a proof with no decimals, using only @thm-nested-intervals.
 
 ::: {#thm-reals-uncountable}
 [Uncountability of the Reals]
 
-Let \( x_1, x_2, x_3, \dots \) be any list of real numbers, that is, any function \( n \mapsto x_n \) from \( \nN \) to \( \nR \). Then there is \( c \in \nR \) with \( c \ne x_n \) for every \( n \in \nN \). Consequently \( \nR \) is not countable.
+Let \( x_1, x_2, x_3, \dots \) be any list of real numbers, that is, any function \( n \mapsto x_n \) from \( \nZ_{>0} \) to \( \nR \). Then there is \( c \in \nR \) with \( c \ne x_n \) for every \( n \ge 1 \). Consequently \( \nR \) is not countable.
 :::
 
 ::: {.idea}
@@ -125,9 +125,9 @@ In the second case \( x_{n+1} \in L \), so \( x_{n+1} \notin R \), since \( L \)
 
 Each \( I_{n+1} \) is determined by \( I_n \) and \( x_{n+1} \) through an explicit rule, so the family is defined by recursion (Chapter 7); no choice principle is involved.
 
-The intervals \( I_n \) are closed, bounded, and nested. By @thm-nested-intervals, there is \( c \in \bigcap_n I_n \). For each \( n \in \nN \) we have \( c \in I_n \) and \( x_n \notin I_n \), so \( c \ne x_n \).
+The intervals \( I_n \) are closed, bounded, and nested. By @thm-nested-intervals, there is \( c \in \bigcap_n I_n \). For each \( n \ge 1 \) we have \( c \in I_n \) and \( x_n \notin I_n \), so \( c \ne x_n \).
 
-Hence no function from \( \nN \) to \( \nR \) has image all of \( \nR \). Since \( \nR \) is nonempty, it is not countable. This proves the theorem.
+Hence no function \( f \) from \( \nN \) to \( \nR \) has image all of \( \nR \): the list \( x_n \coloneqq f(n - 1) \), for \( n \ge 1 \), has the same image as \( f \), and it misses \( c \). Since \( \nR \) is nonempty, it is not countable. This proves the theorem.
 :::
 
 The answer to the prompt: halves share their midpoint. If \( x_{n+1} \) were exactly that midpoint, it would lie in both closed halves, and neither could be chosen to avoid it. Thirds leave a gap between the two outer pieces.
@@ -166,7 +166,7 @@ Two questions are left open. Is the least upper bound axiom *equivalent* to some
 ::: {#exr-nested-intervals-a1}
 [A1]
 
-For each family \( (I_n)_{n \in \nN} \), say which hypothesis of @thm-nested-intervals fails, and find \( \bigcap_n I_n \).
+For each family \( (I_n)_{n \ge 1} \), say which hypothesis of @thm-nested-intervals fails, and find \( \bigcap_n I_n \).
 
 ::: {.enumerate options="label=(\alph*)"}
 1. \( I_n = [0, 1/n) \).
@@ -199,7 +199,7 @@ For each family \( (I_n)_{n \in \nN} \), say which hypothesis of @thm-nested-int
 
 ::: {.enumerate options="label=(\alph*)"}
 1. Let \( I_n = [a_n, b_n] \) be nested closed intervals with \( b_n - a_n = 2^{-n} \) for every \( n \). Prove that \( \bigcap_n I_n \) consists of exactly one point.
-2. For \( n \in \nN \), let \( m_n \coloneqq \floor{10^n \sqrt{2}} \) (@lem-integer-part), and let \( a_n \coloneqq m_n / 10^n \) and \( b_n \coloneqq a_n + 10^{-n} \), so that \( a_n \) is the \( n \)-digit decimal truncation of \( \sqrt{2} \). Prove that the intervals \( [a_n, b_n] \) are nested, and that their intersection is \( \{ \sqrt{2} \} \). Compute \( a_1 \) and \( a_2 \).
+2. For \( n \ge 1 \), let \( m_n \coloneqq \floor{10^n \sqrt{2}} \) (@lem-integer-part), and let \( a_n \coloneqq m_n / 10^n \) and \( b_n \coloneqq a_n + 10^{-n} \), so that \( a_n \) is the \( n \)-digit decimal truncation of \( \sqrt{2} \). Prove that the intervals \( [a_n, b_n] \) are nested, and that their intersection is \( \{ \sqrt{2} \} \). Compute \( a_1 \) and \( a_2 \).
 :::
 :::
 
@@ -218,7 +218,7 @@ For each family \( (I_n)_{n \in \nN} \), say which hypothesis of @thm-nested-int
 ::: {#exr-nested-intervals-b2}
 [B2: An intersection that is not a point]
 
-Prove that \( \bigcap_{n \in \nN} [-1/n, 1 + 1/n] = [0, 1] \). Which hypothesis of the uniqueness clause of @thm-nested-intervals fails?
+Prove that \( \bigcap_{n \ge 1} [-1/n, 1 + 1/n] = [0, 1] \). Which hypothesis of the uniqueness clause of @thm-nested-intervals fails?
 :::
 
 ::: {.solution}
@@ -255,7 +255,7 @@ For "\( s \) is an upper bound" in (c), argue by contradiction: what does an ele
 :::
 
 ::: {.solution}
-(a) Let \( I_n = [a_n, b_n] \) be nested. For \( m \le k \), \( I_k \subseteq I_m \), by induction from \( I_{j+1} \subseteq I_j \). Given \( m, n \), put \( k \coloneqq \max\{ m, n \} \); then \( a_m \le a_k \le b_k \le b_n \). So \( A \coloneqq \{ a_n : n \in \nN \} \) is nonempty and bounded above by \( b_1 \), and \( \alpha \coloneqq \sup A \) exists by @ax-least-upper-bound. For each \( n \), \( a_n \le \alpha \) because \( \alpha \) is an upper bound, and \( \alpha \le b_n \) because \( b_n \) is an upper bound and \( \alpha \) is the least one. So \( \alpha \in I_n \) for every \( n \).
+(a) Let \( I_n = [a_n, b_n] \) be nested. For \( m \le k \), \( I_k \subseteq I_m \), by induction from \( I_{j+1} \subseteq I_j \). Given \( m, n \), put \( k \coloneqq \max\{ m, n \} \); then \( a_m \le a_k \le b_k \le b_n \). So \( A \coloneqq \{ a_n : n \ge 1 \} \) is nonempty and bounded above by \( b_1 \), and \( \alpha \coloneqq \sup A \) exists by @ax-least-upper-bound. For each \( n \), \( a_n \le \alpha \) because \( \alpha \) is an upper bound, and \( \alpha \le b_n \) because \( b_n \) is an upper bound and \( \alpha \) is the least one. So \( \alpha \in I_n \) for every \( n \).
 
 (b) In an ordered field \( 2 = 1 + 1 > 0 \), so \( c \) is defined and \( a_n \le c \le b_n \) when \( a_n \le b_n \). We prove the three statements together by induction on \( n \). For \( n = 1 \): \( b_1 = M \) is an upper bound, \( a_1 = a \in A \), and \( b_1 - a_1 = M - a \). Suppose they hold for \( n \). If \( c \) is an upper bound of \( A \), then \( b_{n+1} = c \) is an upper bound, and \( a_{n+1} = a_n \), so the element of \( A \) that is \( \ge a_n \) still works. Otherwise, \( c \) is not an upper bound, so some \( y \in A \) has \( y > c = a_{n+1} \), and \( b_{n+1} = b_n \) is an upper bound. In both cases \( b_{n+1} - a_{n+1} = (b_n - a_n)/2 = (M - a)/2^n \). The intervals are nested, since each is one half of the previous one.
 
@@ -296,7 +296,7 @@ A proof of (c) that shows \( \sup A = s \) through the backward direction of @th
 ::: {#exr-nested-intervals-c3}
 [C3: Nested intervals in the rational functions]
 
-Work in the ordered field \( \nR(x) \) of @exm-nonarchimedean-field. For \( n \in \nN \), let \( I_n \coloneqq \{ f \in \nR(x) : n \le f \le x/n \} \).
+Work in the ordered field \( \nR(x) \) of @exm-nonarchimedean-field. For \( n \in \nZ_{>0} \), let \( I_n \coloneqq \{ f \in \nR(x) : n \le f \le x/n \} \).
 
 ::: {.enumerate options="label=(\alph*)"}
 1. Show that \( n < x/n \), so \( I_n \) is a closed bounded interval of positive length, and that \( I_{n+1} \subseteq I_n \).
@@ -324,7 +324,7 @@ Write \( \operatorname{lc} \) for the leading coefficient, and recall from @exr-
 
 (a) \( x/n - n = (x - n^2)/n \) has numerator with leading coefficient \( 1 > 0 \) and positive denominator, so \( n < x/n \). Nesting: \( n + 1 > n \), and \( x/n - x/(n+1) = x/(n(n+1)) > 0 \). So \( I_{n+1} \subseteq I_n \).
 
-(b) Since \( f \ge 1 > 0 \), \( \operatorname{lc}(p) > 0 \). Suppose \( \deg p \le \deg q \). By @thm-naturals-unbounded, pick \( N \in \nN \) with \( N > \operatorname{lc}(p)/\operatorname{lc}(q) \), a real number. Then \( N - f = (Nq - p)/q \). If \( \deg p < \deg q \), the leading coefficient of \( Nq - p \) is \( N \operatorname{lc}(q) > 0 \); if \( \deg p = \deg q \), it is \( N \operatorname{lc}(q) - \operatorname{lc}(p) > 0 \). Either way \( f < N \), so \( f \notin I_N \), a contradiction. Hence \( \deg p > \deg q \).
+(b) Since \( f \ge 1 > 0 \), \( \operatorname{lc}(p) > 0 \). Suppose \( \deg p \le \deg q \). By @thm-naturals-unbounded, pick \( N \in \nN \) with \( N > \operatorname{lc}(p)/\operatorname{lc}(q) \), a positive real number, so that \( N \in \nZ_{>0} \). Then \( N - f = (Nq - p)/q \). If \( \deg p < \deg q \), the leading coefficient of \( Nq - p \) is \( N \operatorname{lc}(q) > 0 \); if \( \deg p = \deg q \), it is \( N \operatorname{lc}(q) - \operatorname{lc}(p) > 0 \). Either way \( f < N \), so \( f \notin I_N \), a contradiction. Hence \( \deg p > \deg q \).
 
 (c) For each \( n \),
 \[
@@ -332,7 +332,7 @@ Write \( \operatorname{lc} \) for the leading coefficient, and recall from @exr-
 \]
 If \( \deg p \ge \deg q + 2 \), then \( \deg(np) > \deg(xq) \), so the numerator has leading coefficient \( -n \operatorname{lc}(p) < 0 \). Thus \( f > x/n \) for every \( n \), and \( f \notin I_1 \). If \( \deg p = \deg q + 1 \), both \( xq \) and \( np \) have degree \( \deg q + 1 \), and the numerator has leading coefficient \( \operatorname{lc}(q) - n \operatorname{lc}(p) \). Choosing \( n > \operatorname{lc}(q)/\operatorname{lc}(p) \), which @thm-naturals-unbounded allows, makes it negative, so \( f > x/n \) and \( f \notin I_n \). Both cases contradict \( f \in \bigcap_n I_n \). With (b), no \( f \) lies in every \( I_n \), and the intersection is empty.
 
-(d) The line "\( \alpha \coloneqq \sup \{ a_n \} \) exists by @ax-least-upper-bound". Here the left endpoints are \( a_n = n \), and \( \{ a_n \} = \nN \) is bounded above (by \( x/1 \), for instance) but has no supremum in \( \nR(x) \), as shown in the section on the Archimedean property. The claim \( a_m \le b_n \) and every other line survive.
+(d) The line "\( \alpha \coloneqq \sup \{ a_n \} \) exists by @ax-least-upper-bound". Here the left endpoints are \( a_n = n \), and \( \{ a_n \} = \nZ_{>0} \) is bounded above (by \( x/1 \), for instance) but has no supremum in \( \nR(x) \), by the argument for \( \nN \) in the section on the Archimedean property. The claim \( a_m \le b_n \) and every other line survive.
 :::
 
 ::: {#exr-nested-intervals-c4}
@@ -407,7 +407,7 @@ Let \( A \subseteq \nR \) be nonempty, and let \( s \) be an upper bound of \( A
 
 ::: {.enumerate options="label=(\roman*)"}
 1. \( s = \sup A \).
-2. For every \( n \in \nN \) there is \( a \in A \) with \( a > s - \frac1n \).
+2. For every \( n \in \nZ_{>0} \) there is \( a \in A \) with \( a > s - \frac1n \).
 3. No real number smaller than \( s \) is an upper bound of \( A \).
 :::
 :::

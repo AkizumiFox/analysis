@@ -1,10 +1,10 @@
 # The Archimedean Property
 
-We now have the least upper bound axiom (@ax-least-upper-bound) and a way to use it, the characterization of the supremum by \( \varepsilon \) (@thm-sup-epsilon). This section draws the first consequence, one that looks too obvious to need proof: the natural numbers eventually pass every real number. When we first met suprema, we claimed that \( \sup \{ 1 - 1/n : n \in \nN \} = 1 \) and postponed the proof, because it needs exactly this fact. Here we prove the fact from the axiom, pay off that claim, and then meet an ordered field where the fact is false, so that we can see which line of the proof the axiom is holding up.
+We now have the least upper bound axiom (@ax-least-upper-bound) and a way to use it, the characterization of the supremum by \( \varepsilon \) (@thm-sup-epsilon). This section draws the first consequence, one that looks too obvious to need proof: the natural numbers eventually pass every real number. When we first met suprema, we claimed that \( \sup \{ 1 - 1/n : n \in \nZ_{>0} \} = 1 \) and postponed the proof, because it needs exactly this fact. Here we prove the fact from the axiom, pay off that claim, and then meet an ordered field where the fact is false, so that we can see which line of the proof the axiom is holding up.
 
 ## Where the natural numbers live
 
-So far \( \nR \) is an ordered field satisfying one extra axiom. The numbers \( 1, 2, 3, \dots \) are in it, since \( 2 \) is \( 1 + 1 \), \( 3 \) is \( 2 + 1 \), and so on. But "and so on" is not a definition. We want the set you get by starting at \( 1 \) and adding \( 1 \) again and again, and nothing else. The first half of that description is easy to state as a property of a set.
+So far \( \nR \) is an ordered field satisfying one extra axiom. The numbers \( 0, 1, 2, 3, \dots \) are in it, since \( 2 \) is \( 1 + 1 \), \( 3 \) is \( 2 + 1 \), and so on. But "and so on" is not a definition. We want the set you get by starting at \( 0 \) and adding \( 1 \) again and again, and nothing else. The first half of that description is easy to state as a property of a set.
 
 ::: {#def-inductive-set}
 [Inductive set]
@@ -12,22 +12,22 @@ So far \( \nR \) is an ordered field satisfying one extra axiom. The numbers \( 
 A subset \( S \subseteq \nR \) is **inductive** if
 
 ::: {.enumerate options="label=(N\arabic*)"}
-1. \( 1 \in S \), and
+1. \( 0 \in S \), and
 2. **for every** \( x \in S \), also \( x + 1 \in S \).
 :::
 :::
 
-In words: an inductive set contains \( 1 \), and it is closed under the step "add one". Nothing stops it from containing other numbers as well.
+In words: an inductive set contains \( 0 \), and it is closed under the step "add one". Nothing stops it from containing other numbers as well.
 
 Some examples, checked clause by clause.
 
-- \( \nR \) itself is inductive: it contains \( 1 \), and \( x + 1 \) is a real number whenever \( x \) is.
-- \( [1, \infty) = \{ x \in \nR : x \ge 1 \} \) is inductive: \( 1 \ge 1 \), and \( x \ge 1 \) gives \( x + 1 \ge 1 + 1 > 1 \).
-- \( \{ 1 \} \cup [2, \infty) \) is inductive. From \( 1 \) we step to \( 2 \), which is in \( [2, \infty) \), and \( [2, \infty) \) is closed under adding \( 1 \).
+- \( \nR \) itself is inductive: it contains \( 0 \), and \( x + 1 \) is a real number whenever \( x \) is.
+- \( [0, \infty) = \{ x \in \nR : x \ge 0 \} \) is inductive: \( 0 \ge 0 \), and \( x \ge 0 \) gives \( x + 1 \ge 0 + 1 > 0 \).
+- \( \{ 0 \} \cup [1, \infty) \) is inductive. From \( 0 \) we step to \( 1 \), which is in \( [1, \infty) \), and \( [1, \infty) \) is closed under adding \( 1 \).
 
-A nonexample by minimal change: \( [1, 5] \) contains \( 1 \), so (N1) holds, but \( 4.5 \in [1, 5] \) and \( 5.5 \notin [1, 5] \), so (N2) fails. Chopping the top off \( [1, \infty) \) destroys closure under the step.
+A nonexample by minimal change: \( [0, 5] \) contains \( 0 \), so (N1) holds, but \( 4.5 \in [0, 5] \) and \( 5.5 \notin [0, 5] \), so (N2) fails. Chopping the top off \( [0, \infty) \) destroys closure under the step.
 
-The inductive sets above are too big: \( [1, \infty) \) contains \( 1.5 \) and \( 4.7 \). What we want is the *smallest* one. Intersecting all of them throws away everything that some inductive set can do without.
+The inductive sets above are too big: \( [0, \infty) \) contains \( 1.5 \) and \( 4.7 \). What we want is the *smallest* one. Intersecting all of them throws away everything that some inductive set can do without.
 
 The set of **natural numbers** is
 \[
@@ -37,25 +37,25 @@ that is, the real numbers that belong to every inductive subset of \( \nR \).
 
 Two things are true of \( \nN \), and both follow at once from the definition.
 
-- \( \nN \) **is inductive.** Every inductive set contains \( 1 \), so \( 1 \in \nN \). If \( x \in \nN \), then \( x \) lies in every inductive set \( S \), and each such \( S \) then contains \( x + 1 \) by (N2); so \( x + 1 \in \nN \).
+- \( \nN \) **is inductive.** Every inductive set contains \( 0 \), so \( 0 \in \nN \). If \( x \in \nN \), then \( x \) lies in every inductive set \( S \), and each such \( S \) then contains \( x + 1 \) by (N2); so \( x + 1 \in \nN \).
 - \( \nN \) **is contained in every inductive set**, since it is their intersection.
 
-The second property is the **principle of induction** (@ax-induction) in disguise. To prove that a statement \( P(n) \) holds for every \( n \in \nN \), let \( S \coloneqq \{ n \in \nN : P(n) \} \). If \( P(1) \) holds and \( P(n) \) implies \( P(n + 1) \), then \( S \) is inductive, so \( \nN \subseteq S \), and \( P(n) \) holds for all \( n \in \nN \).
+The second property is the **principle of induction** (@ax-induction) in disguise. To prove that a statement \( P(n) \) holds for every \( n \in \nN \), let \( S \coloneqq \{ n \in \nN : P(n) \} \). If \( P(0) \) holds and \( P(n) \) implies \( P(n + 1) \), then \( S \) is inductive, so \( \nN \subseteq S \), and \( P(n) \) holds for all \( n \in \nN \).
 
 ::: {#exm-naturals-at-least-one}
-[Every natural number is at least 1]
+[Every nonzero natural number is at least 1]
 
-Show that \( n \ge 1 \) for every \( n \in \nN \), and deduce that \( 1/n \) is defined and \( 0 < 1/n \le 1 \).
+Show that \( n \ge 1 \) for every \( n \in \nN \) with \( n \ne 0 \), and deduce that for such \( n \), \( 1/n \) is defined and \( 0 < 1/n \le 1 \).
 :::
 
 ::: {.solution}
-The set \( [1, \infty) \) is inductive, as checked above. Since \( \nN \) is contained in every inductive set, \( \nN \subseteq [1, \infty) \), that is, \( n \ge 1 \) for every \( n \in \nN \). In particular \( n > 0 \), so \( n \ne 0 \) and \( 1/n \) is defined. From \( 0 < 1 \le n \) @thm-ordered-field-rules (f) gives \( 0 < 1/n \le 1/1 = 1 \).
+The set \( \{ 0 \} \cup [1, \infty) \) is inductive, as checked above. Since \( \nN \) is contained in every inductive set, \( \nN \subseteq \{ 0 \} \cup [1, \infty) \), that is, \( n \ge 1 \) for every \( n \in \nN \) with \( n \ne 0 \). In particular such an \( n \) is positive, so \( 1/n \) is defined. From \( 0 < 1 \le n \) @thm-ordered-field-rules (f) gives \( 0 < 1/n \le 1/1 = 1 \).
 :::
 
 The proof never mentioned a single natural number by name. It found an inductive set containing the property we wanted, and let the definition of \( \nN \) do the rest. That is the whole technique.
 
 ::: {.remark}
-Chapter 3 takes induction as a basic property of \( \nN \) (@ax-induction), and Chapter 7 proves well-ordering and the arithmetic below from it. The set defined here is that same \( \nN \), now located inside \( \nR \); it is also the copy \( 1, 1 + 1, 1 + 1 + 1, \dots \) that every ordered field contains (@exr-ordered-fields-c1), and "\( \nN \) is the smallest inductive set" is exactly the induction principle of Chapter 3, in the form "every inductive subset of \( \nN \) is all of \( \nN \)". From now on we use the familiar arithmetic of \( \nN \), each item proved by induction in Chapter 7: sums and products of natural numbers are natural numbers; if \( n \in \nN \) and \( n \ge 2 \), then \( n - 1 \in \nN \); no natural number lies strictly between \( n \) and \( n + 1 \); and every nonempty subset of \( \nN \) has a least element (**well-ordering**). The integers are \( \nZ \coloneqq \nN \cup \{ 0 \} \cup \{ -n : n \in \nN \} \), and the rationals are \( \nQ \coloneqq \{ m/n : m \in \nZ, \ n \in \nN \} \). We also use, again from Chapter 7, that sums, differences, and products of integers are integers. A **positive** integer is a natural number, directly from the definition of \( \nZ \): it is not \( 0 \), and it is not \( -n \) with \( n \in \nN \), since \( -n < 0 \).
+Chapter 3 takes induction as a basic property of \( \nN \) (@ax-induction), and Chapter 7 proves well-ordering and the arithmetic below from it. The set defined here is that same \( \nN \), now located inside \( \nR \); it is also the copy \( 0, 1, 1 + 1, 1 + 1 + 1, \dots \) that every ordered field contains (@exr-ordered-fields-c1), and "\( \nN \) is the smallest inductive set" is exactly the induction principle of Chapter 3, in the form "every inductive subset of \( \nN \) is all of \( \nN \)". From now on we use the familiar arithmetic of \( \nN \), each item proved by induction in Chapter 7: sums and products of natural numbers are natural numbers; if \( n \in \nN \) and \( n \ge 1 \), then \( n - 1 \in \nN \); no natural number lies strictly between \( n \) and \( n + 1 \); and every nonempty subset of \( \nN \) has a least element (**well-ordering**). The integers are \( \nZ \coloneqq \nN \cup \{ -n : n \in \nN \} \), the positive integers are \( \nZ_{>0} \coloneqq \{ n \in \nZ : n > 0 \} \), and the rationals are \( \nQ \coloneqq \{ m/n : m \in \nZ, \ n \in \nZ_{>0} \} \). We also use, again from Chapter 7, that sums, differences, and products of integers are integers. A **positive** integer is a nonzero natural number, directly from the definition of \( \nZ \): it is not \( -n \) with \( n \in \nN \), since \( -n \le 0 \). Conversely, a nonzero natural number is positive by @exm-naturals-at-least-one, so \( \nZ_{>0} = \nN \setminus \{ 0 \} = \{ 1, 2, 3, \dots \} \).
 :::
 
 ## The natural numbers are not bounded
@@ -73,14 +73,14 @@ Suppose \( \nN \) had an upper bound. Then the axiom hands us the least one, \( 
 :::
 
 ::: {.proof}
-Suppose, for contradiction, that \( \nN \) is bounded above. The set \( \nN \) is nonempty, since \( 1 \in \nN \). By @ax-least-upper-bound, \( \nN \) has a supremum \( s \coloneqq \sup \nN \in \nR \).
+Suppose, for contradiction, that \( \nN \) is bounded above. The set \( \nN \) is nonempty, since \( 0 \in \nN \). By @ax-least-upper-bound, \( \nN \) has a supremum \( s \coloneqq \sup \nN \in \nR \).
 
 Let \( n \in \nN \). Since \( \nN \) is inductive, \( n + 1 \in \nN \), and since \( s \) is an upper bound of \( \nN \), \( n + 1 \le s \), that is, \( n \le s - 1 \). As \( n \) was arbitrary, \( s - 1 \) is an upper bound of \( \nN \). Property (S2) of the supremum (@def-supremum) now gives \( s \le s - 1 \), that is, \( 1 \le 0 \), which contradicts \( 0 < 1 \).
 
 Therefore \( \nN \) is not bounded above. Unwinding the definition (@def-bounded-above), no \( x \in \nR \) is an upper bound of \( \nN \): for every \( x \in \nR \) it is false that \( n \le x \) for all \( n \in \nN \). So for every \( x \) some \( n \in \nN \) has \( n \not\le x \), that is, \( n > x \) by trichotomy. This proves the theorem.
 :::
 
-Each hypothesis of the axiom was used and named: "nonempty" through \( 1 \in \nN \), "bounded above" through the assumption for contradiction. The inductive property of \( \nN \) supplied the jump \( n \mapsto n + 1 \).
+Each hypothesis of the axiom was used and named: "nonempty" through \( 0 \in \nN \), "bounded above" through the assumption for contradiction. The inductive property of \( \nN \) supplied the jump \( n \mapsto n + 1 \).
 
 ::: {.remark}
 The contradiction step is \( \rulename{\neg I} \) (@def-rules-negation), not \( \rulename{RAA} \) (@def-rule-raa), the classical rule of proof by contradiction: we assumed "\( \nN \) is bounded above", reached a contradiction, and concluded its negation. Inside that box every step is direct. The proof shows that \( s - 1 \) **is** an upper bound; it does not argue "\( s - 1 \) is not an upper bound, so some \( n \) exceeds \( s - 1 \)", a step that would itself need the classical law described next. The proof's one classical step comes after the \( \rulename{\neg I} \), in its last paragraph. Passing from "not every \( n \) satisfies \( n \le x \)" to "some \( n \) satisfies \( n > x \)" is the quantifier law "not all" gives "some not" of Chapter 4, and that law is derived there with \( \rulename{RAA} \).
@@ -89,45 +89,45 @@ The contradiction step is \( \rulename{\neg I} \) (@def-rules-negation), not \( 
 The form we will use most often puts a small number, not a large one, in the role of \( x \).
 
 ::: {#cor-archimedean-epsilon}
-For every \( \varepsilon > 0 \) there is \( n \in \nN \) with \( 1/n < \varepsilon \). In symbols,
+For every \( \varepsilon > 0 \) there is \( n \in \nZ_{>0} \) with \( 1/n < \varepsilon \). In symbols,
 \[
-    (\forall \varepsilon > 0)\ (\exists n \in \nN) \quad \frac{1}{n} < \varepsilon .
+    (\forall \varepsilon > 0)\ (\exists n \in \nZ_{>0}) \quad \frac{1}{n} < \varepsilon .
 \]
-Moreover, every \( m \in \nN \) with \( m \ge n \) then also satisfies \( 1/m < \varepsilon \).
+Moreover, every \( m \in \nZ_{>0} \) with \( m \ge n \) then also satisfies \( 1/m < \varepsilon \).
 :::
 
 ::: {.proof}
-Let \( \varepsilon > 0 \). Then \( 1/\varepsilon \) is defined and positive. By @thm-naturals-unbounded applied to \( x = 1/\varepsilon \), there is \( n \in \nN \) with \( n > 1/\varepsilon > 0 \). Taking reciprocals reverses a strict inequality between positive numbers (@thm-ordered-field-rules (f)), so \( 1/n < \varepsilon \). If \( m \ge n \), then \( 1/m \le 1/n < \varepsilon \) by the same rule.
+Let \( \varepsilon > 0 \). Then \( 1/\varepsilon \) is defined and positive. By @thm-naturals-unbounded applied to \( x = 1/\varepsilon \), there is \( n \in \nN \) with \( n > 1/\varepsilon > 0 \); so \( n \in \nZ_{>0} \). Taking reciprocals reverses a strict inequality between positive numbers (@thm-ordered-field-rules (f)), so \( 1/n < \varepsilon \). If \( m \ge n \), then \( 1/m \le 1/n < \varepsilon \) by the same rule.
 :::
 
-Read the quantifiers in order. The \( \varepsilon \) is given first and the \( n \) is found afterwards, so **\( n \) depends on \( \varepsilon \)**: the proof chose \( n > 1/\varepsilon \), and a smaller \( \varepsilon \) forces a larger \( n \). Swapping the quantifiers gives a false statement. "There is \( n \in \nN \) such that \( 1/n < \varepsilon \) for every \( \varepsilon > 0 \)" would make \( 1/n \) smaller than every positive number. Since \( 1/n > 0 \) (@exm-naturals-at-least-one), we could take \( \varepsilon = 1/n \) itself and get \( 1/n < 1/n \), which is absurd.
+Read the quantifiers in order. The \( \varepsilon \) is given first and the \( n \) is found afterwards, so **\( n \) depends on \( \varepsilon \)**: the proof chose \( n > 1/\varepsilon \), and a smaller \( \varepsilon \) forces a larger \( n \). Swapping the quantifiers gives a false statement. "There is \( n \in \nZ_{>0} \) such that \( 1/n < \varepsilon \) for every \( \varepsilon > 0 \)" would make \( 1/n \) smaller than every positive number. Since \( 1/n > 0 \) (@exm-naturals-at-least-one), we could take \( \varepsilon = 1/n \) itself and get \( 1/n < 1/n \), which is absurd.
 
 The "moreover" clause says that once one \( n \) works, every later one works too. Chapter 12 turns this "from some point on" into the definition of a limit.
 
 ::: {.check}
-Find the least \( n \in \nN \) with \( 1/n < 0.003 \). Then do the same for \( \varepsilon = 0.0003 \). What does the comparison say about the dependence of \( n \) on \( \varepsilon \)?
+Find the least \( n \in \nZ_{>0} \) with \( 1/n < 0.003 \). Then do the same for \( \varepsilon = 0.0003 \). What does the comparison say about the dependence of \( n \) on \( \varepsilon \)?
 :::
 
 ::: {.solution}
-For positive \( n \), \( 1/n < 0.003 \) is equivalent to \( n > 1/0.003 = 333.\overline{3} \). The least natural number with this property is \( n = 334 \); indeed \( 1/333 = 0.003003\ldots \) is too big. For \( \varepsilon = 0.0003 \) the condition is \( n > 3333.\overline{3} \), so the least \( n \) is \( 3334 \). Dividing \( \varepsilon \) by \( 10 \) multiplied the least \( n \) by about \( 10 \). No single \( n \) serves every \( \varepsilon \), which is why the quantifiers read "for every \( \varepsilon \) there is \( n \)" and not the other way round.
+For positive \( n \), \( 1/n < 0.003 \) is equivalent to \( n > 1/0.003 = 333.\overline{3} \). The least positive integer with this property is \( n = 334 \); indeed \( 1/333 = 0.003003\ldots \) is too big. For \( \varepsilon = 0.0003 \) the condition is \( n > 3333.\overline{3} \), so the least \( n \) is \( 3334 \). Dividing \( \varepsilon \) by \( 10 \) multiplied the least \( n \) by about \( 10 \). No single \( n \) serves every \( \varepsilon \), which is why the quantifiers read "for every \( \varepsilon \) there is \( n \)" and not the other way round.
 :::
 
 ## Paying an old debt
 
-In @exm-sup-one-minus-reciprocal we showed that \( 1 \) is an upper bound of \( A = \{ 1 - 1/n : n \in \nN \} \) and that \( A \) has no maximum. We stopped short of \( \sup A = 1 \), because (S2) needed an \( n \) with \( 1/n \) below a given positive number. That is exactly what @cor-archimedean-epsilon supplies, and the \( \varepsilon \)-characterization tells us what remains to be shown.
+In @exm-sup-one-minus-reciprocal we showed that \( 1 \) is an upper bound of \( A = \{ 1 - 1/n : n \in \nZ_{>0} \} \) and that \( A \) has no maximum. We stopped short of \( \sup A = 1 \), because (S2) needed an \( n \) with \( 1/n \) below a given positive number. That is exactly what @cor-archimedean-epsilon supplies, and the \( \varepsilon \)-characterization tells us what remains to be shown.
 
 ::: {#exm-sup-one-minus-reciprocal-finished}
 [The supremum is 1]
 
-Let \( A \coloneqq \{ 1 - 1/n : n \in \nN \} \). Prove that \( \sup A = 1 \).
+Let \( A \coloneqq \{ 1 - 1/n : n \in \nZ_{>0} \} \). Prove that \( \sup A = 1 \).
 :::
 
 ::: {.solution}
 The set \( A \) is nonempty, since \( 0 = 1 - 1/1 \in A \).
 
-*Upper bound.* For every \( n \in \nN \) we have \( 1/n > 0 \) (@exm-naturals-at-least-one), so \( 1 - 1/n < 1 \). Hence \( 1 \) is an upper bound of \( A \).
+*Upper bound.* For every \( n \in \nZ_{>0} \) we have \( 1/n > 0 \) (@exm-naturals-at-least-one), so \( 1 - 1/n < 1 \). Hence \( 1 \) is an upper bound of \( A \).
 
-*An element in every band below \( 1 \).* Let \( \varepsilon > 0 \). By @cor-archimedean-epsilon there is \( n \in \nN \) with \( 1/n < \varepsilon \); this \( n \) depends on \( \varepsilon \). Then \( a \coloneqq 1 - 1/n \in A \) and \( a > 1 - \varepsilon \).
+*An element in every band below \( 1 \).* Let \( \varepsilon > 0 \). By @cor-archimedean-epsilon there is \( n \in \nZ_{>0} \) with \( 1/n < \varepsilon \); this \( n \) depends on \( \varepsilon \). Then \( a \coloneqq 1 - 1/n \in A \) and \( a > 1 - \varepsilon \).
 
 Since \( 1 \) is an upper bound of \( A \) and every band \( (1 - \varepsilon, 1] \) contains an element of \( A \), @thm-sup-epsilon gives \( \sup A = 1 \).
 
@@ -152,7 +152,7 @@ Positivity does not depend on how the fraction is written. Suppose \( p/q = p'/q
 
 With this order \( \nR(x) \) is an ordered field. The key facts are that sums and products of positive elements are positive, and that for each nonzero \( f \) exactly one of \( f \) and \( -f \) is positive. Checking these is routine, and @exr-archimedean-property-c2 walks through them. On the constants, the new order is the old one: the constant \( c \) is positive exactly when \( c > 0 \). The example below uses that \( \nR(x) \) is an ordered field, and with it the rules of @thm-ordered-field-rules, which hold in every ordered field; so it rests on @exr-archimedean-property-c2, where that is proved.
 
-The natural numbers of \( \nR(x) \), the smallest inductive subset in the sense of @def-inductive-set, are the constants \( 1, 2, 3, \dots \). Indeed, the constant functions \( n \) with \( n \in \nN \) form an inductive subset of \( \nR(x) \): it contains the constant \( 1 \), and the constant \( n \) plus \( 1 \) is the constant \( n + 1 \). So every natural number of \( \nR(x) \) is such a constant. Conversely, let \( I \) be an inductive subset of \( \nR(x) \). The set of \( n \in \nN \) whose constant lies in \( I \) contains \( 1 \) and passes from \( n \) to \( n + 1 \), so it is an inductive subset of \( \nR \) and contains all of \( \nN \). So every constant \( n \) lies in every inductive subset of \( \nR(x) \).
+The natural numbers of \( \nR(x) \), the smallest inductive subset in the sense of @def-inductive-set, are the constants \( 0, 1, 2, 3, \dots \). Indeed, the constant functions \( n \) with \( n \in \nN \) form an inductive subset of \( \nR(x) \): it contains the constant \( 0 \), and the constant \( n \) plus \( 1 \) is the constant \( n + 1 \). So every natural number of \( \nR(x) \) is such a constant. Conversely, let \( I \) be an inductive subset of \( \nR(x) \). The set of \( n \in \nN \) whose constant lies in \( I \) contains \( 0 \) and passes from \( n \) to \( n + 1 \), so it is an inductive subset of \( \nR \) and contains all of \( \nN \). So every constant \( n \) lies in every inductive subset of \( \nR(x) \).
 
 ::: {#exm-nonarchimedean-field}
 [A non-Archimedean field]
@@ -165,7 +165,7 @@ Let \( n \in \nN \). Then \( x - n = (x - n)/1 \). The numerator \( x - n \) has
 
 Hence \( x \) is an upper bound of \( \nN \) in \( \nR(x) \), and \( \nN \) is bounded above there. So the conclusion of @thm-naturals-unbounded is false in \( \nR(x) \).
 
-Now take \( \varepsilon \coloneqq 1/x \). It is positive: numerator \( 1 \) and denominator \( x \) both have leading coefficient \( 1 \). For each \( n \in \nN \) we have \( 0 < n < x \), so taking reciprocals gives \( 1/x < 1/n \). No natural number \( n \) satisfies \( 1/n < \varepsilon \), and @cor-archimedean-epsilon fails.
+Now take \( \varepsilon \coloneqq 1/x \). It is positive: numerator \( 1 \) and denominator \( x \) both have leading coefficient \( 1 \). For each \( n \in \nZ_{>0} \) we have \( 0 < n < x \), so taking reciprocals gives \( 1/x < 1/n \). No positive integer \( n \) satisfies \( 1/n < \varepsilon \), and @cor-archimedean-epsilon fails.
 :::
 
 The element \( 1/x \) is positive yet smaller than every \( 1/n \): an "infinitely small" number. The real line has none, and that is exactly what @cor-archimedean-epsilon says.
@@ -210,7 +210,7 @@ The converse fails: an ordered field can be Archimedean without satisfying the a
 ::: {.solution}
 (a) The property is \( (\forall x \in \nR)(\exists n \in \nN)\ n > x \). Its negation is \( (\exists x \in \nR)(\forall n \in \nN)\ n \le x \): some real number is an upper bound of \( \nN \).
 
-(b) \( [\tfrac12, \infty) \) is inductive: it contains \( 1 \), and \( x \ge \tfrac12 \) gives \( x + 1 \ge \tfrac32 \ge \tfrac12 \). \( [0, 10] \) is not: it contains \( 1 \), but \( 10 \in [0, 10] \) and \( 11 \notin [0, 10] \), so (N2) fails. \( \nN \cup \{ \tfrac12 \} \) is not: \( \tfrac12 \) is in it but \( \tfrac32 \) is not, since \( \tfrac32 \) lies strictly between the natural numbers \( 1 \) and \( 2 \); so (N2) fails. \( \nZ \) is inductive: \( 1 \in \nZ \), and \( k + 1 \in \nZ \) for every integer \( k \).
+(b) \( [\tfrac12, \infty) \) is not: \( 0 \notin [\tfrac12, \infty) \), so (N1) fails, although \( x \ge \tfrac12 \) gives \( x + 1 \ge \tfrac32 \ge \tfrac12 \), so (N2) holds. \( [0, 10] \) is not: it contains \( 0 \), but \( 10 \in [0, 10] \) and \( 11 \notin [0, 10] \), so (N2) fails. \( \nN \cup \{ \tfrac12 \} \) is not: \( \tfrac12 \) is in it but \( \tfrac32 \) is not, since \( \tfrac32 \) lies strictly between the natural numbers \( 1 \) and \( 2 \); so (N2) fails. \( \nZ \) is inductive: \( 0 \in \nZ \), and \( k + 1 \in \nZ \) for every integer \( k \).
 
 (c) False. Such an \( n \) would satisfy \( 1/n < \varepsilon \) for every \( \varepsilon > 0 \). But \( 1/n > 0 \) by @exm-naturals-at-least-one, so \( \varepsilon = 1/n \) is allowed, and it gives \( 1/n < 1/n \), which is absurd. The \( n \) must depend on \( \varepsilon \).
 
@@ -222,13 +222,13 @@ The converse fails: an ordered field can be Archimedean without satisfying the a
 ::: {#exr-archimedean-property-b1}
 [B1: An infimum]
 
-Prove that \( \inf \{ 1/n : n \in \nN \} = 0 \), and that the set has no minimum.
+Prove that \( \inf \{ 1/n : n \in \nZ_{>0} \} = 0 \), and that the set has no minimum.
 :::
 
 ::: {.solution}
-Let \( B \coloneqq \{ 1/n : n \in \nN \} \); it is nonempty, since \( 1 \in B \). By @exm-naturals-at-least-one, \( 1/n > 0 \) for every \( n \), so \( 0 \) is a lower bound of \( B \).
+Let \( B \coloneqq \{ 1/n : n \in \nZ_{>0} \} \); it is nonempty, since \( 1 \in B \). By @exm-naturals-at-least-one, \( 1/n > 0 \) for every \( n \), so \( 0 \) is a lower bound of \( B \).
 
-Let \( L \) be any lower bound of \( B \); we show \( L \le 0 \). Suppose instead \( L > 0 \). By @cor-archimedean-epsilon with \( \varepsilon = L \), there is \( n \in \nN \) with \( 1/n < L \). This contradicts \( L \) being a lower bound of \( B \). Hence \( L \le 0 \). So \( 0 \) is a lower bound that is greater than or equal to every lower bound, that is, \( \inf B = 0 \) (@def-infimum).
+Let \( L \) be any lower bound of \( B \); we show \( L \le 0 \). Suppose instead \( L > 0 \). By @cor-archimedean-epsilon with \( \varepsilon = L \), there is \( n \in \nZ_{>0} \) with \( 1/n < L \). This contradicts \( L \) being a lower bound of \( B \). Hence \( L \le 0 \). So \( 0 \) is a lower bound that is greater than or equal to every lower bound, that is, \( \inf B = 0 \) (@def-infimum).
 
 Since \( 0 \notin B \) (every element is positive), the infimum is not attained, and \( B \) has no minimum.
 :::
@@ -248,11 +248,11 @@ In words: laying a stick of length \( a \), however short, end to end enough tim
 ::: {#exr-archimedean-property-b3}
 [B3: Smaller than every 1/n]
 
-Let \( x \in \nR \) with \( 0 \le x < 1/n \) for every \( n \in \nN \). Prove that \( x = 0 \). Then deduce: if \( a, b \in \nR \) satisfy \( \abs{a - b} < 1/n \) for every \( n \in \nN \), then \( a = b \).
+Let \( x \in \nR \) with \( 0 \le x < 1/n \) for every \( n \in \nZ_{>0} \). Prove that \( x = 0 \). Then deduce: if \( a, b \in \nR \) satisfy \( \abs{a - b} < 1/n \) for every \( n \in \nZ_{>0} \), then \( a = b \).
 :::
 
 ::: {.solution}
-Suppose \( x \ne 0 \). Since \( x \ge 0 \), we get \( x > 0 \). By @cor-archimedean-epsilon with \( \varepsilon = x \), there is \( n \in \nN \) with \( 1/n < x \), contradicting the hypothesis \( x < 1/n \). Hence \( x = 0 \).
+Suppose \( x \ne 0 \). Since \( x \ge 0 \), we get \( x > 0 \). By @cor-archimedean-epsilon with \( \varepsilon = x \), there is \( n \in \nZ_{>0} \) with \( 1/n < x \), contradicting the hypothesis \( x < 1/n \). Hence \( x = 0 \).
 
 For the second statement, put \( x \coloneqq \abs{a - b} \). Then \( 0 \le x < 1/n \) for every \( n \), so \( x = 0 \) by the first part, that is, \( a = b \).
 
@@ -268,12 +268,12 @@ Here are nine lines. Seven of them, in a suitable order, prove that \( \sup A = 
 1. Let \( \varepsilon > 0 \).
 2. Hence \( a \coloneqq \frac{n}{n + 1} \) is an element of \( A \) with \( a > 1 - \varepsilon \).
 3. For every \( n \in \nN \), \( n < n + 1 \) and \( n + 1 > 0 \), so \( \frac{n}{n + 1} < 1 \). Hence \( 1 \) is an upper bound of \( A \).
-4. By @cor-archimedean-epsilon there is \( n \in \nN \), depending on \( \varepsilon \), with \( \frac1n < \varepsilon \).
-5. Choose \( n \in \nN \) such that \( \frac1n < \varepsilon \) for every \( \varepsilon > 0 \).
+4. By @cor-archimedean-epsilon there is \( n \in \nZ_{>0} \), depending on \( \varepsilon \), with \( \frac1n < \varepsilon \).
+5. Choose \( n \in \nZ_{>0} \) such that \( \frac1n < \varepsilon \) for every \( \varepsilon > 0 \).
 6. Since \( \varepsilon > 0 \) was arbitrary, every band \( (1 - \varepsilon, 1] \) contains an element of \( A \).
 7. Then \( \frac{n}{n + 1} = 1 - \frac1{n + 1} \), and \( \frac1{n + 1} < \frac1n < \varepsilon \).
 8. By @thm-sup-epsilon, \( \sup A = 1 \).
-9. Fix \( n \in \nN \) and let \( \varepsilon \coloneqq \frac1n \); then \( \frac{n}{n + 1} = 1 - \frac1{n + 1} > 1 - \varepsilon \).
+9. Fix \( n \in \nZ_{>0} \) and let \( \varepsilon \coloneqq \frac1n \); then \( \frac{n}{n + 1} = 1 - \frac1{n + 1} > 1 - \varepsilon \).
 :::
 :::
 
@@ -297,7 +297,7 @@ Line (ix) is true, but its \( \varepsilon \) is of the wrong kind: it is chosen 
 :::
 
 ::: {.solution}
-(a) Suppose \( \nN \) is bounded above in \( \nR \). Since \( 1 \in \nN \), the set is nonempty, so by @ax-least-upper-bound it has a supremum \( s \) (**this line uses the axiom**). For every \( n \in \nN \), also \( n + 1 \in \nN \), since \( \nN \) is inductive, so \( n + 1 \le s \) by (S1), that is, \( n \le s - 1 \). Hence \( s - 1 \) is an upper bound of \( \nN \), and (S2) gives \( s \le s - 1 \), which is false. So \( \nN \) is not bounded above, which means that every \( x \in \nR \) is exceeded by some \( n \in \nN \).
+(a) Suppose \( \nN \) is bounded above in \( \nR \). Since \( 0 \in \nN \), the set is nonempty, so by @ax-least-upper-bound it has a supremum \( s \) (**this line uses the axiom**). For every \( n \in \nN \), also \( n + 1 \in \nN \), since \( \nN \) is inductive, so \( n + 1 \le s \) by (S1), that is, \( n \le s - 1 \). Hence \( s - 1 \) is an upper bound of \( \nN \), and (S2) gives \( s \le s - 1 \), which is false. So \( \nN \) is not bounded above, which means that every \( x \in \nR \) is exceeded by some \( n \in \nN \).
 
 In \( \nR(x) \) the set \( \nN \) is nonempty and bounded above by \( x \) (@exm-nonarchimedean-field), but it has no supremum. Any upper bound \( M \) gives a smaller one, \( M - 1 \), because \( n + 1 \le M \) for every \( n \in \nN \) forces \( n \le M - 1 \). So the marked line has nothing to produce, and there the proof stops.
 
@@ -306,7 +306,7 @@ In \( \nR(x) \) the set \( \nN \) is nonempty and bounded above by \( x \) (@exm
 In \( \nR(x) \), take the element \( x \) and suppose \( k \in \nZ \) satisfies \( k \ge x \). If \( k \le 0 \), then \( k \le 0 < 1 < x \). If \( k \ge 1 \), then \( k \in \nN \) and \( k < x \) by @exm-nonarchimedean-field. Either way \( k < x \), a contradiction. So no integer is greater than or equal to \( x \), and \( \ceil{x} \) does not exist.
 
 **Marking scheme.** (10 points)
-- 1: (a) supposes, for a contradiction, that \( \nN \) is bounded above, and notes \( 1 \in \nN \).
+- 1: (a) supposes, for a contradiction, that \( \nN \) is bounded above, and notes \( 0 \in \nN \).
 - 2: (a) obtains \( s = \sup \nN \) from @ax-least-upper-bound, with both hypotheses checked, and marks this line.
 - 2: (a) shows that \( s - 1 \) is an upper bound of \( \nN \): \( n + 1 \in \nN \) because \( \nN \) is inductive, so \( n + 1 \le s \) by (S1), that is, \( n \le s - 1 \), for every \( n \in \nN \).
 - 1: (a) applies the "least" property (S2) to the upper bound \( s - 1 \), reaches \( s \le s - 1 \), a contradiction, and concludes.
@@ -375,7 +375,7 @@ Both \( p_1 q_2 \) and \( p_2 q_1 \) have positive leading coefficient. If their
 :::
 
 ::: {.solution}
-(a) Write \( r = m/k \) with \( m \in \nZ \) and \( k \in \nN \). If \( m \le 0 \), then \( r \le 0 < 1 \), and \( n = 1 \) works. If \( m \ge 1 \), then \( m \in \nN \). Since \( k \ge 1 \) (@exm-naturals-at-least-one) and \( m > 0 \), we get \( r = m/k \le m < m + 1 \), and \( n \coloneqq m + 1 \in \nN \) works. No supremum was used: only the arithmetic of integers and the ordered-field rules.
+(a) Write \( r = m/k \) with \( m \in \nZ \) and \( k \in \nZ_{>0} \). If \( m \le 0 \), then \( r \le 0 < 1 \), and \( n = 1 \) works. If \( m \ge 1 \), then \( m \in \nN \). Since \( k \ge 1 \) (@exm-naturals-at-least-one) and \( m > 0 \), we get \( r = m/k \le m < m + 1 \), and \( n \coloneqq m + 1 \in \nN \) works. No supremum was used: only the arithmetic of integers and the ordered-field rules.
 
 (b) By (a), \( \nQ \) is an ordered field in which \( \nN \) is not bounded above, so \( \nQ \) has the Archimedean property. By @thm-no-rational-sup-sqrt2, the nonempty set \( \{ x \in \nQ : x > 0, \ x^2 < 2 \} \), which is bounded above by \( 2 \), has no supremum in \( \nQ \). So \( \nQ \) is Archimedean and fails the least upper bound axiom, and the Archimedean property cannot imply the axiom.
 :::

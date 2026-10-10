@@ -110,14 +110,14 @@ The forward direction of @thm-sup-epsilon is used so often with \( \varepsilon =
 ::: {#cor-sup-approximation}
 [Sup Approximation]
 
-Let \( A \subseteq \nR \) be nonempty and bounded above. For every \( n \in \nN \) there is \( a_n \in A \) with
+Let \( A \subseteq \nR \) be nonempty and bounded above. For every \( n \in \nZ_{>0} \) there is \( a_n \in A \) with
 \[
 \sup A - \frac1n < a_n \le \sup A .
 \]
 :::
 
 ::: {.proof}
-By @ax-least-upper-bound, \( \sup A \) exists. Let \( n \in \nN \). Then \( n > 0 \), by the induction on \( n \) in @exm-sup-one-minus-reciprocal, and \( \frac1n > 0 \) by @thm-ordered-field-rules (f). By @thm-sup-epsilon (\( \Rightarrow \)) with \( \varepsilon = \frac1n \), there is \( a_n \in A \) with \( a_n > \sup A - \frac1n \), and \( a_n \le \sup A \) by (S1).
+By @ax-least-upper-bound, \( \sup A \) exists. Let \( n \in \nZ_{>0} \). Then \( n > 0 \), and \( \frac1n > 0 \) by @thm-ordered-field-rules (f). By @thm-sup-epsilon (\( \Rightarrow \)) with \( \varepsilon = \frac1n \), there is \( a_n \in A \) with \( a_n > \sup A - \frac1n \), and \( a_n \le \sup A \) by (S1).
 :::
 
 The corollary gives, for each \( n \) separately, an element \( a_n \). Choosing one for every \( n \) at once, so as to form a sequence \( (a_n) \), is a use of the axiom of countable choice; we flag it and move on. Once limits are defined in Chapter 12, this says that \( \sup A \) is the limit of a sequence from \( A \). We call the move **sup approximation**: "\( \sup A - \frac1n \) is not an upper bound, so some \( a_n \in A \) exceeds it."

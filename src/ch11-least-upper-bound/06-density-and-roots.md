@@ -70,7 +70,7 @@ The template does not care that the exponent is \( 2 \) or that the number is \(
 ::: {#thm-nth-root}
 [Existence of Roots]
 
-Let \( a > 0 \) and \( n \in \nN \). There is exactly one real number \( s > 0 \) with \( s^n = a \).
+Let \( a > 0 \) and \( n \in \nZ_{>0} \). There is exactly one real number \( s > 0 \) with \( s^n = a \).
 :::
 
 We write this number \( a^{1/n} \), or \( \sqrt[n]{a} \). For \( a = 0 \) the only real \( s \ge 0 \) with \( s^n = 0 \) is \( s = 0 \) (a product of positive numbers is positive), so we also set \( \sqrt[n]{0} \coloneqq 0 \); every \( a \ge 0 \) then has exactly one nonnegative \( n \)-th root.
@@ -95,7 +95,7 @@ For \( s - h \) the same factorization gives \( s^n - (s - h)^n \le h \cdot n s^
 We first prove a power estimate.
 
 ::: {.claim}
-Let \( 0 \le x < y \) and \( k \in \nN \). Then \( x^k < y^k \): the map \( x \mapsto x^k \) is strictly increasing on \( [0, \infty) \). Consequently \( x^m \le y^m \) for every integer \( m \ge 0 \), where \( u^0 \coloneqq 1 \). Moreover
+Let \( 0 \le x < y \) and \( k \in \nZ_{>0} \). Then \( x^k < y^k \): the map \( x \mapsto x^k \) is strictly increasing on \( [0, \infty) \). Consequently \( x^m \le y^m \) for every integer \( m \ge 0 \), where \( u^0 \coloneqq 1 \). Moreover
 \[
     0 < y^k - x^k \le k y^{k-1} (y - x).
 \]
@@ -188,7 +188,7 @@ For every \( y \in \nR \) there is exactly one integer \( m \) with \( m \le y <
 This integer is the **integer part** or **floor** of \( y \), written \( \floor{y} \). For instance \( \floor{2.7} = 2 \) and \( \floor{-2.7} = -3 \).
 
 ::: {.idea}
-Picture the integers as marks spaced \( 1 \) apart. The Archimedean property puts a mark to the right of \( y \), and a mark to the left of \( y \). Among the marks to the right, well-ordering picks out the first one; the mark just before it is \( \floor{y} \). Well-ordering is a statement about subsets of \( \nN \), so we shift the marks so that they start at \( 1 \).
+Picture the integers as marks spaced \( 1 \) apart. The Archimedean property puts a mark to the right of \( y \), and a mark to the left of \( y \). Among the marks to the right, well-ordering picks out the first one; the mark just before it is \( \floor{y} \). Well-ordering is a statement about subsets of \( \nN \), so we shift the marks so that they start at \( 0 \).
 :::
 
 ::: {.proof}
@@ -196,12 +196,9 @@ Picture the integers as marks spaced \( 1 \) apart. The Archimedean property put
 \[
     T \coloneqq \{ j \in \nN : j - p > y \}
 \]
-is nonempty. By well-ordering (Chapter 7), \( T \) has a least element \( j_0 \). Let \( m \coloneqq j_0 - p - 1 \), an integer because differences of integers are integers (the remark on \( \nN \) in the previous section). Then \( m + 1 = j_0 - p > y \), since \( j_0 \in T \). It remains to show \( m \le y \).
+is nonempty. By well-ordering (Chapter 7), \( T \) has a least element \( j_0 \). Let \( m \coloneqq j_0 - p - 1 \), an integer because differences of integers are integers (the remark on \( \nN \) in the previous section). Then \( m + 1 = j_0 - p > y \), since \( j_0 \in T \). It remains to show \( m \le y \). First, \( 0 - p = -p < y \) by the choice of \( p \), so \( 0 \notin T \) and \( j_0 \ne 0 \). Hence \( j_0 \ge 1 \) (@exm-naturals-at-least-one), so \( j_0 - 1 \in \nN \) (again from that remark), and \( j_0 - 1 \notin T \) because it is smaller than the least element of \( T \). So \( (j_0 - 1) - p \le y \), that is, \( m \le y \).
 
-- If \( j_0 = 1 \), then \( m = -p < y \), by the choice of \( p \).
-- If \( j_0 \ge 2 \), then \( j_0 - 1 \in \nN \) (again from that remark), and \( j_0 - 1 \notin T \) because it is smaller than the least element of \( T \). So \( (j_0 - 1) - p \le y \), that is, \( m \le y \).
-
-*Uniqueness.* Suppose \( m \) and \( m' \) are integers with \( m \le y < m + 1 \) and \( m' \le y < m' + 1 \), and suppose \( m < m' \). Then \( m' - m \) is a positive integer, hence a natural number (the remark on \( \nN \) in the previous section), so \( m' - m \ge 1 \) by @exm-naturals-at-least-one; that is, \( m' \ge m + 1 \). Hence \( y \ge m' \ge m + 1 > y \), a contradiction. By symmetry \( m' < m \) is impossible too, so \( m = m' \).
+*Uniqueness.* Suppose \( m \) and \( m' \) are integers with \( m \le y < m + 1 \) and \( m' \le y < m' + 1 \), and suppose \( m < m' \). Then \( m' - m \) is a positive integer, hence a nonzero natural number (the remark on \( \nN \) in the previous section), so \( m' - m \ge 1 \) by @exm-naturals-at-least-one; that is, \( m' \ge m + 1 \). Hence \( y \ge m' \ge m + 1 > y \), a contradiction. By symmetry \( m' < m \) is impossible too, so \( m = m' \).
 :::
 
 ## The rationals are dense
@@ -233,11 +230,11 @@ The plan: ① choose \( n \) with \( 1/n < y - x \), by the Archimedean property
 :::
 
 ::: {.proof}
-Let \( x < y \). Then \( y - x > 0 \), so by @cor-archimedean-epsilon there is \( n \in \nN \) with \( 1/n < y - x \); the \( n \) depends on \( x \) and \( y \), through \( y - x \). By @lem-integer-part, let \( m \coloneqq \floor{nx} + 1 \), an integer, since sums of integers are integers (the remark on \( \nN \) in the previous section). Then \( m - 1 \le nx < m \). Therefore
+Let \( x < y \). Then \( y - x > 0 \), so by @cor-archimedean-epsilon there is \( n \in \nZ_{>0} \) with \( 1/n < y - x \); the \( n \) depends on \( x \) and \( y \), through \( y - x \). By @lem-integer-part, let \( m \coloneqq \floor{nx} + 1 \), an integer, since sums of integers are integers (the remark on \( \nN \) in the previous section). Then \( m - 1 \le nx < m \). Therefore
 \[
     nx < m \le nx + 1 < nx + n(y - x) = ny ,
 \]
-where the last inequality uses \( 1 < n(y - x) \), which is \( 1/n < y - x \) multiplied by \( n > 0 \). Dividing by \( n > 0 \) gives \( x < m/n < y \). Since \( m \in \nZ \) and \( n \in \nN \), \( q \coloneqq m/n \) is rational. This proves the theorem.
+where the last inequality uses \( 1 < n(y - x) \), which is \( 1/n < y - x \) multiplied by \( n > 0 \). Dividing by \( n > 0 \) gives \( x < m/n < y \). Since \( m \in \nZ \) and \( n \in \nZ_{>0} \), \( q \coloneqq m/n \) is rational. This proves the theorem.
 :::
 
 ::: {#exm-rational-between}
@@ -416,9 +413,9 @@ A **dyadic rational** is a number of the form \( m/2^k \) with \( m \in \nZ \) a
 :::
 
 ::: {.solution}
-First, \( 2^k > k \) for every \( k \in \nN \), by induction (@ax-induction; @exr-induction-b1 even gives \( 2^k \ge k + 1 \)): \( 2^1 = 2 > 1 \), and if \( 2^k > k \), then \( 2^{k+1} = 2^k + 2^k > k + 1 \), since \( 2^k \ge 1 \).
+First, \( 2^k > k \) for every \( k \in \nN \), by induction (@ax-induction; @exr-induction-b1 even gives \( 2^k \ge k + 1 \)): \( 2^0 = 1 > 0 \), and if \( 2^k > k \), then \( 2^{k+1} = 2^k + 2^k > k + 1 \), since \( 2^k \ge 1 \).
 
-Let \( x < y \). By @cor-archimedean-epsilon there is \( k \in \nN \) with \( 1/k < y - x \); the \( k \) depends on \( y - x \). Then \( 1/2^k < 1/k < y - x \). By @lem-integer-part, let \( m \coloneqq \floor{2^k x} + 1 \). Then \( m - 1 \le 2^k x < m \), and
+Let \( x < y \). By @cor-archimedean-epsilon there is \( k \in \nZ_{>0} \) with \( 1/k < y - x \); the \( k \) depends on \( y - x \). Then \( 1/2^k < 1/k < y - x \). By @lem-integer-part, let \( m \coloneqq \floor{2^k x} + 1 \). Then \( m - 1 \le 2^k x < m \), and
 \[
     2^k x < m \le 2^k x + 1 < 2^k x + 2^k (y - x) = 2^k y ,
 \]
@@ -435,7 +432,7 @@ A student proves @thm-rationals-dense as follows. Let \( x < y \).
 ::: {.enumerate options="label=(\arabic*)"}
 1. Let \( R \coloneqq \{ r \in \nQ : r > x \} \). By @thm-naturals-unbounded some natural number exceeds \( x \), so \( R \) is nonempty.
 2. By well-ordering, \( R \) has a least element \( q \).
-3. By @cor-archimedean-epsilon, choose \( n \in \nN \) with \( 1/n < y - x \).
+3. By @cor-archimedean-epsilon, choose \( n \in \nZ_{>0} \) with \( 1/n < y - x \).
 4. Since \( q - 1/n \) is rational and smaller than the least element \( q \) of \( R \), it is not in \( R \). So \( q - 1/n \le x \), and hence \( q \le x + 1/n < y \).
 5. Therefore \( q \in \nQ \) and \( x < q < y \).
 :::

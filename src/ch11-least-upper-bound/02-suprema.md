@@ -162,11 +162,11 @@ So \( 1 \) is the supremum. It is not a maximum, since \( 1 \notin (0, 1) \). No
 ::: {#exm-sup-one-minus-reciprocal}
 [A supremum we cannot yet prove]
 
-Let \( A = \{ 1 - \frac1n : n \in \nN \} = \{ 0, \frac12, \frac23, \frac34, \dots \} \) in \( \nR \). Show that \( 1 \) is an upper bound of \( A \) and that \( A \) has no maximum.
+Let \( A = \{ 1 - \frac1n : n \in \nZ_{>0} \} = \{ 0, \frac12, \frac23, \frac34, \dots \} \) in \( \nR \), where \( \nZ_{>0} = \{ 1, 2, 3, \dots \} \) is the set of positive integers. Show that \( 1 \) is an upper bound of \( A \) and that \( A \) has no maximum.
 :::
 
 ::: {.solution}
-Each \( n \in \nN \) is positive, by induction on \( n \) (@ax-induction): \( 1 > 0 \) by @thm-ordered-field-rules (e), and if \( n > 0 \), then \( n + 1 > n > 0 \) by (O3) and (O2). So \( \frac1n > 0 \) by @thm-ordered-field-rules (f), and hence \( 1 - \frac1n < 1 \) by @thm-ordered-field-rules (a). So \( 1 \) is an upper bound, and \( 1 \notin A \). No element is a maximum either: \( 1 - \frac1n < 1 - \frac1{n + 1} \), because \( \frac1{n + 1} < \frac1n \) by @thm-ordered-field-rules (f), so every element is beaten by the next one.
+Each \( n \in \nZ_{>0} \) is positive, so \( \frac1n > 0 \) by @thm-ordered-field-rules (f), and hence \( 1 - \frac1n < 1 \) by @thm-ordered-field-rules (a). So \( 1 \) is an upper bound, and \( 1 \notin A \). No element is a maximum either: \( 1 - \frac1n < 1 - \frac1{n + 1} \), because \( \frac1{n + 1} < \frac1n \) by @thm-ordered-field-rules (f), so every element is beaten by the next one.
 
 It is true that \( \sup A = 1 \), but (S2) is harder than it looks. It says that no \( M < 1 \) is an upper bound, that is, for every \( M < 1 \) some \( 1 - \frac1n \) exceeds \( M \). That requires \( \frac1n < 1 - M \) for some \( n \). The existence of such an \( n \) says, in effect, that the natural numbers are not bounded above, and that does not follow from the ordered-field axioms. We prove it later in this chapter, from the axiom of the next section, and prove \( \sup A = 1 \) right after it.
 :::
@@ -184,7 +184,7 @@ A nonexample by minimal change shows why both clauses are needed. Keep \( A = (0
 :::
 
 ::: {.check}
-Let \( A = \{ \frac{(-1)^n}{n} : n \in \nN \} = \{ -1, \frac12, -\frac13, \frac14, \dots \} \). Find \( \max A \) and \( \sup A \) in \( \nR \), if they exist. Do the same for \( \min A \) and \( \inf A \).
+Let \( A = \{ \frac{(-1)^n}{n} : n \in \nZ_{>0} \} = \{ -1, \frac12, -\frac13, \frac14, \dots \} \). Find \( \max A \) and \( \sup A \) in \( \nR \), if they exist. Do the same for \( \min A \) and \( \inf A \).
 :::
 
 ::: {.solution}

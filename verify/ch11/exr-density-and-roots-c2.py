@@ -5,7 +5,7 @@ import math
 
 QUOTED = {"dyadic between any two reals": True}
 
-for k in range(1, 200):
+for k in range(0, 200):  # base case 2^0 = 1 > 0
     assert 2 ** k > k
 for x, y in [(F(0), F(1, 1000)), (F(-7, 3), F(-2)), (F(314, 100), F(3142, 1000))]:
     k = 1
