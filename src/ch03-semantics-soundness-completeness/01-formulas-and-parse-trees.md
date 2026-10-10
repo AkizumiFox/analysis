@@ -261,7 +261,7 @@ The second measurement of a tree is how deep it goes.
 The **height** of a formula \( \varphi \), written \( \hgt(\varphi) \), is the number of nodes on a **longest** branch of its parse tree.
 :::
 
-Atoms and \( \bot \) have height \( 1 \): their tree is one node, and its only branch has one node. (Some books count edges instead of nodes and give atoms height \( 0 \); with nodes, every formula has height at least \( 1 \), which suits \( \nN = \{1, 2, 3, \dots\} \).) In @exm-parse-trees, (b) has height \( 4 \), along the branch \( \neg, \wedge, \neg, q \), and (c) has height \( 4 \) too, along \( \vee, \leftrightarrow, \neg, q \) or along \( \vee, \wedge, \to, \bot \).
+Atoms and \( \bot \) have height \( 1 \): their tree is one node, and its only branch has one node. (Some books count edges instead of nodes and give atoms height \( 0 \); with nodes, every formula has height at least \( 1 \).) In @exm-parse-trees, (b) has height \( 4 \), along the branch \( \neg, \wedge, \neg, q \), and (c) has height \( 4 \) too, along \( \vee, \leftrightarrow, \neg, q \) or along \( \vee, \wedge, \to, \bot \).
 
 The definition speaks of "its parse tree", and so it depends on the fact, proved only in Section 3.2, that a formula has one parse tree. Until then the height is a promise, not a number: nothing in Section 3.2 uses it before that fact is proved, and Section 3.2 then obtains the height a second way, by a recursive definition that needs no trees at all.
 

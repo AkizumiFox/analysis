@@ -1,7 +1,7 @@
-"""exr-induction-a1 (Ch 3, Section 3.2): 3 | 4^n - 1; n >= 12 is 4a + 5b; base cases 12-15."""
-QUOTED = {"base (i)": 3, "bound (ii)": 12, "base cases (ii)": (12, 13, 14, 15)}
+"""exr-induction-a1 (Ch 3, Section 3.2): 3 | 4^n - 1 (base 4^0 - 1 = 0); n >= 12 is 4a + 5b; base cases 12-15."""
+QUOTED = {"base (i)": (0, 3), "bound (ii)": 12, "base cases (ii)": (12, 13, 14, 15)}
 
-for n in range(1, 200):
+for n in range(0, 200):
     assert (4 ** n - 1) % 3 == 0 and 4 ** (n + 1) - 1 == 4 * (4 ** n - 1) + 3
 
 

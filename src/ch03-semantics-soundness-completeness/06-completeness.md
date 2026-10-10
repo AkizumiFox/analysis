@@ -442,7 +442,7 @@ Let \( v \) be a valuation. Let \( v^{+} \) be the valuation that agrees with \(
 By @lem-atom-splitting, \( \Delta \vdash \psi \). Since \( v \) was arbitrary, this is \( S(j - 1) \).
 :::
 
-It remains to go down from \( S(n) \) to \( S(0) \), which takes \( n \) applications of the Claim. Since \( \nN \) starts at \( 1 \), we count the statements reached: for \( m \in \nN \), let \( T(m) \) say "if \( m \le n + 1 \), then \( S(n + 1 - m) \) holds". \( T(1) \) says that \( S(n) \) holds, which is Step 2. Suppose \( T(m) \) holds, and let \( m + 1 \le n + 1 \). Then \( m \le n + 1 \), so \( S(n + 1 - m) \) holds by \( T(m) \); and \( j \coloneqq n + 1 - m \) satisfies \( 1 \le j \le n \), because \( 1 \le m \le n \). The Claim gives \( S(j - 1) = S(n + 1 - (m + 1)) \), which is \( T(m + 1) \). By @ax-induction, \( T(m) \) holds for every \( m \in \nN \), and \( T(n + 1) \) is \( S(0) \).
+It remains to go down from \( S(n) \) to \( S(0) \), which takes \( n \) applications of the Claim. We count the applications made: for \( m \in \nN \), let \( T(m) \) say "if \( m \le n \), then \( S(n - m) \) holds". \( T(0) \) says that \( S(n) \) holds, which is Step 2. Suppose \( T(m) \) holds, and let \( m + 1 \le n \). Then \( m \le n \), so \( S(n - m) \) holds by \( T(m) \); and \( j \coloneqq n - m \) satisfies \( 1 \le j \le n \), because \( 0 \le m \le n - 1 \). The Claim gives \( S(j - 1) = S(n - (m + 1)) \), which is \( T(m + 1) \). By @ax-induction, \( T(m) \) holds for every \( m \in \nN \), and \( T(n) \) is \( S(0) \).
 
 **Step 4.** \( S(0) \) says that \( \Gamma \vdash \psi \), for every valuation \( v \); there is at least one valuation (for instance the one making every atom true), so \( \Gamma \vdash \psi \). This proves the theorem.
 :::
@@ -842,7 +842,7 @@ For (b): let \( S(j) \) say "for every valuation \( v \), \( \Gamma, p_1^{v}, \d
 
 *The step.* Let \( 1 \le j \le n \) and assume \( S(j) \). Let \( v \) be any valuation, and let \( v^{+} \), \( v^{-} \) agree with \( v \) except that \( v^{+}(p_j) = \mathrm{T} \) and \( v^{-}(p_j) = \mathrm{F} \). Since the \( p_i \) are distinct, both agree with \( v \) on \( p_1, \dots, p_{j-1} \). By \( S(j) \) for \( v^{+} \) and for \( v^{-} \), with \( \Delta \coloneqq \Gamma, p_1^{v}, \dots, p_{j-1}^{v} \): \( \Delta, p_j \vdash \psi \) and \( \Delta, \neg p_j \vdash \psi \). By (a), \( \Delta \vdash \psi \). As \( v \) was arbitrary, \( S(j - 1) \) holds.
 
-*The induction.* We use @ax-induction on \( m \in \nN \) with the statement \( T(m) \): "if \( m \le n + 1 \), then \( S(n + 1 - m) \)". \( T(1) \) is \( S(n) \). If \( T(m) \) holds and \( m + 1 \le n + 1 \), then \( S(n + 1 - m) \) holds and \( j = n + 1 - m \) lies between \( 1 \) and \( n \), so the step gives \( S(n - m) \), which is \( T(m + 1) \). Hence \( T(n + 1) \), which is \( S(0) \): for every valuation, \( \Gamma \vdash \psi \). Valuations exist, so \( \Gamma \vdash \psi \).
+*The induction.* We use @ax-induction on \( m \in \nN \) with the statement \( T(m) \): "if \( m \le n \), then \( S(n - m) \)". \( T(0) \) is \( S(n) \). If \( T(m) \) holds and \( m + 1 \le n \), then \( S(n - m) \) holds and \( j = n - m \) lies between \( 1 \) and \( n \), so the step gives \( S(n - m - 1) \), which is \( T(m + 1) \). Hence \( T(n) \), which is \( S(0) \): for every valuation, \( \Gamma \vdash \psi \). Valuations exist, so \( \Gamma \vdash \psi \).
 
 (Inducting downwards on \( j \), or on the number of atoms removed, is the same argument; either earns full marks.)
 
