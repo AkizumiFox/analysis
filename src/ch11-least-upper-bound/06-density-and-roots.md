@@ -15,7 +15,7 @@ There is exactly one real number \( s > 0 \) with \( s^2 = 2 \).
 *Try it first (ten minutes): the axiom is the only statement we have that produces a real number. To which set would you apply it, and what would you then have to show?*
 
 ::: {.idea}
-The obvious attempts do not get started. There is no formula for \( \sqrt 2 \) in terms of rationals, and the decimals \( 1, 1.4, 1.41, \dots \) of the chapter's introduction would need a limit, which we do not have yet. The only statement that produces a real number is @ax-least-upper-bound, so \( \sqrt 2 \) will have to be a supremum, and @thm-no-rational-sup-sqrt2 suggests which one. Collect the positive reals whose square is below \( 2 \) into a set \( S \). The candidate is \( s = \sup S \). The plan has three steps: ① check that \( S \) is non-empty and bounded above, so the axiom supplies \( s \); ② rule out \( s^2 < 2 \); ③ rule out \( s^2 > 2 \). Trichotomy then leaves \( s^2 = 2 \).
+The obvious attempts do not get started. There is no formula for \( \sqrt 2 \) in terms of rationals, and the decimals \( 1, 1.4, 1.41, \dots \) of the chapter's introduction would need a limit, which we do not have yet. The only statement that produces a real number is @ax-least-upper-bound, so \( \sqrt 2 \) will have to be a supremum, and @thm-no-rational-sup-sqrt2 suggests which one. Collect the positive reals whose square is below \( 2 \) into a set \( S \). The candidate is \( s = \sup S \). The plan has three steps: ① check that \( S \) is nonempty and bounded above, so the axiom supplies \( s \); ② rule out \( s^2 < 2 \); ③ rule out \( s^2 > 2 \). Trichotomy then leaves \( s^2 = 2 \).
 
 Each case is ruled out by nudging \( s \). If \( s^2 < 2 \), there is still room below \( 2 \), so a slightly larger number \( s + h \) is still in \( S \). That is impossible for an upper bound. If \( s^2 > 2 \), a slightly smaller number \( s - h \) still has square above \( 2 \), and is therefore still an upper bound. That is impossible for the *least* upper bound.
 
@@ -25,7 +25,7 @@ The nudges are the ones found in @thm-no-rational-sup-sqrt2, where they were der
 :::
 
 ::: {.proof}
-Let \( S \coloneqq \{ x \in \nR : x > 0, \ x^2 < 2 \} \). By @exm-lub-first-use, \( S \) is non-empty (it contains \( 1 \)) and bounded above by \( 2 \), so by @ax-least-upper-bound its supremum \( s \coloneqq \sup S \) exists, and \( 1 \le s \le 2 \). In particular \( s > 0 \) and \( s^2 \ge 1 \). Throughout we use @thm-ordered-field-rules (g): for \( u, v \ge 0 \), \( u < v \) if and only if \( u^2 < v^2 \).
+Let \( S \coloneqq \{ x \in \nR : x > 0, \ x^2 < 2 \} \). By @exm-lub-first-use, \( S \) is nonempty (it contains \( 1 \)) and bounded above by \( 2 \), so by @ax-least-upper-bound its supremum \( s \coloneqq \sup S \) exists, and \( 1 \le s \le 2 \). In particular \( s > 0 \) and \( s^2 \ge 1 \). Throughout we use @thm-ordered-field-rules (g): for \( u, v \ge 0 \), \( u < v \) if and only if \( u^2 < v^2 \).
 
 *Case 1: \( s^2 < 2 \).* Let
 \[
@@ -73,7 +73,7 @@ The template does not care that the exponent is \( 2 \) or that the number is \(
 Let \( a > 0 \) and \( n \in \nN \). There is exactly one real number \( s > 0 \) with \( s^n = a \).
 :::
 
-We write this number \( a^{1/n} \), or \( \sqrt[n]{a} \). For \( a = 0 \) the only real \( s \ge 0 \) with \( s^n = 0 \) is \( s = 0 \) (a product of positive numbers is positive), so we also set \( \sqrt[n]{0} \coloneqq 0 \); every \( a \ge 0 \) then has exactly one non-negative \( n \)-th root.
+We write this number \( a^{1/n} \), or \( \sqrt[n]{a} \). For \( a = 0 \) the only real \( s \ge 0 \) with \( s^n = 0 \) is \( s = 0 \) (a product of positive numbers is positive), so we also set \( \sqrt[n]{0} \coloneqq 0 \); every \( a \ge 0 \) then has exactly one nonnegative \( n \)-th root.
 
 ::: {.idea}
 Take \( S = \{ x > 0 : x^n < a \} \) and \( s = \sup S \), as before, and rule out \( s^n < a \) and \( s^n > a \). The new difficulty is the estimate. For \( n = 2 \) we expanded \( (s + h)^2 \) and bounded \( h^2 \) by \( h \). For general \( n \), expanding \( (s + h)^n \) is messy. We work backwards from what we need instead.
@@ -122,7 +122,7 @@ since every other term appears once in each sum and cancels. Each term of \( \Si
 
 Let \( S \coloneqq \{ x \in \nR : x > 0, \ x^n < a \} \).
 
-*\( S \) is non-empty.* Let \( x_0 \coloneqq a/(1 + a) \). Then \( 0 < x_0 < 1 \) and \( x_0 < a \). Since \( 0 < x_0 < 1 \), multiplying by \( x_0 \) repeatedly gives \( x_0^n \le x_0 \) (by induction on \( n \)). Hence \( x_0^n \le x_0 < a \), and \( x_0 \in S \).
+*\( S \) is nonempty.* Let \( x_0 \coloneqq a/(1 + a) \). Then \( 0 < x_0 < 1 \) and \( x_0 < a \). Since \( 0 < x_0 < 1 \), multiplying by \( x_0 \) repeatedly gives \( x_0^n \le x_0 \) (by induction on \( n \)). Hence \( x_0^n \le x_0 < a \), and \( x_0 \in S \).
 
 *\( S \) is bounded above by \( 1 + a \).* If \( x \ge 1 + a \), then \( x \ge 1 \), so \( x^n \ge x \) (again by induction on \( n \)), and \( x^n \ge 1 + a > a \). So \( x \notin S \).
 
@@ -196,7 +196,7 @@ Picture the integers as marks spaced \( 1 \) apart. The Archimedean property put
 \[
     T \coloneqq \{ j \in \nN : j - p > y \}
 \]
-is non-empty. By well-ordering (Chapter 7), \( T \) has a least element \( j_0 \). Let \( m \coloneqq j_0 - p - 1 \), an integer because differences of integers are integers (the remark on \( \nN \) in the previous section). Then \( m + 1 = j_0 - p > y \), since \( j_0 \in T \). It remains to show \( m \le y \).
+is nonempty. By well-ordering (Chapter 7), \( T \) has a least element \( j_0 \). Let \( m \coloneqq j_0 - p - 1 \), an integer because differences of integers are integers (the remark on \( \nN \) in the previous section). Then \( m + 1 = j_0 - p > y \), since \( j_0 \in T \). It remains to show \( m \le y \).
 
 - If \( j_0 = 1 \), then \( m = -p < y \), by the choice of \( p \).
 - If \( j_0 \ge 2 \), then \( j_0 - 1 \in \nN \) (again from that remark), and \( j_0 - 1 \notin T \) because it is smaller than the least element of \( T \). So \( (j_0 - 1) - p \le y \), that is, \( m \le y \).
@@ -295,7 +295,7 @@ True or false? Give a reason or a counterexample for each.
 1. There is a least positive irrational number.
 2. Between any two distinct rational numbers there is an irrational number.
 3. Between any two distinct irrational numbers there is a rational number.
-4. Every non-empty set of rationals that is bounded above has a supremum in \( \nR \), and that supremum is rational.
+4. Every nonempty set of rationals that is bounded above has a supremum in \( \nR \), and that supremum is rational.
 5. In the proof of @thm-nth-root, the constant \( C \) depends on \( h \).
 6. Run Case 1 of the proof of @thm-sqrt2-exists with the value \( \frac75 \) in place of \( s \) (so \( s^2 = \frac{49}{25} < 2 \)): compute \( h \), and check that \( (s + h)^2 < 2 \). Which property of a supremum does this show \( \frac75 \) lacks?
 :::
@@ -308,7 +308,7 @@ True or false? Give a reason or a counterexample for each.
 
 (c) True, by @thm-rationals-dense applied to the two irrationals.
 
-(d) False. The set \( A \coloneqq \{ x \in \nQ : x > 0, \ x^2 < 2 \} \) is non-empty and bounded above by \( 2 \), so it has a supremum \( s \in \nR \) by @ax-least-upper-bound. If \( s \) were rational, it would be a rational upper bound of \( A \) that is at most every real upper bound, and in particular at most every rational one. So \( s \) would be a supremum of \( A \) in \( \nQ \), contradicting @thm-no-rational-sup-sqrt2. (In fact \( s = \sqrt{2} \).)
+(d) False. The set \( A \coloneqq \{ x \in \nQ : x > 0, \ x^2 < 2 \} \) is nonempty and bounded above by \( 2 \), so it has a supremum \( s \in \nR \) by @ax-least-upper-bound. If \( s \) were rational, it would be a rational upper bound of \( A \) that is at most every real upper bound, and in particular at most every rational one. So \( s \) would be a supremum of \( A \) in \( \nQ \), contradicting @thm-no-rational-sup-sqrt2. (In fact \( s = \sqrt{2} \).)
 
 (e) False. \( C = n(s + 1)^{n-1} \) depends only on \( n \) and \( s \). It has to be independent of \( h \), because \( h \) is then chosen in terms of \( C \).
 
@@ -328,7 +328,7 @@ Let \( x \in \nR \). Prove that \( x = \sup \{ q \in \nQ : q < x \} \).
 :::
 
 ::: {.solution}
-Let \( A \coloneqq \{ q \in \nQ : q < x \} \). By @thm-rationals-dense applied to \( x - 1 < x \), there is a rational in \( (x - 1, x) \), so \( A \) is non-empty. By definition every element of \( A \) is less than \( x \), so \( x \) is an upper bound of \( A \).
+Let \( A \coloneqq \{ q \in \nQ : q < x \} \). By @thm-rationals-dense applied to \( x - 1 < x \), there is a rational in \( (x - 1, x) \), so \( A \) is nonempty. By definition every element of \( A \) is less than \( x \), so \( x \) is an upper bound of \( A \).
 
 Let \( \varepsilon > 0 \). By @thm-rationals-dense applied to \( x - \varepsilon < x \), there is \( q \in \nQ \) with \( x - \varepsilon < q < x \). Then \( q \in A \) and \( q > x - \varepsilon \). By @thm-sup-epsilon, \( x = \sup A \).
 :::
@@ -338,7 +338,7 @@ Let \( \varepsilon > 0 \). By @thm-rationals-dense applied to \( x - \varepsilon
 
 Here is the start of a proof that there is exactly one real \( s > 0 \) with \( s^2 = 3 \).
 
-> Let \( S \coloneqq \{ x \in \nR : x > 0, \ x^2 < 3 \} \). Then \( 1 \in S \), and if \( x \ge 2 \), then \( x^2 \ge 4 > 3 \); so \( S \) is non-empty and bounded above by \( 2 \). By @ax-least-upper-bound, \( s \coloneqq \sup S \) exists, and \( s \ge 1 \).
+> Let \( S \coloneqq \{ x \in \nR : x > 0, \ x^2 < 3 \} \). Then \( 1 \in S \), and if \( x \ge 2 \), then \( x^2 \ge 4 > 3 \); so \( S \) is nonempty and bounded above by \( 2 \). By @ax-least-upper-bound, \( s \coloneqq \sup S \) exists, and \( s \ge 1 \).
 >
 > *Case \( s^2 < 3 \).* Let \( h \coloneqq (3 - s^2)/(4s + 2) \). Then \( h > 0 \). Since \( 3 - s^2 \le 2 \) and \( 4s + 2 \ge 6 \), we have \( h \le \frac13 \), so \( h^2 \le h \), and \( (s + h)^2 \le s^2 + (2s + 1)h = \frac{3 + s^2}{2} < 3 \). Hence \( s + h \in S \), and \( s + h > s \) contradicts (S1).
 >
@@ -379,7 +379,7 @@ Exact arithmetic gives \( 1.70^3 = 4.913 < 5 \) and \( 1.71^3 = 5.000211 > 5 \).
 ::: {.enumerate options="label=(\alph*)"}
 1. Prove that there is a real number \( s > 0 \) with \( s^2 = 2 \).
 2. Prove that the set \( \{ x \in \nQ : x > 0, \ x^2 < 2 \} \) has no supremum in \( \nQ \).
-3. Both proofs use the same two values of \( h \). Explain in two or three sentences why the same computation yields an existence theorem in \( \nR \) and a non-existence theorem in \( \nQ \).
+3. Both proofs use the same two values of \( h \). Explain in two or three sentences why the same computation yields an existence theorem in \( \nR \) and a nonexistence theorem in \( \nQ \).
 :::
 :::
 
@@ -397,7 +397,7 @@ Both cases are impossible, so \( A \) has no supremum in \( \nQ \).
 (c) The computation shows, in any ordered field, that a supremum of the set cannot have square less than \( 2 \) or greater than \( 2 \). In \( \nR \) the axiom guarantees that a supremum exists, so its square must be \( 2 \): existence. In \( \nQ \) no element has square \( 2 \) (@thm-sqrt2-irrational), so no case is left, and no supremum can exist. For rational \( r \) the values of \( h \) are rational, which is why the argument stays inside \( \nQ \).
 
 **Marking scheme.** (10 points)
-- 1: (a) defines \( S \), checks that it is non-empty and bounded above, and takes \( s = \sup S \) from @ax-least-upper-bound.
+- 1: (a) defines \( S \), checks that it is nonempty and bounded above, and takes \( s = \sup S \) from @ax-least-upper-bound.
 - 2: (a) rules out \( s^2 < 2 \) with an explicit \( h > 0 \), verifying \( (s + h)^2 < 2 \) including any side condition such as \( h \le 1 \), and contradicts (S1).
 - 2: (a) rules out \( s^2 > 2 \) with an explicit \( h > 0 \), verifying \( s - h > 0 \) and that \( s - h \) is an upper bound, and contradicts (S2).
 - 1: (b) supposes a rational supremum \( r \) and excludes \( r^2 = 2 \) by @thm-sqrt2-irrational.
@@ -433,7 +433,7 @@ The proof is that of @thm-rationals-dense with the ruler of step \( 1/n \) repla
 A student proves @thm-rationals-dense as follows. Let \( x < y \).
 
 ::: {.enumerate options="label=(\arabic*)"}
-1. Let \( R \coloneqq \{ r \in \nQ : r > x \} \). By @thm-naturals-unbounded some natural number exceeds \( x \), so \( R \) is non-empty.
+1. Let \( R \coloneqq \{ r \in \nQ : r > x \} \). By @thm-naturals-unbounded some natural number exceeds \( x \), so \( R \) is nonempty.
 2. By well-ordering, \( R \) has a least element \( q \).
 3. By @cor-archimedean-epsilon, choose \( n \in \nN \) with \( 1/n < y - x \).
 4. Since \( q - 1/n \) is rational and smaller than the least element \( q \) of \( R \), it is not in \( R \). So \( q - 1/n \le x \), and hence \( q \le x + 1/n < y \).
@@ -446,7 +446,7 @@ Is the statement the student is proving true? Does the argument prove it? Find t
 ::: {.solution}
 The statement is true: it is @thm-rationals-dense. So there is no counterexample to the conclusion, and the only question is whether the argument proves it. It does not.
 
-Line (2) fails. Well-ordering says that a non-empty subset of \( \nN \) has a least element. The set \( R \) is a set of rationals, not of natural numbers, and it need not have a least element. For \( x = 0 \), \( R \) is the set of positive rationals; if \( q \in R \), then \( q/2 \in R \) and \( q/2 < q \). So no element of \( R \) is least. Lines (3)–(5) are correct once a least element is available.
+Line (2) fails. Well-ordering says that a nonempty subset of \( \nN \) has a least element. The set \( R \) is a set of rationals, not of natural numbers, and it need not have a least element. For \( x = 0 \), \( R \) is the set of positive rationals; if \( q \in R \), then \( q/2 \in R \) and \( q/2 < q \). So no element of \( R \) is least. Lines (3)–(5) are correct once a least element is available.
 
 *Repair.* Fix \( n \) first, as in line (3), and replace \( R \) by a set of integers: \( R_n \coloneqq \{ m \in \nZ : m/n > x \} \). By @lem-integer-part, its least element is \( m \coloneqq \floor{nx} + 1 \): indeed \( m/n > x \), while \( (m - 1)/n \le x \). Now line (4) holds with \( q \coloneqq m/n \): since \( (m - 1)/n = q - 1/n \le x \), we get \( q \le x + 1/n < y \). This is the proof of @thm-rationals-dense. The point is that the step \( 1/n \) is fixed first, so the candidates \( m/n \) form a copy of the integers, where "least" makes sense.
 :::

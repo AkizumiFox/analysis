@@ -1,6 +1,6 @@
 # The Least Upper Bound Axiom
 
-We now know exactly what goes wrong in the rationals. The set of positive rationals whose square is less than \( 2 \) is non-empty and bounded above, and yet it has no supremum in \( \nQ \) (@thm-no-rational-sup-sqrt2). Every failure of calculus over \( \nQ \) traces back to gaps of this kind. This section adds one axiom to the ordered-field axioms, stating that such gaps do not occur in \( \nR \). Then it draws the first consequence: infima exist too, for free.
+We now know exactly what goes wrong in the rationals. The set of positive rationals whose square is less than \( 2 \) is nonempty and bounded above, and yet it has no supremum in \( \nQ \) (@thm-no-rational-sup-sqrt2). Every failure of calculus over \( \nQ \) traces back to gaps of this kind. This section adds one axiom to the ordered-field axioms, stating that such gaps do not occur in \( \nR \). Then it draws the first consequence: infima exist too, for free.
 
 ## The axiom
 
@@ -11,7 +11,7 @@ Up to now, "\( \nR \) is an ordered field containing \( \nQ \)" has been our onl
 ::: {#ax-least-upper-bound}
 [Least Upper Bound Axiom]
 
-Every **non-empty** subset of \( \nR \) that is **bounded above** has a supremum in \( \nR \).
+Every **nonempty** subset of \( \nR \) that is **bounded above** has a supremum in \( \nR \).
 :::
 
 In symbols: for every \( A \subseteq \nR \),
@@ -29,10 +29,10 @@ In words, the axiom has two hypotheses and one conclusion. The hypotheses are ab
 
 Each hypothesis is there because without it the conclusion is false.
 
-- **Non-empty.** The empty set is bounded above, by every real number, and it has no supremum (shown in the section on suprema). Without "non-empty", the axiom would be false.
+- **Nonempty.** The empty set is bounded above, by every real number, and it has no supremum (shown in the section on suprema). Without "nonempty", the axiom would be false.
 - **Bounded above.** The interval \( [0, \infty) \) contains \( 0 \), but no real number sits above all of it, so there is no least such number either. The set \( \nN \) is a subtler example of the same failure; that it is not bounded above in \( \nR \) is proved later in this chapter, from this very axiom.
 
-The axiom is a statement about \( \nR \) and not about ordered fields in general. It fails in \( \nQ \): some non-empty subset of \( \nQ \), bounded above in \( \nQ \), has no supremum in \( \nQ \). Which result of the previous section shows this, and whether it needs adapting, is @exr-the-axiom-c1 (a). So the axiom is exactly the property that separates the two fields we have been comparing.
+The axiom is a statement about \( \nR \) and not about ordered fields in general. It fails in \( \nQ \): some nonempty subset of \( \nQ \), bounded above in \( \nQ \), has no supremum in \( \nQ \). Which result of the previous section shows this, and whether it needs adapting, is @exr-the-axiom-c1 (a). So the axiom is exactly the property that separates the two fields we have been comparing.
 
 ::: {.remark}
 Why is this an axiom and not a theorem? Because we have not said what a real number is. One can **construct** \( \nR \) from \( \nQ \), for instance by Dedekind cuts, and then prove the least upper bound property as a theorem; the optional Chapter 22 does this. The optional Chapter 23 shows that any two ordered fields satisfying the axiom are the same up to relabeling, so the axiom pins \( \nR \) down completely. Nothing else in the book uses those chapters: everything we need follows from the axiom.
@@ -45,7 +45,7 @@ Let \( S = \{ x \in \nR : x > 0 \text{ and } x^2 < 2 \} \). Show that \( \sup S 
 :::
 
 ::: {.solution}
-We check the two hypotheses of @ax-least-upper-bound. \( S \) is non-empty, since \( 1 > 0 \) and \( 1^2 < 2 \). \( S \) is bounded above by \( 2 \): if \( x \in S \) had \( x > 2 \), then \( x^2 > 4 \) by @thm-ordered-field-rules (g), contradicting \( x^2 < 2 \). So the axiom gives a real number \( s = \sup S \).
+We check the two hypotheses of @ax-least-upper-bound. \( S \) is nonempty, since \( 1 > 0 \) and \( 1^2 < 2 \). \( S \) is bounded above by \( 2 \): if \( x \in S \) had \( x > 2 \), then \( x^2 > 4 \) by @thm-ordered-field-rules (g), contradicting \( x^2 < 2 \). So the axiom gives a real number \( s = \sup S \).
 
 So far we know only what (S1) and (S2) give: \( 1 \le s \le 2 \), since \( 1 \in S \) and \( 2 \) is an upper bound. Compare this with @thm-no-rational-sup-sqrt2. The rational version of this set has no supremum in \( \nQ \), and the proof of that theorem showed that a rational candidate \( s \) with \( s^2 < 2 \) or \( s^2 > 2 \) cannot be the supremum. Neither case used rationality except to keep \( s \pm h \) rational. So we can guess the answer: \( s^2 = 2 \). Proving it, and so proving that \( \sqrt 2 \) exists, is done later in this chapter.
 :::
@@ -53,7 +53,7 @@ So far we know only what (S1) and (S2) give: \( 1 \le s \le 2 \), since \( 1 \in
 The example shows the pattern of every use of the axiom. First check the two hypotheses, which is usually routine. Then the axiom hands over a number \( s \), and all we know about \( s \) is (S1) and (S2). Everything else must be extracted from those two properties.
 
 ::: {.warning}
-**Do not forget "non-empty".** The empty set is bounded above and has no supremum, so an argument that applies the axiom to a set without first producing an element of that set is incomplete. The failure is easy to commit when the set is defined by a condition, such as \( \{ x \in \nR : x^2 < c \} \): for \( c \le 0 \) that set is empty.
+**Do not forget "nonempty".** The empty set is bounded above and has no supremum, so an argument that applies the axiom to a set without first producing an element of that set is incomplete. The failure is easy to commit when the set is defined by a condition, such as \( \{ x \in \nR : x^2 < c \} \): for \( c \le 0 \) that set is empty.
 :::
 
 ::: {.warning}
@@ -65,7 +65,7 @@ Let \( A = \{ n \in \nZ : n \le 3.5 \} = \{ \dots, 1, 2, 3 \} \). Does \( A \) s
 :::
 
 ::: {.solution}
-Yes: \( 3 \in A \), so \( A \) is non-empty, and \( 3.5 \) is an upper bound by definition of \( A \). So \( \sup A \) exists. It is \( 3 \), not \( 3.5 \): the element \( 3 \) is an upper bound, because an integer greater than \( 3 \) is at least \( 4 \), which exceeds \( 3.5 \) (arithmetic of the integers, Chapter 7), and it belongs to \( A \), so it is the maximum, and a maximum is the supremum (@exr-suprema-b1). The bound used to check the hypothesis was not the supremum.
+Yes: \( 3 \in A \), so \( A \) is nonempty, and \( 3.5 \) is an upper bound by definition of \( A \). So \( \sup A \) exists. It is \( 3 \), not \( 3.5 \): the element \( 3 \) is an upper bound, because an integer greater than \( 3 \) is at least \( 4 \), which exceeds \( 3.5 \) (arithmetic of the integers, Chapter 7), and it belongs to \( A \), so it is the maximum, and a maximum is the supremum (@exr-suprema-b1). The bound used to check the hypothesis was not the supremum.
 :::
 
 ## Infima come free
@@ -110,28 +110,28 @@ Now the axiom can be applied to \( -A \).
 ::: {#thm-greatest-lower-bound}
 [Greatest Lower Bound Property]
 
-Every **non-empty** subset \( A \) of \( \nR \) that is **bounded below** has an infimum in \( \nR \), and
+Every **nonempty** subset \( A \) of \( \nR \) that is **bounded below** has an infimum in \( \nR \), and
 \[
 \inf A = -\sup(-A) .
 \]
 :::
 
 ::: {.proof}
-Since \( A \) is non-empty, so is \( -A \). Let \( m \) be a lower bound of \( A \). By @thm-inf-neg-sup (a), \( -m \) is an upper bound of \( -A \), so \( -A \) is bounded above. By @ax-least-upper-bound, \( -A \) has a supremum, and by @thm-inf-neg-sup, \( A \) has the infimum \( -\sup(-A) \).
+Since \( A \) is nonempty, so is \( -A \). Let \( m \) be a lower bound of \( A \). By @thm-inf-neg-sup (a), \( -m \) is an upper bound of \( -A \), so \( -A \) is bounded above. By @ax-least-upper-bound, \( -A \) has a supremum, and by @thm-inf-neg-sup, \( A \) has the infimum \( -\sup(-A) \).
 :::
 
-Alternatively, one can take the supremum of the lower bounds. Let \( L \) be the set of lower bounds of \( A \). It is non-empty, because \( A \) is bounded below, and any element of \( A \), of which there is at least one because \( A \) is non-empty, sits above all of \( L \). So \( \ell \coloneqq \sup L \) exists by @ax-least-upper-bound. Each \( a \in A \) is an upper bound of \( L \), so \( \ell \le a \) by (S2); hence \( \ell \) is a lower bound of \( A \). And every lower bound of \( A \) lies in \( L \), so it is at most \( \ell \) by (S1). Thus \( \ell = \inf A \). In this route the two hypotheses on \( A \) swap roles: "bounded below" makes \( L \) non-empty, and "non-empty" makes \( L \) bounded above.
+Alternatively, one can take the supremum of the lower bounds. Let \( L \) be the set of lower bounds of \( A \). It is nonempty, because \( A \) is bounded below, and any element of \( A \), of which there is at least one because \( A \) is nonempty, sits above all of \( L \). So \( \ell \coloneqq \sup L \) exists by @ax-least-upper-bound. Each \( a \in A \) is an upper bound of \( L \), so \( \ell \le a \) by (S2); hence \( \ell \) is a lower bound of \( A \). And every lower bound of \( A \) lies in \( L \), so it is at most \( \ell \) by (S1). Thus \( \ell = \inf A \). In this route the two hypotheses on \( A \) swap roles: "bounded below" makes \( L \) nonempty, and "nonempty" makes \( L \) bounded above.
 
-The hypotheses of @thm-greatest-lower-bound are needed for the same reasons as those of the axiom. The empty set is bounded below and has no infimum, since every real number is a lower bound of it and \( t + 1 \) beats any candidate \( t \). The interval \( (-\infty, 0] \) is non-empty but not bounded below, and has no infimum.
+The hypotheses of @thm-greatest-lower-bound are needed for the same reasons as those of the axiom. The empty set is bounded below and has no infimum, since every real number is a lower bound of it and \( t + 1 \) beats any candidate \( t \). The interval \( (-\infty, 0] \) is nonempty but not bounded below, and has no infimum.
 
-So in \( \nR \), suprema and infima exist under mirror-image hypotheses, and each can be computed from the other. The mirror identity \( \sup A = -\inf(-A) \), for \( A \) non-empty and bounded above, is @exr-the-axiom-b1.
+So in \( \nR \), suprema and infima exist under mirror-image hypotheses, and each can be computed from the other. The mirror identity \( \sup A = -\inf(-A) \), for \( A \) nonempty and bounded above, is @exr-the-axiom-b1.
 
 ## Unbounded and empty sets
 
-It is sometimes convenient to give \( \sup A \) a meaning even when the axiom does not apply. For a non-empty set \( A \) that is not bounded above one writes \( \sup A = +\infty \), and one sets \( \sup \emptyset = -\infty \); symmetrically, \( \inf A = -\infty \) for a non-empty set not bounded below, and \( \inf \emptyset = +\infty \). The strange-looking value \( \sup \emptyset = -\infty \) is chosen so that "\( A \subseteq B \) implies \( \sup A \le \sup B \)" stays true when \( A = \emptyset \).
+It is sometimes convenient to give \( \sup A \) a meaning even when the axiom does not apply. For a nonempty set \( A \) that is not bounded above one writes \( \sup A = +\infty \), and one sets \( \sup \emptyset = -\infty \); symmetrically, \( \inf A = -\infty \) for a nonempty set not bounded below, and \( \inf \emptyset = +\infty \). The strange-looking value \( \sup \emptyset = -\infty \) is chosen so that "\( A \subseteq B \) implies \( \sup A \le \sup B \)" stays true when \( A = \emptyset \).
 
 ::: {.remark}
-These are conventions of notation, and \( \pm\infty \) are **not** real numbers: they obey none of the field axioms, and no rule of @thm-ordered-field-rules applies to them. The book uses them from Part IV on, where measure theory needs suprema of arbitrary sets, and announces them again there. Until then, whenever we write \( \sup A \), the set \( A \) is non-empty and bounded above, and \( \sup A \) is a real number.
+These are conventions of notation, and \( \pm\infty \) are **not** real numbers: they obey none of the field axioms, and no rule of @thm-ordered-field-rules applies to them. The book uses them from Part IV on, where measure theory needs suprema of arbitrary sets, and announces them again there. Until then, whenever we write \( \sup A \), the set \( A \) is nonempty and bounded above, and \( \sup A \) is a real number.
 :::
 
 ## What the axiom will do
@@ -156,7 +156,7 @@ For each set, decide whether it satisfies both hypotheses of @ax-least-upper-bou
 :::
 
 ::: {.solution}
-(a) The set is empty, since \( x^2 \ge 0 \) for every \( x \) (@thm-ordered-field-rules (e)). "Non-empty" fails.
+(a) The set is empty, since \( x^2 \ge 0 \) for every \( x \) (@thm-ordered-field-rules (e)). "Nonempty" fails.
 
 (b) "Bounded above" fails. Given \( M \in \nR \), let \( x \coloneqq \abs{M} + 1 \). Then \( x \ge 1 \), so \( x^2 \ge x \) (multiply \( x \ge 1 \) by \( x > 0 \)), and \( x > \abs{M} \ge M \). Hence \( x^2 > M \), and \( M \) is not an upper bound.
 
@@ -170,23 +170,23 @@ For each set, decide whether it satisfies both hypotheses of @ax-least-upper-bou
 ::: {#exr-the-axiom-b1}
 [B1: The mirror identity]
 
-Let \( A \subseteq \nR \) be non-empty and bounded above. Show that \( -A \) has a lower bound, and that \( \sup A = -\inf(-A) \).
+Let \( A \subseteq \nR \) be nonempty and bounded above. Show that \( -A \) has a lower bound, and that \( \sup A = -\inf(-A) \).
 :::
 
 ::: {.solution}
-Since \( A \) is non-empty, so is \( -A \). Let \( M \) be an upper bound of \( A \). For every \( x \in -A \) we have \( -x \in A \), so \( -x \le M \), and hence \( -M \le x \) by @thm-ordered-field-rules (a). So \( -M \) is a lower bound of \( -A \), and \( -A \) is bounded below. By @thm-greatest-lower-bound, \( \inf(-A) \) exists and equals \( -\sup(-(-A)) = -\sup A \), because \( -(-A) = A \). Negating both sides gives \( \sup A = -\inf(-A) \).
+Since \( A \) is nonempty, so is \( -A \). Let \( M \) be an upper bound of \( A \). For every \( x \in -A \) we have \( -x \in A \), so \( -x \le M \), and hence \( -M \le x \) by @thm-ordered-field-rules (a). So \( -M \) is a lower bound of \( -A \), and \( -A \) is bounded below. By @thm-greatest-lower-bound, \( \inf(-A) \) exists and equals \( -\sup(-(-A)) = -\sup A \), because \( -(-A) = A \). Negating both sides gives \( \sup A = -\inf(-A) \).
 :::
 
 ::: {#exr-the-axiom-b2}
 [B2: The infimum is below the supremum]
 
-Let \( A \subseteq \nR \) be non-empty and bounded. Prove that \( \inf A \le \sup A \), with equality if and only if \( A \) has exactly one element.
+Let \( A \subseteq \nR \) be nonempty and bounded. Prove that \( \inf A \le \sup A \), with equality if and only if \( A \) has exactly one element.
 :::
 
 ::: {.solution}
-Both exist, by @ax-least-upper-bound and @thm-greatest-lower-bound. Since \( A \) is non-empty, choose \( a \in A \). By (I1), \( \inf A \le a \), and by (S1), \( a \le \sup A \). Hence \( \inf A \le \sup A \).
+Both exist, by @ax-least-upper-bound and @thm-greatest-lower-bound. Since \( A \) is nonempty, choose \( a \in A \). By (I1), \( \inf A \le a \), and by (S1), \( a \le \sup A \). Hence \( \inf A \le \sup A \).
 
-If \( A = \{ a \} \), then \( a \) is both the maximum and the minimum of \( A \), so \( \sup A = a = \inf A \) by @exr-suprema-b1. Conversely, suppose \( \inf A = \sup A = c \). For every \( a \in A \), \( c \le a \le c \), so \( a = c \) by trichotomy. Hence \( A \subseteq \{ c \} \), and since \( A \) is non-empty, \( A = \{ c \} \).
+If \( A = \{ a \} \), then \( a \) is both the maximum and the minimum of \( A \), so \( \sup A = a = \inf A \) by @exr-suprema-b1. Conversely, suppose \( \inf A = \sup A = c \). For every \( a \in A \), \( c \le a \le c \), so \( a = c \) by trichotomy. Hence \( A \subseteq \{ c \} \), and since \( A \) is nonempty, \( A = \{ c \} \).
 :::
 
 ### C. Going deeper
@@ -196,15 +196,15 @@ If \( A = \{ a \} \), then \( a \) is both the maximum and the minimum of \( A \
 
 ::: {.enumerate options="label=(\alph*)"}
 1. Say what it would mean for the ordered field \( \nQ \) to satisfy the least upper bound property, and show that it does not. Is @thm-no-rational-sup-sqrt2 exactly a witness, or does it need to be adapted?
-2. Say that an ordered field \( F \) has the **greatest lower bound property** if every non-empty subset of \( F \) that is bounded below has an infimum in \( F \). Prove that if \( F \) has the greatest lower bound property, then it has the least upper bound property.
+2. Say that an ordered field \( F \) has the **greatest lower bound property** if every nonempty subset of \( F \) that is bounded below has an infimum in \( F \). Prove that if \( F \) has the greatest lower bound property, then it has the least upper bound property.
 3. Conclude that, for an ordered field, the two properties are equivalent.
 :::
 :::
 
 ::: {.solution}
-(a) \( \nQ \) would satisfy it if every non-empty subset of \( \nQ \) that is bounded above in \( \nQ \) had a supremum in \( \nQ \). @thm-no-rational-sup-sqrt2 is exactly a witness that it does not: its set is a subset of \( \nQ \), non-empty, bounded above by the rational \( 2 \), and has no supremum in \( \nQ \). Nothing needs adapting, because the theorem was stated and proved inside the ordered field \( \nQ \), with the upper bounds in (S2) ranging over \( \nQ \).
+(a) \( \nQ \) would satisfy it if every nonempty subset of \( \nQ \) that is bounded above in \( \nQ \) had a supremum in \( \nQ \). @thm-no-rational-sup-sqrt2 is exactly a witness that it does not: its set is a subset of \( \nQ \), nonempty, bounded above by the rational \( 2 \), and has no supremum in \( \nQ \). Nothing needs adapting, because the theorem was stated and proved inside the ordered field \( \nQ \), with the upper bounds in (S2) ranging over \( \nQ \).
 
-(b) Let \( A \subseteq F \) be non-empty and bounded above, with upper bound \( M \). Then \( -A \) is non-empty, and it is bounded below by \( -M \), by @thm-inf-neg-sup (a) applied with \( m = -M \) and the set \( -A \) in place of \( A \) (so that \( -(-A) = A \)). By the greatest lower bound property, \( -A \) has an infimum \( t \) in \( F \). By @thm-inf-neg-sup (b), applied to the set \( -A \), \( -t \) is a supremum of \( -(-A) = A \). So \( A \) has a supremum in \( F \).
+(b) Let \( A \subseteq F \) be nonempty and bounded above, with upper bound \( M \). Then \( -A \) is nonempty, and it is bounded below by \( -M \), by @thm-inf-neg-sup (a) applied with \( m = -M \) and the set \( -A \) in place of \( A \) (so that \( -(-A) = A \)). By the greatest lower bound property, \( -A \) has an infimum \( t \) in \( F \). By @thm-inf-neg-sup (b), applied to the set \( -A \), \( -t \) is a supremum of \( -(-A) = A \). So \( A \) has a supremum in \( F \).
 
 (c) The converse direction is the proof of @thm-greatest-lower-bound, which used only @thm-inf-neg-sup (valid in every ordered field) and the least upper bound property. So in any ordered field each property implies the other.
 :::
@@ -213,7 +213,7 @@ If \( A = \{ a \} \), then \( a \) is both the maximum and the minimum of \( A \
 [C2: The upper bounds form a ray]
 
 ::: {.enumerate options="label=(\alph*)"}
-1. Let \( A \subseteq \nR \) be non-empty and bounded above, and let \( U(A) \) be its set of upper bounds. Prove that \( U(A) = [\sup A, \infty) \).
+1. Let \( A \subseteq \nR \) be nonempty and bounded above, and let \( U(A) \) be its set of upper bounds. Prove that \( U(A) = [\sup A, \infty) \).
 2. Let \( B = \{ x \in \nQ : x > 0, \ x^2 < 2 \} \), and let \( U \) be its set of upper bounds **in \( \nQ \)**. Prove that there is no rational \( q \) with \( U = \{ u \in \nQ : u \ge q \} \).
 3. Explain in one sentence how (a) and (b) restate the difference between \( \nR \) and \( \nQ \).
 :::
@@ -224,7 +224,7 @@ If \( A = \{ a \} \), then \( a \) is both the maximum and the minimum of \( A \
 
 (b) Suppose \( U = \{ u \in \nQ : u \ge q \} \) for some rational \( q \). Then \( q \in U \), and \( q \le u \) for every \( u \in U \). So \( q \) is the minimum of \( U \), that is, a rational upper bound of \( B \) below every other rational upper bound. That makes \( q \) a supremum of \( B \) in \( \nQ \), which contradicts @thm-no-rational-sup-sqrt2.
 
-(c) In \( \nR \) the upper bounds of a non-empty bounded-above set always form a closed ray that starts at a point, while in \( \nQ \) they can form a ray whose starting point is missing.
+(c) In \( \nR \) the upper bounds of a nonempty bounded-above set always form a closed ray that starts at a point, while in \( \nQ \) they can form a ray whose starting point is missing.
 :::
 
 <!-- dependency ledger

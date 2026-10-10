@@ -49,7 +49,7 @@ Read the definition clause by clause.
 1. **\( \rulename{{=}I} \) cites nothing.** Its justification is "\( \rulename{{=}I} \)" alone. It is the only rule of the book so far with no given lines, and so it may stand anywhere: as the first line of a derivation with no premises, or deep inside a box.
 2. **The equation is read from left to right.** The cited equation \( t_1 = t_2 \) licenses replacing \( t_1 \) by \( t_2 \), and not the other way round. From \( a = b \) and \( P(b) \), the rule does **not** give \( P(a) \), because \( P(b) \) is \( \varphi[b/x] \) for \( \varphi = P(x) \), and the equation would have to be \( b = a \). The reverse direction needs one more step, symmetry, which we derive below.
 3. **Some or all occurrences.** The choice of \( \varphi \) decides which occurrences of \( t_1 \) are replaced: exactly those that \( \varphi \) marks with \( x \). Occurrences of \( t_1 \) that \( \varphi \) writes out are left alone. Choosing \( \varphi \) is the whole art of using the rule.
-4. **Free for \( x \).** Neither term may have a variable captured by a quantifier of \( \varphi \), the condition of @def-free-for that the rules of Sections 4.3 and 4.5 also carry. The non-example below shows what goes wrong without it.
+4. **Free for \( x \).** Neither term may have a variable captured by a quantifier of \( \varphi \), the condition of @def-free-for that the rules of Sections 4.3 and 4.5 also carry. The nonexample below shows what goes wrong without it.
 
 **One line, many readings.** Take the equation \( a = b \) and the line \( a + a = 2 \cdot a \). The term \( a \) occurs three times in the line, and \( \varphi \) may mark any of them. Some of the choices:
 
@@ -71,7 +71,7 @@ From the equation \( x_0 = 3 \) and the line \( x_0 \cdot x_0 > x_0 \), which fo
 For \( 3 \cdot 3 > x_0 \), take \( \varphi = (z \cdot z > x_0) \), with a variable \( z \) that occurs nowhere else: \( \varphi[x_0/z] \) is the cited line and \( \varphi[3/z] \) is \( 3 \cdot 3 > x_0 \). For \( x_0 \cdot 3 > 3 \), take \( \varphi = (x_0 \cdot z > z) \). The hole has to be a variable other than \( x_0 \), since the occurrences of \( x_0 \) that stay must be written out in \( \varphi \).
 :::
 
-**A non-example: capture.** Take the equation \( a = y \), with \( y \) a variable, and the line \( \exists y\, (y < a) \). It is tempting to "substitute \( y \) for \( a \)" and write \( \exists y\, (y < y) \). With \( \varphi = \exists y\, (y < x) \), the cited line is \( \varphi[a/x] \), and the new line would be \( \varphi[y/x] \). But \( y \) is **not** free for \( x \) in \( \varphi \): the \( x \) sits inside \( \exists y \), and the \( y \) put there would be captured. The side condition fails, and rightly. Read over \( \nZ \), with \( a \) and \( y \) both naming \( 0 \), the premises say "\( a = y \)" (true) and "some integer is less than \( 0 \)" (true), while \( \exists y\, (y < y) \) says that some integer is less than itself (false).
+**A nonexample: capture.** Take the equation \( a = y \), with \( y \) a variable, and the line \( \exists y\, (y < a) \). It is tempting to "substitute \( y \) for \( a \)" and write \( \exists y\, (y < y) \). With \( \varphi = \exists y\, (y < x) \), the cited line is \( \varphi[a/x] \), and the new line would be \( \varphi[y/x] \). But \( y \) is **not** free for \( x \) in \( \varphi \): the \( x \) sits inside \( \exists y \), and the \( y \) put there would be captured. The side condition fails, and rightly. Read over \( \nZ \), with \( a \) and \( y \) both naming \( 0 \), the premises say "\( a = y \)" (true) and "some integer is less than \( 0 \)" (true), while \( \exists y\, (y < y) \) says that some integer is less than itself (false).
 
 ```{=latex}
 \begin{center}
@@ -280,7 +280,7 @@ because \( (x \le y)[y/x] \) is \( y \le y \). Its second conjunct says that **e
 3. Over \( \nR \), \( \exists! x\, \forall y\, (x + y = y) \) is true: \( 0 \) is the **unique** additive identity. *Existence:* \( 0 + y = y \) for every \( y \). *Uniqueness:* suppose \( z + y = y \) for every \( y \). Apply this to the one instance \( y = 0 \) (by \( \rulename{\forall E} \)): \( z + 0 = 0 \). Since also \( z + 0 = z \), symmetry and transitivity give \( z = 0 \). The whole uniqueness proof is the choice of the instance \( y = 0 \).
 4. **Degenerate.** For any constant \( c \), \( \exists! x\, (x = c) \) holds in every domain, and it is derivable from no premises (the derivation follows). By contrast, \( \exists! x\, (x = x) \) says that the domain has exactly one element, which is false in \( \nN \), \( \nZ \) and \( \nR \): existence holds and uniqueness fails.
 
-**Non-example by minimal change.** Keep example 2 and change the domain to \( \nZ \). Existence still holds, with the same witness \( 2 \). Uniqueness fails: \( y = -2 \) also satisfies \( y \cdot y = 4 \), and \( -2 \ne 2 \). So over \( \nZ \), \( \exists! x\, (x \cdot x = 4) \) is false, and the failing clause is exactly the second conjunct.
+**Nonexample by minimal change.** Keep example 2 and change the domain to \( \nZ \). Existence still holds, with the same witness \( 2 \). Uniqueness fails: \( y = -2 \) also satisfies \( y \cdot y = 4 \), and \( -2 \ne 2 \). So over \( \nZ \), \( \exists! x\, (x \cdot x = 4) \) is false, and the failing clause is exactly the second conjunct.
 
 The derivation of \( \exists! x\, (x = c) \), with the abbreviation written out, shows that \( \exists! \) needs no rules of its own:
 
@@ -525,7 +525,7 @@ This is the "at most one" half: any two identities are equal. It says nothing ab
 
 Over \( \nR \), write \( \exists! x\, (x \cdot x = 0) \) without \( \exists! \), and prove it: existence, then uniqueness in the form "suppose \( y \) also satisfies …".
 
-*Hint: a product of two non-zero reals is non-zero.*
+*Hint: a product of two nonzero reals is nonzero.*
 :::
 
 ::: {.solution}
@@ -533,7 +533,7 @@ Written out, the statement is \( \exists x\, \bigl( x \cdot x = 0 \wedge \forall
 
 *Existence.* \( 0 \cdot 0 = 0 \).
 
-*Uniqueness.* Let \( y \) be a real number, and suppose \( y \cdot y = 0 \). If \( y \ne 0 \), then \( y \cdot y \) is a product of two non-zero reals and so is non-zero, which contradicts \( y \cdot y = 0 \). Hence \( y = 0 \), which is the witness. Since \( y \) was arbitrary, every \( y \) with \( y \cdot y = 0 \) equals \( 0 \).
+*Uniqueness.* Let \( y \) be a real number, and suppose \( y \cdot y = 0 \). If \( y \ne 0 \), then \( y \cdot y \) is a product of two nonzero reals and so is nonzero, which contradicts \( y \cdot y = 0 \). Hence \( y = 0 \), which is the witness. Since \( y \) was arbitrary, every \( y \) with \( y \cdot y = 0 \) equals \( 0 \).
 
 So \( 0 \) witnesses the existential, and \( \exists! x\, (x \cdot x = 0) \) holds. The rules behind the words: "we take the witness \( x = 0 \)" is \( \rulename{\exists I} \), postponed to the end as usual; "let \( y \) be a real number" is a flagged box for \( \rulename{\forall I} \); "suppose \( y \cdot y = 0 \)" is a \( \rulename{{\to}I} \) box; "if \( y \ne 0 \) … contradicts" is an \( \rulename{RAA} \) box on \( y \ne 0 \). (That box gives \( y = 0 \) directly; \( \rulename{\neg I} \) would give only \( \neg(y \ne 0) \). Since for reals \( y = 0 \) or \( y \ne 0 \) is also a school fact, a proof by cases would do as well.)
 :::

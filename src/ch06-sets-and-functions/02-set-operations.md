@@ -39,7 +39,7 @@ A \cap B \subseteq A \subseteq A \cup B, \qquad A \setminus B \subseteq A .
 \]
 Each is one element-chase that drops or adds a disjunct or a conjunct: if \( x \in A \cap B \), then \( x \in A \) (\( \rulename{\wedge E} \)); if \( x \in A \), then \( x \in A \cup B \) (\( \rulename{\vee I} \)); if \( x \in A \setminus B \), then \( x \in A \) (\( \rulename{\wedge E} \)).
 
-A non-example by minimal change: the "difference" of two sets is **not** "everything in one but not in both". The set \( \{ x : x \in A \text{ or } x \in B, \text{ but not both} \} \) is a different set: for \( A = \{1, 2, 3\} \) and \( B = \{2, 4\} \) it is \( \{1, 3, 4\} \), while \( A \setminus B = \{1, 3\} \). The element \( 4 \) is in the first and not in \( A \setminus B \), because the difference keeps only elements **of \( A \)**.
+A nonexample by minimal change: the "difference" of two sets is **not** "everything in one but not in both". The set \( \{ x : x \in A \text{ or } x \in B, \text{ but not both} \} \) is a different set: for \( A = \{1, 2, 3\} \) and \( B = \{2, 4\} \) it is \( \{1, 3, 4\} \), while \( A \setminus B = \{1, 3\} \). The element \( 4 \) is in the first and not in \( A \setminus B \), because the difference keeps only elements **of \( A \)**.
 
 ::: {.warning}
 **The difference is not symmetric.** In general \( A \setminus B \ne B \setminus A \). With \( A = \{1\} \) and \( B = \{2\} \), \( A \setminus B = \{1\} \) and \( B \setminus A = \{2\} \), and the witness \( 1 \) lies in the first and not the second. In fact \( A \setminus B \) and \( B \setminus A \) are always disjoint, since an element of both would lie in \( A \) and not in \( A \); they are equal only when both are empty, that is, when \( A = B \).
@@ -145,7 +145,7 @@ Membership in the left side is \( p \wedge (p \vee q) \), and in the right side 
 
 ## Power sets
 
-The operations so far build sets whose elements are elements of the old sets. The next construction collects **sets** as elements. Many questions of analysis quantify over subsets: "every non-empty set of reals that is bounded above has a supremum" is a statement about all subsets of \( \nR \). So the subsets of a set deserve to be collected into one set.
+The operations so far build sets whose elements are elements of the old sets. The next construction collects **sets** as elements. Many questions of analysis quantify over subsets: "every nonempty set of reals that is bounded above has a supremum" is a statement about all subsets of \( \nR \). So the subsets of a set deserve to be collected into one set.
 
 ::: {#def-power-set}
 [Power Set]
@@ -210,10 +210,10 @@ x \in \bigcup_{i \in I} A_i \iff \exists i \in I\ (x \in A_i).
 \]
 :::
 
-For a set \( \sS \) whose elements are sets, \( \bigcup \sS \coloneqq \bigcup_{A \in \sS} A \); and for a **non-empty** set \( \sS \subseteq \powerset{X} \), \( \bigcap \sS \coloneqq \bigcap_{A \in \sS} A \). In both, the family is indexed by \( \sS \) itself, the member with index \( A \) being \( A \).
+For a set \( \sS \) whose elements are sets, \( \bigcup \sS \coloneqq \bigcup_{A \in \sS} A \); and for a **nonempty** set \( \sS \subseteq \powerset{X} \), \( \bigcap \sS \coloneqq \bigcap_{A \in \sS} A \). In both, the family is indexed by \( \sS \) itself, the member with index \( A \) being \( A \).
 :::
 
-In words, clause by clause. The union exists by (W3), like the union of two sets; when all \( A_i \subseteq X \), it may also be written \( \{ x \in X : \exists i \in I\ (x \in A_i) \} \), since then every element of the union lies in \( X \), and this form names its ambient set as Section 6.1 requires. The intersection is cut out of \( X \) by specification. The last sentence covers sets of sets that come with no index: \( \bigcap \sS \) is the set of objects lying in every set that belongs to \( \sS \). For example, Chapter 11 defines \( \nN \) inside \( \nR \) as \( \bigcap \sS \), where \( \sS \) is the set of all subsets of \( \nR \) that contain \( 1 \) and are closed under \( x \mapsto x + 1 \); \( \sS \) is non-empty because \( \nR \) itself belongs to it.
+In words, clause by clause. The union exists by (W3), like the union of two sets; when all \( A_i \subseteq X \), it may also be written \( \{ x \in X : \exists i \in I\ (x \in A_i) \} \), since then every element of the union lies in \( X \), and this form names its ambient set as Section 6.1 requires. The intersection is cut out of \( X \) by specification. The last sentence covers sets of sets that come with no index: \( \bigcap \sS \) is the set of objects lying in every set that belongs to \( \sS \). For example, Chapter 11 defines \( \nN \) inside \( \nR \) as \( \bigcap \sS \), where \( \sS \) is the set of all subsets of \( \nR \) that contain \( 1 \) and are closed under \( x \mapsto x + 1 \); \( \sS \) is nonempty because \( \nR \) itself belongs to it.
 
 With two sets the new definitions give the old ones back. For \( I = \{1, 2\} \), "\( \exists i \in \{1, 2\} \) with \( x \in A_i \)" says "\( x \in A_1 \) or \( x \in A_2 \)", since an \( i \in \{1, 2\} \) is \( 1 \) or \( 2 \); so \( \bigcup_{i \in \{1, 2\}} A_i = A_1 \cup A_2 \), and likewise \( \bigcap_{i \in \{1, 2\}} A_i = A_1 \cap A_2 \). The dictionary gains two rows:
 
@@ -226,13 +226,13 @@ With two sets the new definitions give the old ones back. For \( I = \{1, 2\} \)
 \[
 \bigcap_{i \in \emptyset} A_i = X, \qquad \bigcup_{i \in \emptyset} A_i = \emptyset .
 \]
-The union needs no ambient set, because its condition \( \exists i \in \emptyset\ (x \in A_i) \) is false for every \( x \); the empty union is empty. For a **non-empty** index set the choice of \( X \) does not matter: if some \( i_0 \in I \) exists and \( x \) lies in every \( A_i \), then in particular \( x \in A_{i_0} \subseteq X \), so the condition "\( x \in X \)" adds nothing. Only the empty family sees \( X \), and there it must. This is also why \( \bigcap \sS \) above asks \( \sS \) to be non-empty: a set of sets with no index carries no ambient set with it.
+The union needs no ambient set, because its condition \( \exists i \in \emptyset\ (x \in A_i) \) is false for every \( x \); the empty union is empty. For a **nonempty** index set the choice of \( X \) does not matter: if some \( i_0 \in I \) exists and \( x \) lies in every \( A_i \), then in particular \( x \in A_{i_0} \subseteq X \), so the condition "\( x \in X \)" adds nothing. Only the empty family sees \( X \), and there it must. This is also why \( \bigcap \sS \) above asks \( \sS \) to be nonempty: a set of sets with no index carries no ambient set with it.
 
 ### The smallest set closed under some steps
 
 One use of the intersection pays a debt to Chapter 3. There, the formulas were described as "the smallest collection of strings containing the atoms and \( \bot \), and closed under the building steps (F2) and (F3)" of @def-formula. What does "smallest" mean, and why does such a collection exist? Intersections answer both questions, in any setting of this kind.
 
-Let \( X \) be a set, and consider some **starting elements** of \( X \) and some **steps**, each of which turns elements of \( X \) into an element of \( X \). Call a subset \( S \subseteq X \) **closed** if it contains the starting elements and, whenever a step is applied to elements of \( S \), the result lies in \( S \). Let \( \sS \subseteq \powerset{X} \) be the set of closed subsets; it is non-empty, since \( X \) itself is closed. Then \( M \coloneqq \bigcap \sS \) has two properties.
+Let \( X \) be a set, and consider some **starting elements** of \( X \) and some **steps**, each of which turns elements of \( X \) into an element of \( X \). Call a subset \( S \subseteq X \) **closed** if it contains the starting elements and, whenever a step is applied to elements of \( S \), the result lies in \( S \). Let \( \sS \subseteq \powerset{X} \) be the set of closed subsets; it is nonempty, since \( X \) itself is closed. Then \( M \coloneqq \bigcap \sS \) has two properties.
 
 - **\( M \) lies inside every closed set.** If \( S \in \sS \) and \( x \in M \), then \( x \) lies in every member of \( \sS \), in particular in \( S \).
 - **\( M \) is closed.** Each starting element lies in every \( S \in \sS \), hence in \( M \). If a step is applied to elements of \( M \), those elements lie in every \( S \in \sS \); since each such \( S \) is closed, the result lies in every \( S \in \sS \), hence in \( M \).
@@ -267,9 +267,9 @@ Show that:
 (c) Let \( x \) lie in the intersection. With the index \( t = 1 \), \( x \in (0, 1) \), so \( x > 0 \). Then \( x \) is itself an index, and \( x \in (0, x) \) would give \( x < x \), which is false. So nothing lies in the intersection, and it is empty.
 :::
 
-Part (c) is a degenerate case worth remembering. Each interval \( (0, t) \) is non-empty, and the intervals are **nested**: \( (0, s) \subseteq (0, t) \) whenever \( s \le t \). Yet nothing lies in all of them. Chapter 11 meets the same phenomenon with a sequence of intervals, and it is why its nested interval theorem needs **closed** intervals.
+Part (c) is a degenerate case worth remembering. Each interval \( (0, t) \) is nonempty, and the intervals are **nested**: \( (0, s) \subseteq (0, t) \) whenever \( s \le t \). Yet nothing lies in all of them. Chapter 11 meets the same phenomenon with a sequence of intervals, and it is why its nested interval theorem needs **closed** intervals.
 
-A non-example by minimal change. Close the left endpoint of (c): \( \bigcap_{t > 0} [0, t) = \{0\} \). The number \( 0 \) now lies in every member, since \( 0 \le 0 < t \); and any \( x \ne 0 \) is excluded as before (if \( x < 0 \), by \( [0, 1) \); if \( x > 0 \), by \( [0, x) \)). One endpoint changes the answer from \( \emptyset \) to \( \{0\} \), and the element that (c) loses is exactly the endpoint \( 0 \).
+A nonexample by minimal change. Close the left endpoint of (c): \( \bigcap_{t > 0} [0, t) = \{0\} \). The number \( 0 \) now lies in every member, since \( 0 \le 0 < t \); and any \( x \ne 0 \) is excluded as before (if \( x < 0 \), by \( [0, 1) \); if \( x > 0 \), by \( [0, x) \)). One endpoint changes the answer from \( \emptyset \) to \( \{0\} \), and the element that (c) loses is exactly the endpoint \( 0 \).
 
 ::: {.check}
 Compute \( \bigcup_{t \in [1, 2]} [0, t] \) and \( \bigcap_{t \in [1, 2]} [0, t] \), inside \( X = \nR \).
@@ -416,7 +416,7 @@ So an answer is correct exactly when some element lies in exactly one of \( B \)
 Let \( A \) and \( B \) be sets.
 
 ::: {.enumerate options="label=(\alph*)"}
-1. Decide whether \( \powerset{A \setminus B} = \powerset{A} \setminus \powerset{B} \) can hold. Then prove that every **non-empty** element of \( \powerset{A \setminus B} \) lies in \( \powerset{A} \setminus \powerset{B} \).
+1. Decide whether \( \powerset{A \setminus B} = \powerset{A} \setminus \powerset{B} \) can hold. Then prove that every **nonempty** element of \( \powerset{A \setminus B} \) lies in \( \powerset{A} \setminus \powerset{B} \).
 2. Show by an example that \( \powerset{A} \cup \powerset{B} = \powerset{A \cup B} \) can fail. Then prove that it holds if and only if \( A \subseteq B \) or \( B \subseteq A \).
 :::
 :::
@@ -436,7 +436,7 @@ For (b) \( (\Rightarrow) \), argue by the contrapositive: if \( A \not\subseteq 
 ::: {.solution}
 (a) **Never.** \( \emptyset \in \powerset{A \setminus B} \), since \( \emptyset \) is a subset of every set. But \( \emptyset \in \powerset{B} \) as well, so \( \emptyset \notin \powerset{A} \setminus \powerset{B} \). The empty set is a witness for every \( A \) and \( B \).
 
-Now let \( S \in \powerset{A \setminus B} \) be non-empty, and choose \( s \in S \). Since \( S \subseteq A \setminus B \subseteq A \), we have \( S \in \powerset{A} \). Since \( s \in A \setminus B \), \( s \notin B \); so \( s \) is an element of \( S \) outside \( B \), and \( S \not\subseteq B \), that is, \( S \notin \powerset{B} \). Hence \( S \in \powerset{A} \setminus \powerset{B} \).
+Now let \( S \in \powerset{A \setminus B} \) be nonempty, and choose \( s \in S \). Since \( S \subseteq A \setminus B \subseteq A \), we have \( S \in \powerset{A} \). Since \( s \in A \setminus B \), \( s \notin B \); so \( s \) is an element of \( S \) outside \( B \), and \( S \not\subseteq B \), that is, \( S \notin \powerset{B} \). Hence \( S \in \powerset{A} \setminus \powerset{B} \).
 
 (b) *Failure.* For \( A = \{1\} \), \( B = \{2\} \): \( \{1, 2\} \in \powerset{A \cup B} \), but \( \{1, 2\} \) is a subset of neither \( A \) nor \( B \), so \( \{1, 2\} \notin \powerset{A} \cup \powerset{B} \).
 
@@ -448,12 +448,12 @@ Now let \( S \in \powerset{A \setminus B} \) be non-empty, and choose \( s \in S
 
 **Marking scheme.** (10 points)
 - 2: (a) the empty set as the witness that the equality never holds, with both memberships checked.
-- 2: (a) a non-empty \( S \subseteq A \setminus B \) is shown to lie in \( \powerset{A} \) and, via an element outside \( B \), not in \( \powerset{B} \).
+- 2: (a) a nonempty \( S \subseteq A \setminus B \) is shown to lie in \( \powerset{A} \) and, via an element outside \( B \), not in \( \powerset{B} \).
 - 1: (b) a counterexample with the offending subset named.
 - 2: (b) the inclusion \( \powerset{A} \cup \powerset{B} \subseteq \powerset{A \cup B} \) and the direction \( (\Leftarrow) \).
 - 3: (b) \( (\Rightarrow) \): witnesses \( a \in A \setminus B \) and \( b \in B \setminus A \) named, and \( \{a, b\} \) shown to lie in \( \powerset{A \cup B} \) and in neither \( \powerset{A} \) nor \( \powerset{B} \).
 
-Fatal errors (0 for the step): in (a), testing only non-empty subsets and concluding equality; in (b) \( (\Rightarrow) \), using one witness \( a \) for both failures, or a set such as \( \{a\} \) that lies in \( \powerset{A} \).
+Fatal errors (0 for the step): in (a), testing only nonempty subsets and concluding equality; in (b) \( (\Rightarrow) \), using one witness \( a \) for both failures, or a set such as \( \{a\} \) that lies in \( \powerset{A} \).
 :::
 
 ::: {#exr-set-operations-c2}

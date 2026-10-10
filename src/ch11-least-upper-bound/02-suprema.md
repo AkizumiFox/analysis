@@ -22,7 +22,7 @@ In symbols, \( M \) is an upper bound of \( A \) when
 \]
 The bound is an element of \( F \), and nothing requires it to belong to \( A \).
 
-For the interval \( (0, 1) \) in \( \nR \), the numbers \( 1 \), \( \frac32 \) and \( 2026 \) are all upper bounds, and \( 0 \) and \( -17 \) are lower bounds. Upper bounds are never unique: if \( M \) is one, so is every \( M' \ge M \), by transitivity. A minimal change gives a non-example: \( \frac12 \) is **not** an upper bound of \( (0, 1) \), because \( \frac34 \in (0, 1) \) and \( \frac34 > \frac12 \). One element above \( M \) is enough to spoil it. Negating the definition quantifier by quantifier (the negation rules are the subject of Chapter 4),
+For the interval \( (0, 1) \) in \( \nR \), the numbers \( 1 \), \( \frac32 \) and \( 2026 \) are all upper bounds, and \( 0 \) and \( -17 \) are lower bounds. Upper bounds are never unique: if \( M \) is one, so is every \( M' \ge M \), by transitivity. A minimal change gives a nonexample: \( \frac12 \) is **not** an upper bound of \( (0, 1) \), because \( \frac34 \in (0, 1) \) and \( \frac34 > \frac12 \). One element above \( M \) is enough to spoil it. Negating the definition quantifier by quantifier (the negation rules are the subject of Chapter 4),
 \[
 M \text{ is not an upper bound of } A
 \quad\iff\quad
@@ -142,7 +142,7 @@ For \( A \): the element \( \frac72 \) is an upper bound, as checked above, so (
 
 For \( B \): the same two lines work with \( 1 \) in place of \( \frac72 \). It bounds \( (0, 1] \) from above by the definition of that interval, and it is least because \( 1 \in B \), so every upper bound \( M \) satisfies \( 1 \le M \). So \( \sup B = 1 = \max B \).
 
-The argument used only that the candidate is a maximum. It shows that **a maximum, when it exists, is the supremum** (@exr-suprema-b1). Every non-empty finite set has a maximum, by an induction on the number of elements of the kind practiced in Chapter 7, so for finite sets the supremum is nothing new.
+The argument used only that the candidate is a maximum. It shows that **a maximum, when it exists, is the supremum** (@exr-suprema-b1). Every nonempty finite set has a maximum, by an induction on the number of elements of the kind practiced in Chapter 7, so for finite sets the supremum is nothing new.
 :::
 
 ::: {#exm-sup-open-interval}
@@ -171,9 +171,9 @@ Each \( n \in \nN \) is positive, by induction on \( n \) (@ax-induction): \( 1 
 It is true that \( \sup A = 1 \), but (S2) is harder than it looks. It says that no \( M < 1 \) is an upper bound, that is, for every \( M < 1 \) some \( 1 - \frac1n \) exceeds \( M \). That requires \( \frac1n < 1 - M \) for some \( n \). The existence of such an \( n \) says, in effect, that the natural numbers are not bounded above, and that does not follow from the ordered-field axioms. We prove it later in this chapter, from the axiom of the next section, and prove \( \sup A = 1 \) right after it.
 :::
 
-The degenerate case is the empty set. By the vacuous-truth remark above, every element of \( F \) is an upper bound of \( \emptyset \). If \( s \) were a supremum, then \( s - 1 \) would be an upper bound too, and (S2) would give \( s \le s - 1 \), that is, \( 1 \le 0 \), contradicting \( 1 > 0 \). So **the empty set has no supremum**, although it is bounded above. This is why the axiom of the next section has to say "non-empty".
+The degenerate case is the empty set. By the vacuous-truth remark above, every element of \( F \) is an upper bound of \( \emptyset \). If \( s \) were a supremum, then \( s - 1 \) would be an upper bound too, and (S2) would give \( s \le s - 1 \), that is, \( 1 \le 0 \), contradicting \( 1 > 0 \). So **the empty set has no supremum**, although it is bounded above. This is why the axiom of the next section has to say "nonempty".
 
-A non-example by minimal change shows why both clauses are needed. Keep \( A = (0, 1) \). The number \( 2 \) satisfies (S1) but fails (S2): the upper bound \( 1 \) lies below it. The number \( \frac12 \) satisfies (S2), since every upper bound is at least \( 1 \ge \frac12 \), but it fails (S1). Drop (S1) from the definition and every number below \( 1 \), such as \( \frac12 \) or \( -5 \), would qualify. Drop (S2) and every upper bound would. Only the two clauses together pin down a single number.
+A nonexample by minimal change shows why both clauses are needed. Keep \( A = (0, 1) \). The number \( 2 \) satisfies (S1) but fails (S2): the upper bound \( 1 \) lies below it. The number \( \frac12 \) satisfies (S2), since every upper bound is at least \( 1 \ge \frac12 \), but it fails (S1). Drop (S1) from the definition and every number below \( 1 \), such as \( \frac12 \) or \( -5 \), would qualify. Drop (S2) and every upper bound would. Only the two clauses together pin down a single number.
 
 ::: {.warning}
 **The supremum is not the maximum.** The supremum of a set need not belong to the set: \( \sup (0, 1) = 1 \notin (0, 1) \). The two notions agree exactly when the supremum lies in the set (@exr-suprema-b1). A proof that writes "let \( a = \sup A \in A \)" has assumed something false in general; the section on working with the supremum contains a proof that fails for exactly this reason.
@@ -195,12 +195,12 @@ Similarly, every element is at least \( -1 \): even-indexed ones are positive, a
 
 ## A bounded set of rationals with no rational supremum
 
-We now prove what the opening section promised: in \( \nQ \), a non-empty set that is bounded above can fail to have a supremum. This is the gap in \( \nQ \), expressed in the language of this section.
+We now prove what the opening section promised: in \( \nQ \), a nonempty set that is bounded above can fail to have a supremum. This is the gap in \( \nQ \), expressed in the language of this section.
 
 ::: {#thm-no-rational-sup-sqrt2}
 [No Rational Supremum for the Rationals Below the Square Root of Two]
 
-Let \( A = \{ x \in \nQ : x > 0 \text{ and } x^2 < 2 \} \). Then \( A \) is non-empty and bounded above in \( \nQ \), but \( A \) has no supremum in \( \nQ \).
+Let \( A = \{ x \in \nQ : x > 0 \text{ and } x^2 < 2 \} \). Then \( A \) is nonempty and bounded above in \( \nQ \), but \( A \) has no supremum in \( \nQ \).
 :::
 
 ::: {.idea}
@@ -214,7 +214,7 @@ In both cases \( h \) depends only on \( s \), and it is rational because \( s \
 :::
 
 ::: {.proof}
-Since \( 1 > 0 \) and \( 1^2 = 1 < 2 \), we have \( 1 \in A \), so \( A \) is non-empty. The rational number \( 2 \) is an upper bound: if some \( x \in A \) had \( x > 2 \), then \( x^2 > 4 \) by @thm-ordered-field-rules (g), contradicting \( x^2 < 2 \), so \( x \le 2 \) by trichotomy.
+Since \( 1 > 0 \) and \( 1^2 = 1 < 2 \), we have \( 1 \in A \), so \( A \) is nonempty. The rational number \( 2 \) is an upper bound: if some \( x \in A \) had \( x > 2 \), then \( x^2 > 4 \) by @thm-ordered-field-rules (g), contradicting \( x^2 < 2 \), so \( x \le 2 \) by trichotomy.
 
 Suppose, for a contradiction, that \( s \in \nQ \) is a supremum of \( A \) in \( \nQ \). Since \( 1 \in A \), (S1) gives \( s \ge 1 \); in particular \( s > 0 \), and \( s^2 \ge 1 \) by @thm-ordered-field-rules (g). By @thm-sqrt2-irrational, \( s^2 \ne 2 \), so by trichotomy either \( s^2 < 2 \) or \( s^2 > 2 \).
 

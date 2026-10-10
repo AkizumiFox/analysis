@@ -104,7 +104,7 @@ Let \( f \colon X \to Y \) be a function.
 Consequently, if \( X \ne \emptyset \), then \( f \) has a left inverse **if and only if** \( f \) is injective.
 :::
 
-Part (a) carries no hypothesis on \( X \), on purpose: the last theorem of this section uses it for every \( X \), the empty set included. The hypothesis \( X \ne \emptyset \) sits in (b) only, where it is used. As in Section 6.4, "\( X \ne \emptyset \)" is read as "\( X \) is non-empty: it has an element", and the proof uses it in that form. (From an element, \( X \ne \emptyset \) follows at once, since the empty set has none (@def-empty-set). The passage back, from "\( X \) is not the empty set" to "\( X \) has an element", is the classical law "not all fail, so one holds" of Chapter 4; reading the hypothesis as "has an element" avoids it.)
+Part (a) carries no hypothesis on \( X \), on purpose: the last theorem of this section uses it for every \( X \), the empty set included. The hypothesis \( X \ne \emptyset \) sits in (b) only, where it is used. As in Section 6.4, "\( X \ne \emptyset \)" is read as "\( X \) is nonempty: it has an element", and the proof uses it in that form. (From an element, \( X \ne \emptyset \) follows at once, since the empty set has none (@def-empty-set). The passage back, from "\( X \) is not the empty set" to "\( X \) has an element", is the classical law "not all fail, so one holds" of Chapter 4; reading the hypothesis as "has an element" avoids it.)
 
 ::: {.idea}
 For (a), start from the goal. Injectivity asks: from \( f(x_1) = f(x_2) \), get \( x_1 = x_2 \). A left inverse \( g \) turns each \( f(x) \) back into \( x \), so apply \( g \) to both sides.
@@ -183,7 +183,7 @@ Let \( f \colon X \to Y \) be a function. If \( f \) has a right inverse, then \
 Let \( g \colon Y \to X \) be a right inverse of \( f \), and let \( y \in Y \). By @def-left-right-inverse (b), \( f(g(y)) = y \). So \( x \coloneqq g(y) \) is an element of \( X \) with \( f(x) = y \) \( [\rulename{\exists I}] \). Since \( y \) was arbitrary, \( f \) is surjective by @def-surjective.
 :::
 
-The proof names its witness: the right inverse **is** a rule that hands us, for each \( y \), a preimage \( g(y) \). No hypothesis on \( X \) or \( Y \) is needed. If \( Y = \emptyset \), then \( f \) is surjective vacuously; and \( X = \emptyset \) as well, since there is no function from a non-empty set to \( \emptyset \) (@prp-empty-function).
+The proof names its witness: the right inverse **is** a rule that hands us, for each \( y \), a preimage \( g(y) \). No hypothesis on \( X \) or \( Y \) is needed. If \( Y = \emptyset \), then \( f \) is surjective vacuously; and \( X = \emptyset \) as well, since there is no function from a nonempty set to \( \emptyset \) (@prp-empty-function).
 
 Right inverses are not unique either. Here is a small surjection with several.
 
@@ -213,7 +213,7 @@ Now look at what our rules can do.
 - **Finitely many \( y \).** For \( Y = \{y_1, \dots, y_n\} \), we can apply \( \exists \)E \( n \) times, once for each point, and write down the \( n \) pairs. That is what @exm-right-inverses-finite did.
 - **Infinitely many \( y \).** A proof is a finite object. It cannot contain one \( \exists \)E for each of infinitely many points, and no rule of Chapter 4 makes infinitely many choices in one step.
 
-Sometimes the difficulty does not arise, because a **rule** picks the preimage. The squaring map from \( \nR \) onto \( [0, \infty) \) is surjective, and each \( y \ge 0 \) has the preimages \( \sqrt y \) and \( -\sqrt y \). The rule "take the non-negative one" defines \( g(y) \coloneqq \sqrt y \), and \( g \) is a right inverse: \( (\sqrt y)^2 = y \). Likewise the projection \( \nN \times \nN \to \nN \), \( (m, n) \mapsto m \), is surjective, and \( m \mapsto (m, 1) \) is a right inverse. In each case the specification of @def-set-builder writes \( g \) down, because the rule names one preimage for each \( y \).
+Sometimes the difficulty does not arise, because a **rule** picks the preimage. The squaring map from \( \nR \) onto \( [0, \infty) \) is surjective, and each \( y \ge 0 \) has the preimages \( \sqrt y \) and \( -\sqrt y \). The rule "take the nonnegative one" defines \( g(y) \coloneqq \sqrt y \), and \( g \) is a right inverse: \( (\sqrt y)^2 = y \). Likewise the projection \( \nN \times \nN \to \nN \), \( (m, n) \mapsto m \), is surjective, and \( m \mapsto (m, 1) \) is a right inverse. In each case the specification of @def-set-builder writes \( g \) down, because the rule names one preimage for each \( y \).
 
 For a surjection with no such rule, nothing proved so far produces a right inverse. The missing ingredient is a new principle of set formation, which says that a choice of one element from each set of a family can be made. Chapter 8 states it and proves, with it, that every surjection has a right inverse. Until then, we use only the implication proved above: a right inverse gives surjectivity.
 
@@ -283,7 +283,7 @@ Show that each function is invertible by finding its inverse and checking both c
         -\sqrt{-y} & \text{if } y < 0.
     \end{cases}
 \]
-*First check,* \( t(s(x)) = x \), by cases on \( x \). If \( x \ge 0 \), then \( s(x) = x^2 \ge 0 \), so \( t(s(x)) = \sqrt{x^2} = x \), the non-negative square root of \( x^2 \) being \( x \). If \( x < 0 \), then \( s(x) = -x^2 < 0 \), so \( t(s(x)) = -\sqrt{x^2} = -(-x) = x \), since the non-negative square root of \( x^2 \) is \( -x \).
+*First check,* \( t(s(x)) = x \), by cases on \( x \). If \( x \ge 0 \), then \( s(x) = x^2 \ge 0 \), so \( t(s(x)) = \sqrt{x^2} = x \), the nonnegative square root of \( x^2 \) being \( x \). If \( x < 0 \), then \( s(x) = -x^2 < 0 \), so \( t(s(x)) = -\sqrt{x^2} = -(-x) = x \), since the nonnegative square root of \( x^2 \) is \( -x \).
 
 *Second check,* \( s(t(y)) = y \), by cases on \( y \). If \( y \ge 0 \), then \( t(y) = \sqrt y \ge 0 \), so \( s(t(y)) = (\sqrt y)^2 = y \). If \( y < 0 \), then \( t(y) = -\sqrt{-y} < 0 \), so \( s(t(y)) = -(\sqrt{-y})^2 = -(-y) = y \).
 
@@ -371,7 +371,7 @@ These parts are about @thm-left-inverse-iff-injective and its proof.
 
 (c) The hypotheses hold: \( \{1, 2, 3\} \ne \emptyset \), and \( f \) is injective, since \( k + 1 = k' + 1 \) gives \( k = k' \). The range is \( f(\{1, 2, 3\}) = \{2, 3, 4\} \). On the range, \( g \) returns the unique preimage: \( g(2) = 1 \), \( g(3) = 2 \), \( g(4) = 3 \). The point \( 1 \) is outside the range, so \( g(1) = x_0 = 3 \). Check: \( g(f(1)) = g(2) = 1 \), \( g(f(2)) = g(3) = 2 \), \( g(f(3)) = g(4) = 3 \). So \( g \circ f = \id_{\{1, 2, 3\}} \).
 
-(d) A point of the range has exactly one preimage, by injectivity, and \( g \) sends it there; a point outside the range is sent to a fixed point \( x_0 \) of the non-empty domain. Then \( g(f(x)) \) is the unique preimage of \( f(x) \), which is \( x \).
+(d) A point of the range has exactly one preimage, by injectivity, and \( g \) sends it there; a point outside the range is sent to a fixed point \( x_0 \) of the nonempty domain. Then \( g(f(x)) \) is the unique preimage of \( f(x) \), which is \( x \).
 
 (e) The uniqueness step fails. The point \( y = 1 \) lies in the range and has the two preimages \( 1 \) and \( 2 \), so \( (1, 1) \) and \( (1, 2) \) both lie in \( G \), and \( G \) is not a function. The step "\( f(x) = y = f(x') \), so \( x = x' \)" needs injectivity, which this \( f \) lacks. (By part (a) of the theorem, \( f \) has no left inverse at all.)
 :::
@@ -421,7 +421,7 @@ So \( f^{-1} \circ g^{-1} \) is a two-sided inverse of \( g \circ f \). By the u
 ::: {#exr-inverses-b3}
 [B3: A bijection between an interval and the line]
 
-Let \( h \colon (-1, 1) \to \nR \), \( h(x) = x/(1 - \abs{x}) \), and \( k \colon \nR \to (-1, 1) \), \( k(y) = y/(1 + \abs{y}) \). Show that \( h \) and \( k \) are well defined (each denominator is non-zero, and \( k \) takes values in \( (-1, 1) \)), and that \( k \) is the inverse of \( h \), by checking both composites by cases on the sign. Hence \( h \) is a bijection.
+Let \( h \colon (-1, 1) \to \nR \), \( h(x) = x/(1 - \abs{x}) \), and \( k \colon \nR \to (-1, 1) \), \( k(y) = y/(1 + \abs{y}) \). Show that \( h \) and \( k \) are well defined (each denominator is nonzero, and \( k \) takes values in \( (-1, 1) \)), and that \( k \) is the inverse of \( h \), by checking both composites by cases on the sign. Hence \( h \) is a bijection.
 :::
 
 ::: {.solution}

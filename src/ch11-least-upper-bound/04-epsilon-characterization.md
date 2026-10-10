@@ -110,7 +110,7 @@ The forward direction of @thm-sup-epsilon is used so often with \( \varepsilon =
 ::: {#cor-sup-approximation}
 [Sup Approximation]
 
-Let \( A \subseteq \nR \) be non-empty and bounded above. For every \( n \in \nN \) there is \( a_n \in A \) with
+Let \( A \subseteq \nR \) be nonempty and bounded above. For every \( n \in \nN \) there is \( a_n \in A \) with
 \[
 \sup A - \frac1n < a_n \le \sup A .
 \]
@@ -129,14 +129,14 @@ We now compute suprema of sets built from other sets. The first rule says that e
 ::: {#thm-sup-monotone}
 [Monotonicity of the Supremum]
 
-Let \( A \subseteq B \subseteq \nR \), where \( A \) is non-empty and \( B \) is bounded above. Then \( \sup A \) and \( \sup B \) exist, and \( \sup A \le \sup B \).
+Let \( A \subseteq B \subseteq \nR \), where \( A \) is nonempty and \( B \) is bounded above. Then \( \sup A \) and \( \sup B \) exist, and \( \sup A \le \sup B \).
 :::
 
 ::: {.proof}
-Since \( A \) is non-empty and \( A \subseteq B \), the set \( B \) is non-empty; as it is bounded above, \( \sup B \) exists by @ax-least-upper-bound. Every \( a \in A \) lies in \( B \), so \( a \le \sup B \) by (S1) for \( B \). Hence \( \sup B \) is an upper bound of \( A \). So \( A \) is non-empty and bounded above, \( \sup A \) exists by @ax-least-upper-bound, and \( \sup A \le \sup B \) by (S2) for \( A \).
+Since \( A \) is nonempty and \( A \subseteq B \), the set \( B \) is nonempty; as it is bounded above, \( \sup B \) exists by @ax-least-upper-bound. Every \( a \in A \) lies in \( B \), so \( a \le \sup B \) by (S1) for \( B \). Hence \( \sup B \) is an upper bound of \( A \). So \( A \) is nonempty and bounded above, \( \sup A \) exists by @ax-least-upper-bound, and \( \sup A \le \sup B \) by (S2) for \( A \).
 :::
 
-Strict inclusion does not give strict inequality: \( (0, 1) \subsetneq (0, 1] \), and both have supremum \( 1 \). The hypothesis that \( A \) is non-empty cannot be dropped, since \( \emptyset \subseteq B \) always and \( \emptyset \) has no supremum.
+Strict inclusion does not give strict inequality: \( (0, 1) \subsetneq (0, 1] \), and both have supremum \( 1 \). The hypothesis that \( A \) is nonempty cannot be dropped, since \( \emptyset \subseteq B \) always and \( \emptyset \) has no supremum.
 
 For scaling we need the scaled set. For \( A \subseteq \nR \) and \( c \in \nR \), let
 \[
@@ -147,11 +147,11 @@ For example \( 2(0, 1] = (0, 2] \) and \( (-1)A = -A \).
 ::: {#thm-sup-scaling}
 [Scaling the Supremum]
 
-Let \( A \subseteq \nR \) be non-empty and bounded above, and let \( c \in \nR \).
+Let \( A \subseteq \nR \) be nonempty and bounded above, and let \( c \in \nR \).
 
 ::: {.enumerate options="label=(\alph*)"}
-1. If \( c > 0 \), then \( cA \) is non-empty and bounded above, and \( \sup(cA) = c \sup A \).
-2. If \( c < 0 \), then \( cA \) is non-empty and bounded below, and \( \inf(cA) = c \sup A \).
+1. If \( c > 0 \), then \( cA \) is nonempty and bounded above, and \( \sup(cA) = c \sup A \).
+2. If \( c < 0 \), then \( cA \) is nonempty and bounded below, and \( \inf(cA) = c \sup A \).
 :::
 :::
 
@@ -160,12 +160,12 @@ For (a), prove the equality as two inequalities. Multiplying the inequality \( a
 :::
 
 ::: {.proof}
-Let \( s \coloneqq \sup A \), which exists by @ax-least-upper-bound. Since \( A \) is non-empty, so is \( cA \).
+Let \( s \coloneqq \sup A \), which exists by @ax-least-upper-bound. Since \( A \) is nonempty, so is \( cA \).
 
 (a) Let \( c > 0 \). For every \( a \in A \), \( a \le s \) by (S1), so \( ca \le cs \) by @thm-ordered-field-rules (c) (or trivially if \( a = s \)). Hence \( cs \) is an upper bound of \( cA \), so \( \sup(cA) \) exists by @ax-least-upper-bound, and \( t \coloneqq \sup(cA) \le cs \) by (S2).
 For the reverse inequality, let \( a \in A \). Then \( ca \in cA \), so \( ca \le t \). Multiplying by \( \frac1c > 0 \) (@thm-ordered-field-rules (f) and (c)) gives \( a \le \frac{t}{c} \). Hence \( \frac tc \) is an upper bound of \( A \), and (S2) gives \( s \le \frac tc \). Multiplying by \( c > 0 \) gives \( cs \le t \). By trichotomy, \( \sup(cA) = cs \).
 
-(b) Let \( c < 0 \), so \( -c > 0 \). The set \( -(cA) = \{ -ca : a \in A \} \) equals \( (-c)A \), which by (a) is non-empty and bounded above with \( \sup((-c)A) = -cs \). By @thm-inf-neg-sup (a), \( cA = -((-c)A) \) is bounded below, and by @thm-inf-neg-sup,
+(b) Let \( c < 0 \), so \( -c > 0 \). The set \( -(cA) = \{ -ca : a \in A \} \) equals \( (-c)A \), which by (a) is nonempty and bounded above with \( \sup((-c)A) = -cs \). By @thm-inf-neg-sup (a), \( cA = -((-c)A) \) is bounded below, and by @thm-inf-neg-sup,
 \[
 \inf(cA) = -\sup\bigl( -(cA) \bigr) = -\sup\bigl( (-c)A \bigr) = -(-cs) = cs .
 \]
@@ -185,7 +185,7 @@ For instance \( (0, 1) + \{ 5 \} = (5, 6) \) and \( [0, 1] + [0, 2] = [0, 3] \).
 ::: {#thm-sup-sum}
 [Supremum of a Sum]
 
-Let \( A, B \subseteq \nR \) be non-empty and bounded above. Then \( A + B \) is non-empty and bounded above, and
+Let \( A, B \subseteq \nR \) be nonempty and bounded above. Then \( A + B \) is nonempty and bounded above, and
 \[
 \sup(A + B) = \sup A + \sup B .
 \]
@@ -204,7 +204,7 @@ So we prove the equality as **two inequalities**.
 :::
 
 ::: {.proof}
-By @ax-least-upper-bound, \( \sup A \) and \( \sup B \) exist. Choosing \( a_0 \in A \) and \( b_0 \in B \) gives \( a_0 + b_0 \in A + B \), so \( A + B \) is non-empty.
+By @ax-least-upper-bound, \( \sup A \) and \( \sup B \) exist. Choosing \( a_0 \in A \) and \( b_0 \in B \) gives \( a_0 + b_0 \in A + B \), so \( A + B \) is nonempty.
 
 (\( \le \)) Let \( a \in A \) and \( b \in B \). By (S1), \( a \le \sup A \) and \( b \le \sup B \), so \( a + b \le \sup A + \sup B \) by @thm-ordered-field-rules (b). Hence \( \sup A + \sup B \) is an upper bound of \( A + B \). By @ax-least-upper-bound, \( \sup(A + B) \) exists, and by (S2), \( \sup(A + B) \le \sup A + \sup B \).
 
@@ -261,7 +261,7 @@ Every hypothesis is needed. If \( B = \emptyset \), then \( A + B = \emptyset \)
 
 (e) Here \( \sup A = 1 \), \( \sup B = 5 \) and \( \frac{\varepsilon}{2} = \frac1{20} \). The proof needs \( a \in (0, 1) \) with \( a > 1 - \frac1{20} = \frac{19}{20} \), for instance \( a = \frac{24}{25} \), and \( b \in B \) with \( b > 5 - \frac1{20} \), which forces \( b = 5 \). Then \( a + b = \frac{149}{25} = 5.96 > 5.9 = \sup A + \sup B - \varepsilon \). Any \( a \in (\frac{19}{20}, 1) \) works; the one \( b \) works for every \( \varepsilon \) because \( 5 \) is the maximum of \( B \).
 
-(f) The first line, "By @ax-least-upper-bound, \( \sup A \) and \( \sup B \) exist". The axiom needs \( B \) non-empty, and \( \emptyset \) has no supremum. The line that chooses \( b \in B \) in the (\( \ge \)) half fails too, since there is nothing to choose.
+(f) The first line, "By @ax-least-upper-bound, \( \sup A \) and \( \sup B \) exist". The axiom needs \( B \) nonempty, and \( \emptyset \) has no supremum. The line that chooses \( b \in B \) in the (\( \ge \)) half fails too, since there is nothing to choose.
 :::
 
 ### B. Practice
@@ -285,17 +285,17 @@ By @thm-sup-epsilon, \( \sup A = 4 \). Since \( 4 \notin A \), the set has no ma
 ::: {#exr-epsilon-characterization-b2}
 [B2: Supremum of a union]
 
-Let \( A, B \subseteq \nR \) be non-empty and bounded above. Prove that \( A \cup B \) is bounded above and \( \sup(A \cup B) = \max\{ \sup A, \sup B \} \).
+Let \( A, B \subseteq \nR \) be nonempty and bounded above. Prove that \( A \cup B \) is bounded above and \( \sup(A \cup B) = \max\{ \sup A, \sup B \} \).
 :::
 
 ::: {.solution}
-Let \( m \coloneqq \max\{ \sup A, \sup B \} \); both suprema exist by @ax-least-upper-bound. If \( x \in A \cup B \), then \( x \le \sup A \le m \) or \( x \le \sup B \le m \), so \( m \) is an upper bound of \( A \cup B \), which is non-empty. By symmetry we may assume \( m = \sup A \). Given \( \varepsilon > 0 \), @thm-sup-epsilon (\( \Rightarrow \)) gives \( a \in A \) with \( a > \sup A - \varepsilon = m - \varepsilon \), and \( a \in A \cup B \). By @thm-sup-epsilon (\( \Leftarrow \)), \( \sup(A \cup B) = m \).
+Let \( m \coloneqq \max\{ \sup A, \sup B \} \); both suprema exist by @ax-least-upper-bound. If \( x \in A \cup B \), then \( x \le \sup A \le m \) or \( x \le \sup B \le m \), so \( m \) is an upper bound of \( A \cup B \), which is nonempty. By symmetry we may assume \( m = \sup A \). Given \( \varepsilon > 0 \), @thm-sup-epsilon (\( \Rightarrow \)) gives \( a \in A \) with \( a > \sup A - \varepsilon = m - \varepsilon \), and \( a \in A \cup B \). By @thm-sup-epsilon (\( \Leftarrow \)), \( \sup(A \cup B) = m \).
 :::
 
 ::: {#exr-epsilon-characterization-b3}
 [B3: Supremum of a difference]
 
-Let \( A \subseteq \nR \) be non-empty and bounded above, and \( B \subseteq \nR \) non-empty and bounded below. Prove that
+Let \( A \subseteq \nR \) be nonempty and bounded above, and \( B \subseteq \nR \) nonempty and bounded below. Prove that
 \[
 \sup \{ a - b : a \in A, \ b \in B \} = \sup A - \inf B .
 \]
@@ -303,7 +303,7 @@ Give an example showing that the right side cannot be replaced by \( \sup A - \s
 :::
 
 ::: {.solution}
-The set in question is \( A + (-B) \). By @thm-inf-neg-sup (a), \( -B \) is bounded above, and it is non-empty. By @thm-greatest-lower-bound, \( \inf B = -\sup(-B) \), that is, \( \sup(-B) = -\inf B \). So @thm-sup-sum applies to \( A \) and \( -B \):
+The set in question is \( A + (-B) \). By @thm-inf-neg-sup (a), \( -B \) is bounded above, and it is nonempty. By @thm-greatest-lower-bound, \( \inf B = -\sup(-B) \), that is, \( \sup(-B) = -\inf B \). So @thm-sup-sum applies to \( A \) and \( -B \):
 \[
 \sup\bigl( A + (-B) \bigr) = \sup A + \sup(-B) = \sup A - \inf B .
 \]
@@ -318,8 +318,8 @@ For the example, take \( A = \{ 0 \} \) and \( B = [0, 1] \). The differences \(
 For \( A, B \subseteq \nR \) let \( AB \coloneqq \{ ab : a \in A, \ b \in B \} \).
 
 ::: {.enumerate options="label=(\alph*)"}
-1. Show that \( \sup(AB) = \sup A \cdot \sup B \) can fail for non-empty bounded sets \( A, B \).
-2. Prove that it holds when \( A \) and \( B \) are non-empty, bounded above, and contained in \( (0, \infty) \).
+1. Show that \( \sup(AB) = \sup A \cdot \sup B \) can fail for nonempty bounded sets \( A, B \).
+2. Prove that it holds when \( A \) and \( B \) are nonempty, bounded above, and contained in \( (0, \infty) \).
 :::
 
 :::
@@ -341,7 +341,7 @@ For \( \ge \) in (b): fix \( b \in B \). Which theorem computes \( \sup(bA) \), 
 
 (b) Let \( s \coloneqq \sup A \) and \( t \coloneqq \sup B \), which exist by @ax-least-upper-bound. Since \( A \) contains a positive element and \( s \) is an upper bound, \( s > 0 \); likewise \( t > 0 \).
 
-(\( \le \)) For \( a \in A \) and \( b \in B \), we have \( 0 < a \le s \) and \( 0 < b \le t \), so \( ab \le sb \le st \) by @thm-ordered-field-rules (c) (with trivial equality cases). So \( st \) is an upper bound of the non-empty set \( AB \), \( \sup(AB) \) exists, and \( \sup(AB) \le st \) by (S2).
+(\( \le \)) For \( a \in A \) and \( b \in B \), we have \( 0 < a \le s \) and \( 0 < b \le t \), so \( ab \le sb \le st \) by @thm-ordered-field-rules (c) (with trivial equality cases). So \( st \) is an upper bound of the nonempty set \( AB \), \( \sup(AB) \) exists, and \( \sup(AB) \le st \) by (S2).
 
 (\( \ge \)) Fix \( b \in B \). Then \( bA \subseteq AB \) and \( b > 0 \), so @thm-sup-scaling and @thm-sup-monotone give \( bs = \sup(bA) \le \sup(AB) \). Multiplying by \( \frac1s > 0 \) gives \( b \le \frac{\sup(AB)}{s} \). As \( b \in B \) was arbitrary, \( \frac{\sup(AB)}{s} \) is an upper bound of \( B \), so \( t \le \frac{\sup(AB)}{s} \) by (S2), that is, \( st \le \sup(AB) \).
 
@@ -351,7 +351,7 @@ By trichotomy, \( \sup(AB) = st \). Positivity was used in (\( \le \)), to multi
 ::: {#exr-epsilon-characterization-c2}
 [C2: Exit check: sums of sets]
 
-Let \( A, B \subseteq \nR \) be non-empty.
+Let \( A, B \subseteq \nR \) be nonempty.
 
 ::: {.enumerate options="label=(\alph*)"}
 1. Assume \( A \) and \( B \) are bounded above. Without looking back, prove \( \sup(A + B) = \sup A + \sup B \). This time, instead of proving \( \ge \) separately, show that \( \sup A + \sup B \) satisfies both hypotheses of @thm-sup-epsilon for the set \( A + B \).
@@ -363,7 +363,7 @@ Let \( A, B \subseteq \nR \) be non-empty.
 ::: {.solution}
 (a) Let \( s \coloneqq \sup A + \sup B \), where both suprema exist by @ax-least-upper-bound. *Upper bound:* for \( a \in A \), \( b \in B \), (S1) and @thm-ordered-field-rules (b) give \( a + b \le s \). *Band condition:* let \( \varepsilon > 0 \); then \( \frac{\varepsilon}{2} > 0 \), and @thm-sup-epsilon (\( \Rightarrow \)) gives \( a \in A \) and \( b \in B \), depending on \( \varepsilon \), with \( a > \sup A - \frac{\varepsilon}{2} \) and \( b > \sup B - \frac{\varepsilon}{2} \). Adding, \( a + b > s - \varepsilon \), and \( a + b \in A + B \). By @thm-sup-epsilon (\( \Leftarrow \)), \( s = \sup(A + B) \).
 
-(b) \( \inf(A + B) = \inf A + \inf B \). Indeed \( -(A + B) = (-A) + (-B) \), since \( -(a + b) = (-a) + (-b) \). By @thm-inf-neg-sup (a), \( -A \) and \( -B \) are non-empty and bounded above, so (a) and @thm-greatest-lower-bound give
+(b) \( \inf(A + B) = \inf A + \inf B \). Indeed \( -(A + B) = (-A) + (-B) \), since \( -(a + b) = (-a) + (-b) \). By @thm-inf-neg-sup (a), \( -A \) and \( -B \) are nonempty and bounded above, so (a) and @thm-greatest-lower-bound give
 \[
 \begin{aligned}
 \inf(A + B) &= -\sup\bigl( (-A) + (-B) \bigr) \\
@@ -375,7 +375,7 @@ Here \( A + B \) is bounded below because \( -(A + B) \) is bounded above, by (a
 (c) Fix \( a_0 \in A \) and let \( M \in \nR \). Since \( B \) is not bounded above, \( M - a_0 \) is not an upper bound of \( B \), so some \( b \in B \) has \( b > M - a_0 \). Then \( a_0 + b \in A + B \) and \( a_0 + b > M \). As \( M \) was arbitrary, \( A + B \) is not bounded above.
 
 **Marking scheme.** (10 points)
-- 1: (a) says why \( \sup A \), \( \sup B \) exist and why \( A + B \) is non-empty.
+- 1: (a) says why \( \sup A \), \( \sup B \) exist and why \( A + B \) is nonempty.
 - 2: (a) shows \( \sup A + \sup B \) is an upper bound of \( A + B \), adding the two (S1) inequalities.
 - 3: (a) fixes an arbitrary \( \varepsilon > 0 \), obtains \( a \in A \) and \( b \in B \), **depending on \( \varepsilon \)**, within \( \varepsilon/2 \) of their suprema, and concludes with @thm-sup-epsilon (\( \Leftarrow \)).
 - 2: (b) reduces to (a) through \( -(A + B) = (-A) + (-B) \) and @thm-greatest-lower-bound, including why \( A + B \) is bounded below.
@@ -390,8 +390,8 @@ A solution of (a) that proves \( \le \) and \( \ge \) separately, as in @thm-sup
 Each "proof" below contains a line that is false in general. Find it, give a set for which it fails, and decide whether the claim itself is true.
 
 ::: {.enumerate options="label=(\alph*)"}
-1. *Claim.* If \( A \subseteq \nR \) is non-empty and bounded above and \( a < 1 \) for every \( a \in A \), then \( \sup A < 1 \). *"Proof."* (1) Let \( s = \sup A \). (2) Since \( s \in A \), the hypothesis gives \( s < 1 \). (3) Hence \( \sup A < 1 \).
-2. *Claim.* If \( A, B \subseteq \nR \) are non-empty and bounded above, then \( \sup(A + B) \ge \sup A + \sup B \). *"Proof."* (1) Let \( a = \sup A \) and \( b = \sup B \). (2) Then \( a \in A \) and \( b \in B \), so \( a + b \in A + B \). (3) By (S1), \( a + b \le \sup(A + B) \), which is the claim.
+1. *Claim.* If \( A \subseteq \nR \) is nonempty and bounded above and \( a < 1 \) for every \( a \in A \), then \( \sup A < 1 \). *"Proof."* (1) Let \( s = \sup A \). (2) Since \( s \in A \), the hypothesis gives \( s < 1 \). (3) Hence \( \sup A < 1 \).
+2. *Claim.* If \( A, B \subseteq \nR \) are nonempty and bounded above, then \( \sup(A + B) \ge \sup A + \sup B \). *"Proof."* (1) Let \( a = \sup A \) and \( b = \sup B \). (2) Then \( a \in A \) and \( b \in B \), so \( a + b \in A + B \). (3) By (S1), \( a + b \le \sup(A + B) \), which is the claim.
 :::
 :::
 

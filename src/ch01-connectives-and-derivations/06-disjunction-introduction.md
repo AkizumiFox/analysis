@@ -58,7 +58,7 @@ may be written as a later line, justified by "\( \rulename{\vee I} \) 4". The fi
 
 The degenerate case is \( \psi \) equal to \( \varphi \). From \( P \) the rule writes \( P \vee P \), and then the two schemas give the same line. It is a legal step, and the next section uses the statement \( P \vee P \) once.
 
-Now three non-examples, each a small change of an instance. Take line 1 to be the statement named in each, and line 2 the line shown.
+Now three nonexamples, each a small change of an instance. Take line 1 to be the statement named in each, and line 2 the line shown.
 
 - From \( P \), the line "\( P \wedge Q \) — \( \rulename{\vee I} \) 1" is not an instance. The new line of \( \rulename{\vee I} \) is a disjunction, and the main connective of \( P \wedge Q \) is \( \wedge \).
 - From \( Q \vee P \), the line "\( P \vee Q \) — \( \rulename{\vee I} \) 1" is not an instance. With \( \varphi \) replaced by \( Q \vee P \), the two schemas give \( (Q \vee P) \vee \psi \) and \( \psi \vee (Q \vee P) \). In both, the cited statement is one whole side of the new line, and \( Q \vee P \) is not a side of \( P \vee Q \). Whether \( P \vee Q \) follows from \( Q \vee P \) at all is the question at the end of this section.

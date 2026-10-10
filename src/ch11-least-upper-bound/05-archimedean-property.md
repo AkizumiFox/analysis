@@ -25,7 +25,7 @@ Some examples, checked clause by clause.
 - \( [1, \infty) = \{ x \in \nR : x \ge 1 \} \) is inductive: \( 1 \ge 1 \), and \( x \ge 1 \) gives \( x + 1 \ge 1 + 1 > 1 \).
 - \( \{ 1 \} \cup [2, \infty) \) is inductive. From \( 1 \) we step to \( 2 \), which is in \( [2, \infty) \), and \( [2, \infty) \) is closed under adding \( 1 \).
 
-A non-example by minimal change: \( [1, 5] \) contains \( 1 \), so (N1) holds, but \( 4.5 \in [1, 5] \) and \( 5.5 \notin [1, 5] \), so (N2) fails. Chopping the top off \( [1, \infty) \) destroys closure under the step.
+A nonexample by minimal change: \( [1, 5] \) contains \( 1 \), so (N1) holds, but \( 4.5 \in [1, 5] \) and \( 5.5 \notin [1, 5] \), so (N2) fails. Chopping the top off \( [1, \infty) \) destroys closure under the step.
 
 The inductive sets above are too big: \( [1, \infty) \) contains \( 1.5 \) and \( 4.7 \). What we want is the *smallest* one. Intersecting all of them throws away everything that some inductive set can do without.
 
@@ -55,7 +55,7 @@ The set \( [1, \infty) \) is inductive, as checked above. Since \( \nN \) is con
 The proof never mentioned a single natural number by name. It found an inductive set containing the property we wanted, and let the definition of \( \nN \) do the rest. That is the whole technique.
 
 ::: {.remark}
-Chapter 3 takes induction as a basic property of \( \nN \) (@ax-induction), and Chapter 7 proves well-ordering and the arithmetic below from it. The set defined here is that same \( \nN \), now located inside \( \nR \); it is also the copy \( 1, 1 + 1, 1 + 1 + 1, \dots \) that every ordered field contains (@exr-ordered-fields-c1), and "\( \nN \) is the smallest inductive set" is exactly the induction principle of Chapter 3, in the form "every inductive subset of \( \nN \) is all of \( \nN \)". From now on we use the familiar arithmetic of \( \nN \), each item proved by induction in Chapter 7: sums and products of natural numbers are natural numbers; if \( n \in \nN \) and \( n \ge 2 \), then \( n - 1 \in \nN \); no natural number lies strictly between \( n \) and \( n + 1 \); and every non-empty subset of \( \nN \) has a least element (**well-ordering**). The integers are \( \nZ \coloneqq \nN \cup \{ 0 \} \cup \{ -n : n \in \nN \} \), and the rationals are \( \nQ \coloneqq \{ m/n : m \in \nZ, \ n \in \nN \} \). We also use, again from Chapter 7, that sums, differences and products of integers are integers. A **positive** integer is a natural number, directly from the definition of \( \nZ \): it is not \( 0 \), and it is not \( -n \) with \( n \in \nN \), since \( -n < 0 \).
+Chapter 3 takes induction as a basic property of \( \nN \) (@ax-induction), and Chapter 7 proves well-ordering and the arithmetic below from it. The set defined here is that same \( \nN \), now located inside \( \nR \); it is also the copy \( 1, 1 + 1, 1 + 1 + 1, \dots \) that every ordered field contains (@exr-ordered-fields-c1), and "\( \nN \) is the smallest inductive set" is exactly the induction principle of Chapter 3, in the form "every inductive subset of \( \nN \) is all of \( \nN \)". From now on we use the familiar arithmetic of \( \nN \), each item proved by induction in Chapter 7: sums and products of natural numbers are natural numbers; if \( n \in \nN \) and \( n \ge 2 \), then \( n - 1 \in \nN \); no natural number lies strictly between \( n \) and \( n + 1 \); and every nonempty subset of \( \nN \) has a least element (**well-ordering**). The integers are \( \nZ \coloneqq \nN \cup \{ 0 \} \cup \{ -n : n \in \nN \} \), and the rationals are \( \nQ \coloneqq \{ m/n : m \in \nZ, \ n \in \nN \} \). We also use, again from Chapter 7, that sums, differences and products of integers are integers. A **positive** integer is a natural number, directly from the definition of \( \nZ \): it is not \( 0 \), and it is not \( -n \) with \( n \in \nN \), since \( -n < 0 \).
 :::
 
 ## The natural numbers are not bounded
@@ -73,14 +73,14 @@ Suppose \( \nN \) had an upper bound. Then the axiom hands us the least one, \( 
 :::
 
 ::: {.proof}
-Suppose, for contradiction, that \( \nN \) is bounded above. The set \( \nN \) is non-empty, since \( 1 \in \nN \). By @ax-least-upper-bound, \( \nN \) has a supremum \( s \coloneqq \sup \nN \in \nR \).
+Suppose, for contradiction, that \( \nN \) is bounded above. The set \( \nN \) is nonempty, since \( 1 \in \nN \). By @ax-least-upper-bound, \( \nN \) has a supremum \( s \coloneqq \sup \nN \in \nR \).
 
 Let \( n \in \nN \). Since \( \nN \) is inductive, \( n + 1 \in \nN \), and since \( s \) is an upper bound of \( \nN \), \( n + 1 \le s \), that is, \( n \le s - 1 \). As \( n \) was arbitrary, \( s - 1 \) is an upper bound of \( \nN \). Property (S2) of the supremum (@def-supremum) now gives \( s \le s - 1 \), that is, \( 1 \le 0 \), which contradicts \( 0 < 1 \).
 
 Therefore \( \nN \) is not bounded above. Unwinding the definition (@def-bounded-above), no \( x \in \nR \) is an upper bound of \( \nN \): for every \( x \in \nR \) it is false that \( n \le x \) for all \( n \in \nN \). So for every \( x \) some \( n \in \nN \) has \( n \not\le x \), that is, \( n > x \) by trichotomy. This proves the theorem.
 :::
 
-Each hypothesis of the axiom was used and named: "non-empty" through \( 1 \in \nN \), "bounded above" through the assumption for contradiction. The inductive property of \( \nN \) supplied the jump \( n \mapsto n + 1 \).
+Each hypothesis of the axiom was used and named: "nonempty" through \( 1 \in \nN \), "bounded above" through the assumption for contradiction. The inductive property of \( \nN \) supplied the jump \( n \mapsto n + 1 \).
 
 ::: {.remark}
 The contradiction step is \( \rulename{\neg I} \) (@def-rules-negation), not \( \rulename{RAA} \) (@def-rule-raa), the classical rule of proof by contradiction: we assumed "\( \nN \) is bounded above", reached a contradiction, and concluded its negation. Inside that box every step is direct. The proof shows that \( s - 1 \) **is** an upper bound; it does not argue "\( s - 1 \) is not an upper bound, so some \( n \) exceeds \( s - 1 \)", a step that would itself need the classical law described next. The proof's one classical step comes after the \( \rulename{\neg I} \), in its last paragraph. Passing from "not every \( n \) satisfies \( n \le x \)" to "some \( n \) satisfies \( n > x \)" is the quantifier law "not all" gives "some not" of Chapter 4, and that law is derived there with \( \rulename{RAA} \).
@@ -123,7 +123,7 @@ Let \( A \coloneqq \{ 1 - 1/n : n \in \nN \} \). Prove that \( \sup A = 1 \).
 :::
 
 ::: {.solution}
-The set \( A \) is non-empty, since \( 0 = 1 - 1/1 \in A \).
+The set \( A \) is nonempty, since \( 0 = 1 - 1/1 \in A \).
 
 *Upper bound.* For every \( n \in \nN \) we have \( 1/n > 0 \) (@exm-naturals-at-least-one), so \( 1 - 1/n < 1 \). Hence \( 1 \) is an upper bound of \( A \).
 
@@ -142,15 +142,15 @@ We claimed that the Archimedean property does not follow from the ordered-field 
 
 A **rational function** is a quotient \( p/q \) of real polynomials \( p \) and \( q \) with \( q \) not the zero polynomial. Two quotients \( p/q \) and \( p'/q' \) are the same element when \( p q' = p' q \), exactly as for fractions of integers. With the usual addition and multiplication of fractions, the rational functions form a field, written \( \nR(x) \). This is the same construction that builds \( \nQ \) out of \( \nZ \), applied to polynomials; it is algebra, and we take it as known without proof here. The real numbers sit inside \( \nR(x) \) as the constant functions.
 
-The **leading coefficient** of a non-zero polynomial is the coefficient of its highest power of \( x \). For instance, the leading coefficient of \( 3 - 2x^2 \) is \( -2 \).
+The **leading coefficient** of a nonzero polynomial is the coefficient of its highest power of \( x \). For instance, the leading coefficient of \( 3 - 2x^2 \) is \( -2 \).
 
-Call a non-zero \( p/q \in \nR(x) \) **positive** if the leading coefficients of \( p \) and \( q \) are both positive or both negative, and write \( f < g \) when \( g - f \) is positive.
+Call a nonzero \( p/q \in \nR(x) \) **positive** if the leading coefficients of \( p \) and \( q \) are both positive or both negative, and write \( f < g \) when \( g - f \) is positive.
 
 Here is the picture behind this definition. For large real \( t \), the value \( p(t)/q(t) \) has the sign of the product of the two leading coefficients, because the top powers dominate. So "\( f > 0 \)" means "\( f(t) > 0 \) for all sufficiently large \( t \)", and \( f < g \) means that the graph of \( g \) eventually lies above the graph of \( f \). This is only a picture: the definition uses leading coefficients and nothing else.
 
 Positivity does not depend on how the fraction is written. Suppose \( p/q = p'/q' \), so that \( p q' = p' q \), and let \( \alpha, \beta, \alpha', \beta' \) be the leading coefficients of \( p, q, p', q' \). The leading coefficient of a product of polynomials is the product of their leading coefficients, so \( \alpha \beta' = \alpha' \beta \). Multiplying both sides by \( \beta \beta' \) gives \( \alpha\beta \cdot \beta'^2 = \alpha'\beta' \cdot \beta^2 \), and \( \beta^2, \beta'^2 > 0 \). Hence \( \alpha\beta \) and \( \alpha'\beta' \) have the same sign: \( p/q \) is positive exactly when \( p'/q' \) is.
 
-With this order \( \nR(x) \) is an ordered field. The key facts are that sums and products of positive elements are positive, and that for each non-zero \( f \) exactly one of \( f \) and \( -f \) is positive. Checking these is routine, and @exr-archimedean-property-c2 walks through them. On the constants, the new order is the old one: the constant \( c \) is positive exactly when \( c > 0 \). The example below uses that \( \nR(x) \) is an ordered field, and with it the rules of @thm-ordered-field-rules, which hold in every ordered field; so it rests on @exr-archimedean-property-c2, where that is proved.
+With this order \( \nR(x) \) is an ordered field. The key facts are that sums and products of positive elements are positive, and that for each nonzero \( f \) exactly one of \( f \) and \( -f \) is positive. Checking these is routine, and @exr-archimedean-property-c2 walks through them. On the constants, the new order is the old one: the constant \( c \) is positive exactly when \( c > 0 \). The example below uses that \( \nR(x) \) is an ordered field, and with it the rules of @thm-ordered-field-rules, which hold in every ordered field; so it rests on @exr-archimedean-property-c2, where that is proved.
 
 The natural numbers of \( \nR(x) \), the smallest inductive subset in the sense of @def-inductive-set, are the constants \( 1, 2, 3, \dots \). Indeed, the constant functions \( n \) with \( n \in \nN \) form an inductive subset of \( \nR(x) \): it contains the constant \( 1 \), and the constant \( n \) plus \( 1 \) is the constant \( n + 1 \). So every natural number of \( \nR(x) \) is such a constant. Conversely, let \( I \) be an inductive subset of \( \nR(x) \). The set of \( n \in \nN \) whose constant lies in \( I \) contains \( 1 \) and passes from \( n \) to \( n + 1 \), so it is an inductive subset of \( \nR \) and contains all of \( \nN \). So every constant \( n \) lies in every inductive subset of \( \nR(x) \).
 
@@ -175,13 +175,13 @@ The element \( 1/x \) is positive yet smaller than every \( 1/n \): an "infinite
 Every step in the proof of @thm-naturals-unbounded, except one, is valid in any ordered field. So let us run the proof in \( \nR(x) \) and watch where it breaks.
 
 - "Suppose \( \nN \) is bounded above." In \( \nR(x) \) this is true, with upper bound \( x \).
-- "\( \nN \) is non-empty." True.
+- "\( \nN \) is nonempty." True.
 - "**By @ax-least-upper-bound, \( \nN \) has a supremum \( s \).**" This is the line that fails. In \( \nR(x) \), \( \nN \) has no least upper bound at all. Indeed, let \( M \) be any upper bound of \( \nN \) in \( \nR(x) \). For each \( n \in \nN \), also \( n + 1 \in \nN \), so \( n + 1 \le M \), that is, \( n \le M - 1 \). Hence \( M - 1 \) is also an upper bound, and it is strictly smaller than \( M \). No upper bound is the least one.
 - The remaining lines, "\( n + 1 \le s \) for every \( n \in \nN \), so \( s - 1 \) is an upper bound, and (S2) gives \( s \le s - 1 \)", use only the ordered-field axioms and the fact that \( \nN \) is inductive. They would go through in \( \nR(x) \) if there were an \( s \) to apply them to.
 
 The argument that shows \( \nN \) has no supremum in \( \nR(x) \) is the middle paragraph of the proof of @thm-naturals-unbounded, with \( M \) in place of \( s \). That proof showed that a supremum of \( \nN \) cannot exist in any ordered field; the axiom then says that, in \( \nR \), a bounded \( \nN \) would have to have one. In \( \nR(x) \) there is no axiom to force it, so no contradiction arises. Two conclusions follow:
 
-- \( \nR(x) \) is an ordered field in which @ax-least-upper-bound fails, with witness the non-empty, bounded-above set \( \nN \).
+- \( \nR(x) \) is an ordered field in which @ax-least-upper-bound fails, with witness the nonempty, bounded-above set \( \nN \).
 - In any ordered field, the least upper bound axiom implies the Archimedean property. That is precisely what our proof showed.
 
 ::: {.warning}
@@ -226,7 +226,7 @@ Prove that \( \inf \{ 1/n : n \in \nN \} = 0 \), and that the set has no minimum
 :::
 
 ::: {.solution}
-Let \( B \coloneqq \{ 1/n : n \in \nN \} \); it is non-empty, since \( 1 \in B \). By @exm-naturals-at-least-one, \( 1/n > 0 \) for every \( n \), so \( 0 \) is a lower bound of \( B \).
+Let \( B \coloneqq \{ 1/n : n \in \nN \} \); it is nonempty, since \( 1 \in B \). By @exm-naturals-at-least-one, \( 1/n > 0 \) for every \( n \), so \( 0 \) is a lower bound of \( B \).
 
 Let \( L \) be any lower bound of \( B \); we show \( L \le 0 \). Suppose instead \( L > 0 \). By @cor-archimedean-epsilon with \( \varepsilon = L \), there is \( n \in \nN \) with \( 1/n < L \). This contradicts \( L \) being a lower bound of \( B \). Hence \( L \le 0 \). So \( 0 \) is a lower bound that is greater than or equal to every lower bound, that is, \( \inf B = 0 \) (@def-infimum).
 
@@ -256,7 +256,7 @@ Suppose \( x \ne 0 \). Since \( x \ge 0 \), we get \( x > 0 \). By @cor-archimed
 
 For the second statement, put \( x \coloneqq \abs{a - b} \). Then \( 0 \le x < 1/n \) for every \( n \), so \( x = 0 \) by the first part, that is, \( a = b \).
 
-This is how equality is proved in analysis over and over: show that the distance is non-negative and smaller than every \( 1/n \).
+This is how equality is proved in analysis over and over: show that the distance is nonnegative and smaller than every \( 1/n \).
 :::
 
 ::: {#exr-archimedean-property-b4}
@@ -297,11 +297,11 @@ Line (ix) is true, but its \( \varepsilon \) is of the wrong kind: it is chosen 
 :::
 
 ::: {.solution}
-(a) Suppose \( \nN \) is bounded above in \( \nR \). Since \( 1 \in \nN \), the set is non-empty, so by @ax-least-upper-bound it has a supremum \( s \) (**this line uses the axiom**). For every \( n \in \nN \), also \( n + 1 \in \nN \), since \( \nN \) is inductive, so \( n + 1 \le s \) by (S1), that is, \( n \le s - 1 \). Hence \( s - 1 \) is an upper bound of \( \nN \), and (S2) gives \( s \le s - 1 \), which is false. So \( \nN \) is not bounded above, which means that every \( x \in \nR \) is exceeded by some \( n \in \nN \).
+(a) Suppose \( \nN \) is bounded above in \( \nR \). Since \( 1 \in \nN \), the set is nonempty, so by @ax-least-upper-bound it has a supremum \( s \) (**this line uses the axiom**). For every \( n \in \nN \), also \( n + 1 \in \nN \), since \( \nN \) is inductive, so \( n + 1 \le s \) by (S1), that is, \( n \le s - 1 \). Hence \( s - 1 \) is an upper bound of \( \nN \), and (S2) gives \( s \le s - 1 \), which is false. So \( \nN \) is not bounded above, which means that every \( x \in \nR \) is exceeded by some \( n \in \nN \).
 
-In \( \nR(x) \) the set \( \nN \) is non-empty and bounded above by \( x \) (@exm-nonarchimedean-field), but it has no supremum. Any upper bound \( M \) gives a smaller one, \( M - 1 \), because \( n + 1 \le M \) for every \( n \in \nN \) forces \( n \le M - 1 \). So the marked line has nothing to produce, and there the proof stops.
+In \( \nR(x) \) the set \( \nN \) is nonempty and bounded above by \( x \) (@exm-nonarchimedean-field), but it has no supremum. Any upper bound \( M \) gives a smaller one, \( M - 1 \), because \( n + 1 \le M \) for every \( n \in \nN \) forces \( n \le M - 1 \). So the marked line has nothing to produce, and there the proof stops.
 
-(b) The gap is the existence of \( \ceil{x} \). The set \( \{ k \in \nZ : k \ge x \} \) has a least element only if it is non-empty, and it is non-empty exactly when some integer is at least \( x \). That is (a form of) the Archimedean property, the statement being proved. The proof is circular.
+(b) The gap is the existence of \( \ceil{x} \). The set \( \{ k \in \nZ : k \ge x \} \) has a least element only if it is nonempty, and it is nonempty exactly when some integer is at least \( x \). That is (a form of) the Archimedean property, the statement being proved. The proof is circular.
 
 In \( \nR(x) \), take the element \( x \) and suppose \( k \in \nZ \) satisfies \( k \ge x \). If \( k \le 0 \), then \( k \le 0 < 1 < x \). If \( k \ge 1 \), then \( k \in \nN \) and \( k < x \) by @exm-nonarchimedean-field. Either way \( k < x \), a contradiction. So no integer is greater than or equal to \( x \), and \( \ceil{x} \) does not exist.
 
@@ -323,8 +323,8 @@ A proof of (a) that argues "by (S2), or @thm-sup-epsilon with \( \varepsilon = 1
 Let \( P \subseteq \nR(x) \) be the set of positive elements defined in this section, and let \( f < g \) mean \( g - f \in P \).
 
 ::: {.enumerate options="label=(\alph*)"}
-1. Show that every non-zero \( f \in \nR(x) \) can be written as \( p/q \) with the leading coefficient of \( q \) positive, and that then \( f \in P \) if and only if the leading coefficient of \( p \) is positive.
-2. Show that for every non-zero \( f \), exactly one of \( f \in P \) and \( -f \in P \) holds.
+1. Show that every nonzero \( f \in \nR(x) \) can be written as \( p/q \) with the leading coefficient of \( q \) positive, and that then \( f \in P \) if and only if the leading coefficient of \( p \) is positive.
+2. Show that for every nonzero \( f \), exactly one of \( f \in P \) and \( -f \in P \) holds.
 3. Show that if \( f, g \in P \), then \( f g \in P \) and \( f + g \in P \).
 4. Deduce the order axioms of @def-ordered-field for \( < \): trichotomy, transitivity, \( f < g \Rightarrow f + h < g + h \), and \( f, g > 0 \Rightarrow f g > 0 \).
 :::
@@ -344,17 +344,17 @@ For the sum in (c), with both denominators normalized, write \( f + g = (p_1 q_2
 :::
 
 ::: {.solution}
-Write \( \operatorname{lc}(p) \) for the leading coefficient of a non-zero polynomial \( p \). Recall that \( \operatorname{lc}(pq) = \operatorname{lc}(p)\operatorname{lc}(q) \), since the top powers multiply.
+Write \( \operatorname{lc}(p) \) for the leading coefficient of a nonzero polynomial \( p \). Recall that \( \operatorname{lc}(pq) = \operatorname{lc}(p)\operatorname{lc}(q) \), since the top powers multiply.
 
 (a) Let \( f = p/q \). If \( \operatorname{lc}(q) < 0 \), then \( f = (-p)/(-q) \) and \( \operatorname{lc}(-q) = -\operatorname{lc}(q) > 0 \). So we may assume \( \operatorname{lc}(q) > 0 \). Then "\( \operatorname{lc}(p) \) and \( \operatorname{lc}(q) \) have the same sign" means exactly \( \operatorname{lc}(p) > 0 \). By the well-definedness shown in the section, this does not depend on the chosen representation.
 
-(b) Write \( f = p/q \) with \( \operatorname{lc}(q) > 0 \), as in (a). Then \( -f = (-p)/q \) and \( \operatorname{lc}(-p) = -\operatorname{lc}(p) \). Since \( p \ne 0 \), \( \operatorname{lc}(p) \) is a non-zero real number, so by trichotomy in \( \nR \) exactly one of \( \operatorname{lc}(p) > 0 \) and \( -\operatorname{lc}(p) > 0 \) holds. By (a), exactly one of \( f \in P \) and \( -f \in P \) holds.
+(b) Write \( f = p/q \) with \( \operatorname{lc}(q) > 0 \), as in (a). Then \( -f = (-p)/q \) and \( \operatorname{lc}(-p) = -\operatorname{lc}(p) \). Since \( p \ne 0 \), \( \operatorname{lc}(p) \) is a nonzero real number, so by trichotomy in \( \nR \) exactly one of \( \operatorname{lc}(p) > 0 \) and \( -\operatorname{lc}(p) > 0 \) holds. By (a), exactly one of \( f \in P \) and \( -f \in P \) holds.
 
 (c) Write \( f = p_1/q_1 \) and \( g = p_2/q_2 \) with all four leading coefficients positive, using (a). The product is \( f g = (p_1 p_2)/(q_1 q_2) \) with \( \operatorname{lc}(p_1 p_2) = \operatorname{lc}(p_1)\operatorname{lc}(p_2) > 0 \) and \( \operatorname{lc}(q_1 q_2) > 0 \), so \( f g \in P \). The sum is
 \[
     f + g = \frac{p_1 q_2 + p_2 q_1}{q_1 q_2}.
 \]
-Both \( p_1 q_2 \) and \( p_2 q_1 \) have positive leading coefficient. If their degrees differ, the leading coefficient of the sum is that of the term of higher degree, which is positive. If their degrees agree, it is the sum of the two leading coefficients, which is positive. In both cases the numerator is non-zero with positive leading coefficient, and \( \operatorname{lc}(q_1 q_2) > 0 \), so \( f + g \in P \).
+Both \( p_1 q_2 \) and \( p_2 q_1 \) have positive leading coefficient. If their degrees differ, the leading coefficient of the sum is that of the term of higher degree, which is positive. If their degrees agree, it is the sum of the two leading coefficients, which is positive. In both cases the numerator is nonzero with positive leading coefficient, and \( \operatorname{lc}(q_1 q_2) > 0 \), so \( f + g \in P \).
 
 (d) *Trichotomy.* Given \( f, g \), either \( g - f = 0 \), or \( g - f \ne 0 \) and by (b) exactly one of \( g - f \in P \) and \( f - g = -(g - f) \in P \) holds. So exactly one of \( f = g \), \( f < g \), \( g < f \) holds.
 
@@ -377,7 +377,7 @@ Both \( p_1 q_2 \) and \( p_2 q_1 \) have positive leading coefficient. If their
 ::: {.solution}
 (a) Write \( r = m/k \) with \( m \in \nZ \) and \( k \in \nN \). If \( m \le 0 \), then \( r \le 0 < 1 \), and \( n = 1 \) works. If \( m \ge 1 \), then \( m \in \nN \). Since \( k \ge 1 \) (@exm-naturals-at-least-one) and \( m > 0 \), we get \( r = m/k \le m < m + 1 \), and \( n \coloneqq m + 1 \in \nN \) works. No supremum was used: only the arithmetic of integers and the ordered-field rules.
 
-(b) By (a), \( \nQ \) is an ordered field in which \( \nN \) is not bounded above, so \( \nQ \) has the Archimedean property. By @thm-no-rational-sup-sqrt2, the non-empty set \( \{ x \in \nQ : x > 0, \ x^2 < 2 \} \), which is bounded above by \( 2 \), has no supremum in \( \nQ \). So \( \nQ \) is Archimedean and fails the least upper bound axiom, and the Archimedean property cannot imply the axiom.
+(b) By (a), \( \nQ \) is an ordered field in which \( \nN \) is not bounded above, so \( \nQ \) has the Archimedean property. By @thm-no-rational-sup-sqrt2, the nonempty set \( \{ x \in \nQ : x > 0, \ x^2 < 2 \} \), which is bounded above by \( 2 \), has no supremum in \( \nQ \). So \( \nQ \) is Archimedean and fails the least upper bound axiom, and the Archimedean property cannot imply the axiom.
 :::
 
 <!-- dependency ledger

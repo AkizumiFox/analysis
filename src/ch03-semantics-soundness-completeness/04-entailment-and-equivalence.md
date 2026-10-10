@@ -21,7 +21,7 @@ Examples, simplest first.
 - \( p \to p \) and \( p \vee \neg p \) are tautologies: in the row \( p = \mathrm{T} \) both are true, and in the row \( p = \mathrm{F} \), \( p \to p \) has a false hypothesis and \( \neg p \) is true.
 - \( p \wedge \neg p \) and \( p \leftrightarrow \neg p \) are contradictions: in each row one of \( p \), \( \neg p \) is false, and the two sides of the biconditional differ.
 - A formula with no atoms, such as \( \bot \) or \( \neg\bot \), has the same value under every valuation (its table has one row). So it is either a contradiction, like \( \bot \), or a tautology, like \( \neg\bot \). This degenerate case is the only one in which "not a tautology" forces "a contradiction".
-- *Non-example.* \( p \to q \) is neither: it is \( \mathrm{T} \) in the row TT and \( \mathrm{F} \) in the row TF. Most formulas are like this. Changing one symbol of the tautology \( p \to p \), to get \( p \to q \), loses the property: the rows in which the hypothesis and conclusion differ are no longer excluded by their being the same atom.
+- *Nonexample.* \( p \to q \) is neither: it is \( \mathrm{T} \) in the row TT and \( \mathrm{F} \) in the row TF. Most formulas are like this. Changing one symbol of the tautology \( p \to p \), to get \( p \to q \), loses the property: the rows in which the hypothesis and conclusion differ are no longer excluded by their being the same atom.
 
 The formulas in between also need a word, and so do **lists** of formulas, because a list of premises can fail to be true together even when each premise alone can be true.
 
@@ -155,7 +155,7 @@ In words, each entails the other. Equivalently, \( v(\varphi) = v(\psi) \) for *
 \]
 From "same value under every valuation" it follows at once that \( \equiv \) is reflexive, symmetric and transitive: \( \varphi \equiv \varphi \); if \( \varphi \equiv \psi \), then \( \psi \equiv \varphi \); if \( \varphi \equiv \psi \) and \( \psi \equiv \chi \), then \( \varphi \equiv \chi \).
 
-Examples: \( p \wedge q \equiv q \wedge p \) (the clause (V3) does not care about the order); \( p \equiv \neg\neg p \) (two flips); \( p \vee \neg p \equiv \neg\bot \) (both are true under every valuation). The degenerate case: any two tautologies are equivalent, and so are any two contradictions. *Non-example:* \( p \wedge q \) and \( p \) are not equivalent. One direction holds, \( p \wedge q \models p \), but the other fails in the row \( p = \mathrm{T} \), \( q = \mathrm{F} \). Entailment in one direction is not equivalence. Nor is equivalence identity: \( p \wedge q \) and \( q \wedge p \) are different formulas, with different parse trees, and \( \rulename{{\to}E} \) treats them as different (Section 1.4).
+Examples: \( p \wedge q \equiv q \wedge p \) (the clause (V3) does not care about the order); \( p \equiv \neg\neg p \) (two flips); \( p \vee \neg p \equiv \neg\bot \) (both are true under every valuation). The degenerate case: any two tautologies are equivalent, and so are any two contradictions. *Nonexample:* \( p \wedge q \) and \( p \) are not equivalent. One direction holds, \( p \wedge q \models p \), but the other fails in the row \( p = \mathrm{T} \), \( q = \mathrm{F} \). Entailment in one direction is not equivalence. Nor is equivalence identity: \( p \wedge q \) and \( q \wedge p \) are different formulas, with different parse trees, and \( \rulename{{\to}E} \) treats them as different (Section 1.4).
 
 The equivalences used most often are collected below. They are stated for arbitrary formulas \( \varphi, \psi, \chi \), not just atoms, since Section 3.7 applies them to compound formulas.
 
@@ -565,7 +565,7 @@ Yes. By the paraphrase of @def-semantic-equivalence, \( \varphi \equiv \psi \) m
 
 For the instance: the substitution of \( r \to s \) for \( p \) and \( \neg t \) for \( q \) turns the two sides of \( \neg(p \wedge q) \equiv \neg p \vee \neg q \) into \( \neg((r \to s) \wedge \neg t) \) and \( \neg(r \to s) \vee \neg\neg t \), so these are equivalent by the first part. Checking a law for atoms, by one small table, is therefore enough.
 
-A tempting counterexample fails for a reason worth seeing. With \( \sigma \) putting \( \neg p \) for \( q \), the non-equivalent formulas \( p \) and \( \neg q \) become the equivalent \( p \) and \( \neg\neg p \): substitution can create equivalences. It cannot destroy one, which is what the question asks.
+A tempting counterexample fails for a reason worth seeing. With \( \sigma \) putting \( \neg p \) for \( q \), the nonequivalent formulas \( p \) and \( \neg q \) become the equivalent \( p \) and \( \neg\neg p \): substitution can create equivalences. It cannot destroy one, which is what the question asks.
 
 **Marking scheme.** (10 points)
 
@@ -574,7 +574,7 @@ A tempting counterexample fails for a reason worth seeing. With \( \sigma \) put
 - 2: computes \( \sigma(\varphi \leftrightarrow \psi) = \sigma(\varphi) \leftrightarrow \sigma(\psi) \) from the definition of \( \sigma \).
 - 2: the instance, with the substitution named.
 
-Fatal errors (0 for the step): answering "no" by a pair that is not equivalent before the substitution; using a non-uniform replacement.
+Fatal errors (0 for the step): answering "no" by a pair that is not equivalent before the substitution; using a nonuniform replacement.
 :::
 
 <!-- dependency ledger

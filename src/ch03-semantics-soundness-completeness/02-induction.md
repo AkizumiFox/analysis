@@ -39,7 +39,7 @@ In symbols (the quantifier symbols are Chapter 4's; here they abbreviate the wor
 
 In words: hypothesis (i) is the **base case**. Hypothesis (ii) is the **inductive step**, and inside it, the assumption "\( P(n) \) holds" is the **induction hypothesis**. The step is **one** implication, proved **once**, for a number \( n \) about which we assume nothing except that it is a natural number with \( P(n) \). The conclusion is about every natural number at once.
 
-**Its status.** We take @ax-induction as a basic property of \( \nN \), given and not proved, in the same way that Chapter 11 takes the least upper bound axiom as a basic property of \( \nR \). It is, in a precise sense, what the three dots in \( \{1, 2, 3, \dots\} \) mean: the natural numbers are what we reach from \( 1 \) by adding one, again and again, and nothing else. Chapter 7 proves that it is equivalent to the well-ordering principle (every non-empty collection of natural numbers has a least element), and the optional Chapter 9 derives it from the axioms of set theory. Nothing in this book depends on those two routes; every later use cites this principle.
+**Its status.** We take @ax-induction as a basic property of \( \nN \), given and not proved, in the same way that Chapter 11 takes the least upper bound axiom as a basic property of \( \nR \). It is, in a precise sense, what the three dots in \( \{1, 2, 3, \dots\} \) mean: the natural numbers are what we reach from \( 1 \) by adding one, again and again, and nothing else. Chapter 7 proves that it is equivalent to the well-ordering principle (every nonempty collection of natural numbers has a least element), and the optional Chapter 9 derives it from the axioms of set theory. Nothing in this book depends on those two routes; every later use cites this principle.
 
 **Dominoes.** The usual picture is a row of dominoes, one for each natural number. The base case knocks over the first. The inductive step says that each domino, if it falls, knocks over the next. Then every domino falls. The picture carries the one point that matters: the step must work for **every** \( n \), the first transition from \( 1 \) to \( 2 \) included. A single domino standing too far from the next stops the whole row, however well the others are placed.
 
@@ -261,7 +261,7 @@ Let \( \chi \) be a formula.
 
 ::: {.enumerate options="label=(\alph*)"}
 1. \( \operatorname{ex}(\chi) = 0 \): \( \chi \) has as many left as right parentheses.
-2. Every initial segment \( u \) of \( \chi \) has \( \operatorname{ex}(u) \ge 0 \). If moreover \( \chi \) has the form \( (\varphi \circ \psi) \) and \( u \) is proper and non-empty, then \( \operatorname{ex}(u) \ge 1 \).
+2. Every initial segment \( u \) of \( \chi \) has \( \operatorname{ex}(u) \ge 0 \). If moreover \( \chi \) has the form \( (\varphi \circ \psi) \) and \( u \) is proper and nonempty, then \( \operatorname{ex}(u) \ge 1 \).
 3. For every occurrence of a binary connective in \( \chi \), the initial segment of \( \chi \) that ends just before that occurrence has excess at least \( 1 \).
 :::
 :::
@@ -288,10 +288,10 @@ We prove, by @thm-structural-induction, that every formula \( \chi \) has the pr
 - the empty string: excess \( 0 \);
 - \( ( \) followed by an initial segment \( u' \) of \( \varphi \): excess \( 1 + \operatorname{ex}(u') \ge 1 \), by (b) for \( \varphi \);
 - \( (\varphi\,\circ \): excess \( 1 + \operatorname{ex}(\varphi) + 0 = 1 \), by (a) for \( \varphi \);
-- \( (\varphi\,\circ \) followed by a non-empty initial segment \( v' \) of \( \psi \): excess \( 1 + 0 + \operatorname{ex}(v') \ge 1 \), by (a) for \( \varphi \) and (b) for \( \psi \);
+- \( (\varphi\,\circ \) followed by a nonempty initial segment \( v' \) of \( \psi \): excess \( 1 + 0 + \operatorname{ex}(v') \ge 1 \), by (a) for \( \varphi \) and (b) for \( \psi \);
 - \( \chi \) itself: excess \( 0 \), by (a) for \( \chi \).
 
-All five have excess at least \( 0 \). The proper non-empty ones are those of the middle three kinds, and they have excess at least \( 1 \).
+All five have excess at least \( 0 \). The proper nonempty ones are those of the middle three kinds, and they have excess at least \( 1 \).
 
 *(c)* An occurrence of a binary connective in \( \chi \) is the connective \( \circ \) between \( \varphi \) and \( \psi \), or lies in \( \varphi \), or lies in \( \psi \). Before \( \circ \) stands \( (\varphi \), of excess \( 1 \). Before an occurrence in \( \varphi \) stands \( ( \) followed by the initial segment of \( \varphi \) before it, of excess at least \( 1 + 1 = 2 \) by (c) for \( \varphi \). Before an occurrence in \( \psi \) stands \( (\varphi\,\circ \) followed by the initial segment of \( \psi \) before it, of excess at least \( 1 + 0 + 1 = 2 \) by (a) for \( \varphi \) and (c) for \( \psi \). In all three cases the excess is at least \( 1 \).
 
@@ -546,22 +546,22 @@ For (b): remove the first symbol from both sides. Now both \( \varphi \) and \( 
 :::
 
 ::: {.solution}
-*(a)* The empty string is not a formula, since every formula has at least one symbol. So it is enough to show that no proper **non-empty** initial segment of a formula \( \chi \) is a formula. We prove this by @thm-structural-induction.
+*(a)* The empty string is not a formula, since every formula has at least one symbol. So it is enough to show that no proper **nonempty** initial segment of a formula \( \chi \) is a formula. We prove this by @thm-structural-induction.
 
-*Atoms and \( \bot \).* A formula of length \( 1 \) has no proper non-empty initial segment.
+*Atoms and \( \bot \).* A formula of length \( 1 \) has no proper nonempty initial segment.
 
-*Negation.* Suppose no proper non-empty initial segment of \( \varphi \) is a formula, and let \( u \) be a proper non-empty initial segment of \( \neg\varphi \). Then \( u \) is \( \neg \) followed by a proper initial segment \( u' \) of \( \varphi \). Suppose, for a contradiction, that \( u \) is a formula. It begins with \( \neg \), so it is not an atom or \( \bot \) and not of the form \( (\varphi'' \circ \psi'') \); by looking at the last step (Section 3.1), \( u = \neg\varphi'' \) for a formula \( \varphi'' \), and removing the first symbol gives \( u' = \varphi'' \). So \( u' \) is a formula, hence non-empty, and it is a proper non-empty initial segment of \( \varphi \), contradicting the induction hypothesis.
+*Negation.* Suppose no proper nonempty initial segment of \( \varphi \) is a formula, and let \( u \) be a proper nonempty initial segment of \( \neg\varphi \). Then \( u \) is \( \neg \) followed by a proper initial segment \( u' \) of \( \varphi \). Suppose, for a contradiction, that \( u \) is a formula. It begins with \( \neg \), so it is not an atom or \( \bot \) and not of the form \( (\varphi'' \circ \psi'') \); by looking at the last step (Section 3.1), \( u = \neg\varphi'' \) for a formula \( \varphi'' \), and removing the first symbol gives \( u' = \varphi'' \). So \( u' \) is a formula, hence nonempty, and it is a proper nonempty initial segment of \( \varphi \), contradicting the induction hypothesis.
 
-*Binary connectives.* Let \( u \) be a proper non-empty initial segment of \( (\varphi \circ \psi) \). By @lem-parenthesis-count (b), \( \operatorname{ex}(u) \ge 1 \). If \( u \) were a formula, @lem-parenthesis-count (a) would give \( \operatorname{ex}(u) = 0 \). So \( u \) is not a formula. (This case needs no induction hypothesis.)
+*Binary connectives.* Let \( u \) be a proper nonempty initial segment of \( (\varphi \circ \psi) \). By @lem-parenthesis-count (b), \( \operatorname{ex}(u) \ge 1 \). If \( u \) were a formula, @lem-parenthesis-count (a) would give \( \operatorname{ex}(u) = 0 \). So \( u \) is not a formula. (This case needs no induction hypothesis.)
 
-By @thm-structural-induction, no formula has a proper non-empty initial segment that is a formula, which proves (a).
+By @thm-structural-induction, no formula has a proper nonempty initial segment that is a formula, which proves (a).
 
 *(b)* Suppose \( (\varphi \circ \psi) = (\varphi' \circ' \psi') \). Removing the first symbol, the strings \( \varphi \circ \psi) \) and \( \varphi' \circ' \psi') \) are equal. Both \( \varphi \) and \( \varphi' \) are initial segments of this string, so the shorter of the two is an initial segment of the longer. If their lengths differed, the shorter would be a proper initial segment of the longer, and a formula, contradicting (a). So they have the same length, and being initial segments of the same string, \( \varphi = \varphi' \). The next symbol is then \( \circ \) on one side and \( \circ' \) on the other, so \( \circ = \circ' \); what remains is \( \psi) = \psi') \), and removing the last symbol gives \( \psi = \psi' \).
 
 **Marking scheme.** (10 points)
 
-- 1: reduces (a) to non-empty segments (the empty string is not a formula).
-- 2: sets up a structural induction with the property "no proper non-empty initial segment is a formula", with the atom and \( \bot \) case.
+- 1: reduces (a) to nonempty segments (the empty string is not a formula).
+- 2: sets up a structural induction with the property "no proper nonempty initial segment is a formula", with the atom and \( \bot \) case.
 - 3: negation case: reads the segment as \( \neg \) followed by a proper initial segment of \( \varphi \), and uses the last step of a formula beginning with \( \neg \) to reach a contradiction with the hypothesis.
 - 2: binary case: excess at least \( 1 \) by @lem-parenthesis-count (b) against excess \( 0 \) by (a).
 - 2: (b): compares \( \varphi \) and \( \varphi' \) as initial segments of one string, concludes equal length by (a), then reads off \( \circ \) and \( \psi \).

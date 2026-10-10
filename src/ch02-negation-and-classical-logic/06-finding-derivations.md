@@ -36,7 +36,7 @@ In words: every line that has been written is a premise, an assumption, a curren
 
 The **degenerate** partial derivation is the starting point of every search: the premises, one gap, and the goal. Its resources are the premises. The snapshots in the worked searches below are all partial derivations; a line carries the number it will have in the finished derivation, so that snapshots can be compared, and a line whose place is not yet fixed carries no number. On paper you would number the lines at the end.
 
-**Non-example.** Take a snapshot and leave one of its boxes open at the bottom, so that the conclusion sits inside the box. That is not a partial derivation, even though every line is correct so far: @def-derivation asks that every box close and that the last line lie outside every box, and a gap cannot repair that, since filling a gap adds lines only above its current goal.
+**Nonexample.** Take a snapshot and leave one of its boxes open at the bottom, so that the conclusion sits inside the box. That is not a partial derivation, even though every line is correct so far: @def-derivation asks that every box close and that the last line lie outside every box, and a gap cannot repair that, since filling a gap adds lines only above its current goal.
 
 ::: {.check}
 In the second snapshot of @exm-search-distribute below, the second gap has the current goal \( \bot \) on line 11. List its resources.

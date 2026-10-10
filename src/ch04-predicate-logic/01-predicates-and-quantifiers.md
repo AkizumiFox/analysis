@@ -240,7 +240,7 @@ The swapped sentence is \( \exists p\, \forall n\, \bigl( \mathrm{Prime}(p) \wed
 English marks quantifiers loosely, and mathematical English has habits that hide them altogether. Three traps are worth naming now, before they cause trouble in a translation.
 
 ::: {.warning}
-The word **"any"** can mean "every" or "some", and only the sentence around it decides. "Any \( x \) in \( A \) is positive" means every element of \( A \) is positive: \( \forall x \in A\; (x > 0) \). "If any \( x \) in \( A \) is positive, then \( A \) is non-empty" means if **some** element is positive: \( \exists x \in A\; (x > 0) \to \dots \). When you meet "any", rewrite the sentence with "every" and with "some", and keep the one that says what was meant.
+The word **"any"** can mean "every" or "some", and only the sentence around it decides. "Any \( x \) in \( A \) is positive" means every element of \( A \) is positive: \( \forall x \in A\; (x > 0) \). "If any \( x \) in \( A \) is positive, then \( A \) is nonempty" means if **some** element is positive: \( \exists x \in A\; (x > 0) \to \dots \). When you meet "any", rewrite the sentence with "every" and with "some", and keep the one that says what was meant.
 :::
 
 **Hidden universal quantifiers.** A theorem stated as "if \( n \) is even, then \( n^2 \) is even" has no quantifier word in it, and yet it is not about one number. It means: for every integer \( n \), if \( n \) is even, then \( n^2 \) is even. A letter that is not introduced anywhere, in the statement of a theorem, is read with a "for every" in front. Chapter 5 names this convention and lists the others that written mathematics relies on. When translating, put the hidden quantifier back first.

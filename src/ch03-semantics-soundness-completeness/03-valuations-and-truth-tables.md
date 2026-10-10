@@ -64,7 +64,7 @@ Some valuations, simplest first.
 - The valuation with \( v(p) = \mathrm{T} \), \( v(q) = \mathrm{F} \) and \( v(r) = \mathrm{F} \) for every other atom \( r \). This is the typical way to describe a valuation: give the values of the few atoms we care about, and fix the rest once and for all.
 - A valuation may treat infinitely many atoms differently: \( v(p_n) = \mathrm{T} \) for odd \( n \) and \( v(p_n) = \mathrm{F} \) for even \( n \), with every other atom false. Formulas are finite, so no formula will ever see more than finitely many of these values. Making this precise is the job of the lemma in the next subsection but one.
 
-*Non-example.* "\( p \) is true" and "\( p \) is false" together do not describe a valuation: the definition asks for **exactly one** value per atom. And a list that gives \( p \) the value \( \mathrm{T} \) and says nothing about the other atoms is not a valuation either, since it fails "every atom". We never need more than such a partial list, but we complete it (by \( \mathrm{F} \), say) so that the definition applies.
+*Nonexample.* "\( p \) is true" and "\( p \) is false" together do not describe a valuation: the definition asks for **exactly one** value per atom. And a list that gives \( p \) the value \( \mathrm{T} \) and says nothing about the other atoms is not a valuation either, since it fails "every atom". We never need more than such a partial list, but we complete it (by \( \mathrm{F} \), say) so that the definition applies.
 
 ## The value of a formula
 
@@ -141,7 +141,7 @@ Work from the leaves of the parse tree up to its root, one node at a time, each 
 So \( v(\varphi) = \mathrm{T} \). The last step did not need the value of \( q \wedge r \): a false hypothesis makes an implication true whatever its conclusion is. Computing by hand, one may stop a branch as soon as its value is decided.
 :::
 
-*Non-example.* The rule "every formula gets the value \( \mathrm{T} \)" agrees with the all-T valuation on every atom, but it is not the truth value of @def-truth-value under any valuation. It breaks (V1) at \( \bot \), and it breaks (V2) at \( \neg p \), where \( p \) and \( \neg p \) would both be \( \mathrm{T} \). The truth value under the all-T valuation is the function that (V1)–(V6) produce from it, and it makes \( \neg p \) false.
+*Nonexample.* The rule "every formula gets the value \( \mathrm{T} \)" agrees with the all-T valuation on every atom, but it is not the truth value of @def-truth-value under any valuation. It breaks (V1) at \( \bot \), and it breaks (V2) at \( \neg p \), where \( p \) and \( \neg p \) would both be \( \mathrm{T} \). The truth value under the all-T valuation is the function that (V1)–(V6) produce from it, and it makes \( \neg p \) false.
 
 ::: {.warning}
 Values do not distribute over connectives the way symbols seem to. The value of \( \neg(p \wedge q) \) is not computed by negating \( p \) and \( q \) and keeping the \( \wedge \): under a valuation with \( v(p) = \mathrm{T} \) and \( v(q) = \mathrm{F} \), the formula \( \neg(p \wedge q) \) is \( \mathrm{T} \) (since \( p \wedge q \) is \( \mathrm{F} \)), while \( \neg p \wedge \neg q \) is \( \mathrm{F} \) (since \( \neg p \) is \( \mathrm{F} \)). Always follow the parse tree: the main connective is applied last.
@@ -517,7 +517,7 @@ No step used a value of \( t \) that had not yet been found, since the formulas 
 
 - 3: the row \( (\mathrm{T}, \mathrm{F}) \) from (E), with a valuation making \( p \) true and \( q \) false, and the argument by contradiction.
 - 3: the rows \( (\mathrm{T}, \mathrm{T}) \) and \( (\mathrm{F}, \mathrm{F}) \) from (I), with the hypothesis of (I) checked, and a valuation for each value of \( p \).
-- 3: the row \( (\mathrm{F}, \mathrm{T}) \) from (I) with a non-empty \( \Gamma \) (or any other correct instance), hypothesis checked.
+- 3: the row \( (\mathrm{F}, \mathrm{T}) \) from (I) with a nonempty \( \Gamma \) (or any other correct instance), hypothesis checked.
 - 1: says why the argument is not circular (no \( \to \) in the formulas used).
 
 Fatal errors (0 for the step): using the standard table of \( \to \) to justify a value of \( t \); an instance of (I) whose hypothesis is not checked.

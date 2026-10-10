@@ -43,7 +43,7 @@ The pairs \( (1, 2) \) and \( (2, 1) \) are **not** equal. If they were, the cha
 
 The first part is typical. One equation between pairs is **two** equations between coordinates, and this is how pairs are used: an equation of pairs is split by the characteristic property, and the coordinates are compared one at a time.
 
-**Non-example by minimal change.** Replace the parentheses by braces. The set \( \{1, 2\} \) has the same two numbers as the pair \( (1, 2) \), but the characteristic property fails for sets: \( \{1, 2\} = \{2, 1\} \), and yet \( 1 \ne 2 \). What survives is membership: \( 1 \) and \( 2 \) are both in \( \{1, 2\} \). What is lost is order, the one thing the pair was made to keep.
+**Nonexample by minimal change.** Replace the parentheses by braces. The set \( \{1, 2\} \) has the same two numbers as the pair \( (1, 2) \), but the characteristic property fails for sets: \( \{1, 2\} = \{2, 1\} \), and yet \( 1 \ne 2 \). What survives is membership: \( 1 \) and \( 2 \) are both in \( \{1, 2\} \). What is lost is order, the one thing the pair was made to keep.
 
 **Why this definition.** The characteristic property has two directions and each has a job. Without \( (\Rightarrow) \), the pair could forget its coordinates, as \( \{1, 2\} \) forgets which number came first. Without \( (\Leftarrow) \), the pair \( (a, b) \) would not be determined by \( a \) and \( b \), and "the point \( (1, 2) \)" would not name one object.
 
@@ -261,9 +261,9 @@ So \( D \) has \( 6 + 3 + 2 + 1 + 1 + 1 = 14 \) elements, the pairs \( (a, b) \)
 \[
 S \coloneqq \{ (x, y) \in \nR^2 : x^2 + y^2 = 1 \} ,
 \]
-a relation on \( \nR \); for instance \( 0 \mathrel{S} 1 \), \( 0 \mathrel{S} (-1) \) and \( 1 \mathrel{S} 0 \). Its domain is \( [-1, 1] \). If \( x \mathrel{S} y \), then \( x^2 = 1 - y^2 \le 1 \), so \( -1 \le x \le 1 \). Conversely, for \( -1 \le x \le 1 \) the number \( 1 - x^2 \) is non-negative and so has a square root \( y = \sqrt{1 - x^2} \), which satisfies \( x^2 + y^2 = 1 \). By the symmetry of the equation, the range is \( [-1, 1] \) too.
+a relation on \( \nR \); for instance \( 0 \mathrel{S} 1 \), \( 0 \mathrel{S} (-1) \) and \( 1 \mathrel{S} 0 \). Its domain is \( [-1, 1] \). If \( x \mathrel{S} y \), then \( x^2 = 1 - y^2 \le 1 \), so \( -1 \le x \le 1 \). Conversely, for \( -1 \le x \le 1 \) the number \( 1 - x^2 \) is nonnegative and so has a square root \( y = \sqrt{1 - x^2} \), which satisfies \( x^2 + y^2 = 1 \). By the symmetry of the equation, the range is \( [-1, 1] \) too.
 
-(d) The graph of squaring is \( Q \coloneqq \{ (x, y) \in \nR^2 : y = x^2 \} \). Its domain is all of \( \nR \): every \( x \) is related to \( x^2 \). Its range is \( [0, \infty) \): a square is non-negative, and every \( y \ge 0 \) is the square of \( \sqrt{y} \).
+(d) The graph of squaring is \( Q \coloneqq \{ (x, y) \in \nR^2 : y = x^2 \} \). Its domain is all of \( \nR \): every \( x \) is related to \( x^2 \). Its range is \( [0, \infty) \): a square is nonnegative, and every \( y \ge 0 \) is the square of \( \sqrt{y} \).
 
 (e) Both are subsets of \( A \times B \), so both are relations. The **empty relation** \( \emptyset \) relates nothing, and its domain and range are empty. The **full relation** \( A \times B \) relates everything to everything. If \( A \) and \( B \) both have elements, its domain is \( A \) and its range is \( B \).
 :::
@@ -278,7 +278,7 @@ Write the inverse relation \( L^{-1} \) of part (a) as a set. Which familiar rel
 Turning each pair of \( L \) around gives \( L^{-1} = \{ (2, 1), (3, 1), (3, 2) \} \): the pairs \( (b, a) \) with \( b > a \). So \( L^{-1} \) is the relation \( > \) on \( \{1, 2, 3\} \). Its domain \( \{2, 3\} \) is the range of \( L \), and its range \( \{1, 2\} \) is the domain of \( L \).
 :::
 
-**Non-example by minimal change.** The set \( \{ (1, 2), (2, 3), 3 \} \) looks like the relation "is one less than" on \( \{1, 2, 3\} \), with one pair damaged. It is not a relation on \( \{1, 2, 3\} \): the element \( 3 \) is a number, not a pair, so the set is not a subset of \( \{1, 2, 3\}^2 \). Remove the \( 3 \), or replace it by the pair \( (3, 4) \) and enlarge the second set to \( \{1, 2, 3, 4\} \), and it becomes a relation. The clause that failed is "\( R \subseteq A \times B \)": every element of a relation must be a pair with coordinates in the right sets.
+**Nonexample by minimal change.** The set \( \{ (1, 2), (2, 3), 3 \} \) looks like the relation "is one less than" on \( \{1, 2, 3\} \), with one pair damaged. It is not a relation on \( \{1, 2, 3\} \): the element \( 3 \) is a number, not a pair, so the set is not a subset of \( \{1, 2, 3\}^2 \). Remove the \( 3 \), or replace it by the pair \( (3, 4) \) and enlarge the second set to \( \{1, 2, 3, 4\} \), and it becomes a relation. The clause that failed is "\( R \subseteq A \times B \)": every element of a relation must be a pair with coordinates in the right sets.
 
 **Why this definition.** A relation could be defined as a rule, a sentence, or a formula. Each of those raises the question of when two rules are "the same", and that question has no good answer: "\( x < y \)" and "\( y - x > 0 \)" are different sentences. The definition as a set answers it by extensionality. The price is small: a relation may be an arbitrary set of pairs, with no rule behind it at all, such as \( \{ (1, 3), (2, 2) \} \) on \( \{1, 2, 3\} \). That is a gain, not a loss: in analysis we meet relations and functions that no formula describes.
 
@@ -442,7 +442,7 @@ Both witnesses are needed. With \( B = \emptyset \) there is no \( b_0 \), and i
 - 2: uses the characteristic property (directly or through \( (\ast) \)) to read the coordinates off a pair of \( B \times A \), and concludes \( A = B \) by two inclusions.
 
 Fatal errors (0 for the step): testing inclusion on particular elements only (entry (N1) of Chapter 5's catalogue); using \( b_0 \) without having shown that \( B \) has an element; concluding \( A = B \) from \( A \times B = B \times A \) "by canceling" without an element argument.
-A proof of \( (\Rightarrow) \) by contraposition (assume \( A \ne B \) and both non-empty, and exhibit a pair of \( A \times B \) outside \( B \times A \)) earns full marks if it finds the pair: 2 points for the witnesses and 4 for the pair and the check that it is outside \( B \times A \), in place of the two inclusions.
+A proof of \( (\Rightarrow) \) by contraposition (assume \( A \ne B \) and both nonempty, and exhibit a pair of \( A \times B \) outside \( B \times A \)) earns full marks if it finds the pair: 2 points for the witnesses and 4 for the pair and the check that it is outside \( B \times A \), in place of the two inclusions.
 :::
 
 <!-- dependency ledger

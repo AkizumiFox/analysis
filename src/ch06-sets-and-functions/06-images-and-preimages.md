@@ -72,7 +72,7 @@ Find \( f(\{1, 4\}) \), \( f(\{2, 3\}) \), \( f(X) \) and \( f(\emptyset) \); th
 
 The two computations differ in shape. For the image we ran through the points of \( A \) and **produced** outputs. For the preimage we ran through the points of \( X \) and **tested** each one. That is the "there exists" of the image and the plain condition of the preimage, seen in a table.
 
-The example also contains a non-example by minimal change. The sets \( \{1\} \) and \( \{5\} \) are both one-point subsets of \( Y \). The first has a two-point preimage; change \( 1 \) to \( 5 \) and the preimage becomes empty, because \( 5 \) lies outside the range. A preimage of a non-empty set can be empty. What fails is the existence of a point of \( X \) sent into the set.
+The example also contains a nonexample by minimal change. The sets \( \{1\} \) and \( \{5\} \) are both one-point subsets of \( Y \). The first has a two-point preimage; change \( 1 \) to \( 5 \) and the preimage becomes empty, because \( 5 \) lies outside the range. A preimage of a nonempty set can be empty. What fails is the existence of a point of \( X \) sent into the set.
 
 Why is the preimage defined for **every** function, when \( f^{-1} \) as a function exists only for bijections? Because the question "which inputs land in \( B \)?" makes sense for any \( f \): its answer may be empty, or contain many points, and neither is a problem for a set. The function \( f^{-1} \) of Section 6.5 asks for more: exactly one input for each output. This is why analysis states its definitions with preimages. "The preimage of every open set is open" makes sense for every function; Chapter 24 uses it to characterize continuity.
 
@@ -197,7 +197,7 @@ Unwind each side at a point \( x \in X \). A preimage turns "\( x \) is in the p
 :::
 
 ::: {.proof}
-Every set in the four laws is a subset of \( X \): a preimage is one by @def-preimage, a union of subsets of \( X \) is one because each of its elements lies in some \( f^{-1}(B_i) \subseteq X \), an intersection in \( X \) and a difference \( X \setminus \cdot \) are subsets of \( X \) by @def-family-union-intersection and @def-set-operations, and \( f^{-1}(B) \setminus f^{-1}(C) \subseteq f^{-1}(B) \). For two subsets \( S, T \) of \( X \), a point outside \( X \) lies in neither, so by @def-set-equality, \( S = T \) holds as soon as \( x \in S \iff x \in T \) for every \( x \in X \). Let \( x \in X \). In each chain below, the steps labelled (P) are @def-preimage, which applies because \( x \in X \); the others are named.
+Every set in the four laws is a subset of \( X \): a preimage is one by @def-preimage, a union of subsets of \( X \) is one because each of its elements lies in some \( f^{-1}(B_i) \subseteq X \), an intersection in \( X \) and a difference \( X \setminus \cdot \) are subsets of \( X \) by @def-family-union-intersection and @def-set-operations, and \( f^{-1}(B) \setminus f^{-1}(C) \subseteq f^{-1}(B) \). For two subsets \( S, T \) of \( X \), a point outside \( X \) lies in neither, so by @def-set-equality, \( S = T \) holds as soon as \( x \in S \iff x \in T \) for every \( x \in X \). Let \( x \in X \). In each chain below, the steps labeled (P) are @def-preimage, which applies because \( x \in X \); the others are named.
 
 (a)
 \[
@@ -549,7 +549,7 @@ A student proves the following claim: *if \( f \colon X \to Y \) is injective an
 
 (b) Line (3) fails. The statement \( f(x) \in f(A) \) says only that \( f(a) = f(x) \) for **some** \( a \in A \) (@def-image). To use it, the proof must name that witness by \( \exists \)E, with a fresh name. Line (3) skips the \( \exists \)E and silently takes the witness to be \( x \) itself. The tell is that injectivity, a hypothesis, is never used: an argument that ignores a necessary hypothesis cannot be right.
 
-(c) A counterexample to the step "\( f(x) \in f(A) \), so \( x \in A \)" needs a non-injective function, since for injective ones the conclusion of the step is true. Take \( f(x) = x^2 \) on \( \nR \), \( A = \{1\} \) and \( x = -1 \). Then \( f(x) = 1 \in f(A) \), but \( x \notin A \).
+(c) A counterexample to the step "\( f(x) \in f(A) \), so \( x \in A \)" needs a noninjective function, since for injective ones the conclusion of the step is true. Take \( f(x) = x^2 \) on \( \nR \), \( A = \{1\} \) and \( x = -1 \). Then \( f(x) = 1 \in f(A) \), but \( x \notin A \).
 
 Repair: replace (3) by "Since \( f(x) \in f(A) \), there is \( a \in A \) with \( f(a) = f(x) \); name it \( a \). Since \( f \) is injective, \( a = x \). Hence \( x \in A \)."
 :::

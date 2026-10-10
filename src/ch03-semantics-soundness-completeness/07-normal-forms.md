@@ -55,7 +55,7 @@ Check some formulas against the definitions, clause by clause.
 3. \( p \wedge \neg q \) is in both: in DNF with one conjunct, and in CNF with two clauses of one literal each. Likewise \( p \vee \neg q \) is in both.
 4. A single literal, \( \neg r \), is in both forms: one conjunct of one literal, and one clause of one literal. This degenerate case matters, because a formula such as \( \neg r \) must count as already normal.
 
-A non-example by a minimal change: \( (p \wedge \neg q) \vee r \) is in DNF, but \( \neg(p \wedge q) \vee r \) is not in either form. Only one symbol moved, and the literal condition fails: \( \neg \) now stands on the conjunction \( p \wedge q \), not on an atom. The formula \( p \to q \) is in neither form either, since \( \to \) is not allowed at all.
+A nonexample by a minimal change: \( (p \wedge \neg q) \vee r \) is in DNF, but \( \neg(p \wedge q) \vee r \) is not in either form. Only one symbol moved, and the literal condition fails: \( \neg \) now stands on the conjunction \( p \wedge q \), not on an atom. The formula \( p \to q \) is in neither form either, since \( \to \) is not allowed at all.
 
 Why these layers? Because they are the shapes that the truth table hands us, as the next theorem shows, and because in these shapes some questions become easy: the subsection "Reading validity off a CNF" below decides validity of a CNF without a table.
 

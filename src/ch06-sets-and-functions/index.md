@@ -14,7 +14,7 @@ Two surprises drive the chapter. The first is that the naive rule "any property 
 - **Unions, intersections, complements and families.** The set operations as the connectives read through membership, the algebra of sets as propositional logic, power sets, unions and intersections of arbitrary families, and De Morgan's laws for families, including the empty one.
 - **Ordered pairs, products and relations.** An object that remembers order, the product \( A \times B \) and how it interacts with the set operations, and relations as sets of pairs.
 - **Functions, composition, injections and surjections.** A function as a graph with a declared target, when two functions are equal, composition, and the two questions of injectivity and surjectivity, with the squaring map as three different functions.
-- **Left, right and two-sided inverses.** A left inverse exists exactly for injective maps (on a non-empty domain), a right inverse forces surjectivity, bijections are the maps with a two-sided inverse, and the question whether every surjection has a right inverse, which needs a new principle.
+- **Left, right and two-sided inverses.** A left inverse exists exactly for injective maps (on a nonempty domain), a right inverse forces surjectivity, bijections are the maps with a two-sided inverse, and the question whether every surjection has a right inverse, which needs a new principle.
 - **Images and preimages.** What a function does to sets, why preimages respect every operation and images only unions, where injectivity and surjectivity repair the failures, and sets of numbers such as \( -A \) and \( A + B \) as images.
 
 ## Named moves

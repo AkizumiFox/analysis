@@ -10,7 +10,7 @@ So the rational numbers have a gap, exactly where \( \sqrt{2} \) ought to be. Th
 
 ## Ordered fields
 
-A field is a number system in which one can add, subtract, multiply, and divide by anything non-zero, with the usual rules. The rational, real and complex numbers are fields; so is the arithmetic of remainders modulo a prime. What \( \nQ \) and \( \nR \) have beyond this, and \( \nC \) does not, is an order: any two numbers can be compared, and the comparison behaves well under addition and multiplication. Every inequality we manipulate in analysis rests on four rules about that comparison, and the definition below states them.
+A field is a number system in which one can add, subtract, multiply, and divide by anything nonzero, with the usual rules. The rational, real and complex numbers are fields; so is the arithmetic of remainders modulo a prime. What \( \nQ \) and \( \nR \) have beyond this, and \( \nC \) does not, is an order: any two numbers can be compared, and the comparison behaves well under addition and multiplication. Every inequality we manipulate in analysis rests on four rules about that comparison, and the definition below states them.
 
 *An ordered field is a number system where we can do arithmetic and compare, and where comparison respects arithmetic.*
 
@@ -29,7 +29,7 @@ The **field axioms**: **for all** \( a, b, c \in F \),
 5. \( (ab)c = a(bc) \);
 6. \( ab = ba \);
 7. there is an element \( 1 \in F \) with **\( 1 \ne 0 \)** and \( a \cdot 1 = a \) **for every** \( a \in F \);
-8. **for every non-zero** \( a \in F \) there is an element \( a^{-1} \in F \) with \( a a^{-1} = 1 \);
+8. **for every nonzero** \( a \in F \) there is an element \( a^{-1} \in F \) with \( a a^{-1} = 1 \);
 9. \( a(b + c) = ab + ac \).
 :::
 
@@ -43,7 +43,7 @@ The **order axioms**: **for all** \( a, b, c \in F \),
 :::
 :::
 
-The field axioms are the ones of the linear-algebra companion, Chapter 0, in the same numbering. We write \( a - b \coloneqq a + (-b) \) and \( a / b \coloneqq a b^{-1} \) for \( b \ne 0 \). We write \( b > a \) to mean \( a < b \), and \( a \le b \) to mean "\( a < b \) or \( a = b \)". An element \( a \) is **positive** if \( a > 0 \) and **negative** if \( a < 0 \). It is **non-negative** if \( a \ge 0 \).
+The field axioms are the ones of the linear-algebra companion, Chapter 0, in the same numbering. We write \( a - b \coloneqq a + (-b) \) and \( a / b \coloneqq a b^{-1} \) for \( b \ne 0 \). We write \( b > a \) to mean \( a < b \), and \( a \le b \) to mean "\( a < b \) or \( a = b \)". An element \( a \) is **positive** if \( a > 0 \) and **negative** if \( a < 0 \). It is **nonnegative** if \( a \ge 0 \).
 
 In words, the four order axioms say:
 
@@ -106,7 +106,7 @@ The integers \( \nZ \), with the usual operations and order, satisfy (O1)–(O4)
 Axiom (F8) fails: \( 2 \ne 0 \), but no integer \( m \) has \( 2m = 1 \). Everything else holds, including all four order axioms. So \( \nZ \) is not an ordered field, although it is an "ordered ring". The failure matters as soon as we divide: the rule "if \( 0 < a < b \) then \( 1/b < 1/a \)" proved below has no meaning in \( \nZ \), because \( 1/a \) is not an integer unless \( a = 1 \).
 :::
 
-The two examples mark the scope of the definition. \( \nQ \) and \( \nR \) are the main examples, and the rest of the section is about what the axioms force in both. The complex numbers are the instructive non-example, and they appear as the first payoff of the next theorem.
+The two examples mark the scope of the definition. \( \nQ \) and \( \nR \) are the main examples, and the rest of the section is about what the axioms force in both. The complex numbers are the instructive nonexample, and they appear as the first payoff of the next theorem.
 
 ::: {.remark}
 Why state the order axioms with the strict relation \( < \) rather than with \( \le \)? Either could come first, since each can be defined from the other. We take \( < \) because analysis constantly asks whether a strict inequality **survives** an operation. Adding survives (O3); passing to a limit does not: a number that exceeds \( 1 - \varepsilon \) for every \( \varepsilon > 0 \) is only guaranteed to be \( \ge 1 \), not \( > 1 \). Keeping \( < \) primary keeps that question in view.
@@ -158,10 +158,10 @@ Every rule is proved by the same move: turn a comparison into a statement about 
 
 Three more rules of the same kind are @exr-ordered-fields-b1. With (a)–(h) in hand, every inequality manipulation in this chapter is justified by name. Part (h) looks modest, but it already tells us something structural: between any two elements of an ordered field there is a third, so an ordered field has no "next" element after any given one.
 
-The first payoff is a non-example. The complex numbers form a field, but no relation \( < \) on \( \nC \) satisfies (O1)–(O4). Indeed, if one did, then \( i \ne 0 \) would give \( i^2 > 0 \) by (e), that is, \( -1 > 0 \). But (e) also gives \( 1 > 0 \), and then (a) gives \( -1 < 0 \). Having both \( -1 > 0 \) and \( -1 < 0 \) contradicts trichotomy. So \( \nC \) is a field that cannot be ordered, and this is why the book compares real numbers and never complex ones.
+The first payoff is a nonexample. The complex numbers form a field, but no relation \( < \) on \( \nC \) satisfies (O1)–(O4). Indeed, if one did, then \( i \ne 0 \) would give \( i^2 > 0 \) by (e), that is, \( -1 > 0 \). But (e) also gives \( 1 > 0 \), and then (a) gives \( -1 < 0 \). Having both \( -1 > 0 \) and \( -1 < 0 \) contradicts trichotomy. So \( \nC \) is a field that cannot be ordered, and this is why the book compares real numbers and never complex ones.
 
 ::: {.warning}
-Inequalities may be **added** (part (b)) but not freely **multiplied**. From \( a \le b \) and \( c \le d \) it does **not** follow that \( ac \le bd \): take \( a = c = -3 \) and \( b = d = -1 \). Then \( a \le b \) and \( c \le d \), but \( ac = 9 \) and \( bd = 1 \). Multiplying an inequality needs the sign of the factor, as in (c) and (d), and multiplying two inequalities needs non-negativity, as in @exr-ordered-fields-b1.
+Inequalities may be **added** (part (b)) but not freely **multiplied**. From \( a \le b \) and \( c \le d \) it does **not** follow that \( ac \le bd \): take \( a = c = -3 \) and \( b = d = -1 \). Then \( a \le b \) and \( c \le d \), but \( ac = 9 \) and \( bd = 1 \). Multiplying an inequality needs the sign of the factor, as in (c) and (d), and multiplying two inequalities needs nonnegativity, as in @exr-ordered-fields-b1.
 :::
 
 ::: {.check}
@@ -174,7 +174,7 @@ No. In any ordered field \( 1 > 0 \) by @thm-ordered-field-rules (e), and then (
 
 ## Absolute value and distance
 
-In analysis, the question is almost never "is \( x \) equal to \( a \)?" but "how far is \( x \) from \( a \)?". An answer should be a non-negative number that ignores on which side of \( a \) the point \( x \) lies. The absolute value supplies it.
+In analysis, the question is almost never "is \( x \) equal to \( a \)?" but "how far is \( x \) from \( a \)?". An answer should be a nonnegative number that ignores on which side of \( a \) the point \( x \) lies. The absolute value supplies it.
 
 *\( \abs{x} \) is the size of \( x \) with its sign removed, and \( \abs{x - a} \) is the distance from \( x \) to \( a \).*
 
@@ -191,7 +191,7 @@ x & \text{if } x \ge 0, \\
 \]
 :::
 
-The definition is by cases, and trichotomy guarantees that exactly one case applies, so \( \abs{x} \) is well defined. For example \( \abs{3} = 3 \), \( \abs{-3} = -(-3) = 3 \), and \( \abs{0} = 0 \); the degenerate point \( 0 \) falls in the first case, and it is the only element of absolute value \( 0 \). A minimal change shows that the case split is doing real work: the rule "\( \abs{x} = x \) for all \( x \)" agrees with the definition on every non-negative \( x \) and fails at every negative one, where it would make \( \abs{-3} = -3 < 0 \).
+The definition is by cases, and trichotomy guarantees that exactly one case applies, so \( \abs{x} \) is well defined. For example \( \abs{3} = 3 \), \( \abs{-3} = -(-3) = 3 \), and \( \abs{0} = 0 \); the degenerate point \( 0 \) falls in the first case, and it is the only element of absolute value \( 0 \). A minimal change shows that the case split is doing real work: the rule "\( \abs{x} = x \) for all \( x \)" agrees with the definition on every nonnegative \( x \) and fails at every negative one, where it would make \( \abs{-3} = -3 < 0 \).
 
 The next proposition collects the facts about absolute value that we use constantly. Chapter 1 proved some of them by cases (@exm-triangle-inequality-cases begins with \( a \le \abs{a} \) and \( -a \le \abs{a} \)), taking the sign rules on trust; the sign rules are now @thm-ordered-field-rules.
 
@@ -215,7 +215,7 @@ The definition of \( \abs{x} \) has two cases, so each part is proved by checkin
 ::: {.proof}
 (a) If \( x \ge 0 \) then \( \abs{x} = x \ge 0 \), with equality exactly when \( x = 0 \). If \( x < 0 \) then \( \abs{x} = -x > 0 \) by @thm-ordered-field-rules (a).
 
-(b) If \( x > 0 \) then \( -x < 0 \), so \( \abs{-x} = -(-x) = x = \abs{x} \); if \( x < 0 \) then \( -x > 0 \), so \( \abs{-x} = -x = \abs{x} \); and \( \abs{-0} = \abs{0} \). For the product, both \( \abs{xy} \) and \( \abs{x}\abs{y} \) are one of the two elements \( xy \) and \( -xy \), since each absolute value is its argument up to sign. Both are non-negative: \( \abs{xy} \ge 0 \) by (a), and \( \abs{x}\abs{y} \ge 0 \) by (O4) when both factors are positive and trivially when one is \( 0 \). If \( xy = 0 \), both are \( 0 \). If \( xy \ne 0 \), then exactly one of \( xy \) and \( -xy \) is positive, by trichotomy and @thm-ordered-field-rules (a), so both must be that one. Either way \( \abs{xy} = \abs{x}\abs{y} \). Finally \( \abs{x}^2 = (\pm x)^2 = x^2 \).
+(b) If \( x > 0 \) then \( -x < 0 \), so \( \abs{-x} = -(-x) = x = \abs{x} \); if \( x < 0 \) then \( -x > 0 \), so \( \abs{-x} = -x = \abs{x} \); and \( \abs{-0} = \abs{0} \). For the product, both \( \abs{xy} \) and \( \abs{x}\abs{y} \) are one of the two elements \( xy \) and \( -xy \), since each absolute value is its argument up to sign. Both are nonnegative: \( \abs{xy} \ge 0 \) by (a), and \( \abs{x}\abs{y} \ge 0 \) by (O4) when both factors are positive and trivially when one is \( 0 \). If \( xy = 0 \), both are \( 0 \). If \( xy \ne 0 \), then exactly one of \( xy \) and \( -xy \) is positive, by trichotomy and @thm-ordered-field-rules (a), so both must be that one. Either way \( \abs{xy} = \abs{x}\abs{y} \). Finally \( \abs{x}^2 = (\pm x)^2 = x^2 \).
 
 (c) If \( x \ge 0 \), then \( x = \abs{x} \), and \( -\abs{x} = -x \le 0 \le x \). If \( x < 0 \), then \( -\abs{x} = x \), and \( x < 0 < -x = \abs{x} \).
 
@@ -277,7 +277,7 @@ The case-free proof is typical of what the axioms buy: once a fact such as \( -\
 The inequality in (a) can be strict: \( \abs{1 + (-1)} = 0 < 2 = \abs{1} + \abs{-1} \). Equality holds exactly when \( x \) and \( y \) do not have strictly opposite signs, that is, when \( xy \ge 0 \) (@exr-ordered-fields-b2).
 :::
 
-**Comparing by squaring.** Two absolute values can often be compared without any case split, by squaring. For non-negative \( a \) and \( b \), @thm-ordered-field-rules (g) says that \( a < b \) holds exactly when \( a^2 < b^2 \), and @prp-absolute-value-rules (b) gives \( \abs{u}^2 = u^2 \). For example, which \( x \) satisfy \( \abs{x - 2} < \abs{x} \)? Both sides are non-negative, so the inequality holds if and only if \( (x - 2)^2 < x^2 \), that is, \( x^2 - 4x + 4 < x^2 \). By (O3) this is \( 4 < 4x \), and multiplying by \( \frac14 > 0 \) gives \( x > 1 \). Every step was an equivalence, so the solution set is \( (1, \infty) \): the points closer to \( 2 \) than to \( 0 \).
+**Comparing by squaring.** Two absolute values can often be compared without any case split, by squaring. For nonnegative \( a \) and \( b \), @thm-ordered-field-rules (g) says that \( a < b \) holds exactly when \( a^2 < b^2 \), and @prp-absolute-value-rules (b) gives \( \abs{u}^2 = u^2 \). For example, which \( x \) satisfy \( \abs{x - 2} < \abs{x} \)? Both sides are nonnegative, so the inequality holds if and only if \( (x - 2)^2 < x^2 \), that is, \( x^2 - 4x + 4 < x^2 \). By (O3) this is \( 4 < 4x \), and multiplying by \( \frac14 > 0 \) gives \( x > 1 \). Every step was an equivalence, so the solution set is \( (1, \infty) \): the points closer to \( 2 \) than to \( 0 \).
 
 ## Where this leaves us
 
@@ -301,7 +301,7 @@ Everything proved so far holds in \( \nQ \) and in \( \nR \) equally. So none of
 ::: {.solution}
 (a) The first step is (O3), adding \( a \) to both sides of \( 0 < b \) (with (F1) to put \( a \) on the left). The second is (F3), the defining property of \( 0 \). The third is the hypothesis. The last is transitivity (O2): \( 0 < a \) and \( a < a + b \) give \( 0 < a + b \).
 
-(b) False. Take \( a = -2 \) and \( b = 1 \): then \( a < b \), but \( a^2 = 4 > 1 = b^2 \). @thm-ordered-field-rules (g) needs both numbers non-negative.
+(b) False. Take \( a = -2 \) and \( b = 1 \): then \( a < b \), but \( a^2 = 4 > 1 = b^2 \). @thm-ordered-field-rules (g) needs both numbers nonnegative.
 
 (c) True. If \( x \ge 0 \), then \( -x \le 0 \le x \), so the larger of \( x \) and \( -x \) is \( x = \abs{x} \). If \( x < 0 \), then \( x < 0 < -x \), so the larger is \( -x = \abs{x} \).
 
@@ -344,7 +344,7 @@ Let \( F \) be an ordered field and \( x, y, z \in F \).
 ::: {.solution}
 (a) Since \( x - z = (x - y) + (y - z) \), @thm-triangle-inequality (a) gives \( \abs{x - z} \le \abs{x - y} + \abs{y - z} \).
 
-(b) Both sides are non-negative, so by @thm-ordered-field-rules (g) they are equal if and only if their squares are equal (apply (g) in both directions and use trichotomy). Using @prp-absolute-value-rules (b),
+(b) Both sides are nonnegative, so by @thm-ordered-field-rules (g) they are equal if and only if their squares are equal (apply (g) in both directions and use trichotomy). Using @prp-absolute-value-rules (b),
 \[
 \abs{x + y}^2 = x^2 + 2xy + y^2,
 \qquad
@@ -367,7 +367,7 @@ Find all real \( x \) satisfying each inequality. Hence write each solution set 
 ::: {.solution}
 (a) By @prp-absolute-value-rules (d), the inequality holds if and only if \( -5 < 2x - 3 < 5 \). Adding \( 3 \) gives \( -2 < 2x < 8 \), and multiplying by \( \frac12 > 0 \) gives \( -1 < x < 4 \). Each step is reversible, so the solution set is \( (-1, 4) \).
 
-(b) Both sides are non-negative, so by @thm-ordered-field-rules (g) and @prp-absolute-value-rules (b) the inequality holds if and only if \( (x - 1)^2 < (x + 1)^2 \). Expanding, this is \( x^2 - 2x + 1 < x^2 + 2x + 1 \), which by (O3) is equivalent to \( 0 < 4x \), and by multiplying with \( \frac14 > 0 \) to \( x > 0 \). The solution set is \( (0, \infty) \): the points closer to \( 1 \) than to \( -1 \).
+(b) Both sides are nonnegative, so by @thm-ordered-field-rules (g) and @prp-absolute-value-rules (b) the inequality holds if and only if \( (x - 1)^2 < (x + 1)^2 \). Expanding, this is \( x^2 - 2x + 1 < x^2 + 2x + 1 \), which by (O3) is equivalent to \( 0 < 4x \), and by multiplying with \( \frac14 > 0 \) to \( x > 0 \). The solution set is \( (0, \infty) \): the points closer to \( 1 \) than to \( -1 \).
 :::
 
 ### C. Going deeper

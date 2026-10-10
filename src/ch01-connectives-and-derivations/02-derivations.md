@@ -61,7 +61,7 @@ In words, clause by clause.
 
 An instance first. Take \( i = 3 \), \( j = 5 \), \( k = 6 \), and replace \( a \) by \( 0 \), \( b \) by \( \tfrac12 \) and \( c \) by \( 1 \). The pattern becomes: line 3 is \( 0 < \tfrac12 \), line 5 is \( \tfrac12 < 1 \), and line 6 is \( 0 < 1 \), justified "\( \mathrm{Tr} \ 3, 5 \)". So if lines 3 and 5 of some list say exactly those things, line 6 may say \( 0 < 1 \) with that justification.
 
-Now a non-instance, by a minimal change. Keep line 3 as \( 0 < \tfrac12 \), and let line 5 be \( \tfrac13 < 1 \). Is "6. \( 0 < 1 \), \( \mathrm{Tr} \ 3, 5 \)" justified? Line 3 forces \( b \) to be \( \tfrac12 \), and line 5 forces \( b \) to be \( \tfrac13 \). The letter \( b \) cannot be both, so these lines are not an instance of the schema. Line 6 is true, but \( \mathrm{Tr} \) was not applied, so the line has no justification.
+Now a noninstance, by a minimal change. Keep line 3 as \( 0 < \tfrac12 \), and let line 5 be \( \tfrac13 < 1 \). Is "6. \( 0 < 1 \), \( \mathrm{Tr} \ 3, 5 \)" justified? Line 3 forces \( b \) to be \( \tfrac12 \), and line 5 forces \( b \) to be \( \tfrac13 \). The letter \( b \) cannot be both, so these lines are not an instance of the schema. Line 6 is true, but \( \mathrm{Tr} \) was not applied, so the line has no justification.
 
 The schema of \( \mathrm{Sh} \) has one given line:
 

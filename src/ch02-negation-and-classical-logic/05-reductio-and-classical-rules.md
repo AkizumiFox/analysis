@@ -178,7 +178,7 @@ Line 3 applies \( \rulename{\neg E} \) to the statement \( \neg P \) on line 2 a
 
 In both derivations, lines 2 and 3 form a box that opens with \( \neg P \) and reaches \( \bot \) by a clash with line 1. Only the rule that closes the box differs, and with it the last line. So the two directions are not mirror images: one needs only the rules for \( \neg \), and the derivation of the other uses the new rule.
 
-**Non-example by minimal change.** Change only the last line of (a), from \( \neg\neg P \) to \( P \), keeping the justification \( \rulename{\neg I}\ \lines{2}{3} \). Lines 1–3 still check. What fails is the conclusion of \( \rulename{\neg I} \), which must be the negation of the box's assumption, here \( \neg\neg P \). To write \( P \), the justification must be \( \rulename{RAA} \).
+**Nonexample by minimal change.** Change only the last line of (a), from \( \neg\neg P \) to \( P \), keeping the justification \( \rulename{\neg I}\ \lines{2}{3} \). Lines 1–3 still check. What fails is the conclusion of \( \rulename{\neg I} \), which must be the negation of the box's assumption, here \( \neg\neg P \). To write \( P \), the justification must be \( \rulename{RAA} \).
 
 From now on both parts are derived rules in the sense of @def-derived-rule. A line \( \neg\neg\varphi \) may be justified by "\( \rulename{\neg\neg I} \) \( i \)", citing a line \( \varphi \), and a line \( \varphi \) by "\( \rulename{\neg\neg E} \) \( i \)", citing a line \( \neg\neg\varphi \). The first stall of the list above is now one line: from \( \neg\neg(x > 0) \), \( \rulename{\neg\neg E} \) gives \( x > 0 \).
 
@@ -662,7 +662,7 @@ Written mathematics carries these rules in a handful of phrases. The Lean column
 ::: {.solution}
 (a) \( \rulename{\neg I} \): the box opened with "\( 7 \) is even", and the conclusion is its negation. (\( 7/2 \) is not an integer because \( 3 < 7/2 < 4 \).)
 
-(b) \( \rulename{RAA} \): the box opened with the negation of \( x^2 \ge 2x - 1 \), and the conclusion is \( x^2 \ge 2x - 1 \) itself. (The clash: \( x^2 < 2x - 1 \) rearranges to \( (x - 1)^2 < 0 \), and squares are non-negative.)
+(b) \( \rulename{RAA} \): the box opened with the negation of \( x^2 \ge 2x - 1 \), and the conclusion is \( x^2 \ge 2x - 1 \) itself. (The clash: \( x^2 < 2x - 1 \) rearranges to \( (x - 1)^2 < 0 \), and squares are nonnegative.)
 
 (c) Neither: this is \( \rulename{{\to}I} \). The box opened with \( P \) and ended with \( Q \); no \( \bot \) appears.
 

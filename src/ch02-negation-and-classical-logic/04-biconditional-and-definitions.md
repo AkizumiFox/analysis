@@ -326,7 +326,7 @@ This proves the theorem \( [\rulename{{\leftrightarrow}I}] \).
 Each hypothesis has a job. The direction \( (\Rightarrow) \) needs \( x \ge 0 \), and fails without it: \( x = -2 \), \( y = 1 \) gives \( x \le y \) but \( x^2 = 4 > 1 = y^2 \). (Its proof also multiplied by \( y \ge 0 \), but there \( y \ge 0 \) already follows from \( y \ge x \ge 0 \).) The direction \( (\Leftarrow) \) used only \( y \ge 0 \), and fails without it: \( x = 1 \), \( y = -2 \) gives \( x^2 = 1 \le 4 = y^2 \) but \( x > y \).
 :::
 
-A payoff comes at once. For \( a, b \ge 0 \), apply @thm-squares-order to \( x = \sqrt{a} \) and \( y = \sqrt{b} \): \( \sqrt{a} \le \sqrt{b} \) if and only if \( a \le b \). Taking square roots preserves order, a fact used constantly in estimates. (That square roots of non-negative numbers exist is a school fact here; Chapter 11 proves it from the least upper bound axiom.)
+A payoff comes at once. For \( a, b \ge 0 \), apply @thm-squares-order to \( x = \sqrt{a} \) and \( y = \sqrt{b} \): \( \sqrt{a} \le \sqrt{b} \) if and only if \( a \le b \). Taking square roots preserves order, a fact used constantly in estimates. (That square roots of nonnegative numbers exist is a school fact here; Chapter 11 proves it from the least upper bound axiom.)
 
 ::: {.check}
 Here is a proof of the statement "for a real number \( x \), \( x^2 = 1 \) if and only if \( x = 1 \) or \( x = -1 \)".
@@ -545,7 +545,7 @@ Let \( x \) and \( y \) be real numbers with \( x \ge 0 \) and \( y \ge 0 \). De
 :::
 
 ::: {.solution}
-Apply @thm-squares-order with the roles of \( x \) and \( y \) exchanged, which is allowed since both are non-negative: \( y \le x \) if and only if \( y^2 \le x^2 \). By @exm-iff-negations, with \( P \): "\( y \le x \)" and \( Q \): "\( y^2 \le x^2 \)", used as a derived rule (@def-derived-rule), we get: \( y \le x \) fails if and only if \( y^2 \le x^2 \) fails. By the fact quoted, the left side says \( x < y \) and the right side says \( x^2 < y^2 \). This proves that \( x < y \) if and only if \( x^2 < y^2 \).
+Apply @thm-squares-order with the roles of \( x \) and \( y \) exchanged, which is allowed since both are nonnegative: \( y \le x \) if and only if \( y^2 \le x^2 \). By @exm-iff-negations, with \( P \): "\( y \le x \)" and \( Q \): "\( y^2 \le x^2 \)", used as a derived rule (@def-derived-rule), we get: \( y \le x \) fails if and only if \( y^2 \le x^2 \) fails. By the fact quoted, the left side says \( x < y \) and the right side says \( x^2 < y^2 \). This proves that \( x < y \) if and only if \( x^2 < y^2 \).
 :::
 
 ### C. Going deeper

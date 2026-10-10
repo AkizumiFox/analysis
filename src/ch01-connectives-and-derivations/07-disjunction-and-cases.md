@@ -272,7 +272,7 @@ The answer to the prompt: the boxes end on lines 6 and 9, both \( (P \wedge Q) \
 
 In the second derivation, line 8 derives \( P \) a second time instead of citing line 3. It has to: line 3 lies in the box \( \lines{2}{6} \), which has closed, so line 3 is not available at line 8. Each case must earn its own \( P \).
 
-For a real number \( x \), take \( P \): "\( x \ne 0 \)", \( Q \): "\( x > 0 \)" and \( R \): "\( x < 0 \)". The first sequent then reads: a non-zero number that is positive or negative is a positive non-zero number or a negative non-zero number. The law is dull in words, which is as it should be. Its use is in derivations, where it moves a case split from inside a conjunction to the outside, and in the laws of sets, where "and" and "or" become intersection and union.
+For a real number \( x \), take \( P \): "\( x \ne 0 \)", \( Q \): "\( x > 0 \)" and \( R \): "\( x < 0 \)". The first sequent then reads: a nonzero number that is positive or negative is a positive nonzero number or a negative nonzero number. The law is dull in words, which is as it should be. Its use is in derivations, where it moves a case split from inside a conjunction to the outside, and in the laws of sets, where "and" and "or" become intersection and union.
 
 The next derivation shows a case split **inside** a case: \( \rulename{\vee E} \) applied within one box of another \( \rulename{\vee E} \).
 

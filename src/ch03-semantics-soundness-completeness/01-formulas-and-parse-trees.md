@@ -401,7 +401,7 @@ The replacement must be **uniform**. Replacing only the first \( P \) of the der
 [A1]
 
 ::: {.enumerate options="label=(\alph*)"}
-1. Decide which of the following strings are formulas. Give a formation sequence for each formula, and for each non-formula name the test or clause it fails: (i) \( (p \vee \bot) \); (ii) \( \neg\neg p \); (iii) \( (p \neg q) \); (iv) \( ((p \to q)) \); (v) \( (p \wedge q \wedge r) \).
+1. Decide which of the following strings are formulas. Give a formation sequence for each formula, and for each nonformula name the test or clause it fails: (i) \( (p \vee \bot) \); (ii) \( \neg\neg p \); (iii) \( (p \neg q) \); (iv) \( ((p \to q)) \); (v) \( (p \wedge q \wedge r) \).
 2. List the subformulas of \( (\neg(p \to q) \vee q) \) and give its height.
 3. True or false, with a reason: every subformula of \( \varphi \) other than \( \varphi \) itself has smaller height than \( \varphi \).
 4. Why does clause (F3) of @def-formula put parentheses around its result, while (F2) does not?

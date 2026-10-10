@@ -33,7 +33,7 @@ A **statement** is a declarative sentence that is **either true or false**, and 
 In words: a statement makes a claim, and the claim is either correct or incorrect. The definition asks that one of the two is the case. It does **not** ask that we know which one. A statement whose truth nobody has settled is still a statement.
 
 ::: {#exm-statements}
-[Statements and non-statements]
+[Statements and nonstatements]
 
 Decide which of the following are statements.
 
@@ -107,7 +107,7 @@ Translating into symbols is a skill of its own, best learned slowly, in three st
 
 Take "if \( 12 \) is divisible by \( 3 \) and by \( 4 \), then \( 12 \) is divisible by \( 6 \)". The atomic statements are \( P \): "\( 12 \) is divisible by \( 3 \)", \( Q \): "\( 12 \) is divisible by \( 4 \)" and \( R \): "\( 12 \) is divisible by \( 6 \)". English lets "\( 12 \) is divisible by" be said once and shared; logic writes each piece in full. The words "if … then" carry \( \to \), and "and" carries \( \wedge \). The hypothesis is everything between "if" and "then", so the statement is \( (P \wedge Q) \to R \), not \( P \wedge (Q \to R) \). The second reading would claim \( P \) outright, and the English sentence claims nothing outright: it only says what follows from what.
 
-A second example shows a connective hidden inside a word. Let \( x \) be a real number, and read "\( x \) is non-zero, and if \( x \) is positive, then so is \( x^3 \)". With \( Z \): "\( x = 0 \)", \( P \): "\( x > 0 \)" and \( C \): "\( x^3 > 0 \)", "non-zero" is \( \neg Z \), and the whole sentence is \( \neg Z \wedge (P \to C) \). Letters that recall their statements, as here, often help; a letter is only a name.
+A second example shows a connective hidden inside a word. Let \( x \) be a real number, and read "\( x \) is nonzero, and if \( x \) is positive, then so is \( x^3 \)". With \( Z \): "\( x = 0 \)", \( P \): "\( x > 0 \)" and \( C \): "\( x^3 > 0 \)", "nonzero" is \( \neg Z \), and the whole sentence is \( \neg Z \wedge (P \to C) \). Letters that recall their statements, as here, often help; a letter is only a name.
 
 In both examples the English word order is a poor guide to the grouping. When in doubt, ask of each connective: which two statements does it join?
 
@@ -384,7 +384,7 @@ Let \( P \) and \( Q \) be statements.
 
 The second is \( (x^2 = 4) \to (x = 2) \), the same two parts in the opposite direction. It is false for \( x = -2 \), where \( x^2 = 4 \) but \( x \ne 2 \).
 
-The third is \( \neg(x = 0) \to (x^2 > 0) \), by (b). It is true for every \( x \): a non-zero real number is positive or negative, and in both cases its square is positive.
+The third is \( \neg(x = 0) \to (x^2 > 0) \), by (b). It is true for every \( x \): a nonzero real number is positive or negative, and in both cases its square is positive.
 
 The first two sentences differ by one word, and they are implications in opposite directions. Confusing them is exactly the mistake of Argument B at the start of this section.
 :::

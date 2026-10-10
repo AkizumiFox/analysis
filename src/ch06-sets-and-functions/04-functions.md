@@ -42,7 +42,7 @@ which Section 6.6 will call the image of \( X \) and write \( f(X) \). The domai
 \]
 For \( (\Leftarrow) \): \( (x, f(x)) \in f \) by the choice of \( f(x) \), and if \( y = f(x) \) then \( (x, y) \in f \) by substituting equals (\( \rulename{=E} \)). For \( (\Rightarrow) \): both \( (x, y) \) and \( (x, f(x)) \) lie in \( f \), so \( y = f(x) \) by (F2). Two consequences follow at once. Equal inputs give equal outputs: if \( x_1 = x_2 \), then \( f(x_1) = f(x_2) \). And every value lies in the codomain: \( f(x) \in Y \) for every \( x \in X \).
 
-**Functions given by formulas.** Most functions in this book are introduced by a formula: "let \( f \colon \nR \to \nR \), \( f(x) = x^2 \)". This means the function whose graph is \( \{ (x, y) \in \nR^2 : y = x^2 \} \). Clause (F2) holds for any such graph: if \( y = x^2 \) and \( y' = x^2 \), then \( y = y' \). So for a formula only (F1) needs checking, and it says: for each \( x \) in the domain, the formula **makes sense** and its value **lies in the codomain**. For \( x^2 \) on \( \nR \) both are clear. For "\( f \colon \nR \to \nR \), \( f(x) = 1/x \)" the formula makes no sense at \( x = 0 \), and (F1) fails there; for "\( f \colon \nR \to [0, \infty) \), \( f(x) = x^2 \)" the value must be checked to lie in \( [0, \infty) \), which it does, since squares are non-negative.
+**Functions given by formulas.** Most functions in this book are introduced by a formula: "let \( f \colon \nR \to \nR \), \( f(x) = x^2 \)". This means the function whose graph is \( \{ (x, y) \in \nR^2 : y = x^2 \} \). Clause (F2) holds for any such graph: if \( y = x^2 \) and \( y' = x^2 \), then \( y = y' \). So for a formula only (F1) needs checking, and it says: for each \( x \) in the domain, the formula **makes sense** and its value **lies in the codomain**. For \( x^2 \) on \( \nR \) both are clear. For "\( f \colon \nR \to \nR \), \( f(x) = 1/x \)" the formula makes no sense at \( x = 0 \), and (F1) fails there; for "\( f \colon \nR \to [0, \infty) \), \( f(x) = x^2 \)" the value must be checked to lie in \( [0, \infty) \), which it does, since squares are nonnegative.
 
 A function whose domain is a product \( A \times B \) is a **function of two variables**. Its inputs are pairs, and we write \( f(a, b) \) rather than \( f((a, b)) \). Addition \( (m, n) \mapsto m + n \) from \( \nN \times \nN \) to \( \nN \) is an example.
 
@@ -147,7 +147,7 @@ Decide which of these functions are equal.
 ::: {.solution}
 (a) Equal. The domains are both \( \nR \) and the codomains both \( \nR \). For every real \( x \), \( (x + 1)^2 - 2x - 1 = x^2 + 2x + 1 - 2x - 1 = x^2 \). By @prp-function-equality, \( f = g \): two rules, one function.
 
-(b) Equal. Same domain and codomain, and for every real \( x \), \( \sqrt{x^2} = \abs{x} \): the number \( \abs{x} \) is non-negative and its square is \( x^2 \), and \( \sqrt{x^2} \) is by definition the non-negative number with square \( x^2 \), which is unique by @thm-squares-order.
+(b) Equal. Same domain and codomain, and for every real \( x \), \( \sqrt{x^2} = \abs{x} \): the number \( \abs{x} \) is nonnegative and its square is \( x^2 \), and \( \sqrt{x^2} \) is by definition the nonnegative number with square \( x^2 \), which is unique by @thm-squares-order.
 
 (c) Not equal. They have the same domain, the same values, and even the same graph; but their codomains \( \nR \) and \( [0, \infty) \) are different sets (\( -1 \) is in one and not the other), so by @prp-function-equality \( s_1 \ne s_2 \).
 :::
@@ -198,7 +198,7 @@ The empty set gives the degenerate cases, and they are worth settling now, since
 
 (a) For every set \( Y \) there is exactly one function from \( \emptyset \) to \( Y \): the pair \( (\emptyset, Y) \), called the **empty function**.
 
-(b) If \( X \) is non-empty (it has an element), there is no function from \( X \) to \( \emptyset \).
+(b) If \( X \) is nonempty (it has an element), there is no function from \( X \) to \( \emptyset \).
 :::
 
 ::: {.proof}
@@ -209,7 +209,7 @@ The empty set gives the degenerate cases, and they are worth settling now, since
 (b) Let \( x_0 \in X \), and suppose \( f \colon X \to \emptyset \) were a function. By (F1) there would be \( y \in \emptyset \) with \( (x_0, y) \in f \); but \( \emptyset \) has no elements. So there is no such function \( [\rulename{\neg I}] \).
 :::
 
-In the notation \( Y^X \): the set \( Y^{\emptyset} \) has exactly one element for every \( Y \), including \( Y = \emptyset \); and \( \emptyset^X = \emptyset \) whenever \( X \) is non-empty. The empty function \( \emptyset \to Y \) returns in Section 6.5 as the witness that a hypothesis there cannot be dropped.
+In the notation \( Y^X \): the set \( Y^{\emptyset} \) has exactly one element for every \( Y \), including \( Y = \emptyset \); and \( \emptyset^X = \emptyset \) whenever \( X \) is nonempty. The empty function \( \emptyset \to Y \) returns in Section 6.5 as the witness that a hypothesis there cannot be dropped.
 
 ## Composition
 
@@ -388,9 +388,9 @@ For each of the three functions, settle both questions: injective or not, surjec
 ::: {.solution}
 (a) *Not injective:* \( q_1(1) = 1 = q_1(-1) \) and \( 1 \ne -1 \). *Not surjective:* the witness is \( -1 \in \nR \), since \( x^2 \ge 0 > -1 \) for every real \( x \). So \( q_1 \) is neither.
 
-(b) *Injective.* Let \( x_1, x_2 \ge 0 \) with \( x_1^2 = x_2^2 \). Then \( x_1^2 \le x_2^2 \), so \( x_1 \le x_2 \) by @thm-squares-order, which applies since both numbers are non-negative; and likewise \( x_2 \le x_1 \). Hence \( x_1 = x_2 \). *Not surjective:* the witness \( -1 \) still works, for the same reason.
+(b) *Injective.* Let \( x_1, x_2 \ge 0 \) with \( x_1^2 = x_2^2 \). Then \( x_1^2 \le x_2^2 \), so \( x_1 \le x_2 \) by @thm-squares-order, which applies since both numbers are nonnegative; and likewise \( x_2 \le x_1 \). Hence \( x_1 = x_2 \). *Not surjective:* the witness \( -1 \) still works, for the same reason.
 
-(c) *Injective*, by the same proof as in (b): injectivity concerns only the domain and the values, and these are the same as for \( q_2 \). *Surjective.* Let \( y \in [0, \infty) \). A non-negative real number has a non-negative square root, so put \( x \coloneqq \sqrt{y} \). Then \( x \in [0, \infty) \) and \( q_3(x) = (\sqrt{y})^2 = y \). So \( q_3 \) is bijective.
+(c) *Injective*, by the same proof as in (b): injectivity concerns only the domain and the values, and these are the same as for \( q_2 \). *Surjective.* Let \( y \in [0, \infty) \). A nonnegative real number has a nonnegative square root, so put \( x \coloneqq \sqrt{y} \). Then \( x \in [0, \infty) \) and \( q_3(x) = (\sqrt{y})^2 = y \). So \( q_3 \) is bijective.
 
 The same rule gives three different functions. Shrinking the domain from \( \nR \) to \( [0, \infty) \) removed the two witnesses \( \pm 1 \) against injectivity. Shrinking the codomain to \( [0, \infty) \) removed the witness \( -1 \) against surjectivity. The graphs of \( q_2 \) and \( q_3 \) are the same set; only the declared codomain differs, and surjectivity changes with it.
 :::
@@ -538,7 +538,7 @@ Determine which of the following are injective, which are surjective, and which 
 \qquad
 x_1^2 + x_1 x_2 + x_2^2 = \bigl(x_1 + \tfrac12 x_2\bigr)^2 + \tfrac34 x_2^2 .
 \]
-If \( x_1 \ne x_2 \), the second factor is positive: if \( x_2 \ne 0 \), then \( \tfrac34 x_2^2 > 0 \); if \( x_2 = 0 \), it equals \( x_1^2 > 0 \), because \( x_1 \ne 0 \). Then the product is non-zero, a contradiction. So \( x_1 = x_2 \). *Surjective:* for \( y \in \nR \), every real number has a real cube root, and \( x \coloneqq \sqrt[3]{y} \) satisfies \( x^3 = y \). So the function is bijective.
+If \( x_1 \ne x_2 \), the second factor is positive: if \( x_2 \ne 0 \), then \( \tfrac34 x_2^2 > 0 \); if \( x_2 = 0 \), it equals \( x_1^2 > 0 \), because \( x_1 \ne 0 \). Then the product is nonzero, a contradiction. So \( x_1 = x_2 \). *Surjective:* for \( y \in \nR \), every real number has a real cube root, and \( x \coloneqq \sqrt[3]{y} \) satisfies \( x^3 = y \). So the function is bijective.
 
 (d) *A function:* for every \( x \), \( 1 + \abs{x} > 0 \), and \( \abs{x / (1 + \abs{x})} = \abs{x}/(1 + \abs{x}) < 1 \), so the value lies in \( (-1, 1) \). *Injective.* Suppose \( y = x/(1 + \abs{x}) \); we solve for \( x \). Taking absolute values, \( \abs{y} = \abs{x}/(1 + \abs{x}) \), so \( \abs{y}(1 + \abs{x}) = \abs{x} \), that is, \( \abs{x} = \abs{y}/(1 - \abs{y}) \), and then \( 1 + \abs{x} = 1/(1 - \abs{y}) \). Hence
 \[

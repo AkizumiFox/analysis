@@ -206,7 +206,7 @@ The answer to the prompt: the first step uses the clauses "no premise" and "no o
 
 The \( \exists \)E case uses the same move with the opposite purpose. There the value of \( x_0 \) is **not** arbitrary; it is set to the witness \( d \). What makes that legitimate is that nothing else knows about \( x_0 \) (condition (i)), and that the result \( \chi \) forgets it again (condition (iii)).
 
-## Counter-models prove non-derivability
+## Counter-models prove nonderivability {#counter-models-prove-non-derivability}
 
 The corollary is the one Section 4.11 used, now with a proof.
 
@@ -310,9 +310,9 @@ Line \( k \) is \( \exists x\, \varphi \), by \( \exists \)I citing a line \( i 
 :::
 
 ::: {#exr-first-order-soundness-b2}
-[B2: Three non-derivability results]
+[B2: Three nonderivability results]
 
-Use the following counter-models from Section 4.11 to state three non-derivability results, citing @cor-counter-model, and check in each case that the structure (and assignment) satisfy every premise and not the conclusion.
+Use the following counter-models from Section 4.11 to state three nonderivability results, citing @cor-counter-model, and check in each case that the structure (and assignment) satisfy every premise and not the conclusion.
 
 ::: {.enumerate options="label=(\alph*)"}
 1. The two-element structure of @exm-counter-model-swap.
