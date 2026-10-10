@@ -60,7 +60,7 @@ There is a second way to turn "\( x \) is positive" into a statement, and the fi
 
 Two questions have to be answered before "whatever is put in" makes sense. What may be put in? And how many of those things must make the sentence true?
 
-The first question is answered by a **domain of discourse**, or **domain**: the collection of objects that the variables range over. For the argument above, the domain is the real numbers, \( \nR \). In number theory it is often \( \nZ \) or \( \nN \) (in this book \( \nN = \{1, 2, 3, \dots\} \), without \( 0 \)). A domain always has at least one element; Section 4.11 explains why the book insists on this, and how it handles the empty set instead.
+The first question is answered by a **domain of discourse**, or **domain**: the collection of objects that the variables range over. For the argument above, the domain is the real numbers, \( \nR \). In number theory it is often \( \nZ \) or \( \nN \) (in this book \( \nN = \{0, 1, 2, \dots\} \), with \( 0 \)). A domain always has at least one element; Section 4.11 explains why the book insists on this, and how it handles the empty set instead.
 
 The second question is answered by the **quantifier**.
 
@@ -91,7 +91,7 @@ A quantified sentence is a claim about its domain, so changing the domain can ch
 
 Take \( \forall x\, (x \ge 0) \), "every \( x \) is at least \( 0 \)".
 
-- Over \( \nN \) it is **true**: every natural number is \( 1 \) or more, so at least \( 0 \).
+- Over \( \nN \) it is **true**: every natural number is at least \( 0 \).
 - Over \( \nZ \) it is **false**: the integer \( -1 \) is in the domain, and \( -1 \ge 0 \) is false.
 
 One element of the domain that makes \( \varphi \) false is enough to make \( \forall x\, \varphi \) false. Such an element is a **counterexample**. To show that the sentence is true over \( \nN \), on the other hand, we had to say something about every natural number at once.
@@ -110,7 +110,7 @@ Over which of the domains \( \nN \), \( \nZ \), \( \nR \) is the sentence \( \ex
 :::
 
 ::: {.solution}
-Only \( x = 0 \) satisfies \( x + x = x \), since subtracting \( x \) from both sides gives \( x = 0 \). So the sentence is true over \( \nZ \) and over \( \nR \), with the witness \( 0 \), and false over \( \nN \), which does not contain \( 0 \): every natural number \( n \) has \( n + n > n \).
+Only \( x = 0 \) satisfies \( x + x = x \), since subtracting \( x \) from both sides gives \( x = 0 \). So the sentence is true over all three domains, with the witness \( 0 \) in each: \( \nN \) contains \( 0 \). There is no domain among the three where it is false.
 :::
 
 ### Reading a quantified sentence
@@ -132,7 +132,7 @@ Read each sentence aloud, say what it claims, and decide whether it is true over
 ::: {.solution}
 *(a)* "For every \( x \), \( x^2 \) is at least \( 0 \)." The claim is about every real number, and it is true: the square of a real number is never negative (a school fact about signs: \( x \cdot x \) is a product of two numbers of the same sign, or \( 0 \)).
 
-*(b)* "There is an \( x \) such that for every \( y \), \( x \le y \)." Unpack from the outside. The outer quantifier \( \exists x \) asks for one natural number \( x \). What must be true of it is the inside, \( \forall y\, (x \le y) \): every natural number \( y \) is at least \( x \). So the sentence says that \( \nN \) has a **least element**. It is true, with the witness \( x = 1 \): every natural number is at least \( 1 \).
+*(b)* "There is an \( x \) such that for every \( y \), \( x \le y \)." Unpack from the outside. The outer quantifier \( \exists x \) asks for one natural number \( x \). What must be true of it is the inside, \( \forall y\, (x \le y) \): every natural number \( y \) is at least \( x \). So the sentence says that \( \nN \) has a **least element**. It is true, with the witness \( x = 0 \): every natural number is at least \( 0 \).
 
 *(c)* The outer symbol is \( \neg \), so the sentence denies what follows. What follows is \( \exists p\, (\dots) \): there is a \( p \) that is prime and such that every prime \( q \) is at most \( p \). Such a \( p \) would be a **largest prime**. So the sentence says "there is no largest prime". It is true: this is the ancient theorem that there are infinitely many primes. Nothing in this book depends on that theorem; here it is only something to read.
 
@@ -271,11 +271,11 @@ We can now read quantified sentences and decide, as mathematicians, whether they
 
 (ii) "There is an \( x \) with \( x + 1 = 0 \)." The only solution is \( x = -1 \). False over \( \nN \), which does not contain \( -1 \); true over \( \nZ \) and \( \nR \), with the witness \( -1 \).
 
-(iii) "For every \( x \) there is a \( y \) smaller than \( x \)." False over \( \nN \): for \( x = 1 \) there is no natural number \( y < 1 \). True over \( \nZ \) and \( \nR \): given \( x \), take \( y = x - 1 \).
+(iii) "For every \( x \) there is a \( y \) smaller than \( x \)." False over \( \nN \): for \( x = 0 \) there is no natural number \( y < 0 \). True over \( \nZ \) and \( \nR \): given \( x \), take \( y = x - 1 \).
 
 (iv) "There is an \( x \) with \( 2x = 1 \)." The only solution is \( x = \frac{1}{2} \). False over \( \nN \) and \( \nZ \), true over \( \nR \) with the witness \( \frac{1}{2} \).
 
-(v) "For every \( x \), \( x \cdot x \) is at least \( x \)." True over \( \nN \): if \( x \ge 1 \), then \( x \cdot x \ge 1 \cdot x = x \). True over \( \nZ \): an integer is either at least \( 1 \), as before, or at most \( 0 \), and then \( x \cdot x \ge 0 \ge x \). False over \( \nR \): the counterexample \( x = \frac{1}{2} \) has \( x \cdot x = \frac{1}{4} < \frac{1}{2} \).
+(v) "For every \( x \), \( x \cdot x \) is at least \( x \)." True over \( \nN \): if \( x = 0 \), then \( x \cdot x = 0 = x \); if \( x \ge 1 \), then \( x \cdot x \ge 1 \cdot x = x \). True over \( \nZ \): an integer is either at least \( 1 \), as before, or at most \( 0 \), and then \( x \cdot x \ge 0 \ge x \). False over \( \nR \): the counterexample \( x = \frac{1}{2} \) has \( x \cdot x = \frac{1}{4} < \frac{1}{2} \).
 
 *(b)* (ii) is the translation (@def-bounded-quantifier: \( \wedge \) under \( \exists \)). (i) is true as soon as some real number lies outside \( A \), since that number makes the implication vacuously true; so it can be true when no element of \( A \) is negative (for \( A = \{1\} \), say). (iii) claims that every real number is in \( A \) and negative, which is false whatever \( A \) is (take \( x = 0 \)).
 
@@ -302,7 +302,7 @@ Determine which of the following sentences are true over the domain given. Justi
 ::: {.solution}
 *(a)* True. Given any natural number \( x \), the natural number \( y = x + 1 \) satisfies \( x < y \). The witness depends on \( x \), which the order \( \forall x\, \exists y \) allows.
 
-*(b)* False. The challenger chooses \( x = 1 \). Then \( x + y = 1 \) forces \( y = 0 \), which is not a natural number (\( \nN = \{1, 2, 3, \dots\} \)); every natural \( y \) gives \( 1 + y \ge 2 \). So for \( x = 1 \) no \( y \) works. (Over \( \nZ \) the sentence would be true, with \( y = 1 - x \).)
+*(b)* False. The challenger chooses \( x = 2 \). Then \( x + y = 1 \) forces \( y = -1 \), which is not a natural number; every natural \( y \) gives \( 2 + y \ge 2 \). So for \( x = 2 \) no \( y \) works. (For \( x = 0 \) and \( x = 1 \) the witnesses \( y = 1 \) and \( y = 0 \) do exist, so the challenger must choose with care.) (Over \( \nZ \) the sentence would be true, with \( y = 1 - x \).)
 
 *(c)* True, with the witness \( x = 1 \): for every real \( y \), \( 1 \cdot y = y \). The witness is chosen first and does not depend on \( y \), as the order \( \exists x\, \forall y \) demands.
 
@@ -341,7 +341,7 @@ Decide whether \( \exists x\, \forall y\, (x \le y) \) is true over each of the 
 ::: {.solution}
 The sentence says that the domain has a **least element**: one \( x \) that is at most every element \( y \).
 
-*Over \( \nN \): true*, with the witness \( x = 1 \). Every natural number \( y \) satisfies \( 1 \le y \).
+*Over \( \nN \): true*, with the witness \( x = 0 \). Every natural number \( y \) satisfies \( 0 \le y \).
 
 *Over \( \nZ \): false.* Let \( x \) be any integer. The integer \( y = x - 1 \) satisfies \( y < x \), so \( x \le y \) fails. No integer is least.
 

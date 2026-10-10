@@ -1,6 +1,6 @@
 """def-satisfaction and the text around it (Section 4.11): term values in the arithmetic
 structure on R; the trace of forall x exists y (x < y) in N and in {1, 2, 3}; forall y (x <= y)
-in N under l(x) = 1 and l(x) = 2; the one-element structure; the Quick check on
+in N under l(x) = 0 and l(x) = 1; the one-element structure; the Quick check on
 forall x exists y (y * y = x) in R, [0, oo), C."""
 import cmath
 import itertools
@@ -32,12 +32,12 @@ assert not sat(phi, M3, {})
 fails = [d for d in D3 if not sat(EX("y", P("<", "x", "y")), M3, {"x": d})]
 assert fails == [QUOTED["failing element in {1,2,3}"]]
 
-# N: the witness d + 1 is in N and larger, checked for d = 1..10000
-assert all(d + 1 >= 1 and d < d + 1 for d in range(1, 10001))
+# N: the witness d + 1 is in N and larger, checked for d = 0..10000
+assert all(d + 1 >= 0 and d < d + 1 for d in range(0, 10001))
 
-# forall y (x <= y) in N: with l(x) = 1 true (1 <= e for all e >= 1); with l(x) = 2 false at e = 1
-assert all(1 <= e for e in range(1, 10001))
-assert not (2 <= 1)
+# forall y (x <= y) in N: with l(x) = 0 true (0 <= e for all e >= 0); with l(x) = 1 false at e = 0
+assert all(0 <= e for e in range(0, 10001))
+assert not (1 <= 0)
 
 # one-element structure: forall and exists agree, x = y always satisfied
 for Pset in [set(), {("a",)}]:

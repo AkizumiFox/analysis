@@ -20,5 +20,5 @@ assert t3 == s2 and shape(s1) == shape(s2)
 swap = Ex('y', All('x', At('<', x, y)))
 assert shape(swap) != shape(s1)
 # over N (initial segment), the first true with y = x + 1, the swap false with x = y
-assert all(xx < xx + 1 for xx in range(1, 100)) and all(not (yy < yy) for yy in range(1, 100))
+assert all(xx < xx + 1 for xx in range(0, 100)) and all(not (yy < yy) for yy in range(0, 100))
 print("exr-terms-formulas-substitution-c2: all quoted values check")

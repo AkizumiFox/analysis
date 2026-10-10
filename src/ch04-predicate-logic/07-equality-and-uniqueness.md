@@ -267,16 +267,16 @@ In words: there is an \( x \) that satisfies \( \varphi \), and every \( y \) th
 
 **Well-definedness.** The abbreviation seems to depend on the choice of \( y \). It does not, up to renaming a bound variable (Section 4.2): two admissible choices \( y \) and \( y' \) give \( \forall y\, (\varphi[y/x] \to y = x) \) and \( \forall y'\, (\varphi[y'/x] \to y' = x) \), and the second is the first with its bound \( y \) renamed \( y' \).
 
-**Why \( y \) must not occur in \( \varphi \).** The condition keeps the new quantifier \( \forall y \) from capturing anything of \( \varphi \)'s own. Take \( \varphi = (x \le y) \), in which \( y \) is free, and read over \( \nN \) with \( y \) naming \( 1 \). "There is exactly one natural number \( x \) with \( x \le 1 \)" is true: \( x = 1 \). The formula written with the forbidden bound variable \( y \) is
+**Why \( y \) must not occur in \( \varphi \).** The condition keeps the new quantifier \( \forall y \) from capturing anything of \( \varphi \)'s own. Take \( \varphi = (x \le y) \), in which \( y \) is free, and read over \( \nN \) with \( y \) naming \( 0 \). "There is exactly one natural number \( x \) with \( x \le 0 \)" is true: \( x = 0 \). The formula written with the forbidden bound variable \( y \) is
 \[
 \exists x\, \bigl( x \le y \wedge \forall y\, (y \le y \to y = x) \bigr),
 \]
-because \( (x \le y)[y/x] \) is \( y \le y \). Its second conjunct says that **every** natural number equals \( x \), which is false. The free \( y \) of \( \varphi \), which was to name \( 1 \), has been captured by \( \forall y \). With an admissible variable, say \( z \), the formula is \( \exists x\, \bigl( x \le y \wedge \forall z\, (z \le y \to z = x) \bigr) \), which is true.
+because \( (x \le y)[y/x] \) is \( y \le y \). Its second conjunct says that **every** natural number equals \( x \), which is false. The free \( y \) of \( \varphi \), which was to name \( 0 \), has been captured by \( \forall y \). With an admissible variable, say \( z \), the formula is \( \exists x\, \bigl( x \le y \wedge \forall z\, (z \le y \to z = x) \bigr) \), which is true.
 
 **Examples.** Simplest first; each is read over the domain named, with the informal truth of Section 4.1.
 
 1. Over \( \nR \), \( \exists! x\, (x + 2 = 5) \) is true. *Existence:* \( 3 + 2 = 5 \). *Uniqueness:* if \( y + 2 = 5 \), then subtracting \( 2 \) gives \( y = 3 \), so \( y \) is the \( x \) already found.
-2. Over \( \nN \), \( \exists! x\, (x \cdot x = 4) \) is true. *Existence:* \( 2 \cdot 2 = 4 \). *Uniqueness:* for a natural number \( y \), if \( y = 1 \) then \( y \cdot y = 1 \), and if \( y \ge 3 \) then \( y \cdot y \ge 9 \); so \( y \cdot y = 4 \) forces \( y = 2 \).
+2. Over \( \nN \), \( \exists! x\, (x \cdot x = 4) \) is true. *Existence:* \( 2 \cdot 2 = 4 \). *Uniqueness:* for a natural number \( y \), if \( y \le 1 \) then \( y \cdot y \le 1 \), and if \( y \ge 3 \) then \( y \cdot y \ge 9 \); so \( y \cdot y = 4 \) forces \( y = 2 \).
 3. Over \( \nR \), \( \exists! x\, \forall y\, (x + y = y) \) is true: \( 0 \) is the **unique** additive identity. *Existence:* \( 0 + y = y \) for every \( y \). *Uniqueness:* suppose \( z + y = y \) for every \( y \). Apply this to the one instance \( y = 0 \) (by \( \rulename{\forall E} \)): \( z + 0 = 0 \). Since also \( z + 0 = z \), symmetry and transitivity give \( z = 0 \). The whole uniqueness proof is the choice of the instance \( y = 0 \).
 4. **Degenerate.** For any constant \( c \), \( \exists! x\, (x = c) \) holds in every domain, and it is derivable from no premises (the derivation follows). By contrast, \( \exists! x\, (x = x) \) says that the domain has exactly one element, which is false in \( \nN \), \( \nZ \) and \( \nR \): existence holds and uniqueness fails.
 

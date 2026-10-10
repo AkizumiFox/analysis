@@ -41,9 +41,9 @@ q = And(At('P', x), Ex('y', At('Q', y)))
 assert free_for(y, 'x', q) and sub(q, y, 'x') == And(At('P', y), Ex('y', At('Q', y)))
 # renaming without the condition changes meaning: forall y (y >= z) -> forall z (z >= z)
 assert occurs('z', At('>=', y, z))
-# over N: forall y (y >= z) true iff z = 1 (checked on a finite initial segment)
-Nn = range(1, 50)
-assert [zz for zz in range(1, 10) if all(yy >= zz for yy in Nn)] == [1]
+# over N: forall y (y >= z) true iff z = 0 (checked on a finite initial segment)
+Nn = range(0, 50)
+assert [zz for zz in range(0, 10) if all(yy >= zz for yy in Nn)] == [0]
 # phi[x/x] = phi and the claim "x not free => phi[t/x] = phi" on random formulas
 import random
 random.seed(1)

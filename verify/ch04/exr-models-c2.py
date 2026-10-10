@@ -11,6 +11,6 @@ for n in range(1, 5):
         trans = all((a, c) in R for (a, b) in R for (b2, c) in R if b == b2)
         nolargest = all(any((d, e) in R for e in D) for d in D)
         assert not (trans and nolargest)
-W = range(1, 40)
+W = range(0, 40)
 assert all(not d < d for d in W) and all(d + 1 > d for d in W)
 print("exr-models-c2: all quoted values check")

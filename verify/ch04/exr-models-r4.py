@@ -7,7 +7,7 @@ sys.path.insert(0, "verify/ch04")
 from _fo_models import structure, sat, all_subsets, P, ALL, EX, IMP
 
 QUOTED = {}
-W = range(1, 500)
+W = range(0, 500)
 assert all(d + 1 > d for d in W)
 assert all(not (e < e) for e in W)
 f = IMP(ALL("x", P("P", "x")), EX("x", P("P", "x")))

@@ -13,7 +13,7 @@ Neither side has a main connective among \( \neg, \wedge, \vee, \to, \leftrighta
 So what does make \( \forall y\, \exists x\, R(x, y) \) true or false? Section 4.1 read such sentences informally, **over a domain**: "for every \( y \) in the domain there is an \( x \) in the domain with \( R(x, y) \)". To decide it we need three things.
 
 - **A domain**: the objects the variables range over. Over \( \nZ \) the sentence may be true and over a three-element set false.
-- **A meaning for each symbol.** \( R \) is a predicate symbol, a name with two slots and no meaning of its own (Section 4.2). Read as \( > \) on \( \nZ \), the sentence says "every integer has an integer above it", which is true; read as \( < \) on \( \nN \), it says "every natural number has a natural number below it", which is false at \( y = 1 \).
+- **A meaning for each symbol.** \( R \) is a predicate symbol, a name with two slots and no meaning of its own (Section 4.2). Read as \( > \) on \( \nZ \), the sentence says "every integer has an integer above it", which is true; read as \( < \) on \( \nN \), it says "every natural number has a natural number below it", which is false at \( y = 0 \).
 - **Values for the free variables**, if there are any. The formula \( \exists y\, (y < x) \) is neither true nor false on \( \nN \) until we know which number \( x \) is.
 
 The first two together are a **structure**; the third is an **assignment**. A structure with an assignment decides every formula, by clauses that read the quantifiers as Section 4.1 read them. That is all this section does, and then it uses the result.
@@ -137,7 +137,7 @@ In \( \fM_1 \): by (S6) we must check, for every \( d \in \nN \), that \( \fM_1,
 
 In \( \fM_2 \): (S6) asks the same for \( d = 1, 2, 3 \). At \( d = 1 \) and \( d = 2 \) the witnesses \( e = 2 \) and \( e = 3 \) work. At \( d = 3 \) no \( e \in \{ 1, 2, 3 \} \) has \( 3 < e \), so (S7) fails for \( \ell[x \mapsto 3] \), and (S6) fails. So \( \fM_2 \not\models \forall x\, \exists y\, (x < y) \), and the failure has a name: the element \( 3 \) has nothing above it.
 
-**The assignment matters for free variables.** In \( \fM_1 = (\nN, <) \), with \( \le \) also read as usual, take the formula \( \forall y\, (x \le y) \), in which \( x \) is free. Under an assignment with \( \ell(x) = 1 \) it is satisfied, since every \( e \in \nN \) has \( 1 \le e \) (recall that \( \nN = \{ 1, 2, 3, \dots \} \)). Under an assignment with \( \ell(x) = 2 \) it is not: \( e = 1 \) gives \( 2 \le 1 \), which fails. The same formula in the same structure is satisfied under one assignment and not under another; it is a property of \( x \), "\( x \) is least", not a statement.
+**The assignment matters for free variables.** In \( \fM_1 = (\nN, <) \), with \( \le \) also read as usual, take the formula \( \forall y\, (x \le y) \), in which \( x \) is free. Under an assignment with \( \ell(x) = 0 \) it is satisfied, since every \( e \in \nN \) has \( 0 \le e \) (recall that \( \nN = \{ 0, 1, 2, \dots \} \)). Under an assignment with \( \ell(x) = 1 \) it is not: \( e = 0 \) gives \( 1 \le 0 \), which fails. The same formula in the same structure is satisfied under one assignment and not under another; it is a property of \( x \), "\( x \) is least", not a statement.
 
 **Degenerate cases.** In the one-element structure \( D = \{ a \} \), every assignment gives every variable the value \( a \), so \( \ell[x \mapsto a] = \ell \) and (S6) and (S7) both reduce to "\( \fM, \ell \models \varphi \)". So \( \forall x\, \varphi \) and \( \exists x\, \varphi \) are satisfied together or not at all, and every equation \( x = y \) is satisfied. In any structure, \( \forall x\, (x = x) \) is satisfied, since every \( d \) is the same element as itself; and \( \exists x\, \neg(x = x) \) never is.
 
@@ -279,7 +279,7 @@ With \( D = \{ a, b \} \), \( P^{\fM} = \{ a \} \), \( Q^{\fM} = \{ b \} \): eac
 **The assignment is part of a counter-model.** Section 4.4 showed why \( \forall \)I may not generalize over a name in a premise: from \( P(x_0) \) one would "derive" \( \forall x\, P(x) \). Here \( x_0 \) is a **variable**, free in the premise, so a counter-model needs an assignment as well as a structure. Let \( \fM \) have domain \( \nZ \) with \( P^{\fM} \) the set of even integers, and let \( \ell(x_0) = 2 \). Then \( \fM, \ell \models P(x_0) \), since \( 2 \) is even, and \( \fM, \ell \not\models \forall x\, P(x) \), since (S6) fails at \( d = 1 \). So \( P(x_0) \not\models \forall x\, P(x) \). Under the assignment with \( \ell(x_0) = 1 \) the premise is false, and that assignment refutes nothing; the counter-model is the structure **with** \( \ell(x_0) = 2 \).
 
 ::: {.warning}
-A "counter-model" that falsifies a premise refutes nothing. For \( \forall y\, \exists x\, R(x, y) \vdash \exists x\, \forall y\, R(x, y) \), the structure \( (\nN, <) \), with \( R(x, y) \) read as "\( x < y \)", makes the conclusion false, since no natural number is below every natural number; but it also makes the premise false, since nothing in \( \nN \) is below \( y = 1 \). It is not a counter-model, and it proves nothing about the sequent. As with rows in Chapter 3, check the premises **first**.
+A "counter-model" that falsifies a premise refutes nothing. For \( \forall y\, \exists x\, R(x, y) \vdash \exists x\, \forall y\, R(x, y) \), the structure \( (\nN, <) \), with \( R(x, y) \) read as "\( x < y \)", makes the conclusion false, since no natural number is below every natural number; but it also makes the premise false, since nothing in \( \nN \) is below \( y = 0 \). It is not a counter-model, and it proves nothing about the sequent. As with rows in Chapter 3, check the premises **first**.
 :::
 
 **A model of a list of sentences.** Counter-models are one use of structures; describing a whole kind of object is another. Consider the three sentences
@@ -336,11 +336,11 @@ Let \( \fM_{\nN} \), \( \fM_{\nZ} \), \( \fM_{\nQ} \) be the structures with dom
 ::: {.solution}
 *(a)* True in all three: for each \( d \), take \( y = d + 1 \), which lies in the same domain and is larger.
 
-*(b)* This says "there is a least element". True in \( \fM_{\nN} \), with \( x = 1 \): no natural number is below \( 1 \). False in \( \fM_{\nZ} \) and \( \fM_{\nQ} \): for any \( d \), the element \( e = d - 1 \) has \( e < d \), so (S6) fails for \( \neg(y < x) \) under \( \ell[x \mapsto d] \).
+*(b)* This says "there is a least element". True in \( \fM_{\nN} \), with \( x = 0 \): no natural number is below \( 0 \). False in \( \fM_{\nZ} \) and \( \fM_{\nQ} \): for any \( d \), the element \( e = d - 1 \) has \( e < d \), so (S6) fails for \( \neg(y < x) \) under \( \ell[x \mapsto d] \).
 
 *(c)* This says "between any two elements there is a third" (density). False in \( \fM_{\nN} \) and \( \fM_{\nZ} \): at \( x = 1 \), \( y = 2 \) there is no integer strictly between. True in \( \fM_{\nQ} \): for \( d < e \) in \( \nQ \), \( z = (d + e)/2 \) is rational and \( d < z < e \).
 
-*(d)* This says "no element is least". False in \( \fM_{\nN} \), at \( x = 1 \). True in \( \fM_{\nZ} \) and \( \fM_{\nQ} \), with \( y = d - 1 \).
+*(d)* This says "no element is least". False in \( \fM_{\nN} \), at \( x = 0 \). True in \( \fM_{\nZ} \) and \( \fM_{\nQ} \), with \( y = d - 1 \).
 
 | | \( \nN \) | \( \nZ \) | \( \nQ \) |
 |---|---|---|---|
@@ -440,7 +440,7 @@ For (b), look for an operation on \( \nN \) that never repeats a value but misse
 ::: {.solution}
 *(a)* Let \( \fM \) have a finite domain \( D \) with \( n \ge 1 \) elements. If the hypothesis of \( \sigma \) is false in \( \fM \), then \( \sigma \) is true by (S5). So suppose it is true: by (S6), (S5) and (S2), for all \( d, e \in D \), \( f^{\fM}(d) = f^{\fM}(e) \) implies \( d = e \); that is, \( f^{\fM} \) takes different values at different elements. Then the \( n \) elements of \( D \) have \( n \) different values, so the set of values \( \{ f^{\fM}(d) : d \in D \} \) is a subset of \( D \) with \( n \) elements. A subset of an \( n \)-element set with \( n \) elements is the whole set (a counting fact from school, proved in Chapter 8). So every \( e \in D \) is \( f^{\fM}(d) \) for some \( d \), which is the conclusion of \( \sigma \) by (S6), (S7) and (S2). Hence \( \sigma \) is true in \( \fM \).
 
-*(b)* Take \( D = \nN \) and \( f^{\fM}(d) = d + 1 \). The hypothesis holds: \( d + 1 = e + 1 \) gives \( d = e \). The conclusion fails at \( y = 1 \): there is no \( d \in \nN \) with \( d + 1 = 1 \), since \( d \ge 1 \) gives \( d + 1 \ge 2 \). So \( \sigma \) is false in \( \fM \).
+*(b)* Take \( D = \nN \) and \( f^{\fM}(d) = d + 1 \). The hypothesis holds: \( d + 1 = e + 1 \) gives \( d = e \). The conclusion fails at \( y = 0 \): there is no \( d \in \nN \) with \( d + 1 = 0 \), since \( d \ge 0 \) gives \( d + 1 \ge 1 \). So \( \sigma \) is false in \( \fM \).
 
 *(c)* The structure of (b) is a counter-model to \( \models \sigma \) (with \( \Gamma \) empty). By the soundness statement of this section, \( \sigma \) is not derivable. By (a), no finite structure could have shown this: a search for counter-models that lists finite structures of size 1, 2, 3, … would never stop.
 
@@ -477,13 +477,13 @@ Prove by induction on \( k \) that there are elements \( d_1 < d_2 < \dots < d_k
 :::
 
 ::: {.solution}
-Let \( \fM \) be a model of \( \tau \), with domain \( D \), and write \( d < e \) for \( (d, e) \in <^{\fM} \). We prove, for every \( k \in \nN \), the statement \( A(k) \): *there are elements \( d_1, \dots, d_k \) of \( D \) with \( d_i < d_j \) whenever \( 1 \le i < j \le k \).* We use @ax-induction.
+Let \( \fM \) be a model of \( \tau \), with domain \( D \), and write \( d < e \) for \( (d, e) \in <^{\fM} \). We prove, for every \( k \ge 1 \), the statement \( A(k) \): *there are elements \( d_1, \dots, d_k \) of \( D \) with \( d_i < d_j \) whenever \( 1 \le i < j \le k \).* We use @ax-induction, applied to the property \( A(m + 1) \) of \( m \in \nN \), so that the base case is \( A(1) \).
 
 *Base.* \( D \) is nonempty (@def-structure, (M1)), so there is some \( d_1 \in D \), and \( A(1) \) holds, with no pairs \( i < j \) to check. This is the one place the proof uses nonemptiness. If an empty domain were allowed, with "for every \( d \in \emptyset \)" read as having nothing to check, all three conjuncts would hold in it (each begins with \( \forall \)), and it has no elements at all: the statement "every model is infinite" would fail.
 
 *Step.* Suppose \( d_1, \dots, d_k \) are as in \( A(k) \). By the third conjunct and (S6), (S7), there is \( d_{k+1} \in D \) with \( d_k < d_{k+1} \). For \( i < k \), we have \( d_i < d_k \) by \( A(k) \), and then \( d_i < d_{k+1} \) by the second conjunct (transitivity). So \( A(k + 1) \) holds.
 
-Now the elements \( d_1, \dots, d_k \) are all different: if \( d_i = d_j \) with \( i < j \), then \( d_i < d_j \) says \( d_i < d_i \), which the first conjunct forbids. So for every \( k \in \nN \), the domain contains \( k \) different elements. A finite set with \( n \) elements does not contain \( n + 1 \) different elements, so \( D \) is not finite. Since \( (\nN, <) \) is a model of \( \tau \) (as the text checked), \( \tau \) has models, and all of them are infinite.
+Now the elements \( d_1, \dots, d_k \) are all different: if \( d_i = d_j \) with \( i < j \), then \( d_i < d_j \) says \( d_i < d_i \), which the first conjunct forbids. So for every \( k \ge 1 \), the domain contains \( k \) different elements. A finite set with \( n \) elements does not contain \( n + 1 \) different elements, so \( D \) is not finite. Since \( (\nN, <) \) is a model of \( \tau \) (as the text checked), \( \tau \) has models, and all of them are infinite.
 
 **Marking scheme.** (10 points)
 
@@ -498,11 +498,11 @@ Fatal errors (0 for the step): building the chain without showing its elements a
 ::: {#exr-models-c3}
 [C3: Exit check: formalize, negate, decide]
 
-Work over the domain \( \nR \), with \( n \in \nN \) as a bound as in Section 4.1, and \( 1/n \) as a term.
+Work over the domain \( \nR \), with \( n \in \nZ_{>0} \) as a bound as in Section 4.1, and \( 1/n \) as a term.
 
 ::: {.enumerate options="label=(\alph*)"}
-1. Formalize, with bounded quantifiers: "for every \( \varepsilon > 0 \) there is \( N \in \nN \) such that \( 1/n < \varepsilon \) for every \( n \in \nN \) with \( n \ge N \)."
-2. Formalize the sentence obtained from (a) by moving "there is \( N \in \nN \)" to the front.
+1. Formalize, with bounded quantifiers: "for every \( \varepsilon > 0 \) there is \( N \in \nZ_{>0} \) such that \( 1/n < \varepsilon \) for every \( n \in \nZ_{>0} \) with \( n \ge N \)."
+2. Formalize the sentence obtained from (a) by moving "there is \( N \in \nZ_{>0} \)" to the front.
 3. Negate each of (a) and (b) into positive form: no \( \neg \) left in front of a quantifier or an implication, and \( \neg(s < t) \) written as \( s \ge t \).
 4. Decide which of (a) and (b) is true in \( \nR \). For the true sentence give a proof, saying what each chosen number depends on; for the false one, prove its negation, giving the witnesses it asks for.
 :::
@@ -511,29 +511,29 @@ Work over the domain \( \nR \), with \( n \in \nN \) as a bound as in Section 4.
 :::
 
 ::: {.solution}
-*A remark on the term \( 1/n \).* In the structure \( \nR \), the symbol \( / \) must be a function on all of \( \nR^2 \) (@def-structure, (M3)); give \( 1/0 \) any value. The bound \( n \in \nN \) keeps \( n \ge 1 \), so that value is never used.
+*A remark on the term \( 1/n \).* In the structure \( \nR \), the symbol \( / \) must be a function on all of \( \nR^2 \) (@def-structure, (M3)); give \( 1/0 \) any value. The bound \( n \in \nZ_{>0} \) keeps \( n \ge 1 \), so that value is never used.
 
-*(a)* \( \forall \varepsilon > 0\ \exists N \in \nN\ \forall n \in \nN\ \bigl( n \ge N \to 1/n < \varepsilon \bigr) \).
+*(a)* \( \forall \varepsilon > 0\ \exists N \in \nZ_{>0}\ \forall n \in \nZ_{>0}\ \bigl( n \ge N \to 1/n < \varepsilon \bigr) \).
 
-*(b)* \( \exists N \in \nN\ \forall \varepsilon > 0\ \forall n \in \nN\ \bigl( n \ge N \to 1/n < \varepsilon \bigr) \).
+*(b)* \( \exists N \in \nZ_{>0}\ \forall \varepsilon > 0\ \forall n \in \nZ_{>0}\ \bigl( n \ge N \to 1/n < \varepsilon \bigr) \).
 
 *(c)* Push \( \neg \) inward one quantifier at a time, keeping each bound (@prp-bounded-quantifier-negation), then negate the implication (@prp-negated-implication):
 \[
 \begin{aligned}
-\neg(a): &\quad \exists \varepsilon > 0\ \forall N \in \nN\ \exists n \in \nN\ \bigl( n \ge N \wedge 1/n \ge \varepsilon \bigr), \\
-\neg(b): &\quad \forall N \in \nN\ \exists \varepsilon > 0\ \exists n \in \nN\ \bigl( n \ge N \wedge 1/n \ge \varepsilon \bigr).
+\neg(a): &\quad \exists \varepsilon > 0\ \forall N \in \nZ_{>0}\ \exists n \in \nZ_{>0}\ \bigl( n \ge N \wedge 1/n \ge \varepsilon \bigr), \\
+\neg(b): &\quad \forall N \in \nZ_{>0}\ \exists \varepsilon > 0\ \exists n \in \nZ_{>0}\ \bigl( n \ge N \wedge 1/n \ge \varepsilon \bigr).
 \end{aligned}
 \]
 
-*(d)* **(a) is true.** Let \( \varepsilon > 0 \). Choose \( N \in \nN \) with \( N > 1/\varepsilon \), by the fact allowed in the problem; \( N \) depends on \( \varepsilon \). Let \( n \in \nN \) with \( n \ge N \). Then \( n \ge N > 1/\varepsilon > 0 \), and multiplying \( n > 1/\varepsilon \) by the positive number \( \varepsilon / n \) gives \( \varepsilon > 1/n \). Since \( n \) was arbitrary, and then \( \varepsilon \), (a) holds.
+*(d)* **(a) is true.** Let \( \varepsilon > 0 \). Choose a natural number \( N \) with \( N > 1/\varepsilon \), by the fact allowed in the problem; since \( 1/\varepsilon > 0 \), \( N \in \nZ_{>0} \), and \( N \) depends on \( \varepsilon \). Let \( n \in \nZ_{>0} \) with \( n \ge N \). Then \( n \ge N > 1/\varepsilon > 0 \), and multiplying \( n > 1/\varepsilon \) by the positive number \( \varepsilon / n \) gives \( \varepsilon > 1/n \). Since \( n \) was arbitrary, and then \( \varepsilon \), (a) holds.
 
-**(b) is false; its negation is true.** Let \( N \in \nN \). Take \( \varepsilon = 1/N \), which is positive, and \( n = N \), which is in \( \nN \) with \( n \ge N \). Then \( 1/n = 1/N \ge 1/N = \varepsilon \). Both witnesses depend on \( N \), as the order \( \forall N\ \exists \varepsilon\ \exists n \) allows. Since \( N \) was arbitrary, \( \neg(b) \) holds, so (b) is false. In words: no single \( N \) works for every \( \varepsilon \), because \( \varepsilon = 1/N \) defeats that \( N \).
+**(b) is false; its negation is true.** Let \( N \in \nZ_{>0} \). Take \( \varepsilon = 1/N \), which is positive, and \( n = N \), which is in \( \nZ_{>0} \) with \( n \ge N \). Then \( 1/n = 1/N \ge 1/N = \varepsilon \). Both witnesses depend on \( N \), as the order \( \forall N\ \exists \varepsilon\ \exists n \) allows. Since \( N \) was arbitrary, \( \neg(b) \) holds, so (b) is false. In words: no single \( N \) works for every \( \varepsilon \), because \( \varepsilon = 1/N \) defeats that \( N \).
 
 The two sentences differ only in the order of \( \forall \varepsilon \) and \( \exists N \). In (a) the \( N \) is chosen after \( \varepsilon \) and may depend on it; in (b) it must be chosen first, which is the swap of @exm-counter-model-swap in an analysis setting.
 
 **Marking scheme.** (10 points)
 
-- 2: both formalizations, with the bounds \( \varepsilon > 0 \), \( N \in \nN \), \( n \in \nN \) attached to the right quantifiers and \( \to \) under the \( \forall n \).
+- 2: both formalizations, with the bounds \( \varepsilon > 0 \), \( N \in \nZ_{>0} \), \( n \in \nZ_{>0} \) attached to the right quantifiers and \( \to \) under the \( \forall n \).
 - 3: both negations in positive form, with every bound kept, the quantifier order of each preserved, and \( \wedge \) under the \( \exists n \).
 - 2: verdict "true" for (a), with a proof in which \( N \) is chosen after \( \varepsilon \) and said to depend on it.
 - 3: verdict "false" for (b), with \( \varepsilon \) and \( n \) given as functions of \( N \) and the three facts \( \varepsilon > 0 \), \( n \ge N \), \( 1/n \ge \varepsilon \) checked.

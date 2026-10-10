@@ -7,8 +7,8 @@ Section 4.1 read quantified sentences the way a mathematician does, by eye. That
 Three sentences, over the domain \( \nN \):
 
 - "\( x > 2 \)" is not a statement. It is the open sentence of item (e) of @exm-statements, true for some values of \( x \) and false for others.
-- "\( \forall x\, (x^2 \ge 1) \)" is a statement, and a true one. The letter \( x \) still appears, but the quantifier has closed its hole: the sentence does not ask which \( x \) we mean.
-- "\( \forall x\, (x \ge y) \)" is neither true nor false as it stands. It is true when \( y \) is \( 1 \) (every natural number is at least \( 1 \)) and false when \( y \) is \( 2 \) (the number \( 1 \) is not at least \( 2 \)). It is an open sentence **in \( y \)**, although it begins with a quantifier.
+- "\( \forall x\, (x^2 \ge 0) \)" is a statement, and a true one. The letter \( x \) still appears, but the quantifier has closed its hole: the sentence does not ask which \( x \) we mean.
+- "\( \forall x\, (x \ge y) \)" is neither true nor false as it stands. It is true when \( y \) is \( 0 \) (every natural number is at least \( 0 \)) and false when \( y \) is \( 1 \) (the number \( 0 \) is not at least \( 1 \)). It is an open sentence **in \( y \)**, although it begins with a quantifier.
 
 So the question "is this a statement?" is not answered by looking for quantifiers. It is answered by asking which letters are still holes. In the third sentence \( x \) is closed by \( \forall x \) and \( y \) is open. The open letters will be called **free**, and the closed ones **bound**.
 
@@ -387,7 +387,7 @@ What should we do when \( t \) is not free for \( x \) in \( \varphi \)? A bound
 
 **Renaming.** Let \( \varphi \) be a formula and \( y, z \) variables, with \( z \) **not occurring** in \( \varphi \). The formula \( \forall z\, \varphi[z/y] \) is obtained from \( \forall y\, \varphi \) by **renaming** the bound variable \( y \) to \( z \); likewise \( \exists z\, \varphi[z/y] \) from \( \exists y\, \varphi \). The same may be done to a quantifier anywhere inside a larger formula.
 
-In words: change the variable after the quantifier, and change the occurrences it binds, to a letter that appears nowhere in the formula. The condition that \( z \) does not occur in \( \varphi \) does two jobs. It makes \( z \) free for \( y \) in \( \varphi \) (the third special case above), so no new \( z \) is captured by a quantifier inside \( \varphi \). And it ensures that no free \( z \) already in \( \varphi \) is captured by the new quantifier \( \forall z \). Without it, renaming can change the meaning: \( \forall y\, (y \ge z) \) says something about \( z \) (over \( \nN \), that \( z = 1 \)), and "renaming" \( y \) to \( z \) would give \( \forall z\, (z \ge z) \), a sentence that is simply true.
+In words: change the variable after the quantifier, and change the occurrences it binds, to a letter that appears nowhere in the formula. The condition that \( z \) does not occur in \( \varphi \) does two jobs. It makes \( z \) free for \( y \) in \( \varphi \) (the third special case above), so no new \( z \) is captured by a quantifier inside \( \varphi \). And it ensures that no free \( z \) already in \( \varphi \) is captured by the new quantifier \( \forall z \). Without it, renaming can change the meaning: \( \forall y\, (y \ge z) \) says something about \( z \) (over \( \nN \), that \( z = 0 \)), and "renaming" \( y \) to \( z \) would give \( \forall z\, (z \ge z) \), a sentence that is simply true.
 
 **Its status.** Renaming is not a rule of the calculus, and we have not proved that it keeps meaning. Here is where it stands. For a renaming at the front of a formula, \( \forall y\, \varphi \) and \( \forall z\, \varphi[z/y] \) can each be derived from the other in three lines, once the rules of Section 4.4 are available; that section does it, and Section 4.6 does the same for \( \exists \). A renaming **inside** a larger formula we take as a convention of this book: formulas that differ only by renaming bound variables are treated as saying the same thing. Its justification in terms of meaning is an instance of a lemma in Section 4.12, which is optional; nothing in the chapter depends on that lemma.
 
@@ -426,10 +426,10 @@ which says that **every** term of the sequence is within \( \varepsilon \) of \(
 
 **Induction, as a formula.** The display after @ax-induction in Section 3.2 used a property \( P(n) \). With substitution it can be written for any formula \( \varphi \) in which the variable \( n \) is free, as the formula
 \[
-\Bigl( \varphi[1/n] \ \wedge \ \forall n \in \nN \, \bigl( \varphi \to \varphi[n + 1/n] \bigr) \Bigr)
+\Bigl( \varphi[0/n] \ \wedge \ \forall n \in \nN \, \bigl( \varphi \to \varphi[n + 1/n] \bigr) \Bigr)
 \ \to \ \forall n \in \nN \; \varphi ,
 \]
-where \( \varphi[1/n] \) plays the part of \( P(1) \) and \( \varphi[n + 1/n] \) the part of \( P(n + 1) \). The term \( n + 1 \) is free for \( n \) in \( \varphi \): its only variable is \( n \), and a free occurrence of \( n \) never lies in the scope of a quantifier on \( n \). This is how the principle of induction reads in the language of this chapter; its status (a basic property of \( \nN \)) is unchanged.
+where \( \varphi[0/n] \) plays the part of \( P(0) \) and \( \varphi[n + 1/n] \) the part of \( P(n + 1) \). The term \( n + 1 \) is free for \( n \) in \( \varphi \): its only variable is \( n \), and a free occurrence of \( n \) never lies in the scope of a quantifier on \( n \). This is how the principle of induction reads in the language of this chapter; its status (a basic property of \( \nN \)) is unchanged.
 
 ## Exercises
 
