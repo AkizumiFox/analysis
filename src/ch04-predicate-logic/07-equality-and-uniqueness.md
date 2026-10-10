@@ -143,7 +143,7 @@ Line 3 of (b) cites the equation \( t = u \) on line 2 as the rule's line \( i \
 
 Notice where the "reflexivity" line went in (a): the equation \( s = t \) was not rewritten at all. It was the **tool**, and the line it rewrote, \( s = s \), was manufactured for the purpose. This is the typical use of \( \rulename{{=}I} \): it supplies a line for \( \rulename{{=}E} \) to work on.
 
-From now on, symmetry and transitivity may be used as one line, with the justifications "(sym)" and "(trans)": each abbreviates the three-line derivation above with the given terms in place of \( s \), \( t \), \( u \). This is the licence of @def-derived-rule, extended from statement letters to terms. The extension is harmless for the same reason: the derivations above used nothing about \( s \), \( t \), \( u \) except that they are terms, so they can be pasted in with any terms.
+From now on, symmetry and transitivity may be used as one line, with the justifications "(sym)" and "(trans)": each abbreviates the three-line derivation above with the given terms in place of \( s \), \( t \), \( u \). This is the license of @def-derived-rule, extended from statement letters to terms. The extension is harmless for the same reason: the derivations above used nothing about \( s \), \( t \), \( u \) except that they are terms, so they can be pasted in with any terms.
 
 The next derivation is the rule behind "apply \( f \) to both sides". Let \( f \) be a one-place function symbol, and \( a \), \( b \) constants.
 

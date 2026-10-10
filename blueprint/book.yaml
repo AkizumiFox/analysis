@@ -987,20 +987,27 @@ chapters:
   - - HAM.13
     - §13.2–13.3 ε–δ limits and their negation (problems)
   outline:
-  - 'Terms and formulas: function and predicate symbols, the inductive definitions, free and bound variables'
-  - Substitution φ[t/x] and when t is free for x in φ; variable capture shown and avoided
-  - '∀-introduction and elimination: ''let x be arbitrary'' and the eigenvariable condition; ∃-introduction and
-    elimination: ''choose x with …'' and the fresh-name condition'
-  - 'Equality: reflexivity and substitution; calculation chains; the complete rule / phrase / Lean table (use, obtain,
-    intro x, specialize, rw, calc)'
-  - 'Quantifier equivalences: negation laws, order of quantifiers (∀x∃y vs ∃y∀x), distributing over ∧ and ∨; formalizing
-    and negating three-quantifier statements from analysis; existence and uniqueness'
-  - 'Models, briefly: a structure interprets the symbols; ⊨ for predicate logic and the countermodel as a refutation
-    (soundness stated, completeness only mentioned)'
+  - 'Predicates and quantifiers: open sentences, domains, ∀ and ∃; quantifier order (∀x∃y vs ∃y∀x); bounded quantifiers'
+  - 'Terms, formulas, free variables and substitution: φ[t/x] and when t is free for x in φ; variable capture shown and
+    avoided; renaming bound variables'
+  - '∀-elimination (using ''for every''): instantiation at any term free for x; the stall that motivates ∀I'
+  - '∀-introduction (proving ''for every''): ''let x be arbitrary'', the flagged box and its fresh-name condition; ∀ over
+    ∧; vacuous truth over the empty set'
+  - '∃-introduction (proving ''there exists''): exhibit a witness; ∀x P(x) ⊢ ∃x P(x) and non-empty domains'
+  - '∃-elimination (using ''there exists''): ''choose x with …'' and the fresh-name condition; ∃y∀x R(x,y) ⊢ ∀x∃y R(x,y)
+    and the stall of its converse; only one direction for ∃ over ∧'
+  - 'Equality and unique existence: reflexivity and substitution; calculation chains; ∃!; the complete rule / phrase /
+    Lean table (use, obtain, intro x, specialize, rw, calc)'
+  - 'Translating mathematics: nested and bounded quantifiers, the bounded rules as derived rules; formalizing
+    three-quantifier statements from analysis; the search method extended to the quantifier rules'
+  - 'Quantifier laws: negation laws (¬∀ ⊢ ∃¬ needs RAA), bounded negation, negated implications, distributing over ∧
+    and ∨, moving quantifiers past a formula; negating definitions'
   - 'Worked example: ''uniformly continuous ⇒ continuous'' annotated rule by rule; the converse fails because the
     ∃I witness δ would depend on an x introduced later'
-  - 'The ''what is not allowed'' catalogue: one instance for ∀; δ depending on x; the ∃E name treated as arbitrary;
-    capture in substitution; using an assumption after its box closes'
+  - 'Models and counter-models: a structure interprets the symbols; ⊨ for predicate logic and the countermodel as a
+    refutation (soundness stated, completeness only mentioned)'
+  - 'Soundness for predicate logic (optional): term substitution, renaming bound variables, the soundness proof by
+    induction on the lines of a derivation'
   must_prove:
   - quantifier negation laws ¬∀x P ↔ ∃x ¬P and ¬∃x P ↔ ∀x ¬P, flagging that ¬∀ ⊢ ∃¬ needs PBC
   - ∃y∀x R(x,y) ⊢ ∀x∃y R(x,y), and a countermodel to the converse
