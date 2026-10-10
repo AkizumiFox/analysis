@@ -1180,6 +1180,17 @@ items:
       ℓ(x) = 2), but the book does not do it. Fix: say that Section 4.11 gives this counter-model for
       P(x0) ⊢ ∀x P(x), and that the same structure with ℓ(x) = 2 refutes P(x) ⊨ ∀x P(x), so soundness
       gives P(x) ⊬ ∀x P(x).'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 7c3efbd75797
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 'P(x) (11-models.md about line 279, listed at about line 311). The adaptation with l(x)
+      = 2 is valid, and soundness (stated at 11-models.md:307, proved in optional Section 4.12) gives
+      P(x) does-not-derive forall x P(x). The marking scheme (10 points) matches the solution. The provenance
+      row at line 497 matches the prose. Checkers: check_structure 0 fatal; check_fitch 0 errors across
+      12 derivations.'
 - key: def-rules-universal
   kind: def
   file: 04-universal-introduction.md
@@ -3641,6 +3652,17 @@ items:
       the closing ∀I to ∀xβ breaks its side condition, since x appears in ∀xβ (''appear'' counts the quantified
       letter, 04-universal-introduction.md:92). Fix: ''x_0 is a variable other than x that appears in
       neither α nor β''.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: f90b697f605c
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 't. In all three the dashv-vdash chain stops before the order facts, as 09:603 prescribes.
+      The prime rewrite (09:676) is correct: QN (c); De Morgan (d) with implication-as-disjunction (a),
+      and the converse via (b) and (c); then QN (a)/(b) and NIm under exists q. The ledger line at 09:970
+      lists the new dependencies (forall-I side condition; psi[t/x] = psi from Section 4.2). check_structure:
+      0 fatal.'
 - key: check:09-quantifier-laws:3
   kind: check
   file: 09-quantifier-laws.md
@@ -4237,6 +4259,17 @@ items:
       solution attaches the swap remark, and the gloss that (iv) covers both steps, to the third order
       only. Fix: say that the swap remark applies to both the second and the third order (in both, ε is
       fixed before x).'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: c7b3edfdab5a
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 'arbitrary where an ∃ needs a witness. (vii) generalizes over x while an ∃E assumption mentioning
+      x is open, which breaks the ∀I side condition (the exm-converse-fails reference fits). If δ does
+      not depend on x, (vii) reduces to (vi). Optional nit, not introduced by this diff: the solution
+      quotes (iv) as "since ε and x were arbitrary", but (iv) actually reads ''Since ε > 0 and x ∈ A were
+      arbitrary''.'
 - key: exr-uniform-continuity-rule-by-rule-b3
   kind: exr
   file: 10-uniform-continuity-rule-by-rule.md
@@ -4344,6 +4377,16 @@ items:
       share no point; the sentence''s own tail (''no common point links them'') and line 393 say this
       correctly. Fix: drop ''without either one containing it'' and say ''come arbitrarily close at 1
       but have no point in common''.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 56e382095d59
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: iate. In the mixed case x ∈ [a,b] and y ∈ [b,c] give x ≤ b ≤ y, so |x−b|, |b−y| ≤ |x−y|
+      < δ, and b lies in both sets. The triangle inequality (exm-triangle-inequality-cases at 07-disjunction-and-cases.md:420)
+      then gives a bound < ε. The cases are exhaustive because S = A ∪ B. The marking scheme matches the
+      solution, and its ε1+ε2 ≤ ε generalization is correct. Line 393 is consistent with line 382.
 - key: exr-uniform-continuity-rule-by-rule-c3
   kind: exr
   file: 10-uniform-continuity-rule-by-rule.md
