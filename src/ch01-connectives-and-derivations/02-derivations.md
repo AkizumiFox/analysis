@@ -303,7 +303,7 @@ Change (b) shows why the citation order is part of the justification, and change
 
 A proof about sequences might contain the line
 \[
-0 < \frac{1}{n+1} < \frac{1}{n} \le 1 \qquad \text{for } n \in \nN .
+0 < \frac{1}{n+1} < \frac{1}{n} \le 1 \qquad \text{for } n \in \nZ_{>0} .
 \]
 It asserts three links: \( 0 < \frac{1}{n+1} \), \( \frac{1}{n+1} < \frac1n \), and \( \frac1n \le 1 \). A reader who takes from it a claim about its two ends, \( 0 < 1 \), performs two steps in silence. The first is one application of chaining: \( 0 < \frac{1}{n+1} \) and \( \frac{1}{n+1} < \frac1n \) give \( 0 < \frac1n \). The second joins \( 0 < \frac1n \) with \( \frac1n \le 1 \), and it is **not** \( \mathrm{Tr} \): the line \( \frac1n \le 1 \) has \( \le \), not \( < \), so the lines do not match the schema. It is a different pattern, "from \( a < b \) and \( b \le c \), write \( a < c \)", another true fact about numbers. That is exactly why a justification must name the pattern it uses. "By the chain" does not say which one.
 
@@ -533,7 +533,7 @@ def-rule-schema (example): 2/4 = 1/2 | inline arithmetic
 exm-chaining-derivation (example): none beyond the toy rule Tr | inline; checked by verify/ch01/exm-chaining-derivation.py
 exm-derivations (solution): every rule met before boxes cites at least one line (and-I, and-E, ->E) | the third and fourth sections of this chapter (later sections, stated as a meta-claim, not used in a proof; blueprint ch01.md, Rule system)
 exm-not-a-derivation (solution): the instance and earlier-line claims for both changes | inline; checked by verify/ch01/exm-not-a-derivation.py
-exm-not-a-derivation (example): the "How this looks" chain after it: 0 < 1/(n+1) < 1/n <= 1 for n in N; from a < b and b <= c infer a < c | school algebra; ch11 (promised)
+exm-not-a-derivation (example): the "How this looks" chain after it: 0 < 1/(n+1) < 1/n <= 1 for integers n >= 1; from a < b and b <= c infer a < c | school algebra; ch11 (promised)
 exr-derivations-a1 (solution): Tr and Sh lead from true lines to true lines; going down the derivation line by line is an induction | school algebra, ch11 (promised); the induction is ch03 (promised)
 exr-derivations-b3 (solution): 0 < 1/4 < 1/3 < 1/2; m - 1 joins; the lower bound m - 1 is stated, not proved or used | inline arithmetic, checked by verify/ch01/exr-derivations-b3.py (which also confirms the lower bound for m <= 5); proof by induction ch03 (promised)
 exr-derivations-c1 (solution): 0 < 1 is true and 1 < 0 is false | inline arithmetic
