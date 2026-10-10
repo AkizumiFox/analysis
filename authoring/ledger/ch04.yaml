@@ -877,7 +877,7 @@ items:
 - key: check:03-universal-elimination:1
   kind: check
   file: 03-universal-elimination.md
-  line: 56
+  line: 57
   hash: 2f51899caf9f
   verdicts:
   - stage: S5a
@@ -903,8 +903,8 @@ items:
 - key: exm-universal-elimination-derivations
   kind: exm
   file: 03-universal-elimination.md
-  line: 68
-  hash: c316ddca2b00
+  line: 69
+  hash: 1d3a1b552b64
   verdicts:
   - stage: S5a
     verdict: correct
@@ -927,7 +927,7 @@ items:
 - key: exr-universal-elimination-a1
   kind: exr
   file: 03-universal-elimination.md
-  line: 252
+  line: 253
   hash: c4073ef6ce1a
   verdicts:
   - stage: S5a
@@ -962,7 +962,7 @@ items:
 - key: exr-universal-elimination-b1
   kind: exr
   file: 03-universal-elimination.md
-  line: 287
+  line: 288
   hash: d265262ae32d
   verdicts:
   - stage: S5a
@@ -993,7 +993,7 @@ items:
 - key: exr-universal-elimination-b2
   kind: exr
   file: 03-universal-elimination.md
-  line: 315
+  line: 316
   hash: b51ca8149d79
   verdicts:
   - stage: S5a
@@ -1025,7 +1025,7 @@ items:
 - key: exr-universal-elimination-b3
   kind: exr
   file: 03-universal-elimination.md
-  line: 348
+  line: 349
   hash: 638e789bb699
   verdicts:
   - stage: S5a
@@ -1057,7 +1057,7 @@ items:
 - key: exr-universal-elimination-c1
   kind: exr
   file: 03-universal-elimination.md
-  line: 378
+  line: 379
   hash: 4e3824acd0d1
   verdicts:
   - stage: S5a
@@ -1092,8 +1092,8 @@ items:
 - key: exr-universal-elimination-c2
   kind: exr
   file: 03-universal-elimination.md
-  line: 437
-  hash: aca3e72cc4a1
+  line: 438
+  hash: e25de0c06a32
   verdicts:
   - stage: S5a
     verdict: gap
@@ -1166,7 +1166,7 @@ items:
   kind: exm
   file: 04-universal-introduction.md
   line: 161
-  hash: 87fc5d2bfb9e
+  hash: 9058be869130
   verdicts:
   - stage: S5a
     verdict: gap
@@ -1712,7 +1712,7 @@ items:
   kind: exr
   file: 05-existential-introduction.md
   line: 376
-  hash: 855657209de4
+  hash: 2d06d7cc4955
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1746,7 +1746,7 @@ items:
   kind: exr
   file: 05-existential-introduction.md
   line: 425
-  hash: cff8f416d14a
+  hash: 1e2a479f1e52
   verdicts:
   - stage: S5a
     verdict: minor
@@ -1849,7 +1849,7 @@ items:
   kind: check
   file: 06-existential-elimination.md
   line: 201
-  hash: 44558ae74d84
+  hash: 532aedef4ecb
   verdicts:
   - stage: S5a
     verdict: minor
@@ -1943,7 +1943,7 @@ items:
 - key: exm-sum-of-evens
   kind: exm
   file: 06-existential-elimination.md
-  line: 471
+  line: 473
   hash: 7d23be0f74b7
   verdicts:
   - stage: S5a
@@ -1967,7 +1967,7 @@ items:
 - key: check:06-existential-elimination:2
   kind: check
   file: 06-existential-elimination.md
-  line: 507
+  line: 509
   hash: f6c5f3435dc8
   verdicts:
   - stage: S5a
@@ -1989,8 +1989,8 @@ items:
 - key: exr-existential-elimination-a1
   kind: exr
   file: 06-existential-elimination.md
-  line: 594
-  hash: c9e0ad076e4f
+  line: 596
+  hash: 318a3adf9dcf
   verdicts:
   - stage: S5a
     verdict: minor
@@ -2021,7 +2021,7 @@ items:
 - key: exr-existential-elimination-b1
   kind: exr
   file: 06-existential-elimination.md
-  line: 622
+  line: 624
   hash: 568574a634c3
   verdicts:
   - stage: S5a
@@ -2052,7 +2052,7 @@ items:
 - key: exr-existential-elimination-b2
   kind: exr
   file: 06-existential-elimination.md
-  line: 655
+  line: 657
   hash: 279be81bc5c8
   verdicts:
   - stage: S5a
@@ -2086,7 +2086,7 @@ items:
 - key: exr-existential-elimination-b3
   kind: exr
   file: 06-existential-elimination.md
-  line: 719
+  line: 721
   hash: 6ae4f5250de6
   verdicts:
   - stage: S5a
@@ -2118,7 +2118,7 @@ items:
 - key: exr-existential-elimination-c1
   kind: exr
   file: 06-existential-elimination.md
-  line: 758
+  line: 760
   hash: 133fa8f32c7e
   verdicts:
   - stage: S5a
@@ -2151,7 +2151,7 @@ items:
 - key: exr-existential-elimination-c2
   kind: exr
   file: 06-existential-elimination.md
-  line: 819
+  line: 822
   hash: ae0aba082592
   verdicts:
   - stage: S5a
@@ -3096,7 +3096,7 @@ items:
   kind: proof
   file: 09-quantifier-laws.md
   line: 33
-  hash: d3524e19022e
+  hash: 2e4f51763942
   verdicts:
   - stage: S5a
     verdict: gap
@@ -3252,7 +3252,7 @@ items:
   kind: proof
   file: 09-quantifier-laws.md
   line: 318
-  hash: 8665624422ec
+  hash: 8e93d79e9e3b
   verdicts:
   - stage: S5a
     verdict: minor
@@ -3273,7 +3273,7 @@ items:
   kind: prp
   file: 09-quantifier-laws.md
   line: 352
-  hash: df804ebbaf01
+  hash: 51eabc546425
   verdicts:
   - stage: S5a
     verdict: correct
@@ -3295,7 +3295,7 @@ items:
   kind: proof
   file: 09-quantifier-laws.md
   line: 374
-  hash: 76f0fff91e33
+  hash: ba2c97858148
   verdicts:
   - stage: S5a
     verdict: minor
@@ -3341,7 +3341,7 @@ items:
   kind: exm
   file: 09-quantifier-laws.md
   line: 608
-  hash: 124f9f6301bc
+  hash: f90b697f605c
   verdicts:
   - stage: S5a
     verdict: minor
@@ -3362,7 +3362,7 @@ items:
 - key: check:09-quantifier-laws:3
   kind: check
   file: 09-quantifier-laws.md
-  line: 674
+  line: 682
   hash: 835cb424c959
   verdicts:
   - stage: S5a
@@ -3382,7 +3382,7 @@ items:
 - key: prp-arbitrarily-close-equal
   kind: prp
   file: 09-quantifier-laws.md
-  line: 696
+  line: 704
   hash: ee218243d9ec
   verdicts:
   - stage: S5a
@@ -3403,7 +3403,7 @@ items:
 - key: proof:prp-arbitrarily-close-equal
   kind: proof
   file: 09-quantifier-laws.md
-  line: 706
+  line: 714
   hash: 1cc83cb89e7a
   verdicts:
   - stage: S5a
@@ -3426,8 +3426,8 @@ items:
 - key: exr-quantifier-laws-a1
   kind: exr
   file: 09-quantifier-laws.md
-  line: 718
-  hash: b26b41c7469d
+  line: 726
+  hash: 43364356ae18
   verdicts:
   - stage: S5a
     verdict: minor
@@ -3456,8 +3456,8 @@ items:
 - key: exr-quantifier-laws-b1
   kind: exr
   file: 09-quantifier-laws.md
-  line: 746
-  hash: e2f92a3c4185
+  line: 754
+  hash: cffa2f528fdb
   verdicts:
   - stage: S5a
     verdict: minor
@@ -3487,8 +3487,8 @@ items:
 - key: exr-quantifier-laws-b2
   kind: exr
   file: 09-quantifier-laws.md
-  line: 787
-  hash: befd995e04a0
+  line: 801
+  hash: 17fa31cb5c33
   verdicts:
   - stage: S5a
     verdict: correct
@@ -3519,7 +3519,7 @@ items:
 - key: exr-quantifier-laws-b3
   kind: exr
   file: 09-quantifier-laws.md
-  line: 822
+  line: 836
   hash: 131b16f6c03e
   verdicts:
   - stage: S5a
@@ -3550,7 +3550,7 @@ items:
 - key: exr-quantifier-laws-c1
   kind: exr
   file: 09-quantifier-laws.md
-  line: 840
+  line: 854
   hash: ca29746eed2a
   verdicts:
   - stage: S5a
@@ -3584,7 +3584,7 @@ items:
 - key: exr-quantifier-laws-c2
   kind: exr
   file: 09-quantifier-laws.md
-  line: 887
+  line: 901
   hash: 043376f90b7c
   verdicts:
   - stage: S5a
@@ -3669,7 +3669,7 @@ items:
   kind: check
   file: 10-uniform-continuity-rule-by-rule.md
   line: 91
-  hash: 5dd82359d082
+  hash: 9f2b05ebf06f
   verdicts:
   - stage: S5a
     verdict: correct
@@ -3717,7 +3717,7 @@ items:
   kind: exm
   file: 10-uniform-continuity-rule-by-rule.md
   line: 160
-  hash: fe0bc066326e
+  hash: 8d8d781a6b2d
   verdicts:
   - stage: S5a
     verdict: correct
@@ -3740,7 +3740,7 @@ items:
   kind: exr
   file: 10-uniform-continuity-rule-by-rule.md
   line: 198
-  hash: 464bf9bb5b51
+  hash: 8f51ff01f008
   verdicts:
   - stage: S5a
     verdict: correct
@@ -3772,7 +3772,7 @@ items:
   kind: exr
   file: 10-uniform-continuity-rule-by-rule.md
   line: 226
-  hash: de9389545223
+  hash: b9c7b94ad338
   verdicts:
   - stage: S5a
     verdict: minor
@@ -3817,7 +3817,7 @@ items:
   kind: exr
   file: 10-uniform-continuity-rule-by-rule.md
   line: 278
-  hash: 7ae6243179e0
+  hash: b01c7c0ea10f
   verdicts:
   - stage: S5a
     verdict: gap
@@ -3948,7 +3948,7 @@ items:
   kind: exr
   file: 10-uniform-continuity-rule-by-rule.md
   line: 403
-  hash: d2e256d383f6
+  hash: 68d54db692b7
   verdicts:
   - stage: S5a
     verdict: correct

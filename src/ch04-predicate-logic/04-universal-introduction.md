@@ -82,12 +82,12 @@ $\begin{nd}[schema]
 
 Both draw a boundary and both are cited as a range \( i \)–\( j \). The \( \rulename{{\to}I} \) box opens with what we suppose; the flagged box opens with the name we have fixed. In the schema the flagged box begins with a gap \( \vdots \) on line \( i \), only so that the range has a first line; in a real derivation line \( i \) is whatever the box's first line is. When a flagged box immediately contains another box, as in the swap of two quantifiers in the examples below, the range starts at the first line of that inner box.
 
-Read the side condition clause by clause.
+Read the rule part by part: the flag, the three clauses of the side condition, and the last line.
 
-1. **The flag.** Opening the box is the written "let \( x_0 \) be arbitrary". The flag is always a variable, never a constant: a constant has a fixed meaning, while the whole point of \( x_0 \) is that it may stand for anything. The book writes flags with a subscript \( 0 \), \( x_0 \), \( y_0 \), \( \varepsilon_0 \), so that they stand out.
-2. **No premise, no open assumption.** This is "we know nothing about \( x_0 \)". What is known at line \( k \) is the premises and the assumptions of the boxes still open there. If none of them mentions \( x_0 \), then nothing that was used about \( x_0 \) inside the box is special to \( x_0 \).
-3. **Not in the conclusion.** The name must not leak out. Inside the box it stood for an arbitrary object, and \( \forall x\, \varphi \) is meant to speak about all objects through the bound \( x \). A conclusion that still mentions \( x_0 \) ties what it says to the one object \( x_0 \) names, while claiming it of everything.
-4. **The last line.** \( \varphi[x_0/x] \) is what was proved about \( x_0 \), and it must be a line of the flagged box itself, just as the last line of a \( \rulename{{\to}I} \) box must be (Section 1.5). A line inside a further box would still depend on that box's assumption.
+- **The flag.** Opening the box is the written "let \( x_0 \) be arbitrary". The flag is always a variable, never a constant: a constant has a fixed meaning, while the whole point of \( x_0 \) is that it may stand for anything. The book writes flags with a subscript \( 0 \), \( x_0 \), \( y_0 \), \( \varepsilon_0 \), so that they stand out.
+- **No premise, no open assumption** (the first and second clauses). This is "we know nothing about \( x_0 \)". What is known at line \( k \) is the premises and the assumptions of the boxes still open there. If none of them mentions \( x_0 \), then nothing that was used about \( x_0 \) inside the box is special to \( x_0 \).
+- **Not in the conclusion** (the third clause). The name must not leak out. Inside the box it stood for an arbitrary object, and \( \forall x\, \varphi \) is meant to speak about all objects through the bound \( x \). A conclusion that still mentions \( x_0 \) ties what it says to the one object \( x_0 \) names, while claiming it of everything.
+- **The last line.** \( \varphi[x_0/x] \) is what was proved about \( x_0 \), and it must be a line of the flagged box itself, just as the last line of a \( \rulename{{\to}I} \) box must be (Section 1.5). A line inside a further box would still depend on that box's assumption.
 
 "Appear" is the word of Section 4.2: written anywhere in the formula, including just after a quantifier symbol. So a box flagged \( x \) can never end in \( \forall x\, \varphi \), since \( x \) appears in \( \forall x\, \varphi \). That is one more reason the book never uses the quantified letter itself as the flag.
 
@@ -133,7 +133,7 @@ $\begin{nd}
 \end{center}
 ```
 
-Line 3 breaks the second clause: \( x_0 \) appears in the assumption on line 1, whose box is still open at line 3. Every other line is legal, including line 5, where the box of line 1 has closed. And line 5 says "every positive number makes every number positive", which over \( \nZ \) is false: at \( y = 1 \) the hypothesis \( 1 > 0 \) holds and \( \forall x\, (x > 0) \) fails at \( x = 0 \). This is the "let \( x \) be a real number with \( x > 0 \) … since \( x \) was arbitrary" of the opening, made into lines.
+Line 3 breaks the second clause: \( x_0 \) appears in the assumption on line 1, whose box is still open at line 3. Every other line is legal, including line 5, where the box of line 1 has closed. The inner box on line 2 is flagged \( x_0 \) while the outer box flagged \( x_0 \) is still open; the definition allows this, since its side condition asks only about premises, open assumptions and the conclusion. And line 5 says "every positive number makes every number positive", which over \( \nZ \) is false: at \( y = 1 \) the hypothesis \( 1 > 0 \) holds and \( \forall x\, (x > 0) \) fails at \( x = 0 \). This is the "let \( x \) be a real number with \( x > 0 \) … since \( x \) was arbitrary" of the opening, made into lines.
 
 *A name in the conclusion.* From the premise \( \forall x\, (x \le x) \), true over \( \nN \), open a box flagged \( y_0 \):
 
@@ -152,7 +152,7 @@ $\begin{nd}
 
 Line 2 is \( (x \le y_0)[y_0/x] \), so line 3 has the shape of \( \rulename{\forall I} \) with \( \varphi = (x \le y_0) \). But \( y_0 \) appears in the conclusion, which breaks the third clause. Line 3 says "every natural number is at most \( y_0 \)", and that is false whatever \( y_0 \) names: \( y_0 + 1 \) is a counterexample. (Exercise C1 of Section 4.5 turns this into a sentence, "there is a largest natural number".)
 
-The fourth clause is the one Chapter 1 already imposed on every box rule, for the same reason.
+The requirement on the last line is the one Chapter 1 already imposed on every box rule, for the same reason.
 
 ## Derivations with flagged boxes
 
@@ -233,7 +233,7 @@ $\begin{nd}
 
 The box flagged \( y_0 \) immediately contains the box flagged \( x_0 \), so it has no line of its own before the inner box; following the convention after @def-rules-universal, line 5 cites it as \( \lines{2}{4} \), from the first line of the inner box. Its last line is line 4, a line of the outer box itself. At line 4, \( x_0 \) is in no premise, the only open box (flagged \( y_0 \)) has no assumption, and \( x_0 \) does not appear in \( \forall x\, R(x, y_0) \). At line 5 the same holds for \( y_0 \).
 
-Nothing in (c) used that the formula under the quantifiers is \( R(x, y) \). For any formula \( \psi \) and different variables \( x \) and \( y \), with flags \( x_0 \) and \( y_0 \) that do not appear in \( \psi \), the same five lines derive \( \forall x\, \forall y\, \psi \vdash \forall y\, \forall x\, \psi \): line 3 becomes \( (\psi[x_0/x])[y_0/y] \), which equals \( (\psi[y_0/y])[x_0/x] \), since the two substitutions put fresh names in for two different variables and so do not interfere. Exchanging the letters \( x \) and \( y \) gives the other direction. So **two adjacent universal quantifiers may always be swapped**: \( \forall x\, \forall y\, \psi \dashv\vdash \forall y\, \forall x\, \psi \). Section 4.1 read this off the game, where the challenger makes both moves; here it is derived.
+Nothing in (c) used that the formula under the quantifiers is \( R(x, y) \). For any formula \( \psi \) and different variables \( x \) and \( y \), with flags \( x_0 \) and \( y_0 \) that are different from each other and from \( x \) and \( y \) and that do not appear in \( \psi \), the same five lines derive \( \forall x\, \forall y\, \psi \vdash \forall y\, \forall x\, \psi \): line 3 becomes \( (\psi[x_0/x])[y_0/y] \), which equals \( (\psi[y_0/y])[x_0/x] \), since the two substitutions put two different fresh names in for two different variables and so do not interfere. Exchanging the letters \( x \) and \( y \) gives the other direction. So **two adjacent universal quantifiers may always be swapped**: \( \forall x\, \forall y\, \psi \dashv\vdash \forall y\, \forall x\, \psi \). Section 4.1 read this off the game, where the challenger makes both moves; here it is derived.
 :::
 
 Now the sequent at which Section 4.3 stalled, together with its converse. "For every \( x \), \( P(x) \) and \( Q(x) \)" says the same as "\( P(x) \) for every \( x \), and \( Q(x) \) for every \( x \)":
@@ -316,7 +316,7 @@ $\begin{nd}
 \end{center}
 ```
 
-The goal is universal, so a flagged box; the box's goal \( x_0 \in A \to x_0 > 5 \) is an implication whose hypothesis is refuted by the instance of the premise at \( x_0 \), and VI turns the refutation into the implication. Nothing in the derivation used \( x > 5 \): with \( x < 5 \), or with any formula in place of \( x > 5 \) in which \( x_0 \) does not appear, the same four lines go through. So, from the premise that \( A \) is empty, "every element of \( A \) has property \( \varphi \)" is derivable for every \( \varphi \), as Section 4.1 said; the set \( \emptyset \) is the case \( A = \emptyset \). One more flagged box gives a statement about upper bounds:
+The goal is universal, so a flagged box; the box's goal \( x_0 \in A \to x_0 > 5 \) is an implication whose hypothesis is refuted by the instance of the premise at \( x_0 \), and VI turns the refutation into the implication. Line 3 uses VI as a derived rule (@def-derived-rule), with the formulas \( x_0 \in A \) and \( x_0 > 5 \) in place of the letters \( P \) and \( Q \). This is allowed because the derivation of @prp-vacuous-implication uses only \( \rulename{\neg E} \), \( \rulename{\bot E} \) and \( \rulename{{\to}I} \), whose schemas apply to any formulas (@def-rule-schema), and it has no flagged box, so pasting it into the box flagged \( x_0 \) gives a derivation in the rules themselves. From now on, any derived rule of Chapter 2 is used in this way on first-order formulas. Nothing in the derivation used \( x > 5 \): with \( x < 5 \), or with any formula in place of \( x > 5 \) in which \( x_0 \) does not appear, the same four lines go through. So, from the premise that \( A \) is empty, "every element of \( A \) has property \( \varphi \)" is derivable for every \( \varphi \), as Section 4.1 said; the set \( \emptyset \) is the case \( A = \emptyset \). One more flagged box gives a statement about upper bounds:
 
 ```{=latex}
 \begin{center}
@@ -334,7 +334,7 @@ $\begin{nd}
 \end{center}
 ```
 
-Over \( \nR \), line 5 says that every real number \( u \) is an upper bound of \( A \): every element of \( A \) is at most \( u \). For an empty set this holds for every \( u \), because there are no elements to check. At line 4 the name \( x_0 \) appears in neither the premise nor \( \forall x\, (x \in A \to x \le u_0) \); the name \( u_0 \) does appear in that conclusion, which is allowed, since the condition at line 4 is about \( x_0 \) only.
+Over \( \nR \), line 5 says that every real number \( u \) is an upper bound of \( A \): every element of \( A \) is at most \( u \). For an empty set this holds for every \( u \), because there are no elements to check. At line 4, \( x_0 \) appears in neither the premise nor \( \forall x\, (x \in A \to x \le u_0) \), and the only open box (flagged \( u_0 \)) has no assumption. The name \( u_0 \) does appear in that conclusion, which is allowed, since the condition at line 4 is about \( x_0 \) only. At line 5, \( u_0 \) appears in neither the premise nor \( \forall u\, \forall x\, (x \in A \to x \le u) \), and no box is open.
 
 ## How this rule looks in a mathematical proof
 
@@ -366,7 +366,7 @@ Since the domain is \( \nR \), "let \( x \in \nR \)" asks nothing of \( x \). A 
 
 ## Common errors
 
-Three errors with \( \rulename{\forall I} \) are common enough to name now. Chapter 5 collects them, and the other errors of this chapter, into a catalogue of steps that are not allowed.
+Three errors with \( \rulename{\forall I} \) are common enough to name now. The first of them opens Chapter 5's catalogue of steps that are not allowed.
 
 - **Checking instances.** Verifying \( \varphi \) at \( x = 0, 1, 2 \), or at a thousand values, proves \( \varphi[0/x] \), \( \varphi[1/x] \), \( \varphi[2/x] \), and so on, and not \( \forall x\, \varphi \). The rule needs one proof about a fresh name, not many proofs about particular terms. Exercise C2 shows how plausible this error can look.
 - **Generalizing over a name in an open assumption.** Inside "suppose \( x_0 > 0 \)", the name \( x_0 \) is not arbitrary. The second derivation of "Why each clause" shows where this leads.
@@ -676,7 +676,7 @@ $\begin{nd}
 
 The side condition at line 6. *Premises:* the only premise is line 1, \( \forall x\, \forall y\, R(x, y) \), and \( x_0 \) does not appear in it. *Open assumptions:* no box is open at line 6, so there are none. *Conclusion:* \( \forall x\, R(x, x) \) does not contain \( x_0 \). The last line of the box, line 5, is \( R(x, x)[x_0/x] \) and is a line of the box itself. So line 6 is legal, and the derivation has 7 lines. Lines 2, 3 and 7 mention \( x_0 \) outside the box, and the side condition does not ask about them.
 
-(b) No: lines 2, 3 and 7 mention \( x_0 \) outside its box. Yet the conclusion is correct. The reason the side condition looks only at premises and open assumptions is that these are the only lines whose truth may depend on what \( x_0 \) names. Lines 2 and 3 were derived from a premise that does not mention \( x_0 \); they hold whatever \( x_0 \) names. So the argument in the box really is about an arbitrary object, and \( \forall x\, R(x, x) \) follows. The stronger condition would reject this derivation, although renaming the box's flag to a new letter \( z_0 \) (lines 4–5 becoming \( \forall y\, R(z_0, y) \) and \( R(z_0, z_0) \)) gives a derivation that meets it and has the same last line. A condition that rejects a correct derivation for the spelling of a name forbids more than safety needs.
+(b) No: lines 2, 3 and 7 mention \( x_0 \) outside its box. Yet the conclusion is correct. The reason the side condition looks only at premises and open assumptions is that these are the only lines taken without proof, so they are the only lines that can single out what \( x_0 \) names; every other available line is derived from them. Lines 2 and 3 were derived from a premise that does not mention \( x_0 \); they hold whatever \( x_0 \) names. So the argument in the box really is about an arbitrary object, and \( \forall x\, R(x, x) \) follows. The stronger condition would reject this derivation, although renaming the box's flag to a new letter \( z_0 \) (lines 4–5 becoming \( \forall y\, R(z_0, y) \) and \( R(z_0, z_0) \)) gives a derivation that meets it and has the same last line. A condition that rejects a correct derivation for the spelling of a name forbids more than safety needs.
 
 (c) Yes. \( \rulename{R} \) may copy into the box any line available there, and line 3 lies in no box, so it is available at every later line. With line 5 justified "\( \rulename{R} \) 3" (and line 4 deleted), the box is a single line \( R(x_0, x_0) \), and the side condition at the \( \rulename{\forall I} \) line is checked exactly as in (a): nothing in it looks at where the box's last line came from. The derivation is legal, and it is correct for the reason in (b): line 3 was derived from a premise that says nothing about \( x_0 \).
 
@@ -684,7 +684,7 @@ The side condition at line 6. *Premises:* the only premise is line 1, \( \forall
 - 2: the left conjunct by two \( \rulename{\forall E} \) lines at \( x_0 \), outside any box.
 - 2: a flagged box with \( \rulename{\forall E} \) at the flag and \( \rulename{\forall I} \) citing it.
 - 2: the side condition checked clause by clause: premise, open assumptions, conclusion.
-- 2: (b) explains that lines outside the box that do not rest on premises or assumptions about \( x_0 \) cannot make \( x_0 \) special.
+- 2: (b) explains that lines outside the box that do not rest on premises or assumptions about \( x_0 \) cannot make \( x_0 \) special. Alternatively, 2 for showing that renaming the box's flag to a new letter gives a derivation that meets the stronger condition and has the same last line.
 - 2: (c) correct answer with the availability check for the repeated line.
 Fatal errors (0 for the step): claiming that line 3 makes line 6 illegal; checking the side condition against lines that are not premises, open assumptions or the conclusion.
 :::
@@ -715,15 +715,15 @@ Write lines (2)–(4) as formulas. Which terms do they mention?
 ::: {.solution}
 [Hint 2]
 
-\( \rulename{\forall I} \) needs the box's last line to be \( \varphi[x_0/x] \), for a flag \( x_0 \). Is any of lines (2)–(4) of that form?
+Write the student's proof as a derivation: open a box flagged \( x_0 \) for line (1), and write lines (2)–(4) as lines inside it. What would line (5) have to cite?
 :::
 
 ::: {.solution}
 (a) Yes. For every real \( x \), \( x^2 - 2x + 1 = (x - 1)^2 \ge 0 \), since a square is never negative.
 
-(b) No. Lines (2)–(4) are true, and line (1) opens a flagged box, "let \( x \) be arbitrary". The error is in line (5). With \( \varphi \) the formula \( x^2 - 2 \cdot x + 1 \ge 0 \), lines (2)–(4) establish \( \varphi[0/x] \), \( \varphi[1/x] \) and \( \varphi[2/x] \): statements about the constants \( 0 \), \( 1 \), \( 2 \). None of them is \( \varphi[x_0/x] \) for the flag. Inside the box, nothing about the arbitrary \( x \) was ever proved; the first sentence of (5), "so \( x^2 - 2x + 1 \ge 0 \)", is asserted, not derived. So the closing "since \( x \) was arbitrary" is an application of \( \rulename{\forall I} \) to a box whose last line is not an instance at the flag: the rule's schema is not matched. Line (1) was idle: the argument never used the \( x \) it introduced.
+(b) No. Lines (2)–(4) are true, and line (1) opens a flagged box, "let \( x \) be arbitrary". The error is in line (5). With \( \varphi \) the formula \( x^2 - 2 \cdot x + 1 \ge 0 \), lines (2)–(4) establish \( \varphi[0/x] \), \( \varphi[1/x] \) and \( \varphi[2/x] \): statements about the constants \( 0 \), \( 1 \), \( 2 \). None of them is \( \varphi[x_0/x] \) for the flag. Inside the box, nothing about the arbitrary \( x \) was ever proved. The first sentence of (5), "so \( x^2 - 2x + 1 \ge 0 \)", has the right form: it is \( \varphi[x_0/x] \), with the student's \( x \) as the flag. But no rule writes it: it is not a premise, an assumption or a repetition, and no rule takes \( \varphi[0/x] \), \( \varphi[1/x] \) and \( \varphi[2/x] \) to \( \varphi[x_0/x] \). So the closing "since \( x \) was arbitrary" applies \( \rulename{\forall I} \) to a box whose last line was never derived: the lines the box legally derives are all instances at constants, not the instance at the flag. Line (1) was idle: the argument never used the \( x \) it introduced.
 
-(c) Take \( p(x) = x(x - 1)(x - 2) \). The same checks succeed: \( p(0) = 0 \ge 0 \), \( p(1) = 0 \ge 0 \), \( p(2) = 0 \ge 0 \). But \( p(-1) = (-1)(-2)(-3) = -6 < 0 \), so "\( p(x) \ge 0 \) for every real \( x \)" is false. An argument whose every step is legal never reaches a false conclusion from true premises, so the step in (5) is not legal. The claim in (a) is true for a different reason, one that the argument never gave.
+(c) Take \( p(x) = x(x - 1)(x - 2) \). The same checks succeed: \( p(0) = 0 \ge 0 \), \( p(1) = 0 \ge 0 \), \( p(2) = 0 \ge 0 \). But \( p(-1) = (-1)(-2)(-3) = -6 < 0 \), so "\( p(x) \ge 0 \) for every real \( x \)" is false. So the pattern of (5), concluding "for every \( x \)" from checks at a few constants, can lead from true checks to a false conclusion. It is not an instance of \( \rulename{\forall I} \), as (b) showed. (Section 4.11 states, and the optional Section 4.12 proves, that legal steps never lead from true premises to a false conclusion.) The claim in (a) is true for a different reason, one that the argument never gave.
 
 (d) The derivation under "How this rule looks in a mathematical proof": inside the box flagged \( x_0 \), \( \rulename{\forall E} \) applies "squares are not negative" at \( x_0 - 1 \), an arith line rewrites it as \( x_0^2 - 2x_0 + 1 \ge 0 \), and that line **is** \( \varphi[x_0/x] \), so \( \rulename{\forall I} \) applies.
 
@@ -741,10 +741,10 @@ def-rules-universal (example): over Z, 2 is even and 1 is odd; 1 > 0 and 0 > 0 f
 def-rules-universal (claim): "appear" includes the variable after a quantifier symbol | Section 4.2 (after def-free-variable), recalled
 def-rules-universal (claim): the box rule's last line must be a line of the box itself, as for ->I | def-derivation and def-rules-implication (Section 1.5), recalled
 exm-universal-introduction-derivations (solution): (phi[z/y])[z_0/z] = phi[z_0/y] when z, z_0 do not appear in phi | inline (both replace exactly the free occurrences of y; argued in the text)
-exm-universal-introduction-derivations (solution): (psi[x_0/x])[y_0/y] = (psi[y_0/y])[x_0/x] for different x, y and flags not appearing in psi | inline (stated with its reason in the text)
+exm-universal-introduction-derivations (solution): (psi[x_0/x])[y_0/y] = (psi[y_0/y])[x_0/x] for different x, y and flags x_0, y_0 different from each other and from x, y and not appearing in psi | inline (stated with its reason in the text)
 exm-universal-introduction-derivations (solution): z_0 not appearing in phi is free for y in phi | Section 4.2 (special cases after def-free-for), recalled
 prp-forall-and (claim): forall/vee holds in one direction only | Section 4.9 (prose pointer only, nothing here rests on it)
-universal-introduction-empty (example): VI is a derived rule usable as one line on first-order formulas | prp-vacuous-implication (cited), def-derived-rule pattern (Chapter 2)
+universal-introduction-empty (example): VI is a derived rule usable as one line on first-order formulas | prp-vacuous-implication (cited), def-derived-rule (cited; extended to first-order formulas inline, Section 4.4), def-rule-schema (cited)
 universal-introduction-proof (example): (x - 1)^2 = x^2 - 2x + 1 | school algebra ("arith", as in Section 4.3); checked by verify/ch04/def-rules-universal.py
 universal-introduction-errors (example): the warning's n = 1: 1 is odd and 1^2 = 1 is odd | school arithmetic
 universal-introduction-errors (example): quick check reading over Z with R as !=, c = 0, y_0 = 1 | school arithmetic; checked by verify/ch04/def-rules-universal.py
@@ -754,4 +754,5 @@ exr-universal-introduction-b2 (solution): a stalled search proves nothing; the c
 exr-universal-introduction-b3 (solution): the three universal arithmetic premises are true over R | stated as premises; school facts (as in exm-abs-at-least-x)
 exr-universal-introduction-c1 (solution): renaming the box's flag gives a derivation with the same last line | inline (checked line by line in the solution)
 exr-universal-introduction-c2 (solution): p(x) = x(x - 1)(x - 2) is 0 at 0, 1, 2 and -6 at -1; x^2 - 2x + 1 = (x - 1)^2 | school arithmetic; checked by verify/ch04/exr-universal-introduction-c2.py
+exr-universal-introduction-c2 (solution): legal steps never lead from true premises to a false conclusion | Section 4.11 (stated), optional Section 4.12 (proved); prose pointer only, nothing here rests on it (the illegality of (5) is shown directly in (b))
 -->

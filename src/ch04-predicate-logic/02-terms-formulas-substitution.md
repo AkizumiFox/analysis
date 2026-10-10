@@ -107,7 +107,7 @@ Structural induction and structural recursion (@thm-structural-induction, @thm-s
 
 **Shorthand.** The conventions of Section 3.1 for dropping parentheses stay, with three additions.
 
-1. Two-place predicate symbols such as \( <, \le \) are written between their terms: \( x < y \) is shorthand for \( <(x, y) \). The one-place symbol \( \in A \) is written after its term: \( t \in A \) is shorthand for \( (\in A)(t) \). We write \( t_1 \ne t_2 \) for \( \neg(t_1 = t_2) \).
+1. Two-place predicate symbols such as \( <, \le \) are written between their terms: \( x < y \) is shorthand for \( <(x, y) \). The one-place symbol \( \in A \) is written after its term: \( t \in A \) is shorthand for \( (\in A)(t) \). (When sets are themselves objects of the domain, as in Chapter 6, \( \in \) is a two-place predicate symbol and \( x \in A \) is \( \in(x, A) \); in this chapter \( A \) is always a fixed set, so we treat \( \in A \) as one-place.) We write \( t_1 \ne t_2 \) for \( \neg(t_1 = t_2) \).
 2. **A quantifier binds as tightly as \( \neg \)**: it applies to the smallest formula that follows it. So \( \forall x\, P(x) \to Q(c) \) stands for \( (\forall x\, P(x) \to Q(c)) \), an implication whose hypothesis is \( \forall x\, P(x) \). For the quantifier to govern the whole implication, write \( \forall x\, (P(x) \to Q(x)) \), where the parentheses are the official ones around the implication.
 3. The bounded quantifiers of @def-bounded-quantifier, \( \forall x \in A \; \varphi \) and the rest, stand for the formulas given there.
 

@@ -1,9 +1,8 @@
 """def-rule-existential-introduction (Ch 4, Section 4.5) and the prose of that section:
 the table of readings of R(c, c), the capture nonexample, the Quick check on 2 + 2 = 4,
-the hook and the bounded witness (N = 100), the 'large enough' warning (N = ceil(1/eps)),
+the hook, the bounded witness and the 'large enough' warning (N = 100), clause 3's recipe,
 and the even/odd witnesses of 'How this rule looks in a mathematical proof'."""
 from fractions import Fraction as Fr
-import math
 from _s0102_fol import V, C, F, At, Eq, All, Ex, sub, free_for
 
 QUOTED = {"hook N": 100, "even witness": 3, "odd witness": 3, "rows of the table": 4,
@@ -19,6 +18,10 @@ for phi in table:
 # the readings over N with R as <= and c = 5 are true (witnesses 0, 5, 0)
 N = range(0, 100)
 assert any(d <= 5 for d in N) and any(5 <= d for d in N) and any(d <= d for d in N)
+
+# clause 3: the recipe fails when x appears in the line: R(x, c), marking c, gives R(x, x)
+bad = At('R', x, x)
+assert sub(bad, c, 'x') == At('R', c, c) != At('R', x, c)
 
 # capture: phi = forall y R(x, y), t = y: phi[y/x] is the cited line, y is not free for x
 phi = All('y', At('R', x, y))
@@ -42,10 +45,6 @@ assert Fr(1, 100 + 1) < Fr(1, 100)
 assert not (Fr(1, 99 + 1) < Fr(1, 100))
 least = min(n for n in range(0, 1000) if Fr(1, n + 1) < Fr(1, 100))
 assert least == QUOTED["least bounded witness"] == QUOTED["hook N"]
-# 'large enough' kept by N = ceil(1/eps): 1/(N + 1) < eps for eps > 0
-for eps in [Fr(1, 3), Fr(2, 7), Fr(1, 100), Fr(5, 1), Fr(1, 1), Fr(3, 1000)]:
-    Nn = math.ceil(1 / eps)
-    assert Nn >= 0 and Fr(1, Nn + 1) < eps
 
 # 6 = 2 * 3, 7 = 2 * 3 + 1; 2n + 1 is odd and exceeds 2n
 assert 6 == 2 * QUOTED["even witness"] and 7 == 2 * QUOTED["odd witness"] + 1

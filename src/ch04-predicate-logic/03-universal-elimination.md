@@ -44,6 +44,7 @@ Read the definition clause by clause.
 2. **Any term.** The term may be a constant (\( c \), \( 2 \)), a variable (\( y \), or \( x \) itself), or a compound term (\( f(c) \), \( a - 1 \), \( \varepsilon/2 \)). It may be a variable that already occurs elsewhere in the derivation. Nothing about the term has to be established first: \( \rulename{\forall E} \) needs no line saying that \( t \) "exists" or "is in the domain", because every term names an element of the domain.
 3. **Every free occurrence, by the same term.** The new line is \( \varphi[t/x] \), so by @def-substitution every free occurrence of \( x \) in \( \varphi \) is replaced, and all of them by the same \( t \). We do not choose which occurrences change.
 4. **Free for \( x \).** This is the condition of @def-free-for, and it is the rule's only restriction. It forbids exactly the substitutions in which a variable of \( t \) would be captured by a quantifier of \( \varphi \).
+5. **Line \( i \) is available.** Line \( i \) must be available at line \( k \) (the scope rule of @def-derivation). Every rule asks this; it is not a restriction special to \( \rulename{\forall E} \).
 
 **A degenerate case.** If \( x \) is not free in \( \varphi \), then \( \varphi[t/x] = \varphi \) for every term \( t \) (the claim proved in Section 4.2), and \( \rulename{\forall E} \) simply removes a quantifier that bound nothing: from \( \forall x\, P(c) \) it writes \( P(c) \). Legal, and dull.
 
@@ -51,7 +52,7 @@ Read the definition clause by clause.
 
 *Why this rule.* It says no more than the word "every". If every object in the domain satisfies \( \varphi \), then so does the object that \( t \) names, whichever object that is. A term always names something, since the domain is never empty (Section 4.1), so the instance always has something to be about.
 
-*Why "free for".* The instance must say about \( t \) what \( \varphi \) says about \( x \). Section 4.2 showed that \( \varphi[t/x] \) fails to do so exactly when a variable of \( t \) is captured, and the subsection on common errors below shows the rule going wrong without the condition. Section 4.11 states that the rule, with its condition, never leads from true premises to a false line, and the optional Section 4.12 proves it.
+*Why "free for".* The instance must say about \( t \) what \( \varphi \) says about \( x \). Section 4.2 showed that when a variable of \( t \) is captured, \( \varphi[t/x] \) can say something quite different. The condition rules capture out, and the subsection on common errors below shows the rule going wrong without it. Section 4.11 states that the rule, with its condition, never leads from true premises to a false line, and the optional Section 4.12 proves it.
 
 ::: {.check}
 Line 1 of a derivation is \( \forall x\, \exists z\, (z > x + y) \). For which terms \( t \) may \( \rulename{\forall E} \) write \( (\exists z\, (z > x + y))[t/x] \) on line 2? Is \( t = y \) allowed? Is \( t = z + 1 \)?
@@ -122,7 +123,7 @@ $\begin{nd}
 \end{center}
 ```
 
-A reader who instantiates in the order the letters appear in the premises, \( x \coloneqq a \) because \( a \) comes first and then \( y \coloneqq a \) because nothing else suggests itself, writes \( R(a, a) \to R(a, a) \), which is legal and useless. The goal, not the order of the premises, says which terms to use.
+A reader who matches the goal \( R(b, a) \) against the hypothesis \( R(x, y) \) instead of the conclusion \( R(y, x) \) puts \( b \) for \( x \) and \( a \) for \( y \), and gets \( R(b, a) \to R(a, b) \). That is a legal line, but its hypothesis is the goal itself, so \( \rulename{{\to}E} \) cannot fire. Match the goal against the conclusion of the implication, since that is the part \( \rulename{{\to}E} \) delivers.
 
 (d) *Idea, forwards.* The premise \( P(c) \) is the hypothesis of the instance of the first premise at \( c \), so instantiating at \( c \) and firing gives \( P(f(c)) \). Now \( P(f(c)) \) is the hypothesis of the instance at \( f(c) \), so the same premise, instantiated again, fires again and gives \( P(f(f(c))) \), the goal.
 
@@ -223,9 +224,9 @@ Try the sequent
 \[
 \forall x\, (P(x) \wedge Q(x)) \vdash \forall x\, P(x) .
 \]
-It is plainly correct: if every \( x \) has both properties, then every \( x \) has the first. Search for a derivation. The goal begins with \( \forall \), and no rule so far builds a new \( \forall \): a line beginning with \( \forall \) can only be taken out of a line that already contains it. So the goal-directed step has nothing to offer, and we turn to the premise. \( \rulename{\forall E} \) at \( c \) gives \( P(c) \wedge Q(c) \), and \( \rulename{\wedge E} \) gives \( P(c) \). The same works at \( d \), at \( f(c) \), at any term we name. But each line is an instance. No finite list of instances is the statement \( \forall x\, P(x) \), which speaks about every object at once, including all the objects that none of our terms happen to name.
+It is plainly correct: if every \( x \) has both properties, then every \( x \) has the first. Search for a derivation. The goal begins with \( \forall \), and no rule so far is made for proving a \( \forall \). Apart from \( \rulename{\bot E} \) (@def-rules-contradiction) and \( \rulename{RAA} \) (@def-rule-raa), which reach a line only by way of a contradiction, a line beginning with \( \forall \) can only be taken out of a line or box that already contains it. So the goal-directed step has nothing to offer, and we turn to the premise. \( \rulename{\forall E} \) at \( c \) gives \( P(c) \wedge Q(c) \), and \( \rulename{\wedge E} \) gives \( P(c) \). The same works at \( d \), at \( f(c) \), at any term we name. But each line is an instance. No finite list of instances is the statement \( \forall x\, P(x) \), which speaks about every object at once, including all the objects that none of our terms happen to name.
 
-So with \( \rulename{\forall E} \) alone, a universal statement can be **used** but not **proved**. A derivation can write \( \forall x\, \psi \) only by taking it out of a line that already contains it, as line 2 of (b) took \( \forall y\, R(c, y) \) out of the premise. Section 1.4 was in the same position with implications, and Section 1.5 filled the gap with a box. Section 4.4 does the same for \( \forall \): it proves \( P \) of one name about which nothing is known, and that box finishes this derivation in four lines.
+So with \( \rulename{\forall E} \) alone, a universal statement can be **used** but not **proved**. Leaving aside a detour through a contradiction, a derivation can write \( \forall x\, \psi \) only by taking it out of a line or box that already contains it, as line 2 of (b) took \( \forall y\, R(c, y) \) out of the premise. Section 1.4 was in the same position with implications, and Section 1.5 filled the gap with a box. Section 4.4 does the same for \( \forall \): it proves \( P \) of one name about which nothing is known, and that box finishes this derivation in four lines.
 
 ## What the rule sounds like
 
@@ -456,19 +457,19 @@ $\begin{nd}
 \end{center}
 ```
 
-Clause 1: the main symbol of line 1 is \( \forall x \), with scope \( P(x) \). Clause 2: the term is the variable \( x \) itself, and any term is allowed. Clause 3: \( P(x)[x/x] = P(x) \), so every free occurrence was replaced, by \( x \). Clause 4: \( x \) is free for \( x \) in every formula (Section 4.2: a free occurrence of \( x \) never lies in the scope of a quantifier on \( x \)). So line 2 is legal. Its \( x \) is now free: line 2 says "\( P \) holds of whatever \( x \) names", which is true whatever \( x \) names, since line 1 says that \( P \) holds of everything.
+Clause 1: the main symbol of line 1 is \( \forall x \), with scope \( P(x) \). Clause 2: the term is the variable \( x \) itself, and any term is allowed. Clause 3: \( P(x)[x/x] = P(x) \), so every free occurrence was replaced, by \( x \). Clause 4: \( x \) is free for \( x \) in every formula (Section 4.2: a free occurrence of \( x \) never lies in the scope of a quantifier on \( x \)). Clause 5: line 1 is a premise and lies in no box, so it is available at line 2. So line 2 is legal. Its \( x \) is now free: line 2 says "\( P \) holds of whatever \( x \) names", which is true whatever \( x \) names, since line 1 says that \( P \) holds of everything.
 
 (b) Read \( P(x) \) as "\( x \) is even" and let \( x \) name \( 2 \). Then \( P(x) \) is true, and \( \forall x\, P(x) \), "every integer is even", is false, since \( 1 \) is odd. A rule allowing the step from \( P(x) \) to \( \forall x\, P(x) \) in general would lead from a true line to a false one.
 
 (c) With the letter \( x \) as the name, the conclusion \( \forall x\, P(x) \) contains \( x \) (the variable after the quantifier counts, which is what "appear" means), so the condition "not in the conclusion" fails, whatever else holds. The route must instantiate at a **different** letter instead: open the box for a new name \( x_0 \), write \( P(x_0) \) by \( \rulename{\forall E} \) at \( x_0 \) from line 1, and close the box with \( \forall x\, P(x) \). Now \( x_0 \) appears nowhere in the premise \( \forall x\, P(x) \), there is no other assumption, and \( x_0 \) is not in the conclusion; every condition holds.
 
-If \( P(x) \) is itself the premise, take any name. If the name is \( x \), the line \( P(x) \) is available but \( x \) appears in the premise and in the conclusion. If the name is some \( x_0 \) other than \( x \), the box needs the line \( P(x_0) \), and nothing gives it: the premise is about \( x \), not \( x_0 \), and no rule turns a statement about one free variable into a statement about another. So no derivation of this kind exists, and by (b) none should: \( P(x) \vdash \forall x\, P(x) \) would lead from a true premise to a false conclusion.
+If \( P(x) \) is itself the premise, take any name. If the name is \( x \), the line \( P(x) \) is available but \( x \) appears in the premise and in the conclusion. If the name is some \( x_0 \) other than \( x \), the box needs the line \( P(x_0) \), and the search finds nothing that gives it: the premise is about \( x \), and no line mentions \( x_0 \). A stalled search proves nothing by itself, since a cleverer derivation might exist. By (b), none should exist: \( P(x) \vdash \forall x\, P(x) \) would lead from a true premise to a false conclusion. Section 4.11 turns that reading into a counter-model and, with the soundness statement given there (proved in the optional Section 4.12), shows that \( P(x) \nvdash \forall x\, P(x) \).
 
 **Marking scheme.** (10 points)
-- 3: (a) the derivation, with each of the four clauses checked, including that \( x \) is free for \( x \).
+- 3: (a) the derivation, with each of the five clauses checked, including that \( x \) is free for \( x \).
 - 2: (b) a reading with \( P(x) \) true and \( \forall x\, P(x) \) false, the value of \( x \) stated.
 - 3: (c) the flag \( x \) fails "not in the conclusion"; the fix instantiates at a fresh \( x_0 \) inside the box.
-- 2: (c) for the premise \( P(x) \): no name works, with the reason for both \( x \) and a different name.
+- 2: (c) for the premise \( P(x) \): the name \( x \) fails the side condition, and for a different name the search stalls, with the pointer to Section 4.11 for non-derivability.
 Fatal errors (0 for the step): claiming the flag \( x \) is fine because \( x \) is bound in the conclusion; treating \( P(x) \) and \( P(x_0) \) as the same line.
 :::
 
@@ -481,11 +482,17 @@ exm-universal-elimination-derivations (example): over N, f(n) = n + 2, 0 even, f
 def-rule-universal-elimination (example): in "How this rule looks", (a - 1)^2 = a^2 - 2a + 1; y^2 >= 0 for real y | school algebra, stated as such ("arith"); checked by verify/ch04/def-rule-universal-elimination.py
 def-rule-universal-elimination (claim): the arith convention: an arith line abbreviates a universally quantified arithmetic premise, forall-E at the line's terms and ->E | inline convention, stated in the text; the same convention is recalled in Section 4.12
 def-rule-universal-elimination (example): in "Common errors", over N, x + 1 != x; not every n >= 1 (0); 1 >= 1 and 1 != 0; over R, x <= x^2 for x >= 1, so x <= x^2 or x < 1 for all x; at x = 1, 2 <= 1 and 1 < 1 fail | school arithmetic; checked by verify/ch04/def-rule-universal-elimination.py
-def-rule-universal-elimination (claim): in "A stall", no finite list of instances derives forall x P(x) with the rules so far | informal remark, not a theorem; the stall is resolved in Section 4.4 (prose pointer)
+def-rule-universal-elimination (claim): in "A stall", apart from bot-E and RAA a line beginning with forall comes out of a line or box containing it; no finite list of instances derives forall x P(x) with the rules so far | informal remark, not a theorem (bot-E and RAA by @def-rules-contradiction, @def-rule-raa); the stall is resolved in Section 4.4 (prose pointer)
+def-rule-universal-elimination (claim): renaming a bound variable to a letter that appears nowhere gives the same statement, so one can rename before substituting (Quick check, "Common errors", search step) | Section 4.2 (renaming convention, after def-free-for; no label), recalled in prose
+exm-universal-elimination-derivations (example): a term with no variables (c, f(c)) is free for every variable | Section 4.2 (special cases after def-free-for), recalled
+exr-universal-elimination-a1 (solution): f(c) has no variables, so it is free for x | Section 4.2 (special cases after def-free-for), recalled
+exr-universal-elimination-b3 (solution): every term is free for x in a formula with no quantifier | def-free-for (recursive description: atomic formulas and connectives), recalled
+exr-universal-elimination-c1 (solution): constants are free for every variable | Section 4.2 (special cases after def-free-for), recalled
 exr-universal-elimination-a1 (solution): over Z, exists y (y > x) true for all x, exists y (y > y) false; over R, 3 * (-1) < 0; over N, 0 >= 1 false, 1 >= 1 true | school arithmetic; checked by verify/ch04/exr-universal-elimination-a1.py
 exr-universal-elimination-b3 (solution): (a - b)^2 = a^2 - 2ab + b^2; (a + b)^2 >= 0 gives a^2 + b^2 >= -2ab | school algebra ("arith"); checked by verify/ch04/exr-universal-elimination-b3.py
 exr-universal-elimination-c1 (solution): on {0, 1}, the relation {(0, 0)} is symmetric and transitive, and (1, 1) is not in it | inline (finite check); checked by verify/ch04/exr-universal-elimination-c1.py
 exr-universal-elimination-c2 (solution): over Z, 2 is even and 1 is odd | school arithmetic
 exr-universal-elimination-c2 (solution): x is free for x in every formula; "appear" includes the variable after a quantifier | Section 4.2 (special cases after def-free-for; the definition of "appear" after def-free-variable), recalled
 exr-universal-elimination-c2 (solution): the forall-I side condition, quoted in the item | stated in the item itself; Section 4.4 (prose pointer), not used as a step
+exr-universal-elimination-c2 (solution): P(x) does not derive forall x P(x); the search explanation is informal | NOT proved here: Section 4.11 (counter-model and soundness statement), proved in optional Section 4.12; prose pointer only, nothing depends on it
 -->

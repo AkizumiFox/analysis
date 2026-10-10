@@ -12,7 +12,7 @@ The hypothesis is \( \exists k\, (n = 2 \cdot k) \). The proof does not know whi
 
 Why is this correct? Two tempting shortcuts show what the proof is careful **not** to do.
 
-- It does not name the witness by a term that already means something. From "some integer is even" we may not conclude "\( 3 \) is even": the existential does not say that the witness is \( 3 \), and @exr-existential-introduction-c2 explained why no rule should give \( P(c) \) from \( \exists x\, P(x) \).
+- It does not name the witness by a term that already means something. From "some integer is even" we may not conclude "\( 3 \) is even": the existential does not say that the witness is \( 3 \), and, as the warning "\( \rulename{\exists I} \) runs one way only" of Section 4.5 noted, it cannot be read back as a statement about a named object.
 - It does not let the conclusion mention the name. If it did, the conclusion would be a statement about \( k \), and outside the argument \( k \) refers to nothing; the existential promised only that **some** \( k \) works.
 
 So the name must be new, the argument may use only what the existential says about it, and the conclusion must not mention it. Then the argument works for the witness, whichever integer it is, because it never used anything else about it.
@@ -128,7 +128,7 @@ $\begin{nd}
 
 Line 2 is a legal \( \rulename{\forall E} \) at the term \( x_0 \). Line 5 breaks clause 5: the existential on line 2 is \( \exists x\, \varphi \) with \( \varphi = R(x, x_0) \), and \( x_0 \) appears in it. The assumption \( \varphi[x_0/x] \) on line 3 is \( R(x_0, x_0) \): the box has assumed that the witness smaller than \( x_0 \) is \( x_0 \) itself. The conclusion says that some integer is less than itself, which is false. The other clauses hold at line 5: \( x_0 \) is not in \( \exists z\, R(z, z) \), not in the premise, and no box is open.
 
-A fourth illegal pattern, a second witness given a name that an open assumption already uses, is the error of the second warning at the end of this section.
+A fourth illegal pattern, a second witness given a name that an open assumption already uses, is the error of the warning "Two witnesses, one name" below.
 
 ::: {.warning}
 **The witness is not arbitrary.** The flagged boxes of \( \rulename{\forall I} \) and \( \rulename{\exists E} \) look alike: both introduce a fresh name. Their names mean opposite things. In a \( \rulename{\forall I} \) box, \( x_0 \) is **any** object, and what is proved about it holds for all. In an \( \rulename{\exists E} \) box, \( x_0 \) is **one particular** object, the witness, about which we know \( \varphi[x_0/x] \) and nothing else; what is proved about it holds for it alone. From "some integer is even" nothing follows about every integer, and the rules agree:
@@ -150,7 +150,7 @@ $\begin{nd}
 \end{center}
 ```
 
-Line 4 is blocked: \( x_0 \) appears in the assumption \( P(x_0) \) of the \( \rulename{\exists E} \) box, which is still open at line 4. That clause of \( \rulename{\forall I} \) is what keeps a witness from being generalized over.
+Line 4 is blocked: \( x_0 \) appears in the assumption \( P(x_0) \) of the \( \rulename{\exists E} \) box, which is still open at line 4. That clause of \( \rulename{\forall I} \) is what keeps a witness from being generalized over inside its box; clause 3 of \( \rulename{\exists E} \), that \( x_0 \) not appear in \( \chi \), keeps it from leaving the box (the derivation for clause 3 above).
 :::
 
 ## Using an existential: open the box early
@@ -159,7 +159,7 @@ When a resource is \( \exists x\, \varphi \), the premise-directed step of the s
 
 *Name the witness early: open the \( \rulename{\exists E} \) box as soon as the existential is available, and aim it at the current goal.*
 
-Why early? The box takes nothing away: every line available before it opens is available inside it, so every resource is still there, and the assumption \( \varphi[x_0/x] \) is one more. And a box aimed at the current goal \( \chi \) can always be closed once \( \chi \) is reached: \( x_0 \) was chosen fresh, so it appears in no premise, in no open assumption and not in \( \exists x\, \varphi \), and \( \chi \), the goal that was set before \( x_0 \) existed, does not mention it either. (One caution: a \( \rulename{\forall I} \) inside the box needs a flag that does not appear in the new assumption; a flag that is fresh at that point has this property.) What the early box gives is the witness. The name \( x_0 \) is often exactly the term that a postponed \( \exists \) goal is waiting for (Section 4.5), and the sooner it exists, the sooner the search can see it.
+Why early? The box takes nothing away: every line available before it opens is available inside it, so every resource is still there, and the assumption \( \varphi[x_0/x] \) is one more. And a box aimed at the current goal \( \chi \) can always be closed once \( \chi \) is reached: \( x_0 \) is chosen, when the box opens, to appear in no premise, in no open assumption, not in \( \exists x\, \varphi \) and not in the current goal \( \chi \). The assumptions still open at the line that closes the box are the ones that were open when it opened, so every clause of the side condition holds there. (One caution: a \( \rulename{\forall I} \) inside the box needs a flag that does not appear in the new assumption; a flag that is fresh at that point has this property.) What the early box gives is the witness. The name \( x_0 \) is often exactly the term that a postponed \( \exists \) goal is waiting for (Section 4.5), and the sooner it exists, the sooner the search can see it.
 
 The first result is the derivation that this step writes almost by itself.
 
@@ -203,10 +203,10 @@ Is \( \exists x\, P(x) \wedge \exists x\, Q(x) \vdash \exists x\, \bigl( P(x) \w
 :::
 
 ::: {.solution}
-The premise splits by \( \rulename{\wedge E} \) into \( \exists x\, P(x) \) and \( \exists x\, Q(x) \). Opening both boxes early gives the assumptions \( P(x_0) \) and, for the second box, a **different** name, \( Q(y_0) \): the second box is opened while the first is open, so \( x_0 \) appears in an open assumption and may not be reused. The postponed goal \( \exists x\, (P(x) \wedge Q(x)) \) needs one term \( t \) with \( P(t) \wedge Q(t) \), and the resources speak of two names, with nothing to say that they are equal. The search stalls there. It must: over \( \nZ \), with \( P \) as "even" and \( Q \) as "odd", the premise is true and the conclusion, "some integer is both even and odd", is false. Section 4.11 turns this reading into a proof that no derivation exists.
+The premise splits by \( \rulename{\wedge E} \) into \( \exists x\, P(x) \) and \( \exists x\, Q(x) \). Opening both boxes early gives the assumptions \( P(x_0) \) and, for the second box, a **different** name, \( Q(y_0) \): the second box is opened while the first is open, so \( x_0 \) appears in an open assumption and may not be reused. The postponed goal \( \exists x\, (P(x) \wedge Q(x)) \) needs one term \( t \) with \( P(t) \wedge Q(t) \), and the resources speak of two names, with nothing to say that they are equal. The search stalls there. It must: over \( \nZ \), with \( P \) as "even" and \( Q \) as "odd", the premise is true and the conclusion, "some integer is both even and odd", is false. Section 4.11 gives a counter-model, and with the soundness statement stated there (proved in Section 4.12) this shows that no derivation exists.
 :::
 
-Here are two more derivations, each with an Idea saying why each rule was chosen.
+Here are three more derivations, each with an Idea saying why each rule was chosen: two for part (a), one for each direction, and one for part (b).
 
 ::: {#exm-existential-elimination-derivations}
 [Derivations with existential elimination]
@@ -359,6 +359,8 @@ The two names played opposite parts. The name \( y_0 \) is arbitrary: nothing wa
 
 *Fix, obtain, choose: fix the arbitrary objects of the goal (\( \rulename{\forall I} \)); obtain witnesses from the hypotheses (\( \rulename{\forall E} \) and \( \rulename{\exists E} \)); choose the goal's witness from what is now available (\( \rulename{\exists I} \)).*
 
+Nothing in the proof used that the formula under the quantifiers is \( R(x, y) \). For any formula \( \varphi \) and different variables \( x \) and \( y \), with different names \( x_0 \) and \( y_0 \), other than \( x \) and \( y \), that do not appear in \( \varphi \), the same six lines derive \( \exists x\, \forall y\, \varphi \vdash \forall y\, \exists x\, \varphi \). Line 2 is \( \forall y\, (\varphi[x_0/x]) \). Line 3 is \( (\varphi[x_0/x])[y_0/y] \), which equals \( (\varphi[y_0/y])[x_0/x] \), since the two substitutions put fresh names in for two different variables and so do not interfere; so line 4 is \( \rulename{\exists I} \) with the formula \( \varphi[y_0/y] \) and the witness \( x_0 \). The fresh names are free for their variables, since neither appears in \( \varphi \), and the side conditions are checked as before. With the letters \( x \) and \( y \) exchanged, this is the derivation of \( \exists y\, \forall x\, \varphi \) to \( \forall x\, \exists y\, \varphi \) promised in Section 4.1.
+
 **Either nesting works.** The derivation opened the flagged box of \( y_0 \) first and the \( \rulename{\exists E} \) box inside it. The other order is just as good.
 
 ```{=latex}
@@ -427,7 +429,7 @@ $\begin{nd}
 
 Line 4 is blocked: \( x_0 \) appears in \( \chi = R(x_0, y_0) \). Lines 5 and 6 would be legal on their own; the derivation fails only because the witness escaped its box at line 4.
 
-The two blocked lines are the two halves of one fact. The witness \( x_0 \) is obtained after \( y_0 \) is fixed, so it may depend on \( y_0 \); the conclusion asks for an \( x_0 \) chosen before any \( y \), which may not. This is the dependence that Section 4.1 read off the order of the quantifiers, now visible as the order of the boxes. A stalled search is not a proof that no derivation exists. Section 4.11 gives the proof, with a structure on \( \nZ \) in which the premise is true and the conclusion false.
+The two blocked lines are the two halves of one fact. The witness \( x_0 \) is obtained after \( y_0 \) is fixed, so it may depend on \( y_0 \); the conclusion asks for an \( x_0 \) chosen before any \( y \), which may not. This is the dependence that Section 4.1 read off the order of the quantifiers, now visible as the order of the boxes. A stalled search is not a proof that no derivation exists. Section 4.11 gives a structure on \( \nZ \) in which the premise is true and the conclusion false, and the soundness statement stated there (proved in Section 4.12) turns it into a proof that no derivation exists.
 
 ## Renaming the bound variable of an existential {#existential-renaming}
 
@@ -514,7 +516,7 @@ The inner box would then be flagged \( k_0 \) with the assumption \( m = 2 \cdot
 
 ## How this rule looks in a mathematical proof
 
-In a written proof, the \( \rulename{\exists E} \) box is announced by "choose", "let \( x_0 \) be such a point", "say \( n = 2k \)", "fix such a \( k \)". The assumption of the box is the property in the sentence, and the rest of the paragraph is the inside of the box. Its last sentence must not mention the chosen name; if it does, the paragraph has not finished, and the name will need to be forgotten later by an \( \rulename{\exists I} \).
+In a written proof, the \( \rulename{\exists E} \) box is announced by "choose", "let \( x_0 \) be such a point", "say \( n = 2k \)", "fix such a \( k \)". The assumption of the box is the property in the sentence, and the rest of the paragraph is the inside of the box. The claim the paragraph ends on, usually the clause after the final "so", must not mention the chosen name, though the computation leading up to it may. If that claim still mentions the name, the paragraph has not finished: a later step must reach a claim without the name before the box can close, often an \( \rulename{\exists I} \) that forgets it (as in the example below), or a contradiction \( \bot \) (as in @exm-existential-elimination-derivations (b)).
 
 Here is an instance from analysis. A sequence \( (a_n) \) is **bounded** if there is an \( M \) with \( \abs{a_n} \le M \) for every \( n \in \nN \). A proof says:
 
@@ -608,7 +610,7 @@ These parts are about the proof of @prp-exists-forall-swap.
 ::: {.solution}
 *(a)* From \( \exists x\, \varphi \) on line \( h \) and a flagged box with name \( x_0 \), from the assumption \( \varphi[x_0/x] \) on line \( i \) to \( \chi \) on line \( j \), a line of the box itself, write \( \chi \) on line \( k \), justified "\( \rulename{\exists E} \) \( h \), \( i \)–\( j \)". Side condition at line \( k \): \( x_0 \) does not appear in \( \chi \), in \( \exists x\, \varphi \), in any premise, or in any assumption of a box still open at line \( k \).
 
-*(b)* Yes, either order works. In the other order (the second derivation after the proof), the \( \rulename{\exists E} \) box encloses the flagged box. At the \( \rulename{\forall I} \) line, \( y_0 \) appears in no premise, not in the open assumption \( \forall y\, R(x_0, y) \), and not in the conclusion; at the \( \rulename{\exists E} \) line, \( x_0 \) is not in \( \forall y\, \exists x\, R(x, y) \), not in the premise, and no box is open.
+*(b)* Yes, either order works. In the other order (the derivation under **Either nesting works**, right after the proof), the \( \rulename{\exists E} \) box encloses the flagged box. At the \( \rulename{\forall I} \) line, \( y_0 \) appears in no premise, not in the open assumption \( \forall y\, R(x_0, y) \), and not in the conclusion; at the \( \rulename{\exists E} \) line, \( x_0 \) is not in \( \forall y\, \exists x\, R(x, y) \), not in the premise, and no box is open.
 
 *(c)* At line 5, the clauses list four places: \( \chi \), which is line 4, \( \exists x\, R(x, y_0) \); the existential of line 1, \( \exists x\, \forall y\, R(x, y) \); the premise, which is line 1 again; and the assumptions of boxes open at line 5. The only box open at line 5 is the flagged box of \( y_0 \), which has no assumption. The name \( x_0 \) appears in none of these, so line 5 is correct. It does appear in lines 2–4, inside the box, which the side condition allows.
 
@@ -805,14 +807,15 @@ $\begin{nd}
 
 *Line 10* (\( \rulename{\forall I} \)): the flagged box immediately contains the \( \rulename{\exists E} \) box, so its range starts at line 3. Its last line, line 9, is a line of the box itself and is \( (\exists x\, R(y, x))[y_0/y] \). The name \( y_0 \) appears in neither premise and not in line 10, and no box is open.
 
-*A reading.* Over \( \nZ \), let \( R(x, y) \) mean "\( x \cdot y \) is even". The second premise holds since \( x \cdot y = y \cdot x \). The first holds with the witness \( 0 \), since \( 0 \cdot y = 0 \) is even for every \( y \). The conclusion says that every integer has a partner with even product, which is true, and the derivation finds the partner: the witness \( 0 \) of the first premise, for every \( y \).
+*A reading.* Over \( \nZ \), let \( R(x, y) \) mean "\( x \cdot y = 0 \)". The second premise holds since \( x \cdot y = y \cdot x \). The first holds with the witness \( 0 \), and only with it: for \( x \neq 0 \), the instance \( y = 1 \) gives \( x \cdot 1 = x \neq 0 \). The conclusion says that every integer has a partner with product \( 0 \), which is true. The derivation's \( x_0 \) names the witness of the first premise, so under this reading it can only be \( 0 \), and the derivation gives every \( y \) the partner \( 0 \); the derivation itself never uses which integer it is.
 
 **Marking scheme.** (10 points)
 - 2: opens a flagged box for the goal's \( \forall y \) with a fresh name, and postpones the existential.
 - 2: opens the \( \rulename{\exists E} \) box of the first premise with a **fresh** witness, aimed at the current goal.
 - 2: instantiates the assumption at \( y_0 \) and the symmetry premise at \( x_0 \), \( y_0 \) in that order, and fires it.
 - 2: \( \rulename{\exists I} \) with the witness \( x_0 \), inside the \( \rulename{\exists E} \) box.
-- 2: checks the side conditions of the \( \rulename{\exists E} \) and \( \rulename{\forall I} \) lines clause by clause.
+- 1: checks the side conditions of the \( \rulename{\exists E} \) and \( \rulename{\forall I} \) lines clause by clause.
+- 1: a reading over \( \nZ \) in which both premises hold, with the witness identified (or, if the reading does not determine it, correctly described as whichever witness the first premise has).
 Fatal errors (0 for the step): an \( \rulename{\exists E} \) box closed on a line containing its witness; \( \rulename{\forall I} \) over a name in an open assumption; the symmetry premise instantiated in the wrong order and then used as if it fired.
 :::
 
@@ -852,7 +855,7 @@ For (a), the conclusion is half of the conclusion of a result proved in this sec
 ::: {.solution}
 [Hint 2]
 
-For (c), drop \( Q \): from \( \exists x\, P(x) \), the same illegal line gives \( P(x_0) \) outside the box. What can \( \rulename{\forall I} \) do with a line about a name that appears in no premise and no open assumption?
+For (c), drop \( Q \): start from the premise \( \exists x\, P(x) \) and take the same illegal step as line 4.
 :::
 
 ::: {.solution}
@@ -907,21 +910,23 @@ Fatal errors (0 for the step): answering (a) "no" because the derivation is wron
 
 <!-- dependency ledger
 def-rules-existential (claim): the hook: n = 2k gives n + 2 = 2(k + 1) | school algebra
+def-rules-existential (claim): no rule should give P(c) from exists x P(x): some integer is even, 3 is not | school arithmetic; Section 4.5 warning "exists I runs one way only" (recalled in prose)
 def-rules-existential (claim): a variable that does not appear in phi is free for every variable in phi | Section 4.2 (special cases after def-free-for)
 def-rules-existential (example): the three illegal derivations: over N, some number exceeds 5 and 0 does not; 1 is not even; over Z every integer has a smaller one and none is less than itself | school arithmetic; informal truth, Section 4.1
-def-rules-existential (claim): "open the box early" loses nothing: a derivation remains one when an assumption is added that it does not use; a fresh name appears in no resource and not in the goal | inline argument (as in Section 2.6's argument for the goal steps, recalled in prose)
-def-rules-existential (example): the warning: forall-I side condition, open-assumption clause | def-rules-universal (Section 4.4; recalled in prose)
-prp-exists-and (solution): over Z, some integer is even, some is odd, none is both | school arithmetic; informal truth, Section 4.1; non-derivability proved in Section 4.11 (prose pointer, nothing depends on it)
+def-rules-existential (claim): "open the box early" keeps every resource and the box can always close (not "loses nothing"; see blueprint deviation): every line available before the box opens is available inside it (def-derivation scope rule, recalled in prose); x_0 is chosen to appear in no premise, no open assumption, not in the existential and not in the goal chi, and the assumptions open at the closing line are those open at the opening; a forall-I flag inside the box that is fresh at that point does not appear in the new assumption | inline argument
+def-rules-existential (example): the warning: forall-I side condition, open-assumption clause; clause 3 keeps the witness inside its box | def-rules-universal (Section 4.4; recalled in prose); the clause-3 derivation above
+prp-exists-and (solution): the Quick check after it: over Z, some integer is even (0), some is odd (1), none is both | ch07 (promised); STATUS Ch 1 row, as in Ch 1 §01, §07 (0 even and 1 odd: school arithmetic); informal truth, Section 4.1; non-derivability in Section 4.11 via the soundness statement (proved in Section 4.12) (prose pointer, nothing depends on it)
 exm-existential-elimination-derivations (solution): b: over Z, some integer is odd and no odd integer is divisible by 4 | school arithmetic
 exm-existential-elimination-derivations (solution): a: or-E requires the case conclusions to be lines of the case boxes themselves | def-rules-disjunction (cited)
 prp-exists-forall-swap (proof): the citation convention for a flagged box that immediately contains another box; forall-I side condition | Section 4.4 (def-rules-universal, cited)
-prp-exists-forall-swap (proof): converse attempt: a stalled search is not a proof of non-derivability | Section 4.11 (prose pointer, exm-counter-model-swap; nothing depends on it)
-def-rules-existential (claim): front renaming: (phi[z/y])[t/z] = phi[t/y] when z does not appear in phi; y_0 free for z in phi[z/y] when y_0 does not appear in phi | inline (one-sentence justification; structural induction of the kind in Section 4.2, not written out)
+prp-exists-forall-swap (proof): any formula phi in place of R(x, y): (phi[x_0/x])[y_0/y] = (phi[y_0/y])[x_0/x] for different fresh names not in phi, other than x and y; fresh names free for their variables | inline, as in Section 4.4 (the forall-forall swap); Section 4.2
+prp-exists-forall-swap (proof): converse attempt: a stalled search is not a proof of non-derivability | Section 4.11 (prose pointer, exm-counter-model-swap, with the soundness statement proved in Section 4.12; nothing depends on it)
+def-rules-existential (claim): front renaming: (phi[z/y])[t/z] = phi[t/y] when z does not appear in phi; z_0 free for z in phi[z/y] (the quantifiers of phi[z/y] are those of phi) and free for y in phi when z_0 does not appear in phi | inline (one-sentence justification; structural induction of the kind in Section 4.2, not written out)
 exm-sum-of-evens (solution): from n = 2k_0 and m = 2l_0, n + m = 2(k_0 + l_0) | arith line (substitution, which is =E of Section 4.7, and the distributive law; school algebra)
 def-rules-existential (example): bounded sequence: abs(2a) = 2 abs(a) <= 2M from abs(a) <= M | arith line (school algebra)
 def-rules-existential (example): two witnesses: n = 2k_0 and m = 2k_0 give n + m = 4k_0; 6 is not divisible by 4 | arith line; school arithmetic
 exr-existential-elimination-b1 (solution): over Z no integer is both positive and negative; 1 is positive and not negative | school arithmetic
 exr-existential-elimination-b3 (solution): (2k + 1)(2l + 1) = 2(2kl + k + l) + 1 | arith line (school algebra)
-exr-existential-elimination-c1 (solution): over Z, x * y = y * x, and 0 * y = 0 is even | school arithmetic
+exr-existential-elimination-c1 (solution): over Z, x * y = y * x, 0 * y = 0, and x * 1 = x, so 0 is the only x with x * y = 0 for every y | school arithmetic; verify/ch04/exr-existential-elimination-c1.py
 exr-existential-elimination-c2 (solution): over Z some integer is even and not every integer is | school arithmetic
 -->
