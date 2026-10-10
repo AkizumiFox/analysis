@@ -453,7 +453,7 @@ For each pair, determine whether the two sets are equal. Justify your answer: pr
 
 (c) Equal. Both sets have exactly the elements \( \emptyset \) and \( \{\emptyset\} \): an object lies in the first exactly when it is \( \emptyset \) or \( \{\emptyset\} \), and in the second exactly when it is \( \{\emptyset\} \) or \( \emptyset \) or \( \emptyset \). Order and repetition do not count.
 
-(d) Not equal. The first set is \( \{-1, 0, 1\} \): an integer with \( \abs{x} \ge 2 \) has \( x^2 \ge 4 \), and \( (-1)^2 = 1 \), \( 0^2 = 0 \), \( 1^2 = 1 \) are below \( 2 \). The second set is \( \{1\} \), since \( \nN \) starts at \( 1 \). The witness \( 0 \) lies in the first set and not in the second (\( 0 \notin \nN \)). So does \( -1 \).
+(d) Not equal. The first set is \( \{-1, 0, 1\} \): an integer with \( \abs{x} \ge 2 \) has \( x^2 \ge 4 \), and \( (-1)^2 = 1 \), \( 0^2 = 0 \), \( 1^2 = 1 \) are below \( 2 \). The second set is \( \{0, 1\} \), since \( \nN \) starts at \( 0 \). The witness \( -1 \) lies in the first set and not in the second (\( -1 \notin \nN \)).
 :::
 
 ### C. Going deeper

@@ -10,7 +10,7 @@ E = frozenset()
 assert {E, frozenset({E})} == {frozenset({E}), E, E}
 # (d)
 first = tuple(sorted(n for n in range(-50, 51) if n * n < 2))
-second = tuple(n for n in range(1, 51) if n < 2)
-assert first == QUOTED["(d) first set"] and second == (1,)
-assert 0 in first and 0 not in second and -1 in first and -1 not in second
+second = tuple(n for n in range(0, 51) if n < 2)  # N = {0, 1, ...}
+assert first == QUOTED["(d) first set"] and second == (0, 1)
+assert -1 in first and -1 not in second
 print("exr-sets-and-subsets-b3: all quoted values check")

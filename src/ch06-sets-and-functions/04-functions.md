@@ -82,14 +82,14 @@ The next example collects relations that fail to be functions. Each failure is o
 
 (b) "Send a fraction \( p/q \) to its numerator \( p \)." Is this a function from \( \nQ \) to \( \nZ \)? As a relation it is
 \[
-N \coloneqq \{ (r, p) \in \nQ \times \nZ : \exists q \in \nN \ \ r = p/q \} .
+N \coloneqq \{ (r, p) \in \nQ \times \nZ : \exists q \in \nZ_{>0} \ \ r = p/q \} .
 \]
 :::
 
 ::: {.solution}
 (a) No, and both clauses fail, at different points. Clause (F2) fails at \( x = 0 \): both \( (0, 1) \) and \( (0, -1) \) lie in \( S \), and \( 1 \ne -1 \). Clause (F1) fails at \( x = 2 \): a pair \( (2, y) \in S \) would need \( y^2 = 1 - 4 = -3 \), and no real square is negative. Restricting the inputs to \( [-1, 1] \) repairs (F1) but not (F2); keeping only the upper half, \( y \ge 0 \), repairs (F2) as well, and gives the function \( [-1, 1] \to \nR \), \( x \mapsto \sqrt{1 - x^2} \).
 
-(b) No. Clause (F1) holds: every rational number is \( p/q \) for some \( p \in \nZ \) and \( q \in \nN \). But (F2) fails, because a rational number has many ways of being written as a fraction. Since \( \tfrac{1}{2} = \tfrac{2}{4} \), both \( (\tfrac12, 1) \) and \( (\tfrac12, 2) \) lie in \( N \), and \( 1 \ne 2 \). The "rule" gives an output that depends on **how the input is written**, not on the input. A function may not do that, since its value is attached to the input itself. This is why definitions of the form "write \( x \) as …, then send it to …" must be checked for **well-definedness**, a check that returns in Chapter 7 for functions defined on classes. Here the repair is to fix the way of writing: sending \( r \) to the numerator of its expression in lowest terms is a function.
+(b) No. Clause (F1) holds: every rational number is \( p/q \) for some \( p \in \nZ \) and \( q \in \nZ_{>0} \). But (F2) fails, because a rational number has many ways of being written as a fraction. Since \( \tfrac{1}{2} = \tfrac{2}{4} \), both \( (\tfrac12, 1) \) and \( (\tfrac12, 2) \) lie in \( N \), and \( 1 \ne 2 \). The "rule" gives an output that depends on **how the input is written**, not on the input. A function may not do that, since its value is attached to the input itself. This is why definitions of the form "write \( x \) as …, then send it to …" must be checked for **well-definedness**, a check that returns in Chapter 7 for functions defined on classes. Here the repair is to fix the way of writing: sending \( r \) to the numerator of its expression in lowest terms is a function.
 :::
 
 **Why this definition.** Each clause has a job, and dropping one lets in the failures of @exm-not-a-function. Without (F1), a "function" could be undefined at some inputs, like \( 1/x \) at \( 0 \); then \( f(x) \) would not name anything, and statements "for every \( x \in X \)" about \( f(x) \) would lose their meaning. Without (F2), \( f(x) \) would not name **one** thing, and \( f(\tfrac12) \) in part (b) would be both \( 1 \) and \( 2 \). The graph replaces the rule because two rules can describe one function, and sets are compared by their elements.
@@ -162,7 +162,7 @@ whose graph is \( G \cap (A \times Y) \): the pairs of \( f \) whose input lies 
 
 Section 6.2 used families of sets \( (A_i)_{i \in I} \) and described them informally, as "a set \( A_i \) for each index \( i \in I \)". We can now say exactly what a family is. A **family of subsets of \( X \) indexed by \( I \)** is a function \( I \to \powerset{X} \), \( i \mapsto A_i \), with the power set \( \powerset{X} \) as the codomain the definition asks for. Its value at \( i \) is written \( A_i \) rather than \( A(i) \), and the family is written \( (A_i)_{i \in I} \), in parentheses because it is indexed. A family is not the same thing as its set of values \( \{ A_i : i \in I \} \): the family \( (A_i)_{i \in \{1, 2\}} \) with \( A_1 = A_2 = \{0\} \) has two indices and one value.
 
-In the same way, a **sequence** of real numbers \( (a_n) \) is a function \( \nN \to \nR \), \( n \mapsto a_n \), with the value at \( n \) written \( a_n \). The sequence \( (1/n) \) is the function \( n \mapsto 1/n \), and its set of values is \( \{ 1/n : n \in \nN \} \). Sequences are the main object of Part I.
+In the same way, a **sequence** of real numbers \( (a_n)_{n \ge 1} \) is a function \( \nZ_{>0} \to \nR \), \( n \mapsto a_n \), with the value at \( n \) written \( a_n \). The sequence \( (1/n) \) is the function \( n \mapsto 1/n \), and its set of values is \( \{ 1/n : n \in \nZ_{>0} \} \). Sequences are the main object of Part I.
 
 Finally, all functions from \( X \) to \( Y \) form a set, written
 \[
@@ -404,7 +404,7 @@ Is \( n \mapsto n + 1 \) surjective as a function \( \nN \to \nN \)? As a functi
 :::
 
 ::: {.solution}
-On \( \nN \): no. The witness is \( 1 \), since \( n + 1 \ge 2 \) for every \( n \in \nN \), so \( n + 1 = 1 \) has no solution in \( \nN \). On \( \nZ \): yes. For \( m \in \nZ \), the integer \( m - 1 \) satisfies \( (m - 1) + 1 = m \). Both functions are injective, since \( n_1 + 1 = n_2 + 1 \) gives \( n_1 = n_2 \).
+On \( \nN \): no. The witness is \( 0 \), since \( n + 1 \ge 1 \) for every \( n \in \nN \), so \( n + 1 = 0 \) has no solution in \( \nN \). On \( \nZ \): yes. For \( m \in \nZ \), the integer \( m - 1 \) satisfies \( (m - 1) + 1 = m \). Both functions are injective, since \( n_1 + 1 = n_2 + 1 \) gives \( n_1 = n_2 \).
 :::
 
 ## Composites of injections and surjections
@@ -523,14 +523,14 @@ Determine which of the following are injective, which are surjective, and which 
 2. \( \nN \times \nN \to \nN \), \( (m, n) \mapsto m + n \).
 3. \( \nR \to \nR \), \( x \mapsto x^3 \).
 4. \( \nR \to (-1, 1) \), \( x \mapsto x / (1 + \abs{x}) \).
-5. \( \nN \to \nN \), \( n \mapsto n + (-1)^n \).
+5. \( \nZ_{>0} \to \nZ_{>0} \), \( n \mapsto n + (-1)^n \).
 :::
 :::
 
 ::: {.solution}
 (a) *Injective:* \( 2n_1 = 2n_2 \) gives \( n_1 = n_2 \). *Not surjective:* the witness is \( 1 \), which is odd, while every \( 2n \) is even, and no integer is both even and odd.
 
-(b) *Not injective:* \( (1, 2) \ne (2, 1) \) (@def-ordered-pair), and both are sent to \( 3 \). *Not surjective:* the witness is \( 1 \), since \( m, n \ge 1 \) gives \( m + n \ge 2 \).
+(b) *Not injective:* \( (1, 2) \ne (2, 1) \) (@def-ordered-pair), and both are sent to \( 3 \). *Surjective:* for \( k \in \nN \), the pair \( (0, k) \) lies in \( \nN \times \nN \) and is sent to \( k \).
 
 (c) *Injective.* Let \( x_1^3 = x_2^3 \). Then
 \[
@@ -550,7 +550,7 @@ So \( x \) is determined by \( y \): two inputs with the same output \( y \) are
 \]
 So the function is bijective. (For example, \( x = 1 \mapsto \tfrac12 \) and \( y = \tfrac12 \) comes back to \( x = \tfrac{1/2}{1/2} = 1 \).)
 
-(e) *Not a function* \( \nN \to \nN \): at \( n = 1 \) the formula gives \( 1 + (-1) = 0 \), and \( 0 \notin \nN \), so (F1) fails at \( 1 \). This is the planted failure: the question whether it is injective or surjective does not arise. (On \( \nNz = \{0, 1, 2, \dots\} \) the same formula is a function, and a bijection: it swaps \( 0 \leftrightarrow 1 \), \( 2 \leftrightarrow 3 \), and so on.)
+(e) *Not a function* \( \nZ_{>0} \to \nZ_{>0} \): at \( n = 1 \) the formula gives \( 1 + (-1) = 0 \), and \( 0 \notin \nZ_{>0} \), so (F1) fails at \( 1 \). This is the planted failure: the question whether it is injective or surjective does not arise. (On \( \nN = \{0, 1, 2, \dots\} \) the same formula is a function, and a bijection: it swaps \( 0 \leftrightarrow 1 \), \( 2 \leftrightarrow 3 \), and so on.)
 :::
 
 ::: {#exr-functions-b2}
@@ -592,9 +592,9 @@ Give an example of a function \( \nN \to \nN \) that is surjective and not injec
 :::
 
 ::: {.solution}
-*Surjective, not injective.* Let \( s(1) \coloneqq 1 \) and \( s(n) \coloneqq n - 1 \) for \( n \ge 2 \); for \( n \ge 2 \), \( n - 1 \in \nN \), so \( s \colon \nN \to \nN \) is a function. It is surjective: for \( m \in \nN \), \( m + 1 \ge 2 \), so \( s(m + 1) = m \). It is not injective: \( s(1) = 1 = s(2) \) and \( 1 \ne 2 \).
+*Surjective, not injective.* Let \( s(0) \coloneqq 0 \) and \( s(n) \coloneqq n - 1 \) for \( n \ge 1 \); for \( n \ge 1 \), \( n - 1 \in \nN \), so \( s \colon \nN \to \nN \) is a function. It is surjective: for \( m \in \nN \), \( m + 1 \ge 1 \), so \( s(m + 1) = m \). It is not injective: \( s(0) = 0 = s(1) \) and \( 0 \ne 1 \).
 
-*Injective, not surjective.* Let \( t(n) \coloneqq n + 1 \). It is injective: \( n_1 + 1 = n_2 + 1 \) gives \( n_1 = n_2 \). It is not surjective: \( 1 \) is not an output, since \( n + 1 \ge 2 \).
+*Injective, not surjective.* Let \( t(n) \coloneqq n + 1 \). It is injective: \( n_1 + 1 = n_2 + 1 \) gives \( n_1 = n_2 \). It is not surjective: \( 0 \) is not an output, since \( n + 1 \ge 1 \).
 
 Many other answers are correct. An answer to the first part must have: every value in \( \nN \) (so it is a function into \( \nN \)); at least one value taken at two different inputs, with the two inputs named; and every \( m \in \nN \) reached, with a preimage given as a formula in \( m \), since checking some \( m \) is not enough. An answer to the second part must have: values in \( \nN \); a proof that equal outputs come from equal inputs; and one named natural number that is never reached, with the reason.
 :::

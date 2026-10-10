@@ -6,7 +6,7 @@ QUOTED = {"(1,2) and (2,1) go to": 3, "not hit": 1, "value at n = 1 in (e)": 0,
 
 # (b)
 assert 1 + 2 == 2 + 1 == QUOTED["(1,2) and (2,1) go to"]
-assert all(m + n >= 2 for m in range(1, 30) for n in range(1, 30))
+assert all(0 + k == k for k in range(0, 200))  # (0, k) |-> k: surjective on N = {0, 1, ...}
 # (a) 2n never 1
 assert all(2 * n != QUOTED["not hit"] for n in range(-500, 501))
 # (c) factorization and the positive factor
@@ -25,7 +25,7 @@ assert all(abs(phi(x)) < 1 and psi(phi(x)) == x for x in xs)
 ys = [F(k, 50) for k in range(-49, 50)]
 assert all(phi(psi(y)) == y for y in ys)
 assert phi(1) == QUOTED["x = 1 goes to"] and psi(F(1, 2)) == 1
-# (e) n + (-1)^n at n = 1 is 0, not in N; on N_0 it swaps 2k and 2k + 1
+# (e) n + (-1)^n at n = 1 is 0, not in Z_{>0}; on N = {0, 1, ...} it swaps 2k and 2k + 1
 assert 1 + (-1) ** 1 == QUOTED["value at n = 1 in (e)"]
 e = {n: n + (-1) ** n for n in range(0, 40)}
 assert all(e[e[n]] == n for n in range(0, 39))

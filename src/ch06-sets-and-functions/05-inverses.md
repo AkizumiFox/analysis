@@ -78,7 +78,7 @@ Let \( s \colon \nN \to \nN \) be the successor map, \( s(n) = n + 1 \). Does \(
 :::
 
 ::: {.solution}
-It has a left inverse, for instance \( p(m) \coloneqq m - 1 \) for \( m \ge 2 \) and \( p(1) \coloneqq 1 \). This is a function \( \nN \to \nN \), since \( m - 1 \in \nN \) when \( m \ge 2 \), and \( p(s(n)) = p(n + 1) = n \) because \( n + 1 \ge 2 \). It has no right inverse: that would need \( s(k(1)) = 1 \), that is \( k(1) + 1 = 1 \), so \( k(1) = 0 \notin \nN \). The number \( 1 \) is not reached by \( s \).
+It has a left inverse, for instance \( p(m) \coloneqq m - 1 \) for \( m \ge 1 \) and \( p(0) \coloneqq 0 \). This is a function \( \nN \to \nN \), since \( m - 1 \in \nN \) when \( m \ge 1 \), and \( p(s(n)) = p(n + 1) = n \) because \( n + 1 \ge 1 \). It has no right inverse: that would need \( s(k(0)) = 0 \), that is \( k(0) + 1 = 0 \), so \( k(0) = -1 \notin \nN \). The number \( 0 \) is not reached by \( s \).
 :::
 
 ## A left inverse exists exactly for injective functions
