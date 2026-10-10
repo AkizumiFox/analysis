@@ -611,13 +611,13 @@ In the \( \dashv \) direction, inside the boxes the goal is \( x_0 = y_0 \), an 
 $\begin{nd}
   \hypo {1} {\forall x\, \forall y\, (P(x) \wedge P(y) \to x = y)}
   \open
-  \hypo {2} {\exists x\, \exists y\, (P(x) \wedge P(y) \wedge x \ne y)}
+  \hypo {2} {\exists x\, \exists y\, (P(x) \wedge P(y) \wedge x \neq y)}
   \open[x_0]
-  \hypo {3} {\exists y\, (P(x_0) \wedge P(y) \wedge x_0 \ne y)}
+  \hypo {3} {\exists y\, (P(x_0) \wedge P(y) \wedge x_0 \neq y)}
   \open[y_0]
-  \hypo {4} {P(x_0) \wedge P(y_0) \wedge x_0 \ne y_0}
+  \hypo {4} {P(x_0) \wedge P(y_0) \wedge x_0 \neq y_0}
   \have {5} {P(x_0) \wedge P(y_0)} \ae{4}
-  \have {6} {x_0 \ne y_0} \ae{4}
+  \have {6} {x_0 \neq y_0} \ae{4}
   \have {7} {\forall y\, (P(x_0) \wedge P(y) \to x_0 = y)} \Ae{1}
   \have {8} {P(x_0) \wedge P(y_0) \to x_0 = y_0} \Ae{7}
   \have {9} {x_0 = y_0} \ie{8,5}
@@ -627,7 +627,7 @@ $\begin{nd}
   \close
   \have {12} {\bot} \Ee{2,3-11}
   \close
-  \have {13} {\neg \exists x\, \exists y\, (P(x) \wedge P(y) \wedge x \ne y)} \ni{2-12}
+  \have {13} {\neg \exists x\, \exists y\, (P(x) \wedge P(y) \wedge x \neq y)} \ni{2-12}
 \end{nd}$
 \end{center}
 ```
@@ -639,16 +639,16 @@ The conjunction on line 4 is grouped as \( (P(x_0) \wedge P(y_0)) \wedge x_0 \ne
 ```{=latex}
 \begin{center}
 $\begin{nd}
-  \hypo {1} {\neg \exists x\, \exists y\, (P(x) \wedge P(y) \wedge x \ne y)}
+  \hypo {1} {\neg \exists x\, \exists y\, (P(x) \wedge P(y) \wedge x \neq y)}
   \open[x_0]
   \open[y_0]
   \open
   \hypo {2} {P(x_0) \wedge P(y_0)}
   \open
-  \hypo {3} {x_0 \ne y_0}
-  \have {4} {P(x_0) \wedge P(y_0) \wedge x_0 \ne y_0} \ai{2,3}
-  \have {5} {\exists y\, (P(x_0) \wedge P(y) \wedge x_0 \ne y)} \Ei{4}
-  \have {6} {\exists x\, \exists y\, (P(x) \wedge P(y) \wedge x \ne y)} \Ei{5}
+  \hypo {3} {x_0 \neq y_0}
+  \have {4} {P(x_0) \wedge P(y_0) \wedge x_0 \neq y_0} \ai{2,3}
+  \have {5} {\exists y\, (P(x_0) \wedge P(y) \wedge x_0 \neq y)} \Ei{4}
+  \have {6} {\exists x\, \exists y\, (P(x) \wedge P(y) \wedge x \neq y)} \Ei{5}
   \have {7} {\bot} \ne{6,1}
   \close
   \have {8} {x_0 = y_0} \raa{3-7}
