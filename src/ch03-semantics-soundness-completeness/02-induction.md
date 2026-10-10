@@ -188,7 +188,7 @@ The three direct cases are the base cases. They are needed because the general c
 
 ## Structural induction
 
-We return to formulas. The formation sequence of a formula plays the part that "\( 1, 2, 3, \dots \)" plays for numbers: every formula is reached from atoms and \( \bot \) by finitely many uses of the clauses. So a property of formulas can be proved in the same two parts.
+We return to formulas. The formation sequence of a formula plays the part that "\( 0, 1, 2, \dots \)" plays for numbers: every formula is reached from atoms and \( \bot \) by finitely many uses of the clauses. So a property of formulas can be proved in the same two parts.
 
 A **property of formulas** is a statement \( P(\varphi) \) about a formula \( \varphi \), true or false for each particular formula: "\( \varphi \) has as many left as right parentheses", "\( \varphi \) contains the atom \( p \)".
 
@@ -221,7 +221,7 @@ Let \( i \in \nN \), and suppose \( Q(k) \) holds for every \( k \in \nN \) with
 
 - \( \chi_i \) is an atom or \( \bot \). Then \( P(\chi_i) \) holds by (i).
 - \( \chi_i = \neg\chi_j \) for some \( j < i \). Then \( 1 \le j \le m \), and \( Q(j) \) gives \( P(\chi_j) \). The entry \( \chi_j \) is a formula (every entry of a formation sequence is one, Section 3.1), so (ii) applies and gives \( P(\chi_i) \).
-- \( \chi_i = (\chi_j \circ \chi_l) \) for some \( j, l < i \) and a binary connective \( \circ \). Then \( Q(j) \) and \( Q(l) \) give \( P(\chi_j) \) and \( P(\chi_l) \), both entries are formulas, and (iii) gives \( P(\chi_i) \).
+- \( \chi_i = (\chi_j \circ \chi_l) \) for some \( j, l < i \) and a binary connective \( \circ \). Then \( 1 \le j, l \le m \), and \( Q(j) \) and \( Q(l) \) give \( P(\chi_j) \) and \( P(\chi_l) \), both entries are formulas, and (iii) gives \( P(\chi_i) \).
 
 So \( Q(i) \) holds. By @thm-strong-induction, \( Q(i) \) holds for every \( i \in \nN \); in particular \( Q(m) \) gives \( P(\chi_m) \), that is, \( P(\chi) \). Since \( \chi \) was an arbitrary formula, this proves the theorem.
 :::
@@ -664,12 +664,12 @@ Fatal errors (0 for the step): applying the hypothesis to the formula being prov
 :::
 
 <!-- dependency ledger
-ax-induction (claim): each P(n) alone has a finite derivation from P(1) and the step by ->E | informal, motivation only; not used in any proof
+ax-induction (claim): each P(n) alone has a finite derivation from P(0) and the step by ->E | informal, motivation only; not used in any proof
 exm-sum-consecutive-products (example): the sum 1*2 + ... + n(n+1) read as "the sum of the first n terms, plus the next"; algebra of fractions | school algebra (blueprint, Allowed prerequisites); recursion on N (finite sums) is ch07 (promised; STATUS row "definition by recursion", from Ch 11); checked by verify/ch03/exm-sum-consecutive-products.py
-exm-power-inequality (example): 3^(n+1) = 3 * 3^n; multiplying an inequality by a positive number; 6n >= 2n for n > 0 | school algebra; powers by recursion are ch07 (promised; STATUS row, from Ch 11); checked by verify/ch03/exm-power-inequality.py
-ax-induction (example): (the warning after exm-power-inequality) 2n^2 >= (n+1)^2 exactly for n >= 3; 2^3 = 8 < 9; 2^n >= n^2 for n = 1, 2 and n >= 4 | school algebra; checked by verify/ch03/ax-induction.py
-thm-strong-induction (proof): no natural number is less than 1; k < n + 1 iff k <= n for natural k (nothing strictly between n and n + 1); k <= n + 1 iff k <= n or k = n + 1 | school facts about N (blueprint, Allowed prerequisites); ch07 (promised; STATUS row "nothing between n and n + 1", from Ch 11)
-thm-strong-induction (proof): "for every k < 1, P(k)" holds vacuously | prp-vacuous-implication (cited in the prose before the proof); the rule for "every" is ch04 (prose pointer)
+exm-power-inequality (example): 3^(n+1) = 3 * 3^n; multiplying an inequality by a positive number; 6n >= 2n for n >= 0 | school algebra; powers by recursion are ch07 (promised; STATUS row, from Ch 11); checked by verify/ch03/exm-power-inequality.py
+ax-induction (example): (the warning after exm-power-inequality) 2n^2 >= (n+1)^2 exactly for n >= 3 (fails at n = 0, 1, 2); 2^3 = 8 < 9; 2^n >= n^2 for n = 0, 1, 2 and n >= 4 | school algebra; checked by verify/ch03/ax-induction.py
+thm-strong-induction (proof): no natural number is less than 0; k < n + 1 iff k <= n for natural k (nothing strictly between n and n + 1); k <= n + 1 iff k <= n or k = n + 1 | school facts about N (blueprint, Allowed prerequisites); ch07 (promised; STATUS row "nothing between n and n + 1", from Ch 11)
+thm-strong-induction (proof): "for every k < 0, P(k)" holds vacuously | prp-vacuous-implication (cited in the prose before the proof); the rule for "every" is ch04 (prose pointer)
 exm-threes-and-fives (example): 8 = 3 + 5, 9 = 3*3, 10 = 5*2; 7 is not a sum of threes and fives | inline arithmetic; checked by verify/ch03/exm-threes-and-fives.py
 thm-structural-induction (proof): every entry of a formation sequence is a formula | Section 3.1, after def-formula (inline there)
 lem-parenthesis-count (proof): excess of a concatenation is the sum of the excesses; every initial segment of (phi o psi) is of one of five kinds | inline (counting)

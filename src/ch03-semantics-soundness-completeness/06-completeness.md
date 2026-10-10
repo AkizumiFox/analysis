@@ -866,7 +866,7 @@ lem-truth-table-line (proof): every atom of an immediate part is an atom of the 
 lem-truth-table-line (proof): v(phi^v) = T; the value clauses of each connective | def-truth-value (cited)
 lem-atom-splitting (proof): pasted lines keep availability inside a new box | inline, as in lem-weakening-cut
 thm-completeness (proof): a finite list of formulas contains only finitely many atoms | inline (each formula has finitely many symbols)
-thm-completeness (proof): integer arithmetic 1 <= n + 1 - m <= n from 1 <= m <= n | school arithmetic
+thm-completeness (proof): integer arithmetic 1 <= n - m <= n from 0 <= m <= n - 1 | school arithmetic
 thm-completeness (proof): a valuation may be changed at one atom and stays a valuation; at least one valuation exists | def-valuation (cited)
 cor-derivable-iff-valid (proof): 2^n rows for n atoms | def-truth-table, lem-coincidence (Section 3.3)
 exm-completeness-run (example): the search derivation of Chapter 2 has 13 lines | exr-finding-derivations-c2 solution (cited)

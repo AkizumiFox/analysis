@@ -244,8 +244,8 @@ Chapters 1 and 2 derived many of these laws as pairs of sequents, some direction
 **Long conjunctions and disjunctions.** Associativity lets us stop worrying about grouping. We write \( \varphi_1 \wedge \varphi_2 \wedge \dots \wedge \varphi_n \) for the conjunction grouped to the right, \( \varphi_1 \wedge (\varphi_2 \wedge (\dots \wedge \varphi_n)) \), and likewise for \( \vee \); for \( n = 1 \) it is \( \varphi_1 \) itself. Then, for every valuation \( v \) and every \( n \ge 1 \),
 \[
 \begin{aligned}
-v(\varphi_1 \wedge \dots \wedge \varphi_n) = \mathrm{T} &\iff v(\varphi_i) = \mathrm{T} \text{ for every } i \le n, \\
-v(\varphi_1 \vee \dots \vee \varphi_n) = \mathrm{T} &\iff v(\varphi_i) = \mathrm{T} \text{ for some } i \le n .
+v(\varphi_1 \wedge \dots \wedge \varphi_n) = \mathrm{T} &\iff v(\varphi_i) = \mathrm{T} \text{ for every } i \text{ with } 1 \le i \le n, \\
+v(\varphi_1 \vee \dots \vee \varphi_n) = \mathrm{T} &\iff v(\varphi_i) = \mathrm{T} \text{ for some } i \text{ with } 1 \le i \le n .
 \end{aligned}
 \]
 For the conjunction, we prove by @ax-induction on \( n \), started at \( 1 \), that the first line holds for **every** list of \( n \) formulas. For \( n = 1 \) both sides say \( v(\varphi_1) = \mathrm{T} \). If it holds for every list of \( n \) formulas, take a list of \( n + 1 \). The conjunction is \( \varphi_1 \wedge \theta \), where \( \theta = \varphi_2 \wedge \dots \wedge \varphi_{n+1} \) has \( n \) terms. By (V3), \( v(\varphi_1 \wedge \theta) = \mathrm{T} \) exactly when \( v(\varphi_1) = \mathrm{T} \) and \( v(\theta) = \mathrm{T} \), and by the hypothesis for \( n \), \( v(\theta) = \mathrm{T} \) exactly when \( v(\varphi_i) = \mathrm{T} \) for \( 2 \le i \le n + 1 \). Together: exactly when every \( v(\varphi_i) = \mathrm{T} \). The disjunction is the same with (V4) and "some". Two consequences follow at once, since the right-hand sides do not care about order or grouping. Reordering the terms of a long conjunction, or grouping them differently, gives an equivalent formula; likewise for disjunctions. And De Morgan's laws extend to many terms:
