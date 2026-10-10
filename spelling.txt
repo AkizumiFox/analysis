@@ -144,3 +144,17 @@ catalogue
 antisymmetry
 equalities
 bijections
+# closed non- compounds (math-atlas registry/usage.yaml: "nonempty", not "non-empty")
+nonderivability
+nonderivable
+nonemptiness
+nonexample
+nonexamples
+nonformula
+noninjective
+noninstance
+nonnegative
+nonnegativity
+nonpremise
+nonstatements
+nonstrict
