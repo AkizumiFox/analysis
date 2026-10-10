@@ -40,8 +40,8 @@ These are book-independent. Keep them.
 
 | Type | Renders / meaning |
 |---|---|
-| `\nN, \nZ, \nQ, \nR, \nC` | ℕ, ℤ, ℚ, ℝ, ℂ. **ℕ = {1, 2, 3, …} does not contain 0.** |
-| `\nNz` | ℕ₀ = {0, 1, 2, …}, used on Part 0's construction route (Peano's axioms start at 0) |
+| `\nN, \nZ, \nQ, \nR, \nC` | ℕ, ℤ, ℚ, ℝ, ℂ. **ℕ = {0, 1, 2, …} contains 0** (series-wide convention, math-atlas spec/06 item 1). For indices or numbers starting at 1, write \( n \ge 1 \) or \( \nZ_{>0} \); there is no separate macro for the positive integers |
+| `\nNz` | **Retired.** ℕ now contains 0, so ℕ₀ is just `\nN` (Part 0's construction route and Peano's axioms included). Do not use: the macro is removed from `latex/macros.tex`, so a use fails to render |
 | `\varepsilon` | ε, always the variant (never `\epsilon`) |
 | `\coloneqq` | "is defined to be" |
 | `\{ x \in S : P(x) \}` | set-builder notation, with a colon |
@@ -66,11 +66,11 @@ These are book-independent. Keep them.
 | `cA \coloneqq \{ ca : a \in A \}` | scaling of a set of numbers by \( c \in \nR \) (Ch 11) |
 | `A + B \coloneqq \{ a + b : a \in A, \ b \in B \}` | sum of two sets of numbers (Ch 11); later also for subsets of a vector space |
 | `U(A)` | the set of all upper bounds of \( A \) in the ambient ordered field (Ch 11, local to exercises: §02 C2 in \( F \), §03 C2 in \( \nR \); restated where used). Always written with its argument, so it does not clash with \( U \) for an open set |
-| `\sqrt[n]{a}`, `a^{1/n}` | for \( a > 0 \) and \( n \in \nN \), the unique \( s > 0 \) with \( s^n = a \) (Ch 11 `thm-nth-root`); `\sqrt{a}` is \( n = 2 \). In Chapters 1–10, \( \sqrt{a} \) for \( a \ge 0 \) is a school fact. `a^{m/n} \coloneqq (a^{1/n})^m` for \( a > 0 \) (Ch 11 §06); \( a^x \) for irrational \( x \) from Ch 20 |
+| `\sqrt[n]{a}`, `a^{1/n}` | for \( a > 0 \) and an integer \( n \ge 1 \), the unique \( s > 0 \) with \( s^n = a \) (Ch 11 `thm-nth-root`); `\sqrt{a}` is \( n = 2 \). In Chapters 1–10, \( \sqrt{a} \) for \( a \ge 0 \) is a school fact. `a^{m/n} \coloneqq (a^{1/n})^m` for \( a > 0 \) (Ch 11 §06); \( a^x \) for irrational \( x \) from Ch 20 |
 | `\nR(x)` | the field of rational functions \( p/q \) with real coefficients in one indeterminate \( x \), ordered by the signs of the leading coefficients (Ch 11 §05, `exm-nonarchimedean-field`): the book's non-Archimedean ordered field. Here \( x \) is the indeterminate, not a real number |
 | `\limsup_{n \to \infty} a_n`, `\liminf` | upper and lower limits |
 | `\floor{x}`, `\ceil{x}` | floor and ceiling |
-| `(a_n)_{n \ge 1}` or `(a_n)` | a sequence (parentheses: ordered); `\{a_n : n \in \nN\}` is its set of values |
+| `(a_n)_{n \ge 1}` or `(a_n)` | a sequence (parentheses: ordered); `\{a_n : n \ge 1\}` is its set of values |
 | `(a, b)`, `[a, b]`, `(a, b]` | intervals; an ordered pair is written `(a, b)` too and context decides, stated once in Part 0 |
 
 ## The book's objects

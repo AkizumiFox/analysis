@@ -56,7 +56,7 @@ Every claim is tagged:
 - **[E]** Putnam-AXIOM, arXiv 2508.08292. https://arxiv.org/abs/2508.08292
   - On Putnam problems with the variables and constants changed, o1-preview dropped from 41.9% by 19.6 points.
   - That points to memorization.
-  - **[O]** The risk carries over to this book. Textbook-standard theorems are exactly where a model reproduces a remembered proof, and it may reproduce it with the wrong hypotheses for *this* book's definitions. For example, ℕ starts at 1 here, and the Riemann integral is built from Darboux sums.
+  - **[O]** The risk carries over to this book. Textbook-standard theorems are exactly where a model reproduces a remembered proof, and it may reproduce it with the wrong hypotheses for *this* book's definitions. For example, ℕ contains 0 here, and the Riemann integral is built from Darboux sums.
 - **[E]** Frontier capability is no longer the bottleneck.
   - Gemini Deep Think reached 35/42 at IMO 2025, officially graded.
   - DeepSeekMath-V2 scored 118/120 on Putnam 2024 (arXiv 2511.22570).
