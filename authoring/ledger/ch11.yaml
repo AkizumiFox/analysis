@@ -3492,6 +3492,14 @@ items:
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: S7 fix checked, ch11-S7-recheck.md
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: fcf5f262a4ac
+    date: '2026-10-10'
+    model: claude-opus-5-5
+    evidence: 07-nested-intervals.md:289 reindex z_n:=f(n-1) as in thm-reals-uncountable (line 130); I_1
+      avoids z_1, z_n not in I_n for n>=1
 - key: exr-nested-intervals-c3
   kind: exr
   file: 07-nested-intervals.md
