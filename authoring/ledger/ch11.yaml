@@ -5,24 +5,24 @@ items:
   kind: def
   file: 01-ordered-fields.md
   line: 17
-  hash: 900310fdcdee
+  hash: 60f755823cc2
   verdicts:
   - stage: S5a
     verdict: correct
     by: refereeA
-    hash: 900310fdcdee
+    hash: 60f755823cc2
     date: '2026-09-28'
     evidence: 01:17 F1-F9, O1-O4 standard; <-primitive; derived <= chain rule at 01:55 checked
   - stage: S5b
     verdict: correct
     by: refereeB
-    hash: 900310fdcdee
+    hash: 60f755823cc2
     date: '2026-09-28'
     evidence: 'S5b: claims, meta-claims, ledger lines and refs checked; see authoring/reviews/ch10-S5-B.md'
   - stage: S8
     verdict: correct
     by: seam
-    hash: 900310fdcdee
+    hash: 60f755823cc2
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: authoring/reviews/ch11-S8-seam.md row 15 (LA F1-F9 match)
@@ -30,38 +30,38 @@ items:
   kind: lem
   file: 01-ordered-fields.md
   line: 59
-  hash: acc8d91b2dc6
+  hash: df8bfdfbe294
   verdicts:
   - stage: S5a
     verdict: correct
     by: refereeA
-    hash: acc8d91b2dc6
+    hash: df8bfdfbe294
     date: '2026-09-28'
     evidence: '01:59 drop F8 (Z): (a)-(c),(e) hold, (d) holds in Z too; statement uses only F1-F9 as claimed'
   - stage: S5b
     verdict: correct
     by: refereeB
-    hash: acc8d91b2dc6
+    hash: df8bfdfbe294
     date: '2026-09-28'
     evidence: 'S5b: claims, meta-claims, ledger lines and refs checked; see authoring/reviews/ch10-S5-B.md'
   - stage: S7
     verdict: correct
     by: reviser
-    hash: acc8d91b2dc6
+    hash: df8bfdfbe294
     date: '2026-09-28'
     evidence: 'S5b R4: (a),(b),(d) cited to @la:thm-field-basic-properties (same axioms F1-F9); lead-in
       says so'
   - stage: S7r
     verdict: correct
     by: rereferee
-    hash: acc8d91b2dc6
+    hash: df8bfdfbe294
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: S7 fix checked, ch11-S7-recheck.md
   - stage: S8
     verdict: gap
     by: seam
-    hash: acc8d91b2dc6
+    hash: df8bfdfbe294
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: authoring/reviews/ch11-S8-seam.md row 3
@@ -100,7 +100,7 @@ items:
   - stage: S8
     verdict: gap
     by: seam
-    hash: bbf94fc206ae
+    hash: 9ce14ad07e60
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: authoring/reviews/ch11-S8-seam.md row 3
@@ -108,60 +108,60 @@ items:
   kind: exm
   file: 01-ordered-fields.md
   line: 95
-  hash: 1ef7f6368795
+  hash: 9505c83507c8
   verdicts:
   - stage: S5a
     verdict: correct
     by: refereeA
-    hash: 1ef7f6368795
+    hash: 9505c83507c8
     date: '2026-09-28'
     evidence: 01:95 assumptions stated honestly; Q order via pq'<p'q with q,q'>0
   - stage: S5b
     verdict: correct
     by: refereeB
-    hash: 1ef7f6368795
+    hash: 9505c83507c8
     date: '2026-09-28'
     evidence: 'S5b: claims, meta-claims, ledger lines and refs checked; see authoring/reviews/ch10-S5-B.md'
 - key: exm-integers-not-a-field
   kind: exm
   file: 01-ordered-fields.md
   line: 107
-  hash: 45d631459150
+  hash: cf67adf05194
   verdicts:
   - stage: S5a
     verdict: correct
     by: refereeA
-    hash: 45d631459150
+    hash: cf67adf05194
     date: '2026-09-28'
     evidence: 01:107 2m=1 has no integer solution; F8 is the only failing field axiom
   - stage: S5b
     verdict: correct
     by: refereeB
-    hash: 45d631459150
+    hash: cf67adf05194
     date: '2026-09-28'
     evidence: 'S5b: claims, meta-claims, ledger lines and refs checked; see authoring/reviews/ch10-S5-B.md'
 - key: thm-ordered-field-rules
   kind: thm
   file: 01-ordered-fields.md
   line: 127
-  hash: 648e2a13906f
+  hash: b13182bca1ab
   verdicts:
   - stage: S5a
     verdict: correct
     by: refereeA
-    hash: 648e2a13906f
+    hash: b13182bca1ab
     date: '2026-09-28'
     evidence: '01:127 drop a,b>=0 in (g): a=-2,b=1; drop c>0 in (c): c=-1; each part''s hypothesis used'
   - stage: S5b
     verdict: correct
     by: refereeB
-    hash: 648e2a13906f
+    hash: b13182bca1ab
     date: '2026-09-28'
     evidence: 'S5b: claims, meta-claims, ledger lines and refs checked; see authoring/reviews/ch10-S5-B.md'
   - stage: S8
     verdict: correct
     by: seam
-    hash: 648e2a13906f
+    hash: b13182bca1ab
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: authoring/reviews/ch11-S8-seam.md row (a) Ch1/2 labels at 01:117
@@ -169,44 +169,44 @@ items:
   kind: proof
   file: 01-ordered-fields.md
   line: 148
-  hash: 96f33b039e2e
+  hash: 2be433207450
   verdicts:
   - stage: S5a
     verdict: correct
     by: refereeA
-    hash: 96f33b039e2e
+    hash: 2be433207450
     date: '2026-09-28'
     evidence: 01:148 (a)-(h) step reasons checked; (f) a^-1 = a(a^-1)^2; (g) <= uses both signs hypotheses;
       (h) 1+1>1>0
   - stage: S5b
     verdict: correct
     by: refereeB
-    hash: 96f33b039e2e
+    hash: 2be433207450
     date: '2026-09-28'
     evidence: 'S5b: claims, meta-claims, ledger lines and refs checked; see authoring/reviews/ch10-S5-B.md'
 - key: check:01-ordered-fields:1
   kind: check
   file: 01-ordered-fields.md
   line: 175
-  hash: e375cfc7f39a
+  hash: aeed36d39139
   verdicts:
   - stage: S6
     verdict: correct
     by: verifier
-    hash: e375cfc7f39a
+    hash: aeed36d39139
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: S6 review authoring/reviews/ch10-S6.md; 01:175-181
   - stage: S5a
     verdict: correct
     by: refereeA
-    hash: e375cfc7f39a
+    hash: aeed36d39139
     date: '2026-09-28'
     evidence: 01:175 1>0 => 1+1>1>0 => 0>0 in F_2; independent of chosen <
   - stage: S5b
     verdict: correct
     by: refereeB
-    hash: e375cfc7f39a
+    hash: aeed36d39139
     date: '2026-09-28'
     evidence: 'S5b: claims, meta-claims, ledger lines and refs checked; see authoring/reviews/ch10-S5-B.md'
 - key: def-absolute-value
@@ -231,36 +231,36 @@ items:
   kind: prp
   file: 01-ordered-fields.md
   line: 206
-  hash: 556b64e220e5
+  hash: e24e9835b200
   verdicts:
   - stage: S5a
     verdict: correct
     by: refereeA
-    hash: 556b64e220e5
+    hash: e24e9835b200
     date: '2026-09-28'
     evidence: 01:206 all four parts checked on grid (sidecar + own); (d) strict/non-strict both
   - stage: S5b
     verdict: correct
     by: refereeB
-    hash: 556b64e220e5
+    hash: e24e9835b200
     date: '2026-09-28'
     evidence: 'S5b: claims, meta-claims, ledger lines and refs checked; see authoring/reviews/ch10-S5-B.md'
 - key: proof:prp-absolute-value-rules
   kind: proof
   file: 01-ordered-fields.md
   line: 223
-  hash: a703f0e3f241
+  hash: 828e45c4c817
   verdicts:
   - stage: S5a
     verdict: correct
     by: refereeA
-    hash: a703f0e3f241
+    hash: 828e45c4c817
     date: '2026-09-28'
     evidence: '01:223 (b) both sides in {xy,-xy}, non-negative, non-zero when xy!=0: correct'
   - stage: S5b
     verdict: correct
     by: refereeB
-    hash: a703f0e3f241
+    hash: 828e45c4c817
     date: '2026-09-28'
     evidence: 'S5b: claims, meta-claims, ledger lines and refs checked; see authoring/reviews/ch10-S5-B.md'
 - key: exm-solve-abs-inequality
@@ -355,31 +355,31 @@ items:
   kind: exr
   file: 01-ordered-fields.md
   line: 296
-  hash: 3141b5830c40
+  hash: cbf1a7bcaf03
   verdicts:
   - stage: S6
     verdict: correct
     by: verifier
-    hash: 3141b5830c40
+    hash: cbf1a7bcaf03
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: S6 review authoring/reviews/ch10-S6.md; 01:307-315
   - stage: S5a
     verdict: correct
     by: refereeA
-    hash: 3141b5830c40
+    hash: cbf1a7bcaf03
     date: '2026-09-28'
     evidence: 01:296 (a) O3/F3/hyp/O2; (b) a=-2,b=1; (c) true; (d) F8
   - stage: S5b
     verdict: correct
     by: refereeB
-    hash: 3141b5830c40
+    hash: cbf1a7bcaf03
     date: '2026-09-28'
     evidence: 'S5b: claims, meta-claims, ledger lines and refs checked; see authoring/reviews/ch10-S5-B.md'
   - stage: S8
     verdict: minor
     by: seam
-    hash: 3141b5830c40
+    hash: cbf1a7bcaf03
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: authoring/reviews/ch11-S8-seam.md row 12 (2m=1 unpaid in ch07 table)
@@ -387,12 +387,12 @@ items:
   kind: exr
   file: 01-ordered-fields.md
   line: 319
-  hash: ac0ab9058e3e
+  hash: cad162a00ac2
   verdicts:
   - stage: S6
     verdict: correct
     by: verifier
-    hash: ac0ab9058e3e
+    hash: cad162a00ac2
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'S6 review authoring/reviews/ch10-S6.md; 01:331-337; worked type: proof of thm-ordered-field-rules
@@ -400,25 +400,25 @@ items:
   - stage: S5a
     verdict: correct
     by: refereeA
-    hash: ac0ab9058e3e
+    hash: cad162a00ac2
     date: '2026-09-28'
     evidence: 01:319 (b) ac<=ad<bd with a=0 case; (c) trichotomy on b
   - stage: S5b
     verdict: correct
     by: refereeB
-    hash: ac0ab9058e3e
+    hash: cad162a00ac2
     date: '2026-09-28'
     evidence: 'S5b: claims, meta-claims, ledger lines and refs checked; see authoring/reviews/ch10-S5-B.md'
 - key: exr-ordered-fields-b2
   kind: exr
   file: 01-ordered-fields.md
   line: 339
-  hash: c13541869932
+  hash: e995809f9c97
   verdicts:
   - stage: S6
     verdict: correct
     by: verifier
-    hash: c13541869932
+    hash: e995809f9c97
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: S6 review authoring/reviews/ch10-S6.md; 01:350-360; worked type 01:270-284 (reverse triangle;
@@ -426,25 +426,25 @@ items:
   - stage: S5a
     verdict: correct
     by: refereeA
-    hash: c13541869932
+    hash: e995809f9c97
     date: '2026-09-28'
     evidence: 01:339 (b) squares equal iff 2xy=2|xy| (2!=0) iff xy>=0
   - stage: S5b
     verdict: correct
     by: refereeB
-    hash: c13541869932
+    hash: e995809f9c97
     date: '2026-09-28'
     evidence: 'S5b: claims, meta-claims, ledger lines and refs checked; see authoring/reviews/ch10-S5-B.md'
 - key: exr-ordered-fields-b3
   kind: exr
   file: 01-ordered-fields.md
   line: 362
-  hash: 71cfca5b90f1
+  hash: b20158853c53
   verdicts:
   - stage: S6
     verdict: minor
     by: verifier
-    hash: 71cfca5b90f1
+    hash: b20158853c53
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: S6 review authoring/reviews/ch10-S6.md; 01:373-377; (a) is modelled by exm-solve-abs-inequality
@@ -452,25 +452,25 @@ items:
   - stage: S5a
     verdict: correct
     by: refereeA
-    hash: 71cfca5b90f1
+    hash: b20158853c53
     date: '2026-09-28'
     evidence: '01:362 own grid check: (-1,4) and (0,inf)'
   - stage: S5b
     verdict: correct
     by: refereeB
-    hash: 71cfca5b90f1
+    hash: b20158853c53
     date: '2026-09-28'
     evidence: 'S5b: claims, meta-claims, ledger lines and refs checked; see authoring/reviews/ch10-S5-B.md'
   - stage: S7
     verdict: correct
     by: reviser
-    hash: 71cfca5b90f1
+    hash: b20158853c53
     date: '2026-09-28'
     evidence: 'S6 #2: squaring move now has a worked example (|x-2|<|x| iff x>1) in the section'
   - stage: S7r
     verdict: correct
     by: rereferee
-    hash: 71cfca5b90f1
+    hash: b20158853c53
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: S7 fix checked, ch11-S7-recheck.md
@@ -523,7 +523,7 @@ items:
   - stage: S8
     verdict: correct
     by: coordinator
-    hash: d110eecbbec0
+    hash: 1ab13dff19a8
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'cross-chapter cleanup 2026-09-28: ''induction (Chapter 3)'' now cites @ax-induction (earlier
@@ -532,25 +532,25 @@ items:
   kind: exr
   file: 01-ordered-fields.md
   line: 401
-  hash: ddb2de86f8cf
+  hash: 86b94618bd98
   verdicts:
   - stage: S6
     verdict: correct
     by: verifier
-    hash: ddb2de86f8cf
+    hash: 86b94618bd98
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: S6 review authoring/reviews/ch10-S6.md; 01:415-419; random check of the inequality passes
   - stage: S5a
     verdict: correct
     by: refereeA
-    hash: ddb2de86f8cf
+    hash: 86b94618bd98
     date: '2026-09-28'
     evidence: 01:401 formulas and Lipschitz bound checked on 2000 random rational quadruples
   - stage: S5b
     verdict: correct
     by: refereeB
-    hash: ddb2de86f8cf
+    hash: 86b94618bd98
     date: '2026-09-28'
     evidence: 'S5b: claims, meta-claims, ledger lines and refs checked; see authoring/reviews/ch10-S5-B.md'
 - key: def-upper-bound
@@ -582,18 +582,18 @@ items:
   kind: def
   file: 02-suprema.md
   line: 35
-  hash: 8e6b3561875e
+  hash: 62e34bc7a859
   verdicts:
   - stage: S5a
     verdict: correct
     by: refereeA
-    hash: 8e6b3561875e
+    hash: 62e34bc7a859
     date: '2026-09-28'
     evidence: 02:35 witness max{M,0}+1 > M correct; quantifier-swap remark correct
   - stage: S5b
     verdict: correct
     by: refereeB
-    hash: 8e6b3561875e
+    hash: 62e34bc7a859
     date: '2026-09-28'
     evidence: 'S5b: claims, meta-claims, ledger lines and refs checked; see authoring/reviews/ch10-S5-B.md'
 - key: def-maximum
@@ -631,24 +631,24 @@ items:
   kind: def
   file: 02-suprema.md
   line: 85
-  hash: ea631fba54ac
+  hash: 23d6afee93e4
   verdicts:
   - stage: S5a
     verdict: correct
     by: refereeA
-    hash: ea631fba54ac
+    hash: 23d6afee93e4
     date: '2026-09-28'
     evidence: 02:85 S1/S2 in F; symbols match
   - stage: S5b
     verdict: correct
     by: refereeB
-    hash: ea631fba54ac
+    hash: 23d6afee93e4
     date: '2026-09-28'
     evidence: 'S5b: claims, meta-claims, ledger lines and refs checked; see authoring/reviews/ch10-S5-B.md'
   - stage: S8
     verdict: correct
     by: seam
-    hash: ea631fba54ac
+    hash: 23d6afee93e4
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: authoring/reviews/ch11-S8-seam.md row 21 (ch07 back-pointer pending)
@@ -707,18 +707,18 @@ items:
   kind: def
   file: 02-suprema.md
   line: 121
-  hash: 2abf53cf3c3e
+  hash: 5b5291a780f0
   verdicts:
   - stage: S5a
     verdict: correct
     by: refereeA
-    hash: 2abf53cf3c3e
+    hash: 5b5291a780f0
     date: '2026-09-28'
     evidence: 02:121 mirror of def-supremum
   - stage: S5b
     verdict: correct
     by: refereeB
-    hash: 2abf53cf3c3e
+    hash: 5b5291a780f0
     date: '2026-09-28'
     evidence: 'S5b: claims, meta-claims, ledger lines and refs checked; see authoring/reviews/ch10-S5-B.md'
 - key: exm-sup-finite-and-closed
@@ -742,20 +742,20 @@ items:
   - stage: S7
     verdict: correct
     by: reviser
-    hash: 5da9f79e435a
+    hash: 98820c86d4c9
     date: '2026-09-28'
     evidence: text unchanged in item; hash moved with section edits
   - stage: S7r
     verdict: correct
     by: rereferee
-    hash: 5da9f79e435a
+    hash: 98820c86d4c9
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: S7 fix checked, ch11-S7-recheck.md
   - stage: S8
     verdict: correct
     by: seam
-    hash: 5da9f79e435a
+    hash: 98820c86d4c9
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: authoring/reviews/ch11-S8-seam.md row 12 (prp-finite-max, ch07)
@@ -763,18 +763,18 @@ items:
   kind: exm
   file: 02-suprema.md
   line: 148
-  hash: 6ff9b7f80c01
+  hash: b85a64600423
   verdicts:
   - stage: S5a
     verdict: correct
     by: refereeA
-    hash: 6ff9b7f80c01
+    hash: b85a64600423
     date: '2026-09-28'
     evidence: 02:148 M<1 upper bound => M>=1/2>0, midpoint (M+1)/2 in (0,1) beats M; valid in Q
   - stage: S5b
     verdict: correct
     by: refereeB
-    hash: 6ff9b7f80c01
+    hash: b85a64600423
     date: '2026-09-28'
     evidence: 'S5b: claims, meta-claims, ledger lines and refs checked; see authoring/reviews/ch10-S5-B.md'
 - key: exm-sup-one-minus-reciprocal
@@ -818,7 +818,7 @@ items:
   - stage: S8
     verdict: correct
     by: coordinator
-    hash: 80e5d13e73a6
+    hash: 549eb91aea3f
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'cross-chapter cleanup 2026-09-28: ''induction (Chapter 3)'' now cites @ax-induction (earlier
@@ -827,101 +827,101 @@ items:
   kind: check
   file: 02-suprema.md
   line: 186
-  hash: 9141aaf777a7
+  hash: 0c4c93eb0244
   verdicts:
   - stage: S6
     verdict: correct
     by: verifier
-    hash: 9141aaf777a7
+    hash: 0c4c93eb0244
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: S6 review authoring/reviews/ch10-S6.md; 02:186-194
   - stage: S5a
     verdict: correct
     by: refereeA
-    hash: 9141aaf777a7
+    hash: 0c4c93eb0244
     date: '2026-09-28'
     evidence: 02:186 max=sup=1/2, min=inf=-1
   - stage: S5b
     verdict: correct
     by: refereeB
-    hash: 9141aaf777a7
+    hash: 0c4c93eb0244
     date: '2026-09-28'
     evidence: 'S5b: claims, meta-claims, ledger lines and refs checked; see authoring/reviews/ch10-S5-B.md'
 - key: thm-no-rational-sup-sqrt2
   kind: thm
   file: 02-suprema.md
   line: 200
-  hash: 251acace672e
+  hash: 850c1bbded08
   verdicts:
   - stage: S5a
     verdict: correct
     by: refereeA
-    hash: 251acace672e
+    hash: 850c1bbded08
     date: '2026-09-28'
     evidence: '02:200 drop ''in Q'' (work in R): conclusion false (sup=sqrt2); exact-rational grid of
       2000 s in [1,2]: case1 h in (0,1/6], (s+h)^2<2; case2 (s-h)^2>2, s-h>0'
   - stage: S5b
     verdict: correct
     by: refereeB
-    hash: 251acace672e
+    hash: 850c1bbded08
     date: '2026-09-28'
     evidence: 'S5b: claims, meta-claims, ledger lines and refs checked; see authoring/reviews/ch10-S5-B.md'
 - key: proof:thm-no-rational-sup-sqrt2
   kind: proof
   file: 02-suprema.md
   line: 216
-  hash: 952fa1a7c320
+  hash: 7d6abcbd40d5
   verdicts:
   - stage: S5a
     verdict: correct
     by: refereeA
-    hash: 952fa1a7c320
+    hash: 7d6abcbd40d5
     date: '2026-09-28'
     evidence: 02:216 s>=1 from 1 in A used for h<=1/6; (g) applied with s-h>0; both h rational; every
       step reasoned
   - stage: S5b
     verdict: correct
     by: refereeB
-    hash: 952fa1a7c320
+    hash: 7d6abcbd40d5
     date: '2026-09-28'
     evidence: 'S5b: claims, meta-claims, ledger lines and refs checked; see authoring/reviews/ch10-S5-B.md'
 - key: exr-suprema-a1
   kind: exr
   file: 02-suprema.md
   line: 258
-  hash: 03b274ae480f
+  hash: 63dca846832e
   verdicts:
   - stage: S6
     verdict: correct
     by: verifier
-    hash: 03b274ae480f
+    hash: 63dca846832e
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: S6 review authoring/reviews/ch10-S6.md; 02:273-291; Fraction check
   - stage: S5a
     verdict: correct
     by: refereeA
-    hash: 03b274ae480f
+    hash: 63dca846832e
     date: '2026-09-28'
     evidence: '02:258 (e) h=1/408, 577/408, 577^2=2*408^2+1 exact; (f) correct: only thm-sqrt2-irrational
       line fails'
   - stage: S5b
     verdict: correct
     by: refereeB
-    hash: 03b274ae480f
+    hash: 63dca846832e
     date: '2026-09-28'
     evidence: 'S5b: claims, meta-claims, ledger lines and refs checked; see authoring/reviews/ch10-S5-B.md'
 - key: exr-suprema-b1
   kind: exr
   file: 02-suprema.md
   line: 295
-  hash: fa48a663c54b
+  hash: 792df4804900
   verdicts:
   - stage: S6
     verdict: correct
     by: verifier
-    hash: fa48a663c54b
+    hash: 792df4804900
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: S6 review authoring/reviews/ch10-S6.md; 02:307-313; worked type exm-sup-finite-and-closed
@@ -929,25 +929,25 @@ items:
   - stage: S5a
     verdict: correct
     by: refereeA
-    hash: fa48a663c54b
+    hash: 792df4804900
     date: '2026-09-28'
     evidence: 02:295 correct
   - stage: S5b
     verdict: correct
     by: refereeB
-    hash: fa48a663c54b
+    hash: 792df4804900
     date: '2026-09-28'
     evidence: 'S5b: claims, meta-claims, ledger lines and refs checked; see authoring/reviews/ch10-S5-B.md'
 - key: exr-suprema-b2
   kind: exr
   file: 02-suprema.md
   line: 315
-  hash: ea710f0f7b1b
+  hash: 0cd8c93d191c
   verdicts:
   - stage: S6
     verdict: correct
     by: verifier
-    hash: ea710f0f7b1b
+    hash: 0cd8c93d191c
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'S6 review authoring/reviews/ch10-S6.md; 02:327-339; worked type: negation at 02:26-30 and
@@ -955,120 +955,120 @@ items:
   - stage: S5a
     verdict: correct
     by: refereeA
-    hash: ea710f0f7b1b
+    hash: 0cd8c93d191c
     date: '2026-09-28'
     evidence: 02:315 negation of S1 and S2 correct; witness M=1
   - stage: S5b
     verdict: correct
     by: refereeB
-    hash: ea710f0f7b1b
+    hash: 0cd8c93d191c
     date: '2026-09-28'
     evidence: 'S5b: claims, meta-claims, ledger lines and refs checked; see authoring/reviews/ch10-S5-B.md'
 - key: exr-suprema-b3
   kind: exr
   file: 02-suprema.md
   line: 341
-  hash: abf74704d97e
+  hash: c591d997b519
   verdicts:
   - stage: S6
     verdict: correct
     by: verifier
-    hash: abf74704d97e
+    hash: c591d997b519
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: S6 review authoring/reviews/ch10-S6.md; 02:347-357; worked type exm-sup-open-interval 02:148-160
   - stage: S5a
     verdict: correct
     by: refereeA
-    hash: abf74704d97e
+    hash: c591d997b519
     date: '2026-09-28'
     evidence: '02:341 x=M/(1-M)+1 gives x/(x+1)>M: checked for M in [1/2,1) grid'
   - stage: S5b
     verdict: correct
     by: refereeB
-    hash: abf74704d97e
+    hash: c591d997b519
     date: '2026-09-28'
     evidence: 'S5b: claims, meta-claims, ledger lines and refs checked; see authoring/reviews/ch10-S5-B.md'
 - key: exr-suprema-c1
   kind: exr
   file: 02-suprema.md
   line: 361
-  hash: 225139fb7936
+  hash: 17b54901f9f2
   verdicts:
   - stage: S6
     verdict: correct
     by: verifier
-    hash: 225139fb7936
+    hash: 17b54901f9f2
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: S6 review authoring/reviews/ch10-S6.md; 02:373-380; hint names a tool only
   - stage: S5a
     verdict: correct
     by: refereeA
-    hash: 225139fb7936
+    hash: 17b54901f9f2
     date: '2026-09-28'
     evidence: '02:361 (b) Case 1 needs s>=1: supplied by 1 in B; (c) b>=1 as largest element; correct'
   - stage: S5b
     verdict: correct
     by: refereeB
-    hash: 225139fb7936
+    hash: 17b54901f9f2
     date: '2026-09-28'
     evidence: 'S5b: claims, meta-claims, ledger lines and refs checked; see authoring/reviews/ch10-S5-B.md'
 - key: exr-suprema-c2
   kind: exr
   file: 02-suprema.md
   line: 382
-  hash: 4f914f3e681d
+  hash: 6984e21f599e
   verdicts:
   - stage: S6
     verdict: correct
     by: verifier
-    hash: 4f914f3e681d
+    hash: 6984e21f599e
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: S6 review authoring/reviews/ch10-S6.md; 02:394-401
   - stage: S5a
     verdict: correct
     by: refereeA
-    hash: 4f914f3e681d
+    hash: 6984e21f599e
     date: '2026-09-28'
     evidence: 02:382 U(empty)=F no min; U(F)=empty
   - stage: S5b
     verdict: correct
     by: refereeB
-    hash: 4f914f3e681d
+    hash: 6984e21f599e
     date: '2026-09-28'
     evidence: 'S5b: claims, meta-claims, ledger lines and refs checked; see authoring/reviews/ch10-S5-B.md'
 - key: ax-least-upper-bound
   kind: ax
   file: 03-the-axiom.md
   line: 11
-  hash: 4c231fee6882
+  hash: 979a0e2ad8c7
   verdicts:
   - stage: S5a
     verdict: correct
     by: refereeA
-    hash: 4c231fee6882
+    hash: 979a0e2ad8c7
     date: '2026-09-28'
     evidence: 03:11 both hypotheses shown necessary (empty set; [0,inf))
   - stage: S5b
     verdict: minor
     by: refereeB
-    hash: 4c231fee6882
+    hash: 979a0e2ad8c7
     date: '2026-09-28'
     evidence: 03:26 'Every theorem about real numbers in this book is proved from these assumptions and
       nothing else' false; contradicts 04:123 (countable choice)
   - stage: S7
     verdict: correct
     by: reviser
-    hash: 4c231fee6882
+    hash: 979a0e2ad8c7
     date: '2026-09-28'
     evidence: 03:26 standing assumption now 'with the logic and set theory of Part 0 (incl. flagged choice)';
       03:35 no longer names the C1(a) witness
   - stage: S7r
     verdict: correct
     by: rereferee
-    hash: 4c231fee6882
+    hash: 979a0e2ad8c7
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: S7 fix checked, ch11-S7-recheck.md
@@ -1076,18 +1076,18 @@ items:
   kind: exm
   file: 03-the-axiom.md
   line: 41
-  hash: 28458f9df356
+  hash: bedd2e735cf8
   verdicts:
   - stage: S5a
     verdict: correct
     by: refereeA
-    hash: 28458f9df356
+    hash: bedd2e735cf8
     date: '2026-09-28'
     evidence: 03:41 bound 2 via (g); 1<=s<=2
   - stage: S5b
     verdict: correct
     by: refereeB
-    hash: 28458f9df356
+    hash: bedd2e735cf8
     date: '2026-09-28'
     evidence: 'S5b: claims, meta-claims, ledger lines and refs checked; see authoring/reviews/ch10-S5-B.md'
 - key: check:03-the-axiom:1
@@ -1118,13 +1118,13 @@ items:
   - stage: S7
     verdict: correct
     by: reviser
-    hash: b4d4416ed968
+    hash: 512b75c3ed8e
     date: '2026-09-28'
     evidence: unchanged; hash moved
   - stage: S7r
     verdict: correct
     by: rereferee
-    hash: b4d4416ed968
+    hash: 512b75c3ed8e
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: S7 fix checked, ch11-S7-recheck.md
@@ -1132,109 +1132,109 @@ items:
   kind: thm
   file: 03-the-axiom.md
   line: 81
-  hash: d71bcbe0261c
+  hash: 6931688dce14
   verdicts:
   - stage: S5a
     verdict: correct
     by: refereeA
-    hash: d71bcbe0261c
+    hash: 6931688dce14
     date: '2026-09-28'
     evidence: 03:81 holds in any ordered field; no hypothesis to drop
   - stage: S5b
     verdict: correct
     by: refereeB
-    hash: d71bcbe0261c
+    hash: 6931688dce14
     date: '2026-09-28'
     evidence: 'S5b: claims, meta-claims, ledger lines and refs checked; see authoring/reviews/ch10-S5-B.md'
 - key: proof:thm-inf-neg-sup
   kind: proof
   file: 03-the-axiom.md
   line: 98
-  hash: bc5eee694698
+  hash: 376b6eb7f8f2
   verdicts:
   - stage: S5a
     verdict: correct
     by: refereeA
-    hash: bc5eee694698
+    hash: 376b6eb7f8f2
     date: '2026-09-28'
     evidence: 03:98 (a) via rules (a); (b) both directions use (a) with m=-M; final clause correct
   - stage: S5b
     verdict: correct
     by: refereeB
-    hash: bc5eee694698
+    hash: 376b6eb7f8f2
     date: '2026-09-28'
     evidence: 'S5b: claims, meta-claims, ledger lines and refs checked; see authoring/reviews/ch10-S5-B.md'
 - key: thm-greatest-lower-bound
   kind: thm
   file: 03-the-axiom.md
   line: 110
-  hash: 2bc401675920
+  hash: 4e7050575085
   verdicts:
   - stage: S5a
     verdict: correct
     by: refereeA
-    hash: 2bc401675920
+    hash: 4e7050575085
     date: '2026-09-28'
     evidence: '03:110 drop non-empty: empty set; drop bounded below: (-inf,0]'
   - stage: S5b
     verdict: correct
     by: refereeB
-    hash: 2bc401675920
+    hash: 4e7050575085
     date: '2026-09-28'
     evidence: 'S5b: claims, meta-claims, ledger lines and refs checked; see authoring/reviews/ch10-S5-B.md'
 - key: proof:thm-greatest-lower-bound
   kind: proof
   file: 03-the-axiom.md
   line: 119
-  hash: bd4c4d3d4500
+  hash: 203c172b75b8
   verdicts:
   - stage: S5a
     verdict: correct
     by: refereeA
-    hash: bd4c4d3d4500
+    hash: 203c172b75b8
     date: '2026-09-28'
     evidence: 03:119 correct; alternative via sup of lower bounds also correct (03:123)
   - stage: S5b
     verdict: correct
     by: refereeB
-    hash: bd4c4d3d4500
+    hash: 203c172b75b8
     date: '2026-09-28'
     evidence: 'S5b: claims, meta-claims, ledger lines and refs checked; see authoring/reviews/ch10-S5-B.md'
 - key: exr-the-axiom-a1
   kind: exr
   file: 03-the-axiom.md
   line: 145
-  hash: c698e992b416
+  hash: 52a118c4c16a
   verdicts:
   - stage: S6
     verdict: correct
     by: verifier
-    hash: c698e992b416
+    hash: 52a118c4c16a
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: S6 review authoring/reviews/ch10-S6.md; 03:145-166
   - stage: S5a
     verdict: correct
     by: refereeA
-    hash: c698e992b416
+    hash: 52a118c4c16a
     date: '2026-09-28'
     evidence: 03:145 (b) x=|M|+1, x^2>=x>M; (c) midpoint M/2
   - stage: S5b
     verdict: correct
     by: refereeB
-    hash: c698e992b416
+    hash: 52a118c4c16a
     date: '2026-09-28'
     evidence: 'S5b: claims, meta-claims, ledger lines and refs checked; see authoring/reviews/ch10-S5-B.md'
 - key: exr-the-axiom-b1
   kind: exr
   file: 03-the-axiom.md
   line: 170
-  hash: b144c360b4a8
+  hash: a2e5d7accdaf
   verdicts:
   - stage: S6
     verdict: correct
     by: verifier
-    hash: b144c360b4a8
+    hash: a2e5d7accdaf
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: S6 review authoring/reviews/ch10-S6.md; 03:170-178; worked model thm-greatest-lower-bound
@@ -1242,25 +1242,25 @@ items:
   - stage: S5a
     verdict: correct
     by: refereeA
-    hash: b144c360b4a8
+    hash: a2e5d7accdaf
     date: '2026-09-28'
     evidence: 03:170 correct
   - stage: S5b
     verdict: correct
     by: refereeB
-    hash: b144c360b4a8
+    hash: a2e5d7accdaf
     date: '2026-09-28'
     evidence: 'S5b: claims, meta-claims, ledger lines and refs checked; see authoring/reviews/ch10-S5-B.md'
 - key: exr-the-axiom-b2
   kind: exr
   file: 03-the-axiom.md
   line: 180
-  hash: 4eb312bce9d0
+  hash: 5529b2e2b62e
   verdicts:
   - stage: S6
     verdict: correct
     by: verifier
-    hash: 4eb312bce9d0
+    hash: 5529b2e2b62e
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: S6 review authoring/reviews/ch10-S6.md; 03:180-190; model exm-lub-first-use (1 <= s <= 2)
@@ -1268,25 +1268,25 @@ items:
   - stage: S5a
     verdict: correct
     by: refereeA
-    hash: 4eb312bce9d0
+    hash: 5529b2e2b62e
     date: '2026-09-28'
     evidence: 03:180 correct incl. equality case
   - stage: S5b
     verdict: correct
     by: refereeB
-    hash: 4eb312bce9d0
+    hash: 5529b2e2b62e
     date: '2026-09-28'
     evidence: 'S5b: claims, meta-claims, ledger lines and refs checked; see authoring/reviews/ch10-S5-B.md'
 - key: exr-the-axiom-c1
   kind: exr
   file: 03-the-axiom.md
   line: 194
-  hash: 0d7d8caf2ed1
+  hash: 99a0d8f2afb0
   verdicts:
   - stage: S6
     verdict: minor
     by: verifier
-    hash: 0d7d8caf2ed1
+    hash: 99a0d8f2afb0
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: S6 review authoring/reviews/ch10-S6.md; 03:194-210 correct and complete; (a) is answered
@@ -1294,25 +1294,25 @@ items:
   - stage: S5a
     verdict: correct
     by: refereeA
-    hash: 0d7d8caf2ed1
+    hash: 99a0d8f2afb0
     date: '2026-09-28'
     evidence: 03:194 (b) thm-inf-neg-sup (a),(b) applied to -A correctly; (c) correct
   - stage: S5b
     verdict: correct
     by: refereeB
-    hash: 0d7d8caf2ed1
+    hash: 99a0d8f2afb0
     date: '2026-09-28'
     evidence: 'S5b: claims, meta-claims, ledger lines and refs checked; see authoring/reviews/ch10-S5-B.md'
   - stage: S7
     verdict: correct
     by: reviser
-    hash: 0d7d8caf2ed1
+    hash: 99a0d8f2afb0
     date: '2026-09-28'
     evidence: 'S6 #3: prose at 03:35 no longer answers (a)'
   - stage: S7r
     verdict: correct
     by: rereferee
-    hash: 0d7d8caf2ed1
+    hash: 99a0d8f2afb0
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: S7 fix checked, ch11-S7-recheck.md
@@ -1320,25 +1320,25 @@ items:
   kind: exr
   file: 03-the-axiom.md
   line: 212
-  hash: 4eea55d64995
+  hash: fd54058823cc
   verdicts:
   - stage: S6
     verdict: correct
     by: verifier
-    hash: 4eea55d64995
+    hash: fd54058823cc
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: S6 review authoring/reviews/ch10-S6.md; 03:212-228
   - stage: S5a
     verdict: correct
     by: refereeA
-    hash: 4eea55d64995
+    hash: fd54058823cc
     date: '2026-09-28'
     evidence: 03:212 (b) q in U and least => sup in Q, contradiction
   - stage: S5b
     verdict: correct
     by: refereeB
-    hash: 4eea55d64995
+    hash: fd54058823cc
     date: '2026-09-28'
     evidence: 'S5b: claims, meta-claims, ledger lines and refs checked; see authoring/reviews/ch10-S5-B.md'
 - key: thm-sup-epsilon
@@ -1377,101 +1377,101 @@ items:
   kind: proof
   file: 04-epsilon-characterization.md
   line: 50
-  hash: d63c35231c6e
+  hash: 4deab392d4aa
   verdicts:
   - stage: S5a
     verdict: correct
     by: refereeA
-    hash: d63c35231c6e
+    hash: 4deab392d4aa
     date: '2026-09-28'
     evidence: 04:50 eps:=s-M>0 depends only on M,s; quantifier order eps then a correct
   - stage: S5b
     verdict: correct
     by: refereeB
-    hash: d63c35231c6e
+    hash: 4deab392d4aa
     date: '2026-09-28'
     evidence: 'S5b: claims, meta-claims, ledger lines and refs checked; see authoring/reviews/ch10-S5-B.md'
 - key: check:04-epsilon-characterization:1
   kind: check
   file: 04-epsilon-characterization.md
   line: 68
-  hash: bf8ee1d61fa0
+  hash: cc9113005200
   verdicts:
   - stage: S6
     verdict: correct
     by: verifier
-    hash: bf8ee1d61fa0
+    hash: cc9113005200
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: S6 review authoring/reviews/ch10-S6.md; 04:68-82
   - stage: S5a
     verdict: correct
     by: refereeA
-    hash: bf8ee1d61fa0
+    hash: cc9113005200
     date: '2026-09-28'
     evidence: '04:68 (ii) iff s in A: correct'
   - stage: S5b
     verdict: correct
     by: refereeB
-    hash: bf8ee1d61fa0
+    hash: cc9113005200
     date: '2026-09-28'
     evidence: 'S5b: claims, meta-claims, ledger lines and refs checked; see authoring/reviews/ch10-S5-B.md'
 - key: exm-sup-squares-epsilon
   kind: exm
   file: 04-epsilon-characterization.md
   line: 86
-  hash: 5d3a7c14a0d8
+  hash: 0f32301b1ae2
   verdicts:
   - stage: S5a
     verdict: correct
     by: refereeA
-    hash: 5d3a7c14a0d8
+    hash: 0f32301b1ae2
     date: '2026-09-28'
     evidence: 04:86 backwards Idea/forward proof; h=min{1/2,eps/2} depends on eps only; checked for 208
       eps values
   - stage: S5b
     verdict: correct
     by: refereeB
-    hash: 5d3a7c14a0d8
+    hash: 0f32301b1ae2
     date: '2026-09-28'
     evidence: 'S5b: claims, meta-claims, ledger lines and refs checked; see authoring/reviews/ch10-S5-B.md'
 - key: cor-sup-approximation
   kind: cor
   file: 04-epsilon-characterization.md
   line: 110
-  hash: 52042161015d
+  hash: fa8576e47b78
   verdicts:
   - stage: S5a
     verdict: correct
     by: refereeA
-    hash: 52042161015d
+    hash: fa8576e47b78
     date: '2026-09-28'
     evidence: '04:110 claim of countable choice only for forming the sequence: accurate; corollary itself
       needs none'
   - stage: S5b
     verdict: correct
     by: refereeB
-    hash: 52042161015d
+    hash: fa8576e47b78
     date: '2026-09-28'
     evidence: 'S5b: claims, meta-claims, ledger lines and refs checked; see authoring/reviews/ch10-S5-B.md'
   - stage: S7
     verdict: correct
     by: reviser
-    hash: 52042161015d
+    hash: fa8576e47b78
     date: '2026-09-28'
     evidence: 04:123 softened to 'once limits are defined in Chapter 12, sup A is the limit of a sequence
       from A'
   - stage: S7r
     verdict: correct
     by: rereferee
-    hash: 52042161015d
+    hash: fa8576e47b78
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: S7 fix checked, ch11-S7-recheck.md
   - stage: S8
     verdict: correct
     by: seam
-    hash: 52042161015d
+    hash: fa8576e47b78
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: authoring/reviews/ch11-S8-seam.md row 13 (ax-choice, ch08)
@@ -1479,78 +1479,78 @@ items:
   kind: proof
   file: 04-epsilon-characterization.md
   line: 119
-  hash: 5b915867f282
+  hash: 63ec860f0660
   verdicts:
   - stage: S5a
     verdict: correct
     by: refereeA
-    hash: 5b915867f282
+    hash: 63ec860f0660
     date: '2026-09-28'
     evidence: 04:119 n>0, 1/n>0, thm-sup-epsilon
   - stage: S5b
     verdict: correct
     by: refereeB
-    hash: 5b915867f282
+    hash: 63ec860f0660
     date: '2026-09-28'
     evidence: 'S5b: claims, meta-claims, ledger lines and refs checked; see authoring/reviews/ch10-S5-B.md'
 - key: thm-sup-monotone
   kind: thm
   file: 04-epsilon-characterization.md
   line: 129
-  hash: a380dc50cbe1
+  hash: 3cd6bfb190d1
   verdicts:
   - stage: S5a
     verdict: correct
     by: refereeA
-    hash: a380dc50cbe1
+    hash: 3cd6bfb190d1
     date: '2026-09-28'
     evidence: '04:129 drop A non-empty: empty set; drop B bounded above: B=[0,inf), no sup B'
   - stage: S5b
     verdict: correct
     by: refereeB
-    hash: a380dc50cbe1
+    hash: 3cd6bfb190d1
     date: '2026-09-28'
     evidence: 'S5b: claims, meta-claims, ledger lines and refs checked; see authoring/reviews/ch10-S5-B.md'
 - key: proof:thm-sup-monotone
   kind: proof
   file: 04-epsilon-characterization.md
   line: 135
-  hash: 210546f13841
+  hash: c62f352dc056
   verdicts:
   - stage: S5a
     verdict: correct
     by: refereeA
-    hash: 210546f13841
+    hash: c62f352dc056
     date: '2026-09-28'
     evidence: 04:135 correct
   - stage: S5b
     verdict: correct
     by: refereeB
-    hash: 210546f13841
+    hash: c62f352dc056
     date: '2026-09-28'
     evidence: 'S5b: claims, meta-claims, ledger lines and refs checked; see authoring/reviews/ch10-S5-B.md'
 - key: thm-sup-scaling
   kind: thm
   file: 04-epsilon-characterization.md
   line: 147
-  hash: 2148347a2804
+  hash: cabce9d22e17
   verdicts:
   - stage: S5a
     verdict: correct
     by: refereeA
-    hash: 2148347a2804
+    hash: cabce9d22e17
     date: '2026-09-28'
     evidence: '04:147 drop c>0 in (a): c=-1, A=(0,1] (04:175)'
   - stage: S5b
     verdict: correct
     by: refereeB
-    hash: 2148347a2804
+    hash: cabce9d22e17
     date: '2026-09-28'
     evidence: 'S5b: claims, meta-claims, ledger lines and refs checked; see authoring/reviews/ch10-S5-B.md'
   - stage: S8
     verdict: correct
     by: seam
-    hash: 2148347a2804
+    hash: cabce9d22e17
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: authoring/reviews/ch11-S8-seam.md row 11 (-A, cA as images, ch06)
@@ -1558,42 +1558,42 @@ items:
   kind: proof
   file: 04-epsilon-characterization.md
   line: 162
-  hash: 19d11b4a4a15
+  hash: 7fd5928a37ec
   verdicts:
   - stage: S5a
     verdict: correct
     by: refereeA
-    hash: 19d11b4a4a15
+    hash: 7fd5928a37ec
     date: '2026-09-28'
     evidence: 04:162 (a) two inequalities via 1/c>0; (b) (-c)A=-(cA) and thm-inf-neg-sup
   - stage: S5b
     verdict: correct
     by: refereeB
-    hash: 19d11b4a4a15
+    hash: 7fd5928a37ec
     date: '2026-09-28'
     evidence: 'S5b: claims, meta-claims, ledger lines and refs checked; see authoring/reviews/ch10-S5-B.md'
 - key: thm-sup-sum
   kind: thm
   file: 04-epsilon-characterization.md
   line: 185
-  hash: bca6ab5187df
+  hash: 88be1c738235
   verdicts:
   - stage: S5a
     verdict: correct
     by: refereeA
-    hash: bca6ab5187df
+    hash: 88be1c738235
     date: '2026-09-28'
     evidence: '04:185 drop B non-empty: A+B empty; drop B bounded: A+B unbounded'
   - stage: S5b
     verdict: correct
     by: refereeB
-    hash: bca6ab5187df
+    hash: 88be1c738235
     date: '2026-09-28'
     evidence: 'S5b: claims, meta-claims, ledger lines and refs checked; see authoring/reviews/ch10-S5-B.md'
   - stage: S8
     verdict: correct
     by: seam
-    hash: bca6ab5187df
+    hash: 88be1c738235
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: authoring/reviews/ch11-S8-seam.md row 11 (A+B as image, ch06)
@@ -1601,55 +1601,55 @@ items:
   kind: proof
   file: 04-epsilon-characterization.md
   line: 206
-  hash: 8e6f285ba62a
+  hash: f8dc73c570da
   verdicts:
   - stage: S5a
     verdict: correct
     by: refereeA
-    hash: 8e6f285ba62a
+    hash: f8dc73c570da
     date: '2026-09-28'
     evidence: 04:206 eps/2 depends on eps only; a,b depend on eps; final eps:=supA+supB-sup(A+B) valid
   - stage: S5b
     verdict: correct
     by: refereeB
-    hash: 8e6f285ba62a
+    hash: f8dc73c570da
     date: '2026-09-28'
     evidence: 'S5b: claims, meta-claims, ledger lines and refs checked; see authoring/reviews/ch10-S5-B.md'
 - key: exr-epsilon-characterization-a1
   kind: exr
   file: 04-epsilon-characterization.md
   line: 240
-  hash: 0c5893e2e558
+  hash: 9c87989e2b12
   verdicts:
   - stage: S6
     verdict: correct
     by: verifier
-    hash: 0c5893e2e558
+    hash: 9c87989e2b12
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: S6 review authoring/reviews/ch10-S6.md; 04:240-265; arithmetic checked
   - stage: S5a
     verdict: correct
     by: refereeA
-    hash: 0c5893e2e558
+    hash: 9c87989e2b12
     date: '2026-09-28'
     evidence: 04:240 (a) max{0,5-eps/2}; (c) max{3,4-eps/2}; (e) 24/25, 5.96>5.9 exact
   - stage: S5b
     verdict: correct
     by: refereeB
-    hash: 0c5893e2e558
+    hash: 9c87989e2b12
     date: '2026-09-28'
     evidence: 'S5b: claims, meta-claims, ledger lines and refs checked; see authoring/reviews/ch10-S5-B.md'
 - key: exr-epsilon-characterization-b1
   kind: exr
   file: 04-epsilon-characterization.md
   line: 269
-  hash: 737b81ca16f1
+  hash: 55737e6c7b5d
   verdicts:
   - stage: S6
     verdict: correct
     by: verifier
-    hash: 737b81ca16f1
+    hash: 55737e6c7b5d
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: S6 review authoring/reviews/ch10-S6.md; 04:269-283; model exm-sup-squares-epsilon 04:86-102;
@@ -1657,25 +1657,25 @@ items:
   - stage: S5a
     verdict: correct
     by: refereeA
-    hash: 737b81ca16f1
+    hash: 55737e6c7b5d
     date: '2026-09-28'
     evidence: '04:269 h=min{1,eps/4}, x=2-h in [1,2): checked numerically'
   - stage: S5b
     verdict: correct
     by: refereeB
-    hash: 737b81ca16f1
+    hash: 55737e6c7b5d
     date: '2026-09-28'
     evidence: 'S5b: claims, meta-claims, ledger lines and refs checked; see authoring/reviews/ch10-S5-B.md'
 - key: exr-epsilon-characterization-b2
   kind: exr
   file: 04-epsilon-characterization.md
   line: 285
-  hash: e903ee1ee194
+  hash: 8bd10d0865aa
   verdicts:
   - stage: S6
     verdict: correct
     by: verifier
-    hash: e903ee1ee194
+    hash: 8bd10d0865aa
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: S6 review authoring/reviews/ch10-S6.md; 04:285-293; model exm-sup-squares-epsilon / thm-sup-sum
@@ -1683,25 +1683,25 @@ items:
   - stage: S5a
     verdict: correct
     by: refereeA
-    hash: e903ee1ee194
+    hash: 8bd10d0865aa
     date: '2026-09-28'
     evidence: 04:285 correct
   - stage: S5b
     verdict: correct
     by: refereeB
-    hash: e903ee1ee194
+    hash: 8bd10d0865aa
     date: '2026-09-28'
     evidence: 'S5b: claims, meta-claims, ledger lines and refs checked; see authoring/reviews/ch10-S5-B.md'
 - key: exr-epsilon-characterization-b3
   kind: exr
   file: 04-epsilon-characterization.md
   line: 295
-  hash: 1854a5adf7ec
+  hash: 3bf2fa98dae2
   verdicts:
   - stage: S6
     verdict: correct
     by: verifier
-    hash: 1854a5adf7ec
+    hash: 3bf2fa98dae2
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: S6 review authoring/reviews/ch10-S6.md; 04:295-311; model thm-sup-scaling(b) reflection
@@ -1709,25 +1709,25 @@ items:
   - stage: S5a
     verdict: correct
     by: refereeA
-    hash: 1854a5adf7ec
+    hash: 3bf2fa98dae2
     date: '2026-09-28'
     evidence: 04:295 A={0},B=[0,1] example correct
   - stage: S5b
     verdict: correct
     by: refereeB
-    hash: 1854a5adf7ec
+    hash: 3bf2fa98dae2
     date: '2026-09-28'
     evidence: 'S5b: claims, meta-claims, ledger lines and refs checked; see authoring/reviews/ch10-S5-B.md'
 - key: exr-epsilon-characterization-c1
   kind: exr
   file: 04-epsilon-characterization.md
   line: 315
-  hash: be33bd2e9def
+  hash: c137972f4f20
   verdicts:
   - stage: S6
     verdict: minor
     by: verifier
-    hash: be33bd2e9def
+    hash: c137972f4f20
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: S6 review authoring/reviews/ch10-S6.md; 04:315-349 solution correct and complete (s,t >
@@ -1735,25 +1735,25 @@ items:
   - stage: S5a
     verdict: correct
     by: refereeA
-    hash: be33bd2e9def
+    hash: c137972f4f20
     date: '2026-09-28'
     evidence: 04:315 (a) [-2,-1]^2 contains 4; (b) positivity used in both halves; correct
   - stage: S5b
     verdict: correct
     by: refereeB
-    hash: be33bd2e9def
+    hash: c137972f4f20
     date: '2026-09-28'
     evidence: 'S5b: claims, meta-claims, ledger lines and refs checked; see authoring/reviews/ch10-S5-B.md'
   - stage: S7
     verdict: correct
     by: reviser
-    hash: be33bd2e9def
+    hash: c137972f4f20
     date: '2026-09-28'
     evidence: 'S6 #4: Hint 2 now names the tools as questions, no longer executes the >= step'
   - stage: S7r
     verdict: correct
     by: rereferee
-    hash: be33bd2e9def
+    hash: c137972f4f20
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: S7 fix checked, ch11-S7-recheck.md
@@ -1786,13 +1786,13 @@ items:
   - stage: S7
     verdict: correct
     by: reviser
-    hash: ec73b8d21b08
+    hash: 2f7af69aaa8a
     date: '2026-09-28'
     evidence: 'title ''C2: Exit check: sums of sets'' (S5b R9 nit)'
   - stage: S7r
     verdict: correct
     by: rereferee
-    hash: ec73b8d21b08
+    hash: 2f7af69aaa8a
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: S7 fix checked, ch11-S7-recheck.md
@@ -1800,12 +1800,12 @@ items:
   kind: exr
   file: 04-epsilon-characterization.md
   line: 387
-  hash: 4cfd400c3fa2
+  hash: 70f04bd6eabf
   verdicts:
   - stage: S6
     verdict: correct
     by: verifier
-    hash: 4cfd400c3fa2
+    hash: 70f04bd6eabf
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'S6 review authoring/reviews/ch10-S6.md; 04:387-402. Each flaw is at line (2) only: lines
@@ -1814,52 +1814,52 @@ items:
   - stage: S5a
     verdict: correct
     by: refereeA
-    hash: 4cfd400c3fa2
+    hash: 70f04bd6eabf
     date: '2026-09-28'
     evidence: 04:387 (a) false claim, line 2; (b) TRUE claim, line 2 flawed, A=B=(0,1) defeats it; flawed
       exactly there
   - stage: S5b
     verdict: correct
     by: refereeB
-    hash: 4cfd400c3fa2
+    hash: 70f04bd6eabf
     date: '2026-09-28'
     evidence: 'S5b: claims, meta-claims, ledger lines and refs checked; see authoring/reviews/ch10-S5-B.md'
 - key: def-inductive-set
   kind: def
   file: 05-archimedean-property.md
   line: 9
-  hash: 4fcc023baf50
+  hash: 7a455a97a3b4
   verdicts:
   - stage: S5a
     verdict: correct
     by: refereeA
-    hash: 4fcc023baf50
+    hash: 7a455a97a3b4
     date: '2026-09-28'
     evidence: 05:9 examples/non-example checked
   - stage: S5b
     verdict: correct
     by: refereeB
-    hash: 4fcc023baf50
+    hash: 7a455a97a3b4
     date: '2026-09-28'
     evidence: 'S5b: claims, meta-claims, ledger lines and refs checked; see authoring/reviews/ch10-S5-B.md'
   - stage: S7
     verdict: correct
     by: reviser
-    hash: 4fcc023baf50
+    hash: 7a455a97a3b4
     date: '2026-09-28'
     evidence: '05:58 remark: induction is Chapter 3''s, Chapter 7 proves well-ordering and arithmetic
       (S5b R2)'
   - stage: S7r
     verdict: correct
     by: rereferee
-    hash: 4fcc023baf50
+    hash: 7a455a97a3b4
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: S7 fix checked, ch11-S7-recheck.md
   - stage: S8
     verdict: minor
     by: seam
-    hash: 4fcc023baf50
+    hash: 7a455a97a3b4
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: authoring/reviews/ch11-S8-seam.md row 11 (ch06 intersection of a set of sets)
@@ -1867,24 +1867,24 @@ items:
   kind: exm
   file: 05-archimedean-property.md
   line: 45
-  hash: 14b2892eb213
+  hash: 947cc45d5156
   verdicts:
   - stage: S5a
     verdict: correct
     by: refereeA
-    hash: 14b2892eb213
+    hash: 947cc45d5156
     date: '2026-09-28'
     evidence: 05:45 [1,inf) inductive => N subset; 0<1/n<=1
   - stage: S5b
     verdict: correct
     by: refereeB
-    hash: 14b2892eb213
+    hash: 947cc45d5156
     date: '2026-09-28'
     evidence: 'S5b: claims, meta-claims, ledger lines and refs checked; see authoring/reviews/ch10-S5-B.md'
   - stage: S8
     verdict: minor
     by: seam
-    hash: 14b2892eb213
+    hash: 947cc45d5156
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: authoring/reviews/ch11-S8-seam.md row 6
@@ -1946,20 +1946,20 @@ items:
   - stage: S7
     verdict: correct
     by: reviser
-    hash: 84e7d7080e2e
+    hash: 8e2c7df36ffb
     date: '2026-09-28'
     evidence: 'rewritten per S5a: no ''not an upper bound => some n'' step inside the negI box; Idea matches'
   - stage: S7r
     verdict: correct
     by: rereferee
-    hash: 84e7d7080e2e
+    hash: 8e2c7df36ffb
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: S7 fix checked, ch11-S7-recheck.md
   - stage: S8
     verdict: correct
     by: seam
-    hash: 84e7d7080e2e
+    hash: 8e2c7df36ffb
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: authoring/reviews/ch11-S8-seam.md row 10 (prp-quantifier-negation, ch04)
@@ -2028,30 +2028,30 @@ items:
   kind: exm
   file: 05-archimedean-property.md
   line: 119
-  hash: 079f1a3cfe92
+  hash: e7b686f9e13a
   verdicts:
   - stage: S5a
     verdict: correct
     by: refereeA
-    hash: 079f1a3cfe92
+    hash: e7b686f9e13a
     date: '2026-09-28'
     evidence: 05:119 100/101>0.99 exact
   - stage: S5b
     verdict: correct
     by: refereeB
-    hash: 079f1a3cfe92
+    hash: e7b686f9e13a
     date: '2026-09-28'
     evidence: 'S5b: claims, meta-claims, ledger lines and refs checked; see authoring/reviews/ch10-S5-B.md'
 - key: exm-nonarchimedean-field
   kind: exm
   file: 05-archimedean-property.md
   line: 157
-  hash: f319681d79ca
+  hash: bcda3d11f676
   verdicts:
   - stage: S5a
     verdict: minor
     by: refereeA
-    hash: f319681d79ca
+    hash: bcda3d11f676
     date: '2026-09-28'
     evidence: '05:157 order is a genuine ordered-field order (checked via exr C2: P closed under +,x;
       exactly one of f,-f in P; well-defined by alpha beta''^2 identity). Minor: the example''s use of
@@ -2060,28 +2060,28 @@ items:
   - stage: S5b
     verdict: minor
     by: refereeB
-    hash: f319681d79ca
+    hash: bcda3d11f676
     date: '2026-09-28'
     evidence: 05:155 'natural numbers of R(x) are the constants' asserted without argument; ledger 05:389
       says inline but nothing on page, source an exercise
   - stage: S7
     verdict: correct
     by: reviser
-    hash: f319681d79ca
+    hash: bcda3d11f676
     date: '2026-09-28'
     evidence: 'S5a minor: text states the example rests on exr C2 (ordered field) for rules (f); S5b minor:
       naturals of R(x) = constants now proved inline (two inclusions)'
   - stage: S7r
     verdict: correct
     by: rereferee
-    hash: f319681d79ca
+    hash: bcda3d11f676
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: S7 fix checked, ch11-S7-recheck.md
   - stage: S8
     verdict: correct
     by: seam
-    hash: f319681d79ca
+    hash: bcda3d11f676
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: authoring/reviews/ch11-S8-seam.md row 7, 19
@@ -2089,37 +2089,37 @@ items:
   kind: exr
   file: 05-archimedean-property.md
   line: 199
-  hash: e9681284a41d
+  hash: d3c275555eb2
   verdicts:
   - stage: S6
     verdict: correct
     by: verifier
-    hash: e9681284a41d
+    hash: d3c275555eb2
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: S6 review authoring/reviews/ch10-S6.md; 05:210-218
   - stage: S5a
     verdict: correct
     by: refereeA
-    hash: e9681284a41d
+    hash: d3c275555eb2
     date: '2026-09-28'
     evidence: 05:199 (b) [1/2,inf), Z inductive; [0,10], N u {1/2} not
   - stage: S5b
     verdict: correct
     by: refereeB
-    hash: e9681284a41d
+    hash: d3c275555eb2
     date: '2026-09-28'
     evidence: 'S5b: claims, meta-claims, ledger lines and refs checked; see authoring/reviews/ch10-S5-B.md'
 - key: exr-archimedean-property-b1
   kind: exr
   file: 05-archimedean-property.md
   line: 222
-  hash: 4a66235ea0b5
+  hash: 40961568d049
   verdicts:
   - stage: S6
     verdict: correct
     by: verifier
-    hash: 4a66235ea0b5
+    hash: 40961568d049
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: S6 review authoring/reviews/ch10-S6.md; 05:228-234; worked sup-by-Archimedes example exm-sup-one-minus-reciprocal-finished
@@ -2127,13 +2127,13 @@ items:
   - stage: S5a
     verdict: correct
     by: refereeA
-    hash: 4a66235ea0b5
+    hash: 40961568d049
     date: '2026-09-28'
     evidence: 05:222 correct
   - stage: S5b
     verdict: correct
     by: refereeB
-    hash: 4a66235ea0b5
+    hash: 40961568d049
     date: '2026-09-28'
     evidence: 'S5b: claims, meta-claims, ledger lines and refs checked; see authoring/reviews/ch10-S5-B.md'
 - key: exr-archimedean-property-b2
@@ -2166,37 +2166,37 @@ items:
   kind: exr
   file: 05-archimedean-property.md
   line: 248
-  hash: bcb559617f0f
+  hash: 902f49c4af24
   verdicts:
   - stage: S6
     verdict: correct
     by: verifier
-    hash: bcb559617f0f
+    hash: 902f49c4af24
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: S6 review authoring/reviews/ch10-S6.md; 05:254-260; model 05:99-103
   - stage: S5a
     verdict: correct
     by: refereeA
-    hash: bcb559617f0f
+    hash: 902f49c4af24
     date: '2026-09-28'
     evidence: 05:248 correct
   - stage: S5b
     verdict: correct
     by: refereeB
-    hash: bcb559617f0f
+    hash: 902f49c4af24
     date: '2026-09-28'
     evidence: 'S5b: claims, meta-claims, ledger lines and refs checked; see authoring/reviews/ch10-S5-B.md'
 - key: exr-archimedean-property-b4
   kind: exr
   file: 05-archimedean-property.md
   line: 262
-  hash: 859f9b8b6290
+  hash: ef55451ac4c7
   verdicts:
   - stage: S6
     verdict: correct
     by: verifier
-    hash: 859f9b8b6290
+    hash: ef55451ac4c7
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: S6 review authoring/reviews/ch10-S6.md; 05:280-286; worked example of the same proof exm-sup-one-minus-reciprocal-finished
@@ -2204,14 +2204,14 @@ items:
   - stage: S5a
     verdict: correct
     by: refereeA
-    hash: 859f9b8b6290
+    hash: ef55451ac4c7
     date: '2026-09-28'
     evidence: 05:262 order iii,i,iv,vii,ii,vi,viii admissible; (v) quantifier swap fails; (ix) eps chosen
       after n, conflicts with (i)
   - stage: S5b
     verdict: correct
     by: refereeB
-    hash: 859f9b8b6290
+    hash: ef55451ac4c7
     date: '2026-09-28'
     evidence: 'S5b: claims, meta-claims, ledger lines and refs checked; see authoring/reviews/ch10-S5-B.md'
 - key: exr-archimedean-property-c1
@@ -2244,14 +2244,14 @@ items:
   - stage: S7
     verdict: correct
     by: reviser
-    hash: 0012c44772d1
+    hash: 1ca2b15cc589
     date: '2026-09-28'
     evidence: '(a) model solution and scheme now use the direct step (s-1 is an upper bound); classical
       variant accepted explicitly; title ''Exit check: ...'' (S5b R9)'
   - stage: S7r
     verdict: correct
     by: rereferee
-    hash: 0012c44772d1
+    hash: 1ca2b15cc589
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: S7 fix checked, ch11-S7-recheck.md
@@ -2259,50 +2259,50 @@ items:
   kind: exr
   file: 05-archimedean-property.md
   line: 320
-  hash: 7e5441e19f3f
+  hash: 917946b2493d
   verdicts:
   - stage: S6
     verdict: correct
     by: verifier
-    hash: 7e5441e19f3f
+    hash: 917946b2493d
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: S6 review authoring/reviews/ch10-S6.md; 05:334-366. Hint 1 restates
   - stage: S5a
     verdict: correct
     by: refereeA
-    hash: 7e5441e19f3f
+    hash: 917946b2493d
     date: '2026-09-28'
     evidence: '05:320 (a)-(d) correct: degree cases in (c) right; trichotomy uses 0 not in P'
   - stage: S5b
     verdict: correct
     by: refereeB
-    hash: 7e5441e19f3f
+    hash: 917946b2493d
     date: '2026-09-28'
     evidence: 'S5b: claims, meta-claims, ledger lines and refs checked; see authoring/reviews/ch10-S5-B.md'
 - key: exr-archimedean-property-c3
   kind: exr
   file: 05-archimedean-property.md
   line: 368
-  hash: 39110cf3b9cc
+  hash: 5197f2337374
   verdicts:
   - stage: S6
     verdict: correct
     by: verifier
-    hash: 39110cf3b9cc
+    hash: 5197f2337374
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: S6 review authoring/reviews/ch10-S6.md; 05:377-381; see note N2
   - stage: S5a
     verdict: correct
     by: refereeA
-    hash: 39110cf3b9cc
+    hash: 5197f2337374
     date: '2026-09-28'
     evidence: 05:368 r=m/k<=m<m+1; Q Archimedean, fails LUB
   - stage: S5b
     verdict: correct
     by: refereeB
-    hash: 39110cf3b9cc
+    hash: 5197f2337374
     date: '2026-09-28'
     evidence: 'S5b: claims, meta-claims, ledger lines and refs checked; see authoring/reviews/ch10-S5-B.md'
 - key: thm-sqrt2-exists
@@ -2327,18 +2327,18 @@ items:
   kind: proof
   file: 06-density-and-roots.md
   line: 27
-  hash: 4a8d78ab8f1f
+  hash: 1b4f2ac900d3
   verdicts:
   - stage: S5a
     verdict: correct
     by: refereeA
-    hash: 4a8d78ab8f1f
+    hash: 1b4f2ac900d3
     date: '2026-09-28'
     evidence: 06:27 S2 in case 2, S1 in case 1, s>=1 used for h<=1/6, uniqueness via (g)
   - stage: S5b
     verdict: correct
     by: refereeB
-    hash: 4a8d78ab8f1f
+    hash: 1b4f2ac900d3
     date: '2026-09-28'
     evidence: 'S5b: claims, meta-claims, ledger lines and refs checked; see authoring/reviews/ch10-S5-B.md'
 - key: thm-nth-root
@@ -2409,14 +2409,14 @@ items:
   - stage: fmt
     verdict: correct
     by: coordinator
-    hash: 0e8eccda6cf8
+    hash: f62f2229214f
     date: '2026-09-28'
     evidence: 'typographic change only: lettered paragraph ''(a)'' set as ''*(a)*'' (2026-09-28); content
       reviewed at S5-S8 unchanged'
   - stage: S8fix
     verdict: correct
     by: coordinator
-    hash: 0e8eccda6cf8
+    hash: f62f2229214f
     date: '2026-09-28'
     evidence: 'content edit after S8 (seam row: roots of 0): added the a = 0 case (only non-negative root
       of 0 is 0; nth-root of 0 := 0) and powers from u^0; checked by build/check; not re-refereed'
@@ -2478,20 +2478,20 @@ items:
   - stage: S7
     verdict: correct
     by: reviser
-    hash: f38b6d5ea1c6
+    hash: 2eedb399c70b
     date: '2026-09-28'
     evidence: pointer to the remark on N for 'positive integer is natural'; ledgered
   - stage: S7r
     verdict: correct
     by: rereferee
-    hash: f38b6d5ea1c6
+    hash: 2eedb399c70b
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: S7 fix checked, ch11-S7-recheck.md
   - stage: S8
     verdict: correct
     by: seam
-    hash: f38b6d5ea1c6
+    hash: 2eedb399c70b
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: authoring/reviews/ch11-S8-seam.md row 12 (thm-well-ordering, prp-integers-closed)
@@ -2555,18 +2555,18 @@ items:
   kind: exm
   file: 06-density-and-roots.md
   line: 243
-  hash: 2afffeed10fd
+  hash: 3cab76d99c60
   verdicts:
   - stage: S5a
     verdict: correct
     by: refereeA
-    hash: 2afffeed10fd
+    hash: 3cab76d99c60
     date: '2026-09-28'
     evidence: 06:243 n=12 least (31/22)^2<2; floor(12 sqrt2)=16; 17/12 exact
   - stage: S5b
     verdict: correct
     by: refereeB
-    hash: 2afffeed10fd
+    hash: 3cab76d99c60
     date: '2026-09-28'
     evidence: 'S5b: claims, meta-claims, ledger lines and refs checked; see authoring/reviews/ch10-S5-B.md'
 - key: cor-irrationals-dense
@@ -2609,87 +2609,87 @@ items:
   kind: check
   file: 06-density-and-roots.md
   line: 269
-  hash: fac46fa6ba44
+  hash: a106deba11ec
   verdicts:
   - stage: S6
     verdict: correct
     by: verifier
-    hash: fac46fa6ba44
+    hash: a106deba11ec
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: S6 review authoring/reviews/ch10-S6.md; 06:273-277; python 1.4143^2=2.00024449
   - stage: S5a
     verdict: correct
     by: refereeA
-    hash: fac46fa6ba44
+    hash: a106deba11ec
     date: '2026-09-28'
     evidence: 06:269 1.4143^2=2.00024449 exact; sqrt2*1e-7
   - stage: S5b
     verdict: correct
     by: refereeB
-    hash: fac46fa6ba44
+    hash: a106deba11ec
     date: '2026-09-28'
     evidence: 'S5b: claims, meta-claims, ledger lines and refs checked; see authoring/reviews/ch10-S5-B.md'
 - key: exr-density-and-roots-a1
   kind: exr
   file: 06-density-and-roots.md
   line: 289
-  hash: fe6f483b3431
+  hash: 422e9bbd1535
   verdicts:
   - stage: S6
     verdict: correct
     by: verifier
-    hash: fe6f483b3431
+    hash: 422e9bbd1535
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'S6 review authoring/reviews/ch10-S6.md; 06:304-320; python: h=1/190, 267^2=71289, 2*190^2=72200'
   - stage: S5a
     verdict: correct
     by: refereeA
-    hash: fe6f483b3431
+    hash: 422e9bbd1535
     date: '2026-09-28'
     evidence: 06:289 (d) false correctly argued; (f) h=1/190, 267^2=71289<72200 exact
   - stage: S5b
     verdict: correct
     by: refereeB
-    hash: fe6f483b3431
+    hash: 422e9bbd1535
     date: '2026-09-28'
     evidence: 'S5b: claims, meta-claims, ledger lines and refs checked; see authoring/reviews/ch10-S5-B.md'
 - key: exr-density-and-roots-b1
   kind: exr
   file: 06-density-and-roots.md
   line: 324
-  hash: 58b7e781a202
+  hash: 8bc5756cfaca
   verdicts:
   - stage: S6
     verdict: correct
     by: verifier
-    hash: 58b7e781a202
+    hash: 8bc5756cfaca
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: S6 review authoring/reviews/ch10-S6.md; 06:330-334; see note N3
   - stage: S5a
     verdict: correct
     by: refereeA
-    hash: 58b7e781a202
+    hash: 8bc5756cfaca
     date: '2026-09-28'
     evidence: 06:324 correct
   - stage: S5b
     verdict: correct
     by: refereeB
-    hash: 58b7e781a202
+    hash: 8bc5756cfaca
     date: '2026-09-28'
     evidence: 'S5b: claims, meta-claims, ledger lines and refs checked; see authoring/reviews/ch10-S5-B.md'
 - key: exr-density-and-roots-b2
   kind: exr
   file: 06-density-and-roots.md
   line: 336
-  hash: 4cc79553d69c
+  hash: b9418a86f094
   verdicts:
   - stage: S6
     verdict: correct
     by: verifier
-    hash: 4cc79553d69c
+    hash: b9418a86f094
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: S6 review authoring/reviews/ch10-S6.md; 06:350-360; faded blank completable from Case 2
@@ -2698,14 +2698,14 @@ items:
   - stage: S5a
     verdict: correct
     by: refereeA
-    hash: 4cc79553d69c
+    hash: b9418a86f094
     date: '2026-09-28'
     evidence: '06:336 faded proof: given case correct (h<=1/3, (3+s^2)/2<3); completion h=(s^2-3)/(2s)
       checked on grid'
   - stage: S5b
     verdict: correct
     by: refereeB
-    hash: 4cc79553d69c
+    hash: b9418a86f094
     date: '2026-09-28'
     evidence: 'S5b: claims, meta-claims, ledger lines and refs checked; see authoring/reviews/ch10-S5-B.md'
 - key: exr-density-and-roots-b3
@@ -2738,12 +2738,12 @@ items:
   kind: exr
   file: 06-density-and-roots.md
   line: 376
-  hash: e05c01551ff3
+  hash: 14503d56f42e
   verdicts:
   - stage: S6
     verdict: correct
     by: verifier
-    hash: e05c01551ff3
+    hash: 14503d56f42e
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: S6 review authoring/reviews/ch10-S6.md; 06:386-408. Scheme 1+2+2+1+2+2=10 rewards the demanded
@@ -2752,13 +2752,13 @@ items:
   - stage: S5a
     verdict: correct
     by: refereeA
-    hash: e05c01551ff3
+    hash: 14503d56f42e
     date: '2026-09-28'
     evidence: 06:376 correct; scheme sums 10; alternative h=min{1,(2-s^2)/6} valid since 2s+1<=5
   - stage: S5b
     verdict: correct
     by: refereeB
-    hash: e05c01551ff3
+    hash: 14503d56f42e
     date: '2026-09-28'
     evidence: 'S5b: claims, meta-claims, ledger lines and refs checked; see authoring/reviews/ch10-S5-B.md'
 - key: exr-density-and-roots-c2
@@ -2789,7 +2789,7 @@ items:
   - stage: S8
     verdict: correct
     by: coordinator
-    hash: 85fff5271ef9
+    hash: c461e7b5c0c6
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'cross-chapter cleanup 2026-09-28: ''induction (Chapter 3)'' now cites @ax-induction (earlier
@@ -2798,12 +2798,12 @@ items:
   kind: exr
   file: 06-density-and-roots.md
   line: 430
-  hash: 6da4c7bd5f51
+  hash: fe1f5efadfba
   verdicts:
   - stage: S6
     verdict: correct
     by: verifier
-    hash: 6da4c7bd5f51
+    hash: fe1f5efadfba
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: S6 review authoring/reviews/ch10-S6.md; 06:446-452. Lines 1,3,4,5 sound given a least element,
@@ -2812,50 +2812,50 @@ items:
   - stage: S5a
     verdict: correct
     by: refereeA
-    hash: 6da4c7bd5f51
+    hash: fe1f5efadfba
     date: '2026-09-28'
     evidence: '06:430 true conclusion; line (2) is exactly the flaw (x=0: q/2); repair via R_n correct'
   - stage: S5b
     verdict: correct
     by: refereeB
-    hash: 6da4c7bd5f51
+    hash: fe1f5efadfba
     date: '2026-09-28'
     evidence: 'S5b: claims, meta-claims, ledger lines and refs checked; see authoring/reviews/ch10-S5-B.md'
 - key: thm-nested-intervals
   kind: thm
   file: 07-nested-intervals.md
   line: 18
-  hash: 5d4eb2e654b6
+  hash: 720808292c5c
   verdicts:
   - stage: S5a
     verdict: correct
     by: refereeA
-    hash: 5d4eb2e654b6
+    hash: 720808292c5c
     date: '2026-09-28'
     evidence: 07:18 table rows 07:58-64 each a genuine failure; closed (0,1/n), bounded [n,inf), nested
       [n,n+1], field Q, shrinking [-1/n,1+1/n]
   - stage: S5b
     verdict: correct
     by: refereeB
-    hash: 5d4eb2e654b6
+    hash: 720808292c5c
     date: '2026-09-28'
     evidence: 'S5b: claims, meta-claims, ledger lines and refs checked; see authoring/reviews/ch10-S5-B.md'
 - key: proof:thm-nested-intervals
   kind: proof
   file: 07-nested-intervals.md
   line: 32
-  hash: 239ba89f7b9f
+  hash: 902c746aa0d2
   verdicts:
   - stage: S5a
     verdict: correct
     by: refereeA
-    hash: 239ba89f7b9f
+    hash: 902c746aa0d2
     date: '2026-09-28'
     evidence: 07:32 claim a_m<=a_k<=b_k<=b_n; alpha in I_n by S1/S2; uniqueness via eps=v-u
   - stage: S5b
     verdict: correct
     by: refereeB
-    hash: 239ba89f7b9f
+    hash: 902c746aa0d2
     date: '2026-09-28'
     evidence: 'S5b: claims, meta-claims, ledger lines and refs checked; see authoring/reviews/ch10-S5-B.md'
 - key: check:07-nested-intervals:1
@@ -2887,13 +2887,13 @@ items:
   - stage: S7
     verdict: correct
     by: reviser
-    hash: dbf7849432b5
+    hash: 1fd3c1335760
     date: '2026-09-28'
     evidence: 'S6 #5: check now asks about (0,1/n] and [0,1/n), not answered by the table'
   - stage: S7r
     verdict: correct
     by: rereferee
-    hash: dbf7849432b5
+    hash: 1fd3c1335760
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: S7 fix checked, ch11-S7-recheck.md
@@ -2959,20 +2959,20 @@ items:
   - stage: S7
     verdict: correct
     by: reviser
-    hash: 99df08348a80
+    hash: c5205e7ab3d6
     date: '2026-09-28'
     evidence: unchanged apart from chapter renumbering; hash moved
   - stage: S7r
     verdict: correct
     by: rereferee
-    hash: 99df08348a80
+    hash: c5205e7ab3d6
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: S7 fix checked, ch11-S7-recheck.md
   - stage: S8
     verdict: correct
     by: seam
-    hash: 99df08348a80
+    hash: c5205e7ab3d6
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: authoring/reviews/ch11-S8-seam.md row 12, 13 (thm-recursion, def-countable)
@@ -2980,37 +2980,37 @@ items:
   kind: exr
   file: 07-nested-intervals.md
   line: 166
-  hash: 468267bb51b4
+  hash: 1f976a09c89c
   verdicts:
   - stage: S6
     verdict: correct
     by: verifier
-    hash: 468267bb51b4
+    hash: 1f976a09c89c
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: S6 review authoring/reviews/ch10-S6.md; 07:181-192; (e) checked with exact Fractions
   - stage: S5a
     verdict: correct
     by: refereeA
-    hash: 468267bb51b4
+    hash: 1f976a09c89c
     date: '2026-09-28'
     evidence: 07:166 (e) I1=[1,2], I2=[5/3,2], I3=[5/3,16/9] recomputed; (f) correct
   - stage: S5b
     verdict: correct
     by: refereeB
-    hash: 468267bb51b4
+    hash: 1f976a09c89c
     date: '2026-09-28'
     evidence: 'S5b: claims, meta-claims, ledger lines and refs checked; see authoring/reviews/ch10-S5-B.md'
 - key: exr-nested-intervals-b1
   kind: exr
   file: 07-nested-intervals.md
   line: 197
-  hash: cbcb8c319876
+  hash: f691e94a7c09
   verdicts:
   - stage: S6
     verdict: correct
     by: verifier
-    hash: cbcb8c319876
+    hash: f691e94a7c09
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: S6 review authoring/reviews/ch10-S6.md; 07:206-215; 14^2..142^2 checked; 2^k>k at 06:419;
@@ -3018,26 +3018,26 @@ items:
   - stage: S5a
     verdict: correct
     by: refereeA
-    hash: cbcb8c319876
+    hash: f691e94a7c09
     date: '2026-09-28'
     evidence: 07:197 (b) 10m_n<=m_{n+1}<=10m_n+9 verified n<=10; m1=14,m2=141
   - stage: S5b
     verdict: minor
     by: refereeB
-    hash: cbcb8c319876
+    hash: f691e94a7c09
     date: '2026-09-28'
     evidence: 07:211 'both sides integers => m+1 <= 10m_n+10' uses integer discreteness (ch06/05 remark),
       not in ledger 07:508
   - stage: S7
     verdict: correct
     by: reviser
-    hash: cbcb8c319876
+    hash: f691e94a7c09
     date: '2026-09-28'
     evidence: 'ledger: no integer strictly between k and k+1 (ch07)'
   - stage: S7r
     verdict: correct
     by: rereferee
-    hash: cbcb8c319876
+    hash: f691e94a7c09
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: S7 fix checked, ch11-S7-recheck.md
@@ -3045,12 +3045,12 @@ items:
   kind: exr
   file: 07-nested-intervals.md
   line: 218
-  hash: 027a1b2036a6
+  hash: 8c8b61a7c369
   verdicts:
   - stage: S6
     verdict: correct
     by: verifier
-    hash: 027a1b2036a6
+    hash: 8c8b61a7c369
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'S6 review authoring/reviews/ch10-S6.md; 07:224-229; worked example of the type: the closed
@@ -3058,25 +3058,25 @@ items:
   - stage: S5a
     verdict: correct
     by: refereeA
-    hash: 027a1b2036a6
+    hash: 8c8b61a7c369
     date: '2026-09-28'
     evidence: 07:218 correct
   - stage: S5b
     verdict: correct
     by: refereeB
-    hash: 027a1b2036a6
+    hash: 8c8b61a7c369
     date: '2026-09-28'
     evidence: 'S5b: claims, meta-claims, ledger lines and refs checked; see authoring/reviews/ch10-S5-B.md'
 - key: exr-nested-intervals-c1
   kind: exr
   file: 07-nested-intervals.md
   line: 234
-  hash: 9ee5ac01844e
+  hash: b324f8248f08
   verdicts:
   - stage: S6
     verdict: minor
     by: verifier
-    hash: 9ee5ac01844e
+    hash: b324f8248f08
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'S6 review authoring/reviews/ch10-S6.md; 07:257-275 correct and complete, all parts answered.
@@ -3085,34 +3085,34 @@ items:
   - stage: S5a
     verdict: correct
     by: refereeA
-    hash: 9ee5ac01844e
+    hash: b324f8248f08
     date: '2026-09-28'
     evidence: 07:234 (b) induction correct; (c) n>(M-a)/(y-s) works incl. M=a; scheme sums 10
   - stage: S5b
     verdict: minor
     by: refereeB
-    hash: 9ee5ac01844e
+    hash: b324f8248f08
     date: '2026-09-28'
     evidence: 07:260 (b) induction in ordered field F (N in F via exr-ordered-fields-c1) not ledgered;
       ledger 07:509 has only 2^(n-1)>=n
   - stage: S7
     verdict: correct
     by: reviser
-    hash: 9ee5ac01844e
+    hash: b324f8248f08
     date: '2026-09-28'
     evidence: 'S6 #6 Hint 2 now a question; S6 #7 allowance: backward direction of thm-sup-epsilon rerun
       in F; ledger: the induction (ch03) and N inside F'
   - stage: S7r
     verdict: correct
     by: rereferee
-    hash: 9ee5ac01844e
+    hash: b324f8248f08
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: S7 fix checked, ch11-S7-recheck.md
   - stage: S8
     verdict: correct
     by: seam
-    hash: 9ee5ac01844e
+    hash: b324f8248f08
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: authoring/reviews/ch11-S8-seam.md row 7 (ch21 equivalences)
@@ -3144,13 +3144,13 @@ items:
   - stage: S7
     verdict: correct
     by: reviser
-    hash: 398da12c2ad6
+    hash: 79b8a347846a
     date: '2026-09-28'
     evidence: 'new part (c): reals not in a countable set are dense (blueprint task, S5b R6)'
   - stage: S7r
     verdict: correct
     by: rereferee
-    hash: 398da12c2ad6
+    hash: 79b8a347846a
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: S7 fix checked, ch11-S7-recheck.md
@@ -3158,12 +3158,12 @@ items:
   kind: exr
   file: 07-nested-intervals.md
   line: 293
-  hash: 102e8ad04445
+  hash: d5c43fa9f6ff
   verdicts:
   - stage: S6
     verdict: minor
     by: verifier
-    hash: 102e8ad04445
+    hash: d5c43fa9f6ff
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: S6 review authoring/reviews/ch10-S6.md; 07:319-332 correct; sign criterion from exr-archimedean-property-c2
@@ -3171,27 +3171,27 @@ items:
   - stage: S5a
     verdict: correct
     by: refereeA
-    hash: 102e8ad04445
+    hash: d5c43fa9f6ff
     date: '2026-09-28'
     evidence: 07:293 (b),(c) degree cases correct; N>lc(p)/lc(q), n>lc(q)/lc(p) work; (d) correct
   - stage: S5b
     verdict: minor
     by: refereeB
-    hash: 102e8ad04445
+    hash: d5c43fa9f6ff
     date: '2026-09-28'
     evidence: 07:324,330 Archimedes used for N > lc(p)/lc(q), n > lc(q)/lc(p) without @thm-naturals-unbounded
       or ledger; degree/lc facts unledgered
   - stage: S7
     verdict: correct
     by: reviser
-    hash: 102e8ad04445
+    hash: d5c43fa9f6ff
     date: '2026-09-28'
     evidence: 'S6 #8 Hint 2 cut to the set-up; @thm-naturals-unbounded cited for N and n; polynomial degree
       facts ledgered'
   - stage: S7r
     verdict: correct
     by: rereferee
-    hash: 102e8ad04445
+    hash: d5c43fa9f6ff
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: S7 fix checked, ch11-S7-recheck.md
@@ -3199,12 +3199,12 @@ items:
   kind: exr
   file: 07-nested-intervals.md
   line: 335
-  hash: d78d08610223
+  hash: 967934223a2a
   verdicts:
   - stage: S6
     verdict: correct
     by: verifier
-    hash: d78d08610223
+    hash: 967934223a2a
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: S6 review authoring/reviews/ch10-S6.md; 07:357-395; constants checked numerically (root
@@ -3213,20 +3213,20 @@ items:
   - stage: S5a
     verdict: correct
     by: refereeA
-    hash: d78d08610223
+    hash: 967934223a2a
     date: '2026-09-28'
     evidence: 07:335 identities checked on 500 rational pairs; h=(1-g)/16 and (g-1)/10 checked on 1000-point
       grid; g(0.68),g(0.69) exact; scheme 10
   - stage: S5b
     verdict: correct
     by: refereeB
-    hash: d78d08610223
+    hash: 967934223a2a
     date: '2026-09-28'
     evidence: 'S5b: claims, meta-claims, ledger lines and refs checked; see authoring/reviews/ch10-S5-B.md'
   - stage: S8
     verdict: correct
     by: seam
-    hash: d78d08610223
+    hash: 967934223a2a
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: authoring/reviews/ch11-S8-seam.md row 14 (IVT, Ch 16)
@@ -3258,20 +3258,20 @@ items:
   - stage: S7
     verdict: correct
     by: reviser
-    hash: 757b3bc164f2
+    hash: b5a5ab66029a
     date: '2026-09-28'
     evidence: unchanged apart from renumbering; hash moved
   - stage: S7r
     verdict: correct
     by: rereferee
-    hash: 757b3bc164f2
+    hash: b5a5ab66029a
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: S7 fix checked, ch11-S7-recheck.md
   - stage: S8
     verdict: correct
     by: seam
-    hash: 757b3bc164f2
+    hash: b5a5ab66029a
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: authoring/reviews/ch11-S8-seam.md row (a) prp-equivalence-cycle
@@ -3350,20 +3350,20 @@ items:
   - stage: S7
     verdict: correct
     by: reviser
-    hash: 68e26ea13d25
+    hash: 79ab76ea15d4
     date: '2026-09-28'
     evidence: closure of Q now cites @exm-ordered-fields-q-r; ledgered
   - stage: S7r
     verdict: correct
     by: rereferee
-    hash: 68e26ea13d25
+    hash: 79ab76ea15d4
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: S7 fix checked, ch11-S7-recheck.md
   - stage: S8
     verdict: correct
     by: seam
-    hash: 68e26ea13d25
+    hash: 79ab76ea15d4
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: authoring/reviews/ch11-S8-seam.md row (a), 16 (exr-negation-and-contradiction-c1 must survive
@@ -3372,12 +3372,12 @@ items:
   kind: exr
   file: 07-nested-intervals.md
   line: 459
-  hash: 193f2f02522c
+  hash: 0261a2e34f13
   verdicts:
   - stage: S6
     verdict: correct
     by: verifier
-    hash: 193f2f02522c
+    hash: 0261a2e34f13
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: S6 review authoring/reviews/ch10-S6.md; 07:465-472; source hidden, @thm-triangle-inequality
@@ -3385,12 +3385,12 @@ items:
   - stage: S5a
     verdict: correct
     by: refereeA
-    hash: 193f2f02522c
+    hash: 0261a2e34f13
     date: '2026-09-28'
     evidence: 07:459 equality iff (1-x)(1+x)>=0 iff x in [-1,1]; own grid check
   - stage: S5b
     verdict: correct
     by: refereeB
-    hash: 193f2f02522c
+    hash: 0261a2e34f13
     date: '2026-09-28'
     evidence: 'S5b: claims, meta-claims, ledger lines and refs checked; see authoring/reviews/ch10-S5-B.md'

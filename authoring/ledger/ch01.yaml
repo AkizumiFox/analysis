@@ -5,26 +5,26 @@ items:
   kind: def
   file: 01-statements-and-connectives.md
   line: 27
-  hash: a853efe81303
+  hash: 5d0310f37d51
   verdicts:
   - stage: S5a
     verdict: correct
     by: refereeA
-    hash: a853efe81303
+    hash: 5d0310f37d51
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S5-A.md: checked line by line (Findings table)'
   - stage: S5b
     verdict: correct
     by: refereeB
-    hash: a853efe81303
+    hash: 5d0310f37d51
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S5-B.md rows 15-22: meta-claims, counts, labels, rule order'
   - stage: S8
     verdict: correct
     by: seam
-    hash: a853efe81303
+    hash: 5d0310f37d51
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S8-seam.md rows 14, 16, 20-21: rule order, notation, and every citation
@@ -33,26 +33,26 @@ items:
   kind: exm
   file: 01-statements-and-connectives.md
   line: 35
-  hash: bfd0bd34dc57
+  hash: 7aa82b05ffaa
   verdicts:
   - stage: S5a
     verdict: correct
     by: refereeA
-    hash: bfd0bd34dc57
+    hash: 7aa82b05ffaa
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S5-A.md: checked line by line (Findings table)'
   - stage: S5b
     verdict: correct
     by: refereeB
-    hash: bfd0bd34dc57
+    hash: 7aa82b05ffaa
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S5-B.md rows 15-22: meta-claims, counts, labels, rule order'
   - stage: S8
     verdict: correct
     by: seam
-    hash: bfd0bd34dc57
+    hash: 7aa82b05ffaa
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S8-seam.md rows 14, 20, 25: rule order per section, cross-section
@@ -89,33 +89,33 @@ items:
   kind: check
   file: 01-statements-and-connectives.md
   line: 166
-  hash: 7476e432c878
+  hash: e090fcfac904
   verdicts:
   - stage: S5a
     verdict: correct
     by: refereeA
-    hash: 7476e432c878
+    hash: e090fcfac904
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S5-A.md: checked line by line (Findings table)'
   - stage: S5b
     verdict: correct
     by: refereeB
-    hash: 7476e432c878
+    hash: e090fcfac904
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S5-B.md rows 15-22: meta-claims, counts, labels, rule order'
   - stage: S6
     verdict: correct
     by: verifier
-    hash: 7476e432c878
+    hash: e090fcfac904
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S6.md verdict table: solved before reading, derivations checked'
   - stage: S8
     verdict: correct
     by: seam
-    hash: 7476e432c878
+    hash: e090fcfac904
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S8-seam.md rows 3, 25: rule order and cross-section consistency
@@ -152,33 +152,33 @@ items:
   kind: check
   file: 01-statements-and-connectives.md
   line: 216
-  hash: 10f359807e78
+  hash: a44c76f177a3
   verdicts:
   - stage: S5a
     verdict: correct
     by: refereeA
-    hash: 10f359807e78
+    hash: a44c76f177a3
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S5-A.md: checked line by line (Findings table)'
   - stage: S5b
     verdict: correct
     by: refereeB
-    hash: 10f359807e78
+    hash: a44c76f177a3
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S5-B.md rows 15-22: meta-claims, counts, labels, rule order'
   - stage: S6
     verdict: correct
     by: verifier
-    hash: 10f359807e78
+    hash: a44c76f177a3
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S6.md verdict table: solved before reading, derivations checked'
   - stage: S8
     verdict: correct
     by: seam
-    hash: 10f359807e78
+    hash: a44c76f177a3
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S8-seam.md rows 3, 25: rule order and cross-section consistency
@@ -187,7 +187,7 @@ items:
   kind: exr
   file: 01-statements-and-connectives.md
   line: 282
-  hash: b40ab575a958
+  hash: d741704ca96e
   verdicts:
   - stage: S5a
     verdict: correct
@@ -229,7 +229,7 @@ items:
   - stage: S8
     verdict: minor
     by: seam
-    hash: b40ab575a958
+    hash: d741704ca96e
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S8-seam.md row 9: source list numbered 1,3-7, renumbered 1-6 at
@@ -238,33 +238,33 @@ items:
   kind: exr
   file: 01-statements-and-connectives.md
   line: 311
-  hash: 838fa06c50dc
+  hash: e0e35134ed29
   verdicts:
   - stage: S5a
     verdict: correct
     by: refereeA
-    hash: 838fa06c50dc
+    hash: e0e35134ed29
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S5-A.md: checked line by line (Findings table)'
   - stage: S5b
     verdict: correct
     by: refereeB
-    hash: 838fa06c50dc
+    hash: e0e35134ed29
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S5-B.md rows 15-22: meta-claims, counts, labels, rule order'
   - stage: S6
     verdict: correct
     by: verifier
-    hash: 838fa06c50dc
+    hash: e0e35134ed29
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S6.md verdict table: solved before reading, derivations checked'
   - stage: S8
     verdict: correct
     by: seam
-    hash: 838fa06c50dc
+    hash: e0e35134ed29
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S8-seam.md rows 3, 22, 24: scaffolding, exit checks, R items and
@@ -273,33 +273,33 @@ items:
   kind: exr
   file: 01-statements-and-connectives.md
   line: 334
-  hash: 03bc19fdfd99
+  hash: 3328bb76957b
   verdicts:
   - stage: S5a
     verdict: correct
     by: refereeA
-    hash: 03bc19fdfd99
+    hash: 3328bb76957b
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S5-A.md: checked line by line (Findings table)'
   - stage: S5b
     verdict: correct
     by: refereeB
-    hash: 03bc19fdfd99
+    hash: 3328bb76957b
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S5-B.md rows 15-22: meta-claims, counts, labels, rule order'
   - stage: S6
     verdict: correct
     by: verifier
-    hash: 03bc19fdfd99
+    hash: 3328bb76957b
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S6.md verdict table: solved before reading, derivations checked'
   - stage: S8
     verdict: correct
     by: seam
-    hash: 03bc19fdfd99
+    hash: 3328bb76957b
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S8-seam.md rows 3, 22, 24: scaffolding, exit checks, R items and
@@ -308,33 +308,33 @@ items:
   kind: exr
   file: 01-statements-and-connectives.md
   line: 363
-  hash: c1c022d3cf3f
+  hash: 5c965194dd8f
   verdicts:
   - stage: S5a
     verdict: correct
     by: refereeA
-    hash: c1c022d3cf3f
+    hash: 5c965194dd8f
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S5-A.md: checked line by line (Findings table)'
   - stage: S5b
     verdict: correct
     by: refereeB
-    hash: c1c022d3cf3f
+    hash: 5c965194dd8f
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S5-B.md rows 15-22: meta-claims, counts, labels, rule order'
   - stage: S6
     verdict: correct
     by: verifier
-    hash: c1c022d3cf3f
+    hash: 5c965194dd8f
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S6.md verdict table: solved before reading, derivations checked'
   - stage: S8
     verdict: correct
     by: seam
-    hash: c1c022d3cf3f
+    hash: 5c965194dd8f
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S8-seam.md rows 3, 22, 24: scaffolding, exit checks, R items and
@@ -343,33 +343,33 @@ items:
   kind: exr
   file: 01-statements-and-connectives.md
   line: 392
-  hash: abb4c5fe961f
+  hash: da9d704cb8fb
   verdicts:
   - stage: S5a
     verdict: correct
     by: refereeA
-    hash: abb4c5fe961f
+    hash: da9d704cb8fb
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S5-A.md: checked line by line (Findings table)'
   - stage: S5b
     verdict: correct
     by: refereeB
-    hash: abb4c5fe961f
+    hash: da9d704cb8fb
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S5-B.md rows 15-22: meta-claims, counts, labels, rule order'
   - stage: S6
     verdict: correct
     by: verifier
-    hash: abb4c5fe961f
+    hash: da9d704cb8fb
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S6.md verdict table: solved before reading, derivations checked'
   - stage: S8
     verdict: correct
     by: seam
-    hash: abb4c5fe961f
+    hash: da9d704cb8fb
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S8-seam.md rows 3, 22, 24: scaffolding, exit checks, R items and
@@ -378,26 +378,26 @@ items:
   kind: def
   file: 02-derivations.md
   line: 36
-  hash: fdf9d1c0d0e7
+  hash: 5fb856b39935
   verdicts:
   - stage: S5a
     verdict: correct
     by: refereeA
-    hash: fdf9d1c0d0e7
+    hash: 5fb856b39935
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S5-A.md: checked line by line (Findings table)'
   - stage: S5b
     verdict: correct
     by: refereeB
-    hash: fdf9d1c0d0e7
+    hash: 5fb856b39935
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S5-B.md rows 15-22: meta-claims, counts, labels, rule order'
   - stage: S8
     verdict: correct
     by: seam
-    hash: fdf9d1c0d0e7
+    hash: 5fb856b39935
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S8-seam.md rows 14, 16, 20-21: rule order, notation, and every citation
@@ -406,26 +406,26 @@ items:
   kind: def
   file: 02-derivations.md
   line: 92
-  hash: 819b50150e18
+  hash: 1473d8792d3f
   verdicts:
   - stage: S5a
     verdict: correct
     by: refereeA
-    hash: 819b50150e18
+    hash: 1473d8792d3f
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S5-A.md: checked line by line (Findings table)'
   - stage: S5b
     verdict: correct
     by: refereeB
-    hash: 819b50150e18
+    hash: 1473d8792d3f
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S5-B.md rows 15-22: meta-claims, counts, labels, rule order'
   - stage: S8
     verdict: correct
     by: seam
-    hash: 819b50150e18
+    hash: 1473d8792d3f
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S8-seam.md rows 14, 16, 20-21: rule order, notation, and every citation
@@ -434,26 +434,26 @@ items:
   kind: exm
   file: 02-derivations.md
   line: 115
-  hash: 63b97b198699
+  hash: 3e7d4dd96237
   verdicts:
   - stage: S5a
     verdict: correct
     by: refereeA
-    hash: 63b97b198699
+    hash: 3e7d4dd96237
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S5-A.md: checked line by line (Findings table)'
   - stage: S5b
     verdict: correct
     by: refereeB
-    hash: 63b97b198699
+    hash: 3e7d4dd96237
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S5-B.md rows 15-22: meta-claims, counts, labels, rule order'
   - stage: S8
     verdict: correct
     by: seam
-    hash: 63b97b198699
+    hash: 3e7d4dd96237
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S8-seam.md rows 14, 20, 25: rule order per section, cross-section
@@ -462,33 +462,33 @@ items:
   kind: check
   file: 02-derivations.md
   line: 179
-  hash: 9ea3532ae25c
+  hash: 4ca609b13e90
   verdicts:
   - stage: S5a
     verdict: correct
     by: refereeA
-    hash: 9ea3532ae25c
+    hash: 4ca609b13e90
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S5-A.md: checked line by line (Findings table)'
   - stage: S5b
     verdict: correct
     by: refereeB
-    hash: 9ea3532ae25c
+    hash: 4ca609b13e90
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S5-B.md rows 15-22: meta-claims, counts, labels, rule order'
   - stage: S6
     verdict: correct
     by: verifier
-    hash: 9ea3532ae25c
+    hash: 4ca609b13e90
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S6.md verdict table: solved before reading, derivations checked'
   - stage: S8
     verdict: correct
     by: seam
-    hash: 9ea3532ae25c
+    hash: 4ca609b13e90
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S8-seam.md rows 3, 25: rule order and cross-section consistency
@@ -497,26 +497,26 @@ items:
   kind: def
   file: 02-derivations.md
   line: 191
-  hash: e5bf7603fc0c
+  hash: 7d9204972b4d
   verdicts:
   - stage: S5a
     verdict: correct
     by: refereeA
-    hash: e5bf7603fc0c
+    hash: 7d9204972b4d
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S5-A.md: checked line by line (Findings table)'
   - stage: S5b
     verdict: correct
     by: refereeB
-    hash: e5bf7603fc0c
+    hash: 7d9204972b4d
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S5-B.md rows 15-22: meta-claims, counts, labels, rule order'
   - stage: S8
     verdict: correct
     by: seam
-    hash: e5bf7603fc0c
+    hash: 7d9204972b4d
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S8-seam.md rows 14, 16, 20-21: rule order, notation, and every citation
@@ -525,33 +525,33 @@ items:
   kind: check
   file: 02-derivations.md
   line: 212
-  hash: ddf771177e32
+  hash: 98096a695bd2
   verdicts:
   - stage: S5a
     verdict: correct
     by: refereeA
-    hash: ddf771177e32
+    hash: 98096a695bd2
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S5-A.md: checked line by line (Findings table)'
   - stage: S5b
     verdict: correct
     by: refereeB
-    hash: ddf771177e32
+    hash: 98096a695bd2
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S5-B.md rows 15-22: meta-claims, counts, labels, rule order'
   - stage: S6
     verdict: correct
     by: verifier
-    hash: ddf771177e32
+    hash: 98096a695bd2
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S6.md verdict table: solved before reading, derivations checked'
   - stage: S8
     verdict: correct
     by: seam
-    hash: ddf771177e32
+    hash: 98096a695bd2
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S8-seam.md rows 3, 25: rule order and cross-section consistency
@@ -560,26 +560,26 @@ items:
   kind: exm
   file: 02-derivations.md
   line: 220
-  hash: 9161c9fb9863
+  hash: 4921075280b5
   verdicts:
   - stage: S5a
     verdict: correct
     by: refereeA
-    hash: 9161c9fb9863
+    hash: 4921075280b5
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S5-A.md: checked line by line (Findings table)'
   - stage: S5b
     verdict: correct
     by: refereeB
-    hash: 9161c9fb9863
+    hash: 4921075280b5
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S5-B.md rows 15-22: meta-claims, counts, labels, rule order'
   - stage: S8
     verdict: correct
     by: seam
-    hash: 9161c9fb9863
+    hash: 4921075280b5
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S8-seam.md rows 14, 20, 25: rule order per section, cross-section
@@ -588,26 +588,26 @@ items:
   kind: exm
   file: 02-derivations.md
   line: 266
-  hash: 22444fc7b763
+  hash: 0a32743c8729
   verdicts:
   - stage: S5a
     verdict: correct
     by: refereeA
-    hash: 22444fc7b763
+    hash: 0a32743c8729
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S5-A.md: checked line by line (Findings table)'
   - stage: S5b
     verdict: correct
     by: refereeB
-    hash: 22444fc7b763
+    hash: 0a32743c8729
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S5-B.md rows 15-22: meta-claims, counts, labels, rule order'
   - stage: S8
     verdict: correct
     by: seam
-    hash: 22444fc7b763
+    hash: 0a32743c8729
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S8-seam.md rows 14, 20, 25: rule order per section, cross-section
@@ -650,7 +650,7 @@ items:
   - stage: S8
     verdict: correct
     by: coordinator
-    hash: ccb9bdf0ebd9
+    hash: 7bea085fc0d5
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'cross-chapter cleanup 2026-09-28: a Chapter 3 @ref added to an existing prose pointer (signpost
@@ -660,33 +660,33 @@ items:
   kind: exr
   file: 02-derivations.md
   line: 357
-  hash: fa3fa7ac8658
+  hash: b330acf99e67
   verdicts:
   - stage: S5a
     verdict: correct
     by: refereeA
-    hash: fa3fa7ac8658
+    hash: b330acf99e67
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S5-A.md: checked line by line (Findings table)'
   - stage: S5b
     verdict: correct
     by: refereeB
-    hash: fa3fa7ac8658
+    hash: b330acf99e67
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S5-B.md rows 15-22: meta-claims, counts, labels, rule order'
   - stage: S6
     verdict: correct
     by: verifier
-    hash: fa3fa7ac8658
+    hash: b330acf99e67
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S6.md verdict table: solved before reading, derivations checked'
   - stage: S8
     verdict: correct
     by: seam
-    hash: fa3fa7ac8658
+    hash: b330acf99e67
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S8-seam.md rows 3, 22, 24: scaffolding, exit checks, R items and
@@ -695,33 +695,33 @@ items:
   kind: exr
   file: 02-derivations.md
   line: 380
-  hash: c7c88d039e10
+  hash: eeec865d0e42
   verdicts:
   - stage: S5a
     verdict: correct
     by: refereeA
-    hash: c7c88d039e10
+    hash: eeec865d0e42
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S5-A.md: checked line by line (Findings table)'
   - stage: S5b
     verdict: correct
     by: refereeB
-    hash: c7c88d039e10
+    hash: eeec865d0e42
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S5-B.md rows 15-22: meta-claims, counts, labels, rule order'
   - stage: S6
     verdict: minor
     by: verifier
-    hash: c7c88d039e10
+    hash: eeec865d0e42
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S6.md finding 2: (e), (f) answered by the prose example at 02:78'
   - stage: S7
     verdict: correct
     by: reviser
-    hash: c7c88d039e10
+    hash: eeec865d0e42
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews (Resolution sections): S6-2: prose example at 02:78 now uses y < 5, c
@@ -729,14 +729,14 @@ items:
   - stage: S7r
     verdict: correct
     by: rereferee
-    hash: c7c88d039e10
+    hash: eeec865d0e42
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S7-recheck.md: fix accepted (fixed correctly)'
   - stage: S8
     verdict: correct
     by: seam
-    hash: c7c88d039e10
+    hash: eeec865d0e42
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S8-seam.md rows 3, 22, 24: scaffolding, exit checks, R items and
@@ -779,7 +779,7 @@ items:
   - stage: S8
     verdict: correct
     by: coordinator
-    hash: 9ba5028296c6
+    hash: 752cce565c3f
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'cross-chapter cleanup 2026-09-28: a Chapter 3 @ref added to an existing prose pointer (signpost
@@ -823,7 +823,7 @@ items:
   - stage: S8
     verdict: correct
     by: coordinator
-    hash: 99c665827880
+    hash: 04a9acd024d1
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'cross-chapter cleanup 2026-09-28: a Chapter 3 @ref added to an existing prose pointer (signpost
@@ -833,33 +833,33 @@ items:
   kind: exr
   file: 02-derivations.md
   line: 471
-  hash: 3582012a7dfe
+  hash: 0e0c8dd9e141
   verdicts:
   - stage: S5a
     verdict: correct
     by: refereeA
-    hash: 3582012a7dfe
+    hash: 0e0c8dd9e141
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S5-A.md: checked line by line (Findings table)'
   - stage: S5b
     verdict: correct
     by: refereeB
-    hash: 3582012a7dfe
+    hash: 0e0c8dd9e141
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S5-B.md rows 15-22: meta-claims, counts, labels, rule order'
   - stage: S6
     verdict: correct
     by: verifier
-    hash: 3582012a7dfe
+    hash: 0e0c8dd9e141
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S6.md verdict table: solved before reading, derivations checked'
   - stage: S8
     verdict: correct
     by: seam
-    hash: 3582012a7dfe
+    hash: 0e0c8dd9e141
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S8-seam.md rows 3, 22, 24: scaffolding, exit checks, R items and
@@ -938,7 +938,7 @@ items:
   kind: check
   file: 03-conjunction.md
   line: 78
-  hash: 0a55deb62f4d
+  hash: 8d7f06a4a0db
   verdicts:
   - stage: S5a
     verdict: correct
@@ -964,14 +964,14 @@ items:
   - stage: S7
     verdict: correct
     by: reviser
-    hash: 0a55deb62f4d
+    hash: 8d7f06a4a0db
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews (Resolution sections): B8 rulename (no content change)'
   - stage: S8
     verdict: correct
     by: seam
-    hash: 0a55deb62f4d
+    hash: 8d7f06a4a0db
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S8-seam.md rows 3, 25: rule order and cross-section consistency
@@ -1051,7 +1051,7 @@ items:
   kind: proof
   file: 03-conjunction.md
   line: 193
-  hash: 1e7c5a21f5e4
+  hash: cc24882fce83
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1070,14 +1070,14 @@ items:
   - stage: S7
     verdict: correct
     by: reviser
-    hash: 1e7c5a21f5e4
+    hash: cc24882fce83
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews (Resolution sections): B8 rulename (no content change)'
   - stage: S8
     verdict: correct
     by: seam
-    hash: 1e7c5a21f5e4
+    hash: cc24882fce83
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S8-seam.md rows 14, 16, 20-21: rule order, notation, and every citation
@@ -1114,7 +1114,7 @@ items:
   kind: proof
   file: 03-conjunction.md
   line: 228
-  hash: 26fbcef73af9
+  hash: ac9b3bdcf1ea
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1133,14 +1133,14 @@ items:
   - stage: S7
     verdict: correct
     by: reviser
-    hash: 26fbcef73af9
+    hash: ac9b3bdcf1ea
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews (Resolution sections): B8 rulename; 03:248 dependence sentence generalized'
   - stage: S8
     verdict: correct
     by: seam
-    hash: 26fbcef73af9
+    hash: ac9b3bdcf1ea
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S8-seam.md rows 14, 16, 20-21: rule order, notation, and every citation
@@ -1149,19 +1149,19 @@ items:
   kind: exm
   file: 03-conjunction.md
   line: 309
-  hash: 71a31892d4a5
+  hash: 5136db4462d8
   verdicts:
   - stage: S5a
     verdict: correct
     by: refereeA
-    hash: 71a31892d4a5
+    hash: 5136db4462d8
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S5-A.md: checked line by line (Findings table)'
   - stage: S5b
     verdict: minor
     by: refereeB
-    hash: 71a31892d4a5
+    hash: 5136db4462d8
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S5-B.md row 11: warning instance (03:350) filed under this label
@@ -1169,21 +1169,21 @@ items:
   - stage: S7
     verdict: correct
     by: reviser
-    hash: 71a31892d4a5
+    hash: 5136db4462d8
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews (Resolution sections): B11: warning instance re-filed under def-rules-conjunction'
   - stage: S7r
     verdict: correct
     by: rereferee
-    hash: 71a31892d4a5
+    hash: 5136db4462d8
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S7-recheck.md: fix accepted (fixed correctly)'
   - stage: S8
     verdict: correct
     by: seam
-    hash: 71a31892d4a5
+    hash: 5136db4462d8
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S8-seam.md rows 14, 20, 25: rule order per section, cross-section
@@ -1192,7 +1192,7 @@ items:
   kind: exr
   file: 03-conjunction.md
   line: 382
-  hash: 76b2e1f68e1d
+  hash: c97a4167495b
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1218,7 +1218,7 @@ items:
   - stage: S7
     verdict: correct
     by: reviser
-    hash: 76b2e1f68e1d
+    hash: c97a4167495b
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews (Resolution sections): B8 rulename; S6-5: 03:248 now states the general
@@ -1226,14 +1226,14 @@ items:
   - stage: S7r
     verdict: correct
     by: rereferee
-    hash: 76b2e1f68e1d
+    hash: c97a4167495b
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S7-recheck.md: fix accepted (fixed correctly)'
   - stage: S8
     verdict: correct
     by: seam
-    hash: 76b2e1f68e1d
+    hash: c97a4167495b
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S8-seam.md rows 3, 22, 24: scaffolding, exit checks, R items and
@@ -1242,33 +1242,33 @@ items:
   kind: exr
   file: 03-conjunction.md
   line: 420
-  hash: 8769dc9786c2
+  hash: 8f246786382a
   verdicts:
   - stage: S5a
     verdict: correct
     by: refereeA
-    hash: 8769dc9786c2
+    hash: 8f246786382a
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S5-A.md: checked line by line (Findings table)'
   - stage: S5b
     verdict: correct
     by: refereeB
-    hash: 8769dc9786c2
+    hash: 8f246786382a
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S5-B.md rows 15-22: meta-claims, counts, labels, rule order'
   - stage: S6
     verdict: correct
     by: verifier
-    hash: 8769dc9786c2
+    hash: 8f246786382a
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S6.md verdict table: solved before reading, derivations checked'
   - stage: S8
     verdict: correct
     by: seam
-    hash: 8769dc9786c2
+    hash: 8f246786382a
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S8-seam.md rows 3, 22, 24: scaffolding, exit checks, R items and
@@ -1277,7 +1277,7 @@ items:
   kind: exr
   file: 03-conjunction.md
   line: 446
-  hash: 46465b0aaf95
+  hash: 7812dca7e437
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1303,14 +1303,14 @@ items:
   - stage: S7
     verdict: correct
     by: reviser
-    hash: 46465b0aaf95
+    hash: 7812dca7e437
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews (Resolution sections): B8 rulename (no content change)'
   - stage: S8
     verdict: correct
     by: seam
-    hash: 46465b0aaf95
+    hash: 7812dca7e437
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S8-seam.md rows 3, 22, 24: scaffolding, exit checks, R items and
@@ -1368,26 +1368,26 @@ items:
   kind: exr
   file: 03-conjunction.md
   line: 504
-  hash: 675ea256f11a
+  hash: 9cdb475e3ef5
   verdicts:
   - stage: S5a
     verdict: correct
     by: refereeA
-    hash: 675ea256f11a
+    hash: 9cdb475e3ef5
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S5-A.md: checked line by line (Findings table)'
   - stage: S5b
     verdict: correct
     by: refereeB
-    hash: 675ea256f11a
+    hash: 9cdb475e3ef5
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S5-B.md rows 15-22: meta-claims, counts, labels, rule order'
   - stage: S6
     verdict: minor
     by: verifier
-    hash: 675ea256f11a
+    hash: 9cdb475e3ef5
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S6.md finding 3: marking scheme rewards only the first-bad-line
@@ -1395,7 +1395,7 @@ items:
   - stage: S7
     verdict: correct
     by: reviser
-    hash: 675ea256f11a
+    hash: 9cdb475e3ef5
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews (Resolution sections): S6-3: scheme accepts a line-by-line argument down
@@ -1403,14 +1403,14 @@ items:
   - stage: S7r
     verdict: correct
     by: rereferee
-    hash: 675ea256f11a
+    hash: 9cdb475e3ef5
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S7-recheck.md: fix accepted (fixed correctly)'
   - stage: S8
     verdict: correct
     by: seam
-    hash: 675ea256f11a
+    hash: 9cdb475e3ef5
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S8-seam.md rows 3, 22, 24: scaffolding, exit checks, R items and
@@ -1419,7 +1419,7 @@ items:
   kind: exr
   file: 03-conjunction.md
   line: 546
-  hash: 19bab7917bac
+  hash: 828ffe67d204
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1445,14 +1445,14 @@ items:
   - stage: S7
     verdict: correct
     by: reviser
-    hash: 19bab7917bac
+    hash: 828ffe67d204
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews (Resolution sections): B8 rulename (no content change)'
   - stage: S8
     verdict: correct
     by: seam
-    hash: 19bab7917bac
+    hash: 828ffe67d204
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S8-seam.md rows 3, 22, 24: scaffolding, exit checks, R items and
@@ -1461,26 +1461,26 @@ items:
   kind: exm
   file: 04-using-an-implication.md
   line: 9
-  hash: bb64145f337d
+  hash: 24222c544b6d
   verdicts:
   - stage: S5a
     verdict: correct
     by: refereeA
-    hash: bb64145f337d
+    hash: 24222c544b6d
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S5-A.md: checked line by line (Findings table)'
   - stage: S5b
     verdict: correct
     by: refereeB
-    hash: bb64145f337d
+    hash: 24222c544b6d
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S5-B.md rows 15-22: meta-claims, counts, labels, rule order'
   - stage: S8
     verdict: correct
     by: seam
-    hash: bb64145f337d
+    hash: 24222c544b6d
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S8-seam.md rows 14, 20, 25: rule order per section, cross-section
@@ -1489,26 +1489,26 @@ items:
   kind: def
   file: 04-using-an-implication.md
   line: 39
-  hash: 25b0957e2372
+  hash: 259a4bc78771
   verdicts:
   - stage: S5a
     verdict: correct
     by: refereeA
-    hash: 25b0957e2372
+    hash: 259a4bc78771
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S5-A.md: checked line by line (Findings table)'
   - stage: S5b
     verdict: correct
     by: refereeB
-    hash: 25b0957e2372
+    hash: 259a4bc78771
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S5-B.md rows 15-22: meta-claims, counts, labels, rule order'
   - stage: S8
     verdict: correct
     by: seam
-    hash: 25b0957e2372
+    hash: 259a4bc78771
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S8-seam.md rows 14, 16, 20-21: rule order, notation, and every citation
@@ -1517,33 +1517,33 @@ items:
   kind: check
   file: 04-using-an-implication.md
   line: 88
-  hash: 6a7487540e99
+  hash: 5a82740c8042
   verdicts:
   - stage: S5a
     verdict: correct
     by: refereeA
-    hash: 6a7487540e99
+    hash: 5a82740c8042
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S5-A.md: checked line by line (Findings table)'
   - stage: S5b
     verdict: correct
     by: refereeB
-    hash: 6a7487540e99
+    hash: 5a82740c8042
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S5-B.md rows 15-22: meta-claims, counts, labels, rule order'
   - stage: S6
     verdict: correct
     by: verifier
-    hash: 6a7487540e99
+    hash: 5a82740c8042
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S6.md verdict table: solved before reading, derivations checked'
   - stage: S8
     verdict: correct
     by: seam
-    hash: 6a7487540e99
+    hash: 5a82740c8042
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S8-seam.md rows 3, 25: rule order and cross-section consistency
@@ -1552,7 +1552,7 @@ items:
   kind: check
   file: 04-using-an-implication.md
   line: 110
-  hash: 1586e89e8f95
+  hash: 2f94bb05abad
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1578,14 +1578,14 @@ items:
   - stage: S7
     verdict: correct
     by: reviser
-    hash: 1586e89e8f95
+    hash: 2f94bb05abad
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews (Resolution sections): B8 rulename (no content change)'
   - stage: S8
     verdict: correct
     by: seam
-    hash: 1586e89e8f95
+    hash: 2f94bb05abad
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S8-seam.md rows 3, 25: rule order and cross-section consistency
@@ -1594,7 +1594,7 @@ items:
   kind: exm
   file: 04-using-an-implication.md
   line: 118
-  hash: 2511f664ea8c
+  hash: c2e00596f23b
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1613,14 +1613,14 @@ items:
   - stage: S7
     verdict: correct
     by: reviser
-    hash: 2511f664ea8c
+    hash: c2e00596f23b
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews (Resolution sections): B8 rulename (no content change)'
   - stage: S8
     verdict: correct
     by: seam
-    hash: 2511f664ea8c
+    hash: c2e00596f23b
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S8-seam.md rows 14, 20, 25: rule order per section, cross-section
@@ -1629,7 +1629,7 @@ items:
   kind: exr
   file: 04-using-an-implication.md
   line: 319
-  hash: 1820bee03d32
+  hash: f6264d32684d
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1655,21 +1655,21 @@ items:
   - stage: S7
     verdict: correct
     by: reviser
-    hash: 1820bee03d32
+    hash: f6264d32684d
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews (Resolution sections): B8 rulename'
   - stage: S7r
     verdict: correct
     by: rereferee
-    hash: 1820bee03d32
+    hash: f6264d32684d
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S7-recheck.md: fix accepted (fixed correctly)'
   - stage: S8
     verdict: correct
     by: seam
-    hash: 1820bee03d32
+    hash: f6264d32684d
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S8-seam.md rows 3, 22, 24: scaffolding, exit checks, R items and
@@ -1678,7 +1678,7 @@ items:
   kind: exr
   file: 04-using-an-implication.md
   line: 342
-  hash: abc6a50c9b9b
+  hash: f527bf4b1741
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1704,21 +1704,21 @@ items:
   - stage: S7
     verdict: correct
     by: reviser
-    hash: abc6a50c9b9b
+    hash: f527bf4b1741
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews (Resolution sections): B8 rulename'
   - stage: S7r
     verdict: correct
     by: rereferee
-    hash: abc6a50c9b9b
+    hash: f527bf4b1741
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S7-recheck.md: fix accepted (fixed correctly)'
   - stage: S8
     verdict: correct
     by: seam
-    hash: abc6a50c9b9b
+    hash: f527bf4b1741
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S8-seam.md rows 3, 22, 24: scaffolding, exit checks, R items and
@@ -1727,33 +1727,33 @@ items:
   kind: exr
   file: 04-using-an-implication.md
   line: 388
-  hash: 2671f89f6dfb
+  hash: 417f591a7d00
   verdicts:
   - stage: S5a
     verdict: correct
     by: refereeA
-    hash: 2671f89f6dfb
+    hash: 417f591a7d00
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S5-A.md: checked line by line (Findings table)'
   - stage: S5b
     verdict: correct
     by: refereeB
-    hash: 2671f89f6dfb
+    hash: 417f591a7d00
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S5-B.md rows 15-22: meta-claims, counts, labels, rule order'
   - stage: S6
     verdict: correct
     by: verifier
-    hash: 2671f89f6dfb
+    hash: 417f591a7d00
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S6.md verdict table: solved before reading, derivations checked'
   - stage: S8
     verdict: correct
     by: seam
-    hash: 2671f89f6dfb
+    hash: 417f591a7d00
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S8-seam.md rows 3, 22, 24: scaffolding, exit checks, R items and
@@ -1762,33 +1762,33 @@ items:
   kind: exr
   file: 04-using-an-implication.md
   line: 412
-  hash: 03f63d13aa8d
+  hash: 1126004f9b08
   verdicts:
   - stage: S5a
     verdict: correct
     by: refereeA
-    hash: 03f63d13aa8d
+    hash: 1126004f9b08
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S5-A.md: checked line by line (Findings table)'
   - stage: S5b
     verdict: correct
     by: refereeB
-    hash: 03f63d13aa8d
+    hash: 1126004f9b08
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S5-B.md rows 15-22: meta-claims, counts, labels, rule order'
   - stage: S6
     verdict: correct
     by: verifier
-    hash: 03f63d13aa8d
+    hash: 1126004f9b08
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S6.md verdict table: solved before reading, derivations checked'
   - stage: S8
     verdict: correct
     by: seam
-    hash: 03f63d13aa8d
+    hash: 1126004f9b08
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S8-seam.md rows 3, 22, 24: scaffolding, exit checks, R items and
@@ -1797,7 +1797,7 @@ items:
   kind: exr
   file: 04-using-an-implication.md
   line: 447
-  hash: fb21d3cc09e3
+  hash: 1938334618fd
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1823,21 +1823,21 @@ items:
   - stage: S7
     verdict: correct
     by: reviser
-    hash: fb21d3cc09e3
+    hash: 1938334618fd
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews (Resolution sections): B8 rulename'
   - stage: S7r
     verdict: correct
     by: rereferee
-    hash: fb21d3cc09e3
+    hash: 1938334618fd
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S7-recheck.md: fix accepted (fixed correctly)'
   - stage: S8
     verdict: correct
     by: seam
-    hash: fb21d3cc09e3
+    hash: 1938334618fd
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S8-seam.md rows 3, 22, 24: scaffolding, exit checks, R items and
@@ -1895,26 +1895,26 @@ items:
   kind: def
   file: 05-proving-an-implication.md
   line: 29
-  hash: 522acc5768d6
+  hash: 9684e68558fd
   verdicts:
   - stage: S5a
     verdict: correct
     by: refereeA
-    hash: 522acc5768d6
+    hash: 9684e68558fd
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S5-A.md: checked line by line (Findings table)'
   - stage: S5b
     verdict: correct
     by: refereeB
-    hash: 522acc5768d6
+    hash: 9684e68558fd
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S5-B.md rows 15-22: meta-claims, counts, labels, rule order'
   - stage: S8
     verdict: correct
     by: seam
-    hash: 522acc5768d6
+    hash: 9684e68558fd
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S8-seam.md rows 14, 16, 20-21: rule order, notation, and every citation
@@ -1951,26 +1951,26 @@ items:
   kind: proof
   file: 05-proving-an-implication.md
   line: 85
-  hash: c9a1a0022043
+  hash: 6ac5f75c9705
   verdicts:
   - stage: S5a
     verdict: correct
     by: refereeA
-    hash: c9a1a0022043
+    hash: 6ac5f75c9705
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S5-A.md: checked line by line (Findings table)'
   - stage: S5b
     verdict: correct
     by: refereeB
-    hash: c9a1a0022043
+    hash: 6ac5f75c9705
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S5-B.md rows 15-22: meta-claims, counts, labels, rule order'
   - stage: S8
     verdict: correct
     by: seam
-    hash: c9a1a0022043
+    hash: 6ac5f75c9705
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S8-seam.md rows 14, 16, 20-21: rule order, notation, and every citation
@@ -1979,7 +1979,7 @@ items:
   kind: def
   file: 05-proving-an-implication.md
   line: 157
-  hash: 74a685fcd3f9
+  hash: 7157ac99a525
   verdicts:
   - stage: S5a
     verdict: minor
@@ -1999,7 +1999,7 @@ items:
   - stage: S7
     verdict: correct
     by: reviser
-    hash: 74a685fcd3f9
+    hash: 7157ac99a525
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews (Resolution sections): A 05:157: ''the boxes other than itself that contain
@@ -2007,14 +2007,14 @@ items:
   - stage: S7r
     verdict: correct
     by: rereferee
-    hash: 74a685fcd3f9
+    hash: 7157ac99a525
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S7-recheck.md: fix accepted (fixed correctly)'
   - stage: S8
     verdict: correct
     by: seam
-    hash: 74a685fcd3f9
+    hash: 7157ac99a525
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S8-seam.md rows 14, 16, 20-21: rule order, notation, and every citation
@@ -2023,26 +2023,26 @@ items:
   kind: exm
   file: 05-proving-an-implication.md
   line: 254
-  hash: 34ea5b294697
+  hash: 33c67489ac01
   verdicts:
   - stage: S5a
     verdict: correct
     by: refereeA
-    hash: 34ea5b294697
+    hash: 33c67489ac01
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S5-A.md: checked line by line (Findings table)'
   - stage: S5b
     verdict: correct
     by: refereeB
-    hash: 34ea5b294697
+    hash: 33c67489ac01
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S5-B.md rows 15-22: meta-claims, counts, labels, rule order'
   - stage: S8
     verdict: correct
     by: seam
-    hash: 34ea5b294697
+    hash: 33c67489ac01
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S8-seam.md rows 14, 20, 25: rule order per section, cross-section
@@ -2051,33 +2051,33 @@ items:
   kind: check
   file: 05-proving-an-implication.md
   line: 289
-  hash: e1cb50088bb0
+  hash: 62dd664aee71
   verdicts:
   - stage: S5a
     verdict: correct
     by: refereeA
-    hash: e1cb50088bb0
+    hash: 62dd664aee71
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S5-A.md: checked line by line (Findings table)'
   - stage: S5b
     verdict: correct
     by: refereeB
-    hash: e1cb50088bb0
+    hash: 62dd664aee71
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S5-B.md rows 15-22: meta-claims, counts, labels, rule order'
   - stage: S6
     verdict: correct
     by: verifier
-    hash: e1cb50088bb0
+    hash: 62dd664aee71
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S6.md verdict table: solved before reading, derivations checked'
   - stage: S8
     verdict: correct
     by: seam
-    hash: e1cb50088bb0
+    hash: 62dd664aee71
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S8-seam.md rows 3, 25: rule order and cross-section consistency
@@ -2086,26 +2086,26 @@ items:
   kind: exm
   file: 05-proving-an-implication.md
   line: 317
-  hash: f8f35440a949
+  hash: df6d7059f9c8
   verdicts:
   - stage: S5a
     verdict: correct
     by: refereeA
-    hash: f8f35440a949
+    hash: df6d7059f9c8
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S5-A.md: checked line by line (Findings table)'
   - stage: S5b
     verdict: correct
     by: refereeB
-    hash: f8f35440a949
+    hash: df6d7059f9c8
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S5-B.md rows 15-22: meta-claims, counts, labels, rule order'
   - stage: S8
     verdict: correct
     by: seam
-    hash: f8f35440a949
+    hash: df6d7059f9c8
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S8-seam.md rows 14, 20, 25: rule order per section, cross-section
@@ -2114,26 +2114,26 @@ items:
   kind: prp
   file: 05-proving-an-implication.md
   line: 394
-  hash: 06fddab7b77e
+  hash: 3a0b6bab11f7
   verdicts:
   - stage: S5a
     verdict: correct
     by: refereeA
-    hash: 06fddab7b77e
+    hash: 3a0b6bab11f7
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S5-A.md: checked line by line (Findings table)'
   - stage: S5b
     verdict: correct
     by: refereeB
-    hash: 06fddab7b77e
+    hash: 3a0b6bab11f7
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S5-B.md rows 15-22: meta-claims, counts, labels, rule order'
   - stage: S8
     verdict: correct
     by: seam
-    hash: 06fddab7b77e
+    hash: 3a0b6bab11f7
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S8-seam.md rows 14, 16, 20-21: rule order, notation, and every citation
@@ -2142,26 +2142,26 @@ items:
   kind: proof
   file: 05-proving-an-implication.md
   line: 408
-  hash: 19d644d2bd42
+  hash: da8eef11886c
   verdicts:
   - stage: S5a
     verdict: correct
     by: refereeA
-    hash: 19d644d2bd42
+    hash: da8eef11886c
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S5-A.md: checked line by line (Findings table)'
   - stage: S5b
     verdict: correct
     by: refereeB
-    hash: 19d644d2bd42
+    hash: da8eef11886c
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S5-B.md rows 15-22: meta-claims, counts, labels, rule order'
   - stage: S8
     verdict: correct
     by: seam
-    hash: 19d644d2bd42
+    hash: da8eef11886c
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S8-seam.md rows 14, 16, 20-21: rule order, notation, and every citation
@@ -2205,7 +2205,7 @@ items:
   kind: exr
   file: 05-proving-an-implication.md
   line: 502
-  hash: 9ec1e4429c54
+  hash: 32d602dce842
   verdicts:
   - stage: S5a
     verdict: correct
@@ -2247,7 +2247,7 @@ items:
   - stage: S7
     verdict: correct
     by: reviser
-    hash: 9ec1e4429c54
+    hash: 32d602dce842
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S7-recheck.md Resolution (round 2), N2: (e) stem now asks only ''why
@@ -2255,7 +2255,7 @@ items:
   - stage: S7r
     verdict: correct
     by: rereferee
-    hash: 9ec1e4429c54
+    hash: 32d602dce842
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S7-recheck.md round 2, N2 fixed correctly: (e) asks only why line
@@ -2263,7 +2263,7 @@ items:
   - stage: S8
     verdict: correct
     by: seam
-    hash: 9ec1e4429c54
+    hash: 32d602dce842
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S8-seam.md rows 3, 22, 24: scaffolding, exit checks, R items and
@@ -2272,33 +2272,33 @@ items:
   kind: exr
   file: 05-proving-an-implication.md
   line: 548
-  hash: f6ca7909d1c4
+  hash: 9e3262d5814d
   verdicts:
   - stage: S5a
     verdict: correct
     by: refereeA
-    hash: f6ca7909d1c4
+    hash: 9e3262d5814d
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S5-A.md: checked line by line (Findings table)'
   - stage: S5b
     verdict: correct
     by: refereeB
-    hash: f6ca7909d1c4
+    hash: 9e3262d5814d
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S5-B.md rows 15-22: meta-claims, counts, labels, rule order'
   - stage: S6
     verdict: correct
     by: verifier
-    hash: f6ca7909d1c4
+    hash: 9e3262d5814d
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S6.md verdict table: solved before reading, derivations checked'
   - stage: S8
     verdict: correct
     by: seam
-    hash: f6ca7909d1c4
+    hash: 9e3262d5814d
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S8-seam.md rows 3, 22, 24: scaffolding, exit checks, R items and
@@ -2307,33 +2307,33 @@ items:
   kind: exr
   file: 05-proving-an-implication.md
   line: 576
-  hash: c6358c80a7bd
+  hash: 6972675d1bab
   verdicts:
   - stage: S5a
     verdict: correct
     by: refereeA
-    hash: c6358c80a7bd
+    hash: 6972675d1bab
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S5-A.md: checked line by line (Findings table)'
   - stage: S5b
     verdict: correct
     by: refereeB
-    hash: c6358c80a7bd
+    hash: 6972675d1bab
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S5-B.md rows 15-22: meta-claims, counts, labels, rule order'
   - stage: S6
     verdict: correct
     by: verifier
-    hash: c6358c80a7bd
+    hash: 6972675d1bab
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S6.md verdict table: solved before reading, derivations checked'
   - stage: S8
     verdict: correct
     by: seam
-    hash: c6358c80a7bd
+    hash: 6972675d1bab
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S8-seam.md rows 3, 22, 24: scaffolding, exit checks, R items and
@@ -2342,33 +2342,33 @@ items:
   kind: exr
   file: 05-proving-an-implication.md
   line: 628
-  hash: c5c8fb553243
+  hash: be40f01aba85
   verdicts:
   - stage: S5a
     verdict: correct
     by: refereeA
-    hash: c5c8fb553243
+    hash: be40f01aba85
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S5-A.md: checked line by line (Findings table)'
   - stage: S5b
     verdict: correct
     by: refereeB
-    hash: c5c8fb553243
+    hash: be40f01aba85
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S5-B.md rows 15-22: meta-claims, counts, labels, rule order'
   - stage: S6
     verdict: correct
     by: verifier
-    hash: c5c8fb553243
+    hash: be40f01aba85
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S6.md verdict table: solved before reading, derivations checked'
   - stage: S8
     verdict: correct
     by: seam
-    hash: c5c8fb553243
+    hash: be40f01aba85
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S8-seam.md rows 3, 22, 24: scaffolding, exit checks, R items and
@@ -2377,33 +2377,33 @@ items:
   kind: exr
   file: 05-proving-an-implication.md
   line: 663
-  hash: cf5a83608894
+  hash: c576ae0c61e4
   verdicts:
   - stage: S5a
     verdict: correct
     by: refereeA
-    hash: cf5a83608894
+    hash: c576ae0c61e4
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S5-A.md: checked line by line (Findings table)'
   - stage: S5b
     verdict: correct
     by: refereeB
-    hash: cf5a83608894
+    hash: c576ae0c61e4
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S5-B.md rows 15-22: meta-claims, counts, labels, rule order'
   - stage: S6
     verdict: correct
     by: verifier
-    hash: cf5a83608894
+    hash: c576ae0c61e4
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S6.md verdict table: solved before reading, derivations checked'
   - stage: S8
     verdict: correct
     by: seam
-    hash: cf5a83608894
+    hash: c576ae0c61e4
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S8-seam.md rows 3, 22, 24: scaffolding, exit checks, R items and
@@ -2412,33 +2412,33 @@ items:
   kind: exr
   file: 05-proving-an-implication.md
   line: 693
-  hash: f5b4af009c87
+  hash: 14862d6bd445
   verdicts:
   - stage: S5a
     verdict: correct
     by: refereeA
-    hash: f5b4af009c87
+    hash: 14862d6bd445
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S5-A.md: checked line by line (Findings table)'
   - stage: S5b
     verdict: correct
     by: refereeB
-    hash: f5b4af009c87
+    hash: 14862d6bd445
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S5-B.md rows 15-22: meta-claims, counts, labels, rule order'
   - stage: S6
     verdict: correct
     by: verifier
-    hash: f5b4af009c87
+    hash: 14862d6bd445
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S6.md verdict table: solved before reading, derivations checked'
   - stage: S8
     verdict: correct
     by: seam
-    hash: f5b4af009c87
+    hash: 14862d6bd445
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S8-seam.md rows 3, 22, 24: scaffolding, exit checks, R items and
@@ -2482,33 +2482,33 @@ items:
   kind: exr
   file: 05-proving-an-implication.md
   line: 853
-  hash: bbf7f763ee93
+  hash: 45895935afae
   verdicts:
   - stage: S5a
     verdict: correct
     by: refereeA
-    hash: bbf7f763ee93
+    hash: 45895935afae
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S5-A.md: checked line by line (Findings table)'
   - stage: S5b
     verdict: correct
     by: refereeB
-    hash: bbf7f763ee93
+    hash: 45895935afae
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S5-B.md rows 15-22: meta-claims, counts, labels, rule order'
   - stage: S6
     verdict: correct
     by: verifier
-    hash: bbf7f763ee93
+    hash: 45895935afae
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S6.md verdict table: solved before reading, derivations checked'
   - stage: S8
     verdict: correct
     by: seam
-    hash: bbf7f763ee93
+    hash: 45895935afae
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S8-seam.md rows 3, 22, 24: scaffolding, exit checks, R items and
@@ -2552,33 +2552,33 @@ items:
   kind: check
   file: 06-disjunction-introduction.md
   line: 81
-  hash: 43c4b2bdca1d
+  hash: af798d498ff1
   verdicts:
   - stage: S5a
     verdict: correct
     by: refereeA
-    hash: 43c4b2bdca1d
+    hash: af798d498ff1
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S5-A.md: checked line by line (Findings table)'
   - stage: S5b
     verdict: correct
     by: refereeB
-    hash: 43c4b2bdca1d
+    hash: af798d498ff1
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S5-B.md rows 15-22: meta-claims, counts, labels, rule order'
   - stage: S6
     verdict: correct
     by: verifier
-    hash: 43c4b2bdca1d
+    hash: af798d498ff1
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S6.md verdict table: solved before reading, derivations checked'
   - stage: S8
     verdict: correct
     by: seam
-    hash: 43c4b2bdca1d
+    hash: af798d498ff1
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S8-seam.md rows 3, 25: rule order and cross-section consistency
@@ -2587,7 +2587,7 @@ items:
   kind: exm
   file: 06-disjunction-introduction.md
   line: 110
-  hash: dea0cb4234b0
+  hash: d561d5dc03ec
   verdicts:
   - stage: S5a
     verdict: correct
@@ -2613,7 +2613,7 @@ items:
   - stage: S8
     verdict: minor
     by: seam
-    hash: dea0cb4234b0
+    hash: d561d5dc03ec
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S8-seam.md row 5: bare R in the (d) aftermath typeset as rulename{R}
@@ -2622,26 +2622,26 @@ items:
   kind: exm
   file: 06-disjunction-introduction.md
   line: 214
-  hash: 6688a0873c12
+  hash: a894a06e823b
   verdicts:
   - stage: S5a
     verdict: correct
     by: refereeA
-    hash: 6688a0873c12
+    hash: a894a06e823b
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S5-A.md: checked line by line (Findings table)'
   - stage: S5b
     verdict: correct
     by: refereeB
-    hash: 6688a0873c12
+    hash: a894a06e823b
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S5-B.md rows 15-22: meta-claims, counts, labels, rule order'
   - stage: S6
     verdict: gap
     by: verifier
-    hash: 6688a0873c12
+    hash: a894a06e823b
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S6.md finding 1: sidecar QUOTED string not in the text; check_numbers
@@ -2649,7 +2649,7 @@ items:
   - stage: S7
     verdict: correct
     by: reviser
-    hash: 6688a0873c12
+    hash: a894a06e823b
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews (Resolution sections): S6-1: sidecar QUOTED is the text''s ''if x >=
@@ -2657,14 +2657,14 @@ items:
   - stage: S7r
     verdict: correct
     by: rereferee
-    hash: 6688a0873c12
+    hash: a894a06e823b
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S7-recheck.md: fix accepted (fixed correctly)'
   - stage: S8
     verdict: correct
     by: seam
-    hash: 6688a0873c12
+    hash: a894a06e823b
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S8-seam.md rows 14, 20, 25: rule order per section, cross-section
@@ -2673,33 +2673,33 @@ items:
   kind: check
   file: 06-disjunction-introduction.md
   line: 251
-  hash: dbff397329e0
+  hash: 980257fe0420
   verdicts:
   - stage: S5a
     verdict: correct
     by: refereeA
-    hash: dbff397329e0
+    hash: 980257fe0420
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S5-A.md: checked line by line (Findings table)'
   - stage: S5b
     verdict: correct
     by: refereeB
-    hash: dbff397329e0
+    hash: 980257fe0420
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S5-B.md rows 15-22: meta-claims, counts, labels, rule order'
   - stage: S6
     verdict: correct
     by: verifier
-    hash: dbff397329e0
+    hash: 980257fe0420
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S6.md verdict table: solved before reading, derivations checked'
   - stage: S8
     verdict: correct
     by: seam
-    hash: dbff397329e0
+    hash: 980257fe0420
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S8-seam.md rows 3, 25: rule order and cross-section consistency
@@ -2708,26 +2708,26 @@ items:
   kind: exm
   file: 06-disjunction-introduction.md
   line: 293
-  hash: 801bc1337765
+  hash: 07c3f7be56e7
   verdicts:
   - stage: S5a
     verdict: correct
     by: refereeA
-    hash: 801bc1337765
+    hash: 07c3f7be56e7
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S5-A.md: checked line by line (Findings table)'
   - stage: S5b
     verdict: correct
     by: refereeB
-    hash: 801bc1337765
+    hash: 07c3f7be56e7
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S5-B.md rows 15-22: meta-claims, counts, labels, rule order'
   - stage: S6
     verdict: gap
     by: verifier
-    hash: 801bc1337765
+    hash: 07c3f7be56e7
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S6.md finding 1: sidecar QUOTED string not in the text; check_numbers
@@ -2735,7 +2735,7 @@ items:
   - stage: S7
     verdict: correct
     by: reviser
-    hash: 801bc1337765
+    hash: 07c3f7be56e7
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews (Resolution sections): S6-1: sidecar QUOTED is the text''s school fact;
@@ -2743,14 +2743,14 @@ items:
   - stage: S7r
     verdict: correct
     by: rereferee
-    hash: 801bc1337765
+    hash: 07c3f7be56e7
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S7-recheck.md: fix accepted (fixed correctly)'
   - stage: S8
     verdict: correct
     by: seam
-    hash: 801bc1337765
+    hash: 07c3f7be56e7
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S8-seam.md rows 14, 20, 25: rule order per section, cross-section
@@ -2759,7 +2759,7 @@ items:
   kind: exr
   file: 06-disjunction-introduction.md
   line: 352
-  hash: 2c1ea626124b
+  hash: 7e7b0f2b0f0d
   verdicts:
   - stage: S5a
     verdict: correct
@@ -2802,7 +2802,7 @@ items:
   - stage: S7
     verdict: correct
     by: reviser
-    hash: 2c1ea626124b
+    hash: 7e7b0f2b0f0d
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S7-recheck.md Resolution (round 2), N1: (d) stem now ''although
@@ -2811,7 +2811,7 @@ items:
   - stage: S7r
     verdict: correct
     by: rereferee
-    hash: 2c1ea626124b
+    hash: 7e7b0f2b0f0d
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S7-recheck.md round 2, N1 fixed correctly: stem true; Q, (PvQ)->(Q->R)
@@ -2819,7 +2819,7 @@ items:
   - stage: S8
     verdict: correct
     by: seam
-    hash: 2c1ea626124b
+    hash: 7e7b0f2b0f0d
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S8-seam.md rows 3, 22, 24: scaffolding, exit checks, R items and
@@ -2828,33 +2828,33 @@ items:
   kind: exr
   file: 06-disjunction-introduction.md
   line: 379
-  hash: 161a69b657bb
+  hash: 9fe6d52243cf
   verdicts:
   - stage: S5a
     verdict: correct
     by: refereeA
-    hash: 161a69b657bb
+    hash: 9fe6d52243cf
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S5-A.md: checked line by line (Findings table)'
   - stage: S5b
     verdict: correct
     by: refereeB
-    hash: 161a69b657bb
+    hash: 9fe6d52243cf
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S5-B.md rows 15-22: meta-claims, counts, labels, rule order'
   - stage: S6
     verdict: correct
     by: verifier
-    hash: 161a69b657bb
+    hash: 9fe6d52243cf
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S6.md verdict table: solved before reading, derivations checked'
   - stage: S8
     verdict: correct
     by: seam
-    hash: 161a69b657bb
+    hash: 9fe6d52243cf
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S8-seam.md rows 3, 22, 24: scaffolding, exit checks, R items and
@@ -2863,33 +2863,33 @@ items:
   kind: exr
   file: 06-disjunction-introduction.md
   line: 420
-  hash: 77bdba17bf75
+  hash: 669187fd519b
   verdicts:
   - stage: S5a
     verdict: correct
     by: refereeA
-    hash: 77bdba17bf75
+    hash: 669187fd519b
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S5-A.md: checked line by line (Findings table)'
   - stage: S5b
     verdict: correct
     by: refereeB
-    hash: 77bdba17bf75
+    hash: 669187fd519b
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S5-B.md rows 15-22: meta-claims, counts, labels, rule order'
   - stage: S6
     verdict: correct
     by: verifier
-    hash: 77bdba17bf75
+    hash: 669187fd519b
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S6.md verdict table: solved before reading, derivations checked'
   - stage: S8
     verdict: correct
     by: seam
-    hash: 77bdba17bf75
+    hash: 669187fd519b
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S8-seam.md rows 3, 22, 24: scaffolding, exit checks, R items and
@@ -2898,33 +2898,33 @@ items:
   kind: exr
   file: 06-disjunction-introduction.md
   line: 464
-  hash: 687c99b803d0
+  hash: 468093f8b08f
   verdicts:
   - stage: S5a
     verdict: correct
     by: refereeA
-    hash: 687c99b803d0
+    hash: 468093f8b08f
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S5-A.md: checked line by line (Findings table)'
   - stage: S5b
     verdict: correct
     by: refereeB
-    hash: 687c99b803d0
+    hash: 468093f8b08f
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S5-B.md rows 15-22: meta-claims, counts, labels, rule order'
   - stage: S6
     verdict: correct
     by: verifier
-    hash: 687c99b803d0
+    hash: 468093f8b08f
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S6.md verdict table: solved before reading, derivations checked'
   - stage: S8
     verdict: correct
     by: seam
-    hash: 687c99b803d0
+    hash: 468093f8b08f
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S8-seam.md rows 3, 22, 24: scaffolding, exit checks, R items and
@@ -2933,33 +2933,33 @@ items:
   kind: exr
   file: 06-disjunction-introduction.md
   line: 492
-  hash: 272daac9fb27
+  hash: 03a1c7297915
   verdicts:
   - stage: S5a
     verdict: correct
     by: refereeA
-    hash: 272daac9fb27
+    hash: 03a1c7297915
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S5-A.md: checked line by line (Findings table)'
   - stage: S5b
     verdict: correct
     by: refereeB
-    hash: 272daac9fb27
+    hash: 03a1c7297915
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S5-B.md rows 15-22: meta-claims, counts, labels, rule order'
   - stage: S6
     verdict: correct
     by: verifier
-    hash: 272daac9fb27
+    hash: 03a1c7297915
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S6.md verdict table: solved before reading, derivations checked'
   - stage: S8
     verdict: correct
     by: seam
-    hash: 272daac9fb27
+    hash: 03a1c7297915
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S8-seam.md rows 3, 22, 24: scaffolding, exit checks, R items and
@@ -2968,33 +2968,33 @@ items:
   kind: exr
   file: 06-disjunction-introduction.md
   line: 521
-  hash: 4d72d2ffa29a
+  hash: 23aef049b0f8
   verdicts:
   - stage: S5a
     verdict: correct
     by: refereeA
-    hash: 4d72d2ffa29a
+    hash: 23aef049b0f8
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S5-A.md: checked line by line (Findings table)'
   - stage: S5b
     verdict: correct
     by: refereeB
-    hash: 4d72d2ffa29a
+    hash: 23aef049b0f8
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S5-B.md rows 15-22: meta-claims, counts, labels, rule order'
   - stage: S6
     verdict: correct
     by: verifier
-    hash: 4d72d2ffa29a
+    hash: 23aef049b0f8
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S6.md verdict table: solved before reading, derivations checked'
   - stage: S8
     verdict: correct
     by: seam
-    hash: 4d72d2ffa29a
+    hash: 23aef049b0f8
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S8-seam.md rows 3, 22, 24: scaffolding, exit checks, R items and
@@ -3003,26 +3003,26 @@ items:
   kind: def
   file: 07-disjunction-and-cases.md
   line: 25
-  hash: 3072f1949dc6
+  hash: 87e604682a2c
   verdicts:
   - stage: S5a
     verdict: correct
     by: refereeA
-    hash: 3072f1949dc6
+    hash: 87e604682a2c
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S5-A.md: checked line by line (Findings table)'
   - stage: S5b
     verdict: correct
     by: refereeB
-    hash: 3072f1949dc6
+    hash: 87e604682a2c
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S5-B.md rows 15-22: meta-claims, counts, labels, rule order'
   - stage: S8
     verdict: correct
     by: seam
-    hash: 3072f1949dc6
+    hash: 87e604682a2c
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S8-seam.md rows 14, 16, 20-21: rule order, notation, and every citation
@@ -3031,26 +3031,26 @@ items:
   kind: exm
   file: 07-disjunction-and-cases.md
   line: 85
-  hash: 0f6db1ccb3e1
+  hash: 0caddb5651e0
   verdicts:
   - stage: S5a
     verdict: correct
     by: refereeA
-    hash: 0f6db1ccb3e1
+    hash: 0caddb5651e0
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S5-A.md: checked line by line (Findings table)'
   - stage: S5b
     verdict: correct
     by: refereeB
-    hash: 0f6db1ccb3e1
+    hash: 0caddb5651e0
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S5-B.md rows 15-22: meta-claims, counts, labels, rule order'
   - stage: S8
     verdict: correct
     by: seam
-    hash: 0f6db1ccb3e1
+    hash: 0caddb5651e0
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S8-seam.md rows 14, 20, 25: rule order per section, cross-section
@@ -3059,33 +3059,33 @@ items:
   kind: check
   file: 07-disjunction-and-cases.md
   line: 154
-  hash: 632f46dd7562
+  hash: e7fcd0364848
   verdicts:
   - stage: S5a
     verdict: correct
     by: refereeA
-    hash: 632f46dd7562
+    hash: e7fcd0364848
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S5-A.md: checked line by line (Findings table)'
   - stage: S5b
     verdict: correct
     by: refereeB
-    hash: 632f46dd7562
+    hash: e7fcd0364848
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S5-B.md rows 15-22: meta-claims, counts, labels, rule order'
   - stage: S6
     verdict: correct
     by: verifier
-    hash: 632f46dd7562
+    hash: e7fcd0364848
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S6.md verdict table: solved before reading, derivations checked'
   - stage: S8
     verdict: correct
     by: seam
-    hash: 632f46dd7562
+    hash: e7fcd0364848
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S8-seam.md rows 3, 25: rule order and cross-section consistency
@@ -3094,26 +3094,26 @@ items:
   kind: exm
   file: 07-disjunction-and-cases.md
   line: 166
-  hash: bd163c8566e0
+  hash: 52e73e969071
   verdicts:
   - stage: S5a
     verdict: correct
     by: refereeA
-    hash: bd163c8566e0
+    hash: 52e73e969071
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S5-A.md: checked line by line (Findings table)'
   - stage: S5b
     verdict: correct
     by: refereeB
-    hash: bd163c8566e0
+    hash: 52e73e969071
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S5-B.md rows 15-22: meta-claims, counts, labels, rule order'
   - stage: S8
     verdict: correct
     by: seam
-    hash: bd163c8566e0
+    hash: 52e73e969071
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S8-seam.md rows 14, 20, 25: rule order per section, cross-section
@@ -3122,26 +3122,26 @@ items:
   kind: prp
   file: 07-disjunction-and-cases.md
   line: 207
-  hash: f3b66ff5310e
+  hash: 4da2c340638b
   verdicts:
   - stage: S5a
     verdict: correct
     by: refereeA
-    hash: f3b66ff5310e
+    hash: 4da2c340638b
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S5-A.md: checked line by line (Findings table)'
   - stage: S5b
     verdict: correct
     by: refereeB
-    hash: f3b66ff5310e
+    hash: 4da2c340638b
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S5-B.md rows 15-22: meta-claims, counts, labels, rule order'
   - stage: S8
     verdict: correct
     by: seam
-    hash: f3b66ff5310e
+    hash: 4da2c340638b
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S8-seam.md rows 14, 16, 20-21: rule order, notation, and every citation
@@ -3178,26 +3178,26 @@ items:
   kind: exm
   file: 07-disjunction-and-cases.md
   line: 279
-  hash: f04360cd9912
+  hash: 3cbcc246273d
   verdicts:
   - stage: S5a
     verdict: correct
     by: refereeA
-    hash: f04360cd9912
+    hash: 3cbcc246273d
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S5-A.md: checked line by line (Findings table)'
   - stage: S5b
     verdict: correct
     by: refereeB
-    hash: f04360cd9912
+    hash: 3cbcc246273d
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S5-B.md rows 15-22: meta-claims, counts, labels, rule order'
   - stage: S8
     verdict: correct
     by: seam
-    hash: f04360cd9912
+    hash: 3cbcc246273d
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S8-seam.md rows 14, 20, 25: rule order per section, cross-section
@@ -3206,7 +3206,7 @@ items:
   kind: exm
   file: 07-disjunction-and-cases.md
   line: 349
-  hash: c194f83388c9
+  hash: d7f0633e330e
   verdicts:
   - stage: S5a
     verdict: correct
@@ -3225,7 +3225,7 @@ items:
   - stage: S8
     verdict: minor
     by: seam
-    hash: c194f83388c9
+    hash: d7f0633e330e
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S8-seam.md row 8: ''labelling'' -> ''labeling'' at S8; cited correctly
@@ -3234,26 +3234,26 @@ items:
   kind: exm
   file: 07-disjunction-and-cases.md
   line: 394
-  hash: a72a54db92ff
+  hash: d27e295bb8b7
   verdicts:
   - stage: S5a
     verdict: correct
     by: refereeA
-    hash: a72a54db92ff
+    hash: d27e295bb8b7
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S5-A.md: checked line by line (Findings table)'
   - stage: S5b
     verdict: correct
     by: refereeB
-    hash: a72a54db92ff
+    hash: d27e295bb8b7
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S5-B.md rows 15-22: meta-claims, counts, labels, rule order'
   - stage: S8
     verdict: correct
     by: seam
-    hash: a72a54db92ff
+    hash: d27e295bb8b7
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S8-seam.md rows 14, 20, 25: rule order per section, cross-section
@@ -3262,26 +3262,26 @@ items:
   kind: exm
   file: 07-disjunction-and-cases.md
   line: 420
-  hash: b6884e1ac5f4
+  hash: 84dc839d12f0
   verdicts:
   - stage: S5a
     verdict: correct
     by: refereeA
-    hash: b6884e1ac5f4
+    hash: 84dc839d12f0
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S5-A.md: checked line by line (Findings table)'
   - stage: S5b
     verdict: correct
     by: refereeB
-    hash: b6884e1ac5f4
+    hash: 84dc839d12f0
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S5-B.md rows 15-22: meta-claims, counts, labels, rule order'
   - stage: S8
     verdict: correct
     by: seam
-    hash: b6884e1ac5f4
+    hash: 84dc839d12f0
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S8-seam.md rows 14, 20, 25: rule order per section, cross-section
@@ -3374,7 +3374,7 @@ items:
   - stage: S8
     verdict: correct
     by: coordinator
-    hash: 25e7dbc0ba90
+    hash: 7f564f10f6a7
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'cross-chapter cleanup 2026-09-28: a Chapter 3 @ref added to an existing prose pointer (signpost
@@ -3384,33 +3384,33 @@ items:
   kind: exr
   file: 07-disjunction-and-cases.md
   line: 634
-  hash: bc1d0b782550
+  hash: e5abf1a14510
   verdicts:
   - stage: S5a
     verdict: correct
     by: refereeA
-    hash: bc1d0b782550
+    hash: e5abf1a14510
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S5-A.md: checked line by line (Findings table)'
   - stage: S5b
     verdict: correct
     by: refereeB
-    hash: bc1d0b782550
+    hash: e5abf1a14510
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S5-B.md rows 15-22: meta-claims, counts, labels, rule order'
   - stage: S6
     verdict: correct
     by: verifier
-    hash: bc1d0b782550
+    hash: e5abf1a14510
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S6.md verdict table: solved before reading, derivations checked'
   - stage: S8
     verdict: correct
     by: seam
-    hash: bc1d0b782550
+    hash: e5abf1a14510
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S8-seam.md rows 3, 22, 24: scaffolding, exit checks, R items and
@@ -3419,33 +3419,33 @@ items:
   kind: exr
   file: 07-disjunction-and-cases.md
   line: 674
-  hash: e96baa5cb0f2
+  hash: 0c99303b71f9
   verdicts:
   - stage: S5a
     verdict: correct
     by: refereeA
-    hash: e96baa5cb0f2
+    hash: 0c99303b71f9
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S5-A.md: checked line by line (Findings table)'
   - stage: S5b
     verdict: correct
     by: refereeB
-    hash: e96baa5cb0f2
+    hash: 0c99303b71f9
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S5-B.md rows 15-22: meta-claims, counts, labels, rule order'
   - stage: S6
     verdict: correct
     by: verifier
-    hash: e96baa5cb0f2
+    hash: 0c99303b71f9
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S6.md verdict table: solved before reading, derivations checked'
   - stage: S8
     verdict: correct
     by: seam
-    hash: e96baa5cb0f2
+    hash: 0c99303b71f9
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S8-seam.md rows 3, 22, 24: scaffolding, exit checks, R items and
@@ -3454,33 +3454,33 @@ items:
   kind: exr
   file: 07-disjunction-and-cases.md
   line: 692
-  hash: 45c25e210b62
+  hash: 188c84d72dc1
   verdicts:
   - stage: S5a
     verdict: correct
     by: refereeA
-    hash: 45c25e210b62
+    hash: 188c84d72dc1
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S5-A.md: checked line by line (Findings table)'
   - stage: S5b
     verdict: correct
     by: refereeB
-    hash: 45c25e210b62
+    hash: 188c84d72dc1
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S5-B.md rows 15-22: meta-claims, counts, labels, rule order'
   - stage: S6
     verdict: correct
     by: verifier
-    hash: 45c25e210b62
+    hash: 188c84d72dc1
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S6.md verdict table: solved before reading, derivations checked'
   - stage: S8
     verdict: correct
     by: seam
-    hash: 45c25e210b62
+    hash: 188c84d72dc1
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S8-seam.md rows 3, 22, 24: scaffolding, exit checks, R items and
@@ -3489,33 +3489,33 @@ items:
   kind: exr
   file: 07-disjunction-and-cases.md
   line: 729
-  hash: f3d49fc4a363
+  hash: d12f8c107202
   verdicts:
   - stage: S5a
     verdict: correct
     by: refereeA
-    hash: f3d49fc4a363
+    hash: d12f8c107202
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S5-A.md: checked line by line (Findings table)'
   - stage: S5b
     verdict: correct
     by: refereeB
-    hash: f3d49fc4a363
+    hash: d12f8c107202
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S5-B.md rows 15-22: meta-claims, counts, labels, rule order'
   - stage: S6
     verdict: correct
     by: verifier
-    hash: f3d49fc4a363
+    hash: d12f8c107202
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S6.md verdict table: solved before reading, derivations checked'
   - stage: S8
     verdict: correct
     by: seam
-    hash: f3d49fc4a363
+    hash: d12f8c107202
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S8-seam.md rows 3, 22, 24: scaffolding, exit checks, R items and
@@ -3524,7 +3524,7 @@ items:
   kind: exr
   file: 07-disjunction-and-cases.md
   line: 785
-  hash: 7446cce2ece1
+  hash: 015b66b5908b
   verdicts:
   - stage: S5a
     verdict: correct
@@ -3550,21 +3550,21 @@ items:
   - stage: S7
     verdict: correct
     by: reviser
-    hash: 7446cce2ece1
+    hash: 015b66b5908b
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews (Resolution sections): B12: |-y| = |y| cited @exr-disjunction-and-cases-c1'
   - stage: S7r
     verdict: correct
     by: rereferee
-    hash: 7446cce2ece1
+    hash: 015b66b5908b
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S7-recheck.md: fix accepted (fixed correctly)'
   - stage: S8
     verdict: correct
     by: seam
-    hash: 7446cce2ece1
+    hash: 015b66b5908b
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S8-seam.md rows 3, 22, 24: scaffolding, exit checks, R items and
@@ -3573,33 +3573,33 @@ items:
   kind: exr
   file: 07-disjunction-and-cases.md
   line: 822
-  hash: 7c884cebac04
+  hash: 4f6653d949d7
   verdicts:
   - stage: S5a
     verdict: correct
     by: refereeA
-    hash: 7c884cebac04
+    hash: 4f6653d949d7
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S5-A.md: checked line by line (Findings table)'
   - stage: S5b
     verdict: correct
     by: refereeB
-    hash: 7c884cebac04
+    hash: 4f6653d949d7
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S5-B.md rows 15-22: meta-claims, counts, labels, rule order'
   - stage: S6
     verdict: correct
     by: verifier
-    hash: 7c884cebac04
+    hash: 4f6653d949d7
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S6.md verdict table: solved before reading, derivations checked'
   - stage: S8
     verdict: correct
     by: seam
-    hash: 7c884cebac04
+    hash: 4f6653d949d7
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S8-seam.md rows 3, 22, 24: scaffolding, exit checks, R items and
@@ -3608,47 +3608,47 @@ items:
   kind: exr
   file: 07-disjunction-and-cases.md
   line: 871
-  hash: b764f6c2f96a
+  hash: 91ffd9295e0c
   verdicts:
   - stage: S5a
     verdict: correct
     by: refereeA
-    hash: b764f6c2f96a
+    hash: 91ffd9295e0c
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S5-A.md: checked line by line (Findings table)'
   - stage: S5b
     verdict: correct
     by: refereeB
-    hash: b764f6c2f96a
+    hash: 91ffd9295e0c
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S5-B.md rows 15-22: meta-claims, counts, labels, rule order'
   - stage: S6
     verdict: minor
     by: verifier
-    hash: b764f6c2f96a
+    hash: 91ffd9295e0c
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S6.md finding 4: Hint 2 states the key move'
   - stage: S7
     verdict: correct
     by: reviser
-    hash: b764f6c2f96a
+    hash: 91ffd9295e0c
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews (Resolution sections): S6-4: Hint 2 asks, does not state, the case split'
   - stage: S7r
     verdict: correct
     by: rereferee
-    hash: b764f6c2f96a
+    hash: 91ffd9295e0c
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S7-recheck.md: fix accepted (fixed correctly)'
   - stage: S8
     verdict: correct
     by: seam
-    hash: b764f6c2f96a
+    hash: 91ffd9295e0c
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S8-seam.md rows 3, 22, 24: scaffolding, exit checks, R items and
@@ -3657,33 +3657,33 @@ items:
   kind: exr
   file: 07-disjunction-and-cases.md
   line: 936
-  hash: 9f060a84c0bd
+  hash: 5d333b138890
   verdicts:
   - stage: S5a
     verdict: correct
     by: refereeA
-    hash: 9f060a84c0bd
+    hash: 5d333b138890
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S5-A.md: checked line by line (Findings table)'
   - stage: S5b
     verdict: correct
     by: refereeB
-    hash: 9f060a84c0bd
+    hash: 5d333b138890
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S5-B.md rows 15-22: meta-claims, counts, labels, rule order'
   - stage: S6
     verdict: correct
     by: verifier
-    hash: 9f060a84c0bd
+    hash: 5d333b138890
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S6.md verdict table: solved before reading, derivations checked'
   - stage: S8
     verdict: correct
     by: seam
-    hash: 9f060a84c0bd
+    hash: 5d333b138890
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S8-seam.md rows 3, 22, 24: scaffolding, exit checks, R items and
@@ -3692,33 +3692,33 @@ items:
   kind: exr
   file: 07-disjunction-and-cases.md
   line: 961
-  hash: 6fb0c3adca54
+  hash: b66f974ca194
   verdicts:
   - stage: S5a
     verdict: correct
     by: refereeA
-    hash: 6fb0c3adca54
+    hash: b66f974ca194
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S5-A.md: checked line by line (Findings table)'
   - stage: S5b
     verdict: correct
     by: refereeB
-    hash: 6fb0c3adca54
+    hash: b66f974ca194
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S5-B.md rows 15-22: meta-claims, counts, labels, rule order'
   - stage: S6
     verdict: correct
     by: verifier
-    hash: 6fb0c3adca54
+    hash: b66f974ca194
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S6.md verdict table: solved before reading, derivations checked'
   - stage: S8
     verdict: correct
     by: seam
-    hash: 6fb0c3adca54
+    hash: b66f974ca194
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S8-seam.md rows 3, 22, 24: scaffolding, exit checks, R items and
@@ -3727,33 +3727,33 @@ items:
   kind: exr
   file: 07-disjunction-and-cases.md
   line: 989
-  hash: 5426791746ec
+  hash: fd72836a2a24
   verdicts:
   - stage: S5a
     verdict: correct
     by: refereeA
-    hash: 5426791746ec
+    hash: fd72836a2a24
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S5-A.md: checked line by line (Findings table)'
   - stage: S5b
     verdict: correct
     by: refereeB
-    hash: 5426791746ec
+    hash: fd72836a2a24
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S5-B.md rows 15-22: meta-claims, counts, labels, rule order'
   - stage: S6
     verdict: correct
     by: verifier
-    hash: 5426791746ec
+    hash: fd72836a2a24
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S6.md verdict table: solved before reading, derivations checked'
   - stage: S8
     verdict: correct
     by: seam
-    hash: 5426791746ec
+    hash: fd72836a2a24
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch01-S8-seam.md rows 3, 22, 24: scaffolding, exit checks, R items and
