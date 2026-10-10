@@ -435,7 +435,7 @@ $\begin{nd}
 \end{center}
 ```
 
-The derivations of (a), (b) and (c) close every box by \( \rulename{\neg I} \) or \( \rulename{\vee E} \) and use no \( \rulename{RAA} \). The derivation of (d) uses \( \rulename{RAA} \) at lines 6, 10 and 13. This proves all four laws.
+The derivations of (a), (b), and (c) close every box by \( \rulename{\neg I} \) or \( \rulename{\vee E} \) and use no \( \rulename{RAA} \). The derivation of (d) uses \( \rulename{RAA} \) at lines 6, 10, and 13. This proves all four laws.
 :::
 
 Laws (a)–(c) conclude negations or a conjunction of negations, and \( \rulename{\neg I} \) builds negations. Law (d) concludes a **disjunction**, and \( \rulename{\vee I} \) needs to know **which** side holds, while the premise says only that \( P \) and \( Q \) do not both hold. \( \rulename{RAA} \) gets round the missing decision without making it.
@@ -447,7 +447,7 @@ Suppose \( \rulename{RAA} \) were deleted from the list of rules. Which of the f
 :::
 
 ::: {.solution}
-The derivations of (a), (b) and (c) would still be correct: they use \( \rulename{\neg I} \), \( \rulename{\neg E} \), \( \rulename{\vee I} \), \( \rulename{\vee E} \), \( \rulename{\wedge I} \) and \( \rulename{\wedge E} \) only. In the derivation of (d), line 6 is the first to lose its justification: it closes the box that opened with \( \neg P \) and writes \( P \), which is \( \rulename{RAA} \). (Lines 10 and 13 lose theirs too.)
+The derivations of (a), (b), and (c) would still be correct: they use \( \rulename{\neg I} \), \( \rulename{\neg E} \), \( \rulename{\vee I} \), \( \rulename{\vee E} \), \( \rulename{\wedge I} \), and \( \rulename{\wedge E} \) only. In the derivation of (d), line 6 is the first to lose its justification: it closes the box that opened with \( \neg P \) and writes \( P \), which is \( \rulename{RAA} \). (Lines 10 and 13 lose theirs too.)
 :::
 
 ## Implication as a disjunction
@@ -537,7 +537,7 @@ To say this exactly, we need two rule forms and one notion. **\( \rulename{\neg\
 ::: {#thm-classical-rules-interderivable}
 [The Classical Rules Are Interderivable]
 
-Over the primitive rules other than \( \rulename{RAA} \), each of the three rules \( \rulename{RAA} \), \( \rulename{\neg\neg E} \) and \( \rulename{LEM} \) derives the other two. In particular, adding any one of the three to the other primitive rules gives the same derivable sequents.
+Over the primitive rules other than \( \rulename{RAA} \), each of the three rules \( \rulename{RAA} \), \( \rulename{\neg\neg E} \), and \( \rulename{LEM} \) derives the other two. In particular, adding any one of the three to the other primitive rules gives the same derivable sequents.
 :::
 
 ::: {.idea}
@@ -594,7 +594,7 @@ The first case is a one-line box: it opens with \( \varphi \) and so already end
 
 In each replacement the later lines are renumbered, and a later citation of the old line \( k \) now cites the fragment's last line, which holds the same statement in the same boxes. The premises and the last line of the derivation are unchanged.
 
-Finally, replacements can be chained. \( \rulename{LEM} \) derives \( \rulename{RAA} \): replace each use of \( \rulename{RAA} \) by the fragment of ②, and then each use of \( \rulename{\neg\neg E} \) so created by the fragment of ③. \( \rulename{\neg\neg E} \) derives \( \rulename{LEM} \): replace each use of \( \rulename{LEM} \) by the derivation of ①, and then each use of \( \rulename{RAA} \) in it by the fragment of ②. With ①, ② and ③, this shows that each of the three rules derives the other two, as claimed.
+Finally, replacements can be chained. \( \rulename{LEM} \) derives \( \rulename{RAA} \): replace each use of \( \rulename{RAA} \) by the fragment of ②, and then each use of \( \rulename{\neg\neg E} \) so created by the fragment of ③. \( \rulename{\neg\neg E} \) derives \( \rulename{LEM} \): replace each use of \( \rulename{LEM} \) by the derivation of ①, and then each use of \( \rulename{RAA} \) in it by the fragment of ②. With ①, ②, and ③, this shows that each of the three rules derives the other two, as claimed.
 :::
 
 So the classical part of our rules is **one** extra principle, whichever of its three forms we write down. Chapter 5 tells the story of the mathematicians who declined it, and shows what their mathematics looks like.
@@ -649,7 +649,7 @@ Written mathematics carries these rules in a handful of phrases. The Lean column
 [A1]
 
 ::: {.enumerate options="label=(\alph*)"}
-1. "Suppose \( 7 \) is even. Then \( 7 = 2k \) for some integer \( k \), so \( k = 7/2 \), which is not an integer. This is impossible. Hence \( 7 \) is not even." Is the last step \( \rulename{\neg I} \), \( \rulename{RAA} \) or neither? What did the box open with?
+1. "Suppose \( 7 \) is even. Then \( 7 = 2k \) for some integer \( k \), so \( k = 7/2 \), which is not an integer. This is impossible. Hence \( 7 \) is not even." Is the last step \( \rulename{\neg I} \), \( \rulename{RAA} \), or neither? What did the box open with?
 2. "Let \( x \) be real. Suppose \( x^2 \ge 2x - 1 \) fails, that is, \( x^2 < 2x - 1 \). Then \( (x - 1)^2 < 0 \), which is impossible. Hence \( x^2 \ge 2x - 1 \)." Same questions.
 3. "Assume \( P \). Then, as shown above, \( Q \). Hence \( P \to Q \)." Same questions.
 4. State \( \rulename{RAA} \) and \( \rulename{\neg I} \) side by side, and say which of the two the derivation of @prp-double-negation (a) uses.
@@ -838,7 +838,7 @@ Let \( P \) be the statement "\( x \le 1 \)".
 Suppose that, instead of \( \rulename{RAA} \), we had \( \rulename{LEM} \) as a rule: \( \varphi \vee \neg\varphi \) may be written on any line, for any statement \( \varphi \).
 
 ::: {.enumerate options="label=(\alph*)"}
-1. Given a box that opens with \( \neg\varphi \) and reaches \( \bot \), derive \( \varphi \) using \( \rulename{LEM} \), \( \rulename{\vee E} \), \( \rulename{\bot E} \) and the other primitive rules, but neither \( \rulename{RAA} \) nor \( \rulename{\neg\neg E} \). Write the case \( \neg\varphi \) as the given box, extended.
+1. Given a box that opens with \( \neg\varphi \) and reaches \( \bot \), derive \( \varphi \) using \( \rulename{LEM} \), \( \rulename{\vee E} \), \( \rulename{\bot E} \), and the other primitive rules, but neither \( \rulename{RAA} \) nor \( \rulename{\neg\neg E} \). Write the case \( \neg\varphi \) as the given box, extended.
 2. Which two parts of the proof of @thm-classical-rules-interderivable does your fragment shortcut, and which lines of their composite does it save?
 :::
 :::
@@ -955,7 +955,7 @@ Line 7 cites line 5, the assumption of the enclosing case box, which is still op
 ::: {#exr-reductio-and-classical-rules-c3}
 [C3: Exit check: a classical disjunction]
 
-Derive \( \vdash P \vee (P \to Q) \) using the **primitive** rules only (those of Chapter 1, \( \rulename{\neg E} \), \( \rulename{\bot E} \), \( \rulename{\neg I} \), \( \rulename{{\leftrightarrow}I} \), \( \rulename{{\leftrightarrow}E} \) and \( \rulename{RAA} \)), with no derived rule, so neither \( \rulename{LEM} \) nor \( \rulename{\neg\neg E} \) as a single line. Name the rule on every line, and say which line is classical.
+Derive \( \vdash P \vee (P \to Q) \) using the **primitive** rules only (those of Chapter 1, \( \rulename{\neg E} \), \( \rulename{\bot E} \), \( \rulename{\neg I} \), \( \rulename{{\leftrightarrow}I} \), \( \rulename{{\leftrightarrow}E} \), and \( \rulename{RAA} \)), with no derived rule, so neither \( \rulename{LEM} \) nor \( \rulename{\neg\neg E} \) as a single line. Name the rule on every line, and say which line is classical.
 :::
 
 ::: {.solution}
@@ -993,7 +993,7 @@ A second correct route first derives \( P \vee \neg P \) by the eight lines of @
 - 2: \( \rulename{RAA} \) closes the outer box, and it is named as the classical step.
 - 1: every citation is available.
 
-The second route earns the same points, step for step: 2 for the written-out excluded middle opened correctly (its \( \rulename{RAA} \) box on \( \neg(P \vee \neg P) \)); 3 for the box on \( P \) in the case \( \neg P \), closed by \( \rulename{\bot E} \); 2 for \( \rulename{{\to}I} \), the two \( \rulename{\vee I} \) lines and the \( \rulename{\vee E} \); 2 for naming the \( \rulename{RAA} \) inside excluded middle as the classical step; 1 for availability. Fatal errors (0 for the step): opening the outer box with anything but \( \neg(P \vee (P \to Q)) \); closing the outer box by \( \rulename{\neg I} \) (that gives \( \neg\neg(P \vee (P \to Q)) \)); a line justified by \( \rulename{\neg\neg E} \) or \( \rulename{LEM} \) taken as a rule, which the item excludes.
+The second route earns the same points, step for step: 2 for the written-out excluded middle opened correctly (its \( \rulename{RAA} \) box on \( \neg(P \vee \neg P) \)); 3 for the box on \( P \) in the case \( \neg P \), closed by \( \rulename{\bot E} \); 2 for \( \rulename{{\to}I} \), the two \( \rulename{\vee I} \) lines, and the \( \rulename{\vee E} \); 2 for naming the \( \rulename{RAA} \) inside excluded middle as the classical step; 1 for availability. Fatal errors (0 for the step): opening the outer box with anything but \( \neg(P \vee (P \to Q)) \); closing the outer box by \( \rulename{\neg I} \) (that gives \( \neg\neg(P \vee (P \to Q)) \)); a line justified by \( \rulename{\neg\neg E} \) or \( \rulename{LEM} \) taken as a rule, which the item excludes.
 :::
 
 <!-- dependency ledger

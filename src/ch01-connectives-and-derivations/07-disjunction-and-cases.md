@@ -363,7 +363,7 @@ The goal \( \abs{x} \ge x \) is the disjunction \( (\abs{x} > x) \vee (\abs{x} =
 >
 > In either case \( \abs{x} \ge x \), so \( \abs{x} \ge x \).
 
-As a derivation, with the order fact, the definition's first clause and the school-algebra fact about negative numbers as premises, and with \( \abs{x} \ge x \) written out:
+As a derivation, with the order fact, the definition's first clause, and the school-algebra fact about negative numbers as premises, and with \( \abs{x} \ge x \) written out:
 
 ```{=latex}
 \begin{center}
@@ -465,7 +465,7 @@ Each of the following begins a proof that \( x^2 \ge 0 \) for every real number 
 
 ## What the rules sound like
 
-Here is the row of the rule, phrase and Lean table for \( \rulename{\vee E} \). As before, the last column is for readers who use a proof assistant, and nothing depends on it.
+Here is the row of the rule, phrase, and Lean table for \( \rulename{\vee E} \). As before, the last column is for readers who use a proof assistant, and nothing depends on it.
 
 | Rule | You write | Lean |
 |------|--------------------------------------|------------------------|
@@ -568,7 +568,7 @@ Each rule is also a move in the search for a derivation. Read by the goal's main
 | \( \to \) | open a box with the hypothesis; the new goal is the conclusion; close with \( \rulename{{\to}I} \) | fire it with \( \rulename{{\to}E} \) once its hypothesis is on a line, or make the hypothesis a subgoal |
 | \( \vee \) | postpone; choose a side with \( \rulename{\vee I} \) when that side is in hand | split with \( \rulename{\vee E} \); both boxes end in the current goal |
 
-And here is the full rule, phrase and Lean table for the chapter, assembled from the rows of Sections 1.3 to 1.7.
+And here is the full rule, phrase, and Lean table for the chapter, assembled from the rows of Sections 1.3 to 1.7.
 
 | Rule | You write | Lean |
 |------|--------------------------------------|------------------------|
@@ -580,7 +580,7 @@ And here is the full rule, phrase and Lean table for the chapter, assembled from
 | \( \rulename{\vee I} \) | "So \( P \) or \( Q \) holds." | `left` (or `Or.inl hp`); `right` |
 | \( \rulename{\vee E} \) | "Case 1: \( P \). … so \( R \). Case 2: \( Q \). … so \( R \). In either case, \( R \)." | `Or.elim h` (or `cases h`) |
 
-The rules for "not", for \( \bot \) and for "if and only if", the rule for proof by contradiction, and the method that turns the table of moves above into a way of finding derivations are the subject of Chapter 2.
+The rules for "not", for \( \bot \), and for "if and only if", the rule for proof by contradiction, and the method that turns the table of moves above into a way of finding derivations are the subject of Chapter 2.
 
 ## Exercises
 
@@ -616,7 +616,7 @@ The rules for "not", for \( \bot \) and for "if and only if", the rule for proof
 :::
 
 ::: {.solution}
-(a) The schema is the first one of @def-rules-disjunction: from a line \( i \) holding \( \varphi \vee \psi \), a box \( \lines{j}{k} \) opened by \( \varphi \) and a box \( \lines{l}{m} \) opened by \( \psi \), each ending in the same statement \( \chi \) as a line of its own, a line \( n \) holding \( \chi \). The justification "\( \rulename{\vee E} \) \( i, \lines{j}{k}, \lines{l}{m} \)" cites the disjunction and the two boxes.
+(a) The schema is the first one of @def-rules-disjunction: from a line \( i \) holding \( \varphi \vee \psi \), a box \( \lines{j}{k} \) opened by \( \varphi \), and a box \( \lines{l}{m} \) opened by \( \psi \), each ending in the same statement \( \chi \) as a line of its own, a line \( n \) holding \( \chi \). The justification "\( \rulename{\vee E} \) \( i, \lines{j}{k}, \lines{l}{m} \)" cites the disjunction and the two boxes.
 
 (b) In the first, the disjunction is "\( n \) is even or \( n \) is odd", and both cases end in "\( n^2 + n \) is even". In the second, it is "\( t \ge 0 \) or \( t < 0 \)" (the sentence does not say it, and a careful reader supplies it), and both cases end in \( t^2 \ge 0 \).
 

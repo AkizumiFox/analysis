@@ -4,19 +4,19 @@
 
 The motivating problem is this. A function \( f \) is continuous when for every \( x \) and every \( \varepsilon > 0 \) there is a \( \delta > 0 \) that works; it is uniformly continuous when for every \( \varepsilon > 0 \) there is a \( \delta > 0 \) that works for every \( x \). The two definitions differ only in the order of two quantifiers. *Why does "uniformly continuous implies continuous" have a proof a few lines long, while its converse is false?* The answer is a fact about the order in which names are introduced in a derivation, and Section 4.10 reads it off rule by rule. Along the way the chapter translates mathematical definitions into formulas, negates them quantifier by quantifier, gives formulas a meaning in **models**, and uses models to show that some searches for a derivation must fail. The last section, which is optional, proves that the extended rules are sound.
 
-**What you need.** Chapters 1–3. From Chapters 1 and 2: the rules for every connective, the definition of a derivation with its boxes and its scope rule (@def-derivation), derived rules (@def-derived-rule), the classical rules of Section 2.5, and the search method of Section 2.6, which each rule section here extends by one step. From Chapter 3: formulas as objects (@def-formula), structural induction and recursion (@thm-structural-induction, @thm-structural-recursion), truth tables, and soundness with its refuting rows (@thm-soundness, @cor-refuting-row). School arithmetic and the order of \( \nN \), \( \nZ \), \( \nQ \) and \( \nR \) are used in examples as facts.
+**What you need.** Chapters 1–3. From Chapters 1 and 2: the rules for every connective, the definition of a derivation with its boxes and its scope rule (@def-derivation), derived rules (@def-derived-rule), the classical rules of Section 2.5, and the search method of Section 2.6, which each rule section here extends by one step. From Chapter 3: formulas as objects (@def-formula), structural induction and recursion (@thm-structural-induction, @thm-structural-recursion), truth tables, and soundness with its refuting rows (@thm-soundness, @cor-refuting-row). School arithmetic and the order of \( \nN \), \( \nZ \), \( \nQ \), and \( \nR \) are used in examples as facts.
 
-**Time.** About 70 hours on the core track (all of A, one B and one C per section, the exit checks); about 90 hours for everything.
+**Time.** About 70 hours on the core track (all of A, one B, and one C per section, the exit checks); about 90 hours for everything.
 
 ## Roadmap
 
-- **Predicates and quantifiers.** Predicates, variables and the domain; how to read "for every" and "there exists", bounded quantifiers, and why the order of two quantifiers can change everything.
-- **Terms, formulas, free variables and substitution.** The exact language, which letters are still holes, the operation "put \( t \) in for \( x \)" that every rule uses, and the one way it goes wrong: capture.
+- **Predicates and quantifiers.** Predicates, variables, and the domain; how to read "for every" and "there exists", bounded quantifiers, and why the order of two quantifiers can change everything.
+- **Terms, formulas, free variables, and substitution.** The exact language, which letters are still holes, the operation "put \( t \) in for \( x \)" that every rule uses, and the one way it goes wrong: capture.
 - **Using "for every": instantiation.** The rule \( \rulename{\forall E} \): a universal statement may be applied to any term, and the term is read off the goal.
 - **Proving "for every": let \( x \) be arbitrary.** The rule \( \rulename{\forall I} \) and the flagged box: prove the statement for a fresh name about which nothing is assumed.
 - **Proving "there exists": exhibit a witness.** The rule \( \rulename{\exists I} \), and why the witness is chosen only when an available line shows it.
-- **Using "there exists": name a witness.** The rule \( \rulename{\exists E} \), its box and its fresh-name condition, and the first derivation that moves one quantifier past another.
-- **Equality and unique existence.** The rules \( \rulename{=I} \) and \( \rulename{=E} \), calculation chains, "there is exactly one", and the completed table of rules, phrases and proof-assistant commands.
+- **Using "there exists": name a witness.** The rule \( \rulename{\exists E} \), its box, and its fresh-name condition, and the first derivation that moves one quantifier past another.
+- **Equality and unique existence.** The rules \( \rulename{=I} \) and \( \rulename{=E} \), calculation chains, "there is exactly one", and the completed table of rules, phrases, and proof-assistant commands.
 - **Translating mathematics.** Definitions from analysis written as formulas with nested and bounded quantifiers, the bounded forms of the four rules, and the search method in one place.
 - **Negating and moving quantifiers.** "Not every" is "some not", negation pushed inward quantifier by quantifier, and the laws that move a quantifier across a connective.
 - **Uniformly continuous implies continuous, rule by rule.** The chapter's centerpiece: the full derivation, and the exact line at which the converse breaks down.

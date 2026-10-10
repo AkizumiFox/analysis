@@ -4,7 +4,7 @@ Section 6.3 made "the pairs a description picks out" into a set: a relation from
 
 ## What is a function?
 
-Everyone has used functions since school, and the everyday definition is "a rule that assigns to each input one output". Look at the word "rule". The rules \( x \mapsto x^2 \) and \( x \mapsto (x + 1)^2 - 2x - 1 \) are different: one squares, the other adds, squares, subtracts and subtracts again. Yet on every real number they give the same answer, and nobody would call them different functions. Other functions have no rule at all that one could write down. A table of measured temperatures, one per day, assigns to each day one number, and no formula produces it.
+Everyone has used functions since school, and the everyday definition is "a rule that assigns to each input one output". Look at the word "rule". The rules \( x \mapsto x^2 \) and \( x \mapsto (x + 1)^2 - 2x - 1 \) are different: one squares, the other adds, squares, subtracts, and subtracts again. Yet on every real number they give the same answer, and nobody would call them different functions. Other functions have no rule at all that one could write down. A table of measured temperatures, one per day, assigns to each day one number, and no formula produces it.
 
 So the rule is not what matters. What matters is **which output goes with which input**: the set of input–output pairs. That set is a relation, and Section 6.3 said exactly when two relations are the same, namely when they contain the same pairs. So we forget the rule and keep the pairs. One more piece of data is needed, the set in which the outputs are **declared** to lie; the reason is given after the definition.
 
@@ -127,7 +127,7 @@ Write \( f = (G, Y) \) and \( g = (G', Y') \), as in @def-function.
 
 \( (\Rightarrow) \) Suppose \( f = g \). By the characteristic property of pairs (@def-ordered-pair), \( G = G' \) and \( Y = Y' \). The domain is determined by the graph, as the set of first coordinates of its elements, so \( X = X' \). Let \( x \in X \). By \( (\ast\ast) \), \( (x, f(x)) \in G = G' \), so \( (x, f(x)) \in g \), and \( (\ast\ast) \) for \( g \) gives \( f(x) = g(x) \).
 
-\( (\Leftarrow) \) Suppose \( X = X' \), \( Y = Y' \) and \( f(x) = g(x) \) for every \( x \in X \). We show \( G \subseteq G' \). Let \( p \in G \). Since \( G \subseteq X \times Y \), \( p = (x, y) \) with \( x \in X \) and \( y \in Y \). By \( (\ast\ast) \), \( y = f(x) \), so \( y = g(x) \) by the hypothesis, and then \( p = (x, y) \in G' \) by \( (\ast\ast) \) for \( g \). The same argument with \( f \) and \( g \) exchanged gives \( G' \subseteq G \), so \( G = G' \) by @prp-subset-antisymmetric. Since also \( Y = Y' \), the characteristic property gives \( (G, Y) = (G', Y') \), that is, \( f = g \).
+\( (\Leftarrow) \) Suppose \( X = X' \), \( Y = Y' \), and \( f(x) = g(x) \) for every \( x \in X \). We show \( G \subseteq G' \). Let \( p \in G \). Since \( G \subseteq X \times Y \), \( p = (x, y) \) with \( x \in X \) and \( y \in Y \). By \( (\ast\ast) \), \( y = f(x) \), so \( y = g(x) \) by the hypothesis, and then \( p = (x, y) \in G' \) by \( (\ast\ast) \) for \( g \). The same argument with \( f \) and \( g \) exchanged gives \( G' \subseteq G \), so \( G = G' \) by @prp-subset-antisymmetric. Since also \( Y = Y' \), the characteristic property gives \( (G, Y) = (G', Y') \), that is, \( f = g \).
 :::
 
 So to show two functions equal, check three things: the same domain, the same codomain, and the same value at an arbitrary point. To show them different, one witness suffices: a point where the values differ, or a difference in domain or codomain.
@@ -168,7 +168,7 @@ Finally, all functions from \( X \) to \( Y \) form a set, written
 \[
 Y^X \coloneqq \{ f : f \text{ is a function from } X \text{ to } Y \} .
 \]
-It is a set by the working rules of Section 6.1: every function \( X \to Y \) is a pair \( (G, Y) \) with \( G \in \powerset{X \times Y} \), so \( Y^X \) is the subset of \( \powerset{X \times Y} \times \{Y\} \) cut out by the condition of @def-function, and this product is a set by (W2), (W4) and (W5), so \( Y^X \) is a set by specification (W1). The letters are in this order because, for finite sets, \( Y^X \) has \( m^n \) elements when \( Y \) has \( m \) and \( X \) has \( n \), as the next example suggests; counting is Chapter 8's business. The set \( \{0, 1\}^{\nN} \) of all sequences of zeros and ones plays a leading role in Chapter 8.
+It is a set by the working rules of Section 6.1: every function \( X \to Y \) is a pair \( (G, Y) \) with \( G \in \powerset{X \times Y} \), so \( Y^X \) is the subset of \( \powerset{X \times Y} \times \{Y\} \) cut out by the condition of @def-function, and this product is a set by (W2), (W4), and (W5), so \( Y^X \) is a set by specification (W1). The letters are in this order because, for finite sets, \( Y^X \) has \( m^n \) elements when \( Y \) has \( m \) and \( X \) has \( n \), as the next example suggests; counting is Chapter 8's business. The set \( \{0, 1\}^{\nN} \) of all sequences of zeros and ones plays a leading role in Chapter 8.
 
 ::: {#exm-function-set-small}
 [All functions between two small sets]
@@ -244,7 +244,7 @@ Composition is not commutative, but it is associative, and the identity function
 ::: {#prp-composition-associative}
 [Composition Is Associative]
 
-Let \( f \colon X \to Y \), \( g \colon Y \to Z \) and \( h \colon Z \to W \) be functions. Then
+Let \( f \colon X \to Y \), \( g \colon Y \to Z \), and \( h \colon Z \to W \) be functions. Then
 \[
 h \circ (g \circ f) = (h \circ g) \circ f ,
 \]
@@ -320,7 +320,7 @@ so a failure of surjectivity is shown by **one witness**: a point of the codomai
 Surjectivity depends on the codomain, which is why @def-function records it: \( s_1 \) and \( s_2 \) of @exm-equal-functions have the same graph, and we shall see that \( s_2 \) is surjective and \( s_1 \) is not.
 
 ::: {.warning}
-Surjectivity cannot be checked by trying some \( y \). The function \( f \colon \nR \to \nR \), \( f(x) = x^2 + x \), reaches \( 0 = f(0) \), \( 2 = f(1) \), \( 6 = f(2) \) and \( 12 = f(3) \), and a reader who tries these may believe it reaches everything. It does not reach \( -1 \): \( x^2 + x = -1 \) would mean \( x^2 + x + 1 = 0 \), but \( x^2 + x + 1 = (x + \tfrac12)^2 + \tfrac34 > 0 \) for every real \( x \). Concluding "for every \( y \)" from a few instances is entry (N1) of the catalogue in Chapter 5.
+Surjectivity cannot be checked by trying some \( y \). The function \( f \colon \nR \to \nR \), \( f(x) = x^2 + x \), reaches \( 0 = f(0) \), \( 2 = f(1) \), \( 6 = f(2) \), and \( 12 = f(3) \), and a reader who tries these may believe it reaches everything. It does not reach \( -1 \): \( x^2 + x = -1 \) would mean \( x^2 + x + 1 = 0 \), but \( x^2 + x + 1 = (x + \tfrac12)^2 + \tfrac34 > 0 \) for every real \( x \). Concluding "for every \( y \)" from a few instances is entry (N1) of the catalogue in Chapter 5.
 :::
 
 ### Bijective functions
@@ -344,7 +344,7 @@ Proofs of these properties have a fixed shape, read off the definitions.
 ::: {#exm-injective-surjective-first}
 [Deciding injective and surjective]
 
-For each function below, decide with proof whether it is injective and whether it is onto its codomain.
+For each function below, decide with proof whether it is injective and whether it is surjective.
 
 (a) \( f \colon \nR \to \nR \), \( f(x) = 3x - 5 \).
 

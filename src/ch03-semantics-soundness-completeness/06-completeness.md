@@ -30,7 +30,7 @@ In Chapter 2 we learned to use a proved sequent as a single line (@def-derived-r
 ::: {#lem-weakening-cut}
 [Weakening and Cut]
 
-Let \( \Gamma \) and \( \Delta \) be lists of formulas, and let \( \varphi \), \( \psi \), \( \alpha_1, \dots, \alpha_m \) (\( m \ge 1 \)) and \( \beta \) be formulas.
+Let \( \Gamma \) and \( \Delta \) be lists of formulas, and let \( \varphi \), \( \psi \), \( \alpha_1, \dots, \alpha_m \) (\( m \ge 1 \)), and \( \beta \) be formulas.
 
 ::: {.enumerate options="label=(\alph*)"}
 1. **Weakening.** If \( \Gamma \vdash \psi \) and every member of \( \Gamma \) is a member of \( \Delta \), then \( \Delta \vdash \psi \). In particular, \( \Gamma \vdash \psi \) implies \( \Gamma, \varphi \vdash \psi \).

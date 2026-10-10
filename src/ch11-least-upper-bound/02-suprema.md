@@ -22,7 +22,7 @@ In symbols, \( M \) is an upper bound of \( A \) when
 \]
 The bound is an element of \( F \), and nothing requires it to belong to \( A \).
 
-For the interval \( (0, 1) \) in \( \nR \), the numbers \( 1 \), \( \frac32 \) and \( 2026 \) are all upper bounds, and \( 0 \) and \( -17 \) are lower bounds. Upper bounds are never unique: if \( M \) is one, so is every \( M' \ge M \), by transitivity. A minimal change gives a nonexample: \( \frac12 \) is **not** an upper bound of \( (0, 1) \), because \( \frac34 \in (0, 1) \) and \( \frac34 > \frac12 \). One element above \( M \) is enough to spoil it. Negating the definition quantifier by quantifier (the negation rules are the subject of Chapter 4),
+For the interval \( (0, 1) \) in \( \nR \), the numbers \( 1 \), \( \frac32 \), and \( 2026 \) are all upper bounds, and \( 0 \) and \( -17 \) are lower bounds. Upper bounds are never unique: if \( M \) is one, so is every \( M' \ge M \), by transitivity. A minimal change gives a nonexample: \( \frac12 \) is **not** an upper bound of \( (0, 1) \), because \( \frac34 \in (0, 1) \) and \( \frac34 > \frac12 \). One element above \( M \) is enough to spoil it. Negating the definition quantifier by quantifier (the negation rules are the subject of Chapter 4),
 \[
 M \text{ is not an upper bound of } A
 \quad\iff\quad
@@ -258,7 +258,7 @@ This is the gap in \( \nQ \) in its final form. The next section adds to the ord
 ::: {#exr-suprema-a1}
 [A1]
 
-In (a)–(d), give the supremum, infimum, maximum and minimum of the set in \( \nR \), or say that it does not exist. Justify each answer in a line or two. Parts (e) and (f) are about the proof of @thm-no-rational-sup-sqrt2.
+In (a)–(d), give the supremum, infimum, maximum, and minimum of the set in \( \nR \), or say that it does not exist. Justify each answer in a line or two. Parts (e) and (f) are about the proof of @thm-no-rational-sup-sqrt2.
 
 ::: {.enumerate options="label=(\alph*)"}
 1. \( \{ -2, 0, \frac73 \} \).
@@ -373,10 +373,10 @@ so \( x > Mx + M = M(x + 1) \), and dividing by \( x + 1 > 0 \) gives \( \frac{x
 ::: {.solution}
 (a) \( A = \{ x \in \nQ : 0 < x < 1 \} \). The argument of @exm-sup-open-interval works in the ordered field \( \nQ \), because the midpoint of two rationals is rational; it shows \( \sup A = 1 \) in \( \nQ \), and \( 1 \notin A \).
 
-(b) (\( \subseteq \)) Let \( u \in U \). Since \( 1 \in B \), we get \( u \ge 1 > 0 \). By @thm-sqrt2-irrational, \( u^2 \ne 2 \). If \( u^2 < 2 \), then \( u \in B \), and Case 1 of the proof of @thm-no-rational-sup-sqrt2, applied to \( s = u \) (which used only \( s \in \nQ \), \( s \ge 1 \) and \( s^2 < 2 \)), produces \( u + h \in B \) with \( u + h > u \), contradicting \( u \in U \). Hence \( u^2 > 2 \).
+(b) (\( \subseteq \)) Let \( u \in U \). Since \( 1 \in B \), we get \( u \ge 1 > 0 \). By @thm-sqrt2-irrational, \( u^2 \ne 2 \). If \( u^2 < 2 \), then \( u \in B \), and Case 1 of the proof of @thm-no-rational-sup-sqrt2, applied to \( s = u \) (which used only \( s \in \nQ \), \( s \ge 1 \), and \( s^2 < 2 \)), produces \( u + h \in B \) with \( u + h > u \), contradicting \( u \in U \). Hence \( u^2 > 2 \).
 (\( \supseteq \)) Let \( u \in \nQ \) with \( u > 0 \) and \( u^2 > 2 \). If some \( x \in B \) had \( x > u \), then \( x^2 > u^2 > 2 \) by @thm-ordered-field-rules (g), contradicting \( x^2 < 2 \). So \( u \) is an upper bound of \( B \), and \( u \in U \).
 
-(c) Let \( q \in \nQ \) with \( q > 0 \). By @thm-sqrt2-irrational, \( q^2 \ne 2 \), so by trichotomy exactly one of \( q^2 < 2 \) and \( q^2 > 2 \) holds, that is, \( q \) lies in exactly one of \( B \) and \( U \), by (b). If \( B \) had a largest element \( b \), Case 1 of the proof (with \( s = b \), valid since \( b \ge 1 \) when \( b \) is largest, as \( 1 \in B \)) would give a larger element \( b + h \in B \). If \( U \) had a smallest element \( u \), Case 2 of the proof (with \( s = u \), which needs only \( s > 0 \), \( s \in \nQ \) and \( s^2 > 2 \)) would give \( u - h \in U \), smaller. So the positive rationals split into a lower piece with no top and an upper piece with no bottom. Nothing rational sits between the two pieces; that missing point is the gap.
+(c) Let \( q \in \nQ \) with \( q > 0 \). By @thm-sqrt2-irrational, \( q^2 \ne 2 \), so by trichotomy exactly one of \( q^2 < 2 \) and \( q^2 > 2 \) holds, that is, \( q \) lies in exactly one of \( B \) and \( U \), by (b). If \( B \) had a largest element \( b \), Case 1 of the proof (with \( s = b \), valid since \( b \ge 1 \) when \( b \) is largest, as \( 1 \in B \)) would give a larger element \( b + h \in B \). If \( U \) had a smallest element \( u \), Case 2 of the proof (with \( s = u \), which needs only \( s > 0 \), \( s \in \nQ \), and \( s^2 > 2 \)) would give \( u - h \in U \), smaller. So the positive rationals split into a lower piece with no top and an upper piece with no bottom. Nothing rational sits between the two pieces; that missing point is the gap.
 :::
 
 ::: {#exr-suprema-c2}

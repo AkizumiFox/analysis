@@ -67,7 +67,7 @@ Read the schema clause by clause, as we read those of @def-rules-conjunction.
 
 **A degenerate case.** The statements \( \varphi \) and \( \psi \) may be the same. From \( P \to P \) and \( P \), the rule writes \( P \), which was already there. The line is legal and useless.
 
-*Why this rule.* It is what "by Theorem so-and-so" means. A theorem of school algebra says: if \( a < b \) and \( b < c \), then \( a < c \). Take its instance with \( a = \sqrt{2} \), \( b = 1.5 \) and \( c = 2 \) (passing from "for all \( a, b, c \)" to one instance is a rule of its own, which Chapter 4 states; here we take the instance as given):
+*Why this rule.* It is what "by Theorem so-and-so" means. A theorem of school algebra says: if \( a < b \) and \( b < c \), then \( a < c \). Take its instance with \( a = \sqrt{2} \), \( b = 1.5 \), and \( c = 2 \) (passing from "for all \( a, b, c \)" to one instance is a rule of its own, which Chapter 4 states; here we take the instance as given):
 \[
 \bigl( (\sqrt{2} < 1.5) \wedge (1.5 < 2) \bigr) \to \sqrt{2} < 2 .
 \]
@@ -108,7 +108,7 @@ With \( \rulename{{\to}E} \), a derivation can pass along a chain: from \( P \) 
 The two directions meet in the middle, when a line reached forwards is a goal reached backwards. In written mathematics the backward step has a standard phrase, "to show \( \psi \), it suffices to show \( \varphi \)", and Chapter 5 collects it with the other phrases that stand for rules.
 
 ::: {.check}
-The premises are \( P \), \( P \to R \), \( Q \to S \) and \( R \to S \), and the goal is \( S \). Search backwards: which implications could give the goal, and which of them leads to a derivation?
+The premises are \( P \), \( P \to R \), \( Q \to S \), and \( R \to S \), and the goal is \( S \). Search backwards: which implications could give the goal, and which of them leads to a derivation?
 :::
 
 ::: {.solution}
@@ -217,7 +217,7 @@ $\begin{nd}
 
 Compare (c). There the implication took its two hypotheses one at a time, \( P \to (Q \to R) \), and the conjunction was a premise to be taken apart. Here the implication takes both hypotheses at once, \( (P \wedge Q) \to R \), and the conjunction is a subgoal to be built. The content is the same; the brackets decide which rules the derivation uses. (Section 1.5 shows that each of the two implications is derivable from the other.)
 
-(e) *Idea.* Both ends at once. From the goal: \( Q \wedge S \) is a conjunction, so its last line is \( \rulename{\wedge I} \), with subgoals \( Q \) and \( S \). From the premises: both are conjunctions, so \( \rulename{\wedge E} \) takes each apart, giving \( P \to Q \), \( R \to S \), \( P \) and \( R \). The two ends meet through \( \rulename{{\to}E} \): \( P \to Q \) fires on \( P \) and gives the subgoal \( Q \), and \( R \to S \) fires on \( R \) and gives the subgoal \( S \).
+(e) *Idea.* Both ends at once. From the goal: \( Q \wedge S \) is a conjunction, so its last line is \( \rulename{\wedge I} \), with subgoals \( Q \) and \( S \). From the premises: both are conjunctions, so \( \rulename{\wedge E} \) takes each apart, giving \( P \to Q \), \( R \to S \), \( P \), and \( R \). The two ends meet through \( \rulename{{\to}E} \): \( P \to Q \) fires on \( P \) and gives the subgoal \( Q \), and \( R \to S \) fires on \( R \) and gives the subgoal \( S \).
 
 ```{=latex}
 \begin{center}
@@ -238,7 +238,7 @@ $\begin{nd}
 Lines 3–6 came from the premises, line 9 from the goal, and lines 7–8 are where the two searches met.
 :::
 
-Each derivation in the example is a box-free derivation (@def-box-free-derivation) with \( \rulename{\wedge I} \), \( \rulename{\wedge E} \) and \( \rulename{{\to}E} \) as its rules, so by @def-derivable each shows its sequent. In each, the Idea chose a rule for a reason that can be stated: the goal's main connective, an available line's main connective, or an available implication whose conclusion is the goal.
+Each derivation in the example is a box-free derivation (@def-box-free-derivation) with \( \rulename{\wedge I} \), \( \rulename{\wedge E} \), and \( \rulename{{\to}E} \) as its rules, so by @def-derivable each shows its sequent. In each, the Idea chose a rule for a reason that can be stated: the goal's main connective, an available line's main connective, or an available implication whose conclusion is the goal.
 
 ## Checking a line of modus ponens
 
@@ -437,7 +437,7 @@ $\begin{nd}
 \end{center}
 ```
 
-It uses premises 1, 2 and 6. The others are never cited, which is allowed: a derivation need not use every premise (@def-derivable). Deleting lines 3–5 and renumbering gives a derivation of \( P, \ P \to Q, \ Q \to T \vdash T \).
+It uses premises 1, 2, and 6. The others are never cited, which is allowed: a derivation need not use every premise (@def-derivable). Deleting lines 3–5 and renumbering gives a derivation of \( P, \ P \to Q, \ Q \to T \vdash T \).
 
 A forward search fires every implication whose hypothesis is available, relevant or not: from \( P \) it writes \( Q \) and \( R \), then \( S \) from \( R \), then \( U \) from \( S \), and \( T \) from \( Q \) — five new lines, three of them useless. The backward search looks only at implications whose conclusion is the current goal, and at each stage exactly one qualifies, so it writes only the two lines the derivation needs.
 :::

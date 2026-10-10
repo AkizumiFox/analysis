@@ -245,7 +245,7 @@ Every hypothesis is needed. If \( B = \emptyset \), then \( A + B = \emptyset \)
 2. Use @thm-sup-epsilon to confirm that \( \sup \{ 3 \} = 3 \). Does your witness depend on \( \varepsilon \)? Why not?
 3. Use @thm-sup-epsilon to confirm that \( \sup \bigl( (-1, 1) \cup (2, 4) \bigr) = 4 \).
 4. Let \( s \) be an upper bound of \( A \). Write in symbols, using the \( \varepsilon \) characterization, the statement "\( s \) is **not** the supremum of \( A \)".
-5. Run the (\( \ge \)) half of the proof of @thm-sup-sum on \( A = (0, 1) \), \( B = \{ 5 \} \) and \( \varepsilon = \frac1{10} \): give an \( a \) and a \( b \) the proof could use, and check the inequality it derives.
+5. Run the (\( \ge \)) half of the proof of @thm-sup-sum on \( A = (0, 1) \), \( B = \{ 5 \} \), and \( \varepsilon = \frac1{10} \): give an \( a \) and a \( b \) the proof could use, and check the inequality it derives.
 6. In the proof of @thm-sup-sum, which line can no longer be justified if \( B \) is allowed to be empty?
 :::
 :::
@@ -259,7 +259,7 @@ Every hypothesis is needed. If \( B = \emptyset \), then \( A + B = \emptyset \)
 
 (d) \( \exists \varepsilon > 0 \ \ \forall a \in A : a \le s - \varepsilon \). In words: some band below \( s \) contains no point of \( A \), so \( s - \varepsilon \) is a smaller upper bound.
 
-(e) Here \( \sup A = 1 \), \( \sup B = 5 \) and \( \frac{\varepsilon}{2} = \frac1{20} \). The proof needs \( a \in (0, 1) \) with \( a > 1 - \frac1{20} = \frac{19}{20} \), for instance \( a = \frac{24}{25} \), and \( b \in B \) with \( b > 5 - \frac1{20} \), which forces \( b = 5 \). Then \( a + b = \frac{149}{25} = 5.96 > 5.9 = \sup A + \sup B - \varepsilon \). Any \( a \in (\frac{19}{20}, 1) \) works; the one \( b \) works for every \( \varepsilon \) because \( 5 \) is the maximum of \( B \).
+(e) Here \( \sup A = 1 \), \( \sup B = 5 \), and \( \frac{\varepsilon}{2} = \frac1{20} \). The proof needs \( a \in (0, 1) \) with \( a > 1 - \frac1{20} = \frac{19}{20} \), for instance \( a = \frac{24}{25} \), and \( b \in B \) with \( b > 5 - \frac1{20} \), which forces \( b = 5 \). Then \( a + b = \frac{149}{25} = 5.96 > 5.9 = \sup A + \sup B - \varepsilon \). Any \( a \in (\frac{19}{20}, 1) \) works; the one \( b \) works for every \( \varepsilon \) because \( 5 \) is the maximum of \( B \).
 
 (f) The first line, "By @ax-least-upper-bound, \( \sup A \) and \( \sup B \) exist". The axiom needs \( B \) nonempty, and \( \emptyset \) has no supremum. The line that chooses \( b \in B \) in the (\( \ge \)) half fails too, since there is nothing to choose.
 :::

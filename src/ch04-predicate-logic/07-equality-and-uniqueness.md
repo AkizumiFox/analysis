@@ -1,6 +1,6 @@
 # Equality and Unique Existence
 
-Sections 4.3 to 4.6 gave the four quantifier rules, and with them every symbol of the language of Section 4.2 has rules, except one. The equals sign has been an ordinary predicate symbol so far: \( a = b \) was an atomic formula like \( P(a) \), and no rule looked inside it. Yet almost every calculation in mathematics is a chain of equations, and every use of "the" (the limit, the supremum, the inverse) quietly asserts that something is unique. This section adds the two rules for equality, \( \rulename{{=}I} \) and \( \rulename{{=}E} \), which say together that *equals may be replaced by equals*. Its first application is the phrase "there is exactly one", which is an existential statement together with an equation. The section ends by completing the table of rules, phrases and Lean tactics that Chapter 1 began.
+Sections 4.3 to 4.6 gave the four quantifier rules, and with them every symbol of the language of Section 4.2 has rules, except one. The equals sign has been an ordinary predicate symbol so far: \( a = b \) was an atomic formula like \( P(a) \), and no rule looked inside it. Yet almost every calculation in mathematics is a chain of equations, and every use of "the" (the limit, the supremum, the inverse) quietly asserts that something is unique. This section adds the two rules for equality, \( \rulename{{=}I} \) and \( \rulename{{=}E} \), which say together that *equals may be replaced by equals*. Its first application is the phrase "there is exactly one", which is an existential statement together with an equation. The section ends by completing the table of rules, phrases, and Lean tactics that Chapter 1 began.
 
 ## What the rules so far cannot do with an equation
 
@@ -416,7 +416,7 @@ Section 4.8 collects all the steps into one method.
 
 ## The rule, phrase and Lean table, completed
 
-Chapter 1 began a table that pairs each rule with the sentence that performs it in a written proof and, for readers who use a proof assistant, with the Lean code that does the same (Sections 1.3–1.7), and Chapter 2 added the rows for negation, the biconditional and the classical rules (Sections 2.1–2.5). Sections 4.3–4.6 added a row for each quantifier rule, and this section adds the two rows for equality. Here is the whole table for the calculus of Part 0. Nothing later depends on the last column, and Chapter 5 turns the middle column into a full dictionary of proof phrases.
+Chapter 1 began a table that pairs each rule with the sentence that performs it in a written proof and, for readers who use a proof assistant, with the Lean code that does the same (Sections 1.3–1.7), and Chapter 2 added the rows for negation, the biconditional, and the classical rules (Sections 2.1–2.5). Sections 4.3–4.6 added a row for each quantifier rule, and this section adds the two rows for equality. Here is the whole table for the calculus of Part 0. Nothing later depends on the last column, and Chapter 5 turns the middle column into a full dictionary of proof phrases.
 
 | Rule | You write | Lean |
 |------|--------------------------------------|------------------------|
@@ -440,7 +440,7 @@ Chapter 1 began a table that pairs each rule with the sentence that performs it 
 | \( \rulename{{=}I} \) | (usually unwritten) "\( t = t \)." | `rfl` |
 | \( \rulename{{=}E} \) | "Substituting \( t_2 \) for \( t_1 \), …"; a chain \( t_1 = t_2 = \dots = t_n \) | `rw [h]`; chains `calc` |
 
-The derived rules of Chapter 2 (\( \rulename{MT} \), \( \rulename{CP} \), \( \rulename{DS} \), \( \rulename{\neg\neg E} \), \( \rulename{LEM} \) and the others) have their rows in Sections 2.3 and 2.5, and their sequents are collected in Section 2.6. With the two equality rows, every rule of the calculus has its phrase.
+The derived rules of Chapter 2 (\( \rulename{MT} \), \( \rulename{CP} \), \( \rulename{DS} \), \( \rulename{\neg\neg E} \), \( \rulename{LEM} \), and the others) have their rows in Sections 2.3 and 2.5, and their sequents are collected in Section 2.6. With the two equality rows, every rule of the calculus has its phrase.
 
 ## Exercises
 
@@ -451,7 +451,7 @@ The derived rules of Chapter 2 (\( \rulename{MT} \), \( \rulename{CP} \), \( \ru
 
 ::: {.enumerate options="label=(\alph*)"}
 1. State \( \rulename{{=}I} \) and \( \rulename{{=}E} \) as schemas, with the side condition of \( \rulename{{=}E} \).
-2. In the derivation below, name for each of lines 4, 5, 6 and 8 the rule, the cited lines, and the formula \( \varphi \) (with a variable \( z \) as its hole).
+2. In the derivation below, name for each of lines 4, 5, 6, and 8 the rule, the cited lines, and the formula \( \varphi \) (with a variable \( z \) as its hole).
    ```{=latex}
    \begin{center}
    $\begin{nd}

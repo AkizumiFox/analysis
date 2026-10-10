@@ -157,7 +157,7 @@ $\begin{nd}
 \end{center}
 ```
 
-The rules are \( \rulename{\vee I} \), \( \rulename{\neg E} \) and \( \rulename{\neg I} \). The box is the same as in @exm-manufactured-clash up to its line \( \bot \). There the goal was \( P \to R \), so the box had to end on \( R \), written by \( \rulename{\bot E} \), and closed by \( \rulename{{\to}I} \). Here the goal is \( \neg P \), so the box ends on \( \bot \) itself and closes by \( \rulename{\neg I} \). In words: if neither \( P \) nor \( Q \) holds, then in particular \( P \) does not.
+The rules are \( \rulename{\vee I} \), \( \rulename{\neg E} \), and \( \rulename{\neg I} \). The box is the same as in @exm-manufactured-clash up to its line \( \bot \). There the goal was \( P \to R \), so the box had to end on \( R \), written by \( \rulename{\bot E} \), and closed by \( \rulename{{\to}I} \). Here the goal is \( \neg P \), so the box ends on \( \bot \) itself and closes by \( \rulename{\neg I} \). In words: if neither \( P \) nor \( Q \) holds, then in particular \( P \) does not.
 :::
 
 In the next derivation the clash itself creates a goal that is a negation, and the move of this section is used a second time, one box inside another.
@@ -272,7 +272,7 @@ $\begin{nd}
 \end{center}
 ```
 
-Line 13 is \( r^2 \ne 2 \). The box \( \lines{5}{12} \) is a \( \rulename{\neg I} \) box as the schema asks: opened by the unnegated statement \( r^2 = 2 \), and ending on \( \bot \) as a line of its own. Two steps of the proof lie outside the derivation: choosing \( p \), \( q \) and \( m \), and passing from the arbitrary \( r \) to every rational number. Both are quantifier rules, which come in Chapter 4.
+Line 13 is \( r^2 \ne 2 \). The box \( \lines{5}{12} \) is a \( \rulename{\neg I} \) box as the schema asks: opened by the unnegated statement \( r^2 = 2 \), and ending on \( \bot \) as a line of its own. Two steps of the proof lie outside the derivation: choosing \( p \), \( q \), and \( m \), and passing from the arbitrary \( r \) to every rational number. Both are quantifier rules, which come in Chapter 4.
 
 Notice also what the proof does **not** need: that \( \sqrt{2} \) exists as a real number. The theorem is a statement about rational numbers only. Chapter 11 uses it in exactly this form, as evidence that the rational numbers have a gap where \( \sqrt{2} \) should be.
 
@@ -280,7 +280,7 @@ And notice which rule closes it. "Suppose \( r^2 = 2 \)" opens a box whose **neg
 
 ## What the rule sounds like
 
-Here is the row of the rule, phrase and Lean table for this section's rule; the rows for \( \rulename{\neg E} \) and \( \rulename{\bot E} \) are in Section 2.1.
+Here is the row of the rule, phrase, and Lean table for this section's rule; the rows for \( \rulename{\neg E} \) and \( \rulename{\bot E} \) are in Section 2.1.
 
 | Rule | You write | Lean |
 |------|--------------------------------------|------------------------|

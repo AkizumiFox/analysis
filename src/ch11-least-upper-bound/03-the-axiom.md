@@ -136,7 +136,7 @@ These are conventions of notation, and \( \pm\infty \) are **not** real numbers:
 
 ## What the axiom will do
 
-With the axiom in place, the rest of the chapter extracts its first consequences: a practical test for recognizing a supremum, the Archimedean property, the density of the rationals, the existence of roots, and the nested interval property. The first, the test, holds in every ordered field; it is the tool for the others. Each of the rest fails in \( \nQ \) or in some other ordered field. Three of them, the Archimedean property, the roots and the nested interval property, are proved by the same pattern: define a set, check the two hypotheses, take its supremum, and extract what is needed from (S1) and (S2). The density of the rationals then follows from the Archimedean property, with no new supremum.
+With the axiom in place, the rest of the chapter extracts its first consequences: a practical test for recognizing a supremum, the Archimedean property, the density of the rationals, the existence of roots, and the nested interval property. The first, the test, holds in every ordered field; it is the tool for the others. Each of the rest fails in \( \nQ \) or in some other ordered field. Three of them, the Archimedean property, the roots, and the nested interval property, are proved by the same pattern: define a set, check the two hypotheses, take its supremum, and extract what is needed from (S1) and (S2). The density of the rationals then follows from the Archimedean property, with no new supremum.
 
 ## Exercises
 

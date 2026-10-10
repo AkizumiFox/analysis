@@ -456,7 +456,7 @@ Write out the proof in full, naming each use of \( \rulename{\wedge E} \) and \(
 ::: {.solution}
 The hypotheses are the conjunctions \( (1 < x) \wedge (x < 2) \) and \( (3 < y) \wedge (y < 4) \), and the goal is \( (4 < x + y) \wedge (x + y < 6) \).
 
-By \( \rulename{\wedge E} \), four times, we have \( 1 < x \), \( x < 2 \), \( 3 < y \) and \( y < 4 \) separately. Adding \( 1 < x \) and \( 3 < y \) gives \( 1 + 3 < x + y \), that is, \( 4 < x + y \) (school algebra: two inequalities in the same direction may be added). Adding \( x < 2 \) and \( y < 4 \) gives \( x + y < 6 \) (school algebra again). Finally \( \rulename{\wedge I} \) joins \( 4 < x + y \) and \( x + y < 6 \) into \( 4 < x + y < 6 \).
+By \( \rulename{\wedge E} \), four times, we have \( 1 < x \), \( x < 2 \), \( 3 < y \), and \( y < 4 \) separately. Adding \( 1 < x \) and \( 3 < y \) gives \( 1 + 3 < x + y \), that is, \( 4 < x + y \) (school algebra: two inequalities in the same direction may be added). Adding \( x < 2 \) and \( y < 4 \) gives \( x + y < 6 \) (school algebra again). Finally \( \rulename{\wedge I} \) joins \( 4 < x + y \) and \( x + y < 6 \) into \( 4 < x + y < 6 \).
 
 As a derivation it has the same shape as the one in @exm-product-in-unit-interval: two premises, four \( \rulename{\wedge E} \) lines, two lines justified "algebra", and one \( \rulename{\wedge I} \) line.
 :::

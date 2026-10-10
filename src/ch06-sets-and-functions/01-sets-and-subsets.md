@@ -28,9 +28,9 @@ x \in A
 \]
 for "\( x \) is an element of \( A \)", or "\( x \) belongs to \( A \)", or "\( x \) lies in \( A \)". Its negation is written \( x \notin A \). The objects may be numbers, or sets, or (later in this chapter) pairs and functions.
 
-In the language of Chapter 4, "\( \in \)" is a two-place predicate: \( x \in A \) is a statement about the two objects \( x \) and \( A \), true or false like \( x < y \). So everything Chapter 4 says about predicates, quantifiers and their rules applies to it unchanged. A statement such as "every element of \( A \) is positive" is \( \forall x\, (x \in A \to x > 0) \), which the bounded notation of Chapter 4 shortens to \( \forall x \in A\ (x > 0) \).
+In the language of Chapter 4, "\( \in \)" is a two-place predicate: \( x \in A \) is a statement about the two objects \( x \) and \( A \), true or false like \( x < y \). So everything Chapter 4 says about predicates, quantifiers, and their rules applies to it unchanged. A statement such as "every element of \( A \) is positive" is \( \forall x\, (x \in A \to x > 0) \), which the bounded notation of Chapter 4 shortens to \( \forall x \in A\ (x > 0) \).
 
-Two conventions fix what kind of objects we deal with. First, the number sets \( \nN \), \( \nZ \), \( \nQ \) and \( \nR \) are **given**: we use them as familiar sets, with their school arithmetic and order, as the earlier chapters did. (Chapter 11 turns the facts we use about \( \nR \) into consequences of axioms.) Second, **numbers are not sets**: a number has no elements, and no number is equal to a set. So \( 1 \ne \{1\} \), and \( z \in 5 \) is false for every \( z \). The optional Chapter 9 explains how numbers can be built out of sets; nothing in the main line depends on how that is done, and nothing here uses it.
+Two conventions fix what kind of objects we deal with. First, the number sets \( \nN \), \( \nZ \), \( \nQ \), and \( \nR \) are **given**: we use them as familiar sets, with their school arithmetic and order, as the earlier chapters did. (Chapter 11 turns the facts we use about \( \nR \) into consequences of axioms.) Second, **numbers are not sets**: a number has no elements, and no number is equal to a set. So \( 1 \ne \{1\} \), and \( z \in 5 \) is false for every \( z \). The optional Chapter 9 explains how numbers can be built out of sets; nothing in the main line depends on how that is done, and nothing here uses it.
 
 The single most important fact about sets is that **a set is determined by its elements**. It has no other features: no order in which the elements come, no count of how often each is listed, no color. Two sets with the same elements are the same set.
 
@@ -45,7 +45,7 @@ Sets \( A \) and \( B \) are **equal**, written \( A = B \), if they have the sa
 
 In words: every element of \( A \) is an element of \( B \), and every element of \( B \) is an element of \( A \). This principle is called **extensionality**: a set is fixed by its extension, the things it contains, and not by the words used to describe it. As with every definition (Chapter 2's convention on definitions, Section 2.4), the "if" is an "if and only if", so the definition is used in both directions: to prove \( A = B \), prove the \( \forall \) statement; from \( A = B \), conclude \( x \in A \leftrightarrow x \in B \) for any \( x \) we like.
 
-Sets with finitely many elements can be written by **listing** their elements between braces: \( \{1, 2, 3\} \) is the set whose elements are \( 1 \), \( 2 \) and \( 3 \), and nothing else. Extensionality has two immediate consequences for such lists.
+Sets with finitely many elements can be written by **listing** their elements between braces: \( \{1, 2, 3\} \) is the set whose elements are \( 1 \), \( 2 \), and \( 3 \), and nothing else. Extensionality has two immediate consequences for such lists.
 
 - **Repetition does not matter.** \( \{1, 1, 2\} = \{1, 2\} \). An object \( x \) belongs to the left side exactly when \( x = 1 \) or \( x = 1 \) or \( x = 2 \), and to the right side exactly when \( x = 1 \) or \( x = 2 \); the two conditions are equivalent, since "\( x = 1 \) or \( x = 1 \)" says no more than "\( x = 1 \)".
 - **Order does not matter.** \( \{1, 2\} = \{2, 1\} \). Here the two conditions are "\( x = 1 \) or \( x = 2 \)" and "\( x = 2 \) or \( x = 1 \)", which are equivalent because \( \vee \) commutes (@exm-disjunction-first-derivations).
@@ -55,11 +55,11 @@ Order and repetition are exactly what a list has and a set does not. When order 
 A set with one element, \( \{a\} \), is a **singleton**. A singleton and its element are different things: \( \{1\} \) is a set, and \( 1 \) is a number, so \( 1 \ne \{1\} \) by our convention. For sets the difference is just as real. The set \( \{\nN\} \) has exactly one element, namely \( \nN \), while \( \nN \) has infinitely many; so they differ, by extensionality, as \( 2 \in \nN \) and \( 2 \notin \{\nN\} \).
 
 ::: {.check}
-Are the sets \( \{1, 2, 2, 3\} \), \( \{3, 2, 1\} \) and \( \{1, \{2\}, 3\} \) equal?
+Are the sets \( \{1, 2, 2, 3\} \), \( \{3, 2, 1\} \), and \( \{1, \{2\}, 3\} \) equal?
 :::
 
 ::: {.solution}
-The first two are equal: each has exactly the elements \( 1 \), \( 2 \), \( 3 \), and repetition and order do not count. The third is different: its elements are \( 1 \), \( \{2\} \) and \( 3 \). The number \( 2 \) lies in the first set, but not in the third, since \( 2 \ne 1 \), \( 2 \ne 3 \), and \( 2 \ne \{2\} \) (a number is not a set). So by @def-set-equality the third set differs from the other two.
+The first two are equal: each has exactly the elements \( 1 \), \( 2 \), \( 3 \), and repetition and order do not count. The third is different: its elements are \( 1 \), \( \{2\} \), and \( 3 \). The number \( 2 \) lies in the first set, but not in the third, since \( 2 \ne 1 \), \( 2 \ne 3 \), and \( 2 \ne \{2\} \) (a number is not a set). So by @def-set-equality the third set differs from the other two.
 :::
 
 ## Subsets
@@ -163,7 +163,7 @@ The second payoff is that inclusions chain, as \( \le \) does. Its proof is the 
 ::: {#prp-subset-transitive}
 [Inclusion Is Transitive]
 
-For all sets \( A \), \( B \) and \( C \), if \( A \subseteq B \) and \( B \subseteq C \), then \( A \subseteq C \).
+For all sets \( A \), \( B \), and \( C \), if \( A \subseteq B \) and \( B \subseteq C \), then \( A \subseteq C \).
 :::
 
 ::: {.idea}
@@ -203,7 +203,7 @@ This proves the proposition.
 At level 3, the prose a mathematician writes, the same proof is one line: *let \( x \in A \); then \( x \in B \) since \( A \subseteq B \), and \( x \in C \) since \( B \subseteq C \).* The silent steps are those Chapter 5's convention allows: the two instances of \( \rulename{\forall E} \) at the obvious term \( x \), and the two closing sentences. What may never be silent is the opening "let \( x \in A \)", and the two citations, "since \( A \subseteq B \)" and "since \( B \subseteq C \)".
 
 ::: {.check}
-Let \( A = \{1, 2\} \), \( B = \{1, 2, 3\} \) and \( C = \{1, 3\} \). Which of the six statements \( A \subseteq B \), \( B \subseteq A \), \( A \subseteq C \), \( C \subseteq A \), \( B \subseteq C \), \( C \subseteq B \) are true? For each false one, name a witness.
+Let \( A = \{1, 2\} \), \( B = \{1, 2, 3\} \), and \( C = \{1, 3\} \). Which of the six statements \( A \subseteq B \), \( B \subseteq A \), \( A \subseteq C \), \( C \subseteq A \), \( B \subseteq C \), \( C \subseteq B \) are true? For each false one, name a witness.
 :::
 
 ::: {.solution}
@@ -281,7 +281,7 @@ Specification is one of a short list of **working rules** that say which sets ex
 3. **Unions.** For sets \( A \) and \( B \), there is a set whose elements are exactly the objects lying in \( A \) or in \( B \); more generally, for a family of sets indexed by a set, there is a set whose elements are exactly the objects lying in at least one member of the family (Section 6.2).
 4. **Power sets.** For a set \( X \), the subsets of \( X \) form a set (Section 6.2).
 5. **Products.** For sets \( A \) and \( B \), the ordered pairs \( (a, b) \) with \( a \in A \) and \( b \in B \) form a set (Section 6.3).
-6. **Numbers.** \( \nN \), \( \nZ \), \( \nQ \) and \( \nR \) are sets.
+6. **Numbers.** \( \nN \), \( \nZ \), \( \nQ \), and \( \nR \) are sets.
 :::
 
 These rules are enough for everything the book does with sets. They are not axioms in the formal sense, and we do not try to derive them from fewer principles; the optional Chapter 9 states the axioms of set theory behind them and shows how each rule follows. What matters here is what is **missing** from the list: there is no rule that collects all objects with a property, without an ambient set. The end of this section shows that such a rule would be contradictory.
@@ -368,7 +368,7 @@ $\begin{nd}
 \end{center}
 ```
 
-Every rule in it is one of \( \rulename{\forall E} \), \( \rulename{{\leftrightarrow}E} \), \( \rulename{\wedge E} \), \( \rulename{\wedge I} \), \( \rulename{\neg E} \) and \( \rulename{\neg I} \). There is **no** \( \rulename{RAA} \), and no excluded middle: the inner box (lines 4–7) refutes one answer outright instead of splitting into two answers. This is worth noticing. The paradox is not an artifact of classical logic, and cannot be escaped by giving up a classical rule; it is a genuine contradiction in the naive rule, and the only repair is to change which sets exist.
+Every rule in it is one of \( \rulename{\forall E} \), \( \rulename{{\leftrightarrow}E} \), \( \rulename{\wedge E} \), \( \rulename{\wedge I} \), \( \rulename{\neg E} \), and \( \rulename{\neg I} \). There is **no** \( \rulename{RAA} \), and no excluded middle: the inner box (lines 4–7) refutes one answer outright instead of splitting into two answers. This is worth noticing. The paradox is not an artifact of classical logic, and cannot be escaped by giving up a classical rule; it is a genuine contradiction in the naive rule, and the only repair is to change which sets exist.
 
 **What the theorem says about sets.** Read with \( A \) arbitrary, the theorem says that **no set contains everything**: for every set \( A \) we have produced a set, \( R_A \), outside it. The naive rule "any property defines a set" is exactly specification **without** the phrase "\( x \in A \)", and the theorem shows that the phrase cannot be dropped: with \( A \) ranging over "everything", \( R_A \) would be the paradoxical \( R \). This is why every set-builder in this book names an ambient set, and why (W1)–(W6) contain no "set of all sets". When we want "all objects with a property", we first say where to look.
 
@@ -500,13 +500,13 @@ Fatal errors (0 for the step): using "the set of all sets" or any set-builder wi
 ::: {#exr-sets-and-subsets-c2}
 [C2: Antisymmetry for sets of sets]
 
-Can there be sets \( A \) and \( B \), whose elements are themselves sets, such that \( A \subseteq B \), \( B \subseteq A \) and \( A \ne B \)? Explain why the answer does not depend on what the elements of \( A \) and \( B \) are.
+Can there be sets \( A \) and \( B \), whose elements are themselves sets, such that \( A \subseteq B \), \( B \subseteq A \), and \( A \ne B \)? Explain why the answer does not depend on what the elements of \( A \) and \( B \) are.
 :::
 
 ::: {.solution}
 No. By @prp-subset-antisymmetric, \( A \subseteq B \) and \( B \subseteq A \) give \( A = B \), for **all** sets \( A \) and \( B \).
 
-The answer does not depend on the elements, because nothing in the proof of @prp-subset-antisymmetric looks at them. The proof works with the statements \( x \in A \) and \( x \in B \) for an arbitrary object \( x \), and uses only @def-subset, @def-set-equality and the propositional law @prp-iff-two-implications applied to those two statements. Whether \( x \) is a number, a set, or a set of sets never enters. For example, with \( A = \{\emptyset, \{\emptyset\}\} \) and \( B = \{\{\emptyset\}, \emptyset\} \), the two inclusions hold and indeed \( A = B \).
+The answer does not depend on the elements, because nothing in the proof of @prp-subset-antisymmetric looks at them. The proof works with the statements \( x \in A \) and \( x \in B \) for an arbitrary object \( x \), and uses only @def-subset, @def-set-equality, and the propositional law @prp-iff-two-implications applied to those two statements. Whether \( x \) is a number, a set, or a set of sets never enters. For example, with \( A = \{\emptyset, \{\emptyset\}\} \) and \( B = \{\{\emptyset\}, \emptyset\} \), the two inclusions hold and indeed \( A = B \).
 
 The point of the question is a habit: an element-chasing proof treats its element as a black box, and so it proves the statement for sets of anything at all.
 :::

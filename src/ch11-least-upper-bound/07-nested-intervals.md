@@ -69,7 +69,7 @@ We check each row.
 - **Bounded.** The intervals \( [n, \infty) \) are closed and nested. For any \( x \in \nR \), @thm-naturals-unbounded gives \( n > x \), and then \( x \notin [n, \infty) \). The proof breaks earlier here: the left endpoints form \( \nN \), which has no upper bound, so \( \alpha \) does not exist.
 - **Nested.** The intervals \( [n, n + 1] \) are closed and bounded, but \( [1, 2] \cap [3, 4] = \emptyset \) already.
 - **The field is \( \nR \).** In \( \nQ \), a closed interval means \( \{ q \in \nQ : a \le q \le b \} \). Take the bisection intervals \( [a_n, b_n] \) from the start of this section. They are defined by rational arithmetic alone, because each midpoint \( c \) is rational, and \( c^2 \ne 2 \) by @thm-sqrt2-irrational, so the rule "keep the half whose endpoints' squares straddle \( 2 \)" always applies. We showed that the real intervals \( [a_n, b_n] \) have intersection \( \{ \sqrt{2} \} \). So their rational parts have intersection \( \nQ \cap \{ \sqrt{2} \} = \emptyset \).
-- **Shrinking.** The intervals \( [-1/n, 1 + 1/n] \) are closed, bounded and nested, and their intersection is \( [0, 1] \): every point of \( [0, 1] \) lies in all of them, and a point outside \( [0, 1] \) is excluded from some interval by @cor-archimedean-epsilon (@exr-nested-intervals-b2 writes this out). The intersection is nonempty, but it is not a single point. Their lengths \( 1 + 2/n \) never drop below \( 1 \).
+- **Shrinking.** The intervals \( [-1/n, 1 + 1/n] \) are closed, bounded, and nested, and their intersection is \( [0, 1] \): every point of \( [0, 1] \) lies in all of them, and a point outside \( [0, 1] \) is excluded from some interval by @cor-archimedean-epsilon (@exr-nested-intervals-b2 writes this out). The intersection is nonempty, but it is not a single point. Their lengths \( 1 + 2/n \) never drop below \( 1 \).
 
 ::: {.warning}
 Dropping a hypothesis removes the guarantee. It does not force the conclusion to fail. The open intervals \( (-1/n, 1/n) \) are nested, and their intersection is \( \{ 0 \} \), which is not empty. A witness that a hypothesis is needed must be a family where the conclusion actually fails, like \( (0, 1/n) \).
@@ -85,7 +85,7 @@ The half-open intervals \( (0, 1/n] \) are nested and bounded, but no real numbe
 
 ## The real numbers cannot be listed
 
-Chapter 8 calls a set **countable** if its elements can be listed as \( x_1, x_2, x_3, \dots \), repetitions allowed; for a nonempty set this means that it is the image of some function from \( \nN \). That chapter shows that \( \nN \), \( \nZ \) and \( \nQ \) are countable. It also shows that \( \nR \) is not, by Cantor's diagonal argument with decimal expansions. Decimal expansions were taken there as a fact from school: every real number has one, and two different expansions such as \( 0.4999\ldots \) and \( 0.5000\ldots \) can name the same number. Neither fact has been proved from our axioms.
+Chapter 8 calls a set **countable** if its elements can be listed as \( x_1, x_2, x_3, \dots \), repetitions allowed; for a nonempty set this means that it is the image of some function from \( \nN \). That chapter shows that \( \nN \), \( \nZ \), and \( \nQ \) are countable. It also shows that \( \nR \) is not, by Cantor's diagonal argument with decimal expansions. Decimal expansions were taken there as a fact from school: every real number has one, and two different expansions such as \( 0.4999\ldots \) and \( 0.5000\ldots \) can name the same number. Neither fact has been proved from our axioms.
 
 Here is a proof with no decimals, using only @thm-nested-intervals.
 
@@ -125,7 +125,7 @@ In the second case \( x_{n+1} \in L \), so \( x_{n+1} \notin R \), since \( L \)
 
 Each \( I_{n+1} \) is determined by \( I_n \) and \( x_{n+1} \) through an explicit rule, so the family is defined by recursion (Chapter 7); no choice principle is involved.
 
-The intervals \( I_n \) are closed, bounded and nested. By @thm-nested-intervals, there is \( c \in \bigcap_n I_n \). For each \( n \in \nN \) we have \( c \in I_n \) and \( x_n \notin I_n \), so \( c \ne x_n \).
+The intervals \( I_n \) are closed, bounded, and nested. By @thm-nested-intervals, there is \( c \in \bigcap_n I_n \). For each \( n \in \nN \) we have \( c \in I_n \) and \( x_n \notin I_n \), so \( c \ne x_n \).
 
 Hence no function from \( \nN \) to \( \nR \) has image all of \( \nR \). Since \( \nR \) is nonempty, it is not countable. This proves the theorem.
 :::
@@ -153,7 +153,7 @@ Here is the chapter so far in one table. Each row is a property that \( \nR \) h
 | nested closed intervals meet | yes | no: bisection toward \( \sqrt{2} \) | no: \( [n, x/n] \) |
 | uncountable | yes | no (Chapter 8) | yes: contains \( \nR \) |
 
-The entries for \( \nR \) are this chapter's theorems. For \( \nQ \), the failures come from @thm-no-rational-sup-sqrt2, @thm-sqrt2-irrational and the bisection above; \( \nQ \) is Archimedean by @exr-archimedean-property-c3; and \( \nQ \) is dense in itself because the average of two rationals is a rational between them. For \( \nR(x) \): every rational \( r \) is below some natural number (@exr-archimedean-property-c3), hence below \( x \), so none lies in \( (x, x + 1) \). If \( (p/q)^2 = x \) for polynomials \( p, q \), then \( p^2 = x q^2 \), whose sides have even and odd degree, which is impossible. That the nested intervals \( [n, x/n] \) have no common point is proved in @exr-nested-intervals-c3. And \( \nR(x) \) contains the constants, a copy of \( \nR \), so it cannot be countable, since a subset of a countable set is countable (Chapter 8).
+The entries for \( \nR \) are this chapter's theorems. For \( \nQ \), the failures come from @thm-no-rational-sup-sqrt2, @thm-sqrt2-irrational, and the bisection above; \( \nQ \) is Archimedean by @exr-archimedean-property-c3; and \( \nQ \) is dense in itself because the average of two rationals is a rational between them. For \( \nR(x) \): every rational \( r \) is below some natural number (@exr-archimedean-property-c3), hence below \( x \), so none lies in \( (x, x + 1) \). If \( (p/q)^2 = x \) for polynomials \( p, q \), then \( p^2 = x q^2 \), whose sides have even and odd degree, which is impossible. That the nested intervals \( [n, x/n] \) have no common point is proved in @exr-nested-intervals-c3. And \( \nR(x) \) contains the constants, a copy of \( \nR \), so it cannot be countable, since a subset of a countable set is countable (Chapter 8).
 
 The \( \nQ \) column shows that the Archimedean property and density are far weaker than the axiom; the \( \nR(x) \) column shows an ordered field where even they fail.
 
@@ -173,7 +173,7 @@ For each family \( (I_n)_{n \in \nN} \), say which hypothesis of @thm-nested-int
 2. \( I_n = [n, n + 1/n] \).
 3. \( I_n = (-1/n, 1/n) \).
 4. \( I_n = [-n, n] \).
-5. Run the construction in the proof of @thm-reals-uncountable on a list that begins \( x_1 = 0 \), \( x_2 = 1 \), \( x_3 = 2 \): find \( I_1 \), \( I_2 \) and \( I_3 \).
+5. Run the construction in the proof of @thm-reals-uncountable on a list that begins \( x_1 = 0 \), \( x_2 = 1 \), \( x_3 = 2 \): find \( I_1 \), \( I_2 \), and \( I_3 \).
 6. Where does the proof of @thm-reals-uncountable use that the intervals \( L \) and \( R \) are **closed**, and what could go wrong with open thirds?
 :::
 :::
@@ -187,7 +187,7 @@ For each family \( (I_n)_{n \in \nN} \), say which hypothesis of @thm-nested-int
 
 (d) Not nested in the required direction: \( I_{n+1} \supseteq I_n \), and \( I_2 = [-2, 2] \not\subseteq [-1, 1] = I_1 \). The intersection is \( I_1 = [-1, 1] \), since every \( I_n \) contains \( [-1, 1] \).
 
-(e) \( I_1 = [x_1 + 1, x_1 + 2] = [1, 2] \). For \( n = 1 \), \( d = 1 \), \( L = [1, \frac43] \) and \( R = [\frac53, 2] \); since \( x_2 = 1 \in L \), \( I_2 = R = [\frac53, 2] \). For \( n = 2 \), \( d = \frac13 \), \( L = [\frac53, \frac{16}9] \) and \( R = [\frac{17}9, 2] \); since \( x_3 = 2 \notin L \), \( I_3 = L = [\frac53, \frac{16}9] \). Each \( I_n \) misses \( x_n \), and \( I_3 \subseteq I_2 \subseteq I_1 \).
+(e) \( I_1 = [x_1 + 1, x_1 + 2] = [1, 2] \). For \( n = 1 \), \( d = 1 \), \( L = [1, \frac43] \), and \( R = [\frac53, 2] \); since \( x_2 = 1 \in L \), \( I_2 = R = [\frac53, 2] \). For \( n = 2 \), \( d = \frac13 \), \( L = [\frac53, \frac{16}9] \), and \( R = [\frac{17}9, 2] \); since \( x_3 = 2 \notin L \), \( I_3 = L = [\frac53, \frac{16}9] \). Each \( I_n \) misses \( x_n \), and \( I_3 \subseteq I_2 \subseteq I_1 \).
 
 (f) Only in the last step, where @thm-nested-intervals is applied: its hypothesis is that the intervals are closed. With open thirds the family would be nested open intervals, and those can have empty intersection, like \( (0, \frac1n) \); then there might be no point \( c \) at all. The avoidance of \( x_{n+1} \) does not need closedness, only that \( L \) and \( R \) are disjoint.
 :::
@@ -212,7 +212,7 @@ For each family \( (I_n)_{n \in \nN} \), say which hypothesis of @thm-nested-int
 
 *The intersection.* The lengths are \( 10^{-n} \le 2^{-n} \), so by the argument of (a) the intersection is one point. Since \( \sqrt{2} \) lies in every interval, that point is \( \sqrt{2} \).
 
-*The first terms.* \( 14^2 = 196 \le 200 < 225 = 15^2 \), so \( 14 \le 10\sqrt{2} < 15 \), \( m_1 = 14 \) and \( a_1 = 1.4 \). Likewise \( 141^2 = 19881 \le 20000 < 20164 = 142^2 \), so \( m_2 = 141 \) and \( a_2 = 1.41 \).
+*The first terms.* \( 14^2 = 196 \le 200 < 225 = 15^2 \), so \( 14 \le 10\sqrt{2} < 15 \), \( m_1 = 14 \), and \( a_1 = 1.4 \). Likewise \( 141^2 = 19881 \le 20000 < 20164 = 142^2 \), so \( m_2 = 141 \) and \( a_2 = 1.41 \).
 :::
 
 ::: {#exr-nested-intervals-b2}
@@ -226,7 +226,7 @@ Prove that \( \bigcap_{n \in \nN} [-1/n, 1 + 1/n] = [0, 1] \). Which hypothesis 
 
 \( (\subseteq) \) Let \( x \) lie in every \( [-1/n, 1 + 1/n] \). Suppose \( x < 0 \). By @cor-archimedean-epsilon with \( \varepsilon = -x > 0 \), there is \( n \) with \( 1/n < -x \), that is, \( x < -1/n \), so \( x \notin [-1/n, 1 + 1/n] \): a contradiction. Suppose \( x > 1 \). With \( \varepsilon = x - 1 > 0 \), there is \( n \) with \( 1/n < x - 1 \), that is, \( x > 1 + 1/n \): again a contradiction. Hence \( 0 \le x \le 1 \).
 
-The lengths are \( 1 + 2/n > 1 \), so for \( \varepsilon = 1 \) no interval is shorter than \( \varepsilon \): the shrinking hypothesis fails. The intervals are closed, bounded and nested, and the existence part applies, as it must.
+The lengths are \( 1 + 2/n > 1 \), so for \( \varepsilon = 1 \) no interval is shorter than \( \varepsilon \): the shrinking hypothesis fails. The intervals are closed, bounded, and nested, and the existence part applies, as it must.
 :::
 
 ### C. Going deeper
@@ -286,7 +286,7 @@ A proof of (c) that shows \( \sup A = s \) through the backward direction of @th
 :::
 
 ::: {.solution}
-(a) Let \( z_1, z_2, \dots \) be any list of real numbers. Run the construction in the proof of @thm-reals-uncountable, but start from a closed interval inside \( (x, y) \) that avoids \( z_1 \). Let \( d \coloneqq y - x \), and let \( L \coloneqq [x + d/4, x + d/3] \) and \( R \coloneqq [y - d/3, y - d/4] \). They are disjoint, closed, of positive length, and inside \( (x, y) \). Let \( I_1 \) be \( L \) if \( z_1 \notin L \), and \( R \) otherwise. Then define \( I_2, I_3, \dots \) by the outer-thirds rule from the proof. The intervals are nested, closed and bounded, \( z_n \notin I_n \) for every \( n \), and by @thm-nested-intervals some \( c \) lies in all of them. Then \( c \in I_1 \subseteq (x, y) \), and \( c \ne z_n \) for every \( n \). So no list exhausts \( (x, y) \), and \( (x, y) \), which is nonempty, is not countable.
+(a) Let \( z_1, z_2, \dots \) be any list of real numbers. Run the construction in the proof of @thm-reals-uncountable, but start from a closed interval inside \( (x, y) \) that avoids \( z_1 \). Let \( d \coloneqq y - x \), and let \( L \coloneqq [x + d/4, x + d/3] \) and \( R \coloneqq [y - d/3, y - d/4] \). They are disjoint, closed, of positive length, and inside \( (x, y) \). Let \( I_1 \) be \( L \) if \( z_1 \notin L \), and \( R \) otherwise. Then define \( I_2, I_3, \dots \) by the outer-thirds rule from the proof. The intervals are nested, closed, and bounded, \( z_n \notin I_n \) for every \( n \), and by @thm-nested-intervals some \( c \) lies in all of them. Then \( c \in I_1 \subseteq (x, y) \), and \( c \ne z_n \) for every \( n \). So no list exhausts \( (x, y) \), and \( (x, y) \), which is nonempty, is not countable.
 
 (b) Suppose every element of \( (x, y) \) were rational. Then \( (x, y) \subseteq \nQ \), and a subset of the countable set \( \nQ \) is countable, contradicting (a). So \( (x, y) \) contains an irrational number. This reproves @cor-irrationals-dense by counting: there are too many reals in \( (x, y) \) for all of them to be rational.
 

@@ -1,6 +1,6 @@
 # Contradiction: Using a Negation
 
-Chapter 1 gave rules for "and", "implies" and "or", and not one of them mentions "not". Yet written proofs are full of sentences such as "this is impossible", "this case cannot occur" and "which contradicts what we assumed". This section gives the two rules that **use** a negation: the first says exactly what a clash between two lines is, and the second says what a clash buys. The rule that **proves** a negation is the subject of the next section.
+Chapter 1 gave rules for "and", "implies", and "or", and not one of them mentions "not". Yet written proofs are full of sentences such as "this is impossible", "this case cannot occur", and "which contradicts what we assumed". This section gives the two rules that **use** a negation: the first says exactly what a clash between two lines is, and the second says what a clash buys. The rule that **proves** a negation is the subject of the next section.
 
 ## A case that cannot occur
 
@@ -300,7 +300,7 @@ Suppose \( n^2 \) is even \( [\text{assumption for } \rulename{{\to}I}] \). By (
 In both cases \( n \) is even \( [\rulename{\vee E}] \). This proves that if \( n^2 \) is even, then \( n \) is even \( [\rulename{{\to}I}] \).
 :::
 
-The logic of the proof fits in a derivation. Write \( E \) for "\( n \) is even", \( O \) for "\( n \) is odd", \( S \) for "\( n^2 \) is even" and \( T \) for "\( n^2 \) is odd". Then (E1) for \( n \) is \( E \vee O \), (E2) for \( n^2 \) is \( \neg(S \wedge T) \), and (E3) for \( n \) is \( O \to T \); these are the premises.
+The logic of the proof fits in a derivation. Write \( E \) for "\( n \) is even", \( O \) for "\( n \) is odd", \( S \) for "\( n^2 \) is even", and \( T \) for "\( n^2 \) is odd". Then (E1) for \( n \) is \( E \vee O \), (E2) for \( n^2 \) is \( \neg(S \wedge T) \), and (E3) for \( n \) is \( O \to T \); these are the premises.
 
 ```{=latex}
 \begin{center}
@@ -352,7 +352,7 @@ Which sentence of the proof of @thm-square-even-implies-even is the rule \( \rul
 The sentence "So this case cannot occur, and in it \( n \) is even", line 10 of the derivation. It cites the line \( \bot \) (line 9) and writes \( E \), "\( n \) is even", which is the goal of the case, so that the box of \( O \) ends on the same line as the box of \( E \).
 :::
 
-Every rule in this proof is a primitive rule: \( \rulename{{\to}I} \), \( \rulename{\vee E} \), \( \rulename{{\to}E} \), \( \rulename{\wedge I} \), \( \rulename{\neg E} \) and \( \rulename{\bot E} \). The next section uses the theorem twice, to prove that no rational number has square \( 2 \). Section 2.3 reads the same proof again with shorter steps, as mathematicians usually write it, "by the contrapositive".
+Every rule in this proof is a primitive rule: \( \rulename{{\to}I} \), \( \rulename{\vee E} \), \( \rulename{{\to}E} \), \( \rulename{\wedge I} \), \( \rulename{\neg E} \), and \( \rulename{\bot E} \). The next section uses the theorem twice, to prove that no rational number has square \( 2 \). Section 2.3 reads the same proof again with shorter steps, as mathematicians usually write it, "by the contrapositive".
 
 ## Vacuous truth
 

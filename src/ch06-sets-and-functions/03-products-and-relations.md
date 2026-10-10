@@ -1,6 +1,6 @@
 # Ordered Pairs, Products and Relations
 
-Sections 6.1 and 6.2 built sets and combined them: a set is fixed by its elements, and \( \cup \), \( \cap \), \( \setminus \) are \( \vee \), \( \wedge \), \( \wedge\neg \) read through membership. None of this can yet say "the point \( (1, 2) \) of the plane", "\( 3 \) is less than \( 5 \)" or "\( y \) is the square of \( x \)". Each of these is about two objects **in a given order**, and a set forgets order. This section adds one new thing, the ordered pair, and then uses it twice: to build the product \( A \times B \) of two sets, and to say what a relation between two sets is. The next section needs exactly this much: a function will be a relation of a special kind.
+Sections 6.1 and 6.2 built sets and combined them: a set is fixed by its elements, and \( \cup \), \( \cap \), \( \setminus \) are \( \vee \), \( \wedge \), \( \wedge\neg \) read through membership. None of this can yet say "the point \( (1, 2) \) of the plane", "\( 3 \) is less than \( 5 \)", or "\( y \) is the square of \( x \)". Each of these is about two objects **in a given order**, and a set forgets order. This section adds one new thing, the ordered pair, and then uses it twice: to build the product \( A \times B \) of two sets, and to say what a relation between two sets is. The next section needs exactly this much: a function will be a relation of a special kind.
 
 ## Order matters: ordered pairs
 
@@ -123,7 +123,7 @@ The product is not commutative: \( A \times B \) and \( B \times A \) are in gen
 
 ## Products and the set operations
 
-Section 6.2 showed that \( \cup \), \( \cap \) and \( \setminus \) obey the laws of \( \vee \), \( \wedge \) and \( \wedge \neg \). The product interacts with them just as simply, one factor at a time. We use these laws for regions of the plane (exercise B1) and for functions out of the empty set (Section 6.4), so we state them all.
+Section 6.2 showed that \( \cup \), \( \cap \), and \( \setminus \) obey the laws of \( \vee \), \( \wedge \), and \( \wedge \neg \). The product interacts with them just as simply, one factor at a time. We use these laws for regions of the plane (exercise B1) and for functions out of the empty set (Section 6.4), so we state them all.
 
 ::: {#prp-product-set-laws}
 [Products and Set Operations]
@@ -161,7 +161,7 @@ Every element of each side is a pair, so we name its coordinates by \( \rulename
 
 *The \( \cap \) law.* Let \( p \in A \times (B \cap C) \), so \( p = (a, d) \) with \( a \in A \) and \( d \in B \cap C \). Then \( d \in B \) and \( d \in C \), and \( (\ast) \) gives \( p \in A \times B \) and \( p \in A \times C \). Conversely, let \( p \in (A \times B) \cap (A \times C) \). Since \( p \in A \times B \), \( p = (a, b) \) with \( a \in A \) and \( b \in B \). Since also \( (a, b) = p \in A \times C \), \( (\ast) \) gives \( b \in C \). So \( b \in B \cap C \), and \( p = (a, b) \in A \times (B \cap C) \).
 
-*The \( \setminus \) law.* Let \( p \in A \times (B \setminus C) \), so \( p = (a, d) \) with \( a \in A \), \( d \in B \) and \( d \notin C \). Then \( p \in A \times B \) by \( (\ast) \). If \( p \) were in \( A \times C \), then \( (\ast) \) would give \( d \in C \), which is false; so \( p \notin A \times C \), and \( p \in (A \times B) \setminus (A \times C) \). Conversely, let \( p \in (A \times B) \setminus (A \times C) \). Then \( p = (a, b) \) with \( a \in A \) and \( b \in B \), and \( p \notin A \times C \). If \( b \) were in \( C \), then \( (\ast) \) would give \( p = (a, b) \in A \times C \), which is false; so \( b \notin C \). Hence \( b \in B \setminus C \) and \( p \in A \times (B \setminus C) \).
+*The \( \setminus \) law.* Let \( p \in A \times (B \setminus C) \), so \( p = (a, d) \) with \( a \in A \), \( d \in B \), and \( d \notin C \). Then \( p \in A \times B \) by \( (\ast) \). If \( p \) were in \( A \times C \), then \( (\ast) \) would give \( d \in C \), which is false; so \( p \notin A \times C \), and \( p \in (A \times B) \setminus (A \times C) \). Conversely, let \( p \in (A \times B) \setminus (A \times C) \). Then \( p = (a, b) \) with \( a \in A \) and \( b \in B \), and \( p \notin A \times C \). If \( b \) were in \( C \), then \( (\ast) \) would give \( p = (a, b) \in A \times C \), which is false; so \( b \notin C \). Hence \( b \in B \setminus C \) and \( p \in A \times (B \setminus C) \).
 
 *The \( \emptyset \) law.* An element of \( A \times \emptyset \) would be a pair \( (a, b) \) with \( b \in \emptyset \), and there is no such \( b \). So \( A \times \emptyset \) has no elements, and it equals \( \emptyset \) by @prp-empty-set-unique.
 
@@ -200,7 +200,7 @@ Combining the two \( \emptyset \) laws with one more step gives the full descrip
 
 ## Relations
 
-"Is less than", "divides", "is the square of", "lies on the unit circle with": each of these connects an object of one set with an object of another, or of the same set. Each can be described by a rule, a formula or a sentence. But two different descriptions can pick out exactly the same connections: "\( x < y \)" and "\( y - x > 0 \)" are different sentences about real numbers, and they hold for exactly the same pairs \( (x, y) \). In mathematics we want these to count as the **same** relation.
+"Is less than", "divides", "is the square of", "lies on the unit circle with": each of these connects an object of one set with an object of another, or of the same set. Each can be described by a rule, a formula, or a sentence. But two different descriptions can pick out exactly the same connections: "\( x < y \)" and "\( y - x > 0 \)" are different sentences about real numbers, and they hold for exactly the same pairs \( (x, y) \). In mathematics we want these to count as the **same** relation.
 
 The way to make them the same is to forget the description and keep what it picks out: the set of pairs \( (x, y) \) for which it holds. Two descriptions that pick out the same pairs then give the same set, by extensionality.
 
@@ -261,7 +261,7 @@ So \( D \) has \( 6 + 3 + 2 + 1 + 1 + 1 = 14 \) elements, the pairs \( (a, b) \)
 \[
 S \coloneqq \{ (x, y) \in \nR^2 : x^2 + y^2 = 1 \} ,
 \]
-a relation on \( \nR \); for instance \( 0 \mathrel{S} 1 \), \( 0 \mathrel{S} (-1) \) and \( 1 \mathrel{S} 0 \). Its domain is \( [-1, 1] \). If \( x \mathrel{S} y \), then \( x^2 = 1 - y^2 \le 1 \), so \( -1 \le x \le 1 \). Conversely, for \( -1 \le x \le 1 \) the number \( 1 - x^2 \) is nonnegative and so has a square root \( y = \sqrt{1 - x^2} \), which satisfies \( x^2 + y^2 = 1 \). By the symmetry of the equation, the range is \( [-1, 1] \) too.
+a relation on \( \nR \); for instance \( 0 \mathrel{S} 1 \), \( 0 \mathrel{S} (-1) \), and \( 1 \mathrel{S} 0 \). Its domain is \( [-1, 1] \). If \( x \mathrel{S} y \), then \( x^2 = 1 - y^2 \le 1 \), so \( -1 \le x \le 1 \). Conversely, for \( -1 \le x \le 1 \) the number \( 1 - x^2 \) is nonnegative and so has a square root \( y = \sqrt{1 - x^2} \), which satisfies \( x^2 + y^2 = 1 \). By the symmetry of the equation, the range is \( [-1, 1] \) too.
 
 (d) The graph of squaring is \( Q \coloneqq \{ (x, y) \in \nR^2 : y = x^2 \} \). Its domain is all of \( \nR \): every \( x \) is related to \( x^2 \). Its range is \( [0, \infty) \): a square is nonnegative, and every \( y \ge 0 \) is the square of \( \sqrt{y} \).
 

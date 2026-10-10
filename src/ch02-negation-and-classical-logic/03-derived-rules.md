@@ -49,7 +49,7 @@ $\begin{nd}
 Line 5 cites the premise on line 2, which lies in no box and so is available everywhere below it. The box \( \lines{3}{5} \) ends in \( \bot \) as a line of its own, so \( \rulename{\neg I} \) closes it on line 6. This proves the proposition.
 :::
 
-The name is Latin for "the mode that takes away": denying the conclusion takes away the hypothesis. Its partner, from \( P \to Q \) and \( P \) to \( Q \), is \( \rulename{{\to}E} \), traditionally *modus ponens*, "the mode that puts" (@def-rule-implication-elimination). The derivation uses \( \rulename{{\to}E} \), \( \rulename{\neg E} \) and \( \rulename{\neg I} \), and nothing else.
+The name is Latin for "the mode that takes away": denying the conclusion takes away the hypothesis. Its partner, from \( P \to Q \) and \( P \) to \( Q \), is \( \rulename{{\to}E} \), traditionally *modus ponens*, "the mode that puts" (@def-rule-implication-elimination). The derivation uses \( \rulename{{\to}E} \), \( \rulename{\neg E} \), and \( \rulename{\neg I} \), and nothing else.
 
 A second form of the same fact packs the two premises into one implication. It is the form in which mathematicians state it: an implication **implies** its contrapositive.
 
@@ -87,7 +87,7 @@ $\begin{nd}
 Line 5 may cite line 2, because the only box containing line 2, the box \( \lines{2}{6} \), also contains line 5 (the scope rule of @def-derivation). The inner box closes on line 6, a line of the outer box itself, and line 7 closes the outer box. This proves the proposition.
 :::
 
-The statement \( \neg Q \to \neg P \) is called the **contrapositive** of \( P \to Q \). Like modus tollens, its derivation uses only the rules so far: \( \rulename{{\to}I} \), \( \rulename{{\to}E} \), \( \rulename{\neg I} \) and \( \rulename{\neg E} \). The passage back, from \( \neg Q \to \neg P \) to \( P \to Q \), is a different matter; the warnings below return to it.
+The statement \( \neg Q \to \neg P \) is called the **contrapositive** of \( P \to Q \). Like modus tollens, its derivation uses only the rules so far: \( \rulename{{\to}I} \), \( \rulename{{\to}E} \), \( \rulename{\neg I} \), and \( \rulename{\neg E} \). The passage back, from \( \neg Q \to \neg P \) to \( P \to Q \), is a different matter; the warnings below return to it.
 
 Now compare the two derivations. Lines 3–6 of the derivation of @prp-modus-tollens are, line for line and citation for citation, lines 3–6 of the derivation of @prp-contrapositive: \( P \), then \( Q \) by \( \rulename{{\to}E}\ 1, 3 \), then \( \bot \) by \( \rulename{\neg E}\ 4, 2 \), then \( \neg P \) by \( \rulename{\neg I}\ \lines{3}{5} \). And they are the four lines of the two arguments that opened this section. Writing them out every time buries the argument in bookkeeping.
 
@@ -279,7 +279,7 @@ Let \( x \) be a real number with \( x^2 \le 4 \). Use the implication "if \( x 
 Take \( P \): "\( x > 2 \)" and \( Q \): "\( x^2 > 4 \)". The implication is \( P \to Q \). (It holds because \( x > 2 > 0 \) gives \( x^2 = x \cdot x > 2x > 4 \).) The hypothesis \( x^2 \le 4 \) is \( \neg Q \), since for real numbers \( x^2 \le 4 \) and \( x^2 > 4 \) are exact negations of each other. By \( \rulename{MT} \) (@prp-modus-tollens), \( \neg P \), that is, \( \neg(x > 2) \), which is \( x \le 2 \).
 :::
 
-The same step settles the card most people leave on the table in @exm-wason-selection (Section 1.4): the cards show \( 6 \), \( 7 \), red and green, and the claim is "if a card shows an even number on one side, then its other side is red". For the green card, let \( E \) be "this card's number is even" and \( R \) "its color side is red". The claim, for this card, is \( E \to R \). The card shows green, so \( \neg R \). If the claim holds, \( \rulename{MT} \) gives \( \neg E \): the hidden number must be odd. Turning the card tests exactly that line: an even number there would give \( E \), and with \( \neg R \) and \( E \to R \), \( \rulename{{\to}E} \) and \( \rulename{\neg E} \) would reach \( \bot \). The red card offers only \( R \), and from \( E \to R \) and \( R \) no rule gives anything about \( E \); that was Section 1.4's affirming the consequent. So the green card must be turned and the red one need not be.
+The same step settles the card most people leave on the table in @exm-wason-selection (Section 1.4): the cards show \( 6 \), \( 7 \), red, and green, and the claim is "if a card shows an even number on one side, then its other side is red". For the green card, let \( E \) be "this card's number is even" and \( R \) "its color side is red". The claim, for this card, is \( E \to R \). The card shows green, so \( \neg R \). If the claim holds, \( \rulename{MT} \) gives \( \neg E \): the hidden number must be odd. Turning the card tests exactly that line: an even number there would give \( E \), and with \( \neg R \) and \( E \to R \), \( \rulename{{\to}E} \) and \( \rulename{\neg E} \) would reach \( \bot \). The red card offers only \( R \), and from \( E \to R \) and \( R \) no rule gives anything about \( E \); that was Section 1.4's affirming the consequent. So the green card must be turned and the red one need not be.
 
 Modus tollens is the step people skip. \( \rulename{CP} \) turns the claim into its contrapositive \( \neg R \to \neg E \), "a card whose color is not red has an odd number", which carries the claim's content to the green card; Section 2.5 derives the passage back, so the two say the same. The converse \( R \to E \), "a red card has an even number", is a different claim, and the card rule never made it.
 
@@ -327,7 +327,7 @@ $\begin{nd}
 Line 11 is @exm-disjunction-first-derivations used as a derived rule, so that line 12 refutes the left disjunct, as \( \rulename{DS} \) requires.
 :::
 
-Compare this with the twelve-line derivation after @thm-square-even-implies-even in Section 2.1. There, line 11 split on (E1) at once, and the odd case, lines 6–10, got \( T \) from (E3), built \( S \wedge T \), clashed with (E2) and closed by \( \rulename{\bot E} \). Here the same work is spread over named steps. The \( \rulename{\neg I} \) box on lines 5–7 does the clash with (E2), which there was lines 8–9. Lines 9 and 10, \( \rulename{CP} \) and \( \rulename{{\to}E} \), abbreviate a box that assumes \( O \), gets \( T \) by (E3), as line 7 did there, and clashes with line 8. Line 12, \( \rulename{DS} \), abbreviates a case split on the disjunction with the case \( O \) closed by \( \rulename{\bot E} \), as lines 5–11 did there. The short version reads the way people talk.
+Compare this with the twelve-line derivation after @thm-square-even-implies-even in Section 2.1. There, line 11 split on (E1) at once, and the odd case, lines 6–10, got \( T \) from (E3), built \( S \wedge T \), clashed with (E2), and closed by \( \rulename{\bot E} \). Here the same work is spread over named steps. The \( \rulename{\neg I} \) box on lines 5–7 does the clash with (E2), which there was lines 8–9. Lines 9 and 10, \( \rulename{CP} \) and \( \rulename{{\to}E} \), abbreviate a box that assumes \( O \), gets \( T \) by (E3), as line 7 did there, and clashes with line 8. Line 12, \( \rulename{DS} \), abbreviates a case split on the disjunction with the case \( O \) closed by \( \rulename{\bot E} \), as lines 5–11 did there. The short version reads the way people talk.
 
 Notice also what the argument never does. It feels like "suppose not", and written out in full it does contain one: \( \rulename{CP} \) assumes that \( n \) is odd, reaches \( \bot \), and concludes that \( n \) is **not** odd. What it never does is assume that \( n \) is **not even** and conclude from a contradiction that \( n \) **is** even. Every negation in it is introduced; none is removed. The difference will matter in Section 2.5.
 
@@ -347,7 +347,7 @@ The converse of the contrapositive is a different sequent. \( \rulename{CP} \) p
 
 ## What the rules sound like
 
-Here are the rows of the rule, phrase and Lean table for this section's derived rules. As before, the last column is for readers who use a proof assistant, and nothing depends on it.
+Here are the rows of the rule, phrase, and Lean table for this section's derived rules. As before, the last column is for readers who use a proof assistant, and nothing depends on it.
 
 | Rule | You write | Lean |
 |------|--------------------------------------|------------------------|
@@ -383,7 +383,7 @@ Here are the rows of the rule, phrase and Lean table for this section's derived 
 ::: {.solution}
 (a) If a sequent has been derived earlier (not inside the derivation that uses it), then in a later derivation we may replace its letters by statements, each letter by one statement everywhere it occurs, and, when available lines hold the resulting instances of its premises, write the resulting instance of its conclusion on one line, citing the sequent and those lines.
 
-(b) Line 3 becomes a box on \( R \), then \( \rulename{{\to}E} \), \( \rulename{\neg E} \) and \( \rulename{\neg I} \):
+(b) Line 3 becomes a box on \( R \), then \( \rulename{{\to}E} \), \( \rulename{\neg E} \), and \( \rulename{\neg I} \):
 
 ```{=latex}
 \begin{center}

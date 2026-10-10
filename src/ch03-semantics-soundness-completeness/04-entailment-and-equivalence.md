@@ -153,7 +153,7 @@ In words, each entails the other. Equivalently, \( v(\varphi) = v(\psi) \) for *
 \[
 \varphi \equiv \psi \iff \models \varphi \leftrightarrow \psi .
 \]
-From "same value under every valuation" it follows at once that \( \equiv \) is reflexive, symmetric and transitive: \( \varphi \equiv \varphi \); if \( \varphi \equiv \psi \), then \( \psi \equiv \varphi \); if \( \varphi \equiv \psi \) and \( \psi \equiv \chi \), then \( \varphi \equiv \chi \).
+From "same value under every valuation" it follows at once that \( \equiv \) is reflexive, symmetric, and transitive: \( \varphi \equiv \varphi \); if \( \varphi \equiv \psi \), then \( \psi \equiv \varphi \); if \( \varphi \equiv \psi \) and \( \psi \equiv \chi \), then \( \varphi \equiv \chi \).
 
 Examples: \( p \wedge q \equiv q \wedge p \) (the clause (V3) does not care about the order); \( p \equiv \neg\neg p \) (two flips); \( p \vee \neg p \equiv \neg\bot \) (both are true under every valuation). The degenerate case: any two tautologies are equivalent, and so are any two contradictions. *Nonexample:* \( p \wedge q \) and \( p \) are not equivalent. One direction holds, \( p \wedge q \models p \), but the other fails in the row \( p = \mathrm{T} \), \( q = \mathrm{F} \). Entailment in one direction is not equivalence. Nor is equivalence identity: \( p \wedge q \) and \( q \wedge p \) are different formulas, with different parse trees, and \( \rulename{{\to}E} \) treats them as different (Section 1.4).
 
@@ -183,7 +183,7 @@ For atoms these are truth-table checks. For arbitrary formulas the same tables w
 ::: {.proof}
 Fix a valuation \( v \), and let \( a = v(\varphi) \), \( b = v(\psi) \), \( c = v(\chi) \). Each side of each equivalence is built from \( \varphi, \psi, \chi \) by connectives, so by (V2)–(V6) of @def-truth-value its value under \( v \) is computed from \( a, b, c \) by the clauses of those connectives. The combination \( (a, b) \), or \( (a, b, c) \), is one row of the tables below, whose first columns list all 4 (or 8) combinations. In each table the columns of the two sides of each equivalence agree in every row, as the reader can check column by column. Hence both sides have the same value under \( v \), and since \( v \) was arbitrary, they are equivalent by the paraphrase of @def-semantic-equivalence.
 
-Parts (a), (b), (c) and (e):
+Parts (a), (b), (c), and (e):
 \[
 \begin{array}{cc|cccc}
 \varphi & \psi & \varphi \to \psi & \neg\psi \to \neg\varphi & \neg\varphi \vee \psi & (\varphi \to \psi) \wedge (\psi \to \varphi) \\
@@ -292,7 +292,7 @@ In every case, the replaced occurrence sits either at the top node of the tree o
 This covers every clause of @def-formula, so \( C(\chi) \) holds for every \( \chi \), which proves the lemma.
 :::
 
-Replacing several occurrences, one after another, keeps equivalence at each step, and \( \equiv \) is transitive, so the final formula is equivalent to the first. For instance, with (b), (d) and then (c) of @prp-standard-equivalences, each applied inside the formula:
+Replacing several occurrences, one after another, keeps equivalence at each step, and \( \equiv \) is transitive, so the final formula is equivalent to the first. For instance, with (b), (d), and then (c) of @prp-standard-equivalences, each applied inside the formula:
 \[
 \begin{aligned}
 p \to \neg(q \wedge \neg r) &\equiv p \to (\neg q \vee \neg\neg r) \\

@@ -10,7 +10,7 @@ So the rational numbers have a gap, exactly where \( \sqrt{2} \) ought to be. Th
 
 ## Ordered fields
 
-A field is a number system in which one can add, subtract, multiply, and divide by anything nonzero, with the usual rules. The rational, real and complex numbers are fields; so is the arithmetic of remainders modulo a prime. What \( \nQ \) and \( \nR \) have beyond this, and \( \nC \) does not, is an order: any two numbers can be compared, and the comparison behaves well under addition and multiplication. Every inequality we manipulate in analysis rests on four rules about that comparison, and the definition below states them.
+A field is a number system in which one can add, subtract, multiply, and divide by anything nonzero, with the usual rules. The rational, real, and complex numbers are fields; so is the arithmetic of remainders modulo a prime. What \( \nQ \) and \( \nR \) have beyond this, and \( \nC \) does not, is an order: any two numbers can be compared, and the comparison behaves well under addition and multiplication. Every inequality we manipulate in analysis rests on four rules about that comparison, and the definition below states them.
 
 *An ordered field is a number system where we can do arithmetic and compare, and where comparison respects arithmetic.*
 
@@ -91,7 +91,7 @@ Explain why \( \nQ \) is an ordered field, and what we are assuming when we say 
 :::
 
 ::: {.solution}
-For \( \nQ \), the field axioms are the rules of fraction arithmetic. The order is \( p/q < p'/q' \) (with \( q, q' > 0 \)) exactly when \( pq' < p'q \) as integers. Trichotomy, transitivity, (O3) and (O4) then come from the corresponding facts about integers. Checking them is routine and belongs to the construction of \( \nQ \) from \( \nZ \); here we accept them.
+For \( \nQ \), the field axioms are the rules of fraction arithmetic. The order is \( p/q < p'/q' \) (with \( q, q' > 0 \)) exactly when \( pq' < p'q \) as integers. Trichotomy, transitivity, (O3), and (O4) then come from the corresponding facts about integers. Checking them is routine and belongs to the construction of \( \nQ \) from \( \nZ \); here we accept them.
 
 For \( \nR \) we have not yet said what a real number *is*, and this chapter deliberately does not. Instead we **assume** that \( \nR \) is an ordered field containing \( \nQ \), with its usual operations and order; in particular \( \nR \) contains \( \nN \) and \( \nZ \), with their usual arithmetic. (Later in this chapter we locate \( \nN \) inside \( \nR \) using the axioms alone.) A later section of this chapter completes the list of assumptions by adding exactly one more. Everything proved in this section from (F1)–(F9) and (O1)–(O4) therefore holds in \( \nQ \) and in \( \nR \) alike.
 :::
@@ -271,7 +271,7 @@ By @prp-absolute-value-rules (d) with \( r = \abs{x} + \abs{y} \), this says \( 
 (b) By (a) applied to \( x - y \) and \( y \), \( \abs{x} = \abs{(x - y) + y} \le \abs{x - y} + \abs{y} \), so \( \abs{x} - \abs{y} \le \abs{x - y} \). Swapping the roles of \( x \) and \( y \) gives \( \abs{y} - \abs{x} \le \abs{y - x} = \abs{x - y} \), using @prp-absolute-value-rules (b). The two inequalities together say \( -\abs{x - y} \le \abs{x} - \abs{y} \le \abs{x - y} \), which is (b) by @prp-absolute-value-rules (d). This proves the theorem.
 :::
 
-The case-free proof is typical of what the axioms buy: once a fact such as \( -\abs{x} \le x \le \abs{x} \) is proved, it can be added, multiplied and chained without redoing sign cases. The triangle inequality is the engine of every estimate in Part I. Its standard use is "insert a third point": to bound \( \abs{x - z} \), write \( x - z = (x - y) + (y - z) \) for a well-chosen \( y \), and bound the two pieces separately (@exr-ordered-fields-b2).
+The case-free proof is typical of what the axioms buy: once a fact such as \( -\abs{x} \le x \le \abs{x} \) is proved, it can be added, multiplied, and chained without redoing sign cases. The triangle inequality is the engine of every estimate in Part I. Its standard use is "insert a third point": to bound \( \abs{x - z} \), write \( x - z = (x - y) + (y - z) \) for a well-chosen \( y \), and bound the two pieces separately (@exr-ordered-fields-b2).
 
 ::: {.remark}
 The inequality in (a) can be strict: \( \abs{1 + (-1)} = 0 < 2 = \abs{1} + \abs{-1} \). Equality holds exactly when \( x \) and \( y \) do not have strictly opposite signs, that is, when \( xy \ge 0 \) (@exr-ordered-fields-b2).
@@ -327,7 +327,7 @@ Let \( F \) be an ordered field and \( a, b, c, d \in F \). Prove the following 
 
 (b) Since \( 0 \le c < d \), we have \( d > 0 \). From \( a < b \) and \( d > 0 \), @thm-ordered-field-rules (c) gives \( ad < bd \). From \( c < d \) and \( a \ge 0 \) we get \( ac \le ad \): by @thm-ordered-field-rules (c) if \( a > 0 \), and because both sides are \( 0 \) if \( a = 0 \). Chaining, \( ac \le ad < bd \), so \( ac < bd \).
 
-(c) By trichotomy, \( b > 0 \), \( b = 0 \) or \( b < 0 \). If \( b = 0 \) then \( ab = 0 \), and if \( b < 0 \) then \( ab < 0 \) by (a). Both contradict \( ab > 0 \) by (O1). Hence \( b > 0 \).
+(c) By trichotomy, \( b > 0 \), \( b = 0 \), or \( b < 0 \). If \( b = 0 \) then \( ab = 0 \), and if \( b < 0 \) then \( ab < 0 \) by (a). Both contradict \( ab > 0 \) by (O1). Hence \( b > 0 \).
 :::
 
 ::: {#exr-ordered-fields-b2}

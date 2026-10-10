@@ -6,7 +6,7 @@ This chapter finds the one property that separates the real numbers from the rat
 
 **What you need.** From Chapter 1: proof by cases (@def-rules-disjunction). From Chapter 2: the irrationality of \( \sqrt 2 \) (@thm-sqrt2-irrational), the rules for negation (@def-rules-negation), and the contrapositive (@prp-contrapositive). From Chapters 3–8: induction (@ax-induction), quantifiers and how to negate them (Chapter 4), sets and images of sets (Chapter 6), the well-ordering of \( \nN \), definition by recursion, and the arithmetic of \( \nN \) and \( \nZ \) (Chapter 7), and countable sets (Chapter 8). No linear algebra is needed. The elementary rules of field arithmetic are either cited from the linear-algebra companion, Chapter 0, whose field axioms are ours, or proved in the first section.
 
-**Time.** About 30 hours on the core track (all of A, one B and one C per section, the exit checks); about 45 hours for everything.
+**Time.** About 30 hours on the core track (all of A, one B, and one C per section, the exit checks); about 45 hours for everything.
 
 ## Roadmap
 

@@ -61,7 +61,7 @@ Let \( X = \{1, 2, 3, 4\} \), \( Y = \{0, 1, 2, 5\} \), and let \( f \colon X \t
 \[
     f(1) = 1, \quad f(2) = 2, \quad f(3) = 0, \quad f(4) = 1 .
 \]
-Find \( f(\{1, 4\}) \), \( f(\{2, 3\}) \), \( f(X) \) and \( f(\emptyset) \); then \( f^{-1}(\{1\}) \), \( f^{-1}(\{0, 2\}) \), \( f^{-1}(\{5\}) \), \( f^{-1}(\emptyset) \) and \( f^{-1}(Y) \).
+Find \( f(\{1, 4\}) \), \( f(\{2, 3\}) \), \( f(X) \), and \( f(\emptyset) \); then \( f^{-1}(\{1\}) \), \( f^{-1}(\{0, 2\}) \), \( f^{-1}(\{5\}) \), \( f^{-1}(\emptyset) \), and \( f^{-1}(Y) \).
 :::
 
 ::: {.solution}
@@ -129,7 +129,7 @@ The first step is @def-preimage. The second uses \( x^2 = \abs{x}^2 \) and the s
 Part (d) is worth a second look. We started with \( [0, 1] \), pushed it forwards and pulled it back, and got the bigger set \( [-1, 1] \). The negative numbers came in because they have the same squares as the positive ones. That is a failure of injectivity, and the last subsection of this section proves that it is the only way the round trip can grow a set.
 
 ::: {.check}
-For \( f(x) = x^2 \) on \( \nR \), find \( f^{-1}(\{4\}) \), \( f^{-1}([-4, -1]) \) and \( f(f^{-1}([-1, 1])) \).
+For \( f(x) = x^2 \) on \( \nR \), find \( f^{-1}(\{4\}) \), \( f^{-1}([-4, -1]) \), and \( f(f^{-1}([-1, 1])) \).
 :::
 
 ::: {.solution}
@@ -152,7 +152,7 @@ Let \( A, B \subseteq \nR \) and \( c \in \nR \).
 ::: {.enumerate options="label=(\alph*)"}
 1. Let \( n \colon \nR \to \nR \), \( n(x) = -x \), and \( m_c \colon \nR \to \nR \), \( m_c(x) = cx \). Show that \( -A = n(A) \) and \( cA = m_c(A) \).
 2. Let \( s \colon \nR \times \nR \to \nR \), \( s(a, b) = a + b \). Show that \( A + B = s(A \times B) \).
-3. Compute \( -[0, 1] \), \( \{1, 2\} + \{10, 20\} \) and \( \{1, 2\} + \{1, 2\} \).
+3. Compute \( -[0, 1] \), \( \{1, 2\} + \{10, 20\} \), and \( \{1, 2\} + \{1, 2\} \).
 :::
 :::
 
@@ -174,7 +174,7 @@ This pays a debt. Chapter 11 introduces these sets by set-builder, and @def-imag
 
 ## Preimages respect every operation
 
-Now the promised theorem. The preimage of a union is the union of the preimages, and the same holds for intersections, complements and differences. No hypothesis on \( f \) is needed.
+Now the promised theorem. The preimage of a union is the union of the preimages, and the same holds for intersections, complements, and differences. No hypothesis on \( f \) is needed.
 
 ::: {#thm-preimage-operations}
 [Preimages of Set Operations]
@@ -323,7 +323,7 @@ Show that the conclusion is false, and find the line that fails.
 :::
 
 ::: {.solution}
-*The conclusion is false.* Take \( f(x) = x^2 \) on \( \nR \), \( A = \{-1\} \) and \( B = \{1\} \). Then \( f(A) = f(B) = \{1\} \), so \( f(A) \cap f(B) = \{1\} \); but \( A \cap B = \emptyset \), so \( f(A \cap B) = \emptyset \), and \( 1 \notin \emptyset \).
+*The conclusion is false.* Take \( f(x) = x^2 \) on \( \nR \), \( A = \{-1\} \), and \( B = \{1\} \). Then \( f(A) = f(B) = \{1\} \), so \( f(A) \cap f(B) = \{1\} \); but \( A \cap B = \emptyset \), so \( f(A \cap B) = \emptyset \), and \( 1 \notin \emptyset \).
 
 *The failing line is (3).* Line (2) is a correct \( \exists \)E: it names a witness \( x \in A \) with \( f(x) = y \). Line (3) performs a second \( \exists \)E, on \( y \in f(B) \), and gives its witness the **same** name \( x \). The rule requires a fresh name (Chapter 4, Section 4.6). The statement "\( y = f(b) \) for some \( b \in B \)" promises some point of \( B \), not the point already named. Reusing the name silently asserts that the two witnesses are equal, and nothing says they are. This is the error "one name for two witnesses", entry (N4) of the catalogue of what is not allowed (Chapter 5, Section 5.6).
 
@@ -421,7 +421,7 @@ Parts (a)–(d) are about @thm-preimage-operations and its proof.
 
 ::: {.enumerate options="label=(\alph*)"}
 1. Suppose we tried to prove the image version of law (b), \( f(\bigcap_{i \in I} A_i) = \bigcap_{i \in I} f(A_i) \), by the same kind of chain. At which step would a witness have to be named, and why does the preimage version need none?
-2. Run law (b) on \( f(x) = x^2 \) on \( \nR \), with \( I = \{1, 2\} \), \( B_1 = [0, 4] \) and \( B_2 = [1, 9] \): compute both sides.
+2. Run law (b) on \( f(x) = x^2 \) on \( \nR \), with \( I = \{1, 2\} \), \( B_1 = [0, 4] \), and \( B_2 = [1, 9] \): compute both sides.
 3. What are both sides of law (b) when \( I = \emptyset \)?
 4. State law (c) in symbols, for \( f \colon X \to Y \) and \( B \subseteq Y \).
 5. True or false, with a reason: for every \( A \subseteq X \), \( f(X \cap A) = f(A) \).
@@ -476,7 +476,7 @@ Let \( f \colon X \to Y \) be a function. Prove each law directly, by two inclus
 ::: {.solution}
 (a) \( (\subseteq) \) Let \( y \in f(A \cup B) \). There is \( c \in A \cup B \) with \( f(c) = y \); name it \( c \) \( [\rulename{\exists E}] \). By @def-set-operations, \( c \in A \) or \( c \in B \). *Case 1:* \( c \in A \). Then \( y \in f(A) \), with witness \( c \) \( [\rulename{\exists I}] \), so \( y \in f(A) \cup f(B) \). *Case 2:* \( c \in B \). Then \( y \in f(B) \), with witness \( c \) \( [\rulename{\exists I}] \), so \( y \in f(A) \cup f(B) \). \( (\supseteq) \) Let \( y \in f(A) \cup f(B) \). *Case 1:* \( y \in f(A) \). There is \( a \in A \) with \( f(a) = y \); name it \( a \) \( [\rulename{\exists E}] \). Then \( a \in A \cup B \), so \( y \in f(A \cup B) \), with witness \( a \) \( [\rulename{\exists I}] \). *Case 2:* \( y \in f(B) \) is the same with \( B \) in place of \( A \). In either case \( y \in f(A \cup B) \).
 
-(b) Both sides are subsets of \( X \). For \( x \in X \): \( x \in f^{-1}(C \setminus D) \) iff \( f(x) \in C \setminus D \) (@def-preimage) iff \( f(x) \in C \) and \( f(x) \notin D \) (@def-set-operations) iff \( x \in f^{-1}(C) \) and \( x \notin f^{-1}(D) \) (@def-preimage, and @exm-iff-negations for the second clause) iff \( x \in f^{-1}(C) \setminus f^{-1}(D) \). No step names or exhibits a witness, so no step carries a tag: this is the difference between (a) and (b).
+(b) Both sides are subsets of \( X \). For \( x \in X \): \( x \in f^{-1}(C \setminus D) \) if and only if \( f(x) \in C \setminus D \) (@def-preimage) if and only if \( f(x) \in C \) and \( f(x) \notin D \) (@def-set-operations) if and only if \( x \in f^{-1}(C) \) and \( x \notin f^{-1}(D) \) (@def-preimage, and @exm-iff-negations for the second clause) if and only if \( x \in f^{-1}(C) \setminus f^{-1}(D) \). No step names or exhibits a witness, so no step carries a tag: this is the difference between (a) and (b).
 :::
 
 ::: {#exr-images-and-preimages-b3}
@@ -504,7 +504,7 @@ Let \( f \colon X \to Y \) be a function and \( A, B \subseteq X \).
 1. Here are the first lines of a proof that \( f(A) \setminus f(B) \subseteq f(A \setminus B) \). *Name the move, then complete it.*
 
     > Let \( y \in f(A) \setminus f(B) \). Then \( y \in f(A) \), so there is \( a \in A \) with \( f(a) = y \); name it \( a \) \( [\rulename{\exists E}] \). Also \( y \notin f(B) \).
-2. Show that the reverse inclusion can fail, with \( f(x) = x^2 \) on \( \nR \), \( A = \{-1, 1\} \) and \( B = \{1\} \).
+2. Show that the reverse inclusion can fail, with \( f(x) = x^2 \) on \( \nR \), \( A = \{-1, 1\} \), and \( B = \{1\} \).
 3. Prove that \( f(A \setminus B) = f(A) \setminus f(B) \) holds for all \( A, B \subseteq X \) if and only if \( f \) is injective.
 :::
 :::
@@ -549,7 +549,7 @@ A student proves the following claim: *if \( f \colon X \to Y \) is injective an
 
 (b) Line (3) fails. The statement \( f(x) \in f(A) \) says only that \( f(a) = f(x) \) for **some** \( a \in A \) (@def-image). To use it, the proof must name that witness by \( \exists \)E, with a fresh name. Line (3) skips the \( \exists \)E and silently takes the witness to be \( x \) itself. The tell is that injectivity, a hypothesis, is never used: an argument that ignores a necessary hypothesis cannot be right.
 
-(c) A counterexample to the step "\( f(x) \in f(A) \), so \( x \in A \)" needs a noninjective function, since for injective ones the conclusion of the step is true. Take \( f(x) = x^2 \) on \( \nR \), \( A = \{1\} \) and \( x = -1 \). Then \( f(x) = 1 \in f(A) \), but \( x \notin A \).
+(c) A counterexample to the step "\( f(x) \in f(A) \), so \( x \in A \)" needs a noninjective function, since for injective ones the conclusion of the step is true. Take \( f(x) = x^2 \) on \( \nR \), \( A = \{1\} \), and \( x = -1 \). Then \( f(x) = 1 \in f(A) \), but \( x \notin A \).
 
 Repair: replace (3) by "Since \( f(x) \in f(A) \), there is \( a \in A \) with \( f(a) = f(x) \); name it \( a \). Since \( f \) is injective, \( a = x \). Hence \( x \in A \)."
 :::

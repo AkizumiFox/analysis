@@ -1,6 +1,6 @@
 # Predicates and Quantifiers
 
-Chapters 1–3 built a complete account of the connectives: rules for using and proving "and", "or", "implies" and "not", a meaning for every formula through truth tables, and the theorems that the rules prove exactly what the tables say. In all of that, an atomic statement was a closed box. The statements of analysis are not boxes. "For every \( \varepsilon > 0 \) there is an \( N \) such that …" has its whole content inside, in the words "for every" and "there is" and in the letters they govern. This section opens the box. It introduces predicates, variables, the domain a statement talks about, and the two quantifiers \( \forall \) and \( \exists \), and it teaches how to **read** a quantified sentence. It proves nothing and states no rule: the rules come one per section, from Section 4.3 on.
+Chapters 1–3 built a complete account of the connectives: rules for using and proving "and", "or", "implies", and "not", a meaning for every formula through truth tables, and the theorems that the rules prove exactly what the tables say. In all of that, an atomic statement was a closed box. The statements of analysis are not boxes. "For every \( \varepsilon > 0 \) there is an \( N \) such that …" has its whole content inside, in the words "for every" and "there is" and in the letters they govern. This section opens the box. It introduces predicates, variables, the domain a statement talks about, and the two quantifiers \( \forall \) and \( \exists \), and it teaches how to **read** a quantified sentence. It proves nothing and states no rule: the rules come one per section, from Section 4.3 on.
 
 ## An argument the truth table rejects
 
@@ -150,7 +150,7 @@ Mathematics rarely says "for every real number". It says "for every \( \varepsil
 ::: {#def-bounded-quantifier}
 [Bounded Quantifier]
 
-Let \( A \) be a set, \( x \) a variable and \( \varphi \) an open sentence. The **bounded quantifiers** are the abbreviations
+Let \( A \) be a set, \( x \) a variable, and \( \varphi \) an open sentence. The **bounded quantifiers** are the abbreviations
 \[
 \begin{aligned}
 \forall x \in A \; \varphi \quad &\text{stands for} \quad \forall x\, (x \in A \to \varphi), \\

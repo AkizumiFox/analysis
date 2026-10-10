@@ -11,9 +11,9 @@ The answer is to give formulas a **meaning**. A valuation makes each atom true o
 ## Roadmap
 
 - **Formulas as objects.** The exact definition of a formula, parse trees, subformulas and height, the shorthand of Chapter 1 as a translation, and why a derivation stays a derivation when formulas are put in for its atoms.
-- **Induction on numbers and on formulas.** The principle of induction, strong induction and structural induction, and with them the proofs that every formula is read in only one way and that a definition by one clause per connective defines exactly one thing.
+- **Induction on numbers and on formulas.** The principle of induction, strong induction, and structural induction, and with them the proofs that every formula is read in only one way and that a definition by one clause per connective defines exactly one thing.
 - **Valuations and truth tables.** Truth values for atoms, the value of every formula computed along its parse tree, and why a table with \( 2^n \) rows tells everything about a formula with \( n \) atoms.
-- **Tautologies, entailment and equivalence.** The semantic counterpart \( \Gamma \models \psi \) of a sequent, tautologies and satisfiability, the standard equivalences, and what may be replaced or substituted without changing truth.
+- **Tautologies, entailment, and equivalence.** The semantic counterpart \( \Gamma \models \psi \) of a sequent, tautologies and satisfiability, the standard equivalences, and what may be replaced or substituted without changing truth.
 - **Soundness.** The rules never lead from truth to falsehood, proved by induction on the lines of a derivation; so one refuting row shows that a sequent has no derivation.
 - **Completeness.** Every truth-table consequence of finitely many premises has a derivation: the rules prove their own truth tables, one row at a time, and excluded middle glues the rows together.
 - **Normal forms and adequate connectives.** Every formula is equivalent to one in disjunctive and in conjunctive normal form; validity read off a conjunctive normal form; which sets of connectives can express everything.

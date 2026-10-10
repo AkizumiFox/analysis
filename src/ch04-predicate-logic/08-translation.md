@@ -255,7 +255,7 @@ Here is the first derivation in the book about a limit. The claim is the school 
 derives the same formula with \( 2 \cdot a_n \) and \( 2 \cdot L \) in place of \( a_n \) and \( L \), using two lines of arithmetic, justified "arith": \( \varepsilon_0 > 0 \) gives \( \varepsilon_0 / 2 > 0 \), and \( \abs{a_{n_0} - L} < \varepsilon_0 / 2 \) gives \( \abs{2 \cdot a_{n_0} - 2 \cdot L} < \varepsilon_0 \) (because \( \abs{2 u - 2 v} = 2 \abs{u - v} \)).
 
 ::: {.idea}
-Run the search. The goal starts with \( \forall \varepsilon > 0 \): open a bounded \( \rulename{\forall I} \) box, "let \( \varepsilon_0 > 0 \)". The new goal starts with \( \exists N \in \nN \): **postpone** it (the step of Section 4.5), since no witness is in sight. Turn to the premise: it starts with \( \forall \varepsilon > 0 \), and the step of Section 4.3 says to instantiate it at the term the goal needs. Which term? The goal will need \( \abs{2 a_n - 2 L} < \varepsilon_0 \), which follows from \( \abs{a_n - L} < \varepsilon_0 / 2 \): so instantiate at \( \varepsilon_0 / 2 \), after an "arith" line \( \varepsilon_0 / 2 > 0 \) for the bound. That gives an \( \exists N \in \nN \) line: open its \( \rulename{\exists E} \) box **at once**, with a witness \( N_0 \) (the step of Section 4.6), and let the box's last line be the current goal. Now the postponed goal has its witness: \( N_0 \) itself. The remaining goal \( \forall n \in \nN\, (\dots) \) opens a bounded \( \rulename{\forall I} \) box for \( n_0 \), and a \( \rulename{{\to}I} \) box on \( n_0 \ge N_0 \) finishes with one \( \rulename{\forall E} \), one \( \rulename{{\to}E} \) and the second "arith" line. This is the pattern of @prp-exists-forall-swap: **fix** \( \varepsilon_0 \), **obtain** \( N_0 \), **choose** \( N_0 \) as the witness.
+Run the search. The goal starts with \( \forall \varepsilon > 0 \): open a bounded \( \rulename{\forall I} \) box, "let \( \varepsilon_0 > 0 \)". The new goal starts with \( \exists N \in \nN \): **postpone** it (the step of Section 4.5), since no witness is in sight. Turn to the premise: it starts with \( \forall \varepsilon > 0 \), and the step of Section 4.3 says to instantiate it at the term the goal needs. Which term? The goal will need \( \abs{2 a_n - 2 L} < \varepsilon_0 \), which follows from \( \abs{a_n - L} < \varepsilon_0 / 2 \): so instantiate at \( \varepsilon_0 / 2 \), after an "arith" line \( \varepsilon_0 / 2 > 0 \) for the bound. That gives an \( \exists N \in \nN \) line: open its \( \rulename{\exists E} \) box **at once**, with a witness \( N_0 \) (the step of Section 4.6), and let the box's last line be the current goal. Now the postponed goal has its witness: \( N_0 \) itself. The remaining goal \( \forall n \in \nN\, (\dots) \) opens a bounded \( \rulename{\forall I} \) box for \( n_0 \), and a \( \rulename{{\to}I} \) box on \( n_0 \ge N_0 \) finishes with one \( \rulename{\forall E} \), one \( \rulename{{\to}E} \), and the second "arith" line. This is the pattern of @prp-exists-forall-swap: **fix** \( \varepsilon_0 \), **obtain** \( N_0 \), **choose** \( N_0 \) as the witness.
 :::
 
 ```{=latex}
@@ -291,7 +291,7 @@ $\begin{nd}
 
 Check the side conditions at the three lines that close flagged boxes, and the witness line.
 
-- Line 13 (\( \forall n \in \nN \; \rulename{I} \), flag \( n_0 \)): \( n_0 \) is not in the premise, not in line 13, and not in the assumptions still open at line 13, which are lines 2, 5 and 6.
+- Line 13 (\( \forall n \in \nN \; \rulename{I} \), flag \( n_0 \)): \( n_0 \) is not in the premise, not in line 13, and not in the assumptions still open at line 13, which are lines 2, 5, and 6.
 - Line 14 (\( \exists N \in \nN \; \rulename{I} \)): the witness \( N_0 \), with its bound on line 5 and the instance on line 13.
 - Line 15 (\( \exists N \in \nN \; \rulename{E} \), flag \( N_0 \)): \( N_0 \) is not in line 15, the conclusion (the witness has been forgotten by line 14), not in line 4, not in the premise, and not in the open assumption on line 2.
 - Line 16 (\( \forall \varepsilon > 0 \; \rulename{I} \), flag \( \varepsilon_0 \)): \( \varepsilon_0 \) is not in the premise and not in line 16, and no assumption is open at line 16.
@@ -302,7 +302,7 @@ In prose, line by line:
 
 > Let \( \varepsilon > 0 \) [lines 2, 16]. Then \( \varepsilon / 2 > 0 \) [3], so, since \( a_n \to L \), there is \( N \in \nN \) with \( \abs{a_n - L} < \varepsilon/2 \) for every \( n \ge N \) [4]; choose such an \( N \) [5, 6, 15]. Let \( n \in \nN \) with \( n \ge N \) [7, 9]. Then \( \abs{a_n - L} < \varepsilon / 2 \) [8, 10], so \( \abs{2 a_n - 2 L} = 2 \abs{a_n - L} < \varepsilon \) [11]. So this \( N \) works [12–14].
 
-Written with the unbounded rules, the same derivation has 22 lines, since each of its six bounded steps (lines 4, 8, 13, 14, 15 and 16) costs one line more. The claim "\( \frac1n \to 0 \)" is not derived here: its proof needs a fact about \( \nN \) inside \( \nR \), the Archimedean property, which is a theorem of Chapter 11, not of logic.
+Written with the unbounded rules, the same derivation has 22 lines, since each of its six bounded steps (lines 4, 8, 13, 14, 15, and 16) costs one line more. The claim "\( \frac1n \to 0 \)" is not derived here: its proof needs a fact about \( \nN \) inside \( \nR \), the Archimedean property, which is a theorem of Chapter 11, not of logic.
 
 ## The search method, extended
 
@@ -318,7 +318,7 @@ Section 2.6 put the moves for the connectives in order. Each of Sections 4.3–4
    - \( \vee \): **postpone**, as in Section 2.6;
    - \( \exists x\, \psi \): **postpone**; work on the premises until an available line shows a term \( t \) with \( \psi[t/x] \), then use \( \rulename{\exists I} \) (Section 4.5). For \( \exists x \in A\; \psi \), the line \( t \in A \) is needed too.
 
-   Repeat while the goal is \( \wedge \), \( \to \), \( \neg \), \( \leftrightarrow \) or \( \forall \).
+   Repeat while the goal is \( \wedge \), \( \to \), \( \neg \), \( \leftrightarrow \), or \( \forall \).
 3. **Premise-directed step.** Take the main symbol of a resource and apply its elimination rule:
    - \( \wedge \), \( \to \), \( \vee \), \( \leftrightarrow \), and the derived rules: as in Section 2.6;
    - \( \exists x\, \psi \): open the \( \rulename{\exists E} \) box **early**, as soon as the line is available, with a fresh witness \( x_0 \), and make its last line the current goal, which must not mention \( x_0 \) (Section 4.6). An early box lets the witness serve the goals that come later;

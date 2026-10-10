@@ -427,7 +427,7 @@ Give an example of a formula in DNF, with atoms \( p \), \( q \), \( r \), that 
 :::
 
 ::: {.solution}
-The rows with an odd number of T's are those with three T's, T T T, and those with one, T F F, F T F and F F T. One conjunct per row, as in @thm-dnf:
+The rows with an odd number of T's are those with three T's, T T T, and those with one, T F F, F T F, and F F T. One conjunct per row, as in @thm-dnf:
 \[
 (p \wedge q \wedge r) \vee (p \wedge \neg q \wedge \neg r) \vee (\neg p \wedge q \wedge \neg r) \vee (\neg p \wedge \neg q \wedge r).
 \]
@@ -615,7 +615,7 @@ p & q & r & p \to q & q \wedge r & (p \to q) \to (q \wedge r) \\
 \mathrm{F} & \mathrm{F} & \mathrm{F} & \mathrm{T} & \mathrm{F} & \mathrm{F}
 \end{array}
 \]
-The T-rows are T T T, T F T, T F F and F T T. The DNF \( (p \wedge \neg q) \vee (q \wedge r) \) is true in exactly these: \( p \wedge \neg q \) in T F T and T F F, and \( q \wedge r \) in T T T and F T T. In each of the four F-rows the CNF has a false clause: \( \neg q \vee r \) in T T F and F T F, \( p \vee q \) in F F T and F F F.
+The T-rows are T T T, T F T, T F F, and F T T. The DNF \( (p \wedge \neg q) \vee (q \wedge r) \) is true in exactly these: \( p \wedge \neg q \) in T F T and T F F, and \( q \wedge r \) in T T T and F T T. In each of the four F-rows the CNF has a false clause: \( \neg q \vee r \) in T T F and F T F, \( p \vee q \) in F F T and F F F.
 
 *By the table route*, the DNF has four conjuncts, one per T-row, and the CNF four clauses, one per F-row, for instance \( \neg p \vee \neg q \vee r \) for the row T T F. Any correct DNF and CNF earns full marks; a CNF is not unique.
 

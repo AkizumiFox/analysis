@@ -273,7 +273,7 @@ Induction on the shape of a formula, all three parts at once. For \( \neg\varphi
 :::
 
 ::: {.proof}
-We prove, by @thm-structural-induction, that every formula \( \chi \) has the property \( P(\chi) \): "(a), (b) and (c) hold for \( \chi \)".
+We prove, by @thm-structural-induction, that every formula \( \chi \) has the property \( P(\chi) \): "(a), (b), and (c) hold for \( \chi \)".
 
 *Atoms and \( \bot \).* The formula is one symbol, not a parenthesis. (a) Its excess is \( 0 \). (b) Its initial segments are the empty string and the formula itself, both of excess \( 0 \); and it does not have the form \( (\varphi \circ \psi) \), which has length at least \( 5 \). (c) It contains no binary connective.
 
@@ -519,7 +519,7 @@ where the last step is \( 1 \le 2^h \).
 \operatorname{nodes}((\varphi \circ \psi)) \le (2^a - 1) + (2^b - 1) + 1 \le 2 \cdot 2^{h - 1} - 1 = 2^h - 1 .
 \]
 
-By @thm-structural-induction, the bound holds for every formula. Equality at height \( 3 \): \( ((p \wedge q) \wedge (r \wedge p)) \) has \( 7 = 2^3 - 1 \) nodes (a root, two \( \wedge \) nodes and four leaves). Equality needs every node above the bottom level to have two children.
+By @thm-structural-induction, the bound holds for every formula. Equality at height \( 3 \): \( ((p \wedge q) \wedge (r \wedge p)) \) has \( 7 = 2^3 - 1 \) nodes (a root, two \( \wedge \) nodes, and four leaves). Equality needs every node above the bottom level to have two children.
 :::
 
 ### C. Going deeper

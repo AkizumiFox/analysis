@@ -47,7 +47,7 @@ In words, clause by clause.
 
 - **One given line.** Line \( i \) holds a statement \( \varphi \), which may be any statement at all, and it must be available at line \( k \), in the sense of the scope rule of @def-derivation: an earlier line, not inside a box that has already closed. The justification "\( \rulename{\vee I} \) \( i \)" cites that one line. There is no box: \( \rulename{\vee I} \) is a one-step rule, like \( \rulename{\wedge E} \) and \( \rulename{{\to}E} \).
 - **Either side.** The new line is a disjunction with \( \varphi \) as one of its two sides: on the left in the first schema, on the right in the second. Both forms have the same name, and the justification does not say which was used; the shape of the new line shows it.
-- **Any other side.** The letter \( \psi \) appears in no given line. It stands for **any statement at all**. It need not be true, it need not have been mentioned before, and it need not have anything to do with \( \varphi \). This is the rule's one surprising clause. No earlier rule has it: \( \rulename{\wedge I} \), \( \rulename{\wedge E} \), \( \rulename{{\to}E} \) and \( \rulename{{\to}I} \) all build their new line out of statements that already stand on the lines or boxes they cite.
+- **Any other side.** The letter \( \psi \) appears in no given line. It stands for **any statement at all**. It need not be true, it need not have been mentioned before, and it need not have anything to do with \( \varphi \). This is the rule's one surprising clause. No earlier rule has it: \( \rulename{\wedge I} \), \( \rulename{\wedge E} \), \( \rulename{{\to}E} \), and \( \rulename{{\to}I} \) all build their new line out of statements that already stand on the lines or boxes they cite.
 - **Consistent replacement.** As @def-rule-schema requires, \( \varphi \) is replaced by the whole cited statement, symbol for symbol. If line 3 is \( P \wedge Q \), then \( \rulename{\vee I} \) 3 may write \( (P \wedge Q) \vee R \), with \( \varphi \) replaced by \( P \wedge Q \) and \( \psi \) by \( R \). The brackets matter: the main connective of the new line (@def-main-connective) must be the \( \vee \) that the rule introduces.
 
 Here is an instance. Let \( x \) be a real number, and suppose line 4 of some derivation is \( x > 0 \). Then each of the lines
@@ -260,7 +260,7 @@ In the derivation of @exm-or-hypothesis-split, line 3 could not have been skippe
 
 The most obvious fact about "or" is that the order of its sides does not matter: \( P \vee Q \vdash Q \vee P \). Try to derive it with the rules so far.
 
-The goal \( Q \vee P \) is a disjunction, so we postpone it and look at the premise. Its main connective is \( \vee \), and no rule so far takes a disjunction apart. \( \rulename{\wedge E} \) needs a conjunction and \( \rulename{{\to}E} \) an implication; \( \rulename{\wedge I} \), \( \rulename{\vee I} \) and \( \rulename{R} \) may cite \( P \vee Q \), but only to copy it or to build something larger around it. So the premise gives us nothing, and neither side of the goal ever comes into hand.
+The goal \( Q \vee P \) is a disjunction, so we postpone it and look at the premise. Its main connective is \( \vee \), and no rule so far takes a disjunction apart. \( \rulename{\wedge E} \) needs a conjunction and \( \rulename{{\to}E} \) an implication; \( \rulename{\wedge I} \), \( \rulename{\vee I} \), and \( \rulename{R} \) may cite \( P \vee Q \), but only to copy it or to build something larger around it. So the premise gives us nothing, and neither side of the goal ever comes into hand.
 
 We can get this far, though. Each side of the premise, **assumed** in a box, leads to the goal:
 
@@ -282,7 +282,7 @@ $\begin{nd}
 \end{center}
 ```
 
-This is a correct derivation, with a disappointing last line: it shows \( P \vee Q \vdash Q \to (Q \vee P) \), and line 1 is never cited. (A derivation need not use every premise, @def-derivable.) What we would like is to put the three lines 1, 4 and 7 together: *one of \( P \), \( Q \) holds, and either one leads to \( Q \vee P \); so \( Q \vee P \)*. That is a proof by cases, and none of the rules so far performs it. With them we cannot find a derivation of \( P \vee Q \vdash Q \vee P \).
+This is a correct derivation, with a disappointing last line: it shows \( P \vee Q \vdash Q \to (Q \vee P) \), and line 1 is never cited. (A derivation need not use every premise, @def-derivable.) What we would like is to put the three lines 1, 4, and 7 together: *one of \( P \), \( Q \) holds, and either one leads to \( Q \vee P \); so \( Q \vee P \)*. That is a proof by cases, and none of the rules so far performs it. With them we cannot find a derivation of \( P \vee Q \vdash Q \vee P \).
 
 The missing move is to **use** a disjunction, as \( \rulename{\wedge E} \) uses a conjunction and \( \rulename{{\to}E} \) uses an implication. The next section gives the rule that does this, and with it the six-line derivation that this attempt lacks.
 

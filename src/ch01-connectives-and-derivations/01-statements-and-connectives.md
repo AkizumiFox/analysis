@@ -73,7 +73,7 @@ The book reserves the words "proposition" and "theorem" for proved results, so i
 
 Most statements in mathematics are built from smaller ones. "\( 0 < x \) and \( x < 1 \)" is built from "\( 0 < x \)" and "\( x < 1 \)" with the word "and". "If \( n^2 \) is even, then \( n \) is even" is built from two statements with "if … then". The words that do the building are the **connectives**. A statement built from smaller statements by a connective is **compound**; one that is not is **atomic**. For this chapter, "\( x > 0 \)" is atomic: it has an inner structure, a number and an order, but no connective joins parts of it.
 
-We write \( P \), \( Q \), \( R \), \( S \) for statements whose inner structure we are ignoring. They stand for **arbitrary** statements, atomic or compound. There are five connectives. In the last column of the table, \( x \) is a real number, \( P \) is "\( x > 0 \)" and \( Q \) is "\( x < 1 \)".
+We write \( P \), \( Q \), \( R \), \( S \) for statements whose inner structure we are ignoring. They stand for **arbitrary** statements, atomic or compound. There are five connectives. In the last column of the table, \( x \) is a real number, \( P \) is "\( x > 0 \)", and \( Q \) is "\( x < 1 \)".
 
 | Symbol | Name | Read | Example |
 |--------|------------|---------------------|--------------------------------|
@@ -85,9 +85,9 @@ We write \( P \), \( Q \), \( R \), \( S \) for statements whose inner structure
 
 To the five connectives we add one statement with no parts at all, written \( \bot \) and read "contradiction". It stands for a statement that is false however things stand: \( 0 = 1 \) will do. A proof that reaches \( \bot \) has shown that the situation it was working in cannot occur. That is the heart of proof by contradiction, and Chapter 2 gives \( \bot \) its rules.
 
-In \( P \to Q \), the statement \( P \) is the **hypothesis** (or antecedent) and \( Q \) the **conclusion** (or consequent). English has many ways of saying \( P \to Q \): "\( P \) implies \( Q \)", "\( Q \) if \( P \)", "\( Q \) whenever \( P \)", "\( P \) only if \( Q \)", "\( P \) is sufficient for \( Q \)" and "\( Q \) is necessary for \( P \)" all say the same thing, and the exercises ask you to see why. "If and only if" is often shortened to **iff**.
+In \( P \to Q \), the statement \( P \) is the **hypothesis** (or antecedent) and \( Q \) the **conclusion** (or consequent). English has many ways of saying \( P \to Q \): "\( P \) implies \( Q \)", "\( Q \) if \( P \)", "\( Q \) whenever \( P \)", "\( P \) only if \( Q \)", "\( P \) is sufficient for \( Q \)", and "\( Q \) is necessary for \( P \)" all say the same thing, and the exercises ask you to see why. "If and only if" is often shortened to **iff**.
 
-Several English words become \( \wedge \): "but", "although" and "while" all assert both parts, and add a tone of contrast that logic ignores. "\( 2 \) is prime but not odd" is a conjunction. So is "neither … nor", in disguise: "\( 9 \) is neither even nor prime" asserts that \( 9 \) is not even **and** that \( 9 \) is not prime, which is \( \neg P \wedge \neg Q \) with \( P \): "\( 9 \) is even" and \( Q \): "\( 9 \) is prime".
+Several English words become \( \wedge \): "but", "although", and "while" all assert both parts, and add a tone of contrast that logic ignores. "\( 2 \) is prime but not odd" is a conjunction. So is "neither … nor", in disguise: "\( 9 \) is neither even nor prime" asserts that \( 9 \) is not even **and** that \( 9 \) is not prime, which is \( \neg P \wedge \neg Q \) with \( P \): "\( 9 \) is even" and \( Q \): "\( 9 \) is prime".
 
 Chained inequalities are conjunctions in disguise too. \( 0 < x < 1 \) abbreviates \( (0 < x) \wedge (x < 1) \), and \( a \le b \le c \) abbreviates \( (a \le b) \wedge (b \le c) \). The symbol \( \le \) itself hides a disjunction: \( a \le b \) means \( (a < b) \vee (a = b) \). And \( a \ne b \) is the negation \( \neg(a = b) \). All three facts are used often in the sections that follow.
 
@@ -246,7 +246,7 @@ The table below is an informal preview. Section 1.3 states these two rules exact
 | \( \rulename{\wedge I} \) | from \( P \) and \( Q \), conclude \( P \wedge Q \) | "We have shown \( x > 0 \) and \( x < 1 \). Hence \( 0 < x < 1 \)." |
 | \( \rulename{\wedge E} \) | from \( P \wedge Q \), conclude \( P \); also \( Q \) | "Since \( 0 < x < 1 \), in particular \( x > 0 \)." |
 
-Every connective works the same way. Each comes with introduction rules, saying how to prove a statement with that main connective, and elimination rules, saying what a statement with that main connective lets us conclude. The rules for \( \wedge \) come in Section 1.3, those for \( \to \) in Sections 1.4 and 1.5, and those for \( \vee \) in Sections 1.6 and 1.7. The rules for \( \neg \), \( \bot \) and \( \leftrightarrow \), and one more rule for proof by contradiction, which stands apart from the others, are the subject of Chapter 2. Two slogans summarize the plan.
+Every connective works the same way. Each comes with introduction rules, saying how to prove a statement with that main connective, and elimination rules, saying what a statement with that main connective lets us conclude. The rules for \( \wedge \) come in Section 1.3, those for \( \to \) in Sections 1.4 and 1.5, and those for \( \vee \) in Sections 1.6 and 1.7. The rules for \( \neg \), \( \bot \), and \( \leftrightarrow \), and one more rule for proof by contradiction, which stands apart from the others, are the subject of Chapter 2. Two slogans summarize the plan.
 
 *Each connective comes with a way to prove it and a way to use it.*
 

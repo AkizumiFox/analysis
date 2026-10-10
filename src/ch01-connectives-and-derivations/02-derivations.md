@@ -8,7 +8,7 @@ Here is a chain of inequalities between fractions:
 \[
 0 < \tfrac{1}{3} < \tfrac{1}{2} < 1 .
 \]
-It is read as three claims, \( 0 < \tfrac13 \), \( \tfrac13 < \tfrac12 \) and \( \tfrac12 < 1 \), and a reader who accepts them concludes \( 0 < 1 \). What justifies that conclusion? Not a picture of the number line, and not a feeling that the numbers go up. The justification is one fact, used twice:
+It is read as three claims, \( 0 < \tfrac13 \), \( \tfrac13 < \tfrac12 \), and \( \tfrac12 < 1 \), and a reader who accepts them concludes \( 0 < 1 \). What justifies that conclusion? Not a picture of the number line, and not a feeling that the numbers go up. The justification is one fact, used twice:
 
 > if \( a < b \) and \( b < c \), then \( a < c \).
 
@@ -59,7 +59,7 @@ In words, clause by clause.
 - *Letters are replaced consistently, symbol for symbol.* The middle letter \( b \) occurs in both given lines, so it must be replaced by the **same** expression in both: the same string of symbols, not merely the same number. This is the clause a careless step breaks.
 - *Nothing else is required.* There is no condition on what the expressions mean, how large they are, or whether the given lines are true.
 
-An instance first. Take \( i = 3 \), \( j = 5 \), \( k = 6 \), and replace \( a \) by \( 0 \), \( b \) by \( \tfrac12 \) and \( c \) by \( 1 \). The pattern becomes: line 3 is \( 0 < \tfrac12 \), line 5 is \( \tfrac12 < 1 \), and line 6 is \( 0 < 1 \), justified "\( \mathrm{Tr} \ 3, 5 \)". So if lines 3 and 5 of some list say exactly those things, line 6 may say \( 0 < 1 \) with that justification.
+An instance first. Take \( i = 3 \), \( j = 5 \), \( k = 6 \), and replace \( a \) by \( 0 \), \( b \) by \( \tfrac12 \), and \( c \) by \( 1 \). The pattern becomes: line 3 is \( 0 < \tfrac12 \), line 5 is \( \tfrac12 < 1 \), and line 6 is \( 0 < 1 \), justified "\( \mathrm{Tr} \ 3, 5 \)". So if lines 3 and 5 of some list say exactly those things, line 6 may say \( 0 < 1 \) with that justification.
 
 Now a noninstance, by a minimal change. Keep line 3 as \( 0 < \tfrac12 \), and let line 5 be \( \tfrac13 < 1 \). Is "6. \( 0 < 1 \), \( \mathrm{Tr} \ 3, 5 \)" justified? Line 3 forces \( b \) to be \( \tfrac12 \), and line 5 forces \( b \) to be \( \tfrac13 \). The letter \( b \) cannot be both, so these lines are not an instance of the schema. Line 6 is true, but \( \mathrm{Tr} \) was not applied, so the line has no justification.
 
@@ -79,7 +79,7 @@ Its letter \( c \) occurs only in the new line, so it may be replaced by **any**
 
 *Why define rules this way?* Because a rule applied by matching can be checked by someone who knows nothing about the subject. The schema turns "this step is obviously fine" into "this step matches that pattern", a claim anyone can test. Every rule of logic in the following sections is given in this form, and the definition was worded so that none of them needs a new one: Section 1.5 adds given **boxes**, cited as ranges of lines, and a rule of Chapter 4 has no given lines at all.
 
-From the next section on, the letters in a schema are Greek: \( \varphi \), \( \psi \), \( \chi \) (phi, psi, chi) stand for arbitrary **statements**, just as \( a \), \( b \), \( c \) stand for expressions for numbers here. Replacing them works the same way, with parentheses put around a compound statement where it is needed. For example, if a schema has the given lines \( \varphi \) and \( \psi \) and the new line \( \varphi \wedge \psi \), then the three lines \( P \to Q \), \( R \) and \( (P \to Q) \wedge R \) are an instance of it, with \( \varphi \) replaced by \( P \to Q \) and \( \psi \) by \( R \).
+From the next section on, the letters in a schema are Greek: \( \varphi \), \( \psi \), \( \chi \) (phi, psi, chi) stand for arbitrary **statements**, just as \( a \), \( b \), \( c \) stand for expressions for numbers here. Replacing them works the same way, with parentheses put around a compound statement where it is needed. For example, if a schema has the given lines \( \varphi \) and \( \psi \) and the new line \( \varphi \wedge \psi \), then the three lines \( P \to Q \), \( R \), and \( (P \to Q) \wedge R \) are an instance of it, with \( \varphi \) replaced by \( P \to Q \) and \( \psi \) by \( R \).
 
 ::: {.warning}
 The middle expression must match **exactly**, symbol for symbol. The step "\( 0 < \tfrac24 \) and \( \tfrac12 < 1 \), so \( 0 < 1 \)" is tempting, because \( \tfrac24 = \tfrac12 \) and every line in it is true, but it is not an application of \( \mathrm{Tr} \): the two middle expressions are different strings. A checker who had to notice that they are equal would need arithmetic, and the point of a schema is that a checker needs nothing. Compare symbols, not values.
@@ -292,7 +292,7 @@ $\begin{nd}
 \end{center}
 ```
 
-Line 5 passes all three questions, exactly as line 4 did before. Line 4 passes the first two: lines 5, 3 and 4 are an instance of \( \mathrm{Tr} \) with \( a \), \( b \), \( c \) replaced by \( 0 \), \( y \), \( 1 \). It fails the third, because it cites line 5, which is not earlier. So the list is not a derivation. (It would also be useless if it were one: its last line is now \( 0 < y \), not \( 0 < 1 \).)
+Line 5 passes all three questions, exactly as line 4 did before. Line 4 passes the first two: lines 5, 3, and 4 are an instance of \( \mathrm{Tr} \) with \( a \), \( b \), \( c \) replaced by \( 0 \), \( y \), \( 1 \). It fails the third, because it cites line 5, which is not earlier. So the list is not a derivation. (It would also be useless if it were one: its last line is now \( 0 < y \), not \( 0 < 1 \).)
 
 (b) Line 5 is now "\( 0 < 1 \), \( \mathrm{Tr} \ 3, 4 \)". Lines 3 and 4 are earlier, so the third question passes, and the rule is named, so the first passes. The second fails. The citation makes line 3, \( y < 1 \), play \( a < b \), so \( a \) is \( y \) and \( b \) is \( 1 \); and it makes line 4, \( 0 < y \), play \( b < c \), so \( b \) is \( 0 \). The letter \( b \) cannot be both \( 1 \) and \( 0 \), so there is no instance. The lines are the right ones in the wrong roles.
 :::
@@ -305,7 +305,7 @@ A proof about sequences might contain the line
 \[
 0 < \frac{1}{n+1} < \frac{1}{n} \le 1 \qquad \text{for } n \in \nN .
 \]
-It asserts three links: \( 0 < \frac{1}{n+1} \), \( \frac{1}{n+1} < \frac1n \) and \( \frac1n \le 1 \). A reader who takes from it a claim about its two ends, \( 0 < 1 \), performs two steps in silence. The first is one application of chaining: \( 0 < \frac{1}{n+1} \) and \( \frac{1}{n+1} < \frac1n \) give \( 0 < \frac1n \). The second joins \( 0 < \frac1n \) with \( \frac1n \le 1 \), and it is **not** \( \mathrm{Tr} \): the line \( \frac1n \le 1 \) has \( \le \), not \( < \), so the lines do not match the schema. It is a different pattern, "from \( a < b \) and \( b \le c \), write \( a < c \)", another true fact about numbers. That is exactly why a justification must name the pattern it uses. "By the chain" does not say which one.
+It asserts three links: \( 0 < \frac{1}{n+1} \), \( \frac{1}{n+1} < \frac1n \), and \( \frac1n \le 1 \). A reader who takes from it a claim about its two ends, \( 0 < 1 \), performs two steps in silence. The first is one application of chaining: \( 0 < \frac{1}{n+1} \) and \( \frac{1}{n+1} < \frac1n \) give \( 0 < \frac1n \). The second joins \( 0 < \frac1n \) with \( \frac1n \le 1 \), and it is **not** \( \mathrm{Tr} \): the line \( \frac1n \le 1 \) has \( \le \), not \( < \), so the lines do not match the schema. It is a different pattern, "from \( a < b \) and \( b \le c \), write \( a < c \)", another true fact about numbers. That is exactly why a justification must name the pattern it uses. "By the chain" does not say which one.
 
 Written chains like this one are everywhere in analysis, and they are derivations with the justifications left off. Nobody writes the justifications out in a real proof about numbers. But a reader checking a hard chain does what the table of "Reading a derivation" does: for each step, which fact, applied to which earlier lines.
 

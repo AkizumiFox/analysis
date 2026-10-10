@@ -136,7 +136,7 @@ which depends only on \( n \) and \( s \). Suppose \( s^n \ne a \), and let
 \]
 Then \( hC \le \tfrac12 \abs{s^n - a} < \abs{s^n - a} \).
 
-*Case 1: \( s^n < a \).* Apply the claim with \( k = n \), \( x = s \) and \( y = s + h \). Since \( s + h < s + 1 \), the claim with \( m = n - 1 \) gives \( (s + h)^{n-1} \le (s + 1)^{n-1} \) (both sides are \( 1 \) when \( n = 1 \)). Therefore
+*Case 1: \( s^n < a \).* Apply the claim with \( k = n \), \( x = s \), and \( y = s + h \). Since \( s + h < s + 1 \), the claim with \( m = n - 1 \) gives \( (s + h)^{n-1} \le (s + 1)^{n-1} \) (both sides are \( 1 \) when \( n = 1 \)). Therefore
 \[
     (s + h)^n - s^n \le n (s + h)^{n-1} h \le C h < a - s^n ,
 \]
@@ -146,7 +146,7 @@ so \( (s + h)^n < a \). Hence \( s + h \in S \), although \( s + h > s \). This 
 \[
     h \le \frac{s^n - a}{2C} < \frac{s^n}{2C} \le \frac{s^n}{2 n s^{n-1}} = \frac{s}{2n} < s .
 \]
-Apply the claim with \( k = n \), \( x = s - h \) and \( y = s \):
+Apply the claim with \( k = n \), \( x = s - h \), and \( y = s \):
 \[
     s^n - (s - h)^n \le n s^{n-1} h \le C h < s^n - a ,
 \]

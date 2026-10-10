@@ -1,6 +1,6 @@
 # How to Find a Derivation
 
-We now have every rule for the connectives. Checking a derivation is mechanical, as @def-derivation makes it: for each line, which rule, which lines, and are they available. Finding one is not, since an assumption may be any statement at all. Yet every Idea in Chapters 1 and 2 found its derivation with the same handful of moves. This section introduces no new rule. It collects those moves into one method, puts them in order, says why the order is right, and then watches the method work: on four searches that succeed, one that fails and one mathematical goal. It ends with every rule in one place.
+We now have every rule for the connectives. Checking a derivation is mechanical, as @def-derivation makes it: for each line, which rule, which lines, and are they available. Finding one is not, since an assumption may be any statement at all. Yet every Idea in Chapters 1 and 2 found its derivation with the same handful of moves. This section introduces no new rule. It collects those moves into one method, puts them in order, says why the order is right, and then watches the method work: on four searches that succeed, one that fails, and one mathematical goal. It ends with every rule in one place.
 
 ## The moves so far
 
@@ -32,7 +32,7 @@ A search builds a derivation from the outside in: the last line first, then the 
 A **partial derivation** is a list of lines laid out as a derivation (@def-derivation), except that some stretches of lines are still missing. Each missing stretch is a **gap**, drawn as a row \( \vdots \). The line just below a gap is its **current goal**; it is already written, but it has no justification yet, since the lines of the gap are to supply one. The lines available at the current goal, in the sense of @def-derivation, are the gap's **resources**.
 :::
 
-In words: every line that has been written is a premise, an assumption, a current goal, or a line justified by a rule from lines and boxes available to it; the boxes are nested and closed as in any derivation; only the gaps are missing. A search starts with a single gap, below the premises and above the conclusion, and each step replaces a gap by lines, boxes and smaller gaps. It ends when no gap is left, and then the partial derivation is a derivation.
+In words: every line that has been written is a premise, an assumption, a current goal, or a line justified by a rule from lines and boxes available to it; the boxes are nested and closed as in any derivation; only the gaps are missing. A search starts with a single gap, below the premises and above the conclusion, and each step replaces a gap by lines, boxes, and smaller gaps. It ends when no gap is left, and then the partial derivation is a derivation.
 
 The **degenerate** partial derivation is the starting point of every search: the premises, one gap, and the goal. Its resources are the premises. The snapshots in the worked searches below are all partial derivations; a line carries the number it will have in the finished derivation, so that snapshots can be compared, and a line whose place is not yet fixed carries no number. On paper you would number the lines at the end.
 
@@ -43,7 +43,7 @@ In the second snapshot of @exm-search-distribute below, the second gap has the c
 :::
 
 ::: {.solution}
-Lines 1, 7, 8 and 9: the premise \( P \to \neg Q \), the line \( \neg(P \wedge Q) \), and the assumptions \( Q \) and \( P \) of the two boxes that contain the gap. Line 7 lies in no box and above the gap, so it is available, though this gap will not need it. Lines 2–6 are not resources: they lie in a box that has closed.
+Lines 1, 7, 8, and 9: the premise \( P \to \neg Q \), the line \( \neg(P \wedge Q) \), and the assumptions \( Q \) and \( P \) of the two boxes that contain the gap. Line 7 lies in no box and above the gap, so it is available, though this gap will not need it. Lines 2–6 are not resources: they lie in a box that has closed.
 :::
 
 ## The method
@@ -61,7 +61,7 @@ Lines 1, 7, 8 and 9: the premise \( P \to \neg Q \), the line \( \neg(P \wedge Q
    - \( \psi \leftrightarrow \chi \): two boxes, one from \( \psi \) to \( \chi \) and one from \( \chi \) to \( \psi \) (Section 2.4);
    - \( \psi \vee \chi \): **postpone**; do not choose a side yet (Section 1.6), unless the disjunction is being manufactured for a clash with its own negation (step 4), when either side may be chosen (see below).
 
-   Repeat while the current goal is a \( \wedge \), \( \to \), \( \neg \) or \( \leftrightarrow \).
+   Repeat while the current goal is a \( \wedge \), \( \to \), \( \neg \), or \( \leftrightarrow \).
 3. **Premise-directed step.** Take the main connective of a resource and apply its elimination rule: \( \rulename{\wedge E} \) freely (Section 1.3); \( \rulename{{\to}E} \) and \( \rulename{{\leftrightarrow}E} \) when the other statement they need is a resource, or can be made a new goal (Sections 1.4 and 2.4); \( \rulename{\vee E} \) by opening two boxes, one per disjunct, **each ending in the current goal** (Section 1.7). A derived rule may do the work of several lines (Section 2.3): a resource \( \psi \to \chi \) with \( \neg\chi \) available gives \( \neg\psi \) by \( \rulename{MT} \); a resource \( \psi \vee \chi \) with \( \neg\psi \) available gives \( \chi \) by \( \rulename{DS} \).
 4. **Clash.** If the current goal is \( \bot \), look for a pair \( \chi \), \( \neg\chi \) among the resources, or make \( \chi \) the new goal for some resource \( \neg\chi \) and manufacture it, starting again at step 2 for that goal. Whatever the current goal, if the resources clash, write \( \bot \) and then the goal by \( \rulename{\bot E} \): an impossible case closes itself (Section 2.1).
 5. **Stuck.** Use \( \rulename{RAA} \): open a box with the negation of the current goal, whose new goal is \( \bot \); if that gives nothing, try the same with a goal further out whose box contains the stalled gap. Or use \( \rulename{LEM} \) on a well-chosen statement \( \chi \), and split on \( \chi \vee \neg\chi \) by \( \rulename{\vee E} \). Then return to step 3 (Section 2.5).
@@ -71,7 +71,7 @@ When no gap is left, number the lines and check the derivation as @def-derivatio
 
 The steps are listed in the order in which to try them, and the order has reasons.
 
-**The goal-directed steps lose nothing.** Suppose the goal \( \psi \to \chi \) is derivable from the resources \( \Gamma \) at all, by some derivation \( D \). Then \( \chi \) is derivable from \( \Gamma \) together with \( \psi \): add \( \psi \) to the premises of \( D \) (@def-derivable asks only that the premises belong to the list), and append the line \( \chi \) by \( \rulename{{\to}E} \), citing the last line of \( D \) and the premise \( \psi \). So opening a box on \( \psi \) never turns a derivable gap into an underivable one. With \( \rulename{\wedge E} \), \( \rulename{\neg E} \) or \( \rulename{{\leftrightarrow}E} \) as the appended line, the same argument covers \( \wedge \), \( \neg \) and \( \leftrightarrow \). That is why step 2 may be applied without thinking.
+**The goal-directed steps lose nothing.** Suppose the goal \( \psi \to \chi \) is derivable from the resources \( \Gamma \) at all, by some derivation \( D \). Then \( \chi \) is derivable from \( \Gamma \) together with \( \psi \): add \( \psi \) to the premises of \( D \) (@def-derivable asks only that the premises belong to the list), and append the line \( \chi \) by \( \rulename{{\to}E} \), citing the last line of \( D \) and the premise \( \psi \). So opening a box on \( \psi \) never turns a derivable gap into an underivable one. With \( \rulename{\wedge E} \), \( \rulename{\neg E} \), or \( \rulename{{\leftrightarrow}E} \) as the appended line, the same argument covers \( \wedge \), \( \neg \), and \( \leftrightarrow \). That is why step 2 may be applied without thinking.
 
 **Choosing a side of \( \vee \) can lose everything.** A disjunction can be derivable when neither side is. From \( P \vee Q \) the goal \( Q \vee P \) is derivable (@exm-disjunction-first-derivations), but \( P \vee Q \) does not say which side holds, so a last line \( \rulename{\vee I} \) from \( Q \), or from \( P \), leaves a gap that cannot be filled (Chapter 3 makes "cannot" exact, @cor-refuting-row). Choosing a side is safe only once the resources decide it, typically inside a case of \( \rulename{\vee E} \), or when the disjunction is being manufactured for a clash (step 4) with a resource that is its negation: then the resources derive \( \bot \) as soon as they derive the disjunction, and from \( \bot \) every statement, either side included, by \( \rulename{\bot E} \).
 
@@ -94,7 +94,7 @@ For each goal, with no premises, name the first rule the method aims for and the
 
 ## Splitting the goal
 
-We now run the method. The first search uses only steps 2, 3 and 4. It is the full version of the chapter's main move, *read the skeleton off the goal, then work from both ends*, which comes back twice in the exercises with parts left blank.
+We now run the method. The first search uses only steps 2, 3, and 4. It is the full version of the chapter's main move, *read the skeleton off the goal, then work from both ends*, which comes back twice in the exercises with parts left blank.
 
 ::: {#exm-search-distribute}
 [Splitting the goal, then using the premise]
@@ -151,7 +151,7 @@ $\begin{nd}[schema]
 
 *Steps 3 and 4, first gap.* The resources are lines 1 and 2. Step 3 splits line 2 into \( P \) and \( Q \) by \( \rulename{\wedge E} \). Now \( P \) is the hypothesis of line 1, so \( \rulename{{\to}E} \) gives \( \neg Q \). Step 4 finds the pair \( Q \), \( \neg Q \).
 
-*Steps 3 and 4, second gap.* The resources are lines 1, 7, 8 and 9, and line 7 is not needed. \( \rulename{{\to}E} \) on lines 1 and 9 gives \( \neg Q \), which clashes with line 8. Both gaps close:
+*Steps 3 and 4, second gap.* The resources are lines 1, 7, 8, and 9, and line 7 is not needed. \( \rulename{{\to}E} \) on lines 1 and 9 gives \( \neg Q \), which clashes with line 8. Both gaps close:
 
 ```{=latex}
 \begin{center}
@@ -180,7 +180,7 @@ $\begin{nd}
 \end{center}
 ```
 
-*What the method did.* The goal-directed steps wrote nine of the fourteen lines, every box among them, before the premise was used; the premise-directed steps wrote four, lines 3, 4, 5 and 10. The premise itself was used once in each gap, by the same \( \rulename{{\to}E} \). Line 10 cites line 1 from inside two boxes, which is legal because line 1 is a premise and so is available everywhere below it.
+*What the method did.* The goal-directed steps wrote nine of the fourteen lines, every box among them, before the premise was used; the premise-directed steps wrote four, lines 3, 4, 5, and 10. The premise itself was used once in each gap, by the same \( \rulename{{\to}E} \). Line 10 cites line 1 from inside two boxes, which is legal because line 1 is a premise and so is available everywhere below it.
 :::
 
 Notice how little thinking the search needed. Step 2 is mechanical, and it did most of the work: by the time the premise was consulted, each gap was small, with the goal \( \bot \) and two or three resources. That is the typical shape of a successful search: **the goal fixes the skeleton, and the premises fill in the flesh.**
@@ -283,7 +283,7 @@ $\begin{nd}[schema]
 \end{center}
 ```
 
-In the case \( R \) the resources are \( P \to (Q \vee R) \), \( P \), \( Q \vee R \) and \( R \), and none of them yields \( Q \): no resource has \( Q \) as a conclusion except \( Q \vee R \), which is already split, and nothing clashes. Choosing the right side instead fails in the mirror image, in the case \( Q \). In fact neither side follows from the premise alone: with \( P \) and \( Q \) true and \( R \) false the premise is true and \( P \to R \) is false, and with \( P \) and \( R \) true and \( Q \) false the premise is true and \( P \to Q \) is false. (Chapter 3 turns such rows into proofs that no derivation exists: @cor-refuting-row.)
+In the case \( R \) the resources are \( P \to (Q \vee R) \), \( P \), \( Q \vee R \), and \( R \), and none of them yields \( Q \): no resource has \( Q \) as a conclusion except \( Q \vee R \), which is already split, and nothing clashes. Choosing the right side instead fails in the mirror image, in the case \( Q \). In fact neither side follows from the premise alone: with \( P \) and \( Q \) true and \( R \) false the premise is true and \( P \to R \) is false, and with \( P \) and \( R \) true and \( Q \) false the premise is true and \( P \to Q \) is false. (Chapter 3 turns such rows into proofs that no derivation exists: @cor-refuting-row.)
 
 *The diagnosis.* Each case of the dead end knew which side it wanted: the case \( Q \) wanted \( P \to Q \), and the case \( R \) wanted \( P \to R \). But those cases were opened inside the box of \( P \), too late to choose the side of a disjunction that stands outside it. The side must be decided **before** any box is opened, and the premise does not decide it. Steps 2–4 are used up: we are at step 5.
 
@@ -405,7 +405,7 @@ $\begin{nd}[schema]
 \end{center}
 ```
 
-*The two small gaps.* In the first, the resources are lines 1, 2 and 3, and the goal \( Q \) is a letter that no resource produces. But the resources clash once a line is manufactured: \( \rulename{\vee I} \) builds \( P \vee Q \) from line 3, which clashes with line 2, and \( \rulename{\bot E} \) writes \( Q \) (step 4: an impossible case closes itself). The second gap is the mirror image:
+*The two small gaps.* In the first, the resources are lines 1, 2, and 3, and the goal \( Q \) is a letter that no resource produces. But the resources clash once a line is manufactured: \( \rulename{\vee I} \) builds \( P \vee Q \) from line 3, which clashes with line 2, and \( \rulename{\bot E} \) writes \( Q \) (step 4: an impossible case closes itself). The second gap is the mirror image:
 
 ```{=latex}
 \begin{center}
@@ -484,7 +484,7 @@ First, if \( m \) is even, say \( m = 2k \) with \( k \) an integer, then \( mn 
 
 Exchanging the roles of \( m \) and \( n \) in the previous paragraph shows that \( n \) is odd. Hence \( m \) and \( n \) are both odd.
 
-*What the method did.* It fixed the first sentence, the two paragraphs and the last sentence; the only computation is \( mn = 2(kn) \). No step uses \( \rulename{RAA} \): the classical-looking move from "\( m \) is not even" to "\( m \) is odd" is disjunctive syllogism on the fact that every integer is even or odd. (The phrase "say \( m = 2k \)" names a witness, which is a rule for "there exists" from Chapter 4.)
+*What the method did.* It fixed the first sentence, the two paragraphs, and the last sentence; the only computation is \( mn = 2(kn) \). No step uses \( \rulename{RAA} \): the classical-looking move from "\( m \) is not even" to "\( m \) is odd" is disjunctive syllogism on the fact that every integer is even or odd. (The phrase "say \( m = 2k \)" names a witness, which is a rule for "there exists" from Chapter 4.)
 :::
 
 ::: {.warning}
@@ -1161,7 +1161,7 @@ In either case the equation holds, which proves it. Both cases end in the same s
 ::: {#exr-finding-derivations-r2}
 [R2]
 
-Let \( x \) be a real number. Write \( N \) for "\( x < 0 \)", \( G \) for "\( x > 1 \)" and \( S \) for "\( x = 7 \)". Translate the argument below into a sequent in these letters, and derive it.
+Let \( x \) be a real number. Write \( N \) for "\( x < 0 \)", \( G \) for "\( x > 1 \)", and \( S \) for "\( x = 7 \)". Translate the argument below into a sequent in these letters, and derive it.
 
 > \( x \) is neither negative nor greater than \( 1 \). Therefore \( x \) is not negative, and if \( x \) is greater than \( 1 \), then \( x = 7 \).
 :::

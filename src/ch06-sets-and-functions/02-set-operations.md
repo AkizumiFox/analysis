@@ -31,7 +31,7 @@ Examples, simplest first, each checked against the membership conditions.
 - **Finite sets.** For \( A = \{1, 2, 3\} \) and \( B = \{2, 4\} \): \( A \cup B = \{1, 2, 3, 4\} \), \( A \cap B = \{2\} \), \( A \setminus B = \{1, 3\} \), \( B \setminus A = \{4\} \). For instance \( 3 \in A \setminus B \) because \( 3 \in A \) and \( 3 \notin B \); and \( 4 \notin A \setminus B \) because \( 4 \notin A \).
 - **Intervals.** For \( A = [0, 2] \) and \( B = [1, 3] \): \( A \cup B = [0, 3] \), \( A \cap B = [1, 2] \), \( A \setminus B = [0, 1) \). The last one shows how an endpoint behaves: \( 1 \in B \), so \( 1 \notin A \setminus B \), while every \( x \) with \( 0 \le x < 1 \) lies in \( A \) and not in \( B \).
 - **Divisibility.** With \( A \) and \( B \) the multiples of \( 2 \) and of \( 3 \) in \( \nZ \), as in the opening, \( A \cap B \) is the set of multiples of \( 6 \) (this uses the school fact that an integer divisible by \( 2 \) and by \( 3 \) is divisible by \( 6 \)), and \( \nZ \setminus A \) is the set of odd integers, the complement of \( A \) in \( \nZ \).
-- **Degenerate cases.** For every set \( A \): \( A \cup \emptyset = A \), \( A \cap \emptyset = \emptyset \), \( A \setminus \emptyset = A \) and \( A \setminus A = \emptyset \). Each is one line: for example, \( x \in A \setminus A \) would mean \( x \in A \) and \( x \notin A \), which is impossible, so \( A \setminus A \) has no element. They matter because \( \emptyset \) behaves for \( \cup \) as \( 0 \) does for \( + \), and for \( \cap \) as \( 0 \) does for \( \times \).
+- **Degenerate cases.** For every set \( A \): \( A \cup \emptyset = A \), \( A \cap \emptyset = \emptyset \), \( A \setminus \emptyset = A \), and \( A \setminus A = \emptyset \). Each is one line: for example, \( x \in A \setminus A \) would mean \( x \in A \) and \( x \notin A \), which is impossible, so \( A \setminus A \) has no element. They matter because \( \emptyset \) behaves for \( \cup \) as \( 0 \) does for \( + \), and for \( \cap \) as \( 0 \) does for \( \times \).
 
 Three inclusions hold for all sets and are used without comment from now on:
 \[
@@ -46,7 +46,7 @@ A nonexample by minimal change: the "difference" of two sets is **not** "everyth
 :::
 
 ::: {.check}
-Let \( X = \{1, 2, 3, 4, 5, 6\} \), \( A = \{1, 2, 3\} \) and \( B = \{2, 4, 6\} \). Compute \( A \cup B \), \( A \cap B \), \( X \setminus (A \cup B) \) and \( (X \setminus A) \cap (X \setminus B) \).
+Let \( X = \{1, 2, 3, 4, 5, 6\} \), \( A = \{1, 2, 3\} \), and \( B = \{2, 4, 6\} \). Compute \( A \cup B \), \( A \cap B \), \( X \setminus (A \cup B) \), and \( (X \setminus A) \cap (X \setminus B) \).
 :::
 
 ::: {.solution}
@@ -55,7 +55,7 @@ Let \( X = \{1, 2, 3, 4, 5, 6\} \), \( A = \{1, 2, 3\} \) and \( B = \{2, 4, 6\}
 
 ## Laws of sets are laws of logic
 
-Unwinding the three definitions turns every question about \( \cup \), \( \cap \) and \( \setminus \) into a question about \( \vee \), \( \wedge \) and \( \neg \). Here is the dictionary, with the notions of Section 6.1 included.
+Unwinding the three definitions turns every question about \( \cup \), \( \cap \), and \( \setminus \) into a question about \( \vee \), \( \wedge \), and \( \neg \). Here is the dictionary, with the notions of Section 6.1 included.
 
 | On sets | Unwound through membership | Logic |
 |---|---|---|
@@ -79,7 +79,7 @@ Here are the laws used most.
 ::: {#thm-set-algebra}
 [Algebra of Sets]
 
-For all sets \( A \), \( B \) and \( C \):
+For all sets \( A \), \( B \), and \( C \):
 
 ::: {.enumerate options="label=(\alph*)"}
 1. (commutativity) \( A \cup B = B \cup A \) and \( A \cap B = B \cap A \);
@@ -161,7 +161,7 @@ The set exists by the working rule (W4) of Section 6.1. Its elements are sets, a
 ::: {#exm-power-set-small}
 [Small power sets]
 
-Compute \( \powerset{\emptyset} \), \( \powerset{\{\emptyset\}} \) and \( \powerset{\{1, 2\}} \).
+Compute \( \powerset{\emptyset} \), \( \powerset{\{\emptyset\}} \), and \( \powerset{\{1, 2\}} \).
 :::
 
 ::: {.solution}
@@ -362,7 +362,7 @@ Prove that \( A \cap (B \setminus C) = (A \cap B) \setminus (A \cap C) \) for al
 ::: {.solution}
 With \( p, q, r \) for \( x \in A \), \( x \in B \), \( x \in C \), the membership conditions are \( p \wedge (q \wedge \neg r) \) and \( (p \wedge q) \wedge \neg(p \wedge r) \), and the equivalence behind the law is \( p \wedge (q \wedge \neg r) \equiv (p \wedge q) \wedge \neg(p \wedge r) \). Both directions have short direct derivations, which the element-chase follows.
 
-\( (\subseteq) \) Let \( x \in A \cap (B \setminus C) \). Then \( x \in A \), \( x \in B \) and \( x \notin C \). So \( x \in A \cap B \). If \( x \) were in \( A \cap C \), then \( x \in C \), a contradiction; so \( x \notin A \cap C \). Hence \( x \in (A \cap B) \setminus (A \cap C) \).
+\( (\subseteq) \) Let \( x \in A \cap (B \setminus C) \). Then \( x \in A \), \( x \in B \), and \( x \notin C \). So \( x \in A \cap B \). If \( x \) were in \( A \cap C \), then \( x \in C \), a contradiction; so \( x \notin A \cap C \). Hence \( x \in (A \cap B) \setminus (A \cap C) \).
 
 \( (\supseteq) \) Let \( x \in (A \cap B) \setminus (A \cap C) \). Then \( x \in A \), \( x \in B \), and \( x \notin A \cap C \). If \( x \) were in \( C \), then, since \( x \in A \), \( x \in A \cap C \), a contradiction; so \( x \notin C \). Hence \( x \in B \setminus C \), and \( x \in A \cap (B \setminus C) \).
 
@@ -476,7 +476,7 @@ Here is a "proof" that \( (A \cup B) \cap (A \cup C) \subseteq A \cup (B \cap C)
 
 (b) Line (5). From \( x \in A \cup C \), that is, \( x \in A \) or \( x \in C \), it concludes \( x \in C \), dropping the case \( x \in A \). A disjunction is used by \( \rulename{\vee E} \), which needs **both** cases; the line uses only one. This is a missing case, entry (N7) of the catalogue of Chapter 5.
 
-(c) Take \( A = \{1\} \), \( B = \{1\} \), \( C = \emptyset \) and \( x = 1 \). Then \( x \in B \) (the case of line (5)) and \( x \in A \cup C \) (the premise of the line), but \( x \notin C \). The step is illegal although the conclusion of the whole proof is true: here \( x \in A \), so \( x \in A \cup (B \cap C) \) by the other case.
+(c) Take \( A = \{1\} \), \( B = \{1\} \), \( C = \emptyset \), and \( x = 1 \). Then \( x \in B \) (the case of line (5)) and \( x \in A \cup C \) (the premise of the line), but \( x \notin C \). The step is illegal although the conclusion of the whole proof is true: here \( x \in A \), so \( x \in A \cup (B \cap C) \) by the other case.
 
 (d) Replace lines (5)–(6) by: *Case \( x \in B \).* Since \( x \in A \cup C \), there are two sub-cases. If \( x \in A \), then \( x \in A \cup (B \cap C) \). If \( x \in C \), then \( x \in B \cap C \), so \( x \in A \cup (B \cap C) \). In both sub-cases \( x \in A \cup (B \cap C) \). The rest of the proof stands.
 :::

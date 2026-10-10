@@ -50,7 +50,7 @@ Check the definition against the doubling map. With \( d(n) = 2n \) on \( \nN \)
 ::: {#exm-left-inverses-small-sets}
 [Left inverses on small sets]
 
-Let \( X = \{1, 2\} \), \( Y = \{1, 2, 3\} \) and \( e \colon X \to Y \), \( e(1) = 1 \), \( e(2) = 2 \): the inclusion of \( X \) into \( Y \).
+Let \( X = \{1, 2\} \), \( Y = \{1, 2, 3\} \), and \( e \colon X \to Y \), \( e(1) = 1 \), \( e(2) = 2 \): the inclusion of \( X \) into \( Y \).
 
 ::: {.enumerate options="label=(\alph*)"}
 1. Show that \( g \colon Y \to X \) with \( g(1) = 1 \), \( g(2) = 2 \), \( g(3) = 2 \) is a left inverse of \( e \), and that \( e \) is a right inverse of \( g \).
@@ -83,7 +83,7 @@ It has a left inverse, for instance \( p(m) \coloneqq m - 1 \) for \( m \ge 2 \)
 
 ## A left inverse exists exactly for injective functions
 
-The examples point to a pattern. The doubling map, the inclusion \( e \) and the successor map are injective, and each has a left inverse. The constant map \( c \) is not injective, and it has none. Here is the pattern as a theorem. Its hypothesis \( X \ne \emptyset \) looks like a technicality; after the proof we will see that it is not.
+The examples point to a pattern. The doubling map, the inclusion \( e \), and the successor map are injective, and each has a left inverse. The constant map \( c \) is not injective, and it has none. Here is the pattern as a theorem. Its hypothesis \( X \ne \emptyset \) looks like a technicality; after the proof we will see that it is not.
 
 We use one piece of notation from Section 6.4: the **range** of \( f \) is
 \[

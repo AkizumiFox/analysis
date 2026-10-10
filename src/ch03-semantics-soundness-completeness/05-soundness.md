@@ -54,7 +54,7 @@ In the derivation of @prp-contrapositive above, the boxes are \( \lines{2}{6} \)
 | 6 | \( \neg p \) | \( \lines{2}{6} \) | \( p \to q, \ \neg q \) |
 | 7 | \( \neg q \to \neg p \) | none | \( p \to q \) |
 
-Now look at each line through its context. Line 3 is one of the formulas in its own context, so every row making the context true makes line 3 true. Line 4: every row making \( p \to q \) and \( p \) true makes \( q \) true. Line 5: no row makes \( p \to q \), \( \neg q \) and \( p \) all true (the first and third force \( q \)), so the context is unsatisfiable and it entails even \( \bot \) (Section 3.4). Line 6: every row making \( p \to q \) and \( \neg q \) true makes \( p \) false. Line 7: its context is the premise, and we know \( p \to q \models \neg q \to \neg p \). So on this derivation, every line \( k \) satisfies
+Now look at each line through its context. Line 3 is one of the formulas in its own context, so every row making the context true makes line 3 true. Line 4: every row making \( p \to q \) and \( p \) true makes \( q \) true. Line 5: no row makes \( p \to q \), \( \neg q \), and \( p \) all true (the first and third force \( q \)), so the context is unsatisfiable and it entails even \( \bot \) (Section 3.4). Line 6: every row making \( p \to q \) and \( \neg q \) true makes \( p \) false. Line 7: its context is the premise, and we know \( p \to q \models \neg q \to \neg p \). So on this derivation, every line \( k \) satisfies
 \[
 \Gamma_k \models \varphi_k .
 \]
@@ -440,7 +440,7 @@ The trap is (d). Its conclusion **looks** stronger than the premise, since it se
 ::: {#exr-soundness-b2}
 [B2: Ordering the \( \vee \)E case]
 
-Here are nine lines. Seven of them, in the right order, form the \( \rulename{\vee E} \) case of the proof of @thm-soundness. Line \( k \) is \( \chi \), by \( \rulename{\vee E} \) citing line \( i \) (holding \( \varphi \vee \psi \)), the box from line \( a \) to line \( b \) (opening with \( \varphi \), ending with \( \chi \)) and the box from line \( c \) to line \( d \) (opening with \( \psi \), ending with \( \chi \)). Give an admissible order, and say why each of the other two lines cannot be used.
+Here are nine lines. Seven of them, in the right order, form the \( \rulename{\vee E} \) case of the proof of @thm-soundness. Line \( k \) is \( \chi \), by \( \rulename{\vee E} \) citing line \( i \) (holding \( \varphi \vee \psi \)), the box from line \( a \) to line \( b \) (opening with \( \varphi \), ending with \( \chi \)), and the box from line \( c \) to line \( d \) (opening with \( \psi \), ending with \( \chi \)). Give an admissible order, and say why each of the other two lines cannot be used.
 
 *(i)* By the induction hypothesis for lines \( b \) and \( d \), which come before line \( k \), \( \Gamma_b \models \chi \) and \( \Gamma_d \models \chi \).
 
@@ -464,7 +464,7 @@ Here are nine lines. Seven of them, in the right order, form the \( \rulename{\v
 ::: {.solution}
 An admissible order: (iii), (v), (vii), (i), (viii), (iv), (ii).
 
-What each line needs: (v) and (viii), (iv) use the valuation fixed in (iii); (viii) and (iv) use (vii) and (i); (ii) uses the case split of (v) and both of (viii) and (iv). So any order is admissible in which (iii) comes before (v), (viii) and (iv); (vii) and (i) come before (viii) and (iv); (v) comes before (ii); and (viii) and (iv) come before (ii). For instance (vii), (i), (iii), (v), (iv), (viii), (ii) is also admissible: (vii) and (i) do not mention \( v \), and the two cases may be taken in either order.
+What each line needs: (v) and (viii), (iv) use the valuation fixed in (iii); (viii) and (iv) use (vii) and (i); (ii) uses the case split of (v) and both of (viii) and (iv). So any order is admissible in which (iii) comes before (v), (viii), and (iv); (vii) and (i) come before (viii) and (iv); (v) comes before (ii); and (viii) and (iv) come before (ii). For instance (vii), (i), (iii), (v), (iv), (viii), (ii) is also admissible: (vii) and (i) do not mention \( v \), and the two cases may be taken in either order.
 
 Line (vi) applies the induction hypothesis to line \( k \) itself. The hypothesis of @thm-strong-induction covers only the lines \( j < k \); (vi) assumes what is to be proved.
 

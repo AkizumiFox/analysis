@@ -1,6 +1,6 @@
 # Terms, Formulas, Free Variables and Substitution
 
-Section 4.1 read quantified sentences the way a mathematician does, by eye. That was enough to understand them, and it is not enough to reason with them. Each quantifier rule of Sections 4.3 to 4.6, and the rule for using an equation in Section 4.7, has the form "put the term \( t \) in for the variable \( x \) in the formula \( \varphi \)", written \( \varphi[t/x] \), and a rule has to say exactly which symbols change and which do not. This section makes the language of Section 4.1 exact, in the way Section 3.1 made the propositional language exact, and then defines the operation \( \varphi[t/x] \). The one new thing is substitution, together with the single way in which it can go wrong, called **capture**. Terms, formulas and free variables are the smaller definitions it needs, and each comes just before it is used.
+Section 4.1 read quantified sentences the way a mathematician does, by eye. That was enough to understand them, and it is not enough to reason with them. Each quantifier rule of Sections 4.3 to 4.6, and the rule for using an equation in Section 4.7, has the form "put the term \( t \) in for the variable \( x \) in the formula \( \varphi \)", written \( \varphi[t/x] \), and a rule has to say exactly which symbols change and which do not. This section makes the language of Section 4.1 exact, in the way Section 3.1 made the propositional language exact, and then defines the operation \( \varphi[t/x] \). The one new thing is substitution, together with the single way in which it can go wrong, called **capture**. Terms, formulas, and free variables are the smaller definitions it needs, and each comes just before it is used.
 
 ## Which letters are holes
 
@@ -36,9 +36,9 @@ Section 3.1 described the propositional language by its alphabet and its formati
 - **Predicate symbols**, each with an arity \( n \ge 1 \): \( P, Q, R, S \), \( < \), \( \le \), \( \mathrm{Prime} \), and \( \in A \) for a fixed set \( A \) (one place, as in Section 4.1).
 - **Equality** \( = \), which every language has.
 - The constant \( \bot \), the connectives \( \neg, \wedge, \vee, \to, \leftrightarrow \) of Chapter 3, and the **quantifier symbols** \( \forall \) and \( \exists \).
-- Parentheses \( ( \), \( ) \) and the comma.
+- Parentheses \( ( \), \( ) \), and the comma.
 
-Which constant, function and predicate symbols are available depends on the subject. For the argument of Section 4.1 we need the constant \( 2 \) and the one-place predicate symbols \( P \) and \( S \). For arithmetic we need \( 0 \), \( 1 \), \( + \), \( \cdot \) and \( < \). Every formula uses only finitely many symbols, and we never need to fix the whole list in advance.
+Which constant, function, and predicate symbols are available depends on the subject. For the argument of Section 4.1 we need the constant \( 2 \) and the one-place predicate symbols \( P \) and \( S \). For arithmetic we need \( 0 \), \( 1 \), \( + \), \( \cdot \), and \( < \). Every formula uses only finitely many symbols, and we never need to fix the whole list in advance.
 
 The first things to build are the names of objects.
 
@@ -90,7 +90,7 @@ The **formulas** (of predicate logic, or **first-order formulas**) are the strin
 ::: {.enumerate options="label=(Fm\arabic*)"}
 1. **Atomic formulas.** If \( R \) is a predicate symbol of arity \( n \) and \( t_1, \dots, t_n \) are terms, then \( R(t_1, \dots, t_n) \) is a formula. If \( t_1 \) and \( t_2 \) are terms, then \( t_1 = t_2 \) is a formula. And \( \bot \) is a formula.
 2. If \( \varphi \) is a formula, then \( \neg\varphi \) is a formula.
-3. If \( \varphi \) and \( \psi \) are formulas, then \( (\varphi \wedge \psi) \), \( (\varphi \vee \psi) \), \( (\varphi \to \psi) \) and \( (\varphi \leftrightarrow \psi) \) are formulas.
+3. If \( \varphi \) and \( \psi \) are formulas, then \( (\varphi \wedge \psi) \), \( (\varphi \vee \psi) \), \( (\varphi \to \psi) \), and \( (\varphi \leftrightarrow \psi) \) are formulas.
 4. If \( \varphi \) is a formula and \( x \) is a **variable**, then \( \forall x\, \varphi \) and \( \exists x\, \varphi \) are formulas.
 5. **Nothing else** is a formula: a string is a formula only if it is the last entry of a finite list in which every entry is an atomic formula, or is built by (Fm2), (Fm3) or (Fm4) from **earlier** entries.
 :::
@@ -103,7 +103,7 @@ In words, clause by clause.
 - *(Fm4).* The new clause. A quantifier symbol followed by a **variable** is put in front of a formula, with no parentheses, as \( \neg \) is. Only a variable may follow \( \forall \) or \( \exists \): \( \forall 2\, P(2) \) and \( \forall f(x)\, P(x) \) are not formulas. The variable need not occur in \( \varphi \): \( \forall x\, P(c) \) is a formula, and says no more than \( P(c) \) (a quantifier with nothing to bind is harmless and useless).
 - *(Fm5).* The closing clause, as before.
 
-Structural induction and structural recursion (@thm-structural-induction, @thm-structural-recursion) carry over to first-order formulas with one change in the list of cases. The base case covers every **atomic** formula (and \( \bot \)), and there are two new building steps, from \( \varphi \) to \( \forall x\, \varphi \) and to \( \exists x\, \varphi \), for every variable \( x \), each with one part, like the step to \( \neg\varphi \). So, to prove that every formula has a property, prove it for the atomic formulas and \( \bot \), and prove that it passes from \( \varphi \) to \( \neg\varphi \), \( \forall x\, \varphi \) and \( \exists x\, \varphi \), and from \( \varphi, \psi \) to \( (\varphi \circ \psi) \). To define a function on formulas, give one clause for each of these cases. The proofs in Section 3.2 go through word for word with the new cases added, and unique readability holds for the same reason; we use all three without repeating them. The same two principles hold for terms, with (Tm1) as the base case and (Tm2) as the one building step.
+Structural induction and structural recursion (@thm-structural-induction, @thm-structural-recursion) carry over to first-order formulas with one change in the list of cases. The base case covers every **atomic** formula (and \( \bot \)), and there are two new building steps, from \( \varphi \) to \( \forall x\, \varphi \) and to \( \exists x\, \varphi \), for every variable \( x \), each with one part, like the step to \( \neg\varphi \). So, to prove that every formula has a property, prove it for the atomic formulas and \( \bot \), and prove that it passes from \( \varphi \) to \( \neg\varphi \), \( \forall x\, \varphi \), and \( \exists x\, \varphi \), and from \( \varphi, \psi \) to \( (\varphi \circ \psi) \). To define a function on formulas, give one clause for each of these cases. The proofs in Section 3.2 go through word for word with the new cases added, and unique readability holds for the same reason; we use all three without repeating them. The same two principles hold for terms, with (Tm1) as the base case and (Tm2) as the one building step.
 
 **Shorthand.** The conventions of Section 3.1 for dropping parentheses stay, with three additions.
 
@@ -201,7 +201,7 @@ Unfolding the three bounded quantifiers by @def-bounded-quantifier (\( \to \) un
 & \qquad \forall n \, \bigl( n \in \nN \to ( n \ge N \to \abs{a_n - L} < \varepsilon ) \bigr) \bigr) \Bigr) .
 \end{aligned}
 \]
-The variables that occur are \( \varepsilon \), \( N \), \( n \) and \( L \). Check each.
+The variables that occur are \( \varepsilon \), \( N \), \( n \), and \( L \). Check each.
 
 - Every occurrence of \( \varepsilon \) lies below the root \( \forall \varepsilon \): bound.
 - Every occurrence of \( N \) lies below \( \exists N \): bound.
@@ -343,7 +343,7 @@ The difference between the safe case and the two unsafe ones is exactly this: wh
 ::: {#def-free-for}
 [Free For]
 
-Let \( t \) be a term, \( x \) a variable and \( \varphi \) a formula. The term \( t \) is **free for** \( x \) in \( \varphi \) if **no** free occurrence of \( x \) in \( \varphi \) lies in the scope of a quantifier \( \forall y \) or \( \exists y \) such that \( y \) is a variable of \( t \).
+Let \( t \) be a term, \( x \) a variable, and \( \varphi \) a formula. The term \( t \) is **free for** \( x \) in \( \varphi \) if **no** free occurrence of \( x \) in \( \varphi \) lies in the scope of a quantifier \( \forall y \) or \( \exists y \) such that \( y \) is a variable of \( t \).
 :::
 
 In words: look at each place where \( t \) will go, that is, at each free occurrence of \( x \). Look at the quantifiers above it in the tree. If none of them is on a variable of \( t \), the substitution is safe there. The term is free for \( x \) when it is safe at every such place. Informally: **no variable of \( t \) becomes bound** when \( t \) is put in.
@@ -365,7 +365,7 @@ In our examples: \( y \) is **not** free for \( x \) in \( \exists y\, (y \ne x)
 
 The first two lines hold because an atomic formula has no quantifiers and a connective node is not a quantifier. For the third: if \( x \) is not free in \( \forall y\, \varphi \), there is nothing to check. If it is free, then \( y \) is a different variable and the free occurrences of \( x \) in \( \forall y\, \varphi \) are those in \( \varphi \); each lies in the scope of the new root \( \forall y \) and of the quantifiers inside \( \varphi \) above it. The root is harmless exactly when \( y \) is not a variable of \( t \), and the quantifiers inside are harmless exactly when \( t \) is free for \( x \) in \( \varphi \).
 
-**Why the definition.** "Free for" is the precise condition under which \( \varphi[t/x] \) says about \( t \) what \( \varphi \) says about \( x \). Each rule of Sections 4.3, 4.5 and 4.7 will carry it as a side condition, and Section 4.3 shows the capture example of this section turning a true premise into a false conclusion when the side condition is ignored. The definition asks for no more than it needs: a variable of \( t \) may be quantified elsewhere in \( \varphi \), as long as no free occurrence of \( x \) lies in its scope. For instance, \( y \) is free for \( x \) in \( P(x) \wedge \exists y\, Q(y) \), and the result \( P(y) \wedge \exists y\, Q(y) \) says of \( y \) what the original said of \( x \).
+**Why the definition.** "Free for" is the precise condition under which \( \varphi[t/x] \) says about \( t \) what \( \varphi \) says about \( x \). Each rule of Sections 4.3, 4.5, and 4.7 will carry it as a side condition, and Section 4.3 shows the capture example of this section turning a true premise into a false conclusion when the side condition is ignored. The definition asks for no more than it needs: a variable of \( t \) may be quantified elsewhere in \( \varphi \), as long as no free occurrence of \( x \) lies in its scope. For instance, \( y \) is free for \( x \) in \( P(x) \wedge \exists y\, Q(y) \), and the result \( P(y) \wedge \exists y\, Q(y) \) says of \( y \) what the original said of \( x \).
 
 ::: {.warning}
 Capture changes meaning, and it gives no warning: the definition of \( \varphi[t/x] \) returns a formula either way. Over \( \nR \), \( \exists y\, (y > x) \) is true for every \( x \), and \( (\exists y\, (y > x))[y + 1/x] \) is \( \exists y\, (y > y + 1) \), which is false. Before putting \( t \) in for \( x \), check that no variable of \( t \) is quantified above a free occurrence of \( x \).

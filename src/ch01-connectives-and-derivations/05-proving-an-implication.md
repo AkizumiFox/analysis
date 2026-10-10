@@ -12,7 +12,7 @@ The proof everyone would write goes like this. *Suppose \( x > 2 \). Then \( x >
 
 Look at the first sentence. We do not know that \( x > 2 \). The number \( x \) is arbitrary, and it may well be \( 0 \). So "suppose \( x > 2 \)" asserts nothing. It opens a **temporary world**, one in which \( x > 2 \) holds, and asks what else holds there.
 
-Inside that world, the sentences "\( x^2 > 2x \)", "\( 2x > 4 \)" and "\( x^2 > 4 \)" are true. Outside it they are not: at \( x = 0 \) all three are false. Only the last sentence of the proof leaves the temporary world. What it carries out is not "\( x^2 > 4 \)" but the implication "if \( x > 2 \), then \( x^2 > 4 \)", and that is true for every real \( x \).
+Inside that world, the sentences "\( x^2 > 2x \)", "\( 2x > 4 \)", and "\( x^2 > 4 \)" are true. Outside it they are not: at \( x = 0 \) all three are false. Only the last sentence of the proof leaves the temporary world. What it carries out is not "\( x^2 > 4 \)" but the implication "if \( x > 2 \), then \( x^2 > 4 \)", and that is true for every real \( x \).
 
 None of the rules so far can do this. \( \rulename{\wedge I} \) writes a conjunction, and \( \rulename{\wedge E} \) and \( \rulename{{\to}E} \) write a piece of a line that is already there. So with those three rules, an implication can stand on a line only as a premise or as a piece of an earlier line. To prove "if \( x > 2 \), then \( x^2 > 4 \)" from nothing, we must be allowed to suppose.
 
@@ -103,7 +103,7 @@ $\begin{nd}
 Line 3 opens a box with the assumption \( P \). Lines 4 and 5 apply \( \rulename{{\to}E} \) inside it, each citing a premise and a line of the box. Line 5, \( R \), is the last line of the box. Line 6 closes it and writes \( P \to R \), citing the box \( \lines{3}{5} \). By @def-derivable, this proves the proposition.
 :::
 
-Read the drawing once more. The bar that starts at line 3 stops after line 5. The statements \( P \), \( Q \) and \( R \) on lines 3–5 were never established outright; they hold inside the temporary world where \( P \) is assumed. Only \( P \to R \) stands outside, next to the premises.
+Read the drawing once more. The bar that starts at line 3 stops after line 5. The statements \( P \), \( Q \), and \( R \) on lines 3–5 were never established outright; they hold inside the temporary world where \( P \) is assumed. Only \( P \to R \) stands outside, next to the premises.
 
 Now give the letters some content. Let \( x \) be a real number, and let
 \[
@@ -307,7 +307,7 @@ $\begin{nd}
 :::
 
 ::: {.solution}
-Lines 3, 4 and 5. They lie in the box \( \lines{2}{5} \), the only box containing line 2, so line 2 is available to each of them. Line 6 cites the box \( \lines{2}{5} \) as a whole, which is what \( \rulename{{\to}I} \) requires; it does not cite line 2 by itself, and could not, since line 6 is outside the box. Line 7 may not cite line 2 either, for the same reason.
+Lines 3, 4, and 5. They lie in the box \( \lines{2}{5} \), the only box containing line 2, so line 2 is available to each of them. Line 6 cites the box \( \lines{2}{5} \) as a whole, which is what \( \rulename{{\to}I} \) requires; it does not cite line 2 by itself, and could not, since line 6 is outside the box. Line 7 may not cite line 2 either, for the same reason.
 :::
 
 ## More boxes: from nothing, and one inside another
@@ -426,7 +426,7 @@ $\begin{nd}
 \end{center}
 ```
 
-Line 4 may cite lines 1, 2 and 3: line 1 lies in no box, the only box containing line 2 (the box \( \lines{2}{6} \)) contains line 4, and both boxes containing line 3 contain line 4. Line 6 may cite the box \( \lines{3}{5} \), because that box has ended and both it and line 6 lie in the box \( \lines{2}{6} \) and in no other. Line 6 may not cite line 5 on its own, because the box \( \lines{3}{5} \) contains line 5 and not line 6.
+Line 4 may cite lines 1, 2, and 3: line 1 lies in no box, the only box containing line 2 (the box \( \lines{2}{6} \)) contains line 4, and both boxes containing line 3 contain line 4. Line 6 may cite the box \( \lines{3}{5} \), because that box has ended and both it and line 6 lie in the box \( \lines{2}{6} \) and in no other. Line 6 may not cite line 5 on its own, because the box \( \lines{3}{5} \) contains line 5 and not line 6.
 
 For the second claim, the following is a derivation with premise \( P \to (Q \to R) \) and last line \( (P \wedge Q) \to R \).
 
@@ -534,7 +534,7 @@ $\begin{nd}
 
 (b) (i) \( \rulename{{\to}E} \) 1, 3; (ii) \( \rulename{{\to}E} \) 4, 2; (iii) \( \rulename{{\to}I} \) \( \lines{3}{5} \). The derivation shows \( P \to (Q \to R), \ Q \vdash P \to R \).
 
-(c) Lines 1 and 2. Lines 3, 4 and 5 lie in the box \( \lines{3}{5} \), which does not contain line 6. (The box \( \lines{3}{5} \) as a whole is available at line 6, which is why (iii) may cite it.) The context of line 5 is \( P \to (Q \to R) \), \( Q \), \( P \): the two premises and the assumption of the one box containing it.
+(c) Lines 1 and 2. Lines 3, 4, and 5 lie in the box \( \lines{3}{5} \), which does not contain line 6. (The box \( \lines{3}{5} \) as a whole is available at line 6, which is why (iii) may cite it.) The context of line 5 is \( P \to (Q \to R) \), \( Q \), \( P \): the two premises and the assumption of the one box containing it.
 
 (d) No. Line 6 is available at line 7, but line 3 is not: it lies in the box \( \lines{3}{5} \), which does not contain line 7. So line 7 applies a rule to a line that is not available, which (D4) forbids.
 
