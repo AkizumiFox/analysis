@@ -21,7 +21,7 @@ For any objects \( a \) and \( b \) there is an object \( (a, b) \), the **order
 
 In words: to decide whether two pairs are equal, compare first coordinates with first coordinates and second with second; nothing else matters, and both comparisons must succeed. The direction \( (\Leftarrow) \) is nothing new: equal inputs give equal pairs, as for any construction (\( \rulename{=E} \), @def-rules-equality). The direction \( (\Rightarrow) \) is the content. It says that from the pair we can read off its coordinates, each in its place.
 
-We do not say here **what** the object \( (a, b) \) is. Besides the characteristic property, we use one working convention: pairs and \( n \)-tuples are a different kind of object from numbers, just as sets are (Section 6.1), so **a pair is not a number**; and tuples of different lengths are different kinds of object, so a triple is not a pair. Nothing else about pairs is used, in this chapter or in the rest of the book. The optional Chapter 9 shows that a pair with this property can be built from sets alone, so that nothing new has to be assumed. Until then, the existence of pairs with this property is taken as given, alongside the working rules (W1)–(W6) of Section 6.1.
+We do not say here **what** the object \( (a, b) \) is. Besides the characteristic property, we use one working convention: pairs and \( n \)-tuples are a different kind of object from numbers, just as sets are (Section 6.1), so **a pair is not a number**; and tuples of different lengths are different kinds of object, so a triple is not a pair. Nothing else about pairs is used in this chapter. The optional Chapter 9 shows that a pair with this property can be built from sets alone, so that nothing new has to be assumed. Until then, the existence of pairs with this property is taken as given, alongside the working rules (W1)–(W6) of Section 6.1.
 
 **A convention about parentheses.** The symbol \( (a, b) \) now has two meanings. For real numbers \( a < b \) it is also the open interval \( \{ x \in \nR : a < x < b \} \). The book keeps both, and context decides, as it does in every analysis text. In "\( (0, 1) \) contains \( \tfrac{1}{2} \)" it is an interval. In "the point \( (0, 1) \) lies on the unit circle" it is a pair. Where both readings are near each other, the text says which is meant. This convention is stated once, here.
 
@@ -90,7 +90,7 @@ We write \( (\ast) \) for this equivalence in the rest of the section. It is the
 ::: {#exm-small-products}
 [Products, small and large]
 
-(a) List \( \{1, 2\} \times \{a, b, c\} \) and \( \{a, b, c\} \times \{1, 2\} \).
+(a) Let \( a, b, c \) be three different objects, none of them a number. List \( \{1, 2\} \times \{a, b, c\} \) and \( \{a, b, c\} \times \{1, 2\} \).
 
 (b) Describe \( \nR^2 \) and \( [0, 1] \times [0, 1] \) as sets of points of the plane.
 
@@ -102,7 +102,7 @@ We write \( (\ast) \) for this equivalence in the rest of the section. It is the
 \[
 \{1, 2\} \times \{a, b, c\} = \{ (1, a), (1, b), (1, c), (2, a), (2, b), (2, c) \},
 \]
-six pairs. Swapping the factors gives the six pairs \( (a, 1), (a, 2), (b, 1), (b, 2), (c, 1), (c, 2) \). No pair of the first list is in the second: every pair in the first list has a number as its first coordinate, and every pair in the second list has a letter there.
+six pairs, all different by the characteristic property, since \( 1 \ne 2 \) and \( a, b, c \) are different. Swapping the factors gives the six pairs \( (a, 1), (a, 2), (b, 1), (b, 2), (c, 1), (c, 2) \). No pair of the first list is in the second: every pair in the first list has a number as its first coordinate, and every pair in the second list has one of \( a, b, c \) there, none of which is a number; so by the characteristic property no pair of one list equals a pair of the other.
 
 (b) \( \nR^2 = \nR \times \nR \) is the set of all pairs \( (x, y) \) of real numbers: the plane, with \( x \) the horizontal and \( y \) the vertical coordinate. By \( (\ast) \), \( (x, y) \in [0, 1] \times [0, 1] \) if and only if \( 0 \le x \le 1 \) and \( 0 \le y \le 1 \): the closed unit square, with its four sides.
 
@@ -458,6 +458,7 @@ def-cartesian-product (claim): (the pair-pattern set-builder paragraph) membersh
 exm-pair-equations (example): solving x + y = 3, x - y = 1 by adding and subtracting | school algebra
 exm-pair-equations (solution): (the quick check after it) t^2 >= 0 for real t | school fact (Part 0 convention); proved in Ch 11
 exm-small-products (example): an element of the empty set does not exist | def-empty-set
+exm-small-products (example): (a) a, b, c are pairwise different and none of them is 1 or 2 | hypothesis stated in part (a) ("three different objects, none of them a number"); the six pairs are distinct and the two lists disjoint by def-ordered-pair (characteristic property)
 prp-product-set-laws (proof): exists-E with fresh names; case split on d in B or d in C | prp-bounded-quantifier-rules (cited) for exists-E; Ch 1 or-E (def-set-operations unwinds the union)
 prp-product-set-laws (proof): substituting equals (=E): from p = (a, d) and (a, d) in A x B infer p in A x B, and likewise in the intersection and set-difference cases | def-rules-equality (cited after def-ordered-pair)
 prp-product-set-laws (claim): (the warning after the remark) catalogue entry (N7), missing case | ch05 (promised; prose pointer "the catalogue in Chapter 5, entry (N7)")

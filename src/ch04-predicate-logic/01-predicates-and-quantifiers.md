@@ -376,7 +376,7 @@ So neither mistranslation tells us anything about \( A \) at all: the first is f
 
 **Marking scheme.** (10 points)
 - 2: a set for the first mistranslation, with both truth values checked.
-- 2: a set for the second mistranslation, with both truth values checked, the truth of the implication justified (its hypothesis is false).
+- 2: a set for the second mistranslation, with both truth values checked, and the implication at the witness justified (its hypothesis is false, or its conclusion is true).
 - 3: for the first, for an arbitrary \( A \), a real number (the same for every \( A \), or chosen by cases covering every \( A \)) that fails \( x \in A \wedge x > 0 \), with the check.
 - 3: for the second, for an arbitrary \( A \), a witness (the same for every \( A \), or chosen by cases covering every \( A \)) at which \( x \in A \to x > 0 \) holds, with a reason that covers every \( A \) (its conclusion is true, or a check in every case).
 Fatal errors (0 for the step): a witness or counterexample that depends on \( A \) in (b) without a case split covering every \( A \); reading \( \exists x\, (x \in A \to x > 0) \) as "some element of \( A \) is positive".

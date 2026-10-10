@@ -21,8 +21,9 @@ together with the set \( Y \), the **codomain** of \( f \). Formally, \( f \) is
 
 In symbols, the condition on the graph is
 \[
-\forall x \in X \ \ \exists! \, y \in Y \ \ (x, y) \in G .
+\forall x \in X \ \ \exists! \, y \in Y \ \ (x, y) \in G ,
 \]
+where, as with the bounded quantifiers of @def-bounded-quantifier, \( \exists! \, y \in Y \ \psi \) abbreviates \( \exists! \, y \, (y \in Y \wedge \psi) \).
 :::
 
 The whole definition is the quantifier pattern \( \forall \exists! \). By @def-unique-existence, "\( \exists! \, y \)" is an existence claim and a uniqueness claim, and by @prp-unique-existence-use the uniqueness claim may be stated without reference to the witness; so the condition on the graph is two clauses:
@@ -645,6 +646,7 @@ Let \( f \colon X \to Y \) and \( g \colon Y \to Z \) be functions.
 :::
 
 <!-- dependency ledger
+def-function (claim): bounded exists-unique, exists! y in Y psi, abbreviates exists! y (y in Y and psi) | notation, by analogy with def-bounded-quantifier (cited); NOTATION bounded-quantifier row
 def-function (claim): exists-unique splits into existence (Fn1) and uniqueness (Fn2) | def-unique-existence, prp-unique-existence-use (cited)
 def-function (claim): (**) uses substituting equals (=E) | def-rules-equality (cited)
 def-function (claim): squares of reals are non-negative; 1/x undefined at 0 | school fact (Part 0 convention); proved in Ch 11

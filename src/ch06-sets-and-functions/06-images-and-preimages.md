@@ -399,7 +399,7 @@ For (a), a point \( a \in A \) is sent into \( f(A) \), with itself as witness, 
 
 \( (\Leftarrow) \) Suppose \( f \) is injective, and let \( x \in f^{-1}(f(A)) \). Then \( x \in X \) and \( f(x) \in f(A) \), so there is \( a \in A \) with \( f(a) = f(x) \); name it \( a \) \( [\rulename{\exists E}] \). Since \( f \) is injective (@def-injective), \( a = x \), so \( x \in A \). With the inclusion already proved, \( A = f^{-1}(f(A)) \) by @prp-subset-antisymmetric.
 
-\( (\Rightarrow) \) Suppose \( A = f^{-1}(f(A)) \) for every \( A \subseteq X \). Let \( x_1, x_2 \in X \) with \( f(x_1) = f(x_2) \). Then \( f(x_2) = f(x_1) \in f(\{x_1\}) \), with witness \( x_1 \), so \( x_2 \in f^{-1}(f(\{x_1\})) = \{x_1\} \). Hence \( x_2 = x_1 \), and \( f \) is injective.
+\( (\Rightarrow) \) Suppose \( A = f^{-1}(f(A)) \) for every \( A \subseteq X \). Let \( x_1, x_2 \in X \) with \( f(x_1) = f(x_2) \). Then \( f(x_2) = f(x_1) \in f(\{x_1\}) \), with witness \( x_1 \), so \( x_2 \in f^{-1}(f(\{x_1\})) \) by @def-preimage. The hypothesis with \( A = \{x_1\} \), a subset of \( X \) because \( x_1 \in X \), gives \( f^{-1}(f(\{x_1\})) = \{x_1\} \), so \( x_2 \in \{x_1\} \). Hence \( x_2 = x_1 \), and \( f \) is injective.
 
 (b) Let \( B \subseteq Y \). \( (\subseteq) \) Let \( y \in f(f^{-1}(B)) \). There is \( x \in f^{-1}(B) \) with \( f(x) = y \); name it \( x \). Then \( x \in X \) and \( f(x) \in B \), so \( y \in B \); and \( y \in f(X) \), with witness \( x \). \( (\supseteq) \) Let \( y \in B \cap f(X) \). Since \( y \in f(X) \), there is \( x \in X \) with \( f(x) = y \); name it \( x \). Then \( f(x) = y \in B \), so \( x \in f^{-1}(B) \), and \( y \in f(f^{-1}(B)) \), with witness \( x \). This proves \( f(f^{-1}(B)) = B \cap f(X) \), and \( B \cap f(X) \subseteq B \).
 
@@ -741,6 +741,7 @@ thm-image-union (proof): exists-E side condition (conclusion free of the witness
 exm-image-two-witnesses (solution): fresh-name condition; catalogue entry (N4) | ch04 (promised) Section 4.6; ch05 (promised): exm-not-allowed-catalogue (prose pointer, Section 5.6)
 thm-image-intersection (proof): c in {x_1} gives c = x_1 | def-set-builder / listing (Section 6.1)
 prp-image-preimage (proof): A = f^{-1}(f(A)) from two inclusions | prp-subset-antisymmetric (cited)
+prp-image-preimage (proof): x_2 in {x_1} gives x_2 = x_1; {x_1} is a subset of X when x_1 in X | def-set-builder / listing (Section 6.1); def-subset (Section 6.1)
 prp-image-preimage (proof): f^{-1}(Y) = X | def-preimage (cited), as in exm-images-finite
 prp-image-preimage (proof): B cap Y = B for B subset of Y | inline, from def-subset and the definition of intersection (Section 6.2)
 thm-image-intersection (proof): substituting equals (=E): a = b and b in B give a in B; c = x_1 and c = x_2 give x_1 = x_2 | def-rules-equality (Section 4.7), used silently
@@ -749,7 +750,7 @@ exr-images-and-preimages-c1 (solution): substituting equals (=E): a = b and b in
 prp-image-preimage (claim): (two readings remark and example) a(x) = 3x - 2 and its inverse; interval arithmetic | exm-two-sided-inverses (Section 6.5); school facts
 prp-image-preimage (claim): (two readings remark) for a bijection the preimage f^{-1}(B) equals the image of B under the inverse function | inline two-inclusion argument in the remark, from def-inverse-function (cited: g o f = id_X, f o g = id_Y); exr-images-and-preimages-b3 writes it out with tags
 exr-images-and-preimages-a1 (solution): numeric preimages under squaring | school facts; exm-images-of-square
-exr-images-and-preimages-b1 (solution): m > n in N gives m - n in Z_{>0}; (x - 1)^2 algebra; -1 <= t <= 2 gives |t| <= 2, and t^2 = |t|^2; sqrt monotone | school facts (Part 0 convention)
+exr-images-and-preimages-b1 (solution): m > n in N gives m - n in Z_{>0}; a positive integer is in N; m - n = 0 iff m = n; (x - 1)^2 algebra; -1 <= t <= 2 gives |t| <= 2, and t^2 = |t|^2; sqrt monotone | school facts (Part 0 convention)
 exr-images-and-preimages-b1 (solution): the indicator function | Section 6.4 (ind_A defined there)
 exr-images-and-preimages-c1 (solution): RAA for x_1 = x_2 | def-rule-raa (cited)
 exr-images-and-preimages-c2 (solution): fresh-name condition; catalogue (N4) | ch04 (promised) Section 4.6; ch05 (promised): exm-not-allowed-catalogue (prose pointer)

@@ -513,6 +513,12 @@ For (a), a left inverse exists by @thm-left-inverse-iff-injective (b); only "at 
 :::
 
 ::: {.solution}
+[Hint 2]
+
+For (a), let \( g \) and \( g' \) be left inverses of \( f \). If \( f \) is surjective, write a given \( y \in Y \) as \( y = f(x) \) and compare \( g(y) \) with \( g'(y) \).
+:::
+
+::: {.solution}
 (a) A left inverse exists by @thm-left-inverse-iff-injective (b). For "at most one", let \( g \) and \( g' \) be left inverses of \( f \). *Case 1:* \( f \) is surjective. Then \( f \) is bijective (@def-bijective), so it has the inverse \( f^{-1} \) (@thm-bijection-iff-inverse), which is in particular a right inverse of \( f \). By @prp-inverse-unique, \( g = f^{-1} \) and \( g' = f^{-1} \), so \( g = g' \). *Case 2:* \( X \) has exactly one element \( x_0 \). For every \( y \in Y \), both \( g(y) \) and \( g'(y) \) are elements of \( X \), so \( g(y) = x_0 = g'(y) \); hence \( g = g' \) by @prp-function-equality. In either case any two left inverses are equal, so \( f \) has exactly one.
 
 (b) Run the proof of @thm-left-inverse-iff-injective (b) once with the fixed point \( x_0 \) and once with \( x_1 \); call the resulting left inverses \( g_0 \) and \( g_1 \). The point \( y_1 \) is outside the range, so the second alternative in the definition of \( G \) applies to it: \( g_0(y_1) = x_0 \) and \( g_1(y_1) = x_1 \). Since \( x_0 \ne x_1 \), the functions \( g_0 \) and \( g_1 \) differ at \( y_1 \), so \( g_0 \ne g_1 \).
