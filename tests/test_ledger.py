@@ -118,6 +118,118 @@ class PureTests(unittest.TestCase):
         self.assertIn(("def-thing", "no longer in the source"), ledger.stale_items(led, self.items()))
 
 
+USAGE_SECTION = """# S
+
+## Sets of numbers
+
+::: {#def-naturals}
+[Natural numbers]
+The natural numbers are $\\mathbb{N} = \\{1, 2, 3, \\dots\\}$. A set is non-empty
+if it has an element, and $n \\le m$ iff $m - n \\ge 0$. Sums, products and powers of
+natural numbers are natural numbers. A map that is onto is a surjection; $P \\iff Q$.
+:::
+
+::: {#thm-order}
+[Order]
+Every non-empty set of natural numbers has a least element.
+
+### Proof sketch
+
+Take $n \\le m$, or $n > m$.
+:::
+"""
+
+
+class UsageHashTests(unittest.TestCase):
+    """content_hash ignores the English usage migration but not a mathematical edit."""
+
+    def setUp(self):
+        self.tmp = tempfile.TemporaryDirectory()
+        self.ch = Path(self.tmp.name) / "src" / "ch11-numbers"
+        self.ch.mkdir(parents=True)
+        self.write(USAGE_SECTION)
+
+    def tearDown(self):
+        self.tmp.cleanup()
+
+    def write(self, text):
+        (self.ch / "01-s.md").write_text(text)
+
+    def hashes(self, text=None):
+        if text is not None:
+            self.write(text)
+        return {i["key"]: i["hash"] for i in ledger.extract_items(self.ch)}
+
+    def assertSameHashes(self, edited):
+        before = self.hashes(USAGE_SECTION)
+        self.assertNotEqual(edited, USAGE_SECTION)
+        self.assertEqual(self.hashes(edited), before)
+
+    def assertChanged(self, edited, key):
+        before = self.hashes(USAGE_SECTION)
+        self.assertNotEqual(self.hashes(edited)[key], before[key])
+
+    def test_nonempty(self):
+        self.assertSameHashes(USAGE_SECTION.replace("non-empty", "nonempty"))
+
+    def test_serial_comma(self):
+        self.assertSameHashes(USAGE_SECTION.replace("products and powers", "products, and powers"))
+
+    def test_iff(self):
+        self.assertSameHashes(USAGE_SECTION.replace(" iff ", " if and only if "))
+
+    def test_onto(self):
+        self.assertSameHashes(USAGE_SECTION.replace("is onto", "is surjective"))
+
+    def test_kept_heading_anchor(self):
+        edited = USAGE_SECTION.replace("### Proof sketch", "### Proof sketch {#proof-sketch}")
+        self.assertSameHashes(edited)
+
+    def test_the_whole_migration_at_once(self):
+        edited = (USAGE_SECTION.replace("non-empty", "nonempty")
+                  .replace(" iff ", " if and only if ")
+                  .replace("products and", "products, and")
+                  .replace("is onto", "is surjective"))
+        self.assertSameHashes(edited)
+
+    def test_div_identifier_is_not_a_heading_anchor(self):
+        self.assertIn("thm-least", self.hashes(USAGE_SECTION.replace("{#thm-order}", "{#thm-least}")))
+
+    def test_iff_macro_is_not_the_word(self):
+        self.assertChanged(USAGE_SECTION.replace("P \\iff Q", "P \\implies Q"), "def-naturals")
+
+    def test_naturals_with_zero(self):
+        edited = USAGE_SECTION.replace("\\{1, 2, 3, \\dots\\}", "\\{0, 1, 2, \\dots\\}")
+        self.assertChanged(edited, "def-naturals")
+
+    def test_inequality(self):
+        self.assertChanged(USAGE_SECTION.replace("$m - n \\ge 0$", "$m - n > 0$"), "def-naturals")
+        self.assertChanged(USAGE_SECTION.replace("or $n > m$", "or $n \\ge m$"), "thm-order")
+
+    def test_rehash_carries_only_current_verdicts(self):
+        items = ledger.extract_items(self.ch)
+        led, _, _ = ledger.refresh({}, items)
+        by_key = {it["key"]: it for it in items}
+        # Verdicts as the old code recorded them: on the raw hash.
+        for key in ("def-naturals", "thm-order"):
+            led_entry = next(e for e in led["items"] if e["key"] == key)
+            led_entry["hash"] = by_key[key]["raw_hash"]
+            led_entry["verdicts"] = [{"stage": "S5a", "verdict": "correct", "by": "refA",
+                                      "hash": by_key[key]["raw_hash"]}]
+        # thm-order's verdict was on an earlier text: stale before, so stale after.
+        stale_v = next(e for e in led["items"] if e["key"] == "thm-order")["verdicts"][0]
+        stale_v["hash"] = "0123456789ab"
+        self.assertNotEqual(by_key["def-naturals"]["raw_hash"], by_key["def-naturals"]["hash"])
+        self.assertEqual(sorted(k for k, _ in ledger.stale_items(led, items)),
+                         ["def-naturals", "thm-order"])
+        self.assertEqual(ledger.rehash(led, items), 1)
+        self.assertEqual([k for k, _ in ledger.stale_items(led, items)], ["thm-order"])
+        self.assertEqual(stale_v["hash"], "0123456789ab")
+        entry = next(e for e in led["items"] if e["key"] == "def-naturals")
+        self.assertEqual(entry["hash"], by_key["def-naturals"]["hash"])
+        self.assertEqual(ledger.rehash(led, items), 0)          # idempotent
+
+
 @unittest.skipUnless(VENV.exists(), "needs the repo's .venv (PyYAML)")
 class CliTests(unittest.TestCase):
     def run_cli(self, *args, cwd):

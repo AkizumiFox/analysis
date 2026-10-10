@@ -24,6 +24,15 @@ Needs PyYAML, which lives in the repo's virtualenv: run it as
     .venv/bin/python tools/ledger.py stale 8       # verdicts whose text has changed since
     .venv/bin/python tools/ledger.py summary       # every ledger, one line each
 
+Hashes are taken after `usage_forms.normalize`, which rewrites the English usage
+forms the series is migrating away from (`non-empty`, `iff`, a missing serial
+comma, a kept heading anchor `{#id}`, ...) to their preferred forms, so a usage-only
+edit leaves a verdict current while a mathematical edit still stales it. Verdicts
+recorded before normalization carry the raw hash; `ledger.py rehash [ch]` moves
+every verdict whose hash is the raw hash of its item's current text to the new
+hash, and leaves any other mismatch stale. (Adding a rule to usage_forms.py
+changes the hash of the items containing that form; their verdicts go stale.)
+
 `init` is also a refresh: on an existing ledger it keeps every verdict, updates
 hashes and files, adds new items, and keeps (marked `removed`) any item that has
 verdicts but is gone from the source. A non-`correct` verdict must carry
@@ -31,7 +40,7 @@ verdicts but is gone from the source. A non-`correct` verdict must carry
 anything is stale.
 
 Importable (no YAML needed for these): `extract_items(chapter_dir)`,
-`refresh(ledger, items)`, `stale_items(ledger, items)`.
+`refresh(ledger, items)`, `stale_items(ledger, items)`, `rehash(ledger, items)`.
 """
 import argparse
 import datetime
@@ -42,6 +51,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import mdblocks  # noqa: E402
+import usage_forms  # noqa: E402
 
 SRC = Path("src")
 LEDGER_DIR = Path("authoring/ledger")
@@ -49,10 +59,15 @@ RESULT_KINDS = ("thm", "lem", "cor", "prp", "ax", "cnj", "def", "exm", "exr")
 VERDICTS = ("correct", "minor", "gap", "error")
 
 
-def content_hash(text: str) -> str:
+def _raw_hash(text: str) -> str:
+    """The hash before usage normalization. Used only by `rehash`, to carry verdicts over."""
     norm = "\n".join(line.rstrip() for line in text.strip().split("\n"))
     norm = re.sub(r"\n{2,}", "\n\n", norm)
     return hashlib.sha256(norm.encode("utf-8")).hexdigest()[:12]
+
+
+def content_hash(text: str) -> str:
+    return _raw_hash(usage_forms.normalize(text))
 
 
 def _block_text(doc, div, with_solution=False):
@@ -67,7 +82,8 @@ def _block_text(doc, div, with_solution=False):
 def extract_items(chapter_dir: Path) -> list:
     """Every ledger item in one chapter directory, in book order.
 
-    Returns dicts {key, kind, file, line, hash}.
+    Returns dicts {key, kind, file, line, hash, raw_hash}; `raw_hash` is the hash
+    without usage normalization, for `rehash`.
     """
     items, seen = [], {}
     for f in sorted(Path(chapter_dir).glob("*.md")):
@@ -96,7 +112,8 @@ def extract_items(chapter_dir: Path) -> list:
             else:
                 seen[key] = 1
             items.append({"key": key, "kind": kind, "file": f.name,
-                          "line": div.start + 1, "hash": content_hash(text)})
+                          "line": div.start + 1, "hash": content_hash(text),
+                          "raw_hash": _raw_hash(text)})
     return items
 
 
@@ -141,6 +158,26 @@ def stale_items(ledger: dict, items: list) -> list:
                                       f"by {last.get('by')} was on {last.get('hash')}, "
                                       f"text is now {current[entry['key']]}"))
     return out
+
+
+def rehash(ledger: dict, items: list) -> int:
+    """Carry verdicts over to the normalized hash. A verdict whose recorded hash is the raw
+    (unnormalized) hash of its item's current text was current before normalization, so it is
+    rewritten to the new hash; any other hash is left as it is (stale stays stale). The entry's own
+    `hash` is updated the same way. Returns the number of verdicts rewritten."""
+    current = {it["key"]: it for it in items}
+    n = 0
+    for entry in ledger.get("items", []):
+        it = current.get(entry["key"])
+        if it is None or it["raw_hash"] == it["hash"]:
+            continue
+        if entry.get("hash") == it["raw_hash"]:
+            entry["hash"] = it["hash"]
+        for v in entry.get("verdicts") or []:
+            if v.get("hash") == it["raw_hash"]:
+                v["hash"] = it["hash"]
+                n += 1
+    return n
 
 
 def add_verdict(ledger: dict, items: list, key: str, stage: str, verdict: str, by: str,
@@ -230,6 +267,9 @@ def main(argv=None) -> int:
     p.add_argument("--by", required=True, help="reviewer name")
     p.add_argument("--evidence", default="", help="file:line, counterexample or computation")
     p.add_argument("--model", default="", help="model that produced the verdict")
+    p = sub.add_parser("rehash", help="carry verdicts that were current over to the "
+                                      "usage-normalized hash (every ledger, or one chapter)")
+    p.add_argument("ch", type=int, nargs="?")
     p = sub.add_parser("stale", help="verdicts whose item text has changed; exit 1 if any")
     p.add_argument("ch", type=int)
     sub.add_parser("summary", help="one line per ledger")
@@ -248,6 +288,25 @@ def main(argv=None) -> int:
             print(f"ch{ch:02d}: {s['items']} items, {s['reviewed']} reviewed "
                   f"(correct {s['correct']}, minor {s['minor']}, gap {s['gap']}, "
                   f"error {s['error']}), {s['stale']} stale")
+        return 0
+
+    if args.cmd == "rehash":
+        paths = ([ledger_path(ldir, args.ch)] if args.ch is not None
+                 else sorted(ldir.glob("ch*.yaml")))
+        for path in paths:
+            ledger = load(path)
+            if not ledger:
+                print(f"{path}: no ledger, skipped")
+                continue
+            ch = ledger.get("chapter") or int(re.search(r"\d+", path.stem).group(0))
+            cdir = Path(src) / ledger["dir"] if ledger.get("dir") else chapter_dir(src, ch)
+            if not cdir.is_dir():
+                print(f"{path}: chapter directory {cdir} not found, skipped")
+                continue
+            n = rehash(ledger, extract_items(cdir))
+            if n:
+                save(path, ledger)
+            print(f"{path}: {n} verdict(s) rehashed")
         return 0
 
     items = extract_items(chapter_dir(src, args.ch))
