@@ -50,7 +50,7 @@ We usually describe a structure in one line, naming the domain and the meaning o
 - *The integers with their order.* \( D = \nZ \), with \( R^{\fM} = \{ (x, y) \in \nZ^2 : x > y \} \). Here the relation is described by a condition rather than a list.
 - *Arithmetic.* \( D = \nR \), with the constants \( 0 \) and \( 1 \) naming zero and one, the function symbols \( + \) and \( \cdot \) meaning addition and multiplication, and \( < \) the usual order. This is the structure in which the analysis examples of this chapter have been read all along.
 
-*Nonexample by minimal change.* Take the arithmetic structure and add a one-place function symbol \( g \), meant to be read as \( x \mapsto 1/x \). This is **not** a structure: (M3) asks for a function defined at every element of \( D \), and \( 1/0 \) is not defined. Everything else in the description is fine; exactly clause (M3) fails, at the single point \( 0 \). There are two repairs. Shrink the domain to \( (0, \infty) \), where \( 1/x \) is always defined; or keep \( \nR \) and give \( g \) any value at \( 0 \), say \( g^{\fM}(0) \coloneqq 0 \). The second repair is the one this chapter uses for terms such as \( 1/n \): the value at \( 0 \) is fixed arbitrarily and is never looked at, exactly as a sequence \( a_n \) was read in Section 4.1 as a function symbol whose values off \( \nN \) are never used.
+*Nonexample by minimal change.* Take the arithmetic structure and add a one-place function symbol \( g \), meant to be read as \( x \mapsto 1/x \). This is **not** a structure: (M3) asks for a function defined at every element of \( D \), and \( 1/0 \) is not defined. Everything else in the description is fine; exactly clause (M3) fails, at the single point \( 0 \). There are two repairs. Shrink the domain to \( (0, \infty) \), where \( 1/x \) is always defined; or keep \( \nR \) and give \( g \) any value at \( 0 \), say \( g^{\fM}(0) \coloneqq 0 \). The second repair is the one this chapter uses for terms such as \( 1/n \): the value at \( 0 \) is fixed arbitrarily and is never looked at, because such terms are used only under a bound \( n \in \nZ_{>0} \) (as in @exr-models-c3), exactly as a sequence \( a_n \) was read in Section 4.1 as a function symbol whose values off \( \nN \) are never used.
 
 **Why this definition.** Each clause earns its place.
 
@@ -690,7 +690,7 @@ def-assignment (claim): an assignment exists because D is non-empty (a constant 
 def-assignment (claim): the value of a term is well defined by recursion on terms | thm-structural-recursion (pattern), def-term; Section 4.2 says Chapter 3's induction and recursion carry over to terms and first-order formulas
 def-assignment (example): values 2*2 + (-3) = 1, 2*2 + 1 = 5, -3, and 1 + 1 = 2 | inline; verify/ch04/def-satisfaction.py
 def-satisfaction (claim): satisfaction is well defined by recursion on formulas, for all assignments at once | thm-structural-recursion applied to def-first-order-formula (Section 4.2 remark)
-def-satisfaction (example): traces of forall x exists y (x < y) in N and in {1,2,3}; forall y (x <= y) in N under l(x) = 1 and l(x) = 2; one-element domain | inline; verify/ch04/def-satisfaction.py
+def-satisfaction (example): traces of forall x exists y (x < y) in N and in {1,2,3}; forall y (x <= y) in N under l(x) = 0 and l(x) = 1; one-element domain | inline; verify/ch04/def-satisfaction.py
 def-satisfaction (solution): every real square is >= 0; sqrt(d) exists for d >= 0; a product of non-negative reals is non-negative | school algebra; ch11 (thm-nth-root) proves the roots, prose only
 def-satisfaction (solution): every complex number has a complex square root (polar form) | school algebra of complex numbers, stated in the solution; not proved in the book before Part V
 lem-free-coincidence (proof): structural induction on terms and on first-order formulas | thm-structural-induction (pattern) with the clauses of def-term and def-first-order-formula; Section 4.2 remark
@@ -709,7 +709,7 @@ exr-models-b1 (solution): the three finite counter-models | verify/ch04/exr-mode
 exr-models-b2 (solution): the three-element model and the alternatives | verify/ch04/exr-models-b2.py
 exr-models-b3 (solution): the two-element counter-model | verify/ch04/exr-models-b3.py
 exr-models-c1 (solution): a subset of an n-element set with n elements is the whole set | school counting fact, named in the solution; ch08 (promised) proves it
-exr-models-c1 (solution): successor on N is injective and misses 1 | inline
+exr-models-c1 (solution): successor on N is injective and misses 0 | inline
 exr-models-c2 (solution): a finite set with n elements does not contain n + 1 different elements | school counting fact, named in the solution; ch08 (promised)
 exr-models-c3 (solution): for every real there is a larger natural number | given in the problem; thm-naturals-unbounded (Ch 11), not cited
 exr-models-c3 (solution): n > 1/eps > 0 implies 1/n < eps | school algebra of < (Ch 11 ordered-field rules)

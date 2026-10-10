@@ -81,7 +81,7 @@ Translate "\( A \) has a maximum" (an element of \( A \) that is at least every 
 :::
 
 ::: {.warning}
-**Three mistranslations to avoid.** (1) An \( \exists \) with \( \to \) under it, such as \( \exists x\, (x \in A \to x > 5) \): it is true as soon as something lies outside \( A \) (Section 4.1). (2) A bound on the wrong quantifier: "\( f \) is bounded on \( A \)" is \( \exists M\, \forall x \in A\, (\abs{f(x)} \le M) \); the form \( \exists M \in A\, \forall x\, (\abs{f(x)} \le M) \) asks for a bound that lies in \( A \) and works on all of \( \nR \), and it fails for \( f(x) = x \) on \( A = [0, 1] \), which is bounded on \( A \) by \( 1 \). (3) "For all large \( n \)" read as "for all \( n \)": "\( a_n > 0 \) for all large \( n \)" is \( \exists N \in \nN\; \forall n \in \nN\; (n \ge N \to a_n > 0) \), not \( \forall n \in \nN\, (a_n > 0) \). The sequence \( a_n = n - 3 \) satisfies the first (take \( N = 4 \)) and not the second (\( a_1 = -2 \)).
+**Three mistranslations to avoid.** (1) An \( \exists \) with \( \to \) under it, such as \( \exists x\, (x \in A \to x > 5) \): it is true as soon as something lies outside \( A \) (Section 4.1). (2) A bound on the wrong quantifier: "\( f \) is bounded on \( A \)" is \( \exists M\, \forall x \in A\, (\abs{f(x)} \le M) \); the form \( \exists M \in A\, \forall x\, (\abs{f(x)} \le M) \) asks for a bound that lies in \( A \) and works on all of \( \nR \), and it fails for \( f(x) = x \) on \( A = [0, 1] \), which is bounded on \( A \) by \( 1 \). (3) "For all large \( n \)" read as "for all \( n \)": "\( a_n > 0 \) for all large \( n \)" is \( \exists N \in \nN\; \forall n \in \nN\; (n \ge N \to a_n > 0) \), not \( \forall n \in \nN\, (a_n > 0) \). The sequence \( a_n = n - 3 \) satisfies the first (take \( N = 4 \)) and not the second (\( a_0 = -3 \)).
 :::
 
 ## Rules for bounded quantifiers
@@ -302,7 +302,7 @@ In prose, line by line:
 
 > Let \( \varepsilon > 0 \) [lines 2, 16]. Then \( \varepsilon / 2 > 0 \) [3], so, since \( a_n \to L \), there is \( N \in \nN \) with \( \abs{a_n - L} < \varepsilon/2 \) for every \( n \ge N \) [4]; choose such an \( N \) [5, 6, 15]. Let \( n \in \nN \) with \( n \ge N \) [7, 9]. Then \( \abs{a_n - L} < \varepsilon / 2 \) [8, 10], so \( \abs{2 a_n - 2 L} = 2 \abs{a_n - L} < \varepsilon \) [11]. So this \( N \) works [12–14].
 
-Written with the unbounded rules, the same derivation has 22 lines, since each of its six bounded steps (lines 4, 8, 13, 14, 15, and 16) costs one line more. The claim "\( \frac1n \to 0 \)" is not derived here: its proof needs a fact about \( \nN \) inside \( \nR \), the Archimedean property, which is a theorem of Chapter 11, not of logic.
+Written with the unbounded rules, the same derivation has 22 lines, since each of its six bounded steps (lines 4, 8, 13, 14, 15, and 16) costs one line more. The claim "\( \frac1n \to 0 \)" (for \( n \ge 1 \)) is not derived here: its proof needs a fact about \( \nN \) inside \( \nR \), the Archimedean property, which is a theorem of Chapter 11, not of logic.
 
 ## The search method, extended
 
@@ -497,7 +497,7 @@ Fatal errors (0 for the step): exchanging \( \forall \) with \( \exists \); a "s
 exm-translate-limit (solution): p | n means n = p * k for some integer k | NOTATION.md row for d | n (definition, first used Ch 2); stated in the solution
 exm-translate-limit (solution, d): the two forms of "no largest prime" are provably equivalent | Section 4.9 (later section of this chapter; prose pointer only, nothing here rests on it)
 exm-translate-limit (claim, the opening list): 1, 1/2, 1/3, ... has terms not all close to any L; only eventually-L sequences satisfy the swapped form | informal reading, illustrative only; no result rests on it
-exm-translate-limit (claim, the warning): f(x) = x is bounded by 1 on [0, 1] and not on R; a_n = n - 3 has a_1 = -2 and a_n > 0 for n >= 4 | school arithmetic
+exm-translate-limit (claim, the warning): f(x) = x is bounded by 1 on [0, 1] and not on R; a_n = n - 3 has a_0 = -3 and a_n > 0 for n >= 4 | school arithmetic
 prp-bounded-quantifier-rules (proof): (x in A -> phi)[t/x] is t in A -> phi[t/x]; t free for x in (x in A -> phi) iff t free for x in phi; likewise with x > a when x does not occur in a | def-substitution, def-free-for (cited); argued inline
 prp-bounded-quantifier-rules (proof): moving lines into a new enclosing box keeps each citation available | def-derivation's scope rule (Ch 1, cited as def-derivation via Section 4.4's extension to flagged boxes); argued inline
 prp-bounded-quantifier-rules (claim): a new rule is admissible if every use can be replaced by old steps | def-derived-rule (cited), extended; argued in the text

@@ -106,11 +106,11 @@ One element that makes \( \varphi \) true is enough to make \( \exists x\, \varp
 The two quantifiers are mirror images. For \( \forall \), a single counterexample refutes and a general argument confirms. For \( \exists \), a single witness confirms and a general argument refutes. Section 4.9 makes the mirror exact: "not every \( x \) satisfies \( \varphi \)" says the same as "some \( x \) fails \( \varphi \)".
 
 ::: {.check}
-Over which of the domains \( \nN \), \( \nZ \), \( \nR \) is the sentence \( \exists x\, (x + x = x) \) true? Give a witness where it is true, and a reason where it is false.
+Over which of the domains \( \nZ_{>0} = \{1, 2, 3, \dots\} \), \( \nZ \), \( \nR \) is the sentence \( \exists x\, (x + x = x) \) true? Give a witness where it is true, and a reason where it is false.
 :::
 
 ::: {.solution}
-Only \( x = 0 \) satisfies \( x + x = x \), since subtracting \( x \) from both sides gives \( x = 0 \). So the sentence is true over all three domains, with the witness \( 0 \) in each: \( \nN \) contains \( 0 \). There is no domain among the three where it is false.
+Only \( x = 0 \) satisfies \( x + x = x \), since subtracting \( x \) from both sides gives \( x = 0 \). So the sentence is true over \( \nZ \) and over \( \nR \), with the witness \( 0 \). It is false over \( \nZ_{>0} \), which does not contain \( 0 \): every \( n \in \nZ_{>0} \) has \( n + n > n \), since \( n > 0 \). (Over \( \nN = \{0, 1, 2, \dots\} \) it would be true, again with the witness \( 0 \).)
 :::
 
 ### Reading a quantified sentence
@@ -384,14 +384,14 @@ Fatal errors (0 for the step): a witness or counterexample that depends on \( A 
 
 <!-- dependency ledger
 predicates-and-quantifiers-domains (claim): sqrt 2 exists in R, so exists x (x^2 = 2) is true over R | school fact here, stated as such; Chapter 11 (thm-nth-root) proves it; prose pointer
-predicates-and-quantifiers-domains (claim): every natural number is at least 1, so forall x (x >= 0) holds over N | convention N = {1, 2, 3, ...} (NOTATION); school fact
+predicates-and-quantifiers-domains (claim): every natural number is at least 0, so forall x (x >= 0) holds over N | convention N = {0, 1, 2, ...} (NOTATION); school fact
 exm-reading-quantified-sentences (example): x^2 >= 0 for every real x | school fact (signs), stated as such
 exm-reading-quantified-sentences (example): there is no largest prime | school fact (infinitude of primes), stated in the text as not used; nothing depends on it
 def-bounded-quantifier (claim): an implication with a false hypothesis is true (vacuous truth), used to read the wrong bounded forms and the empty-set cases | informal reading of Chapter 2 (prp-vacuous-implication cited); made exact in Section 4.11; the universal empty-set case is derived in Section 4.4
 exm-quantifier-order-sum (example): x + (-x) = 0 and (1 - y) + y = 1 in R | school arithmetic
 predicates-and-quantifiers-order (claim): swapping two quantifiers of the same kind is harmless; exists y forall x implies forall x exists y | informal reading only, stated as such; derived in Sections 4.4 and 4.6; the failure of the converse is exm-quantifier-order-sum
-predicates-and-quantifiers-check (solution): x + x = x iff x = 0; n + n > n for n in N | school arithmetic
+predicates-and-quantifiers-check (solution): x + x = x iff x = 0; 0 is in Z, R and N, not in Z_{>0}; n + n > n for n in Z_{>0} | school arithmetic
 exr-predicates-and-quantifiers-a1 (solution): x * x >= x for all integers; (1/2)^2 = 1/4 < 1/2 | school arithmetic; checked by verify/ch04/exr-predicates-and-quantifiers-a1.py
-exr-predicates-and-quantifiers-b1 (solution): y * y >= 0 for real y; 1 + y >= 2 for y in N | school arithmetic; checked by verify/ch04/exr-predicates-and-quantifiers-b1.py
+exr-predicates-and-quantifiers-b1 (solution): y * y >= 0 for real y; 2 + y >= 2 for y in N; x = 0, 1 have witnesses y = 1, 0 | school arithmetic; checked by verify/ch04/exr-predicates-and-quantifiers-b1.py
 exr-predicates-and-quantifiers-c1 (solution): 0 < x/2 < x for 0 < x | school arithmetic; checked by verify/ch04/exr-predicates-and-quantifiers-c1.py
 -->

@@ -683,7 +683,7 @@ def-rules-equality (example, the chain a + b = 9): 2 * 3 + 3 = 9 | arith line (s
 def-rules-equality (example, mixed chains): adding b^2 >= 0 does not decrease; <= is transitive | school algebra; ch11 (prose pointer)
 prp-equality-symmetric-transitive (example, additive inverse): y + 0 = y, 0 + c = c, associativity and commutativity of + | school algebra (field axioms); ch11 (prose pointer)
 def-unique-existence (well-definedness): two admissible choices of y differ by renaming a bound variable | Section 4.2 (renaming bound variables)
-def-unique-existence (examples): 3 + 2 = 5 and y + 2 = 5 gives y = 3; y = 1 gives y*y = 1, y >= 3 gives y*y >= 9; 0 + y = y; z + 0 = z | school arithmetic
+def-unique-existence (examples): 3 + 2 = 5 and y + 2 = 5 gives y = 3; y <= 1 gives y*y <= 1, y >= 3 gives y*y >= 9; 0 + y = y; z + 0 = z | school arithmetic
 def-unique-existence (example 3): the uniqueness step z + 0 = 0 and z + 0 = z give z = 0 | prp-equality-symmetric-transitive (cited in the text by name "symmetry and transitivity")
 prp-unique-existence-use (proof): (phi[y/x])[t/y] = phi[t/x] for y not in phi; phi[y/x] has no free x | def-substitution (cited), stated inline
 prp-unique-existence-use (proof): lines 13-14 and 10-11 are symmetry written out | prp-equality-symmetric-transitive (cited)
