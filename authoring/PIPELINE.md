@@ -24,7 +24,7 @@ First tranche, required before Wave 1 (being built now; each documents its own u
 | `tools/check_fitch.py` | Checks every fitch.sty derivation (line availability, box scope, rule shape, cited lines, RAA placement) and every truth table; honors the expect-invalid marker for deliberate non-examples. | S4 (Part 0, and any later derivation) |
 | `tools/promises.py` | Finds prose pointers without an `@ref`, reconciles them with STATUS's promise table, lists the promises a chapter must pay, and verifies that each paid one names an existing label. | S4, S8, S10 |
 | `tools/check_rendered.py` | Lints the built HTML and the PDF logs: backslashes in code, raw TeX or `\qedhere` on the page, MathJax errors, `??`, prose rendered as code. | S4 (after the build) |
-| `tools/ledger.py` | `authoring/ledger/chNN.yaml`: every result, proof, example, check and exercise with its label, kind and content hash; verdicts (stage, reviewer, model, verdict, evidence); `--stale` lists verdicts whose hash no longer matches. | every stage records here; S10 requires no stale or missing verdict |
+| `tools/ledger.py` | `authoring/ledger/chNN.yaml`: every result, proof, example, check and exercise with its label, kind and content hash; verdicts (stage, reviewer, model, verdict, evidence); `--stale` lists verdicts whose hash no longer matches. Retired ledgers live in `authoring/ledger/archive/`, which the tool never reads. | every stage records here; S10 requires no stale or missing verdict |
 
 Already in the gate (`./build.py check`): `check_forward_deps.py` (proofs citing later sections or exercises), `check_optional.py`, proof ownership, PDF errors, math source, `blueprint/originality.py` (fatal at n = 8), `check_order.py`, spelling, display widths.
 

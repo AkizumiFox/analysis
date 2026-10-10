@@ -1,3 +1,6 @@
+# ARCHIVED 2026-10-10. Ledger of the earlier Chapter 1 (ch01-propositional-natural-deduction),
+# whose directory is no longer in src/. Kept only for its verdict history: tools/ledger.py reads
+# authoring/ledger/ch*.yaml and never this folder. Do not edit; the live ledger is ../ch01.yaml.
 chapter: 1
 dir: ch01-propositional-natural-deduction
 items:
