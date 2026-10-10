@@ -496,6 +496,17 @@ items:
     model: claude-opus-5-5
     evidence: 'S8 row 8: warning after exm-power-inequality omitted that the step 1->2 is also uncovered;
       fixed in place (02:122)'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 20603e2e255a
+    date: '2026-10-10'
+    model: claude-opus-5-5
+    evidence: 'S7r after N-includes-0 edit (diff vs 410a4ee4/earlier reviewed text): 02-induction.md:21-32:
+      base case is now P(0), which matches the symbol display at :36, the prose at :11, :19 and :44 ("first
+      transition from 0 to 1"), and the started-at-b paragraph at :66 (Q(0) is P(b)). I re-checked the
+      warning after the example at :124: the base case 2^0=1>=0 holds; 2n^2>=(n+1)^2 fails at n=0,1,2
+      and holds at n=3 (18>=16); the steps 0->1, 1->2 and 2->3 are not covered; 2>=1 ...'
 - key: exm-sum-consecutive-products
   kind: exm
   file: 02-induction.md
@@ -523,6 +534,17 @@ items:
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'S8 row 12: American spelling (labeled, neighbors) only; content unchanged'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 22fce241351f
+    date: '2026-10-10'
+    model: claude-opus-5-5
+    evidence: 'S7r after N-includes-0 edit (diff vs 410a4ee4/earlier reviewed text): 02-induction.md:70-97:
+      the claim now reads n>=1 and the proof is induction started at 1, as set up at :66 (which needs
+      P(b) plus the step for every n>=b). The base case P(1) holds: 2=2. The step is now restricted to
+      n>=1. Algebra checked: n(n+1)(n+2)/3+(n+1)(n+2)=(n+1)(n+2)(n+3)/3. The conclusion at :94 cites @ax-induction
+      started at 1, which :66 defines as @ax-induction applied to Q. Small cas...'
 - key: exm-power-inequality
   kind: exm
   file: 02-induction.md
@@ -551,6 +573,16 @@ items:
     model: claude-opus-5-5
     evidence: 'S8 seam (authoring/reviews/ch03-S8-seam.md): cross-section, cross-chapter labels and notation
       checked'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: e03b25b4fb8e
+    date: '2026-10-10'
+    model: claude-opus-5-5
+    evidence: 'S7r after N-includes-0 edit (diff vs 410a4ee4/earlier reviewed text): 02-induction.md:107-121:
+      base case 3^0=1=2*0+1 checked. The step chain 3*3^n>=3(2n+1)=6n+3>=2n+3=2(n+1)+1 holds; the second
+      inequality needs 6n>=2n, which is true for n>=0, as the text now says (:116). The dependency ledger
+      at :669 also says "6n >= 2n for n >= 0".'
 - key: thm-strong-induction
   kind: thm
   file: 02-induction.md
@@ -607,6 +639,17 @@ items:
     model: claude-opus-5-5
     evidence: 'S8 seam (authoring/reviews/ch03-S8-seam.md): cross-section, cross-chapter labels and notation
       checked'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 81ea58be4d66
+    date: '2026-10-10'
+    model: claude-opus-5-5
+    evidence: 'S7r after N-includes-0 edit (diff vs 410a4ee4/earlier reviewed text): 02-induction.md:147-155:
+      the base case Q(0) holds. The condition k<0 is vacuous, so the theorem''s hypothesis at n=0 gives
+      P(0), and the only natural number k<=0 is 0. The inductive step (unchanged) works from n>=0. This
+      agrees with the prose at :139 (P(0),...,P(n-1)) and :141 (hidden base case at n=0), and with the
+      ledger at :671 ("no natural number is less than 0").'
 - key: check:02-induction:1
   kind: check
   file: 02-induction.md
@@ -719,6 +762,17 @@ items:
     model: claude-opus-5-5
     evidence: 'S8 seam (authoring/reviews/ch03-S8-seam.md): cross-section, cross-chapter labels and notation
       checked'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 0f2cc47020bb
+    date: '2026-10-10'
+    model: claude-opus-5-5
+    evidence: 'S7r after N-includes-0 edit (diff vs 410a4ee4/earlier reviewed text): 02-induction.md:217-227:
+      Q(i) is now "if 1<=i<=m", and i=0 is handled as a vacuous case, which is needed now that N contains
+      0. The claim 1<=j<=m (and 1<=j,l<=m) follows because formation-sequence indices start at 1 (01:50,
+      chi_1..chi_m with m>=1) and j<i<=m. At the end, Q(m) gives P(chi_m), which is valid since m>=1.
+      The same pattern appears in 05-soundness.md:149 and ch04/12-first-order-sound...'
 - key: check:02-induction:2
   kind: check
   file: 02-induction.md
@@ -952,6 +1006,17 @@ items:
     model: claude-opus-5-5
     evidence: 'S8 seam (authoring/reviews/ch03-S8-seam.md): cross-section, cross-chapter labels and notation
       checked'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: ecebf72029ce
+    date: '2026-10-10'
+    model: claude-opus-5-5
+    evidence: 'S7r after N-includes-0 edit (diff vs 410a4ee4/earlier reviewed text): 02-induction.md:377-387:
+      n-good is now defined only for n>=1, and S(n) is proved by induction started at 1 (:66). The base
+      case S(1) uses the first-symbol test. The step is for n>=1, and then n+1>=2, so chi is neither an
+      atom nor bot, which is required for @thm-unique-readability. In the paragraph defining f, every
+      formula has length n>=1, so h_n always exists, and "restricts, for each n, to an...'
 - key: exm-recursive-definitions
   kind: exm
   file: 02-induction.md
@@ -1022,6 +1087,17 @@ items:
     date: '2026-09-28'
     evidence: 'typographic change only: lettered paragraph ''(a)'' set as ''*(a)*'' (2026-09-28); content
       reviewed at S5-S8 unchanged'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 7e1635e6455c
+    date: '2026-10-10'
+    model: claude-opus-5-5
+    evidence: 'S7r after N-includes-0 edit (diff vs 410a4ee4/earlier reviewed text): 02-induction.md:430-456.
+      (a)(i): the base case 4^0-1=0 is divisible by 3, and 4^{n+1}-1=4(4^n-1)+3 checked. (b): the statement
+      now asks about P(0); "False" is right, because the strong-induction hypothesis at n=0 is vacuous
+      and so yields P(0), matching :141. (c): "1<=i<=m" now matches the proof of thm-structural-induction
+      at :218. (a)(ii) is unchanged and still right: base cases 12..15, and k=n...'
 - key: exr-induction-b1
   kind: exr
   file: 02-induction.md
@@ -1057,6 +1133,15 @@ items:
     model: claude-opus-5-5
     evidence: 'S8 seam (authoring/reviews/ch03-S8-seam.md): cross-section, cross-chapter labels and notation
       checked'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: b2c22374f4f4
+    date: '2026-10-10'
+    model: claude-opus-5-5
+    evidence: 'S7r after N-includes-0 edit (diff vs 410a4ee4/earlier reviewed text): 02-induction.md:460-478:
+      base case 2^0=1=0+1 checked. The step 2(n+1)=2n+2>=n+2 uses n>=0, as stated at :475. ch11/06-density-and-roots.md:416
+      cites this exercise with base 2^0=1>0, which is consistent.'
 - key: exr-induction-b2
   kind: exr
   file: 02-induction.md
@@ -2721,6 +2806,17 @@ items:
     model: claude-opus-5-5
     evidence: 'S8 seam (authoring/reviews/ch03-S8-seam.md): cross-section, cross-chapter labels and notation
       checked'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 7da2835ac41c
+    date: '2026-10-10'
+    model: claude-opus-5-5
+    evidence: 'S7r after N-includes-0 edit (diff vs 410a4ee4/earlier reviewed text): src/ch03-semantics-soundness-completeness/05-soundness.md:149.
+      S(k) is ''if 1 <= k <= n then Gamma_k |= phi_k'' for k in N. k = 0 is vacuous (lines are numbered
+      from 1) and so is k > n. For 1 <= k <= n, every cited line or box-last-line j satisfies 1 <= j <
+      k <= n, so S(j) yields Gamma_j |= phi_j. This matches @thm-strong-induction (02-induction.md:136,
+      hypothesis over all k < n in N, hidden base...'
 - key: exm-soundness-run
   kind: exm
   file: 05-soundness.md
@@ -3143,6 +3239,17 @@ items:
     model: claude-opus-5-5
     evidence: 'S8 seam (authoring/reviews/ch03-S8-seam.md): cross-section, cross-chapter labels and notation
       checked'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 8d56a0671a59
+    date: '2026-10-10'
+    model: claude-opus-5-5
+    evidence: 'S7r after N-includes-0 edit (diff vs 410a4ee4/earlier reviewed text): src/ch03-semantics-soundness-completeness/05-soundness.md:534.
+      The new solution applies @thm-strong-induction (02-induction.md:136, quantified over all n in N
+      including 0) to the property ''if 1 <= k <= n then Gamma_k |= phi_k''. k = 0 is vacuous (there is
+      no line 0) and k > n is excluded by the guard. The step assumes Gamma_j |= phi_j for lines j < k,
+      and cited lines and boxes satisfy 1 <= j < k...'
 - key: lem-weakening-cut
   kind: lem
   file: 06-completeness.md
@@ -3530,6 +3637,17 @@ items:
     model: claude-opus-5-5
     evidence: 'S8 seam (authoring/reviews/ch03-S8-seam.md): cross-section, cross-chapter labels and notation
       checked'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: cbce6cd947db
+    date: '2026-10-10'
+    model: claude-opus-5-5
+    evidence: 'S7r after N-includes-0 edit (diff vs 410a4ee4/earlier reviewed text): src/ch03-semantics-soundness-completeness/06-completeness.md:445.
+      Base case: T(0) is ''if 0 <= n then S(n)'', and 0 <= n always holds, so T(0) is Step 2''s Claim.
+      Step: from m + 1 <= n we get m <= n, so T(m) gives S(n - m). Then j = n - m satisfies 1 <= j (since
+      m <= n - 1) and j <= n (since m >= 0), which matches the Claim''s hypothesis 1 <= j <= n (line 425),
+      and the Claim gives S(n - m - 1) = T(...'
 - key: exm-completeness-run
   kind: exm
   file: 06-completeness.md

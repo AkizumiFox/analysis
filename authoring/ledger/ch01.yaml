@@ -785,6 +785,17 @@ items:
     evidence: 'cross-chapter cleanup 2026-09-28: a Chapter 3 @ref added to an existing prose pointer (signpost
       in a solution/example, not a step); text otherwise unchanged; check_forward_deps and check_optional
       pass'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: c624fff52068
+    date: '2026-10-10'
+    model: claude-opus-5-5
+    evidence: 'S7r after N-includes-0 edit (diff vs 410a4ee4/earlier reviewed text): src/ch01-connectives-and-derivations/02-derivations.md:413-439.
+      The only change is adding ''m >= 1'' to part (b). It is needed: the answer m - 1 would be -1 at
+      m = 0, and a chain e_0 < ... < e_m with 0 links has no premise to start from. The solution (b) still
+      matches. It answers m - 1, checks m = 3 against 2 applications in (a), and handles the base m =
+      1 explicitly (''the single premise is alrea...'
 - key: exr-derivations-c1
   kind: exr
   file: 02-derivations.md

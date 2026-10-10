@@ -528,6 +528,17 @@ items:
     model: claude-opus-5-5
     evidence: 'cross-chapter cleanup 2026-09-28: ''induction (Chapter 3)'' now cites @ax-induction (earlier
       chapter); exr-density-and-roots-c2 also points to @exr-induction-b1 as an aside; argument unchanged'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 5175ce3e96fe
+    date: '2026-10-10'
+    model: claude-opus-5-5
+    evidence: 'S7r after N-includes-0 edit (diff vs 410a4ee4/earlier reviewed text): 01-ordered-fields.md:375-393.
+      The recursion now starts at 0*1 := 0. In (b) the claim n*1 > 0 is restricted to n >= 1, and the
+      base case is 1*1 = 0*1 + 1 = 0 + 1 = 1 > 0 by (e). Starting the induction at 1 is justified by the
+      ''started at b'' remark in ch03 02-induction.md:66 (an application of ax-induction, which the hint
+      cites). The step (k+1)*1 > k*1 uses only (O3), so it holds for every k >= 0...'
 - key: exr-ordered-fields-c2
   kind: exr
   file: 01-ordered-fields.md
@@ -823,6 +834,17 @@ items:
     model: claude-opus-5-5
     evidence: 'cross-chapter cleanup 2026-09-28: ''induction (Chapter 3)'' now cites @ax-induction (earlier
       chapter); exr-density-and-roots-c2 also points to @exr-induction-b1 as an aside; argument unchanged'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: ca0e3db854a2
+    date: '2026-10-10'
+    model: claude-opus-5-5
+    evidence: 'S7r after N-includes-0 edit (diff vs 410a4ee4/earlier reviewed text): 02-suprema.md:162-172.
+      The set is now indexed by Z_{>0}, defined inline as {1,2,3,...} (informal for now, made formal in
+      §05). The listed elements match: n=1 gives 0. The old proof of positivity by induction (base 1)
+      is replaced by ''positive by definition'', which is legitimate because 01:96 assumes R contains
+      Z with its usual order, and the ledger line at 02:407 records this. 1/n > 0 follows fr...'
 - key: check:02-suprema:1
   kind: check
   file: 02-suprema.md
@@ -848,6 +870,17 @@ items:
     hash: 0c4c93eb0244
     date: '2026-09-28'
     evidence: 'S5b: claims, meta-claims, ledger lines and refs checked; see authoring/reviews/ch10-S5-B.md'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 46b812de17f6
+    date: '2026-10-10'
+    model: claude-opus-5-5
+    evidence: 'S7r after N-includes-0 edit (diff vs 410a4ee4/earlier reviewed text): 02-suprema.md:186-194.
+      Index set changed from N to Z_{>0}, which is what the listed elements {-1, 1/2, -1/3, ...} need
+      (n=0 would divide by zero). Solution checked again: odd n gives -1/n < 0; even n >= 2 gives 1/n
+      <= 1/2 by thm-ordered-field-rules (f), using 0<2<=n; max = sup = 1/2 is attained at n=2; -1/n >=
+      -1 because 1/n <= 1 for n >= 1; min = inf = -1 is attained at n=1. Z_{>0} is introduc...'
 - key: thm-no-rational-sup-sqrt2
   kind: thm
   file: 02-suprema.md
@@ -1475,6 +1508,17 @@ items:
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: authoring/reviews/ch11-S8-seam.md row 13 (ax-choice, ch08)
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 9de94e7b5b0e
+    date: '2026-10-10'
+    model: claude-opus-5-5
+    evidence: 'S7r after N-includes-0 edit (diff vs 410a4ee4/earlier reviewed text): 04-epsilon-characterization.md:110-116.
+      The index changed from N to Z_{>0}, which is required: n=0 would make 1/n undefined under the new
+      N. Statement sup A - 1/n < a_n <= sup A checked for every n >= 1. Z_{>0} was introduced informally
+      at 02:165 as the positive integers and is defined formally at 05 (Z_{>0} = {n in N : n != 0}), so
+      the symbol is available before this point. The countable-choic...'
 - key: proof:cor-sup-approximation
   kind: proof
   file: 04-epsilon-characterization.md
@@ -1493,6 +1537,17 @@ items:
     hash: 63ec860f0660
     date: '2026-09-28'
     evidence: 'S5b: claims, meta-claims, ledger lines and refs checked; see authoring/reviews/ch10-S5-B.md'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 5af38084c7fe
+    date: '2026-10-10'
+    model: claude-opus-5-5
+    evidence: 'S7r after N-includes-0 edit (diff vs 410a4ee4/earlier reviewed text): 04-epsilon-characterization.md:119-121.
+      The proof no longer cites the induction from exm-sup-one-minus-reciprocal, because that example
+      no longer contains one. n > 0 now holds directly for n in Z_{>0} (the positive integers, 02:165),
+      so nothing is missing. 1/n > 0 follows from (f). thm-sup-epsilon (=>) is applied with eps = 1/n
+      > 0, and a_n <= sup A follows from (S1). Every cited label says wha...'
 - key: thm-sup-monotone
   kind: thm
   file: 04-epsilon-characterization.md
@@ -1863,6 +1918,16 @@ items:
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: authoring/reviews/ch11-S8-seam.md row 11 (ch06 intersection of a set of sets)
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 51fc5e5fb0a3
+    date: '2026-10-10'
+    model: claude-opus-5-5
+    evidence: 'S7r after N-includes-0 edit (diff vs 410a4ee4/earlier reviewed text): 05-archimedean-property.md:9-18.
+      (N1) is now 0 in S. Checked lines 20-28: [0,inf), {0} u [1,inf) and the nonexample [0,5] all use
+      0 consistently. Line 40 now reads ''0 in N'' and line 43 has induction from P(0). NOTATION.md:43
+      says N contains 0. Intersecting the family (ch06) is unchanged.'
 - key: exm-naturals-at-least-one
   kind: exm
   file: 05-archimedean-property.md
@@ -1888,6 +1953,17 @@ items:
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: authoring/reviews/ch11-S8-seam.md row 6
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 697e5357e8d4
+    date: '2026-10-10'
+    model: claude-opus-5-5
+    evidence: 'S7r after N-includes-0 edit (diff vs 410a4ee4/earlier reviewed text): 05-archimedean-property.md:45-53.
+      {0} u [1,inf) is inductive by line 26: 0 steps to 1, and x>=1 gives x+1>=1. So N is a subset of
+      it, which gives n>=1 for n in N with n != 0. Then n>=1>0, so 1/n is defined. thm-ordered-field-rules
+      (f) (01-ordered-fields.md:130, 0<a<b gives 0<1/b<1/a) gives 1/n<=1, and n=1 is trivial. The title
+      and statement now exclude 0, which matches the solution.'
 - key: thm-naturals-unbounded
   kind: thm
   file: 05-archimedean-property.md
@@ -1963,6 +2039,15 @@ items:
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: authoring/reviews/ch11-S8-seam.md row 10 (prp-quantifier-negation, ch04)
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: d4bb09c529c8
+    date: '2026-10-10'
+    model: claude-opus-5-5
+    evidence: 'S7r after N-includes-0 edit (diff vs 410a4ee4/earlier reviewed text): 05-archimedean-property.md:82.
+      Nonemptiness now comes from 0 in N, which line 40 justifies (every inductive set contains 0). The
+      rest is unchanged, and line 89 (''nonempty through 0 in N'') is consistent.'
 - key: cor-archimedean-epsilon
   kind: cor
   file: 05-archimedean-property.md
@@ -1981,6 +2066,15 @@ items:
     hash: 28a5587c0e1d
     date: '2026-09-28'
     evidence: 'S5b: claims, meta-claims, ledger lines and refs checked; see authoring/reviews/ch10-S5-B.md'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: a1204ce50b51
+    date: '2026-10-10'
+    model: claude-opus-5-5
+    evidence: 'S7r after N-includes-0 edit (diff vs 410a4ee4/earlier reviewed text): 05-archimedean-property.md:97-103.
+      Quantifying over Z_{>0} is necessary because 1/0 is undefined, and Z_{>0} is defined at line 59
+      before use. The ''moreover'' clause is restricted to m in Z_{>0}, so 1/m is defined.'
 - key: proof:cor-archimedean-epsilon
   kind: proof
   file: 05-archimedean-property.md
@@ -1999,6 +2093,16 @@ items:
     hash: c3a1b5d66296
     date: '2026-09-28'
     evidence: 'S5b: claims, meta-claims, ledger lines and refs checked; see authoring/reviews/ch10-S5-B.md'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 46ef609603cd
+    date: '2026-10-10'
+    model: claude-opus-5-5
+    evidence: 'S7r after N-includes-0 edit (diff vs 410a4ee4/earlier reviewed text): 05-archimedean-property.md:106.
+      thm-naturals-unbounded gives n in N with n>1/eps>0, so n != 0, and n is in Z_{>0} by line 59 ({n
+      in N : n != 0}). Applying (f) to 0<1/eps<n gives 1/n<eps. For m>=n>0, 1/m<=1/n by (f) when m>n,
+      and the case m=n is trivial.'
 - key: check:05-archimedean-property:1
   kind: check
   file: 05-archimedean-property.md
@@ -2024,6 +2128,16 @@ items:
     hash: ff8665b95946
     date: '2026-09-28'
     evidence: 'S5b: claims, meta-claims, ledger lines and refs checked; see authoring/reviews/ch10-S5-B.md'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 269642d61fbf
+    date: '2026-10-10'
+    model: claude-opus-5-5
+    evidence: 'S7r after N-includes-0 edit (diff vs 410a4ee4/earlier reviewed text): 05-archimedean-property.md:113-119.
+      For positive n, 1/n<0.003 iff n>333.3..., so the least positive integer is 334 (1/333=0.003003...
+      is too big). The second answer is 3334. The changed wording ''least positive integer'' matches the
+      question, which now asks over Z_{>0}.'
 - key: exm-sup-one-minus-reciprocal-finished
   kind: exm
   file: 05-archimedean-property.md
@@ -2042,6 +2156,16 @@ items:
     hash: e7b686f9e13a
     date: '2026-09-28'
     evidence: 'S5b: claims, meta-claims, ledger lines and refs checked; see authoring/reviews/ch10-S5-B.md'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 3630f89a61e7
+    date: '2026-10-10'
+    model: claude-opus-5-5
+    evidence: 'S7r after N-includes-0 edit (diff vs 410a4ee4/earlier reviewed text): 05-archimedean-property.md:125-141.
+      A is now over Z_{>0}, which matches 02-suprema.md:165. The set is nonempty via 1 in Z_{>0}. Every
+      n in Z_{>0} has 1/n>0 (exm-naturals-at-least-one applies to nonzero naturals). The cor gives n in
+      Z_{>0}, so a=1-1/n is in A. The instance n=101 is checked.'
 - key: exm-nonarchimedean-field
   kind: exm
   file: 05-archimedean-property.md
@@ -2085,6 +2209,16 @@ items:
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: authoring/reviews/ch11-S8-seam.md row 7, 19
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 9698e03db6f4
+    date: '2026-10-10'
+    model: claude-opus-5-5
+    evidence: 'S7r after N-includes-0 edit (diff vs 410a4ee4/earlier reviewed text): 05-archimedean-property.md:163-175.
+      The first part still covers all n in N, including n=0: x-0 has leading coefficient 1, so it is positive.
+      For the reciprocal step it restricts to n in Z_{>0}. Constants c are positive iff c>0 (line 159),
+      so 0<n<x, and (f), valid in R(x) by c2, gives 1/x<1/n. This negates the Z_{>0} form of the cor exactly.'
 - key: exr-archimedean-property-a1
   kind: exr
   file: 05-archimedean-property.md
@@ -2110,6 +2244,17 @@ items:
     hash: d3c275555eb2
     date: '2026-09-28'
     evidence: 'S5b: claims, meta-claims, ledger lines and refs checked; see authoring/reviews/ch10-S5-B.md'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: aa0f2235efdb
+    date: '2026-10-10'
+    model: claude-opus-5-5
+    evidence: 'S7r after N-includes-0 edit (diff vs 410a4ee4/earlier reviewed text): 05-archimedean-property.md:219.
+      [1/2,inf) is not inductive: 0 is not in it, so (N1) fails, while (N2) holds. This answer is right
+      under the new (N1). [0,10] contains 0, and (N2) fails at 10. N u {1/2}: (N2) fails at 1/2, since
+      3/2 is strictly between 1 and 2 (arithmetic, ledger line 398). Z: 0 is in Z, so Z is inductive.
+      Parts (a), (c) and (d) are consistent.'
 - key: exr-archimedean-property-b1
   kind: exr
   file: 05-archimedean-property.md
@@ -2136,6 +2281,16 @@ items:
     hash: 40961568d049
     date: '2026-09-28'
     evidence: 'S5b: claims, meta-claims, ledger lines and refs checked; see authoring/reviews/ch10-S5-B.md'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: ca7dfedc20e5
+    date: '2026-10-10'
+    model: claude-opus-5-5
+    evidence: 'S7r after N-includes-0 edit (diff vs 410a4ee4/earlier reviewed text): 05-archimedean-property.md:228-240.
+      B={1/n : n in Z_{>0}} is nonempty (1 in B). 1/n>0 by exm-naturals-at-least-one, since each n is
+      a nonzero natural. The cor gives n in Z_{>0} with 1/n<L, so 1/n is in B, which is the contradiction.
+      0 is not in B, so there is no minimum.'
 - key: exr-archimedean-property-b2
   kind: exr
   file: 05-archimedean-property.md
@@ -2187,6 +2342,16 @@ items:
     hash: 902f49c4af24
     date: '2026-09-28'
     evidence: 'S5b: claims, meta-claims, ledger lines and refs checked; see authoring/reviews/ch10-S5-B.md'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 75516d119488
+    date: '2026-10-10'
+    model: claude-opus-5-5
+    evidence: 'S7r after N-includes-0 edit (diff vs 410a4ee4/earlier reviewed text): 05-archimedean-property.md:254-266.
+      The hypothesis is now over Z_{>0}, which keeps 1/n defined. The cor with eps=x gives n in Z_{>0},
+      which contradicts the hypothesis for that same n. In line 263, ''every n'' implicitly means Z_{>0},
+      which is acceptable.'
 - key: exr-archimedean-property-b4
   kind: exr
   file: 05-archimedean-property.md
@@ -2214,6 +2379,17 @@ items:
     hash: ef55451ac4c7
     date: '2026-09-28'
     evidence: 'S5b: claims, meta-claims, ledger lines and refs checked; see authoring/reviews/ch10-S5-B.md'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: d9d94db06df1
+    date: '2026-10-10'
+    model: claude-opus-5-5
+    evidence: 'S7r after N-includes-0 edit (diff vs 410a4ee4/earlier reviewed text): 05-archimedean-property.md:268-292.
+      A={n/(n+1) : n in N} now contains 0, and sup A=1 still holds. Line (iii) holds for n=0 (0<1, 1>0).
+      Line (iv) gives n in Z_{>0}, which is a subset of N, so a in (ii) lies in A. In (vii), 1/(n+1)<1/n
+      needs n>0, which holds. Lines (v) and (ix) use Z_{>0} so that 1/n is defined. The solution''s order
+      and its reasons are unchanged and still valid.'
 - key: exr-archimedean-property-c1
   kind: exr
   file: 05-archimedean-property.md
@@ -2255,6 +2431,16 @@ items:
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: S7 fix checked, ch11-S7-recheck.md
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: ec94b377232e
+    date: '2026-10-10'
+    model: claude-opus-5-5
+    evidence: 'S7r after N-includes-0 edit (diff vs 410a4ee4/earlier reviewed text): 05-archimedean-property.md:306,315.
+      Nonemptiness via 0 in N matches the main proof (line 82). Marking-scheme item 1 is updated to match.
+      In (b), line 312 (k<=0 or k>=1 for an integer k; k>=1 gives k in N, so k<x) remains valid under
+      the new convention.'
 - key: exr-archimedean-property-c2
   kind: exr
   file: 05-archimedean-property.md
@@ -2305,6 +2491,16 @@ items:
     hash: 5197f2337374
     date: '2026-09-28'
     evidence: 'S5b: claims, meta-claims, ledger lines and refs checked; see authoring/reviews/ch10-S5-B.md'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 8683841aaa1b
+    date: '2026-10-10'
+    model: claude-opus-5-5
+    evidence: 'S7r after N-includes-0 edit (diff vs 410a4ee4/earlier reviewed text): 05-archimedean-property.md:384.
+      r=m/k with k in Z_{>0} matches the definition of Q at line 64 and ledger line 400. k>=1 by exm-naturals-at-least-one,
+      since k is a nonzero natural (or directly by line 59). If m<=0, n=1 works. If m>=1, m is in N, and
+      m/k<=m<m+1, which is in N.'
 - key: thm-sqrt2-exists
   kind: thm
   file: 06-density-and-roots.md
@@ -2367,6 +2563,17 @@ items:
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: authoring/reviews/ch11-S8-seam.md row 4
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: e60b833b0d2b
+    date: '2026-10-10'
+    model: claude-opus-5-5
+    evidence: 'S7r after N-includes-0 edit (diff vs 410a4ee4/earlier reviewed text): 06-density-and-roots.md:73
+      now restricts to n ∈ Z_{>0}, which is required: for n = 0 the statement would be false (s^0 = 1
+      != a when a != 1, and not unique when a = 1). The follow-up at line 76 (sqrt[n]{0} := 0, ''a product
+      of positive numbers is positive'') assumes n >= 1, which this restriction gives. Uses in exm-cube-root-bounds
+      (n = 3), exr-density-and-roots-b3 (n = 3) and the remark at 175 (...'
 - key: proof:thm-nth-root
   kind: proof
   file: 06-density-and-roots.md
@@ -2420,6 +2627,17 @@ items:
     date: '2026-09-28'
     evidence: 'content edit after S8 (seam row: roots of 0): added the a = 0 case (only non-negative root
       of 0 is 0; nth-root of 0 := 0) and powers from u^0; checked by build/check; not re-refereed'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 924ec58ca661
+    date: '2026-10-10'
+    model: claude-opus-5-5
+    evidence: 'S7r after N-includes-0 edit (diff vs 410a4ee4/earlier reviewed text): 06-density-and-roots.md:98-155.
+      Claim: k ∈ Z_{>0} is needed, since at k = 0 ''x^k < y^k'' would read 1 < 1 and be false. The induction
+      base k = 1 (line 107) matches this, and line 105 says ''only k >= 1 is needed''. The m >= 0 extension
+      holds with u^0 = 1. The Σ estimate (k terms, top term y^{k-1} > 0) is valid for k >= 1, including
+      k = 1 (Σ = 1). Uses with m = n - 1 >= 0 (lines 139, 145) are valid...'
 - key: exm-cube-root-bounds
   kind: exm
   file: 06-density-and-roots.md
@@ -2495,6 +2713,17 @@ items:
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: authoring/reviews/ch11-S8-seam.md row 12 (thm-well-ordering, prp-integers-closed)
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 132257ab0146
+    date: '2026-10-10'
+    model: claude-opus-5-5
+    evidence: 'S7r after N-includes-0 edit (diff vs 410a4ee4/earlier reviewed text): 06-density-and-roots.md:195-201.
+      The choice p ∈ N with p > -y gives 0 - p < y, so 0 ∉ T and j0 != 0. From that, j0 >= 1 by @exm-naturals-at-least-one
+      (05:45-52, which states n >= 1 for nonzero n ∈ N), and j0 - 1 ∈ N by the remark on N (05:64, ''if
+      n ∈ N and n >= 1, then n - 1 ∈ N''). Since j0 - 1 ∉ T by minimality, m <= y. The old j0 = 1 case
+      is absorbed correctly, because j0 - 1 = 0 ∈ N and 0 ∉ ...'
 - key: thm-rationals-dense
   kind: thm
   file: 06-density-and-roots.md
@@ -2551,6 +2780,17 @@ items:
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: authoring/reviews/ch11-S8-seam.md row 12
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 77d7d73759ca
+    date: '2026-10-10'
+    model: claude-opus-5-5
+    evidence: 'S7r after N-includes-0 edit (diff vs 410a4ee4/earlier reviewed text): 06-density-and-roots.md:233-237.
+      n ∈ Z_{>0} from @cor-archimedean-epsilon (05:98). Multiplying and dividing by n > 0 is justified.
+      ''m ∈ Z and n ∈ Z_{>0}, so m/n is rational'' matches the definition Q := {m/n : m ∈ Z, n ∈ Z_{>0}}
+      in the remark at 05:64 exactly. The floor(nx)+1 integer step cites sums of integers from the same
+      remark. The chain nx < m <= nx+1 < ny is unchanged.'
 - key: exm-rational-between
   kind: exm
   file: 06-density-and-roots.md
@@ -2794,6 +3034,17 @@ items:
     model: claude-opus-5-5
     evidence: 'cross-chapter cleanup 2026-09-28: ''induction (Chapter 3)'' now cites @ax-induction (earlier
       chapter); exr-density-and-roots-c2 also points to @exr-induction-b1 as an aside; argument unchanged'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 35235650cb61
+    date: '2026-10-10'
+    model: claude-opus-5-5
+    evidence: 'S7r after N-includes-0 edit (diff vs 410a4ee4/earlier reviewed text): 06-density-and-roots.md:410-422.
+      In the exercise statement k ∈ N now allows k = 0, which is harmless because integers are dyadic.
+      The induction for 2^k > k now starts at 0: 2^0 = 1 > 0 is correct. The step 2^{k+1} = 2^k + 2^k
+      > k + 1 combines 2^k > k with 2^k >= 1 and is valid for every k >= 0. Line 418 now takes k ∈ Z_{>0}
+      from @cor-archimedean-epsilon, and 05-archimedean-property.md:98 does s...'
 - key: exr-density-and-roots-c3
   kind: exr
   file: 06-density-and-roots.md
@@ -2821,6 +3072,17 @@ items:
     hash: fe1f5efadfba
     date: '2026-09-28'
     evidence: 'S5b: claims, meta-claims, ledger lines and refs checked; see authoring/reviews/ch10-S5-B.md'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 4c1ff9709300
+    date: '2026-10-10'
+    model: claude-opus-5-5
+    evidence: 'S7r after N-includes-0 edit (diff vs 410a4ee4/earlier reviewed text): 06-density-and-roots.md:435
+      now reads n ∈ Z_{>0}, which matches @cor-archimedean-epsilon (05:98), so 1/n is defined. Line (1)
+      (''some natural number exceeds x'', @thm-naturals-unbounded) and line (2) (well-ordering is for
+      subsets of N) are still correct as the student''s text, and line (2) is still the only faulty line.
+      The solution at 446-448 (q/2 counterexample at x = 0; repair with R_n ⊆ Z and ...'
 - key: thm-nested-intervals
   kind: thm
   file: 07-nested-intervals.md
@@ -2840,6 +3102,17 @@ items:
     hash: 720808292c5c
     date: '2026-09-28'
     evidence: 'S5b: claims, meta-claims, ledger lines and refs checked; see authoring/reviews/ch10-S5-B.md'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 1a99c803d643
+    date: '2026-10-10'
+    model: claude-opus-5-5
+    evidence: 'S7r after N-includes-0 edit (diff vs 410a4ee4/earlier reviewed text): 07-nested-intervals.md:21-23.
+      Every index range is now n >= 1, matching ''I_1, I_2, ...'' at 07:16 and the proof''s a_1 / b_1
+      at 07:43. Nothing else in the statement depends on the index set. The witness table 07:58-64 uses
+      1/n, which needs n >= 1, and that is consistent. 07:69 now reads ''the left endpoints form Z_{>0}'',
+      which is right for [n, inf) with n >= 1.'
 - key: proof:thm-nested-intervals
   kind: proof
   file: 07-nested-intervals.md
@@ -2858,6 +3131,17 @@ items:
     hash: 902c746aa0d2
     date: '2026-09-28'
     evidence: 'S5b: claims, meta-claims, ledger lines and refs checked; see authoring/reviews/ch10-S5-B.md'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: c72936c9e837
+    date: '2026-10-10'
+    model: claude-opus-5-5
+    evidence: 'S7r after N-includes-0 edit (diff vs 410a4ee4/earlier reviewed text): 07:36-47. The claim
+      a_m <= b_n for m, n >= 1 is checked. k = max{m,n} >= 1 stays in range. The induction on k - m does
+      not depend on the base index. A is nonempty because a_1 is in A, and b_1 bounds it. That fits the
+      n >= 1 range. Fixing n >= 1 and applying (S1)/(S2) is unchanged. In the uniqueness paragraph (07:47),
+      ''some n'' comes from the hypothesis, which now gives n >= 1. Consistent.'
 - key: check:07-nested-intervals:1
   kind: check
   file: 07-nested-intervals.md
@@ -2938,6 +3222,17 @@ items:
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: authoring/reviews/ch11-S8-seam.md row 13
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 283496d63b0f
+    date: '2026-10-10'
+    model: claude-opus-5-5
+    evidence: 'S7r after N-includes-0 edit (diff vs 410a4ee4/earlier reviewed text): 07:95. The list x_1,
+      x_2, ... is now a function from Z_{>0}, which matches the subscripts. ''c != x_n for every n >=
+      1'' matches. The ''Consequently not countable'' clause is bridged in the proof at 07:130 by reindexing
+      a function from N. Prose at 07:88 states the Chapter 8 definition as x_0, x_1, ... (image of a function
+      from N), so the two indexings are reconciled explicitly.'
 - key: proof:thm-reals-uncountable
   kind: proof
   file: 07-nested-intervals.md
@@ -2976,6 +3271,17 @@ items:
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: authoring/reviews/ch11-S8-seam.md row 12, 13 (thm-recursion, def-countable)
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: e93c3759b9df
+    date: '2026-10-10'
+    model: claude-opus-5-5
+    evidence: 'S7r after N-includes-0 edit (diff vs 410a4ee4/earlier reviewed text): 07:107-130. The recursion
+      starts at I_1 and steps from n to n+1, so it covers exactly n >= 1. 07:128: c is in I_n and x_n
+      is not in I_n for each n >= 1. 07:130: for f: N -> R, x_n := f(n-1) for n >= 1 has image {f(0),
+      f(1), ...} = image of f, because n -> n-1 is a bijection from Z_{>0} onto N. So c is not in the
+      image of f. Applying @thm-nested-intervals (stated for n >= 1) fits. Nonemptiness o...'
 - key: exr-nested-intervals-a1
   kind: exr
   file: 07-nested-intervals.md
@@ -3001,6 +3307,17 @@ items:
     hash: 1f976a09c89c
     date: '2026-09-28'
     evidence: 'S5b: claims, meta-claims, ledger lines and refs checked; see authoring/reviews/ch10-S5-B.md'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: cd77b9964d7a
+    date: '2026-10-10'
+    model: claude-opus-5-5
+    evidence: 'S7r after N-includes-0 edit (diff vs 410a4ee4/earlier reviewed text): 07:169. (I_n)_{n
+      >= 1} matches the theorem''s index range. Every family in (a)-(d) involves 1/n or a check of I_1,
+      I_2, so it needs n >= 1. Solutions 07:182-192 are unchanged: (b) I_1 ∩ I_3 = [1,2] ∩ [3,10/3] is
+      empty, (d) the intersection is I_1 = [-1,1], (e) I_1 = [1,2], I_2 = [5/3,2], I_3 = [5/3,16/9] rechecked.
+      @cor-archimedean-epsilon (05:98) gives n in Z_{>0}, which is what (a) and (c) use.'
 - key: exr-nested-intervals-b1
   kind: exr
   file: 07-nested-intervals.md
@@ -3041,6 +3358,17 @@ items:
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: S7 fix checked, ch11-S7-recheck.md
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 1c99bf30e072
+    date: '2026-10-10'
+    model: claude-opus-5-5
+    evidence: 'S7r after N-includes-0 edit (diff vs 410a4ee4/earlier reviewed text): 07:202 and 07:207.
+      (b) is now indexed n >= 1, which fits ''n-digit truncation'' and computing a_1, a_2. The nesting
+      argument 07:211 works for every n. (a): ''2^n > n for every n in N'' is true including n = 0 (2^0
+      = 1 > 0). The source @exr-density-and-roots-c2 (06:416) proves exactly this for k in N with base
+      2^0 = 1 > 0. The deduction 2^{-n} < 1/n is now restricted to n >= 1, as division by n requ...'
 - key: exr-nested-intervals-b2
   kind: exr
   file: 07-nested-intervals.md
@@ -3067,6 +3395,16 @@ items:
     hash: 8c8b61a7c369
     date: '2026-09-28'
     evidence: 'S5b: claims, meta-claims, ledger lines and refs checked; see authoring/reviews/ch10-S5-B.md'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 9d3efc118f54
+    date: '2026-10-10'
+    model: claude-opus-5-5
+    evidence: 'S7r after N-includes-0 edit (diff vs 410a4ee4/earlier reviewed text): 07:221. The intersection
+      over n >= 1 of [-1/n, 1+1/n] is [0,1]. The range is needed for 1/n and matches the table row 07:64.
+      Solution 07:225-229: (⊇) -1/n < 0 for n >= 1. (⊆) uses @cor-archimedean-epsilon, which gives n in
+      Z_{>0} (05:98). The lengths 1 + 2/n > 1 are correct for n >= 1.'
 - key: exr-nested-intervals-c1
   kind: exr
   file: 07-nested-intervals.md
@@ -3195,6 +3533,17 @@ items:
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: S7 fix checked, ch11-S7-recheck.md
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: c6678b69f735
+    date: '2026-10-10'
+    model: claude-opus-5-5
+    evidence: 'S7r after N-includes-0 edit (diff vs 410a4ee4/earlier reviewed text): 07:299. I_n is now
+      defined for n in Z_{>0}. This removes the division x/0 the old ''n in N'' would have allowed under
+      the new convention. (a) 07:325: (x - n^2)/n has positive denominator for n >= 1. (b) 07:327: N in
+      N with N > lc(p)/lc(q) > 0 forces N >= 1, so ''N in Z_{>0}'' is stated and I_N is defined. (c) uses
+      I_1 and an n > lc(q)/lc(p) > 0, so n >= 1. (d) 07:335: {a_n} = Z_{>0} is bounded by x...'
 - key: exr-nested-intervals-c4
   kind: exr
   file: 07-nested-intervals.md
@@ -3275,6 +3624,16 @@ items:
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: authoring/reviews/ch11-S8-seam.md row (a) prp-equivalence-cycle
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: ed087bdaed0a
+    date: '2026-10-10'
+    model: claude-opus-5-5
+    evidence: 'S7r after N-includes-0 edit (diff vs 410a4ee4/earlier reviewed text): 07:410. (ii) now
+      quantifies over n in Z_{>0}, which 1/n requires. (i)⇒(ii): @cor-sup-approximation (04:113) is stated
+      for n in Z_{>0}, an exact match. @thm-sup-epsilon with eps = 1/n > 0 also applies. (ii)⇒(iii): @cor-archimedean-epsilon
+      (05:98) gives n in Z_{>0} with 1/n < s - u, which is in the range of (ii). (iii)⇒(i) is unchanged.'
 - key: exr-nested-intervals-r2
   kind: exr
   file: 07-nested-intervals.md
