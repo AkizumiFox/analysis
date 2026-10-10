@@ -404,7 +404,7 @@ Let \( F \) be an ordered field, \( A \subseteq F \), and let \( U(A) \) be the 
 def-upper-bound (example): negating "for every a in A, a <= M" to "there exists a in A with a > M" | quantifier negation, ch04 (promised); prose pointer in the text
 def-bounded-above (example): max{M, 0} + 1 > M for every real M | thm-ordered-field-rules and (O3), shown inline
 exm-sup-finite-and-closed (solution): every non-empty finite subset of an ordered field has a maximum | induction on the number of elements, ch07 (promised); prose pointer in the text; not used in any proof
-exm-sup-one-minus-reciprocal (solution): n > 0 for every n in N | inline, by induction on n; the principle is ax-induction
+exm-sup-one-minus-reciprocal (solution): every n in Z_{>0} is positive | definition of Z_{>0} as the positive integers, stated inline
 thm-no-rational-sup-sqrt2 (proof): Q is closed under the field operations, so h and s + h, s - h are rational | exm-ordered-fields-q-r
 thm-no-rational-sup-sqrt2 (proof): the arithmetic of the two values of h ((s + h)^2 bound, (s - h)^2 = 2 + h^2) | inline; lem-field-algebra
 exr-suprema-a1 (solution): 577^2 = 332929 = 2 * 408^2 + 1 | arithmetic, shown inline

@@ -204,7 +204,7 @@ For each family \( (I_n)_{n \ge 1} \), say which hypothesis of @thm-nested-inter
 :::
 
 ::: {.solution}
-(a) By @thm-nested-intervals it suffices to check the shrinking hypothesis. By induction, \( 2^n > n \) for every \( n \in \nN \) (as in @exr-density-and-roots-c2), so \( 2^{-n} < 1/n \). Given \( \varepsilon > 0 \), @cor-archimedean-epsilon gives \( n \) with \( 1/n < \varepsilon \), and then \( b_n - a_n = 2^{-n} < \varepsilon \). Hence the intersection is a single point.
+(a) By @thm-nested-intervals it suffices to check the shrinking hypothesis. By induction, \( 2^n > n \) for every \( n \in \nN \) (as in @exr-density-and-roots-c2), so \( 2^{-n} < 1/n \) for every \( n \ge 1 \). Given \( \varepsilon > 0 \), @cor-archimedean-epsilon gives \( n \) with \( 1/n < \varepsilon \), and then \( b_n - a_n = 2^{-n} < \varepsilon \). Hence the intersection is a single point.
 
 (b) By definition of the floor, \( m_n \le 10^n \sqrt{2} < m_n + 1 \), so \( a_n \le \sqrt{2} < b_n \) for every \( n \).
 
@@ -477,7 +477,7 @@ The look-alike tools work less well. Proof by cases, as in @exm-triangle-inequal
 
 <!-- dependency ledger
 thm-nested-intervals (claim): I_k is contained in I_m for m <= k, from I_(j+1) contained in I_j | inline, by induction on k - m (ax-induction)
-thm-nested-intervals (example): 2^(n-1) >= n for n in N (the bisection intervals shrink) | inline, by induction (ax-induction)
+thm-nested-intervals (example): 2^(n-1) >= n for n >= 1 (the bisection intervals shrink) | inline, by induction (ax-induction)
 thm-reals-uncountable (proof): a family defined by recursion from an explicit rule exists | definition by recursion, ch07 (promised); prose pointer in the proof
 thm-reals-uncountable (proof): countable means listable, i.e. the image of a function from N | ch08 (promised); prose pointer before the theorem
 thm-reals-uncountable (example): Q is countable; a union of two countable sets is countable; a subset of a countable set is countable (remark and table) | ch08 (promised); used only in a remark and the table, never in a proof

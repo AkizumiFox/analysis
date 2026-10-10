@@ -386,10 +386,10 @@ exm-naturals-at-least-one (solution): none beyond def-inductive-set and thm-orde
 thm-naturals-unbounded (proof): "not (n <= x for all n)" gives "n > x for some n" (last paragraph, after the negI; the step inside the box is direct) | quantifier negation, ch04 (promised); the remark after the proof says so
 cor-archimedean-epsilon (proof): none | inline
 exm-nonarchimedean-field (example): R(x) is a field; lc(pq) = lc(p) lc(q) | algebra of polynomials and fractions, taken as known and stated in the text
-exm-nonarchimedean-field (example): the natural numbers of R(x) are the constants 1, 2, 3, ... | inline: the constants form an inductive set, and every inductive set contains them (shown in the paragraph before the example)
+exm-nonarchimedean-field (example): the natural numbers of R(x) are the constants 0, 1, 2, 3, ... | inline: the constants form an inductive set, and every inductive set contains them (shown in the paragraph before the example)
 exm-nonarchimedean-field (example): R(x) with this order is an ordered field, so thm-ordered-field-rules (f) applies in it | exr-archimedean-property-c2, stated in the text before the example
 exm-sup-one-minus-reciprocal-finished (solution): 100/101 > 0.99 | arithmetic, shown inline
 exr-archimedean-property-a1 (solution): 3/2 lies strictly between the natural numbers 1 and 2, so it is not in N | arithmetic of N stated in the remark on N, ch07 (promised)
 exr-archimedean-property-c1 (solution): a non-empty set of integers bounded below has a least element (for the ceiling) | well-ordering, ch07 (promised)
-exr-archimedean-property-c3 (solution): every rational is m/k with m in Z, k in N | definition of Q in the remark on N
+exr-archimedean-property-c3 (solution): every rational is m/k with m in Z, k in Z_{>0} | definition of Q in the remark on N
 -->

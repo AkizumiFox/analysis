@@ -455,7 +455,7 @@ thm-nth-root (claim): the finite sum Sigma is defined by recursion on its number
 thm-nth-root (claim): the telescoping of the two sums in (y - x) * Sigma | inline
 thm-nth-root (proof): x0^n <= x0 for 0 < x0 < 1, and x^n >= x for x >= 1 | inline, by induction on n (ax-induction)
 exm-cube-root-bounds (solution): 1.25^3 = 1.953125 and 1.26^3 = 2.000376 | arithmetic, shown inline
-lem-integer-part (proof): well-ordering of N; differences of integers are integers; j - 1 in N for j >= 2 in N | ch07 (promised), recalled in the remark on N in 05-archimedean-property
+lem-integer-part (proof): well-ordering of N; differences of integers are integers; j - 1 in N for j >= 1 in N (j_0 != 0 because 0 is not in T) | ch07 (promised), recalled in the remark on N in 05-archimedean-property
 lem-integer-part (proof): a positive integer is a natural number | inline in the remark on N in 05-archimedean-property (pointer in the proof)
 thm-rationals-dense (proof): floor(nx) + 1 is an integer (sums of integers are integers) | ch07 (promised), recalled in the remark on N in 05-archimedean-property
 cor-irrationals-dense (proof): the difference of two rationals is rational | exm-ordered-fields-q-r (Q is a field)
