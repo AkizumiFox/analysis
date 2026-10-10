@@ -54,6 +54,12 @@ The set \( \{ 0 \} \cup [1, \infty) \) is inductive, as checked above. Since \( 
 
 The proof never mentioned a single natural number by name. It found an inductive set containing the property we wanted, and let the definition of \( \nN \) do the rest. That is the whole technique.
 
+The nonzero natural numbers are the **positive integers**,
+\[
+    \nZ_{>0} \coloneqq \{ n \in \nN : n \ne 0 \} = \{ n \in \nN : n \ge 1 \},
+\]
+the two descriptions agreeing by @exm-naturals-at-least-one. This is the set \( \{ 1, 2, 3, \dots \} \) that indexed our examples informally before; from here on it is a defined subset of \( \nR \), and \( 1/n \) is defined and positive for every \( n \in \nZ_{>0} \).
+
 ::: {.remark}
 Chapter 3 takes induction as a basic property of \( \nN \) (@ax-induction), and Chapter 7 proves well-ordering and the arithmetic below from it. The set defined here is that same \( \nN \), now located inside \( \nR \); it is also the copy \( 0, 1, 1 + 1, 1 + 1 + 1, \dots \) that every ordered field contains (@exr-ordered-fields-c1), and "\( \nN \) is the smallest inductive set" is exactly the induction principle of Chapter 3, in the form "every inductive subset of \( \nN \) is all of \( \nN \)". From now on we use the familiar arithmetic of \( \nN \), each item proved by induction in Chapter 7: sums and products of natural numbers are natural numbers; if \( n \in \nN \) and \( n \ge 1 \), then \( n - 1 \in \nN \); no natural number lies strictly between \( n \) and \( n + 1 \); and every nonempty subset of \( \nN \) has a least element (**well-ordering**). The integers are \( \nZ \coloneqq \nN \cup \{ -n : n \in \nN \} \), the positive integers are \( \nZ_{>0} \coloneqq \{ n \in \nZ : n > 0 \} \), and the rationals are \( \nQ \coloneqq \{ m/n : m \in \nZ, \ n \in \nZ_{>0} \} \). We also use, again from Chapter 7, that sums, differences, and products of integers are integers. A **positive** integer is a nonzero natural number, directly from the definition of \( \nZ \): it is not \( -n \) with \( n \in \nN \), since \( -n \le 0 \). Conversely, a nonzero natural number is positive by @exm-naturals-at-least-one, so \( \nZ_{>0} = \nN \setminus \{ 0 \} = \{ 1, 2, 3, \dots \} \).
 :::

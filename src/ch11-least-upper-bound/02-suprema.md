@@ -162,7 +162,7 @@ So \( 1 \) is the supremum. It is not a maximum, since \( 1 \notin (0, 1) \). No
 ::: {#exm-sup-one-minus-reciprocal}
 [A supremum we cannot yet prove]
 
-Let \( A = \{ 1 - \frac1n : n \in \nZ_{>0} \} = \{ 0, \frac12, \frac23, \frac34, \dots \} \) in \( \nR \), where \( \nZ_{>0} = \{ 1, 2, 3, \dots \} \) is the set of positive integers. Show that \( 1 \) is an upper bound of \( A \) and that \( A \) has no maximum.
+Let \( A = \{ 1 - \frac1n : n \in \nZ_{>0} \} = \{ 0, \frac12, \frac23, \frac34, \dots \} \) in \( \nR \), where \( \nZ_{>0} = \{ 1, 2, 3, \dots \} \) is the set of positive integers (taken informally for now; later in this chapter, once the natural numbers are defined inside \( \nR \), it becomes a defined subset of \( \nR \)). Show that \( 1 \) is an upper bound of \( A \) and that \( A \) has no maximum.
 :::
 
 ::: {.solution}
