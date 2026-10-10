@@ -49,6 +49,14 @@ These are book-independent. Keep them.
 | `f \colon X \to Y`, `x \mapsto f(x)` | functions |
 | `\id_X` | identity function |
 | `\powerset{X}` | power set 𝒫(X) |
+| `A \subseteq B`, `A \subsetneq B` | subset (equality allowed), proper subset (Ch 6 §01, `def-subset`). The book never writes `\subset`, which other books use for either |
+| `A \cup B`, `A \cap B`, `X \setminus A` | union, intersection, difference (Ch 6 §02, `def-set-operations`). **No `A^c`:** a complement is always written `X \setminus A` with the ambient set named, so the reader never guesses it (there is no complement without one, by `thm-russell`) |
+| `(A_i)_{i \in I}`, `\bigcup_{i \in I} A_i`, `\bigcap_{i \in I} A_i`; `\bigcup \sS`, `\bigcap \sS` | a family indexed by \( I \) (parentheses: indexed); its union, and its intersection taken inside a named ambient \( X \), so the empty intersection is \( X \) (Ch 6 §02, `def-indexed-family`, `def-family-union-intersection`); \( \bigcap \sS \) only for non-empty \( \sS \subseteq \powerset{X} \) |
+| `(a, b)`, `(x_1, \dots, x_n)` | ordered pair and \( n \)-tuple (Ch 6 §03, `def-ordered-pair`), known only through the characteristic property \( (a, b) = (c, d) \iff a = c \wedge b = d \). The pair/interval double reading of `(a, b)` is stated once, in Ch 6 §03 |
+| `A \times B`, `X^2`, `X^n` | Cartesian product; \( X \times X \); the set of \( n \)-tuples from \( X \) (Ch 6 §03, `def-cartesian-product`). \( X^n \) has a number as exponent; \( Y^X \) (below) has a set, and the two never clash |
+| `a \mathrel{R} b`, `R^{-1}` | \( (a, b) \in R \) for a relation \( R \subseteq A \times B \); the inverse relation \( \{ (b, a) : (a, b) \in R \} \) (Ch 6 §03, `def-relation`). For the graph of a bijection \( f \), the inverse relation is the graph of the inverse function \( f^{-1} \) of Ch 6 §05 |
+| `f\|_A` | restriction of \( f \colon X \to Y \) to \( A \subseteq X \), a function \( A \to Y \) (Ch 6 §04). The bar is one of the uses the colon-for-set-builder convention keeps free |
+| `Y^X` | the set of all functions \( X \to Y \) (Ch 6 §04); \( \{0, 1\}^{\nN} \) in Ch 8. A function is the pair (graph, codomain), so the codomain is part of the function (Ch 6 §04, `def-function`) |
 | `\card{S}` | cardinality |
 | `\ind_{A}` | indicator function 𝟏_A of a set A |
 | `\sup A`, `\inf A`, `\max`, `\min` | supremum and infimum (sup ∅ = −∞ and sup of an unbounded set = +∞ only from Part IV on, where it is announced) |

@@ -127,3 +127,20 @@ ors
 # possessive bases: the check strips 's and then looks the bare word up here
 schema
 rewriting
+antisymmetric
+Cartesian
+codomains
+coordinatewise
+distractor
+extensionality
+inequation
+Kuratowski
+namings
+preimage
+preimages
+surjection
+surjections
+catalogue
+antisymmetry
+equalities
+bijections
