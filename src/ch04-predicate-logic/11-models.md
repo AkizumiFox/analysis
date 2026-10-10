@@ -22,7 +22,7 @@ The first two together are a **structure**; the third is an **assignment**. A st
 
 Situate the notion first. A formula is built from **symbols**: constants such as \( c \) and \( 0 \), function symbols such as \( f \) and \( + \), predicate symbols such as \( P \), \( R \) and \( < \), each function and predicate symbol with its number of argument places, its **arity** (Section 4.2, @def-term and @def-first-order-formula). The symbol \( = \) is special: it is part of the logic, with rules of its own (@def-rules-equality), and it will always mean the same thing. A structure gives every other symbol a meaning.
 
-*A structure is a nonempty set of objects together with a meaning for each symbol: an object for each constant, an operation for each function symbol, and a relation for each predicate symbol.*
+*A structure is a non-empty set of objects together with a meaning for each symbol: an object for each constant, an operation for each function symbol, and a relation for each predicate symbol.*
 
 ::: {#def-structure}
 [Structure]
@@ -30,7 +30,7 @@ Situate the notion first. A formula is built from **symbols**: constants such as
 Fix a collection of constants, function symbols and predicate symbols, each function and predicate symbol with its arity \( n \ge 1 \). A **structure** \( \fM \) (also called a **model**) for these symbols consists of
 
 ::: {.enumerate options="label=(M\arabic*)"}
-1. a **nonempty** set \( D \), the **domain** of \( \fM \);
+1. a **non-empty** set \( D \), the **domain** of \( \fM \);
 2. for each constant \( c \), an element \( c^{\fM} \in D \);
 3. for each function symbol \( f \) of arity \( n \), a function \( f^{\fM} \colon D^n \to D \), defined at **every** \( n \)-tuple of elements of \( D \);
 4. for each predicate symbol \( R \) of arity \( n \), a set \( R^{\fM} \) of \( n \)-tuples of elements of \( D \).
@@ -45,18 +45,18 @@ We usually describe a structure in one line, naming the domain and the meaning o
 
 **Examples**, simplest first.
 
-- *One element.* \( D = \{ a \} \), with \( P^{\fM} = \{ a \} \). This is the degenerate structure. Every variable must take the value \( a \), so "for every element" and "there is an element" both mean "\( a \)". It will reappear as a test case: a sentence true here and false elsewhere cannot be derivable, and some of the chapter's nonderivable sequents need at least two elements to refute.
+- *One element.* \( D = \{ a \} \), with \( P^{\fM} = \{ a \} \). This is the degenerate structure. Every variable must take the value \( a \), so "for every element" and "there is an element" both mean "\( a \)". It will reappear as a test case: a sentence true here and false in some other structure cannot be derivable (by the soundness statement at the end of this section), and some of the chapter's non-derivable sequents need at least two elements to refute.
 - *Two elements, one relation.* \( D = \{ a, b \} \), with \( R^{\fM} = \{ (a, a), (b, b) \} \): the relation "is the same as", written out as a set of pairs. A finite structure can be given completely by listing.
 - *The integers with their order.* \( D = \nZ \), with \( R^{\fM} = \{ (x, y) \in \nZ^2 : x > y \} \). Here the relation is described by a condition rather than a list.
-- *Arithmetic.* \( D = \nR \), with the constants \( 0 \) and \( 1 \) naming zero and one, the function symbols \( + \) and \( \cdot \) meaning addition and multiplication, and \( < \) the usual order. This is the structure in which the analysis examples of this chapter have been read all along.
+- *Arithmetic.* \( D = \nR \), with the constants \( 0 \) and \( 1 \) naming zero and one, the function symbols \( + \), \( \cdot \) and two-place \( - \) meaning addition, multiplication and subtraction, the one-place symbols \( - \), \( (\cdot)^2 \) and \( \abs{\cdot} \) meaning negation, squaring and absolute value, and \( < \), \( \le \), \( > \), \( \ge \) the usual order. Extended by the other familiar symbols with their usual meanings (numerals, halving, the predicates \( \in A \), division with its value at a zero denominator fixed arbitrarily as in the non-example below, and a function symbol for each sequence or function an example uses), this is the structure in which the analysis examples of this chapter have been read all along.
 
-*Nonexample by minimal change.* Take the arithmetic structure and add a one-place function symbol \( g \), meant to be read as \( x \mapsto 1/x \). This is **not** a structure: (M3) asks for a function defined at every element of \( D \), and \( 1/0 \) is not defined. Everything else in the description is fine; exactly clause (M3) fails, at the single point \( 0 \). There are two repairs. Shrink the domain to \( (0, \infty) \), where \( 1/x \) is always defined; or keep \( \nR \) and give \( g \) any value at \( 0 \), say \( g^{\fM}(0) \coloneqq 0 \). The second repair is the one this chapter uses for terms such as \( 1/n \): the value at \( 0 \) is fixed arbitrarily and is never looked at, because such terms are used only under a bound \( n \in \nZ_{>0} \) (as in @exr-models-c3), exactly as a sequence \( a_n \) was read in Section 4.1 as a function symbol whose values off \( \nN \) are never used.
+*Non-example by minimal change.* Take the arithmetic structure and add a one-place function symbol \( g \), meant to be read as \( x \mapsto 1/x \). This is **not** a structure: (M3) asks for a function defined at every element of \( D \), and \( 1/0 \) is not defined. Everything else in the description is fine; exactly clause (M3) fails, at the single point \( 0 \). There are two repairs. Shrink the domain to \( (0, \infty) \), where \( 1/x \) is always defined; or keep \( \nR \) and give \( g \) any value at \( 0 \), say \( g^{\fM}(0) \coloneqq 0 \). The second repair is the one this chapter uses for terms such as \( 1/n \): the value at \( 0 \) is fixed arbitrarily and is never looked at, because such terms are used only under a bound \( n \in \nZ_{>0} \) (as in @exr-models-c3), exactly as a sequence \( a_n \) was read in Section 4.1 as a function symbol whose values off \( \nN \) are never used.
 
 **Why this definition.** Each clause earns its place.
 
-- *Nonempty.* This is a genuine choice, and it is made because of @prp-forall-implies-exists. A later subsection explains it.
-- *Total functions.* Clause (M3) is what makes every term name an object: the term \( g(0) \) must have a value, or the formula \( g(0) = g(0) \), which =I derives from nothing, would have no truth value.
-- *Identity for \( = \).* The rule =E replaces equals by equals **everywhere**. If a structure could read \( = \) as some other relation, =E would fail. On \( \nZ \), read \( x = y \) as "\( x \) and \( y \) have the same parity" and \( P \) as "is positive": then \( -2 = 2 \) and \( P(2) \) would both hold, while \( P(-2) \), which =E derives from them, fails. With \( = \) fixed as identity, no such reading exists.
+- *Non-empty.* This is a genuine choice, and it is made because of @prp-forall-implies-exists. A later subsection explains it.
+- *Total functions.* Clause (M3) is what makes every term name an object: the term \( g(0) \) must have a value, or the formula \( g(0) = g(0) \), which \( \rulename{{=}I} \) derives from nothing, would have no truth value.
+- *Identity for \( = \).* The rule \( \rulename{{=}E} \) replaces equals by equals **everywhere**. If a structure could read \( = \) as some other relation, \( \rulename{{=}E} \) would fail. On \( \nZ \), read \( x = y \) as "\( x \) and \( y \) have the same parity" and \( P \) as "is positive": then \( -2 = 2 \) and \( P(2) \) would both hold, while \( P(-2) \), which \( \rulename{{=}E} \) derives from them, fails. With \( = \) fixed as identity, no such reading exists.
 
 ::: {.warning}
 A structure must interpret **every** symbol that occurs in the formulas at hand. "Take \( D = \nZ \)" is not yet a structure for \( \forall y\, \exists x\, R(x, y) \): until \( R \) is given a meaning, the sentence has no truth value, and the same domain makes it true with \( R \) read as \( > \) and false with \( R \) read as "\( x \cdot x = y \)" (at \( y = 2 \)). Always write the domain **and** the meaning of each symbol.
@@ -81,7 +81,7 @@ d & \text{if } y \text{ is the variable } x, \\
 
 In words: an assignment is a choice of value for every variable at once, and \( \ell[x \mapsto d] \) changes that choice at the one variable \( x \), leaving the others alone. The assignment \( \ell[x \mapsto d] \) is what the quantifiers will use: "for every \( x \)" will mean "for every \( d \in D \), with \( x \) set to \( d \)". Changes can be stacked: \( \ell[x \mapsto d][y \mapsto e] \) first sets \( x \) to \( d \) and then \( y \) to \( e \). When \( x \) and \( y \) are different variables the order does not matter, since each change touches only its own variable; when they are the same variable, the later change wins.
 
-There are always assignments, because \( D \) is nonempty: pick any \( d_0 \in D \) and let every variable have the value \( d_0 \). Like a valuation in Chapter 3 (@def-valuation), an assignment fixes infinitely many values, and a formula will only ever look at finitely many of them.
+There are always assignments, because \( D \) is non-empty: pick any \( d_0 \in D \) and let every variable have the value \( d_0 \). Like a valuation in Chapter 3 (@def-valuation), an assignment fixes infinitely many values, and a formula will only ever look at finitely many of them.
 
 With a structure and an assignment, every term names an element of the domain. Terms are built by the clauses of @def-term, so the value is defined by recursion on terms, in the pattern of @thm-structural-recursion.
 
@@ -121,7 +121,7 @@ Let \( \fM \) be a structure with domain \( D \) and \( \ell \) an assignment in
 When \( \fM, \ell \models \varphi \) does not hold we write \( \fM, \ell \not\models \varphi \). For a list \( \Gamma \) of formulas, \( \fM, \ell \models \Gamma \) means that \( \fM, \ell \models \gamma \) for **every** formula \( \gamma \) of \( \Gamma \).
 :::
 
-Read it clause by clause. (S1): an atomic formula is satisfied exactly when the values of its terms form a tuple in the relation that interprets its predicate symbol. (S2): an equation is satisfied when both sides name the same object; this is where "\( = \) means identity" enters. (S3)–(S5) are Chapter 3's clauses (V1)–(V6) of @def-truth-value, with "is true under \( v \)" replaced by "is satisfied by \( \fM \) under \( \ell \)": \( \bot \) is never satisfied, \( \neg \) flips, \( \wedge \) needs both, \( \vee \) needs one, \( \to \) fails only with a satisfied hypothesis and an unsatisfied conclusion, \( \leftrightarrow \) needs agreement. (S6) and (S7) are the new clauses. To decide \( \forall x\, \varphi \), we run through the elements \( d \) of the domain, set \( x \) to \( d \) and leave every other variable alone, and ask whether \( \varphi \) is satisfied each time. For \( \exists x\, \varphi \) one success is enough. In symbols, for (S6) and (S7):
+Read it clause by clause. (S1): an atomic formula is satisfied exactly when the values of its terms form a tuple in the relation that interprets its predicate symbol. (S2): an equation is satisfied when both sides name the same object; this is where "\( = \) means identity" enters. (S3)–(S5) are the \( \bot \) half of (V1) and clauses (V2)–(V6) of Chapter 3's @def-truth-value, with "is true under \( v \)" replaced by "is satisfied by \( \fM \) under \( \ell \)": \( \bot \) is never satisfied, \( \neg \) flips, \( \wedge \) needs both, \( \vee \) needs one, \( \to \) fails only with a satisfied hypothesis and an unsatisfied conclusion, \( \leftrightarrow \) needs agreement. (S6) and (S7) are the new clauses. To decide \( \forall x\, \varphi \), we run through the elements \( d \) of the domain, set \( x \) to \( d \) and leave every other variable alone, and ask whether \( \varphi \) is satisfied each time. For \( \exists x\, \varphi \) one success is enough. In symbols, for (S6) and (S7):
 \[
 \begin{aligned}
 \fM, \ell \models \forall x\, \varphi \quad &\text{iff} \quad \text{for every } d \in D, \ \ \fM, \ell[x \mapsto d] \models \varphi , \\
@@ -146,12 +146,12 @@ Is \( \forall x\, \exists y\, (y \cdot y = x) \) satisfied in \( \nR \), in \( [
 :::
 
 ::: {.solution}
-In \( \nR \), no: at \( d = -1 \), (S7) asks for a real \( e \) with \( e \cdot e = -1 \), and every real square is \( \ge 0 \). In \( [0, \infty) \), yes: for each \( d \ge 0 \), \( e = \sqrt{d} \) is in the domain and \( e \cdot e = d \); and \( [0, \infty) \) with \( \cdot \) is a structure, since a product of nonnegative reals is nonnegative (M3). In \( \nC \), yes: every complex number has a complex square root (school algebra of complex numbers: \( r(\cos\theta + i\sin\theta) \) with \( r \ge 0 \) has the square root \( \sqrt{r}\,(\cos\frac{\theta}{2} + i\sin\frac{\theta}{2}) \)). The sentence is the same all three times; only the structure changes.
+In \( \nR \), no: at \( d = -1 \), (S7) asks for a real \( e \) with \( e \cdot e = -1 \), and every real square is \( \ge 0 \). In \( [0, \infty) \), yes: for each \( d \ge 0 \), \( e = \sqrt{d} \) is in the domain and \( e \cdot e = d \); and \( [0, \infty) \) with \( \cdot \) is a structure, since a product of non-negative reals is non-negative (M3). In \( \nC \), yes: every complex number has a complex square root (school algebra of complex numbers: \( r(\cos\theta + i\sin\theta) \) with \( r \ge 0 \) has the square root \( \sqrt{r}\,(\cos\frac{\theta}{2} + i\sin\frac{\theta}{2}) \)). The sentence is the same all three times; only the structure changes.
 :::
 
 ## Only the free variables matter
 
-The last example showed \( \ell \) mattering. In the first example it did not: the verdict on \( \forall x\, \exists y\, (x < y) \) was reached for "any assignment \( \ell \)". That is no accident. A sentence has no free variables (@def-sentence), and every variable it contains is bound, so every value \( \ell \) gives is overwritten by (S6) or (S7) before it is looked at. We prove the general fact, which is the first-order version of Chapter 3's @lem-coincidence: satisfaction depends only on the values of the **free** variables.
+The example of \( \forall y\, (x \le y) \) above showed \( \ell \) mattering. In the first example it did not: the verdict on \( \forall x\, \exists y\, (x < y) \) was reached for "any assignment \( \ell \)". That is no accident. A sentence has no free variables (@def-sentence), and every variable it contains is bound, so every value \( \ell \) gives is overwritten by (S6) or (S7) before it is looked at. We prove the general fact, which is the first-order version of Chapter 3's @lem-coincidence: satisfaction depends only on the values of the **free** variables.
 
 Say that two assignments \( \ell \) and \( \ell' \) **agree on** a set of variables if \( \ell(y) = \ell'(y) \) for every variable \( y \) in it. We need the free variables of a formula, recursively defined in @def-free-variable: every variable occurring in an atomic formula is free there; \( \neg\varphi \) has the free variables of \( \varphi \); \( \varphi \circ \psi \), for a binary connective \( \circ \), has those of \( \varphi \) and those of \( \psi \); and \( \forall x\, \varphi \) and \( \exists x\, \varphi \) have those of \( \varphi \) other than \( x \).
 
@@ -190,7 +190,7 @@ Every clause of @def-first-order-formula has been covered, so \( C(\varphi) \) h
 
 The lemma has a consequence that the rest of the section uses constantly.
 
-*Sentences.* If \( \varphi \) is a sentence, it has no free variables, so **any** two assignments agree on its free variables, and the lemma says that \( \fM, \ell \models \varphi \) either holds for every assignment \( \ell \) or for none. We then write \( \fM \models \varphi \), and say that \( \varphi \) is **true in** \( \fM \) (or that \( \fM \) is a model of \( \varphi \)), in the first case, and \( \fM \not\models \varphi \), \( \varphi \) is **false in** \( \fM \), in the second. At least one assignment exists because \( D \) is nonempty, so a sentence is always exactly one of true and false in \( \fM \). This is the precise form of Section 4.1's informal "true over a domain".
+*Sentences.* If \( \varphi \) is a sentence, it has no free variables, so **any** two assignments agree on its free variables, and the lemma says that \( \fM, \ell \models \varphi \) either holds for every assignment \( \ell \) or for none. We then write \( \fM \models \varphi \), and say that \( \varphi \) is **true in** \( \fM \) (or that \( \fM \) is a model of \( \varphi \)), in the first case, and \( \fM \not\models \varphi \), \( \varphi \) is **false in** \( \fM \), in the second. At least one assignment exists because \( D \) is non-empty, so a sentence is always exactly one of true and false in \( \fM \). This is the precise form of Section 4.1's informal "true over a domain".
 
 *Only finitely many values matter.* A formula has finitely many free variables. To decide \( \fM, \ell \models \varphi \), it is enough to know \( \ell \) on those. So we describe an assignment by the values that matter ("\( \ell(x) = 2 \)"), exactly as Chapter 3 described a valuation by the values of a few atoms.
 
@@ -224,21 +224,21 @@ A structure may interpret symbols that do not occur in \( \Gamma \) or \( \varph
 \]
 Let \( \fM, \ell \) satisfy both premises, and let \( a = c^{\fM} \). By (S6) for the first premise, with \( d = a \), we get \( \fM, \ell[x \mapsto a] \models P(x) \to Q(x) \). Under \( \ell[x \mapsto a] \) the term \( x \) has value \( a \), and under \( \ell \) the term \( c \) has value \( a \); so by (S1), \( \fM, \ell[x \mapsto a] \models P(x) \) holds if and only if \( a \in P^{\fM} \) if and only if \( \fM, \ell \models P(c) \), which is the second premise. So by (S5) \( \fM, \ell[x \mapsto a] \models Q(x) \), that is, \( a \in Q^{\fM} \), and by (S1) again \( \fM, \ell \models Q(c) \). Chapter 3's objection to this argument is gone.
 
-## Why domains are nonempty {#why-domains-are-non-empty}
+## Why domains are non-empty {#why-domains-are-non-empty}
 
-Clause (M1) of @def-structure demands a nonempty domain. Here is the reason. @prp-forall-implies-exists derives \( \forall x\, P(x) \vdash \exists x\, P(x) \) in three lines: \( \forall \)E at the variable \( x \), then \( \exists \)I. The matching entailment holds for our structures:
+Clause (M1) of @def-structure demands a non-empty domain. Here is the reason. @prp-forall-implies-exists derives \( \forall x\, P(x) \vdash \exists x\, P(x) \) in three lines: \( \rulename{\forall E} \) at the variable \( x \), then \( \rulename{\exists I} \). The matching entailment holds for our structures:
 \[
 \forall x\, P(x) \models \exists x\, P(x) .
 \]
-Let \( \fM, \ell \models \forall x\, P(x) \). Since \( D \) is nonempty, choose some \( d \in D \). By (S6), \( \fM, \ell[x \mapsto d] \models P(x) \), and this \( d \) is the one element (S7) asks for, so \( \fM, \ell \models \exists x\, P(x) \).
+Let \( \fM, \ell \models \forall x\, P(x) \). Since \( D \) is non-empty, choose some \( d \in D \). By (S6), \( \fM, \ell[x \mapsto d] \models P(x) \), and this \( d \) is the one element (S7) asks for, so \( \fM, \ell \models \exists x\, P(x) \).
 
-Now suppose empty domains were allowed. In a structure with \( D = \emptyset \), (S6) says \( \forall x\, P(x) \) is satisfied, since "for every \( d \in \emptyset \)" has nothing to check; and (S7) says \( \exists x\, P(x) \) is not, since there is no \( d \) at all. So the sequent would be derivable and yet fail in a structure, and the rules would lead from a true premise to a false conclusion. (Worse, no assignment into an empty domain exists, so even the clauses could not be applied as written.) One of two things had to give: the rule \( \forall \)E at a variable, or empty domains. The book, like most of mathematics, keeps the rules and makes domains nonempty.
+Now suppose empty domains were allowed. In a structure with \( D = \emptyset \), (S6) says \( \forall x\, P(x) \) is satisfied, since "for every \( d \in \emptyset \)" has nothing to check; and (S7) says \( \exists x\, P(x) \) is not, since there is no \( d \) at all. So the sequent would be derivable and yet fail in a structure, and the rules would lead from a true premise to a false conclusion. (Worse, no assignment into an empty domain exists, so even the clauses could not be applied as written.) One of two things had to give: the rule \( \rulename{\forall E} \) at a variable, or empty domains. The book, like most of mathematics, keeps the rules and makes domains non-empty.
 
-Nothing is lost. Statements about an empty **set** are handled by the bounded quantifiers of @def-bounded-quantifier, inside a nonempty domain. The bounded forms \( \forall x \in \emptyset\ \varphi \) and \( \exists x \in \emptyset\ \varphi \) abbreviate \( \forall x\, (x \in \emptyset \to \varphi) \) and \( \exists x\, (x \in \emptyset \wedge \varphi) \), and in a structure with domain \( \nR \) in which \( \emptyset \) names the empty set, the first is true (every hypothesis \( d \in \emptyset \) is false) and the second is false (no \( d \) is in \( \emptyset \)). Vacuous truth lives in the bound, not in the domain.
+Nothing is lost. Statements about an empty **set** are handled by the bounded quantifiers of @def-bounded-quantifier, inside a non-empty domain. The bounded forms \( \forall x \in \emptyset\ \varphi \) and \( \exists x \in \emptyset\ \varphi \) abbreviate \( \forall x\, (x \in \emptyset \to \varphi) \) and \( \exists x\, (x \in \emptyset \wedge \varphi) \), and in a structure with domain \( \nR \) in which the one-place predicate symbol \( \in \emptyset \) (Section 4.2) is interpreted, by (M4), as the empty subset of \( \nR \), the first is true (every hypothesis \( d \in \emptyset \) is false) and the second is false (no \( d \) is in \( \emptyset \)). Vacuous truth lives in the bound, not in the domain.
 
 ## Counter-models
 
-A counter-model is found the way a refuting row was found in Chapter 3, by working backwards from what must fail. The conclusion must be false, so read off what that demands; the premises must be true, so read off what they demand; and then build the smallest structure meeting both. Each example below is a sequent whose derivation search stalled in an earlier section.
+A counter-model is found the way a refuting row was found in Chapter 3, by working backwards from what must fail. The conclusion must be false, so read off what that demands; the premises must be true, so read off what they demand; and then build the smallest structure meeting both. The worked examples that follow (the swap, the converses of @prp-exists-and and of the \( \forall \)/\( \vee \) law, \( \exists x\, P(x) \vdash P(c) \), and \( P(x_0) \vdash \forall x\, P(x) \)) are sequents whose derivations stalled or were blocked in earlier sections.
 
 ::: {#exm-counter-model-swap}
 [The swap of \( \exists \) and \( \forall \)]
@@ -266,7 +266,7 @@ The two-element structure is the \( \nZ \) structure's idea at its smallest: eac
 \[
 \exists x\, P(x) \wedge \exists x\, Q(x) \not\models \exists x\, (P(x) \wedge Q(x)) .
 \]
-Backwards from the conclusion: it is false when no element is in both \( P^{\fM} \) and \( Q^{\fM} \). The premise needs \( P^{\fM} \) and \( Q^{\fM} \) nonempty. So take \( D = \{ a, b \} \), \( P^{\fM} = \{ a \} \), \( Q^{\fM} = \{ b \} \). The premise holds by (S5) and (S7), with witnesses \( a \) for \( P \) and \( b \) for \( Q \). The conclusion fails: at \( d = a \), \( a \notin Q^{\fM} \); at \( d = b \), \( b \notin P^{\fM} \). In arithmetic: in \( \nZ \), some integer is even and some integer is odd, but no integer is both. The two witnesses of the premise are different objects, and the conclusion needs one.
+Backwards from the conclusion: it is false when no element is in both \( P^{\fM} \) and \( Q^{\fM} \). The premise needs \( P^{\fM} \) and \( Q^{\fM} \) non-empty. So take \( D = \{ a, b \} \), \( P^{\fM} = \{ a \} \), \( Q^{\fM} = \{ b \} \). The premise holds by (S5) and (S7), with witnesses \( a \) for \( P \) and \( b \) for \( Q \). The conclusion fails: at \( d = a \), \( a \notin Q^{\fM} \); at \( d = b \), \( b \notin P^{\fM} \). In arithmetic: in \( \nZ \), some integer is even and some integer is odd, but no integer is both. The two witnesses of the premise are different objects, and the conclusion needs one.
 
 **The converse of the \( \forall \)/\( \vee \) law.** The one-way law \( \forall x\, P(x) \vee \forall x\, Q(x) \vdash \forall x\, (P(x) \vee Q(x)) \) of @prp-quantifier-distribution has a false converse, and the same structure shows it:
 \[
@@ -276,7 +276,7 @@ With \( D = \{ a, b \} \), \( P^{\fM} = \{ a \} \), \( Q^{\fM} = \{ b \} \): eac
 
 **A witness is not a named constant.** @exr-existential-introduction-c2 asked why \( \exists x\, P(x) \vdash P(c) \) cannot be derived. Take \( D = \{ a, b \} \), \( c^{\fM} = a \) and \( P^{\fM} = \{ b \} \). The premise holds with the witness \( b \); the conclusion \( P(c) \) fails, since the value of \( c \) is \( a \notin P^{\fM} \). So \( \exists x\, P(x) \not\models P(c) \). The premise says that something has \( P \), and nothing says that the object named \( c \) is that something.
 
-**The assignment is part of a counter-model.** Section 4.4 showed why \( \forall \)I may not generalize over a name in a premise: from \( P(x_0) \) one would "derive" \( \forall x\, P(x) \). Here \( x_0 \) is a **variable**, free in the premise, so a counter-model needs an assignment as well as a structure. Let \( \fM \) have domain \( \nZ \) with \( P^{\fM} \) the set of even integers, and let \( \ell(x_0) = 2 \). Then \( \fM, \ell \models P(x_0) \), since \( 2 \) is even, and \( \fM, \ell \not\models \forall x\, P(x) \), since (S6) fails at \( d = 1 \). So \( P(x_0) \not\models \forall x\, P(x) \). Under the assignment with \( \ell(x_0) = 1 \) the premise is false, and that assignment refutes nothing; the counter-model is the structure **with** \( \ell(x_0) = 2 \).
+**The assignment is part of a counter-model.** Section 4.4 showed why \( \rulename{\forall I} \) may not generalize over a name in a premise: from \( P(x_0) \) one would "derive" \( \forall x\, P(x) \). Here \( x_0 \) is a **variable**, free in the premise, so a counter-model needs an assignment as well as a structure. Let \( \fM \) have domain \( \nZ \) with \( P^{\fM} \) the set of even integers, and let \( \ell(x_0) = 2 \). Then \( \fM, \ell \models P(x_0) \), since \( 2 \) is even, and \( \fM, \ell \not\models \forall x\, P(x) \), since (S6) fails at \( d = 1 \). So \( P(x_0) \not\models \forall x\, P(x) \). Under the assignment with \( \ell(x_0) = 1 \) the premise is false, and that assignment refutes nothing; the counter-model is the structure **with** \( \ell(x_0) = 2 \).
 
 ::: {.warning}
 A "counter-model" that falsifies a premise refutes nothing. For \( \forall y\, \exists x\, R(x, y) \vdash \exists x\, \forall y\, R(x, y) \), the structure \( (\nN, <) \), with \( R(x, y) \) read as "\( x < y \)", makes the conclusion false, since no natural number is below every natural number; but it also makes the premise false, since nothing in \( \nN \) is below \( y = 0 \). It is not a counter-model, and it proves nothing about the sequent. As with rows in Chapter 3, check the premises **first**.
@@ -290,7 +290,7 @@ A "counter-model" that falsifies a premise refutes nothing. For \( \forall y\, \
 &\forall x\, \exists y\, (x < y),
 \end{aligned}
 \]
-which say that \( < \) is a **strict order** (never \( x < x \); \( x < y \) and \( y < z \) give \( x < z \)) **with no largest element**. The structure \( (\nN, <) \) is a model of all three, and it is the one the sentences were written with in mind. It is not the only one. In \( (\nZ, <) \) and \( (\nQ, <) \) all three are true, by the same checks: no number is less than itself, the order is transitive, and \( d + 1 > d \) is a witness for the third sentence in either domain. These models differ in ways the three sentences cannot see: \( \nZ \) has no least element, and \( \nQ \) has a third element between any two. And the one-element structure \( D = \{ a \} \) is not a model: if \( (a, a) \in <^{\fM} \) the first sentence fails, and if not, the third fails at \( d = a \). Exercise C2 shows that no **finite** structure is a model.
+which say that \( < \) is a **strict order** (never \( x < x \); \( x < y \) and \( y < z \) give \( x < z \)) **with no largest element**. The structure \( (\nN, <) \) is a model of all three: no number is less than itself, the order is transitive, and \( d + 1 > d \) is a witness for the third sentence. It is the one the sentences were written with in mind, but not the only one: in \( (\nZ, <) \) and \( (\nQ, <) \) all three are true, by the same checks. These models differ in ways the three sentences cannot see: \( \nZ \) has no least element, and \( \nQ \) has a third element between any two. And the one-element structure \( D = \{ a \} \) is not a model of the three sentences: if \( (a, a) \in <^{\fM} \) the first sentence fails, and if not, the third fails at \( d = a \). Exercise C2 shows that no **finite** structure is a model of them.
 
 ::: {.check}
 Give a counter-model to \( \forall x\, P(x) \to \forall x\, Q(x) \models \forall x\, (P(x) \to Q(x)) \). (Think about what makes an implication with a universal hypothesis true cheaply.)
@@ -300,15 +300,15 @@ Give a counter-model to \( \forall x\, P(x) \to \forall x\, Q(x) \models \forall
 Take \( D = \{ a, b \} \), \( P^{\fM} = \{ a \} \), \( Q^{\fM} = \emptyset \). The premise is an implication whose hypothesis \( \forall x\, P(x) \) is false (it fails at \( b \)), so by (S5) the premise is true. The conclusion fails at \( d = a \): \( a \in P^{\fM} \) and \( a \notin Q^{\fM} \), so \( P(x) \to Q(x) \) is not satisfied under \( \ell[x \mapsto a] \). (Any structure with \( P^{\fM} \ne D \) and some element in \( P^{\fM} \) but not in \( Q^{\fM} \) works.)
 :::
 
-## From counter-models to nonderivability {#from-counter-models-to-non-derivability}
+## From counter-models to non-derivability {#from-counter-models-to-non-derivability}
 
 A counter-model shows \( \Gamma \not\models \varphi \). The stalled searches asked something else: whether \( \Gamma \vdash \varphi \). The bridge is the same as in Chapter 3, where @thm-soundness turned a refuting row into a proof that no derivation exists (@cor-refuting-row). For predicate logic it reads:
 
 *Soundness for predicate logic.* If \( \Gamma \vdash \varphi \) with the rules of Chapters 1 and 2 and the quantifier and equality rules of Sections 4.3 to 4.7, then \( \Gamma \models \varphi \) in the sense of @def-first-order-entailment. Consequently, a counter-model to \( \Gamma \models \varphi \) shows \( \Gamma \nvdash \varphi \).
 
-This statement is **not proved in this section**. Its proof extends Chapter 3's to the new rules, and it is the subject of Section 4.12, which is optional. The proof is where each side condition of the quantifier rules is used: the fresh-name conditions of \( \forall \)I and \( \exists \)E, and "free for" in \( \forall \)E, \( \exists \)I, and =E. A reader who skips Section 4.12 may take the statement on trust, as the rest of the book does; a reader who reads it will see why the side conditions are exactly as strict as they are.
+This statement is **not proved in this section**. Its proof extends Chapter 3's to the new rules, and it is the subject of Section 4.12, which is optional. The proof is where each side condition of the quantifier rules is used: the fresh-name conditions of \( \rulename{\forall I} \) and \( \rulename{\exists E} \), and "free for" in \( \rulename{\forall E} \), \( \rulename{\exists I} \), and \( \rulename{{=}E} \). A reader who skips Section 4.12 may take the statement on trust, as the rest of the book does; a reader who reads it will see why the side conditions are exactly as strict as they are.
 
-With the statement, the examples above become nonderivability results. \( \forall y\, \exists x\, R(x, y) \nvdash \exists x\, \forall y\, R(x, y) \): the converse search of @prp-exists-forall-swap had to stall, and the two lines where it stalled, the blocked \( \forall \)I and the blocked close of the \( \exists \)E box, are not a lack of cleverness. Likewise the converse of @prp-exists-and, the converse of the \( \forall \)/\( \vee \) law, \( \exists x\, P(x) \vdash P(c) \), and \( P(x_0) \vdash \forall x\, P(x) \) have no derivations. And the same reasoning is the semantic side of Section 4.10: there, @exm-square-not-uniform showed that \( x^2 \) on \( \nR \) is continuous and not uniformly continuous, so the arithmetic structure on \( \nR \), with \( f \) read as squaring, is a counter-model to "continuous entails uniformly continuous".
+With the statement, the examples above become non-derivability results. \( \forall y\, \exists x\, R(x, y) \nvdash \exists x\, \forall y\, R(x, y) \): the converse search of @prp-exists-forall-swap had to stall, and the two lines where it stalled, the blocked \( \rulename{\forall I} \) and the blocked close of the \( \rulename{\exists E} \) box, are not a lack of cleverness. Likewise the converse of @prp-exists-and, the converse of the \( \forall \)/\( \vee \) law, \( \exists x\, P(x) \vdash P(c) \), and \( P(x_0) \vdash \forall x\, P(x) \) have no derivations. And the same reasoning is the semantic side of Section 4.10: there, @exm-square-not-uniform showed that \( x^2 \) on \( \nR \) is continuous and not uniformly continuous, so the arithmetic structure on \( \nR \), with \( f \) read as squaring, is a counter-model to "continuous entails uniformly continuous".
 
 ::: {.warning}
 A counter-model proves **non**-derivability; it never proves derivability, and a structure in which a sentence is true says nothing about whether the sentence is derivable. \( \forall x\, \exists y\, (x < y) \) is true in \( (\nN, <) \), yet it is not derivable: it is false in \( (\{ 1, 2, 3 \}, <) \). To show \( \Gamma \vdash \varphi \), write a derivation.
@@ -329,7 +329,7 @@ Let \( \fM_{\nN} \), \( \fM_{\nZ} \), \( \fM_{\nQ} \) be the structures with dom
 3. \( \forall x\, \forall y\, \bigl( x < y \to \exists z\, (x < z \wedge z < y) \bigr) \).
 4. \( \forall x\, \exists y\, (y < x) \).
 5. True or false: if a sentence is true in some structure, then it is derivable.
-6. Why must the domain of a structure be nonempty? Name the derivable sequent that would otherwise fail.
+6. Why must the domain of a structure be non-empty? Name the derivable sequent that would otherwise fail.
 :::
 :::
 
@@ -351,7 +351,7 @@ Let \( \fM_{\nN} \), \( \fM_{\nZ} \), \( \fM_{\nQ} \) be the structures with dom
 
 *(e)* False. By the soundness statement, a derivable sentence is true in **every** structure. Sentence (a) is true in \( \fM_{\nN} \) but false in the structure \( (\{ 1, 2, 3 \}, <) \), so it is not derivable.
 
-*(f)* The sequent is \( \forall x\, P(x) \vdash \exists x\, P(x) \), derived in @prp-forall-implies-exists by \( \forall \)E at the variable \( x \) and \( \exists \)I. In an empty domain \( \forall x\, P(x) \) would be true, with nothing to check, and \( \exists x\, P(x) \) false, with no witness; so the rules would lead from a true premise to a false conclusion. (There would also be no assignments at all.)
+*(f)* The sequent is \( \forall x\, P(x) \vdash \exists x\, P(x) \), derived in @prp-forall-implies-exists by \( \rulename{\forall E} \) at the variable \( x \) and \( \rulename{\exists I} \). In an empty domain \( \forall x\, P(x) \) would be true, with nothing to check, and \( \exists x\, P(x) \) false, with no witness; so the rules would lead from a true premise to a false conclusion. (There would also be no assignments at all.)
 :::
 
 ### B. Practice
@@ -373,7 +373,7 @@ Give a counter-model for each of the following, and check each premise and the c
 
 *(ii)* Take \( D = \{ a, b \} \), \( P^{\fM} = Q^{\fM} = \{ a \} \). Premise: at \( d = a \), \( P(x) \) and \( Q(x) \) are both satisfied, so \( P(x) \to Q(x) \) is; at \( d = b \), \( P(x) \) is not satisfied, so \( P(x) \to Q(x) \) is, by (S5). Hence the premise holds by (S6). Conclusion: \( \exists x\, P(x) \) holds (\( d = a \)) and \( \forall x\, Q(x) \) fails (at \( d = b \)), so by (S5) the implication fails. In words: whatever has \( P \) has \( Q \), and something has \( P \); that does not make everything have \( Q \).
 
-*(iii)* Take \( D = \{ a, b \} \), \( P^{\fM} = \{ a \} \), and an assignment with \( \ell(x) = b \). The hypothesis \( \exists x\, P(x) \) holds by (S7) with \( d = a \); its \( x \) is bound, and the value \( \ell(x) \) is overwritten. The conclusion \( P(x) \) has \( x \) free, with value \( \ell(x) = b \notin P^{\fM} \), so it fails. By (S5) the implication fails under \( \ell \). Under an assignment with \( \ell(x) = a \) the implication holds; so the formula is satisfied under some assignments and not others, and a counter-model must name \( \ell \). This is why the passage law \( \forall x\, (\varphi \to \psi) \dashv\vdash \exists x\, \varphi \to \psi \) of @prp-quantifier-passage needs \( x \) not free in \( \psi \).
+*(iii)* Take \( D = \{ a, b \} \), \( P^{\fM} = \{ a \} \), and an assignment with \( \ell(x) = b \). The hypothesis \( \exists x\, P(x) \) holds by (S7) with \( d = a \); its \( x \) is bound, and the value \( \ell(x) \) is overwritten. The conclusion \( P(x) \) has \( x \) free, with value \( \ell(x) = b \notin P^{\fM} \), so it fails. By (S5) the implication fails under \( \ell \). Under an assignment with \( \ell(x) = a \) the implication holds; so the formula is satisfied under some assignments and not others, and a counter-model must name \( \ell \). Now take \( \varphi \) and \( \psi \) both to be \( P(x) \). The formula \( \forall x\, (P(x) \to P(x)) \) is satisfied in every structure under every assignment, since \( P(x) \to P(x) \) is satisfied at every \( d \) by (S5) and (S6). So this structure, with \( \ell \), is a counter-model to \( \forall x\, (P(x) \to P(x)) \models \exists x\, P(x) \to P(x) \), and by the soundness statement of this section that sequent is not derivable. This is why the passage law \( \forall x\, (\varphi \to \psi) \dashv\vdash \exists x\, \varphi \to \psi \) of @prp-quantifier-passage needs \( x \) not free in \( \psi \).
 :::
 
 ::: {#exr-models-b2}
@@ -449,7 +449,7 @@ For (b), look for an operation on \( \nN \) that never repeats a value but misse
 - 1: (a) disposes of the case where the hypothesis of \( \sigma \) is false, by the clause for \( \to \).
 - 3: (a) reads the hypothesis as injectivity of \( f^{\fM} \) and uses finiteness to get surjectivity, naming the counting fact.
 - 3: (b) a structure with infinite domain, with the hypothesis checked and the conclusion refuted at a named element.
-- 3: (c) concludes nonderivability through soundness and says why finite structures could not have done it.
+- 3: (c) concludes non-derivability through soundness and says why finite structures could not have done it.
 
 Fatal errors (0 for the step): in (b), a "counter-model" in which \( f^{\fM} \) is not injective; in (a), an argument that never uses finiteness.
 :::
@@ -461,7 +461,7 @@ Let \( \tau \) be the conjunction of the three sentences of the text saying that
 \[
 \forall x\, \neg(x < x) \ \wedge \ \forall x\, \forall y\, \forall z\, \bigl( (x < y \wedge y < z) \to x < z \bigr) \ \wedge \ \forall x\, \exists y\, (x < y) .
 \]
-Prove that every model of \( \tau \) has an infinite domain. Where does your proof use that domains are nonempty?
+Prove that every model of \( \tau \) has an infinite domain. Where does your proof use that domains are non-empty?
 :::
 
 ::: {.solution}
@@ -479,7 +479,7 @@ Prove by induction on \( k \) that there are elements \( d_1 < d_2 < \dots < d_k
 ::: {.solution}
 Let \( \fM \) be a model of \( \tau \), with domain \( D \), and write \( d < e \) for \( (d, e) \in <^{\fM} \). We prove, for every \( k \ge 1 \), the statement \( A(k) \): *there are elements \( d_1, \dots, d_k \) of \( D \) with \( d_i < d_j \) whenever \( 1 \le i < j \le k \).* We use @ax-induction, applied to the property \( A(m + 1) \) of \( m \in \nN \), so that the base case is \( A(1) \).
 
-*Base.* \( D \) is nonempty (@def-structure, (M1)), so there is some \( d_1 \in D \), and \( A(1) \) holds, with no pairs \( i < j \) to check. This is the one place the proof uses nonemptiness. If an empty domain were allowed, with "for every \( d \in \emptyset \)" read as having nothing to check, all three conjuncts would hold in it (each begins with \( \forall \)), and it has no elements at all: the statement "every model is infinite" would fail.
+*Base.* \( D \) is non-empty (@def-structure, (M1)), so there is some \( d_1 \in D \), and \( A(1) \) holds, with no pairs \( i < j \) to check. This is the one place the proof uses non-emptiness. If an empty domain were allowed, with "for every \( d \in \emptyset \)" read as having nothing to check, all three conjuncts would hold in it (each begins with \( \forall \)), and it has no elements at all: the statement "every model is infinite" would fail.
 
 *Step.* Suppose \( d_1, \dots, d_k \) are as in \( A(k) \). By the third conjunct and (S6), (S7), there is \( d_{k+1} \in D \) with \( d_k < d_{k+1} \). For \( i < k \), we have \( d_i < d_k \) by \( A(k) \), and then \( d_i < d_{k+1} \) by the second conjunct (transitivity). So \( A(k + 1) \) holds.
 
@@ -487,10 +487,12 @@ Now the elements \( d_1, \dots, d_k \) are all different: if \( d_i = d_j \) wit
 
 **Marking scheme.** (10 points)
 
-- 2: names the nonempty domain as the start of the construction, and says what fails without it.
+- 2: names the non-empty domain as the start of the construction, and says what fails without it.
 - 3: an induction producing, for every \( k \), a chain of \( k \) elements, using the third conjunct for the step.
 - 2: uses transitivity to keep the whole chain increasing, not only neighbors.
 - 3: uses irreflexivity to show the elements are different, and concludes that \( D \) is infinite.
+
+A second route: a proof that every non-empty finite subset of \( D \) has a \( < \)-maximal element (induction on its size, with irreflexivity in the base and transitivity in the step), applied to \( D \), which is non-empty, and contradicted by the third conjunct, earns 2 for using \( D \) non-empty, 3 for the induction, 2 for transitivity in the step, and 3 for irreflexivity plus the contradiction with the third conjunct.
 
 Fatal errors (0 for the step): building the chain without showing its elements are distinct; an "infinite chain" asserted without an induction or a recursion.
 :::
@@ -511,7 +513,7 @@ Work over the domain \( \nR \), with \( n \in \nZ_{>0} \) as a bound as in Secti
 :::
 
 ::: {.solution}
-*A remark on the term \( 1/n \).* In the structure \( \nR \), the symbol \( / \) must be a function on all of \( \nR^2 \) (@def-structure, (M3)); give \( 1/0 \) any value. The bound \( n \in \nZ_{>0} \) keeps \( n \ge 1 \), so that value is never used.
+*A remark on the term \( 1/n \).* In the structure \( \nR \), the symbol \( / \) must be a function on all of \( \nR^2 \) (@def-structure, (M3)); give \( x/0 \) a value for every \( x \in \nR \), say \( x/0 \coloneqq 0 \). The bound \( n \in \nZ_{>0} \) keeps \( n \ge 1 \), so those values are never used.
 
 *(a)* \( \forall \varepsilon > 0\ \exists N \in \nZ_{>0}\ \forall n \in \nZ_{>0}\ \bigl( n \ge N \to 1/n < \varepsilon \bigr) \).
 
@@ -587,7 +589,7 @@ Derive \( \neg(P \to \neg Q) \vdash \neg\neg P \wedge \neg\neg Q \) without \( \
 :::
 
 ::: {.solution}
-The goal is a conjunction, so derive each conjunct. Each is a negation, so each gets a \( \neg \)I box, whose goal is \( \bot \). The only way to use the premise \( \neg(P \to \neg Q) \) is to clash with it, so inside each box we build \( P \to \neg Q \). In the first box, from \( \neg P \): a \( \to \)I box on \( P \) clashes \( P \) with \( \neg P \) and uses \( \bot \)E (the pattern of @prp-vacuous-implication). In the second, from \( \neg Q \): a \( \to \)I box on \( P \) simply repeats \( \neg Q \). These are the rules of Chapters 1 and 2 (@def-rules-negation, @def-rules-contradiction, @def-rules-implication).
+The goal is a conjunction, so derive each conjunct. Each is a negation, so each gets a \( \rulename{\neg I} \) box, whose goal is \( \bot \). The only way to use the premise \( \neg(P \to \neg Q) \) is to clash with it, so inside each box we build \( P \to \neg Q \). In the first box, from \( \neg P \): a \( \rulename{{\to}I} \) box on \( P \) clashes \( P \) with \( \neg P \) and uses \( \rulename{\bot E} \) (the pattern of @prp-vacuous-implication). In the second, from \( \neg Q \): a \( \rulename{{\to}I} \) box on \( P \) simply repeats \( \neg Q \). These are the rules of Chapters 1 and 2 (@def-rules-negation, @def-rules-contradiction, @def-rules-implication).
 
 ```{=latex}
 \begin{center}
@@ -619,7 +621,7 @@ $\begin{nd}
 \end{center}
 ```
 
-No \( \rulename{RAA} \) is used. To reach \( P \wedge Q \) we would need \( P \) from \( \neg\neg P \) and \( Q \) from \( \neg\neg Q \), that is, \( \rulename{\neg\neg E} \), which is derived with \( \rulename{RAA} \) (@prp-double-negation), or an \( \rulename{RAA} \) box directly (@def-rule-raa). The look-alike is @exr-finding-derivations-b1 (b), \( \neg(P \to Q) \vdash P \wedge \neg Q \): there the conjunct \( P \) needed \( \rulename{RAA} \), while \( \neg Q \) came by \( \neg \)I alone. Here both conjuncts stop at a double negation, which is as far as the rules without \( \rulename{RAA} \) go.
+No \( \rulename{RAA} \) is used. To reach \( P \wedge Q \) we would need \( P \) from \( \neg\neg P \) and \( Q \) from \( \neg\neg Q \), that is, \( \rulename{\neg\neg E} \), which is derived with \( \rulename{RAA} \) (@prp-double-negation), or an \( \rulename{RAA} \) box directly (@def-rule-raa). The look-alike is @exr-finding-derivations-b1 (b), \( \neg(P \to Q) \vdash P \wedge \neg Q \): there the conjunct \( P \) needed \( \rulename{RAA} \), while \( \neg Q \) came by \( \rulename{\neg I} \) alone. Here both conjuncts stop at a double negation. That no derivation of \( P \) (or of \( P \wedge Q \)) from the premise avoids \( \rulename{RAA} \) is true, but we state it without proof, and nothing depends on it.
 :::
 
 ::: {#exr-models-r3}
@@ -629,7 +631,7 @@ Derive \( \neg\exists x\, (P(x) \to \neg Q(x)) \vdash \forall x\, \bigl( \neg\ne
 :::
 
 ::: {.solution}
-The goal is \( \forall x \), so open a flagged box with a fresh name \( x_0 \) (@def-rules-universal); the new goal is \( \neg\neg P(x_0) \wedge \neg\neg Q(x_0) \). Inside, run the derivation of R2 with \( P(x_0) \) and \( Q(x_0) \) in place of \( P \) and \( Q \). One change: the premise is now \( \neg\exists x\, (P(x) \to \neg Q(x)) \), not \( \neg(P \to \neg Q) \), so each clash first turns \( P(x_0) \to \neg Q(x_0) \) into \( \exists x\, (P(x) \to \neg Q(x)) \) by \( \exists \)I at \( x_0 \) (@def-rule-existential-introduction).
+The goal is \( \forall x \), so open a flagged box with a fresh name \( x_0 \) (@def-rules-universal); the new goal is \( \neg\neg P(x_0) \wedge \neg\neg Q(x_0) \). Inside, run the derivation of R2 (@exr-models-r2) with \( P(x_0) \) and \( Q(x_0) \) in place of \( P \) and \( Q \). One change: the premise is now \( \neg\exists x\, (P(x) \to \neg Q(x)) \), not \( \neg(P \to \neg Q) \), so each clash first turns \( P(x_0) \to \neg Q(x_0) \) into \( \exists x\, (P(x) \to \neg Q(x)) \) by \( \rulename{\exists I} \) at \( x_0 \) (@def-rule-existential-introduction).
 
 ```{=latex}
 \begin{center}
@@ -666,7 +668,7 @@ $\begin{nd}
 \end{center}
 ```
 
-The side condition of \( \forall \)I at line 18: \( x_0 \) does not occur in the premise on line 1, no box is open at line 18, and \( x_0 \) does not occur in the conclusion. The flagged box immediately contains the \( \neg \)I box of line 2, so it is cited from line 2, the first line of that inner box. Lines 7 and 14 are legal \( \exists \)I steps: \( P(x_0) \to \neg Q(x_0) \) is \( (P(x) \to \neg Q(x))[x_0/x] \). The whole derivation is R2's, run inside a flagged box, with an \( \exists \)I before each clash.
+The side condition of \( \rulename{\forall I} \) at line 18: \( x_0 \) does not appear in the premise on line 1, no box is open at line 18, and \( x_0 \) does not appear in the conclusion. The flagged box immediately contains the \( \rulename{\neg I} \) box of line 2, so it is cited from line 2, the first line of that inner box. Lines 7 and 14 are legal \( \rulename{\exists I} \) steps: \( P(x_0) \to \neg Q(x_0) \) is \( (P(x) \to \neg Q(x))[x_0/x] \). The whole derivation is R2's, run inside a flagged box, with an \( \rulename{\exists I} \) before each clash.
 :::
 
 ::: {#exr-models-r4}
@@ -680,12 +682,13 @@ Is the sentence \( \forall x\, \exists y\, (x < y) \to \exists y\, \forall x\, (
 
 *Derivable?* No. By the soundness statement of this section, a derivable sentence is true in every structure; this one is false in \( (\nN, <) \), so no derivation exists.
 
-*Why these tools.* A structure settles the question in two lines, while a derivation search could only fail, and a failed search proves nothing. A truth table is the wrong look-alike: it reads the sentence as \( p \to q \) with two atoms, and a refuting row for \( p \to q \) says nothing here, since the sentence \( \forall x\, P(x) \to \exists x\, P(x) \) has the same shape and is derivable (@prp-forall-implies-exists, then \( \to \)I). The soundness statement used here is proved in Section 4.12.
+*Why these tools.* A structure settles the question in two lines, while a derivation search could only fail, and a failed search proves nothing. A truth table is the wrong look-alike: it reads the sentence as \( p \to q \) with two atoms, and a refuting row for \( p \to q \) says nothing here, since the sentence \( \forall x\, P(x) \to \exists x\, P(x) \) has the same shape and is derivable (@prp-forall-implies-exists, then \( \rulename{{\to}I} \)). The soundness statement used here is proved in Section 4.12.
 :::
 
 <!-- dependency ledger
 def-structure (claim): D^n, subsets, ordered pairs and functions used in their everyday meaning | ch06 (promised), prose pointer "Chapter 6 develops sets, pairs and functions properly"
 def-structure (example): with = read as same parity on Z, -2 = 2 and P(2) hold and P(-2) fails | inline
+def-structure (example): a sentence false in some structure is not derivable | the soundness statement of this section (not proved here; Section 4.12)
 def-assignment (claim): an assignment exists because D is non-empty (a constant assignment) | inline, from def-structure (M1)
 def-assignment (claim): the value of a term is well defined by recursion on terms | thm-structural-recursion (pattern), def-term; Section 4.2 says Chapter 3's induction and recursion carry over to terms and first-order formulas
 def-assignment (example): values 2*2 + (-3) = 1, 2*2 + 1 = 5, -3, and 1 + 1 = 2 | inline; verify/ch04/def-satisfaction.py
@@ -702,6 +705,7 @@ def-first-order-entailment (claim): forall x P(x) |= exists x P(x) in non-empty 
 def-first-order-entailment (claim): bounded quantifiers over the empty set, true and false | def-bounded-quantifier; inline
 exm-counter-model-swap (solution): Z with >, the two-element identity; no one-element counter-model | inline; verify/ch04/exm-counter-model-swap.py
 exm-counter-model-swap (example): converses of prp-exists-and and of the forall/or law; exists x P(x) |/= P(c); P(x_0) |/= forall x P(x); strict-order models Z, Q and the one-element non-model; the second Quick check | inline; verify/ch04/exm-counter-model-swap.py
+exm-counter-model-swap (example): every integer is even or odd, and not both (the Z illustrations of the two converses) | ch07 (promised); STATUS Ch 1 row, as in Ch 1 §01, §07
 def-first-order-entailment (claim): Gamma |- phi implies Gamma |= phi (soundness for predicate logic) | stated without proof in this section and marked so; proved in Section 4.12 (optional; thm-first-order-soundness, never cited here)
 def-first-order-entailment (claim): x^2 on R is continuous and not uniformly continuous | exm-square-not-uniform (Section 4.10), cited in prose
 exr-models-a1 (solution): witnesses and failing elements in N, Z, Q; z = (d + e)/2 is rational and strictly between | inline; verify/ch04/exr-models-a1.py
@@ -713,8 +717,13 @@ exr-models-c1 (solution): successor on N is injective and misses 0 | inline
 exr-models-c2 (solution): a finite set with n elements does not contain n + 1 different elements | school counting fact, named in the solution; ch08 (promised)
 exr-models-c3 (solution): for every real there is a larger natural number | given in the problem; thm-naturals-unbounded (Ch 11), not cited
 exr-models-c3 (solution): n > 1/eps > 0 implies 1/n < eps | school algebra of < (Ch 11 ordered-field rules)
+exr-models-a1 (solution): (e) non-derivability from the three-element counter-model | the soundness statement of this section (not proved here; Section 4.12)
+exr-models-b1 (solution): (iii) non-derivability from the counter-model with l(x) = b; forall x (P(x) -> P(x)) is satisfied everywhere by (S5), (S6) | the soundness statement of this section (not proved here; Section 4.12); inline
+exr-models-b3 (solution): non-derivability from a counter-model | the soundness statement of this section (not proved here; Section 4.12)
 exr-models-c1 (solution): non-derivability from a counter-model | the soundness statement of this section (not proved here; Section 4.12)
 exr-models-r4 (solution): non-derivability from a false instance | the soundness statement of this section (not proved here; Section 4.12)
 exr-models-r1 (solution): refuting row and derivation | cor-refuting-row; verify/ch04/exr-models-r1.py
 exr-models-r2 (solution): neg-neg-E is derived with RAA | prp-double-negation (cited)
+exr-models-r2 (solution): no RAA-free derivation of P or P and Q from not(P -> not Q) | stated without proof and marked so; nothing depends on it
+exr-models-r3 (solution): the derivation of R2 rerun with P(x_0), Q(x_0) inside a flagged box | exr-models-r2 (cited)
 -->

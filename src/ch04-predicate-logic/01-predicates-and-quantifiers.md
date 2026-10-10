@@ -1,6 +1,6 @@
 # Predicates and Quantifiers
 
-Chapters 1–3 built a complete account of the connectives: rules for using and proving "and", "or", "implies", and "not", a meaning for every formula through truth tables, and the theorems that the rules prove exactly what the tables say. In all of that, an atomic statement was a closed box. The statements of analysis are not boxes. "For every \( \varepsilon > 0 \) there is an \( N \) such that …" has its whole content inside, in the words "for every" and "there is" and in the letters they govern. This section opens the box. It introduces predicates, variables, the domain a statement talks about, and the two quantifiers \( \forall \) and \( \exists \), and it teaches how to **read** a quantified sentence. It proves nothing and states no rule: the rules come one per section, from Section 4.3 on.
+Chapters 1–3 built a complete account of the connectives: rules for using and proving "and", "or", "implies", and "not", a meaning for every formula through truth tables, and the theorems that the rules prove exactly what the tables say. In all of that, an atomic statement was a closed box. The statements of analysis are not boxes. "For every \( \varepsilon > 0 \) there is an \( N \) such that …" has its whole content inside, in the words "for every" and "there is" and in the letters they govern. This section opens the box. It introduces predicates, variables, the domain a statement talks about, and the two quantifiers \( \forall \) and \( \exists \), and it teaches how to **read** a quantified sentence. It proves no theorem and states no rule: the four quantifier rules come one per section, in Sections 4.3 to 4.6.
 
 ## An argument the truth table rejects
 
@@ -32,11 +32,11 @@ The argument of the last subsection is built from two open sentences of this kin
 
 *A predicate is a statement with holes in it; filling every hole with a name of an object gives a statement.*
 
-A **predicate** is an open sentence with one or more marked holes. The number of holes is its **arity**: a predicate with one hole is **one-place** (or unary), with two holes **two-place** (binary), and so on. We write a predicate as a capital letter followed by its holes in parentheses: \( P(x) \) for "\( x \) is positive", \( S(x) \) for "\( x \) has a square root", \( D(x, y) \) for "\( x \) divides \( y \)". The letters that mark the holes are **variables**: \( x, y, z, u \), and in analysis also \( \varepsilon, \delta, N, n \). A **constant** is a name of one particular object: \( 0 \), \( 1 \), \( 2 \), or a letter \( a, b, c \) that has been given a fixed meaning.
+A **predicate** is an open sentence with one or more marked holes. The number of holes is its **arity**: a predicate with one hole is **one-place** (or unary), with two holes **two-place** (binary), and so on. We write a predicate as a capital letter followed by its holes in parentheses: \( P(x) \) for "\( x \) is positive", \( S(x) \) for "\( x \) has a square root", \( D(x, y) \) for "\( x \) divides \( y \)". The letters that mark the holes are **variables**: \( x, y, z, u \), and in analysis also \( \varepsilon, \delta, N, n \), and for primes and other natural numbers \( p, q \). A **constant** is a name of one particular object: \( 0 \), \( 1 \), \( 2 \), or a letter \( a, b, c \) that has been given a fixed meaning.
 
 In words: a predicate says something **about** objects without saying which objects. The variables are placeholders, not objects. "\( x \) is positive" is about whatever will be put in for \( x \), and until something is, it is neither true nor false.
 
-Many predicates of mathematics are written with a symbol between their two holes rather than a letter in front: \( x < y \), \( x \le y \), \( x = y \), \( x \mid y \). These are two-place predicates like any other; only the way of writing them differs. Membership \( x \in A \), for a fixed set \( A \), is a one-place predicate of \( x \): "\( x \) is an element of \( A \)". Chapter 6 develops sets and membership properly. Until then we use \( x \in A \) only for sets described in plain words, such as \( \nN \), \( \nZ \), an interval, or a list of numbers.
+Many predicates of mathematics are written with a symbol between their two holes rather than a letter in front: \( x < y \), \( x \le y \), \( x = y \), \( x \mid y \). These are two-place predicates like any other; only the way of writing them differs. Membership \( x \in A \), for a fixed set \( A \), is a one-place predicate of \( x \): "\( x \) is an element of \( A \)". Chapter 6 develops sets and membership properly. Until then a set is understood informally, as a collection of objects (usually numbers), and nothing in this section uses more about a set \( A \) than whether a given object is an element of it. For sets \( A \) and \( B \), \( A \subseteq B \) means that every element of \( A \) is an element of \( B \); so \( A \subseteq \nR \) says that \( A \) is a set of real numbers.
 
 Objects can also be built from other objects: \( x + 1 \), \( x^2 \), \( \abs{x} \), \( 2 \cdot y \). The symbols that build them (\( + \), squaring, \( \abs{\cdot} \), \( \cdot \)) are **function symbols**, and an expression such as \( x^2 + 1 \) names an object as soon as \( x \) does. A function symbol may also be a letter, \( f(x) \). Chapter 6 defines functions as sets of pairs; here a function symbol is simply a way of naming one object in terms of others. Section 4.2 makes all of this exact, under the name **term**. For now, a term is any expression that names an object: a variable, a constant, or a function symbol applied to terms.
 
@@ -51,7 +51,7 @@ Filling holes is the first way to turn a predicate into a statement.
 The last two items show that filling holes is not all or nothing. A predicate with some holes filled is a predicate with fewer holes. Only when **every** hole is filled, or closed in the way described next, do we have a statement.
 
 ::: {.remark}
-A clash of letters to keep apart. In Chapters 1 and 2, capital letters \( P, Q, R \) stood for whole statements, and Chapter 3 read them as atoms or as arbitrary formulas. In this chapter \( P, Q, R \) are **predicate symbols**, always followed by their holes: \( P(x) \), \( R(x, y) \). The parentheses tell the two uses apart. A property \( P(n) \) of natural numbers, as in the principle of induction (@ax-induction), was already a one-place predicate in this sense.
+A clash of letters to keep apart. In Chapters 1 and 2, capital letters \( P, Q, R \) stood for whole statements, and Chapter 3 read them as atoms or as arbitrary formulas. In this chapter \( P, Q, R \) are **predicate symbols**, followed by their holes: \( P(x) \), \( R(x, y) \). A bare \( P \) or \( Q \) in this chapter, in a reference back to Chapters 1–3 or in a review exercise, is a statement letter as before. The parentheses tell the two uses apart. The small letters \( p, q, r \) were atoms in the argument that opened this section, which was written in the language of Chapter 3, and they are atoms again wherever a later section reads a formula with a truth table (Section 4.11). A formula of this chapter has no atoms (Section 4.2 replaces them by predicates with their holes), so inside one, \( p \) and \( q \) are variables, used for primes and other natural numbers. A property \( P(n) \) of natural numbers, as in the principle of induction (@ax-induction), was already a one-place predicate in this sense.
 :::
 
 ## Quantifiers and the domain
@@ -139,7 +139,7 @@ Read each sentence aloud, say what it claims, and decide whether it is true over
 Notice the shape inside (c): \( \forall q\, (\mathrm{Prime}(q) \to q \le p) \), "every prime is at most \( p \)", has an implication under the \( \forall \). It speaks about primes only, and the implication is how a "for every" is restricted to them. The next subsection makes this a rule of writing.
 :::
 
-The sentence in (b) has two quantifiers, and they come in a definite order: first \( \exists x \), then \( \forall y \). The order matters, and the last subsection of this section is about it. First, restricted quantifiers.
+The sentence in (b) has two quantifiers, and they come in a definite order: first \( \exists x \), then \( \forall y \). The order matters, and the subsection "The order of quantifiers" below is about it. First, restricted quantifiers.
 
 ## Bounded quantifiers
 
@@ -218,7 +218,7 @@ The two sentences have the same letters, the same quantifiers and the same equat
 What makes the pair work as an example? Two properties, and any other pair with the same shape would do as well. First, for each \( x \) separately there is a suitable \( y \). Second, no one \( y \) is suitable for all \( x \) together, because each \( y \) serves only one \( x \) (here, only \( x = -y \)).
 :::
 
-**Quantifiers as a game.** The difference in @exm-quantifier-order-sum can be felt by reading a sentence as a game between two players. The **challenger** chooses a value for each \( \forall \) variable and tries to make the sentence false. The **defender** chooses a value for each \( \exists \) variable and tries to make it true. They move in the order in which the quantifiers are written, left to right, and each player sees every move made so far. When all variables have values, the inside is checked. The sentence is true exactly when the defender has a way of playing that wins against every choice of the challenger.
+**Quantifiers as a game.** The difference in @exm-quantifier-order-sum can be felt by reading a sentence as a game between two players. The reading applies to a sentence whose quantifiers all stand at the front, unnegated, followed by an inside with no quantifiers, as in (i) and (ii); a bounded quantifier such as \( \forall \varepsilon > 0 \) counts, its bound being checked with the inside. The **challenger** chooses a value for each \( \forall \) variable and tries to make the sentence false. The **defender** chooses a value for each \( \exists \) variable and tries to make it true. They move in the order in which the quantifiers are written, left to right, and each player sees every move made so far. When all variables have values, the inside is checked. The sentence is true exactly when the defender has a way of playing that wins against every choice of the challenger. A quantifier under a \( \neg \), or in the hypothesis of an implication, changes sides: \( \neg \forall x\, \varphi \) is played as \( \exists x\, \neg \varphi \), with the defender moving. Section 4.9 proves the laws that push a \( \neg \) inward in this way.
 
 - In (i), the challenger moves first and picks some \( x \). The defender sees \( x \) and answers \( y = -x \). The defender always wins.
 - In (ii), the defender moves first and must commit to some \( y \) without knowing \( x \). The challenger sees \( y \) and answers \( x = 1 - y \). The challenger always wins.
@@ -245,7 +245,7 @@ The word **"any"** can mean "every" or "some", and only the sentence around it d
 
 **Hidden universal quantifiers.** A theorem stated as "if \( n \) is even, then \( n^2 \) is even" has no quantifier word in it, and yet it is not about one number. It means: for every integer \( n \), if \( n \) is even, then \( n^2 \) is even. A letter that is not introduced anywhere, in the statement of a theorem, is read with a "for every" in front. Chapter 5 names this convention and lists the others that written mathematics relies on. When translating, put the hidden quantifier back first.
 
-**An implication inside \( \exists \).** This is the warning of the last subsection, and it deserves repeating because it comes up in translations of analysis: "there is an \( N \) such that, if \( n \ge N \), then …" is not the shape of any definition in this book. The implication belongs under a \( \forall \): "there is an \( N \) such that **for every** \( n \), if \( n \ge N \), then …".
+**An implication inside \( \exists \).** This is the warning after @def-bounded-quantifier, and it deserves repeating because it comes up in translations of analysis: "there is an \( N \) such that, if \( n \ge N \), then …" is not the shape of the sentence displayed under **One domain per formula** above, where the implication \( n \ge N \to \dots \) sits under \( \forall n \in \nN \). The implication belongs under a \( \forall \): "there is an \( N \) such that **for every** \( n \), if \( n \ge N \), then …".
 
 ## What comes next
 
@@ -370,28 +370,32 @@ Take \( A = \{-1\} \) for the second. "Some element of \( \{-1\} \) is positive"
 
 *(b)* For the first, let \( A \subseteq \nR \) be any set. The real number \( x = 0 \) does not satisfy \( x > 0 \), so it does not satisfy \( x \in A \wedge x > 0 \), whatever \( A \) is. It is a counterexample to the \( \forall \), so the sentence is false.
 
-For the second, let \( A \subseteq \nR \) be any set, and consider the real number \( x = 1 \). *Case 1: \( 1 \in A \).* Then \( 1 \in A \to 1 > 0 \) is true, because its conclusion \( 1 > 0 \) is true. *Case 2: \( 1 \notin A \).* Then the implication has a false hypothesis and is true. In both cases \( x = 1 \) is a witness, so the sentence is true.
+For the second, let \( A \subseteq \nR \) be any set, and consider the real number \( x = 1 \). The conclusion \( 1 > 0 \) is true, so the implication \( 1 \in A \to 1 > 0 \) is true whether or not \( 1 \in A \). Hence \( x = 1 \) is a witness, whatever \( A \) is, and the sentence is true.
 
 So neither mistranslation tells us anything about \( A \) at all: the first is false and the second is true, whichever set \( A \) is. A sentence whose truth value does not depend on \( A \) cannot express a property of \( A \). This is the precise sense in which the wrong connective "claims too much" under \( \forall \) and "too little" under \( \exists \).
 
 **Marking scheme.** (10 points)
 - 2: a set for the first mistranslation, with both truth values checked.
-- 2: a set for the second mistranslation, with both truth values checked, the vacuous implication named.
-- 3: for the first, one real number that is a counterexample for every \( A \), with the reason it does not depend on \( A \).
-- 3: for the second, one witness for every \( A \), with both cases (the witness in \( A \) or not) handled.
+- 2: a set for the second mistranslation, with both truth values checked, the truth of the implication justified (its hypothesis is false).
+- 3: for the first, for an arbitrary \( A \), a real number (the same for every \( A \), or chosen by cases covering every \( A \)) that fails \( x \in A \wedge x > 0 \), with the check.
+- 3: for the second, for an arbitrary \( A \), a witness (the same for every \( A \), or chosen by cases covering every \( A \)) at which \( x \in A \to x > 0 \) holds, with a reason that covers every \( A \) (its conclusion is true, or a check in every case).
 Fatal errors (0 for the step): a witness or counterexample that depends on \( A \) in (b) without a case split covering every \( A \); reading \( \exists x\, (x \in A \to x > 0) \) as "some element of \( A \) is positive".
 :::
 
 <!-- dependency ledger
-predicates-and-quantifiers-domains (claim): sqrt 2 exists in R, so exists x (x^2 = 2) is true over R | school fact here, stated as such; Chapter 11 (thm-nth-root) proves it; prose pointer
-predicates-and-quantifiers-domains (claim): every natural number is at least 0, so forall x (x >= 0) holds over N | convention N = {0, 1, 2, ...} (NOTATION); school fact
+exm-reading-quantified-sentences (claim): in the subsection "The same sentence over different domains" before it, sqrt 2 exists in R, so exists x (x^2 = 2) is true over R | school fact here, stated as such; Chapter 11 (thm-nth-root) proves it; prose pointer
+exm-reading-quantified-sentences (claim): in the subsection "The same sentence over different domains" before it, every natural number is at least 0, so forall x (x >= 0) holds over N | convention N = {0, 1, 2, ...} (NOTATION); school fact
+exm-reading-quantified-sentences (solution): the check "exists x (x + x = x)" before it: x + x = x iff x = 0; 0 is in Z, R and N, not in Z_{>0}; n + n > n for n in Z_{>0} | school arithmetic
 exm-reading-quantified-sentences (example): x^2 >= 0 for every real x | school fact (signs), stated as such
 exm-reading-quantified-sentences (example): there is no largest prime | school fact (infinitude of primes), stated in the text as not used; nothing depends on it
 def-bounded-quantifier (claim): an implication with a false hypothesis is true (vacuous truth), used to read the wrong bounded forms and the empty-set cases | informal reading of Chapter 2 (prp-vacuous-implication cited); made exact in Section 4.11; the universal empty-set case is derived in Section 4.4
 exm-quantifier-order-sum (example): x + (-x) = 0 and (1 - y) + y = 1 in R | school arithmetic
-predicates-and-quantifiers-order (claim): swapping two quantifiers of the same kind is harmless; exists y forall x implies forall x exists y | informal reading only, stated as such; derived in Sections 4.4 and 4.6; the failure of the converse is exm-quantifier-order-sum
-predicates-and-quantifiers-check (solution): x + x = x iff x = 0; 0 is in Z, R and N, not in Z_{>0}; n + n > n for n in Z_{>0} | school arithmetic
-exr-predicates-and-quantifiers-a1 (solution): x * x >= x for all integers; (1/2)^2 = 1/4 < 1/2 | school arithmetic; checked by verify/ch04/exr-predicates-and-quantifiers-a1.py
+exm-quantifier-order-sum (claim): the game reading after it; a quantifier under a negation changes sides, not-forall x read as exists x not | informal reading only, stated as such; Section 4.9 (later section of this chapter; prose pointer only, nothing here rests on it)
+exm-quantifier-order-sum (claim): "When swapping is harmless" after it: swapping two quantifiers of the same kind is harmless; exists y forall x implies forall x exists y | informal reading only, stated as such; derived in Sections 4.4 and 4.6; the failure of the converse is exm-quantifier-order-sum
+exm-quantifier-order-sum (solution): the check on the swapped prime sentence after it: n = p gives p > p, which is false | school arithmetic (irreflexivity of <)
+exr-predicates-and-quantifiers-a1 (solution): (a)(i)-(iv): x + 1 > x; x + 1 = 0 only at -1; y = x - 1 < x; 2x = 1 only at 1/2; (v): x * x >= x for all integers; (1/2)^2 = 1/4 < 1/2 | school arithmetic; checked by verify/ch04/exr-predicates-and-quantifiers-a1.py
 exr-predicates-and-quantifiers-b1 (solution): y * y >= 0 for real y; 2 + y >= 2 for y in N; x = 0, 1 have witnesses y = 1, 0 | school arithmetic; checked by verify/ch04/exr-predicates-and-quantifiers-b1.py
+exr-predicates-and-quantifiers-b2 (solution): x + 1 > x; y > y is false; y != x and y >= x also work (partners x + 1 and x, failures at x = y and x = y + 1); y >= 1 fails because y = 1 is a partner of every x | school arithmetic; checked by verify/ch04/exr-predicates-and-quantifiers-b2.py
 exr-predicates-and-quantifiers-c1 (solution): 0 < x/2 < x for 0 < x | school arithmetic; checked by verify/ch04/exr-predicates-and-quantifiers-c1.py
+exr-predicates-and-quantifiers-c2 (solution): 0 is not > 0; 1 > 0; -1 < 0; 0 is not in {1} and not in {-1} | school arithmetic; checked by verify/ch04/exr-predicates-and-quantifiers-c2.py
 -->

@@ -100,8 +100,8 @@ from pathlib import Path
 # ---------------------------------------------------------------------------
 
 BOT = ("bot",)
-OPS = {  # token -> (kind, precedence, right-associative)
-    "iff": (1, True), "imp": (2, True), "or": (3, False), "and": (4, False),
+OPS = {  # token -> (precedence, right-associative); chains of ∧ and ∨ group to the right (Ch 3 §04)
+    "iff": (1, True), "imp": (2, True), "or": (3, True), "and": (4, True),
 }
 MACROS = {
     r"\neg": "not", r"\lnot": "not", r"\wedge": "and", r"\land": "and",

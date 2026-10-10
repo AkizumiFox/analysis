@@ -1,6 +1,6 @@
 # Left, Right and Two-Sided Inverses
 
-Section 6.4 sorted functions by two questions. Does \( f \) ever send two different inputs to the same output? Does \( f \) reach every point of its codomain? The answers were the words injective and surjective (@def-injective, @def-surjective). This section asks a question that sounds different: can the work of \( f \) be **undone**? It turns out that it asks the same two questions again, one for each side of \( f \). Undoing \( f \) after it has acted is possible exactly when \( f \) is injective. Undoing it before, so that \( f \) finishes the job, forces \( f \) to be surjective. The one new thing in the section is the notion of an inverse on one side.
+Section 6.4 sorted functions by two questions. Does \( f \) ever send two different inputs to the same output? Does \( f \) reach every point of its codomain? The answers were the words injective and surjective (@def-injective, @def-surjective). This section asks a question that sounds different: can the work of \( f \) be **undone**? It turns out that it asks the same two questions again, one for each side of \( f \). Undoing \( f \) after it has acted forces \( f \) to be injective, and when \( X \) is non-empty injectivity is also enough. Undoing it before, so that \( f \) finishes the job, forces \( f \) to be surjective. The one new idea in the section is an inverse on one side; an inverse on both sides, written \( f^{-1} \), is simply a map that is both.
 
 Throughout, \( f \colon X \to Y \) is a function in the sense of @def-function, and composites are formed as in @def-composition: \( g \circ f \) is defined when the codomain of \( f \) is the domain of \( g \), and \( (g \circ f)(x) = g(f(x)) \).
 
@@ -78,18 +78,18 @@ Let \( s \colon \nN \to \nN \) be the successor map, \( s(n) = n + 1 \). Does \(
 :::
 
 ::: {.solution}
-It has a left inverse, for instance \( p(m) \coloneqq m - 1 \) for \( m \ge 1 \) and \( p(0) \coloneqq 0 \). This is a function \( \nN \to \nN \), since \( m - 1 \in \nN \) when \( m \ge 1 \), and \( p(s(n)) = p(n + 1) = n \) because \( n + 1 \ge 1 \). It has no right inverse: that would need \( s(k(0)) = 0 \), that is \( k(0) + 1 = 0 \), so \( k(0) = -1 \notin \nN \). The number \( 0 \) is not reached by \( s \).
+It has a left inverse, for instance \( p(m) \coloneqq m - 1 \) for \( m \ge 1 \) and \( p(0) \coloneqq 0 \). This is a function \( \nN \to \nN \), since \( m - 1 \in \nN \) when \( m \ge 1 \), and \( p(s(n)) = p(n + 1) = n \) because \( n + 1 \ge 1 \). It has no right inverse: a right inverse \( k \colon \nN \to \nN \) of \( s \) would need \( s(k(0)) = 0 \), that is \( k(0) + 1 = 0 \), which no \( k(0) \in \nN \) satisfies. The number \( 0 \) is not reached by \( s \).
 :::
 
 ## A left inverse exists exactly for injective functions
 
 The examples point to a pattern. The doubling map, the inclusion \( e \), and the successor map are injective, and each has a left inverse. The constant map \( c \) is not injective, and it has none. Here is the pattern as a theorem. Its hypothesis \( X \ne \emptyset \) looks like a technicality; after the proof we will see that it is not.
 
-We use one piece of notation from Section 6.4: the **range** of \( f \) is
+We need the **range** of \( f \) from Section 6.4, and from now on we write it as \( f(X) \):
 \[
     f(X) = \{ y \in Y : f(x) = y \text{ for some } x \in X \}.
 \]
-Section 6.6 generalizes it to the image of any subset of \( X \).
+Section 6.6 extends this notation to the image of any subset of \( X \).
 
 ::: {#thm-left-inverse-iff-injective}
 [Left Inverses and Injectivity]
@@ -104,7 +104,7 @@ Let \( f \colon X \to Y \) be a function.
 Consequently, if \( X \ne \emptyset \), then \( f \) has a left inverse **if and only if** \( f \) is injective.
 :::
 
-Part (a) carries no hypothesis on \( X \), on purpose: the last theorem of this section uses it for every \( X \), the empty set included. The hypothesis \( X \ne \emptyset \) sits in (b) only, where it is used. As in Section 6.4, "\( X \ne \emptyset \)" is read as "\( X \) is nonempty: it has an element", and the proof uses it in that form. (From an element, \( X \ne \emptyset \) follows at once, since the empty set has none (@def-empty-set). The passage back, from "\( X \) is not the empty set" to "\( X \) has an element", is the classical law "not all fail, so one holds" of Chapter 4; reading the hypothesis as "has an element" avoids it.)
+Part (a) carries no hypothesis on \( X \), on purpose: the last theorem of this section uses it for every \( X \), the empty set included. The hypothesis \( X \ne \emptyset \) sits in (b) only, where it is used. As in @prp-empty-function (b), "\( X \ne \emptyset \)" is read as "\( X \) is non-empty: it has an element", and the proof uses it in that form. (From an element, \( X \ne \emptyset \) follows at once, since the empty set has none (@def-empty-set). The passage back, from "\( X \) is not the empty set" to "\( X \) has an element", is the classical law "not all fail, so one holds" of Chapter 4; reading the hypothesis as "has an element" avoids it.)
 
 ::: {.idea}
 For (a), start from the goal. Injectivity asks: from \( f(x_1) = f(x_2) \), get \( x_1 = x_2 \). A left inverse \( g \) turns each \( f(x) \) back into \( x \), so apply \( g \) to both sides.
@@ -131,11 +131,11 @@ Since \( x_1 \) and \( x_2 \) were arbitrary, \( f \) is injective by @def-injec
     \text{ or }
     \bigl(y \notin f(X) \text{ and } x = x_0\bigr) \,\}.
 \]
-We show that for every \( y \in Y \) there is exactly one \( x \in X \) with \( (y, x) \in G \), by checking the two clauses (F1) (existence) and (F2) (uniqueness) into which Section 6.4 splits the condition of @def-function. Then \( G \), with codomain \( X \), is a function \( g \colon Y \to X \). Let \( y \in Y \).
+We show that for every \( y \in Y \) there is exactly one \( x \in X \) with \( (y, x) \in G \), by checking the two clauses (Fn1) (existence) and (Fn2) (uniqueness) into which Section 6.4 splits the condition of @def-function (@prp-unique-existence-use). Then \( G \), with codomain \( X \), is a function \( g \colon Y \to X \). Let \( y \in Y \).
 
-*Existence (F1).* By excluded middle (@prp-excluded-middle), \( y \in f(X) \) or \( y \notin f(X) \). *Case 1:* \( y \in f(X) \). Then \( f(x_1) = y \) for some \( x_1 \in X \); name it \( x_1 \) \( [\rulename{\exists E}] \). The pair \( (y, x_1) \) satisfies the first alternative, so \( (y, x_1) \in G \). *Case 2:* \( y \notin f(X) \). Then \( (y, x_0) \) satisfies the second alternative, so \( (y, x_0) \in G \). In either case some \( x \in X \) has \( (y, x) \in G \).
+*Existence (Fn1).* By excluded middle (@prp-excluded-middle), \( y \in f(X) \) or \( y \notin f(X) \). *Case 1:* \( y \in f(X) \). Then \( f(x_1) = y \) for some \( x_1 \in X \); name it \( x_1 \) \( [\rulename{\exists E}] \). The pair \( (y, x_1) \) satisfies the first alternative, so \( (y, x_1) \in G \). *Case 2:* \( y \notin f(X) \). Then \( (y, x_0) \) satisfies the second alternative, so \( (y, x_0) \in G \). In either case some \( x \in X \) has \( (y, x) \in G \).
 
-*Uniqueness (F2).* Let \( x, x' \in X \) with \( (y, x) \in G \) and \( (y, x') \in G \). Each pair satisfies one of the two alternatives. If both satisfy the first, then \( f(x) = y = f(x') \), so \( x = x' \) because \( f \) is injective. If both satisfy the second, then \( x = x_0 = x' \). If one satisfies the first and the other the second, then \( y \in f(X) \) and \( y \notin f(X) \), a contradiction, so this case cannot occur. Hence \( x = x' \).
+*Uniqueness (Fn2).* Let \( x, x' \in X \) with \( (y, x) \in G \) and \( (y, x') \in G \). Each pair satisfies one of the two alternatives. If both satisfy the first, then \( f(x) = y = f(x') \), so \( x = x' \) because \( f \) is injective. If both satisfy the second, then \( x = x_0 = x' \). If one satisfies the first and the other the second, then \( y \in f(X) \) and \( y \notin f(X) \), a contradiction, so this case cannot occur. Hence \( x = x' \).
 
 So \( g \colon Y \to X \) is a function, and \( g(y) = x \) means \( (y, x) \in G \). It remains to show \( g \circ f = \id_X \). Let \( x \in X \). Then \( f(x) \in f(X) \), with \( x \) as the witness \( [\rulename{\exists I}] \), and \( f(x) = f(x) \), so the pair \( (f(x), x) \) satisfies the first alternative: \( (f(x), x) \in G \), that is, \( g(f(x)) = x \). The functions \( g \circ f \) and \( \id_X \) have domain and codomain \( X \) and agree at every point, so they are equal by @prp-function-equality. Hence \( g \) is a left inverse of \( f \).
 
@@ -183,7 +183,7 @@ Let \( f \colon X \to Y \) be a function. If \( f \) has a right inverse, then \
 Let \( g \colon Y \to X \) be a right inverse of \( f \), and let \( y \in Y \). By @def-left-right-inverse (b), \( f(g(y)) = y \). So \( x \coloneqq g(y) \) is an element of \( X \) with \( f(x) = y \) \( [\rulename{\exists I}] \). Since \( y \) was arbitrary, \( f \) is surjective by @def-surjective.
 :::
 
-The proof names its witness: the right inverse **is** a rule that hands us, for each \( y \), a preimage \( g(y) \). No hypothesis on \( X \) or \( Y \) is needed. If \( Y = \emptyset \), then \( f \) is surjective vacuously; and \( X = \emptyset \) as well, since there is no function from a nonempty set to \( \emptyset \) (@prp-empty-function).
+The proof names its witness: the right inverse **is** a rule that hands us, for each \( y \), a preimage \( g(y) \). No hypothesis on \( X \) or \( Y \) is needed. If \( Y = \emptyset \), then \( f \) is surjective vacuously; and \( X = \emptyset \) as well, since there is no function from a non-empty set to \( \emptyset \) (@prp-empty-function).
 
 Right inverses are not unique either. Here is a small surjection with several.
 
@@ -210,10 +210,10 @@ Read what a right inverse must do. For **every** \( y \in Y \), \( g(y) \) must 
 Now look at what our rules can do.
 
 - **One \( y \).** For a single \( y \), the statement "there is \( x \in X \) with \( f(x) = y \)" lets us name a preimage by \( \exists \)E (Chapter 4, Section 4.6). That is one choice, made inside one proof.
-- **Finitely many \( y \).** For \( Y = \{y_1, \dots, y_n\} \), we can apply \( \exists \)E \( n \) times, once for each point, and write down the \( n \) pairs. That is what @exm-right-inverses-finite did.
+- **Finitely many \( y \).** For a particular finite \( Y = \{y_1, \dots, y_n\} \), with \( n \) a fixed number, we can apply \( \exists \)E \( n \) times, once for each point, and write down the \( n \) pairs. (To get this for every finite \( Y \) at once, with \( n \) arbitrary, one inducts on \( n \), @ax-induction.) @exm-right-inverses-finite picked one preimage per point in the same spirit, by listing the preimage sets and choosing from them.
 - **Infinitely many \( y \).** A proof is a finite object. It cannot contain one \( \exists \)E for each of infinitely many points, and no rule of Chapter 4 makes infinitely many choices in one step.
 
-Sometimes the difficulty does not arise, because a **rule** picks the preimage. The squaring map from \( \nR \) onto \( [0, \infty) \) is surjective, and each \( y \ge 0 \) has the preimages \( \sqrt y \) and \( -\sqrt y \). The rule "take the nonnegative one" defines \( g(y) \coloneqq \sqrt y \), and \( g \) is a right inverse: \( (\sqrt y)^2 = y \). Likewise the projection \( \nN \times \nN \to \nN \), \( (m, n) \mapsto m \), is surjective, and \( m \mapsto (m, 1) \) is a right inverse. In each case the specification of @def-set-builder writes \( g \) down, because the rule names one preimage for each \( y \).
+Sometimes the difficulty does not arise, because a **rule** picks the preimage. The squaring map from \( \nR \) onto \( [0, \infty) \) is surjective, and each \( y \ge 0 \) has the preimages \( \sqrt y \) and \( -\sqrt y \). The rule "take the non-negative one" defines \( g(y) \coloneqq \sqrt y \), and \( g \) is a right inverse: \( (\sqrt y)^2 = y \). Likewise the projection \( \nN \times \nN \to \nN \), \( (m, n) \mapsto m \), is surjective, and \( m \mapsto (m, 1) \) is a right inverse. In each case the specification of @def-set-builder writes \( g \) down, because the rule names one preimage for each \( y \).
 
 For a surjection with no such rule, nothing proved so far produces a right inverse. The missing ingredient is a new principle of set formation, which says that a choice of one element from each set of a family can be made. Chapter 8 states it and proves, with it, that every surjection has a right inverse. Until then, we use only the implication proved above: a right inverse gives surjectivity.
 
@@ -228,12 +228,12 @@ Let \( f \colon X \to Y \) be a function. If \( g \colon Y \to X \) is a left in
 :::
 
 ::: {.proof}
-For every function \( k \colon Y \to X \) we have \( k \circ \id_Y = k \) and \( \id_X \circ k = k \), by @prp-function-equality: all three functions have domain \( Y \) and codomain \( X \), and \( k(\id_Y(y)) = k(y) = \id_X(k(y)) \) for every \( y \in Y \). Hence
+By @prp-composition-associative (associativity and the identity laws),
 \[
     g = g \circ \id_Y = g \circ (f \circ h)
       = (g \circ f) \circ h = \id_X \circ h = h ,
 \]
-where the second equality uses that \( h \) is a right inverse, the third is @prp-composition-associative, and the fourth uses that \( g \) is a left inverse. This proves the proposition.
+where the first and last equalities are the identity laws, the second uses that \( h \) is a right inverse, the third is associativity, and the fourth uses that \( g \) is a left inverse. This proves the proposition.
 :::
 
 The chain is worth reading twice. The composite \( g \circ f \circ h \) can be simplified from either end: the left pair \( g \circ f \) collapses to \( \id_X \), the right pair \( f \circ h \) collapses to \( \id_Y \). Associativity says both simplifications are of the same function.
@@ -283,7 +283,7 @@ Show that each function is invertible by finding its inverse and checking both c
         -\sqrt{-y} & \text{if } y < 0.
     \end{cases}
 \]
-*First check,* \( t(s(x)) = x \), by cases on \( x \). If \( x \ge 0 \), then \( s(x) = x^2 \ge 0 \), so \( t(s(x)) = \sqrt{x^2} = x \), the nonnegative square root of \( x^2 \) being \( x \). If \( x < 0 \), then \( s(x) = -x^2 < 0 \), so \( t(s(x)) = -\sqrt{x^2} = -(-x) = x \), since the nonnegative square root of \( x^2 \) is \( -x \).
+*First check,* \( t(s(x)) = x \), by cases on \( x \). If \( x \ge 0 \), then \( s(x) = x^2 \ge 0 \), so \( t(s(x)) = \sqrt{x^2} = x \), the non-negative square root of \( x^2 \) being \( x \). If \( x < 0 \), then \( s(x) = -x^2 < 0 \), so \( t(s(x)) = -\sqrt{x^2} = -(-x) = x \), since the non-negative square root of \( x^2 \) is \( -x \).
 
 *Second check,* \( s(t(y)) = y \), by cases on \( y \). If \( y \ge 0 \), then \( t(y) = \sqrt y \ge 0 \), so \( s(t(y)) = (\sqrt y)^2 = y \). If \( y < 0 \), then \( t(y) = -\sqrt{-y} < 0 \), so \( s(t(y)) = -(\sqrt{-y})^2 = -(-y) = y \).
 
@@ -311,7 +311,7 @@ A function \( f \colon X \to Y \) is bijective if and only if it has a two-sided
 \[
     G \coloneqq \{ (y, x) \in Y \times X : f(x) = y \},
 \]
-a subset of \( Y \times X \) by specification (@def-set-builder). Let \( y \in Y \). Since \( f \) is surjective, there is \( x \in X \) with \( f(x) = y \), so some \( x \) has \( (y, x) \in G \). If \( (y, x) \in G \) and \( (y, x') \in G \), then \( f(x) = y = f(x') \), so \( x = x' \) since \( f \) is injective. So \( G \) satisfies (F1) and (F2): for every \( y \in Y \) there is exactly one \( x \in X \) with \( (y, x) \in G \), and \( G \) with codomain \( X \) is a function \( g \colon Y \to X \) (@def-function). By construction, \( g(y) = x \) holds exactly when \( f(x) = y \).
+a subset of \( Y \times X \) by specification (@def-set-builder). Let \( y \in Y \). Since \( f \) is surjective, there is \( x \in X \) with \( f(x) = y \), so some \( x \) has \( (y, x) \in G \). If \( (y, x) \in G \) and \( (y, x') \in G \), then \( f(x) = y = f(x') \), so \( x = x' \) since \( f \) is injective. So \( G \) satisfies (Fn1) and (Fn2) (@prp-unique-existence-use): for every \( y \in Y \) there is exactly one \( x \in X \) with \( (y, x) \in G \), and \( G \) with codomain \( X \) is a function \( g \colon Y \to X \) (@def-function). By construction, \( g(y) = x \) holds exactly when \( f(x) = y \).
 
 Now let \( y \in Y \). Then \( g(y) = x \) for the \( x \) with \( (y, x) \in G \), so \( f(g(y)) = y \). And let \( x \in X \). The pair \( (f(x), x) \) lies in \( G \), since \( f(x) = f(x) \); so \( g(f(x)) = x \). By @prp-function-equality, \( f \circ g = \id_Y \) and \( g \circ f = \id_X \). So \( g \) is a two-sided inverse of \( f \). This proves the theorem.
 :::
@@ -333,7 +333,7 @@ Does \( x \mapsto x^3 \) from \( \nR \) to \( \nR \) have a two-sided inverse? D
 :::
 
 ::: {.solution}
-The first does: \( y \mapsto \sqrt[3]{y} \), the real cube root, which exists and is unique for every real \( y \) (a school fact). Indeed \( \sqrt[3]{x^3} = x \) and \( (\sqrt[3]{y})^3 = y \). The second does not. It is injective, but it is not surjective, since \( -1 \) has no preimage; by @thm-bijection-iff-inverse it has no two-sided inverse. (It has left inverses, by @thm-left-inverse-iff-injective, for instance \( y \mapsto \sqrt y \) for \( y \ge 0 \) and \( y \mapsto 0 \) for \( y < 0 \).)
+The first does: \( y \mapsto \sqrt[3]{y} \), the real cube root, which exists and is unique for every real \( y \) (a school fact). Indeed \( \sqrt[3]{x^3} = x \) and \( (\sqrt[3]{y})^3 = y \). The second does not. It is injective (@exm-square-three-ways (b)), but it is not surjective, since \( -1 \) has no preimage; by @thm-bijection-iff-inverse it has no two-sided inverse. (It has left inverses, by @thm-left-inverse-iff-injective, for instance \( y \mapsto \sqrt y \) for \( y \ge 0 \) and \( y \mapsto 0 \) for \( y < 0 \).)
 :::
 
 ## What the section proved
@@ -371,7 +371,7 @@ These parts are about @thm-left-inverse-iff-injective and its proof.
 
 (c) The hypotheses hold: \( \{1, 2, 3\} \ne \emptyset \), and \( f \) is injective, since \( k + 1 = k' + 1 \) gives \( k = k' \). The range is \( f(\{1, 2, 3\}) = \{2, 3, 4\} \). On the range, \( g \) returns the unique preimage: \( g(2) = 1 \), \( g(3) = 2 \), \( g(4) = 3 \). The point \( 1 \) is outside the range, so \( g(1) = x_0 = 3 \). Check: \( g(f(1)) = g(2) = 1 \), \( g(f(2)) = g(3) = 2 \), \( g(f(3)) = g(4) = 3 \). So \( g \circ f = \id_{\{1, 2, 3\}} \).
 
-(d) A point of the range has exactly one preimage, by injectivity, and \( g \) sends it there; a point outside the range is sent to a fixed point \( x_0 \) of the nonempty domain. Then \( g(f(x)) \) is the unique preimage of \( f(x) \), which is \( x \).
+(d) A point of the range has exactly one preimage, by injectivity, and \( g \) sends it there; a point outside the range is sent to a fixed point \( x_0 \) of the non-empty domain. Then \( g(f(x)) \) is the unique preimage of \( f(x) \), which is \( x \).
 
 (e) The uniqueness step fails. The point \( y = 1 \) lies in the range and has the two preimages \( 1 \) and \( 2 \), so \( (1, 1) \) and \( (1, 2) \) both lie in \( G \), and \( G \) is not a function. The step "\( f(x) = y = f(x') \), so \( x = x' \)" needs injectivity, which this \( f \) lacks. (By part (a) of the theorem, \( f \) has no left inverse at all.)
 :::
@@ -402,7 +402,7 @@ Let \( f \colon X \to Y \) and \( g \colon Y \to Z \) be bijections. Prove that 
 :::
 
 ::: {.solution}
-The candidate \( f^{-1} \circ g^{-1} \colon Z \to X \) is defined, since \( g^{-1} \colon Z \to Y \) and \( f^{-1} \colon Y \to X \) exist by @thm-bijection-iff-inverse. We check the two equations of @def-inverse-function, using @prp-composition-associative to regroup and the identity \( k \circ \id = k = \id \circ k \) from the proof of @prp-inverse-unique:
+The candidate \( f^{-1} \circ g^{-1} \colon Z \to X \) is defined, since \( g^{-1} \colon Z \to Y \) and \( f^{-1} \colon Y \to X \) exist by @thm-bijection-iff-inverse. We check the two equations of @def-inverse-function, using @prp-composition-associative to regroup and for its identity laws \( k \circ \id = k = \id \circ k \):
 \[
 \begin{aligned}
     (f^{-1} \circ g^{-1}) \circ (g \circ f)
@@ -421,7 +421,7 @@ So \( f^{-1} \circ g^{-1} \) is a two-sided inverse of \( g \circ f \). By the u
 ::: {#exr-inverses-b3}
 [B3: A bijection between an interval and the line]
 
-Let \( h \colon (-1, 1) \to \nR \), \( h(x) = x/(1 - \abs{x}) \), and \( k \colon \nR \to (-1, 1) \), \( k(y) = y/(1 + \abs{y}) \). Show that \( h \) and \( k \) are well defined (each denominator is nonzero, and \( k \) takes values in \( (-1, 1) \)), and that \( k \) is the inverse of \( h \), by checking both composites by cases on the sign. Hence \( h \) is a bijection.
+Let \( h \colon (-1, 1) \to \nR \), \( h(x) = x/(1 - \abs{x}) \), and \( k \colon \nR \to (-1, 1) \), \( k(y) = y/(1 + \abs{y}) \). Show that \( h \) and \( k \) are well defined (each denominator is non-zero, and \( k \) takes values in \( (-1, 1) \)), and that \( k \) is the inverse of \( h \), by checking both composites by cases on the sign. Hence \( h \) is a bijection.
 :::
 
 ::: {.solution}
@@ -487,7 +487,7 @@ For \( g \): let \( x \in X \); you need a point of \( Y \) that \( g \) sends t
 **Marking scheme.** (10 points)
 
 - 2: \( f \) injective, from the left-inverse equation (citing @thm-left-inverse-iff-injective (a) or arguing directly from \( f(x_1) = f(x_2) \)).
-- 2: \( g \) surjective, with the witness \( f(x) \) for a given \( x \in X \) named.
+- 2: \( g \) surjective, either by citing @prp-right-inverse-surjective (\( f \) is a right inverse of \( g \)) or directly, naming the witness \( f(x) \) for a given \( x \in X \).
 - 3: an example with explicit sets and both failures checked (a point missed by \( f \), two points identified by \( g \)).
 - 3: (c) obtains a right inverse of \( f \) (from bijectivity) and applies uniqueness of one-sided inverses, or checks \( f \circ g = \id_Y \) directly (for \( y = f(x) \), \( f(g(y)) = f(g(f(x))) = f(x) = y \), using surjectivity to write \( y = f(x) \)).
 
@@ -495,17 +495,43 @@ Fatal errors (0 for the step): assuming \( f \circ g = \id_Y \) in (a) or (c) wi
 :::
 
 ::: {#exr-inverses-c2}
-[C2: How many left inverses]
+[C2: When is a left inverse unique?]
 
-Let \( f \colon \{1, 2\} \to \{1, 2, 3, 4\} \), \( f(k) = 2k \). List all left inverses of \( f \), and explain in one sentence why there are \( 2^2 = 4 \) of them.
+Let \( f \colon X \to Y \) be injective, with \( X \ne \emptyset \).
+
+::: {.enumerate options="label=(\alph*)"}
+1. Prove that if \( f \) is surjective, or \( X \) has exactly one element, then \( f \) has exactly one left inverse.
+2. Prove that if some \( y_1 \in Y \) is not in \( f(X) \), and \( X \) has two different elements \( x_0 \ne x_1 \), then \( f \) has at least two different left inverses.
+3. Let \( f \colon \{1, 2\} \to \{1, 2, 3, 4\} \), \( f(k) = 2k \). List all left inverses of \( f \), and explain in one sentence why there are \( 2^2 = 4 \) of them.
+:::
 :::
 
 ::: {.solution}
-The range is \( \{2, 4\} \). A left inverse \( g \colon \{1, 2, 3, 4\} \to \{1, 2\} \) must satisfy \( g(f(1)) = 1 \) and \( g(f(2)) = 2 \), that is \( g(2) = 1 \) and \( g(4) = 2 \). The values \( g(1) \) and \( g(3) \) are free, each in \( \{1, 2\} \), and every choice gives a left inverse. The four are
+[Hint 1]
+
+For (a), a left inverse exists by @thm-left-inverse-iff-injective (b); only "at most one" needs proof. For (b), run the construction of that proof twice.
+:::
+
+::: {.solution}
+(a) A left inverse exists by @thm-left-inverse-iff-injective (b). For "at most one", let \( g \) and \( g' \) be left inverses of \( f \). *Case 1:* \( f \) is surjective. Then \( f \) is bijective (@def-bijective), so it has the inverse \( f^{-1} \) (@thm-bijection-iff-inverse), which is in particular a right inverse of \( f \). By @prp-inverse-unique, \( g = f^{-1} \) and \( g' = f^{-1} \), so \( g = g' \). *Case 2:* \( X \) has exactly one element \( x_0 \). For every \( y \in Y \), both \( g(y) \) and \( g'(y) \) are elements of \( X \), so \( g(y) = x_0 = g'(y) \); hence \( g = g' \) by @prp-function-equality. In either case any two left inverses are equal, so \( f \) has exactly one.
+
+(b) Run the proof of @thm-left-inverse-iff-injective (b) once with the fixed point \( x_0 \) and once with \( x_1 \); call the resulting left inverses \( g_0 \) and \( g_1 \). The point \( y_1 \) is outside the range, so the second alternative in the definition of \( G \) applies to it: \( g_0(y_1) = x_0 \) and \( g_1(y_1) = x_1 \). Since \( x_0 \ne x_1 \), the functions \( g_0 \) and \( g_1 \) differ at \( y_1 \), so \( g_0 \ne g_1 \).
+
+(c) The range is \( \{2, 4\} \). A left inverse \( g \colon \{1, 2, 3, 4\} \to \{1, 2\} \) must satisfy \( g(f(1)) = 1 \) and \( g(f(2)) = 2 \), that is \( g(2) = 1 \) and \( g(4) = 2 \). The values \( g(1) \) and \( g(3) \) are free, each in \( \{1, 2\} \), and every choice gives a left inverse. The four are
 \[
     (g(1), g(2), g(3), g(4)) = (1, 1, 1, 2),\ (1, 1, 2, 2),\ (2, 1, 1, 2),\ (2, 1, 2, 2).
 \]
-The values on the range are forced, and each of the two points \( 1 \), \( 3 \) outside the range may go to either of the two points of the domain, independently: \( 2 \cdot 2 = 4 \) choices.
+The values on the range are forced, and each of the two points \( 1 \), \( 3 \) outside the range may go to either of the two points of the domain, independently: \( 2 \cdot 2 = 4 \) choices. This is the situation of (b): \( f \) is not surjective and its domain has two elements.
+
+**Marking scheme.** (10 points)
+
+- 1: (a) existence of a left inverse, citing @thm-left-inverse-iff-injective (b).
+- 2: (a) surjective case: an inverse exists, and uniqueness of one-sided inverses (@prp-inverse-unique) forces every left inverse to equal it (or a direct argument: for \( y = f(x) \), \( g(y) = x = g'(y) \)).
+- 2: (a) one-element case: any two functions into a one-element set agree at every point, so they are equal.
+- 3: (b) two left inverses that take the values \( x_0 \) and \( x_1 \) at \( y_1 \) (by the construction or defined directly), each checked to be a left inverse, and shown to differ at \( y_1 \).
+- 2: (c) the forced values \( g(2) = 1 \), \( g(4) = 2 \), the four left inverses, and the count \( 2 \cdot 2 \).
+
+Fatal errors (0 for the step): in (a), writing \( f^{-1} \) before showing \( f \) bijective; in (b), concluding \( g_0 \ne g_1 \) without exhibiting a point where they differ.
 :::
 
 <!-- dependency ledger
@@ -517,19 +543,18 @@ exm-left-inverses-small-sets (claim): (quick check after it) successor s(n) = n 
 thm-left-inverse-iff-injective (claim): "X != empty" read as "X has an element" (as in Section 6.4, prp-empty-function (b)); the passage from not-empty to has-an-element is the classical quantifier law | def-empty-set (cited); ch04 (promised): prp-quantifier-negation (prose pointer "Chapter 4"); nothing uses the passage
 thm-left-inverse-iff-injective (proof): the range f(X) = { y in Y : f(x) = y for some x in X } | def-function (Section 6.4 preview of the range), recalled on the page
 thm-left-inverse-iff-injective (proof): exists-E naming x_0 and x_1 | ch04 (promised): def-rules-existential (prose pointer, Section 4.6)
-thm-left-inverse-iff-injective (proof): exactly one = existence (F1) plus uniqueness (F2) | def-function and the split (F1)/(F2) after it in Section 6.4 (which cites ch04 unique existence)
+thm-left-inverse-iff-injective (proof): exactly one = existence (Fn1) plus uniqueness (Fn2) | def-function and the split (Fn1)/(Fn2) in Section 6.4; prp-unique-existence-use (cited)
 thm-left-inverse-iff-injective (proof): the mixed case is contradictory (y in f(X) and y not in f(X)) | def-rules-negation (not-E), then bot-E; ch02, used silently per the silent-steps convention (ch05 promised)
 thm-left-inverse-iff-injective (proof): equal inputs give equal outputs for a function g | def-function (cited): exists! gives uniqueness of the value
 thm-left-inverse-iff-injective (claim): the empty function is injective vacuously | prp-vacuous-implication (ch02), used in words
 prp-right-inverse-surjective (proof): exists-I with witness g(y) | ch04 (promised): def-rules-existential (prose pointer, Section 4.6)
 prp-right-inverse-surjective (claim): (open-question subsection) sqrt(y) >= 0 and (sqrt y)^2 = y for y >= 0 | school fact (Part 0 convention); proved in Chapter 11 (thm-nth-root)
 prp-right-inverse-surjective (claim): (open-question subsection) a proof is finite, so it contains finitely many exists-E | informal remark about derivations (def-derivation, ch01), no result depends on it
-prp-inverse-unique (proof): k o id_Y = k = id_X o k | proved inline from prp-function-equality
+prp-inverse-unique (proof): g o id_Y = g and id_X o h = h | prp-composition-associative (identity laws, cited)
 def-inverse-function (claim): (f^{-1})^{-1} = f | inline: the two defining equations are symmetric, then uniqueness (prp-inverse-unique)
 exm-two-sided-inverses (example): arithmetic of R; 1/x > 0 for x > 0; sqrt(x^2) = |x|; sign cases | school facts (Part 0 convention); proved in Chapter 11
-thm-bijection-iff-inverse (proof): exactly one = existence (F1) plus uniqueness (F2) | def-function and the split (F1)/(F2) in Section 6.4
+thm-bijection-iff-inverse (proof): exactly one = existence (Fn1) plus uniqueness (Fn2) | def-function and the split (Fn1)/(Fn2) in Section 6.4; prp-unique-existence-use (cited)
 thm-bijection-iff-inverse (claim): the empty function empty -> empty is id_empty | def-function, prp-empty-function (cited), prp-function-equality
 thm-bijection-iff-inverse (claim): (quick check) the real cube root exists and is unique | school fact (Part 0 convention); Chapter 11 (thm-nth-root) for odd roots of positives, sign by symmetry
 exr-inverses-b3 (solution): |x| < 1 gives 1 - |x| > 0; fraction arithmetic | school facts (Part 0 convention)
-exr-inverses-c1 (solution): composition regrouping | prp-composition-associative (cited)
 -->

@@ -248,7 +248,7 @@ items:
   kind: exr
   file: 01-predicates-and-quantifiers.md
   line: 355
-  hash: 4321ff967695
+  hash: 97b09aa80b07
   verdicts:
   - stage: S5a
     verdict: minor
@@ -370,7 +370,7 @@ items:
 - key: def-sentence
   kind: def
   file: 02-terms-formulas-substitution.md
-  line: 159
+  line: 161
   hash: b9577afe2cf3
   verdicts:
   - stage: S5a
@@ -390,8 +390,8 @@ items:
 - key: exm-free-and-bound-limit
   kind: exm
   file: 02-terms-formulas-substitution.md
-  line: 185
-  hash: 197b86cf525a
+  line: 187
+  hash: 1a2b3119e3b2
   verdicts:
   - stage: S5a
     verdict: minor
@@ -413,7 +413,7 @@ items:
 - key: check:02-terms-formulas-substitution:2
   kind: check
   file: 02-terms-formulas-substitution.md
-  line: 220
+  line: 222
   hash: 58cd0a52a55e
   verdicts:
   - stage: S5a
@@ -433,7 +433,7 @@ items:
 - key: def-substitution
   kind: def
   file: 02-terms-formulas-substitution.md
-  line: 234
+  line: 236
   hash: d68a6f1a424a
   verdicts:
   - stage: S5a
@@ -457,7 +457,7 @@ items:
 - key: exm-computing-substitutions
   kind: exm
   file: 02-terms-formulas-substitution.md
-  line: 264
+  line: 268
   hash: 913c0ce98af9
   verdicts:
   - stage: S5a
@@ -478,7 +478,7 @@ items:
 - key: proof:exm-computing-substitutions
   kind: proof
   file: 02-terms-formulas-substitution.md
-  line: 305
+  line: 309
   hash: 6c732b25c374
   verdicts:
   - stage: S5a
@@ -501,7 +501,7 @@ items:
 - key: def-free-for
   kind: def
   file: 02-terms-formulas-substitution.md
-  line: 343
+  line: 347
   hash: 54a2a2275e4b
   verdicts:
   - stage: S5a
@@ -524,7 +524,7 @@ items:
 - key: check:02-terms-formulas-substitution:3
   kind: check
   file: 02-terms-formulas-substitution.md
-  line: 374
+  line: 378
   hash: 6781a2711c3f
   verdicts:
   - stage: S5a
@@ -545,8 +545,8 @@ items:
 - key: exr-terms-formulas-substitution-a1
   kind: exr
   file: 02-terms-formulas-substitution.md
-  line: 438
-  hash: 13dfd0b8c538
+  line: 442
+  hash: 6928184e1159
   verdicts:
   - stage: S5a
     verdict: correct
@@ -576,8 +576,8 @@ items:
 - key: exr-terms-formulas-substitution-b1
   kind: exr
   file: 02-terms-formulas-substitution.md
-  line: 467
-  hash: 701a6389cdac
+  line: 471
+  hash: 2628f805259f
   verdicts:
   - stage: S5a
     verdict: correct
@@ -608,7 +608,7 @@ items:
 - key: exr-terms-formulas-substitution-b2
   kind: exr
   file: 02-terms-formulas-substitution.md
-  line: 493
+  line: 497
   hash: c12871be7467
   verdicts:
   - stage: S5a
@@ -638,7 +638,7 @@ items:
 - key: exr-terms-formulas-substitution-c1
   kind: exr
   file: 02-terms-formulas-substitution.md
-  line: 531
+  line: 535
   hash: 8765d9a58325
   verdicts:
   - stage: S5a
@@ -671,8 +671,8 @@ items:
 - key: exr-terms-formulas-substitution-c2
   kind: exr
   file: 02-terms-formulas-substitution.md
-  line: 596
-  hash: 150acd97d8ea
+  line: 600
+  hash: a5ded9bd0f4b
   verdicts:
   - stage: S5a
     verdict: correct
@@ -735,7 +735,7 @@ items:
   kind: check
   file: 07-equality-and-uniqueness.md
   line: 66
-  hash: bf82d45e1b89
+  hash: 42047b847d18
   verdicts:
   - stage: S5a
     verdict: correct
@@ -779,7 +779,7 @@ items:
   kind: proof
   file: 07-equality-and-uniqueness.md
   line: 116
-  hash: 13155af941c8
+  hash: dbe1d820a62a
   verdicts:
   - stage: S5a
     verdict: minor
@@ -800,7 +800,7 @@ items:
   kind: check
   file: 07-equality-and-uniqueness.md
   line: 230
-  hash: 00011c2b9fba
+  hash: 82f2c9f53b97
   verdicts:
   - stage: S5a
     verdict: correct
@@ -821,7 +821,7 @@ items:
   kind: def
   file: 07-equality-and-uniqueness.md
   line: 256
-  hash: dd77eb2b8d97
+  hash: 5442c653b7f5
   verdicts:
   - stage: S5a
     verdict: correct
@@ -858,7 +858,7 @@ items:
   kind: prp
   file: 07-equality-and-uniqueness.md
   line: 314
-  hash: 99394a4d5773
+  hash: f87094368c5f
   verdicts:
   - stage: S5a
     verdict: correct
@@ -881,7 +881,7 @@ items:
   kind: proof
   file: 07-equality-and-uniqueness.md
   line: 329
-  hash: 62510007b3ee
+  hash: 1551d0bce79b
   verdicts:
   - stage: S5a
     verdict: minor
@@ -938,7 +938,7 @@ items:
   kind: exr
   file: 07-equality-and-uniqueness.md
   line: 489
-  hash: 346f16486b19
+  hash: c6f1c077cfa9
   verdicts:
   - stage: S5a
     verdict: minor
@@ -999,7 +999,7 @@ items:
   kind: exr
   file: 07-equality-and-uniqueness.md
   line: 541
-  hash: 3341d6c8b53d
+  hash: bee7fc2c015f
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1030,7 +1030,7 @@ items:
   kind: exr
   file: 07-equality-and-uniqueness.md
   line: 563
-  hash: e57e9656a2d7
+  hash: 17a084cba7c0
   verdicts:
   - stage: S5a
     verdict: minor
@@ -1061,7 +1061,7 @@ items:
   kind: exr
   file: 07-equality-and-uniqueness.md
   line: 584
-  hash: 58eeea6e27d5
+  hash: 0d181cc4c5d4
   verdicts:
   - stage: S5a
     verdict: gap
@@ -1093,7 +1093,7 @@ items:
   kind: exm
   file: 08-translation.md
   line: 27
-  hash: 51dfc73e33ec
+  hash: cc0cc87a8e58
   verdicts:
   - stage: S5a
     verdict: minor
@@ -1139,7 +1139,7 @@ items:
   kind: prp
   file: 08-translation.md
   line: 93
-  hash: 985171b3bb12
+  hash: 27884f16b378
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1162,7 +1162,7 @@ items:
   kind: proof
   file: 08-translation.md
   line: 155
-  hash: 2e34d9ae7bea
+  hash: dce2ec214943
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1209,7 +1209,7 @@ items:
   kind: exr
   file: 08-translation.md
   line: 339
-  hash: 9f98e94edeba
+  hash: 44a718e49bab
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1242,7 +1242,7 @@ items:
   kind: exr
   file: 08-translation.md
   line: 363
-  hash: 6a7ec7c4611e
+  hash: 55131e602472
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1272,7 +1272,7 @@ items:
 - key: exr-translation-b2
   kind: exr
   file: 08-translation.md
-  line: 387
+  line: 389
   hash: 4063b43db07d
   verdicts:
   - stage: S5a
@@ -1304,8 +1304,8 @@ items:
 - key: exr-translation-c1
   kind: exr
   file: 08-translation.md
-  line: 424
-  hash: e49a5480aedc
+  line: 426
+  hash: 07175a0bd205
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1335,7 +1335,7 @@ items:
 - key: exr-translation-c2
   kind: exr
   file: 08-translation.md
-  line: 445
+  line: 447
   hash: f1f1b56b25d8
   verdicts:
   - stage: S5a
@@ -1582,7 +1582,7 @@ items:
   kind: exr
   file: 11-models.md
   line: 321
-  hash: b1df4ab67692
+  hash: e4c07c49969f
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1613,7 +1613,7 @@ items:
   kind: exr
   file: 11-models.md
   line: 359
-  hash: b5a82c0096ed
+  hash: 29eb88a25eff
   verdicts:
   - stage: S5a
     verdict: minor
@@ -1767,8 +1767,8 @@ items:
 - key: exr-models-c3
   kind: exr
   file: 11-models.md
-  line: 498
-  hash: 7baf9317d8de
+  line: 500
+  hash: 82a493c7356b
   verdicts:
   - stage: S5a
     verdict: minor
@@ -1798,7 +1798,7 @@ items:
 - key: exr-models-r1
   kind: exr
   file: 11-models.md
-  line: 546
+  line: 548
   hash: 0fe774d731c2
   verdicts:
   - stage: S5a
@@ -1829,8 +1829,8 @@ items:
 - key: exr-models-r2
   kind: exr
   file: 11-models.md
-  line: 583
-  hash: b05bb3ba24b8
+  line: 585
+  hash: b231df02d3ac
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1870,8 +1870,8 @@ items:
 - key: exr-models-r3
   kind: exr
   file: 11-models.md
-  line: 625
-  hash: 2d9d8481f26a
+  line: 627
+  hash: 15fa0f1e40ff
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1900,8 +1900,8 @@ items:
 - key: exr-models-r4
   kind: exr
   file: 11-models.md
-  line: 672
-  hash: 9f3c93088d6f
+  line: 674
+  hash: 25e9b4e46aed
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1932,7 +1932,7 @@ items:
 - key: lem-term-substitution
   kind: lem
   file: 12-first-order-soundness.md
-  line: 55
+  line: 57
   hash: 72867aa07439
   verdicts:
   - stage: S5a
@@ -1963,7 +1963,7 @@ items:
 - key: proof:lem-term-substitution
   kind: proof
   file: 12-first-order-soundness.md
-  line: 68
+  line: 70
   hash: dbdef4ebfaa0
   verdicts:
   - stage: S5a
@@ -1991,7 +1991,7 @@ items:
 - key: check:12-first-order-soundness:1
   kind: check
   file: 12-first-order-soundness.md
-  line: 100
+  line: 102
   hash: 78f252e1ba38
   verdicts:
   - stage: S5a
@@ -2011,10 +2011,22 @@ items:
     model: claude-opus-5-5
     evidence: '12:100-106. Recomputed: a=6. Both sides reduce to ∀z(6<z→5<z), which is true. Under ℓ itself,
       z=4 fails. The sidecar verify/ch04/lem-term-substitution.py asserts these values.'
+- key: cor-renaming-bound-variables
+  kind: cor
+  file: 12-first-order-soundness.md
+  line: 112
+  hash: eece6a53a4f0
+  verdicts: []
+- key: proof:cor-renaming-bound-variables
+  kind: proof
+  file: 12-first-order-soundness.md
+  line: 123
+  hash: 7d7eda61e528
+  verdicts: []
 - key: thm-first-order-soundness
   kind: thm
   file: 12-first-order-soundness.md
-  line: 112
+  line: 135
   hash: 3f6e41a30be9
   verdicts:
   - stage: S5a
@@ -2047,8 +2059,8 @@ items:
 - key: proof:thm-first-order-soundness
   kind: proof
   file: 12-first-order-soundness.md
-  line: 132
-  hash: 50dacee25b7a
+  line: 155
+  hash: d563808794a1
   verdicts:
   - stage: S5a
     verdict: gap
@@ -2072,7 +2084,7 @@ items:
 - key: cor-counter-model
   kind: cor
   file: 12-first-order-soundness.md
-  line: 213
+  line: 236
   hash: e12b13aef9bf
   verdicts:
   - stage: S5a
@@ -2094,7 +2106,7 @@ items:
 - key: proof:cor-counter-model
   kind: proof
   file: 12-first-order-soundness.md
-  line: 219
+  line: 242
   hash: 44044f98d1a2
   verdicts:
   - stage: S5a
@@ -2116,8 +2128,8 @@ items:
 - key: check:12-first-order-soundness:2
   kind: check
   file: 12-first-order-soundness.md
-  line: 250
-  hash: ce1a0e2d8fcc
+  line: 280
+  hash: 1782e3699711
   verdicts:
   - stage: S5a
     verdict: correct
@@ -2140,8 +2152,8 @@ items:
 - key: exr-first-order-soundness-a1
   kind: exr
   file: 12-first-order-soundness.md
-  line: 262
-  hash: fc1b04388b89
+  line: 292
+  hash: 02c858b6f9b8
   verdicts:
   - stage: S5a
     verdict: correct
@@ -2175,8 +2187,8 @@ items:
 - key: exr-first-order-soundness-b1
   kind: exr
   file: 12-first-order-soundness.md
-  line: 300
-  hash: de8150a80233
+  line: 330
+  hash: e3b19e83d952
   verdicts:
   - stage: S5a
     verdict: correct
@@ -2208,7 +2220,7 @@ items:
 - key: exr-first-order-soundness-b2
   kind: exr
   file: 12-first-order-soundness.md
-  line: 312
+  line: 342
   hash: 29afbcfc47b6
   verdicts:
   - stage: S5a
@@ -2239,8 +2251,8 @@ items:
 - key: exr-first-order-soundness-c1
   kind: exr
   file: 12-first-order-soundness.md
-  line: 334
-  hash: 841b18b8a0c4
+  line: 364
+  hash: 8b26162d5117
   verdicts:
   - stage: S5a
     verdict: correct
@@ -2269,8 +2281,8 @@ items:
 - key: exr-first-order-soundness-c2
   kind: exr
   file: 12-first-order-soundness.md
-  line: 377
-  hash: 7cb8c56b5a7d
+  line: 407
+  hash: e01079b125e5
   verdicts:
   - stage: S5a
     verdict: correct

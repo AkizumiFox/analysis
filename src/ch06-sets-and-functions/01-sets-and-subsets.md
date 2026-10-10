@@ -16,9 +16,9 @@ Apply the naive rule to this property. It promises a set
 \[
 R = \text{the set of all } x \text{ with } x \notin x .
 \]
-Now ask whether \( R \in R \). By the way \( R \) was made, an object belongs to \( R \) exactly when it is not an element of itself; applied to the object \( R \), this says \( R \in R \) exactly when \( R \notin R \). A statement that is equivalent to its own negation leads to a contradiction by the rules of Chapter 2 alone; the derivation after Russell's theorem, at the end of this section, shows exactly how. So the naive rule is contradictory: it cannot be part of mathematics.
+Now ask whether \( R \in R \). By the way \( R \) was made, an object belongs to \( R \) exactly when it is not an element of itself; applied to the object \( R \), this says \( R \in R \) exactly when \( R \notin R \). A statement that is equivalent to its own negation leads to a contradiction by the rules of Chapter 2 alone; lines 4–11 of the derivation after Russell's theorem, at the end of this section, carry out exactly this argument, with an extra conjunct carried along. So the naive rule is contradictory: it cannot be part of mathematics.
 
-This is **Russell's paradox**. We hold it until the end of the section, where it becomes a theorem, Russell's theorem (@thm-russell), about the sets that do exist. First we set out what does work.
+This is **Russell's paradox**. We hold it until the end of the section, where it becomes a theorem, Russell's theorem, about the sets that do exist. First we set out what does work.
 
 ## Sets and membership
 
@@ -28,22 +28,22 @@ x \in A
 \]
 for "\( x \) is an element of \( A \)", or "\( x \) belongs to \( A \)", or "\( x \) lies in \( A \)". Its negation is written \( x \notin A \). The objects may be numbers, or sets, or (later in this chapter) pairs and functions.
 
-In the language of Chapter 4, "\( \in \)" is a two-place predicate: \( x \in A \) is a statement about the two objects \( x \) and \( A \), true or false like \( x < y \). So everything Chapter 4 says about predicates, quantifiers, and their rules applies to it unchanged. A statement such as "every element of \( A \) is positive" is \( \forall x\, (x \in A \to x > 0) \), which the bounded notation of Chapter 4 shortens to \( \forall x \in A\ (x > 0) \).
+In the language of Chapter 4, "\( \in \)" is a two-place predicate: \( x \in A \) is a statement about the two objects \( x \) and \( A \), true or false like \( x < y \). So everything Chapter 4 says about predicates, quantifiers, and their rules applies to it unchanged. A statement such as "every element of \( A \) is positive" is \( \forall x\, (x \in A \to x > 0) \), which the bounded notation of @def-bounded-quantifier shortens to \( \forall x \in A\ (x > 0) \).
 
-Two conventions fix what kind of objects we deal with. First, the number sets \( \nN \), \( \nZ \), \( \nQ \), and \( \nR \) are **given**: we use them as familiar sets, with their school arithmetic and order, as the earlier chapters did. (Chapter 11 turns the facts we use about \( \nR \) into consequences of axioms.) Second, **numbers are not sets**: a number has no elements, and no number is equal to a set. So \( 1 \ne \{1\} \), and \( z \in 5 \) is false for every \( z \). The optional Chapter 9 explains how numbers can be built out of sets; nothing in the main line depends on how that is done, and nothing here uses it.
+Two conventions fix what kind of objects we deal with. First, the number sets \( \nN \), \( \nZ \), \( \nQ \), and \( \nR \) are **given**: we use them as familiar sets, with their school arithmetic and order, as the earlier chapters did. (Chapter 11 turns the facts we use about \( \nR \) into consequences of axioms.) Second, **numbers are not sets**: a number has no elements, and no number is equal to a set. So \( 1 \ne \{1\} \), and \( z \in 5 \) is false for every \( z \). The optional Chapters 9, 10 and 22 explain how numbers can be built out of sets; nothing in the main line depends on how that is done, and nothing here uses it.
 
 The single most important fact about sets is that **a set is determined by its elements**. It has no other features: no order in which the elements come, no count of how often each is listed, no color. Two sets with the same elements are the same set.
 
 ::: {#def-set-equality}
 [Equality of Sets]
 
-Sets \( A \) and \( B \) are **equal**, written \( A = B \), if they have the same elements:
+Sets \( A \) and \( B \) are equal, \( A = B \), if and only if they have the same elements:
 \[
 \forall x\, (x \in A \leftrightarrow x \in B).
 \]
 :::
 
-In words: every element of \( A \) is an element of \( B \), and every element of \( B \) is an element of \( A \). This principle is called **extensionality**: a set is fixed by its extension, the things it contains, and not by the words used to describe it. As with every definition (Chapter 2's convention on definitions, Section 2.4), the "if" is an "if and only if", so the definition is used in both directions: to prove \( A = B \), prove the \( \forall \) statement; from \( A = B \), conclude \( x \in A \leftrightarrow x \in B \) for any \( x \) we like.
+In words: every element of \( A \) is an element of \( B \), and every element of \( B \) is an element of \( A \). This principle is called **extensionality**: a set is fixed by its extension, the things it contains, and not by the words used to describe it. The sign \( = \) here is not new: it is the equality of @def-rules-equality, "names of the same object". The direction from \( A = B \) to the same elements is \( \rulename{{=}E} \), with \( \varphi \) the formula \( x \in z \) and \( z \) the variable replaced (and symmetry, @prp-equality-symmetric-transitive, for the way back from \( B \) to \( A \)). The converse direction is the principle just stated, that a set has no features beyond its elements; it is what lets an equation proved from "same elements" be used with \( \rulename{{=}E} \) like any other. The principle is an "if and only if", so it is used in both directions: to prove \( A = B \), prove the \( \forall \) statement; from \( A = B \), conclude \( x \in A \leftrightarrow x \in B \) for any \( x \) we like.
 
 Sets with finitely many elements can be written by **listing** their elements between braces: \( \{1, 2, 3\} \) is the set whose elements are \( 1 \), \( 2 \), and \( 3 \), and nothing else. Extensionality has two immediate consequences for such lists.
 
@@ -82,13 +82,13 @@ Let \( A \) and \( B \) be sets. \( A \) is a **subset** of \( B \), written \( 
 We also say that \( A \) is **contained in** \( B \), or that \( B \) **contains** \( A \). If \( A \subseteq B \) **and** \( A \ne B \), then \( A \) is a **proper subset** of \( B \), written \( A \subsetneq B \).
 :::
 
-In words, clause by clause. The quantifier \( \forall x \) ranges over every object whatsoever, not over the elements of \( A \) only; the implication \( x \in A \to x \in B \) restricts attention to the elements of \( A \), and says nothing about objects outside \( A \). With the bounded notation of Chapter 4, the same condition is \( \forall x \in A\ (x \in B) \): "for every \( x \) in \( A \), \( x \) is in \( B \)". The symbol \( \subseteq \) allows equality, as \( \le \) does for numbers; the symbol \( \subsetneq \) excludes it, as \( < \) does. This book never writes \( \subset \), which some books use for \( \subseteq \) and others for \( \subsetneq \).
+In words, clause by clause. The quantifier \( \forall x \) ranges over every object whatsoever, not over the elements of \( A \) only; the implication \( x \in A \to x \in B \) restricts attention to the elements of \( A \), and says nothing about objects outside \( A \). With the bounded notation of @def-bounded-quantifier, the same condition is \( \forall x \in A\ (x \in B) \): "for every \( x \) in \( A \), \( x \) is in \( B \)". The symbol \( \subseteq \) allows equality, as \( \le \) does for numbers; the symbol \( \subsetneq \) excludes it, as \( < \) does. This book never writes \( \subset \), which some books use for \( \subseteq \) and others for \( \subsetneq \).
 
-The definition is a \( \forall \) around an \( \to \), and its rules are the rules of those two symbols. To **prove** \( A \subseteq B \), we prove the \( \forall \) statement: by the rule \( \rulename{\forall I} \) of Chapter 4 we open a box for an arbitrary \( x \) (in prose, "let \( x \) be arbitrary"), and inside it we prove \( x \in A \to x \in B \) by \( \rulename{{\to}I} \) (@def-rules-implication): assume \( x \in A \) and reach \( x \in B \). The two openings are always written together, as "let \( x \in A \)". To **use** \( A \subseteq B \), we apply \( \rulename{\forall E} \) (Chapter 4) at the element we care about, and then \( \rulename{{\to}E} \): from \( A \subseteq B \) and \( a \in A \), conclude \( a \in B \). This gives the book's first named move of the chapter.
+The definition is a \( \forall \) around an \( \to \), and its rules are the rules of those two symbols. To **prove** \( A \subseteq B \), we prove the \( \forall \) statement: by the rule \( \rulename{\forall I} \) of Chapter 4 we open a box for an arbitrary \( x \) (in prose, "let \( x \) be arbitrary"), and inside it we prove \( x \in A \to x \in B \) by \( \rulename{{\to}I} \) (@def-rules-implication): assume \( x \in A \) and reach \( x \in B \). The two openings are always written together, as "let \( x \in A \)". To **use** \( A \subseteq B \), we apply \( \rulename{\forall E} \) (Chapter 4) at the element we care about, and then \( \rulename{{\to}E} \): from \( A \subseteq B \) and \( a \in A \), conclude \( a \in B \). This gives the chapter's first named move.
 
 *To show \( A \subseteq B \), take an arbitrary element of \( A \) and show that it lies in \( B \).*
 
-We call this **element-chasing**: we follow one element from \( A \) to \( B \), unwinding the definition of \( A \) to find out what we know about it, and rewinding the definition of \( B \) to see what we must show. Here is the move three times, simplest first. In each, the first sentence is the pair of openings, \( \rulename{\forall I} \) and \( \rulename{{\to}I} \), and the rest reaches \( x \in B \).
+We call this **element-chasing**: we follow one element from \( A \) to \( B \), unwinding the definition of \( A \) to find out what we know about it, and rewinding the definition of \( B \) to see what we must show. Here is the move three times: two ordinary inclusions, then the degenerate one. In each, the first sentence is the pair of openings, \( \rulename{\forall I} \) and \( \rulename{{\to}I} \), and the rest reaches \( x \in B \).
 
 ::: {#exm-subset-first-examples}
 [Three inclusions]
@@ -118,7 +118,7 @@ A \not\subseteq B \quad\text{means}\quad \exists x\, (x \in A \wedge x \notin B)
 \]
 *To refute an inclusion, exhibit one element of the first set that is not in the second.*
 
-**Why this definition.** The definition says nothing about objects outside \( A \); that is the implication doing its job. If the \( \to \) were replaced by \( \wedge \), the condition \( \forall x\, (x \in A \wedge x \in B) \) would say that **every object** lies in \( A \) and in \( B \), which is false for every set we will meet (Russell's theorem at the end of this section shows that no set contains every set). This is the reason, explained in Chapter 4, why a bounded "for every" always unfolds to an implication.
+**Why this definition.** The definition says nothing about objects outside \( A \); that is the implication doing its job. If the \( \to \) were replaced by \( \wedge \), the condition \( \forall x\, (x \in A \wedge x \in B) \) would say that **every object** lies in \( A \) and in \( B \), which is false for every set we will meet (Russell's theorem at the end of this section shows that no set contains every set). This is the reason why a bounded "for every" always unfolds to an implication (@def-bounded-quantifier).
 
 ::: {.warning}
 **Element or subset?** The symbols \( \in \) and \( \subseteq \) relate different things. \( x \in A \) says that \( x \) is one of the objects collected in \( A \); \( B \subseteq A \) says that every object collected in \( B \) is also collected in \( A \). For example \( 1 \in \{1\} \) and \( \{1\} \subseteq \{1\} \), but \( \{1\} \notin \{1\} \): the only element of \( \{1\} \) is the number \( 1 \), which is not the set \( \{1\} \). And "\( 1 \subseteq \{1\} \)" is not a comparison worth making: \( 1 \) is a number, not a set, so the definition of \( \subseteq \) does not apply to it. Before writing either symbol, ask whether the thing on the left is **one of the objects** in the set on the right, or a **collection** of such objects.
@@ -158,7 +158,7 @@ A proof of this kind is written in two paragraphs, labeled \( (\subseteq) \) and
 
 ### Transitivity, rule by rule
 
-The second payoff is that inclusions chain, as \( \le \) does. Its proof is the first element-chase of the chapter written with every rule named, and we give it at two levels: first as a derivation, then as prose in which each sentence carries its rule in brackets. (These are levels 0 and 2 of Chapter 5; from here on the book writes level-3 prose, and brackets appear only on the step a proof is about.)
+The second payoff is that inclusions chain, as \( \le \) does. Its proof is the first element-chase of the chapter written with every rule named, and we give it at two levels: first as a derivation, then as prose in which each sentence carries its rule in brackets. (These are levels 0 and 2 of Chapter 5; from here on the book writes level-3 prose; after one more fully tagged proof, in Section 6.2, brackets appear only on the step a proof is about.)
 
 ::: {#prp-subset-transitive}
 [Inclusion Is Transitive]
@@ -210,6 +210,40 @@ Let \( A = \{1, 2\} \), \( B = \{1, 2, 3\} \), and \( C = \{1, 3\} \). Which of 
 True: \( A \subseteq B \) and \( C \subseteq B \) (every listed element of \( A \), and of \( C \), is listed in \( B \)). False: \( B \subseteq A \) (witness \( 3 \in B \), \( 3 \notin A \)); \( A \subseteq C \) (witness \( 2 \)); \( C \subseteq A \) (witness \( 3 \)); \( B \subseteq C \) (witness \( 2 \)). Both \( A \) and \( C \) are proper subsets of \( B \), and neither of \( A \), \( C \) is a subset of the other.
 :::
 
+## Describing sets: listing and specification
+
+Listing works for a handful of elements. For a set such as "the real numbers whose square is less than \( 2 \)" we need to describe the elements by a property, as the naive rule wanted. The repair of the naive rule is small but essential: we may cut a set out **of a set we already have**.
+
+::: {#def-set-builder}
+[Specification]
+
+Let \( A \) be a set and \( P(x) \) a property of objects \( x \). Then there is a set, written
+\[
+\{ x \in A : P(x) \},
+\]
+whose elements are exactly the elements of \( A \) that have the property \( P \): for every \( y \),
+\[
+y \in \{ x \in A : P(x) \} \iff y \in A \text{ and } P(y).
+\]
+:::
+
+The notation is read "the set of \( x \) in \( A \) such that \( P(x) \)"; the colon is read "such that" (the book never writes a bar here, so that a bar stays free for divisibility and absolute value). The letter \( x \) is a bound variable, like the \( x \) of \( \forall x \): \( \{ x \in A : P(x) \} \) and \( \{ t \in A : P(t) \} \) are the same set. The set \( A \) is the **ambient set** of the description, and every set-builder in this book has one, named or fixed by the context; a set written \( \{ f(a) : a \in A \} \) is the image of \( A \) under \( f \) (Section 6.6), and any other set the book defines is shown to exist by (W1)–(W6) where it is introduced. By @def-set-equality, the equivalence in the definition determines the set completely, so "the" set is justified.
+
+In the language of the rules: to show that \( y \) belongs to \( \{ x \in A : P(x) \} \), show \( y \in A \) and \( P(y) \); from \( y \in \{ x \in A : P(x) \} \), conclude both. Each is one \( \rulename{{\leftrightarrow}E} \) (@def-rules-biconditional) with the definition, followed or preceded by \( \rulename{\wedge I} \) or \( \rulename{\wedge E} \) (@def-rules-conjunction); at level 3 all of these are silent, and a proof simply writes "by definition" or nothing at all.
+
+Specification is one of a short list of **working rules** that say which sets exist. We state them once, here, and use them from now on without comment.
+
+::: {.enumerate options="label=(W\arabic*)"}
+1. **Specification.** For a set \( A \) and a property \( P \), \( \{ x \in A : P(x) \} \) is a set (@def-set-builder).
+2. **Listing.** Any finitely many objects \( a_1, \dots, a_n \) form a set \( \{ a_1, \dots, a_n \} \), whose elements are exactly \( a_1, \dots, a_n \).
+3. **Unions.** For sets \( A \) and \( B \), there is a set whose elements are exactly the objects lying in \( A \) or in \( B \); more generally, for a family of sets indexed by a set, there is a set whose elements are exactly the objects lying in at least one member of the family (Section 6.2).
+4. **Power sets.** For a set \( X \), the subsets of \( X \) form a set (Section 6.2).
+5. **Products.** For sets \( A \) and \( B \), the ordered pairs \( (a, b) \) with \( a \in A \) and \( b \in B \) form a set; more generally, for a set \( X \) and \( n \in \nN \) with \( n \ge 2 \), the \( n \)-tuples \( (x_1, \dots, x_n) \) with every \( x_k \in X \) form a set (Section 6.3).
+6. **Numbers.** \( \nN \), \( \nZ \), \( \nQ \), and \( \nR \) are sets.
+:::
+
+These rules are enough for everything the book does with sets until Chapter 8, which adds one more: a principle for making infinitely many choices at once (Section 6.5 shows where it is first needed). They are not axioms in the formal sense, and we do not try to derive them from fewer principles; the optional Chapter 9 states the axioms of set theory behind them and shows how (W1)–(W5) and the set \( \nN \) follow from them, and the optional Chapters 10 and 22 build \( \nZ \), \( \nQ \) and \( \nR \), which completes (W6). What matters here is what is **missing** from the list: there is no rule that collects all objects with a property, without an ambient set. The end of this section shows that such a rule would be contradictory.
+
 ## The empty set
 
 Among all sets, one is special: the set with nothing in it. It turns up constantly: as the set of real solutions of \( x^2 = -1 \), as the intersection of two sets with nothing in common (Section 6.2), as the domain of a function with no inputs (Section 6.4). Without it, "the set of solutions" would not always name a set.
@@ -220,7 +254,7 @@ Among all sets, one is special: the set with nothing in it. It turns up constant
 An **empty set** is a set with no elements: a set \( E \) such that \( \forall x\, (x \notin E) \).
 :::
 
-Such a set exists. Take any set we are given, say \( \nN \), and collect its elements \( x \) with \( x \ne x \); by the rule of specification later in this section (@def-set-builder), this is a set, and since \( x = x \) for every \( x \), nothing has the property, so the set has no elements. There is also at most one empty set, which justifies the article "**the**".
+Such a set exists. Take any set we are given, say \( \nN \), and collect its elements \( x \) with \( x \ne x \); by specification (@def-set-builder), this is a set, and since \( x = x \) for every \( x \) (\( \rulename{{=}I} \), @def-rules-equality), nothing has the property, so the set has no elements. There is also at most one empty set, which justifies the article "**the**".
 
 ::: {#prp-empty-set-unique}
 [The Empty Set Is Unique]
@@ -252,41 +286,9 @@ The empty set is a set with no elements, and a set **containing** it is not empt
 (c) None. \( \emptyset \) has no elements, and each of the other two has exactly one, so \( \emptyset \) differs from both. The only element of \( \{\emptyset\} \) is \( \emptyset \), and the only element of \( \{\{\emptyset\}\} \) is \( \{\emptyset\} \); these two elements are different by the first observation, so \( \emptyset \in \{\emptyset\} \) but \( \emptyset \notin \{\{\emptyset\}\} \), and the two sets differ by @def-set-equality.
 :::
 
-## Describing sets: listing and specification
+## Computing with set-builders
 
-Listing works for a handful of elements. For a set such as "the real numbers whose square is less than \( 2 \)" we need to describe the elements by a property, as the naive rule wanted. The repair of the naive rule is small but essential: we may cut a set out **of a set we already have**.
-
-::: {#def-set-builder}
-[Specification]
-
-Let \( A \) be a set and \( P(x) \) a property of objects \( x \). Then there is a set, written
-\[
-\{ x \in A : P(x) \},
-\]
-whose elements are exactly the elements of \( A \) that have the property \( P \): for every \( y \),
-\[
-y \in \{ x \in A : P(x) \} \iff y \in A \text{ and } P(y).
-\]
-:::
-
-The notation is read "the set of \( x \) in \( A \) such that \( P(x) \)"; the colon is read "such that" (the book never writes a bar here, so that a bar stays free for divisibility and absolute value). The letter \( x \) is a bound variable, like the \( x \) of \( \forall x \): \( \{ x \in A : P(x) \} \) and \( \{ t \in A : P(t) \} \) are the same set. The set \( A \) is the **ambient set** of the description, and every set-builder in this book names one. By @def-set-equality, the equivalence in the definition determines the set completely, so "the" set is justified.
-
-In the language of the rules: to show that \( y \) belongs to \( \{ x \in A : P(x) \} \), show \( y \in A \) and \( P(y) \); from \( y \in \{ x \in A : P(x) \} \), conclude both. Each is one \( \rulename{{\leftrightarrow}E} \) with the definition, followed or preceded by \( \rulename{\wedge I} \) or \( \rulename{\wedge E} \); at level 3 all of these are silent, and a proof simply writes "by definition" or nothing at all.
-
-Specification is one of a short list of **working rules** that say which sets exist. We state them once, here, and use them from now on without comment.
-
-::: {.enumerate options="label=(W\arabic*)"}
-1. **Specification.** For a set \( A \) and a property \( P \), \( \{ x \in A : P(x) \} \) is a set (@def-set-builder).
-2. **Listing.** Any finitely many objects \( a_1, \dots, a_n \) form a set \( \{ a_1, \dots, a_n \} \), whose elements are exactly \( a_1, \dots, a_n \).
-3. **Unions.** For sets \( A \) and \( B \), there is a set whose elements are exactly the objects lying in \( A \) or in \( B \); more generally, for a family of sets indexed by a set, there is a set whose elements are exactly the objects lying in at least one member of the family (Section 6.2).
-4. **Power sets.** For a set \( X \), the subsets of \( X \) form a set (Section 6.2).
-5. **Products.** For sets \( A \) and \( B \), the ordered pairs \( (a, b) \) with \( a \in A \) and \( b \in B \) form a set (Section 6.3).
-6. **Numbers.** \( \nN \), \( \nZ \), \( \nQ \), and \( \nR \) are sets.
-:::
-
-These rules are enough for everything the book does with sets. They are not axioms in the formal sense, and we do not try to derive them from fewer principles; the optional Chapter 9 states the axioms of set theory behind them and shows how each rule follows. What matters here is what is **missing** from the list: there is no rule that collects all objects with a property, without an ambient set. The end of this section shows that such a rule would be contradictory.
-
-The first worked example shows how a set-builder is computed: we guess the answer, then prove the guess by two inclusions (@prp-subset-antisymmetric).
+The next worked example shows how a set-builder is computed: we guess the answer, then prove the guess by two inclusions (@prp-subset-antisymmetric).
 
 ::: {#exm-set-builder-small}
 [Computing sets given by a property]
@@ -306,7 +308,11 @@ The first worked example shows how a set-builder is computed: we guess the answe
 
 By @prp-subset-antisymmetric, \( S = \{-2, -1, 0, 1, 2\} \).
 
-(b) The inclusion \( \emptyset \subseteq \{ x \in \nR : x^2 < 0 \} \) holds because \( \emptyset \) is a subset of every set. For the other inclusion, let \( x \in \{ x \in \nR : x^2 < 0 \} \). Then \( x \) is a real number with \( x^2 < 0 \); but \( x^2 \ge 0 \) for every real \( x \), a contradiction. So this case cannot occur, and \( x \in \emptyset \) holds in it vacuously (\( \rulename{\bot E} \)). Hence the set is empty. A set-builder with an impossible property is a legitimate description of \( \emptyset \).
+(b) \( (\subseteq) \) Let \( x \in \{ x \in \nR : x^2 < 0 \} \). Then \( x \) is a real number with \( x^2 < 0 \); but \( x^2 \ge 0 \) for every real \( x \), a contradiction. So this case cannot occur, and \( x \in \emptyset \) holds in it vacuously (\( \rulename{\bot E} \), @def-rules-contradiction).
+
+\( (\supseteq) \) \( \emptyset \subseteq \{ x \in \nR : x^2 < 0 \} \), because \( \emptyset \) is a subset of every set.
+
+By @prp-subset-antisymmetric, the set is \( \emptyset \). A set-builder with an impossible property is a legitimate description of \( \emptyset \).
 :::
 
 Two remarks on the example. In (a), the \( (\supseteq) \) direction is a proof by cases over a finite list, which is legitimate: the five cases exhaust the set, because the list says exactly which elements it has. That is quite different from the error of the second warning above, where finitely many cases were checked for an infinite set. In (b), the \( (\supseteq) \) direction is free, and only \( (\subseteq) \) needs an argument. For "\( S = \emptyset \)" this is always so: the claim amounts to "\( S \) has no elements".
@@ -330,7 +336,7 @@ For every set \( A \), the set \( R_A = \{ x \in A : x \notin x \} \) is **not**
 ::: {.idea}
 The attempt runs into the old paradox, but with one extra condition. If \( R_A \in R_A \), then by specification \( R_A \notin R_A \): the first answer refutes itself. If \( R_A \notin R_A \), then specification puts \( R_A \) into \( R_A \), **provided** \( R_A \in A \): the second answer refutes itself only under that proviso. So the two answers together are impossible exactly when \( R_A \in A \), and the conclusion is not a contradiction in mathematics but a fact: \( R_A \notin A \).
 
-We do not need to split into the two answers. The first answer is refuted outright, with no proviso, by \( \rulename{\neg I} \); so \( R_A \notin R_A \) holds whenever \( R_A \in A \). That fact, fed back into specification, gives \( R_A \in R_A \), and the two collide.
+We do not need to split into the two answers. The first answer is refuted outright, with no proviso, by \( \rulename{\neg I} \) (@def-rules-negation); so \( R_A \notin R_A \) holds whenever \( R_A \in A \). That fact, fed back into specification, gives \( R_A \in R_A \), and the two collide.
 :::
 
 ::: {.proof}
@@ -370,7 +376,7 @@ $\begin{nd}
 
 Every rule in it is one of \( \rulename{\forall E} \), \( \rulename{{\leftrightarrow}E} \), \( \rulename{\wedge E} \), \( \rulename{\wedge I} \), \( \rulename{\neg E} \), and \( \rulename{\neg I} \). There is **no** \( \rulename{RAA} \), and no excluded middle: the inner box (lines 4–7) refutes one answer outright instead of splitting into two answers. This is worth noticing. The paradox is not an artifact of classical logic, and cannot be escaped by giving up a classical rule; it is a genuine contradiction in the naive rule, and the only repair is to change which sets exist.
 
-**What the theorem says about sets.** Read with \( A \) arbitrary, the theorem says that **no set contains everything**: for every set \( A \) we have produced a set, \( R_A \), outside it. The naive rule "any property defines a set" is exactly specification **without** the phrase "\( x \in A \)", and the theorem shows that the phrase cannot be dropped: with \( A \) ranging over "everything", \( R_A \) would be the paradoxical \( R \). This is why every set-builder in this book names an ambient set, and why (W1)–(W6) contain no "set of all sets". When we want "all objects with a property", we first say where to look.
+**What the theorem says about sets.** Read with \( A \) arbitrary, the theorem says that **no set contains everything**: for every set \( A \) we have produced a set, \( R_A \), outside it. The naive rule "any property defines a set" is exactly specification **without** the phrase "\( x \in A \)", and the theorem shows that the phrase cannot be dropped: with \( A \) ranging over "everything", \( R_A \) would be the paradoxical \( R \). This is why every set-builder in this book has an ambient set, and why (W1)–(W6) contain no "set of all sets". When we want "all objects with a property", we first say where to look.
 
 The argument has a shape that will return: a set built from \( A \) so that it disagrees with each candidate on the candidate itself. Chapter 8 proves by the same shape of argument that no function from a set \( X \) to the set of its subsets reaches every subset.
 
@@ -385,7 +391,7 @@ The argument has a shape that will return: a set built from \( A \) so that it d
 1. Negate "\( A \subseteq B \)" in symbols, and then in words, with the negation pushed through the quantifier and the implication.
 2. True or false: \( \{1\} \in \{\{1\}, 2\} \); \( \{1\} \subseteq \{\{1\}, 2\} \); \( \emptyset \subseteq \emptyset \); \( \{\emptyset\} \subseteq \{1\} \). Give a reason for each.
 3. List the elements of \( \{ n \in \nZ : 0 < n^2 \le 9 \} \).
-4. Which rule of logic gives the first sentence of every proof of \( A \subseteq B \), and which gives the second clause of that sentence?
+4. In an element-chasing proof of \( A \subseteq B \), the first sentence is "let \( x \in A \)". Which rule of logic gives its first clause, and which its second?
 :::
 :::
 
@@ -486,7 +492,7 @@ For (b): suppose, for \( \rulename{\neg I} \), that every subset of \( A \) is a
 
 (b) Suppose, for \( \rulename{\neg I} \), that \( A \) is a set such that every subset of \( A \) is an element of \( A \). The set \( R_A \) is a subset of \( A \): if \( y \in R_A \), then \( y \in A \) (and \( y \notin y \)) by @def-set-builder. So by the assumption, \( R_A \in A \), which contradicts @thm-russell. Hence no set has the property.
 
-Part (a) says that no set is "as large as possible": there is always a set with one more element. Part (b) rules out a set containing all of its own subsets; for instance, no set \( A \) satisfies \( A = \{ S : S \subseteq A \} \).
+Part (a) says that no set is "as large as possible": there is always a set with one more element. Part (b) rules out a set containing all of its own subsets; for instance, no set \( A \) has as its elements exactly the subsets of \( A \).
 
 **Marking scheme.** (10 points)
 - 2: (a) proves the inclusion \( A \subseteq A^{+} \) from the description of \( A^{+} \).
@@ -513,24 +519,29 @@ The point of the question is a habit: an element-chasing proof treats its elemen
 
 <!-- dependency ledger
 def-set-equality (claim): {1, 1, 2} = {1, 2} uses "x = 1 or x = 1" iff "x = 1" | proved inline in words (vee-E / vee-I); disjunction rules def-rules-disjunction (Ch 1)
-def-set-equality (claim): membership is a two-place predicate; bounded quantifier notation | ch04 (promised; prose pointer "Chapter 4")
+def-set-equality (claim): membership is a two-place predicate | ch04 (promised; prose pointer "Chapter 4")
 def-set-equality (claim): numbers are not sets; no number equals a set | convention stated in this section (Part 0 working convention)
-def-subset (claim): forall-I, forall-E and the flagged box; bounded quantifier unfolds to an implication | ch04 (promised; prose pointer "Chapter 4")
+def-subset (claim): forall-I, forall-E and the flagged box | ch04 (promised; prose pointer "Chapter 4")
+def-subset (claim): 6k = 3(2k); 3 is not a multiple of 6; 4 is not a multiple of 6; 4 is not a multiple of 3 | school fact (Part 0 convention); proved in Chapter 7 (integers)
 exm-subset-first-examples (example): 0 <= 1, 2 <= 3 and transitivity of <= on R | school fact (Part 0 convention); proved in Chapter 11
 exm-subset-first-examples (example): exists-E and exists-I on "6 | x" | ch04 (promised; prose pointer "Chapter 4")
+exm-subset-first-examples (example): 2k is an integer when k is (Z closed under multiplication) | school fact (Part 0 convention); proved in Chapter 7 (integers)
 def-subset (claim): negation of A subset B is "exists x (x in A and x notin B)" via quantifier negation and negated implication | ch04 (promised; prose pointer "Chapter 4")
 def-subset (claim): the warning's catalogue entry (N1) | ch05 (promised; prose pointer "the catalogue of Chapter 5")
 prp-subset-transitive (proof): forall-I with a flagged box, forall-E | ch04 (promised; prose pointer "Chapter 4"; the derivation is checked with Chapter 4's rules)
 prp-subset-transitive (claim): levels 0, 2, 3 and the silent-step convention | ch05 (promised; prose pointer "Chapter 5")
+prp-subset-transitive (claim): Section 6.2 tags one more proof rule by rule | Section 6.2 (prose pointer; nothing depends on it)
 prp-subset-antisymmetric (proof): "let x be arbitrary ... since x was arbitrary" is forall-I | ch04 (promised; prose pointer)
-def-empty-set (claim): x = x for every x (to show {x in N : x != x} is empty) | =I, ch04 (promised; prose pointer)
 exm-set-builder-small (example): an integer with |x| >= 3 has x^2 >= 9; the integers with |x| <= 2 are -2..2; x^2 >= 0 for real x | school fact (Part 0 convention); proved in Chapter 11 (order) and Chapter 7 (integers)
 thm-russell (proof): forall-E on the specification premise | ch04 (promised; prose pointer); the derivation is checked with Chapter 4's rules
 thm-russell (claim): Chapter 8's "no map X -> P(X) is onto" has the same shape | ch08 (prose pointer; nothing depends on it)
-def-set-builder (claim): the working rules (W1)-(W6) follow from axioms | optional ch09 (prose pointer; nothing depends on it)
+def-set-builder (claim): the working rules (W1)-(W5) and N follow from axioms; Z, Q, R are built from sets | optional ch09, ch10, ch22 (prose pointers; nothing depends on them)
+def-set-builder (claim): Chapter 8 adds a principle of choice beyond (W1)-(W6); Section 6.5 shows where it is needed | ch08, Section 6.5 (prose pointers; nothing in this section depends on them)
+def-set-builder (claim): a set written {f(a) : a in A} is an image | Section 6.6 (prose pointer; nothing in this section depends on it)
 exr-sets-and-subsets-a1 (solution): quantifier negation and negated implication | ch04 (promised; prose pointer)
 exr-sets-and-subsets-a1 (solution): integers with |n| >= 4 have n^2 >= 16 | school fact (Part 0 convention)
 exr-sets-and-subsets-b1 (solution): x^2 - 3x + 2 = (x - 1)(x - 2); a product of reals is zero only if a factor is | school algebra (Part 0 convention); proved in Chapter 11
-exr-sets-and-subsets-b3 (solution): 1/2 is not an integer; integers with |x| >= 2 have x^2 >= 4; -1 is not in N | school facts (Part 0 convention); N = {0, 1, 2, ...} (NOTATION)
+exr-sets-and-subsets-b3 (solution): 1/2 is not an integer; integers with |x| >= 2 have x^2 >= 4; -1 is not in N; x = 4k gives x = 2(2k) with 2k an integer | school facts (Part 0 convention); N = {0, 1, 2, ...} (NOTATION)
+exr-sets-and-subsets-b3 (solution): x^2 - 4 = (x - 2)(x + 2); a product of reals is zero only if a factor is | school algebra (Part 0 convention); proved in Chapter 11
 exr-sets-and-subsets-c1 (solution): A+ exists by (W2) and (W3) | working rules stated in this section
 -->
