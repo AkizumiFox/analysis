@@ -415,7 +415,7 @@ Determine which of the following candidate lines 4 are justified. Justify your a
 
 ::: {.enumerate options="label=(\alph*)"}
 1. Write the chain \( 0 < \tfrac14 < \tfrac13 < \tfrac12 \) as a derivation, with its three links as premises and the conclusion \( 0 < \tfrac12 \), using \( \mathrm{Tr} \), forwards from the first link as in part (a) of @exm-chaining-derivation.
-2. A chain \( e_0 < e_1 < \dots < e_m \) has \( m \) links. Forward chaining, as in (a), writes the links as premises and then joins the first link with the next, again and again. How many applications of \( \mathrm{Tr} \) does it use to reach \( e_0 < e_m \)?
+2. A chain \( e_0 < e_1 < \dots < e_m \) has \( m \ge 1 \) links. Forward chaining, as in (a), writes the links as premises and then joins the first link with the next, again and again. How many applications of \( \mathrm{Tr} \) does it use to reach \( e_0 < e_m \)?
 :::
 :::
 
