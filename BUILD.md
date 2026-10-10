@@ -37,6 +37,11 @@ that point nowhere, component problems, and any label whose number in the PDFs d
 the website. Run it after `./build.py all`, since the numbering comparison reads the LaTeX
 `.aux` files. `deploy` runs `all` and `check` first and stops if either fails.
 
+References into sections that are planned but not yet written can be accepted in
+`config/known-unresolved.json`, a list of `{"why": ..., "references": [{"ref", "in"}]}`
+groups. `check` then fails only on unresolved references not listed there, and warns when a
+listed one resolves, so its entry gets deleted.
+
 `check` also warns (without failing) about:
 
 - **Spelling** (needs `aspell`): words in the prose, not in formulas or code. Add correct

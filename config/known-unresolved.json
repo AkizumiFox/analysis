@@ -1,0 +1,111 @@
+[
+  {
+    "why": "Chapter 4 sections 03-06, 09 and 10 (the quantifier rules, derived quantifier laws and their exercises) are planned in authoring/blueprints/ch04.md, which lists every one of these labels, but are not yet written; sections 07, 08, 11 and 12 already cite them. Delete each entry as its section lands (check warns when one resolves). Accepted 2026-10-10.",
+    "references": [
+      {
+        "ref": "def-rule-existential-introduction",
+        "in": "src/ch04-predicate-logic/07-equality-and-uniqueness.md"
+      },
+      {
+        "ref": "exm-existential-introduction-derivations",
+        "in": "src/ch04-predicate-logic/08-translation.md"
+      },
+      {
+        "ref": "exm-universal-introduction-derivations",
+        "in": "src/ch04-predicate-logic/08-translation.md"
+      },
+      {
+        "ref": "prp-exists-forall-swap",
+        "in": "src/ch04-predicate-logic/08-translation.md"
+      },
+      {
+        "ref": "def-rule-existential-introduction",
+        "in": "src/ch04-predicate-logic/11-models.md"
+      },
+      {
+        "ref": "def-rules-universal",
+        "in": "src/ch04-predicate-logic/11-models.md"
+      },
+      {
+        "ref": "exm-square-not-uniform",
+        "in": "src/ch04-predicate-logic/11-models.md"
+      },
+      {
+        "ref": "exr-existential-introduction-c2",
+        "in": "src/ch04-predicate-logic/11-models.md"
+      },
+      {
+        "ref": "exr-universal-introduction-b2",
+        "in": "src/ch04-predicate-logic/11-models.md"
+      },
+      {
+        "ref": "prp-bounded-quantifier-negation",
+        "in": "src/ch04-predicate-logic/11-models.md"
+      },
+      {
+        "ref": "prp-exists-and",
+        "in": "src/ch04-predicate-logic/11-models.md"
+      },
+      {
+        "ref": "prp-exists-forall-swap",
+        "in": "src/ch04-predicate-logic/11-models.md"
+      },
+      {
+        "ref": "prp-forall-implies-exists",
+        "in": "src/ch04-predicate-logic/11-models.md"
+      },
+      {
+        "ref": "prp-negated-implication",
+        "in": "src/ch04-predicate-logic/11-models.md"
+      },
+      {
+        "ref": "prp-quantifier-distribution",
+        "in": "src/ch04-predicate-logic/11-models.md"
+      },
+      {
+        "ref": "prp-quantifier-passage",
+        "in": "src/ch04-predicate-logic/11-models.md"
+      },
+      {
+        "ref": "def-rule-existential-introduction",
+        "in": "src/ch04-predicate-logic/12-first-order-soundness.md"
+      },
+      {
+        "ref": "def-rule-universal-elimination",
+        "in": "src/ch04-predicate-logic/12-first-order-soundness.md"
+      },
+      {
+        "ref": "def-rules-existential",
+        "in": "src/ch04-predicate-logic/12-first-order-soundness.md"
+      },
+      {
+        "ref": "def-rules-universal",
+        "in": "src/ch04-predicate-logic/12-first-order-soundness.md"
+      },
+      {
+        "ref": "exr-existential-elimination-c2",
+        "in": "src/ch04-predicate-logic/12-first-order-soundness.md"
+      },
+      {
+        "ref": "exr-existential-introduction-c1",
+        "in": "src/ch04-predicate-logic/12-first-order-soundness.md"
+      },
+      {
+        "ref": "exr-existential-introduction-c2",
+        "in": "src/ch04-predicate-logic/12-first-order-soundness.md"
+      },
+      {
+        "ref": "prp-exists-forall-swap",
+        "in": "src/ch04-predicate-logic/12-first-order-soundness.md"
+      },
+      {
+        "ref": "prp-quantifier-distribution",
+        "in": "src/ch04-predicate-logic/12-first-order-soundness.md"
+      },
+      {
+        "ref": "prp-quantifier-passage",
+        "in": "src/ch04-predicate-logic/12-first-order-soundness.md"
+      }
+    ]
+  }
+]
