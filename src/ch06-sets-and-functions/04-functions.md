@@ -162,7 +162,7 @@ whose graph is \( G \cap (A \times Y) \): the pairs of \( f \) whose input lies 
 
 Section 6.2 used families of sets \( (A_i)_{i \in I} \) and described them informally, as "a set \( A_i \) for each index \( i \in I \)". We can now say exactly what a family is. A **family of subsets of \( X \) indexed by \( I \)** is a function \( I \to \powerset{X} \), \( i \mapsto A_i \), with the power set \( \powerset{X} \) as the codomain the definition asks for. Its value at \( i \) is written \( A_i \) rather than \( A(i) \), and the family is written \( (A_i)_{i \in I} \), in parentheses because it is indexed. A family is not the same thing as its set of values \( \{ A_i : i \in I \} \): the family \( (A_i)_{i \in \{1, 2\}} \) with \( A_1 = A_2 = \{0\} \) has two indices and one value.
 
-In the same way, a **sequence** of real numbers \( (a_n)_{n \ge 1} \) is a function \( \nZ_{>0} \to \nR \), \( n \mapsto a_n \), with the value at \( n \) written \( a_n \). The sequence \( (1/n) \) is the function \( n \mapsto 1/n \), and its set of values is \( \{ 1/n : n \in \nZ_{>0} \} \). Sequences are the main object of Part I.
+In the same way, a **sequence** of real numbers \( (a_n)_{n \ge 1} \) is a function \( \nZ_{>0} \to \nR \), \( n \mapsto a_n \), with the value at \( n \) written \( a_n \). The sequence \( (1/n) \) is the function \( n \mapsto 1/n \), and its set of values is \( \{ 1/n : n \ge 1 \} \). Sequences are the main object of Part I.
 
 Finally, all functions from \( X \) to \( Y \) form a set, written
 \[
@@ -668,7 +668,7 @@ thm-composition-injective-surjective (proof): forall-E, ->E, exists-E, exists-I,
 thm-composition-injective-surjective (claim): closing lines of ->I and forall-I may be silent | ch05 (promised; STATUS): def-silent-steps, prose pointer
 exr-functions-b1 (solution): parity (1 is odd, 2n even, not both) | school fact as in Ch 1-2; ch07 (promised; STATUS row "every integer is even or odd, and not both")
 exr-functions-b1 (solution): x1^3 - x2^3 factorization; real cube roots exist; |x| algebra for x/(1+|x|) | school algebra (Part 0 convention); cube roots proved in Ch 11 (thm-nth-root with a sign change)
-exr-functions-b1 (solution): m, n >= 1 gives m + n >= 2 | school arithmetic of N; ch07 (promised; STATUS)
-exr-functions-b3 (solution): n >= 2 gives n - 1 in N; n + 1 >= 2 for n in N | ch07 (promised; STATUS row "n >= 2 => n - 1 in N")
+exr-functions-b1 (solution): 0 in N and 0 + k = k | school arithmetic of N; ch07 (promised; STATUS)
+exr-functions-b3 (solution): n >= 1 gives n - 1 in N; n + 1 >= 1 for n in N | ch07 (promised; STATUS row "n >= 1 => n - 1 in N")
 exr-functions-a1 (solution): negation laws | ch04 (promised; STATUS), prose pointer
 -->

@@ -513,6 +513,7 @@ def-left-right-inverse (claim): (first subsection) h and h' are functions N -> N
 def-left-right-inverse (claim): (first subsection) 1 is odd, so 2k(1) = 1 has no solution in N | school fact (Part 0 convention)
 def-left-right-inverse (claim): g o f = id_X iff g(f(x)) = x for all x | prp-function-equality (cited), def-composition (cited)
 exm-left-inverses-small-sets (example): a function has one value at each point | def-function (cited in the section opening)
+exm-left-inverses-small-sets (claim): (quick check after it) successor s(n) = n + 1: m >= 1 gives m - 1 in N; n + 1 >= 1 for n in N; -1 is not in N | ch07 (promised; STATUS row "n >= 1 => n - 1 in N")
 thm-left-inverse-iff-injective (claim): "X != empty" read as "X has an element" (as in Section 6.4, prp-empty-function (b)); the passage from not-empty to has-an-element is the classical quantifier law | def-empty-set (cited); ch04 (promised): prp-quantifier-negation (prose pointer "Chapter 4"); nothing uses the passage
 thm-left-inverse-iff-injective (proof): the range f(X) = { y in Y : f(x) = y for some x in X } | def-function (Section 6.4 preview of the range), recalled on the page
 thm-left-inverse-iff-injective (proof): exists-E naming x_0 and x_1 | ch04 (promised): def-rules-existential (prose pointer, Section 4.6)

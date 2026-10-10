@@ -5,7 +5,7 @@ QUOTED = {"g([0,3])": [-1, 3], "g^{-1}({0})": [0, 2], "g^{-1}([-1,0])": [0, 2]}
 # (a)
 N = range(0, 40)  # N = {0, 1, ...}; the image is Z_{>0}
 assert {m - n for m in N for n in N if m > n} == set(range(1, 40))
-assert all((k + 1) - 1 == k and k + 1 > 1 for k in range(1, 100))
+assert all(k - 0 == k and k > 0 for k in range(1, 100))
 # (c)
 g = lambda x: x * x - 2 * x
 xs = [F(k, 200) for k in range(0, 601)]

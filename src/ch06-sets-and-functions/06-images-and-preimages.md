@@ -455,7 +455,7 @@ Compute each set, and prove each equality by two inclusions or by a chain of equ
 :::
 
 ::: {.solution}
-(a) The image is \( \nZ_{>0} \). \( (\subseteq) \) If \( y = m - n \) with \( m > n \), then \( y \) is an integer and \( y > 0 \), so \( y \in \nZ_{>0} \). \( (\supseteq) \) Let \( k \in \nZ_{>0} \). The pair \( (k + 1, 1) \) lies in \( \nN \times \nN \), has \( k + 1 > 1 \), and \( d(k + 1, 1) = k \); so \( k \) is in the image. The preimage is \( d^{-1}(\{0\}) = \{ (m, n) \in \nN \times \nN : m = n \} = \{ (n, n) : n \in \nN \} \), since \( m - n = 0 \) exactly when \( m = n \).
+(a) The image is \( \nZ_{>0} \). \( (\subseteq) \) If \( y = m - n \) with \( m > n \), then \( y \) is an integer and \( y > 0 \), so \( y \in \nZ_{>0} \). \( (\supseteq) \) Let \( k \in \nZ_{>0} \). The pair \( (k, 0) \) lies in \( \nN \times \nN \), has \( k > 0 \), and \( d(k, 0) = k \); so \( k \) is in the image. The preimage is \( d^{-1}(\{0\}) = \{ (m, n) \in \nN \times \nN : m = n \} = \{ (n, n) : n \in \nN \} \), since \( m - n = 0 \) exactly when \( m = n \).
 
 (b) By the definition of the indicator (Section 6.4), \( \ind_{[0, 1]}(x) = 1 \) for \( x \in [0, 1] \) and \( 0 \) otherwise. So \( \ind_{[0, 1]}^{-1}(\{1\}) = [0, 1] \) and \( \ind_{[0, 1]}^{-1}(\{0\}) = \nR \setminus [0, 1] \), each a chain of one equivalence. The image \( \ind_{[0, 1]}([2, 3]) = \{0\} \): every point of \( [2, 3] \) lies outside \( [0, 1] \) and is sent to \( 0 \), and \( 0 \) is hit, for instance by \( 2 \).
 
@@ -737,7 +737,7 @@ prp-image-preimage (proof): f^{-1}(Y) = X | def-preimage (cited), as in exm-imag
 prp-image-preimage (claim): (two readings remark and example) a(x) = 3x - 2 and its inverse; interval arithmetic | exm-two-sided-inverses (Section 6.5); school facts
 prp-image-preimage (claim): (two readings remark) for a bijection the preimage f^{-1}(B) equals the image of B under the inverse function | exr-images-and-preimages-b3 (proved in its solution); no proof, idea or claim of the text rests on it
 exr-images-and-preimages-a1 (solution): numeric preimages under squaring | school facts; exm-images-of-square
-exr-images-and-preimages-b1 (solution): m > n in N gives m - n in N; (x - 1)^2 algebra; sqrt monotone | school facts (Part 0 convention)
+exr-images-and-preimages-b1 (solution): m > n in N gives m - n in Z_{>0}; (x - 1)^2 algebra; sqrt monotone | school facts (Part 0 convention)
 exr-images-and-preimages-b1 (solution): the indicator function | Section 6.4 (ind_A defined there)
 exr-images-and-preimages-c1 (solution): RAA for x_1 = x_2 | def-rule-raa (cited)
 exr-images-and-preimages-c3 (solution): marking-scheme reference to catalogue (N1) | ch05 (promised): exm-not-allowed-catalogue (prose pointer)

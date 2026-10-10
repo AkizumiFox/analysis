@@ -531,6 +531,6 @@ def-set-builder (claim): the working rules (W1)-(W6) follow from axioms | option
 exr-sets-and-subsets-a1 (solution): quantifier negation and negated implication | ch04 (promised; prose pointer)
 exr-sets-and-subsets-a1 (solution): integers with |n| >= 4 have n^2 >= 16 | school fact (Part 0 convention)
 exr-sets-and-subsets-b1 (solution): x^2 - 3x + 2 = (x - 1)(x - 2); a product of reals is zero only if a factor is | school algebra (Part 0 convention); proved in Chapter 11
-exr-sets-and-subsets-b3 (solution): 1/2 is not an integer; integers with |x| >= 2 have x^2 >= 4; 0 is not in N | school facts (Part 0 convention); N starts at 1 (NOTATION)
+exr-sets-and-subsets-b3 (solution): 1/2 is not an integer; integers with |x| >= 2 have x^2 >= 4; -1 is not in N | school facts (Part 0 convention); N = {0, 1, 2, ...} (NOTATION)
 exr-sets-and-subsets-c1 (solution): A+ exists by (W2) and (W3) | working rules stated in this section
 -->
