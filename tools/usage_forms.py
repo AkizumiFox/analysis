@@ -8,13 +8,18 @@ mathematical edit changes the normalized text as much as the raw text, so it sti
 
 The text is normalized as a whole, mathematics and labels included: hashing only needs the old and
 the new text to normalize to the same string, so there is no need to mask what the migration itself
-leaves alone.
+leaves alone. The price is that a few non-usage edits are invisible to the hash too, and a referee
+should know them: adding or removing any comma before "and"/"or" (not only a serial comma, so
+also a scope change such as "P or Q, and R"), an avoided form inside mathematics, a label or
+`\text{}` (e.g. renaming `non-negative` in a label), and renaming any trailing heading anchor
+`{#id}`, not only one the migration appended.
 
 RULES is copied from math-atlas tools/usage_apply.py (the RULES list) at math-atlas commit 1dcc264
 (last change to that file: 7b1c19b). The two lists must be kept in step: when a mechanical rule is
-added there, add it here too, before the migration is applied to this book. (A new rule changes the
-hash of every item that contains its avoided form, so add it while those verdicts can be re-stamped.) REVIEW_RULES are the review-type forms that the linear algebra book's
-migration also edited, and the serial comma.
+added there, add it here too, before the migration is applied to this book. (A new rule changes
+the hash of every item that contains its avoided form, so add it while those verdicts can be
+re-stamped.) REVIEW_RULES are the review-type forms that the linear algebra book's migration also
+edited, and the serial comma.
 """
 import re
 

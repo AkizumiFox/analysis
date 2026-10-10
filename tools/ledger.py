@@ -299,12 +299,15 @@ def main(argv=None) -> int:
                 print(f"{path}: no ledger, skipped")
                 continue
             ch = ledger.get("chapter") or int(re.search(r"\d+", path.stem).group(0))
-            cdir = Path(src) / ledger["dir"] if ledger.get("dir") else chapter_dir(src, ch)
-            if not cdir.is_dir():
+            found = ([Path(src) / ledger["dir"]] if ledger.get("dir")
+                     else sorted(Path(src).glob(f"ch{ch:02d}-*")))
+            cdir = found[0] if found else Path(src) / f"ch{ch:02d}-*"
+            if not cdir.is_dir():   # skip, not chapter_dir's exit: the other ledgers still run
                 print(f"{path}: chapter directory {cdir} not found, skipped")
                 continue
+            before = repr(ledger)
             n = rehash(ledger, extract_items(cdir))
-            if n:
+            if repr(ledger) != before:      # also an entry's own hash, with no verdict moved
                 save(path, ledger)
             print(f"{path}: {n} verdict(s) rehashed")
         return 0

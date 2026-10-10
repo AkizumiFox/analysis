@@ -258,6 +258,35 @@ class CliTests(unittest.TestCase):
                              "--by", "refA", cwd=tmp)
             self.assertNotEqual(r.returncode, 0)
 
+    def test_rehash(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            ch = Path(tmp) / "src" / "ch03-three"
+            ch.mkdir(parents=True)
+            text = SECTION.replace("Things exist.", "Non-empty things exist.")
+            (ch / "01-s.md").write_text(text)
+            self.assertEqual(self.run_cli("init", "3", cwd=tmp).returncode, 0)
+            r = self.run_cli("set", "3", "thm-thing", "--stage", "S5a", "--verdict", "correct",
+                             "--by", "refA", cwd=tmp)
+            self.assertEqual(r.returncode, 0, r.stderr)
+            # Make the ledger look as if written before normalization: the raw hash.
+            item = next(it for it in ledger.extract_items(ch) if it["key"] == "thm-thing")
+            self.assertNotEqual(item["raw_hash"], item["hash"])
+            path = Path(tmp) / "led" / "ch03.yaml"
+            path.write_text(path.read_text().replace(item["hash"], item["raw_hash"]))
+            self.assertEqual(self.run_cli("stale", "3", cwd=tmp).returncode, 1)
+            r = self.run_cli("rehash", cwd=tmp)               # every ledger
+            self.assertEqual(r.returncode, 0, r.stderr)
+            self.assertIn("1 verdict(s) rehashed", r.stdout)
+            self.assertNotIn(item["raw_hash"], path.read_text())
+            self.assertEqual(self.run_cli("stale", "3", cwd=tmp).returncode, 0)
+            r = self.run_cli("rehash", "3", cwd=tmp)          # one chapter; idempotent
+            self.assertIn("0 verdict(s) rehashed", r.stdout)
+            r = self.run_cli("rehash", "5", cwd=tmp)          # no such ledger
+            self.assertIn("no ledger, skipped", r.stdout)
+            (Path(tmp) / "led" / "ch07.yaml").write_text("chapter: 7\nitems: []\n")
+            r = self.run_cli("rehash", "7", cwd=tmp)          # ledger without a chapter dir
+            self.assertIn("not found, skipped", r.stdout)
+
 
 if __name__ == "__main__":
     unittest.main()
