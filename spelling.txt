@@ -225,3 +225,14 @@ intuitionistically
 alikes
 Gerhard
 voor
+leastness
+minimality
+factorizations
+congruences
+disjointness
+moduli
+divisibilities
+incomparability
+irreflexive
+maximality
+preorder

@@ -64,7 +64,13 @@ These are book-independent. Keep them.
 | `\ind_{A}` | indicator function 𝟏_A of a set A |
 | `\sup A`, `\inf A`, `\max`, `\min` | supremum and infimum (sup ∅ = −∞ and sup of an unbounded set = +∞ only from Part IV on, where it is announced) |
 | `\abs{x}` | absolute value of a number: defined by cases in Ch 1 (first in §01 C2, displayed in §07; school algebra), formally in Ch 11 (`def-absolute-value`); \( \abs{x - y} \) is the distance from \( x \) to \( y \) |
-| `d \mid n` | d divides n: n = dk for some integer k (first used Ch 2 §04, C1) |
+| `d \mid n`, `d \nmid n` | d divides n: n = dk for some integer k (first used Ch 2 §04, C1); formally defined in Ch 7 §02, `def-divides`, with \( k \in \nZ \) (so every integer divides 0); `\nmid` is its negation (Ch 7 §02). As a partial order on ℕ: Ch 7 §04, `prp-divides-partial-order` |
+| `\{1, \dots, n\}`, `\{0, \dots, n\}` | for \( n \in \nN \): \( \{ k \in \nN : 1 \le k \le n \} \) and \( \{ k \in \nN : k \le n \} \) (Ch 7 §01); \( \{1, \dots, 0\} = \emptyset \). No bracket notation \( [n] \): \( [a] \) is an equivalence class |
+| `\{x_1, \dots, x_n\}` | the set whose elements are the terms of the list \( x_1, \dots, x_n \), \( n \ge 1 \) (Ch 7 §03 `prp-finite-max`, §06 R4); passing from a finite set to such a list is Ch 8's definition of finite |
+| `\sum_{k=1}^{n} a_k`, `\prod_{k=1}^{n} a_k`; `\sum_{k=m}^{n} a_k`, `\prod_{k=m}^{n} a_k` | finite sum and product, defined by recursion for \( n \in \nN \) (Ch 7 §03, `def-sum-product`): the empty sum is \( 0 \), the empty product \( 1 \); from \( m \) to \( n \) for integers \( m \le n + 1 \), by shifting the index to start at \( 1 \) |
+| `n!` | factorial, \( n! \coloneqq \prod_{k=1}^{n} k \) for \( n \in \nN \), so \( 0! = 1 \) (Ch 7 §03, `def-sum-product`) |
+| `u^n` | power of a real \( u \) for \( n \in \nN \): \( u^0 \coloneqq 1 \), \( u^{n+1} \coloneqq u^n u \) (Ch 7 §03, `def-power`), so \( 0^0 = 1 \); the laws in `prp-power-laws`. Roots \( a^{1/n} \) are Ch 11 (row above), real exponents Ch 20 |
+| `\Delta_X` | the diagonal \( \{ (x, x) : x \in X \} \) of \( X \times X \) (local to Ch 7 §04 C1, defined where used) |
 | `-A \coloneqq \{ -a : a \in A \}` | reflection of a set of numbers (first defined Ch 6 §06, as an image: `exm-sets-of-numbers-as-images`; used from Ch 11); \( \inf A = -\sup(-A) \) |
 | `cA \coloneqq \{ ca : a \in A \}` | scaling of a set of numbers by \( c \in \nR \) (first defined Ch 6 §06, as an image: `exm-sets-of-numbers-as-images`; used from Ch 11) |
 | `A + B \coloneqq \{ a + b : a \in A, \ b \in B \}` | sum of two sets of numbers (first defined Ch 6 §06, as the image of \( A \times B \): `exm-sets-of-numbers-as-images`; used from Ch 11); later also for subsets of a vector space |
@@ -170,8 +176,12 @@ second meaning is recorded here, with the reason the two uses never meet.
 
 | Type | Meaning |
 |---|---|
-| | |
-| | |
+| `x \mathrel{R} y` | \( (x, y) \in R \) for a general relation \( R \) on a set \( X \) (relations: Ch 6 §03, `def-relation`); reflexive on \( X \), symmetric, antisymmetric, transitive: Ch 7 §04, `def-relation-properties`. Local relation letters (e.g. a plain \( R \) in a non-example, \( L \) for the pointwise order of Ch 7 §04 B1(c)) are defined where used |
+| `\sim`; `[a]`, `[a]_\sim`; `X/{\sim}`; `q` | an equivalence relation, clauses (Eq1)–(Eq3) (Ch 7 §05, `def-equivalence-relation`); the class of \( a \), with the relation named when needed (`def-equivalence-class`); the quotient set and the quotient map \( q(a) \coloneqq [a] \) (`def-quotient-set`). Reserved for equivalence relations: Ch 8 writes equinumerosity as \( \card{A} = \card{B} \), never with \( \sim \) |
+| `\sP`; `\sim_{\sP}`, `\sim_f` | 𝒫, a partition of \( X \), clauses (P1)–(P3) (Ch 7 §05, `def-partition`; not the power set, which is `\powerset{X}`); the equivalence relation of a partition (`thm-partition-equivalence`) and the fibers relation \( f(x) = f(y) \) of a function (`exm-fibres-of-function`), both local to Ch 7 §05 |
+| `a \equiv b \pmod{n}`; `\nZ/n`; `[a]_n` | congruence modulo \( n \in \nZ_{>0} \): \( n \mid a - b \) (Ch 7 §05, `def-congruence`); the integers modulo \( n \), the quotient set (`prp-integers-mod-n`); a residue class with its modulus named, when two moduli are in play (Ch 7 §05 B3). The congruence always carries its modulus, so it never meets \( \varphi \equiv \psi \) of Ch 3 |
+| `\preceq`, `\prec`; `\succeq`, `\succ` | a general partial order, clauses (PO1)–(PO3) (Ch 7 §06, `def-partial-order`), and its strict part \( x \prec y \iff x \preceq y \wedge x \ne y \); the reverse order \( x \succeq y \iff y \preceq x \) and its strict part. \( \le \) keeps its meaning on numbers |
+| `\sup A`, `\inf A` in \( (X, \preceq) \) | least upper bound and greatest lower bound in a partially ordered set, clauses (S1)–(S2) (Ch 7 §06, `def-order-supremum`); Ch 11's `def-supremum` is the case \( (\nR, \le) \) |
 
 ## Retired notation
 
