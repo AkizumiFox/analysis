@@ -121,7 +121,7 @@ A **digit sequence** is a function \( k \mapsto d_k \) from \( \nZ_{>0} \) to \(
 \[
 t_n \coloneqq \sum_{k=1}^{n} d_k 10^{-k}
 \]
-(@def-sum-product). The digit sequence is a **decimal expansion** of \( x \in [0, 1] \) if **for every** \( n \ge 1 \),
+(@def-sum-product), where \( 10^{-k} \coloneqq (1/10)^k \) (@def-power). The digit sequence is a **decimal expansion** of \( x \in [0, 1] \) if **for every** \( n \ge 1 \),
 \[
 t_n \le x \le t_n + 10^{-n} .
 \]
@@ -137,9 +137,9 @@ In words: \( t_n \) is the number written with the first \( n \) digits, \( 0.d_
 
 **A non-example by minimal change.** Keep the sequence \( 5, 0, 0, \dots \) and move \( x \) from \( \frac12 \) to \( 0.51 \). The inequalities still hold for \( n = 1 \) (\( 0.5 \le 0.51 \le 0.6 \)) and for \( n = 2 \) (\( 0.50 \le 0.51 \le 0.51 \)), and they fail at \( n = 3 \): \( 0.51 > 0.500 + 0.001 \). So \( 5, 0, 0, \dots \) is not an expansion of \( 0.51 \); the clause "for every \( n \ge 1 \)" is what fails.
 
-**Why this definition.** Both inequalities are non-strict. With a strict right inequality, \( x < t_n + 10^{-n} \), the all-nine sequence would be an expansion of no number at all: it would need \( x < 1 \) together with \( 1 - 10^{-n} \le x \) for every \( n \), and no real number satisfies both. The non-strict form is what makes \( 0.999\ldots = 1 \) true, and true **by the definition**: the inequalities for \( x = 1 \) are checked in Example 3. Example 2 shows that the price is two expansions for some numbers.
+**Why this definition.** Both inequalities are non-strict. With a strict right inequality, \( x < t_n + 10^{-n} \), the all-nine sequence would be an expansion of no number at all: it would need \( x < 1 \) together with \( 1 - 10^{-n} \le x \) for every \( n \), and no real number satisfies both, by the Archimedean property (a school fact; Chapter 11 proves it). The non-strict form is what makes \( 0.999\ldots = 1 \) true, and true **by the definition**: the inequalities for \( x = 1 \) are checked in Example 3, and no other number satisfies them, since \( 1 - 10^{-n} \le x \le 1 \) for every \( n \) forces \( x = 1 \), again by the Archimedean property (this is the uniqueness half of (D2) below). Example 2 shows that the price is two expansions for some numbers.
 
-What this book does not prove are the facts that make expansions behave as school says. We state them once and use them in this section, always by name.
+What this book does not prove are the facts that make expansions behave as school says. We state them once and use them in this section and the next, always by name.
 
 ::: {.enumerate options="label=(D\arabic*)"}
 1. Every \( x \in [0, 1) \) has a decimal expansion that does **not** end in all \( 9 \)s.
@@ -149,7 +149,7 @@ What this book does not prove are the facts that make expansions behave as schoo
 
 Here a digit sequence **ends in all \( 9 \)s** if there is \( N \ge 1 \) with \( d_k = 9 \) for every \( k \ge N \), and likewise for \( 0 \)s. By the uniqueness in (D2), we may write \( x = 0.d_1 d_2 d_3 \ldots \) for "\( x \) is the number of which \( d_1, d_2, d_3, \dots \) is an expansion". So \( 0.4999\ldots = 0.5000\ldots = \frac12 \), as in (D3).
 
-None of (D1)–(D3) follows from what Part 0 has. The **existence** half of (D2), that some \( x \) satisfies all the inequalities at once, is where the completeness of \( \nR \) hides, and Chapter 11 takes completeness as an axiom. The **uniqueness** half of (D2) and the "not ending in all \( 9 \)s" of (D1) rest on the Archimedean property: two numbers \( x, x' \) with \( \abs{x - x'} \le 10^{-n} \) for every \( n \) must be equal, which Chapter 11 also proves. Until then we use them as school facts, and each use names the fact it uses.
+Neither (D1) nor (D2) follows from what Part 0 has. (D3) does, by a finite computation at the first place where the two sequences differ (@thm-well-ordering, @prp-geometric-sum); we state it with the others to quote it by name. The **existence** half of (D2), that some \( x \) satisfies all the inequalities at once, is where the completeness of \( \nR \) hides, and Chapter 11 takes completeness as an axiom. The **uniqueness** half of (D2) and the "not ending in all \( 9 \)s" of (D1) rest on the Archimedean property: two numbers \( x, x' \) with \( \abs{x - x'} \le 10^{-n} \) for every \( n \) must be equal, which Chapter 11 also proves. Until then we use them as school facts, and each use names the fact it uses.
 
 One consequence is used below. *A digit sequence with no digit \( 0 \) and no digit \( 9 \) is the **only** expansion of its number.* Indeed, by (D3) a second expansion of the same number would force one of the two to end in all \( 9 \)s and the other in all \( 0 \)s; the given sequence ends in neither, since it has no \( 9 \)s and no \( 0 \)s at all.
 
@@ -181,7 +181,7 @@ e_n \coloneqq
 \]
 Then \( e_n \ne d_{n,n} \) for every \( n \ge 1 \). By (D2), there is \( y \in [0, 1] \) of which \( (e_k)_{k \ge 1} \) is an expansion. Its first truncation is \( t_1 = e_1/10 \in \{0.4, 0.5\} \), so \( 0.4 \le t_1 \le y \le t_1 + 0.1 \le 0.6 \), and in particular \( y \in [0, 1) \).
 
-Let \( n \ge 1 \), and suppose \( y = x_n \). Then \( (e_k) \) and \( (d_{n,k}) \) are both expansions of \( y \), and they are different, since they differ in place \( n \). By (D3), one of them ends in all \( 9 \)s. But \( (e_k) \) has no digit \( 9 \), and \( (d_{n,k}) \) does not end in all \( 9 \)s, by its definition, a contradiction. So \( y \ne x_n \) for every \( n \ge 1 \), and \( y \) is not a value of \( f \). Since \( f \) was arbitrary, no function \( \nN \to [0, 1) \) is surjective; and \( [0, 1) \) is non-empty, since it contains \( 0 \). By @def-countable, \( [0, 1) \) is not countable.
+Let \( n \ge 1 \), and suppose \( y = x_n \). Then \( (e_k) \) and \( (d_{n,k}) \) are both expansions of \( y \), and they are different, since they differ in place \( n \). But \( (e_k) \) has no digit \( 0 \) and no digit \( 9 \), so by the consequence of (D3) stated above it is the **only** expansion of \( y \), a contradiction. So \( y \ne x_n \) for every \( n \ge 1 \), and \( y \) is not a value of \( f \). Since \( f \) was arbitrary, no function \( \nN \to [0, 1) \) is surjective; and \( [0, 1) \) is non-empty, since it contains \( 0 \). By @def-countable, \( [0, 1) \) is not countable.
 
 Finally, if \( \nR \) were countable, its subset \( [0, 1) \) would be countable by @prp-countable-subset. So \( \nR \) is uncountable.
 :::
@@ -201,11 +201,11 @@ The set \( \nR \setminus \mathrm{Alg} \) of transcendental numbers is uncountabl
 :::
 
 ::: {.proof}
-Suppose \( \nR \setminus \mathrm{Alg} \) is countable. Since \( \nR = \mathrm{Alg} \cup (\nR \setminus \mathrm{Alg}) \) and \( \mathrm{Alg} \) is countable by @thm-algebraic-countable, \( \nR \) is countable by @prp-union-two-countable, contradicting @thm-reals-uncountable-decimal. So \( \nR \setminus \mathrm{Alg} \) is uncountable, and in particular non-empty, since \( \emptyset \) is countable.
+Suppose \( \nR \setminus \mathrm{Alg} \) is countable. Since \( \nR = \mathrm{Alg} \cup (\nR \setminus \mathrm{Alg}) \) and \( \mathrm{Alg} \) is countable by @thm-algebraic-countable, \( \nR \) is countable by @prp-union-two-countable, contradicting @thm-reals-uncountable-decimal. So \( \nR \setminus \mathrm{Alg} \) is uncountable. In particular \( \nR \setminus \mathrm{Alg} \ne \emptyset \), since \( \emptyset \) is countable (@def-countable). So not every \( x \) satisfies \( x \notin \nR \setminus \mathrm{Alg} \): otherwise \( \nR \setminus \mathrm{Alg} \) would be an empty set (@def-empty-set), hence equal to \( \emptyset \) (@prp-empty-set-unique). By the classical law @prp-quantifier-negation (a) and \( \rulename{\neg\neg E} \), some \( x \) lies in \( \nR \setminus \mathrm{Alg} \); this \( x \) is a real number that is not algebraic. This last passage, from "not empty" to "has an element", is a classical step (Section 5.7).
 :::
 
 ::: {.remark}
-The proof names no transcendental number: it shows that the set of them is too large to be countable, hence not empty. Compare the existence proofs of Section 5.7, which also name no witness. Proving that a particular number, such as \( \pi \), is transcendental is a different and much harder matter.
+The proof names no transcendental number: it shows that the set of them is too large to be countable, hence not empty, and its one classical step is the last one, from "not empty" to "has an element". Compare the classical proof of @thm-irrational-power-rational in Section 5.7, which also names no witness (unlike @prp-log2-9-irrational, which does). Proving that a particular number, such as \( \pi \), is transcendental is a different and much harder matter.
 :::
 
 ## Exercises
@@ -256,7 +256,7 @@ Prove that the set of **infinite** subsets of \( \nN \) is uncountable.
 :::
 
 ::: {.solution}
-Let \( \sF \) be the set of finite subsets of \( \nN \) and \( \sI \) the set of infinite ones, both subsets of \( \powerset{\nN} \) defined by specification. Every subset of \( \nN \) is finite or infinite (@def-infinite), so \( \powerset{\nN} = \sF \cup \sI \). The set \( \sF \) is countable by @exr-countable-sets-c1. If \( \sI \) were countable, \( \powerset{\nN} \) would be countable by @prp-union-two-countable, contradicting @cor-powerset-naturals-uncountable. So \( \sI \) is uncountable.
+Let \( \sF \) be the set of finite subsets of \( \nN \) and \( \sI \) the set of infinite ones, both subsets of \( \powerset{\nN} \) defined by specification. By excluded middle (@prp-excluded-middle), every subset of \( \nN \) is finite or not finite, that is, finite or infinite (@def-infinite), so \( \powerset{\nN} = \sF \cup \sI \). The set \( \sF \) is countable by @exr-countable-sets-c1. If \( \sI \) were countable, \( \powerset{\nN} \) would be countable by @prp-union-two-countable, contradicting @cor-powerset-naturals-uncountable. So \( \sI \) is uncountable.
 :::
 
 ::: {#exr-diagonal-arguments-b3}
@@ -266,13 +266,13 @@ For each of \( x = \frac13 \), \( \frac12 \), \( 1 \), find **all** decimal expa
 :::
 
 ::: {.solution}
-We use @prp-geometric-sum in the form \( \sum_{k=1}^{n} 10^{-k} = \frac19 (1 - 10^{-n}) \).
+We use @prp-geometric-sum with \( r = \frac{1}{10} \), after taking the constant factor \( \frac{1}{10} \) out of the sum: \( \sum_{k=1}^{n} 10^{-k} = \frac{1}{10} \sum_{k=1}^{n} (\frac{1}{10})^{k-1} = \frac{1}{10} \cdot \frac{1 - 10^{-n}}{9/10} = \frac19 (1 - 10^{-n}) \).
 
 \( x = \frac13 \). The all-three sequence has \( t_n = \frac39 (1 - 10^{-n}) = \frac13 - \frac13 10^{-n} \), so \( t_n \le \frac13 \le t_n + 10^{-n} \). It is an expansion, and it does not end in all \( 9 \)s, as (D1) promises. It ends in neither \( 9 \)s nor \( 0 \)s, so by (D3) no other expansion of \( \frac13 \) exists. Answer: \( 0.333\ldots \) only.
 
-\( x = \frac12 \). Example 2 after @def-decimal-expansion checks that \( 0.5000\ldots \) and \( 0.4999\ldots \) are expansions. There are no others: if three different expansions existed, two of them would both end in all \( 9 \)s or both not, and by (D3) two different expansions of one number are one of each kind. Answer: exactly these two, which illustrate (D3); the first is the one (D1) promises.
+\( x = \frac12 \). Example 2 after @def-decimal-expansion checks that \( 0.5000\ldots \) and \( 0.4999\ldots \) are expansions. There are no others: if three different expansions existed, two of them would both end in all \( 9 \)s or both not; but by (D3), of two different expansions of one number, one ends in all \( 9 \)s and the other in all \( 0 \)s, and a sequence ending in all \( 0 \)s does not end in all \( 9 \)s (from some place on, its digits would be both \( 0 \) and \( 9 \)). Answer: exactly these two, which illustrate (D3); the first is the one (D1) promises.
 
-\( x = 1 \). The all-nine sequence is an expansion (Example 3). Conversely, let \( (d_k) \) be an expansion of \( 1 \), and suppose \( d_m \le 8 \) for some \( m \). Since every digit is at most \( 9 \), \( t_m \le \sum_{k=1}^{m} 9 \cdot 10^{-k} - 10^{-m} = 1 - 2 \cdot 10^{-m} \), so \( t_m + 10^{-m} \le 1 - 10^{-m} < 1 \), against the definition. So every digit is \( 9 \). Answer: \( 0.999\ldots \) only. This illustrates the existence and uniqueness of (D2) at the number \( 1 \), and why (D1) is stated for \( [0, 1) \) only: the one expansion of \( 1 \) ends in all \( 9 \)s.
+\( x = 1 \). The all-nine sequence is an expansion (Example 3). Conversely, let \( (d_k) \) be an expansion of \( 1 \), and suppose \( d_m \le 8 \) for some \( m \). Since every digit is at most \( 9 \), \( t_m \le \sum_{k=1}^{m} 9 \cdot 10^{-k} - 10^{-m} = 1 - 2 \cdot 10^{-m} \), so \( t_m + 10^{-m} \le 1 - 10^{-m} < 1 \), against the definition. So every digit is \( 9 \). Answer: \( 0.999\ldots \) only. The all-nine sequence is an expansion of \( 1 \), an instance of the existence half of (D2). Here (D3) has no second expansion to compare. The case also shows why (D1) is stated for \( [0, 1) \) only: the one expansion of \( 1 \) ends in all \( 9 \)s.
 :::
 
 ### C. Going deeper
@@ -346,18 +346,28 @@ thm-cantor (claim): (ii), (iii) "strictly bigger" as a relation | Section 8.5 (p
 cor-powerset-naturals-uncountable (claim): (after it) S -> ind_S is a bijection P(N) -> {0, 1}^N with inverse b -> {n : b(n) = 1} | Ch 6 Section 6.4 (the correspondence after exm-function-set-small); thm-bijection-iff-inverse (cited)
 def-decimal-expansion (example): t_n = 1/2 - 10^(-n) for 0.4999..., t_n = 1 - 10^(-n) for 0.999...; the non-example 0.51 fails first at n = 3 | prp-geometric-sum (cited); verify/ch08/def-decimal-expansion.py
 def-decimal-expansion (claim): (why this definition) no x has 1 - 10^(-n) <= x < 1 for every n | Archimedean property, school fact; Ch 11
-def-decimal-expansion (claim): (D1)-(D3) | school facts (D1)-(D3), stated in this section and not proved; Ch 11 (prose pointer: completeness and the Archimedean property)
+def-decimal-expansion (claim): (why this definition) 1 is the only x with 1 - 10^(-n) <= x <= 1 for every n | Archimedean property, school fact; Ch 11 (the uniqueness half of (D2))
+def-decimal-expansion (claim): 10^(-k) := (1/10)^k | def-power (cited)
+def-decimal-expansion (example): (Examples 2, 3) a constant factor comes out of a finite sum; splitting off the first term | induction on n via def-sum-product (Ch 7); R arithmetic
+exr-diagonal-arguments-b3 (solution): a constant factor comes out of a finite sum | induction on n via def-sum-product (Ch 7); R arithmetic
+def-decimal-expansion (claim): (D1)-(D3) | school facts (D1)-(D3), stated in this section and not proved; Ch 11 (prose pointer: completeness and the Archimedean property, for (D1)-(D2))
+def-decimal-expansion (claim): (D3) follows from Part 0 | thm-well-ordering, prp-geometric-sum (cited), def-sum-product (inline; the proof is not written out, (D3) is used as stated)
 def-decimal-expansion (claim): a digit sequence with no 0 and no 9 is the only expansion of its number | school fact (D3), stated in this section
 thm-reals-uncountable-decimal (proof): the expansion of x_n not ending in 9s exists and is unique | school facts (D1), (D3), stated in this section
 thm-reals-uncountable-decimal (proof): some y has expansion (e_k), and y lies in [0.4, 0.6] | school fact (D2), stated in this section; the definition at n = 1
-thm-reals-uncountable-decimal (proof): y = x_n is impossible | school fact (D3), stated in this section
+thm-reals-uncountable-decimal (proof): y = x_n is impossible | the consequence of (D3) stated in this section (a digit sequence with no 0 and no 9 is the only expansion of its number)
 thm-reals-uncountable-decimal (claim): the naive rule gives 0.4999... = 1/2; the 4/5 rule gives 0.4555... = 41/90 | def-decimal-expansion Example 2; school fact (D2); verify/ch08/thm-reals-uncountable-decimal.py
 thm-reals-uncountable-decimal (claim): Chapter 11 reproves it without decimals | ch11 (prose pointer; thm-reals-uncountable exists)
 cor-transcendental-exist (proof): the empty set is countable | def-countable (Section 8.2)
+cor-transcendental-exist (proof): a set that is not empty has an element | def-empty-set, prp-empty-set-unique (Ch 6); prp-quantifier-negation (a) and not-not-E (classical step, flagged)
+cor-transcendental-exist (claim): (remark) Section 5.7 comparison | thm-irrational-power-rational, prp-log2-9-irrational (optional; pointer in a remark only)
 cor-transcendental-exist (claim): (remark) pi is transcendental | not proved and not used (a remark only)
 exr-diagonal-arguments-a1 (solution): D = {2} | verify/ch08/exr-diagonal-arguments-a1.py
 exr-diagonal-arguments-b2 (solution): the finite subsets of N form a countable set | exr-countable-sets-c1 (cited; an exercise may cite an earlier one)
+exr-diagonal-arguments-b2 (solution): every subset of N is finite or infinite | prp-excluded-middle (cited), def-infinite
 exr-diagonal-arguments-b3 (solution): t_n for 0.333...; the bound t_m <= 1 - 2 * 10^(-m) | prp-geometric-sum (cited); school facts (D1)-(D3); verify/ch08/exr-diagonal-arguments-b3.py
+exr-diagonal-arguments-b3 (solution): termwise comparison of finite sums (d_k <= 9 for k < m, d_m <= 9 - 1) | induction on n via def-sum-product (Ch 7) and the order axioms for +
+exr-diagonal-arguments-b3 (solution): no sequence ends in both all 0s and all 9s | 0 != 9, at a place beyond both thresholds
 exr-diagonal-arguments-c2 (solution): m = 2q + r uniquely with q in N, r in {0, 1} | thm-division-algorithm (cited), quotient in N as in prp-union-two-countable
 exr-diagonal-arguments-c2 (solution): pi_b o pi_b = id; pi(2n) differs from f_n(2n) | inline; verify/ch08/exr-diagonal-arguments-c2.py
 -->

@@ -1,6 +1,6 @@
 # Infinite Sets
 
-Section 8.5 compared sizes with injections. Here we ask where \( \nN \) sits in that comparison. Every infinite set we have met contains a copy of \( \nN \), and it is tempting to say that this must always happen: start from an infinite set, and keep picking new elements. This section makes the picking exact. It turns out to be a use of @ax-choice in a stronger form than in Section 8.3, and it gives two results: \( \nN \) is the smallest infinite size, and a set is infinite exactly when it is the same size as a proper part of itself.
+Section 8.5 compared sizes with injections. Here we ask where \( \nN \) sits in that comparison. Every infinite set we have met contains a copy of \( \nN \), and it is tempting to say that this must always happen by picking new elements one at a time; this section makes that picking exact. It turns out to need @ax-choice again, this time applied to a family with one set for each non-empty subset of the given set, and it gives two results: \( \nN \) is the smallest infinite size, and a set is infinite exactly when it is the same size as a proper part of itself.
 
 ## Every infinite set contains a copy of the natural numbers
 
@@ -17,7 +17,7 @@ The natural attempt picks \( x_0 \in X \), then \( x_1 \in X \setminus \{x_0\} \
 :::
 
 ::: {.proof}
-Let \( X \) be infinite. The family \( (S)_{S \in \powerset{X} \setminus \{\emptyset\}} \), indexed by the non-empty subsets of \( X \) with each index as its own member, consists of non-empty sets, and its union is contained in \( X \). **By @ax-choice** there is a function \( c \colon \powerset{X} \setminus \{\emptyset\} \to X \) with
+Let \( X \) be infinite. The family \( (S)_{S \in \powerset{X} \setminus \{\emptyset\}} \), indexed by the non-empty subsets of \( X \) with each index as its own member, consists of non-empty sets, and its union is \( X \): every index is a subset of \( X \), and each \( x \in X \) lies in the index \( \{x\} \). **By @ax-choice** there is a function \( c \colon \powerset{X} \setminus \{\emptyset\} \to X \) with
 \[
 c(S) \in S \quad \text{for every non-empty } S \subseteq X .
 \]
@@ -33,14 +33,18 @@ x_n \coloneqq c(X \setminus F_n) \in X \setminus F_n , \qquad\text{and then}\qqu
 \]
 Hence \( F_n \subseteq F_{n+1} \) for every \( n \), and by induction on \( k \), \( F_m \subseteq F_{m+k} \) for all \( m, k \in \nN \).
 
-Now let \( m, n \in \nN \) with \( m < n \). Then \( x_m \in F_{m+1} \subseteq F_n \), because \( m + 1 \le n \) (@lem-naturals-arithmetic (e)); and \( x_n \notin F_n \). So \( x_m \ne x_n \). Hence \( n \mapsto x_n \) is an injection \( \nN \to X \). Its image \( \{ x_n : n \in \nN \} \subseteq X \) is equinumerous with \( \nN \), since \( n \mapsto x_n \) is a bijection from \( \nN \) onto it. This proves the theorem.
+Now let \( m, n \in \nN \) with \( m < n \). Then \( x_m \in F_{m+1} \subseteq F_n \), because \( m + 1 \le n \) (@lem-naturals-arithmetic (e)), so \( k \coloneqq n - (m + 1) \in \nN \) (@lem-naturals-arithmetic (d)) and \( F_{m+1} \subseteq F_{(m+1)+k} = F_n \); and \( x_n \notin F_n \). So \( x_m \ne x_n \). Hence \( n \mapsto x_n \) is an injection \( \nN \to X \). Its image \( \{ x_n : n \in \nN \} \subseteq X \) is equinumerous with \( \nN \), since \( n \mapsto x_n \) is a bijection from \( \nN \) onto it. This proves the theorem.
 :::
 
 The proof shows where the axiom enters and why one \( \rulename{\exists E} \) per step is not enough: \( \rulename{\exists E} \) names one element for one set, while the recursion needs \( g \) as a single function defined on every stage at once. Each \( F_n \) is then determined by \( c \); the only arbitrary thing is \( c \) itself.
 
+**A non-example by a minimal change.** Run the same construction on the finite set \( X = \{a, b\} \), with \( a \ne b \). The choice function \( c \) and the recursion still make sense, since \( g \) is defined on every \( F \subseteq X \). But \( F_1 = \{ c(X) \} \) has one element, \( F_2 \) adds the other, so \( F_2 = X \), and from then on \( g \) leaves \( F_n \) unchanged. So \( x_2 = c(X \setminus F_2) = c(\emptyset) \) is not defined. The step that fails is "\( F_n \) is finite and \( X \) is not, so \( F_n \ne X \)", exactly where the hypothesis that \( X \) is infinite is used.
+
 ::: {.remark}
-Compare Chapter 11's proof that the real numbers cannot be listed. There, a given list is used to build nested closed intervals, and each interval is obtained from the previous one by an explicit rule (keep an outer third that misses the next point of the list), so no choice principle is involved. Here \( X \) is an arbitrary infinite set, and there is no rule available for picking an element of an arbitrary non-empty subset of it; the choice function **is** the rule. For a particular \( X \) a rule may exist: for \( X \subseteq \nN \), "the least element" is one (@thm-well-ordering), and then the proof needs no axiom. That the theorem cannot be proved in general from the other rules of set formation alone is a result of set theory; we state it without proof, and nothing depends on it.
+Compare Chapter 11's proof that the real numbers cannot be listed. There, a given list is used to build nested closed intervals, and each interval is obtained from the previous one by an explicit rule (keep an outer third that misses the next point of the list), so no choice principle is involved. Here \( X \) is an arbitrary infinite set, and there is no rule available for picking an element of an arbitrary non-empty subset of it; the choice function **is** the rule.
 :::
+
+For a particular \( X \) a rule may exist: for \( X \subseteq \nN \), "the least element" is one (@thm-well-ordering), and then the proof needs no axiom. That the theorem cannot be proved in general from the other rules of set formation alone is a result of set theory; we state it without proof, and nothing depends on it.
 
 ## Consequences: the smallest infinite size
 
@@ -48,10 +52,10 @@ The theorem says \( \card{\nN} \le \card{X} \) for every infinite \( X \) (@def-
 
 - **\( \nN \) is the smallest infinite size.** If \( X \) is infinite and \( \card{X} \le \card{\nN} \), then \( \card{X} = \card{\nN} \), by @thm-schroder-bernstein and the theorem. So no infinite set is strictly smaller than \( \nN \).
 - **Countable sets are exactly the sets of size at most \( \card{\nN} \)**, by @thm-countable-characterizations, (i) \( \iff \) (ii). Combining with the first point: a countable set is finite or equinumerous with \( \nN \), which @thm-countable-characterizations (iii) already said.
-- **An uncountable set is strictly bigger than \( \nN \).** If \( X \) is uncountable, then \( X \) is infinite (a finite set is countable, by @thm-countable-characterizations), so \( \card{\nN} \le \card{X} \); and \( \card{\nN} = \card{X} \) would make \( X \) countable. So \( \card{\nN} < \card{X} \). For example \( \card{\nN} < \card{\nR} \).
+- **An uncountable set is strictly bigger than \( \nN \).** If \( X \) is uncountable, then \( X \) is infinite (a finite set is countable, by @thm-countable-characterizations), so \( \card{\nN} \le \card{X} \); and \( \card{\nN} = \card{X} \) would make \( X \) countable. So \( \card{\nN} < \card{X} \). For example \( \card{\nN} < \card{\nR} \), since \( \nR \) is uncountable (@thm-reals-uncountable-decimal).
 
 ::: {.warning}
-"Infinite" and "uncountable" are different words. \( \nQ \) is infinite (it contains \( \nN \), which is infinite by @exm-hilbert-hotel, and a subset of a finite set is finite, by @prp-subset-finite) and countable (@thm-integers-rationals-countable). Likewise "\( X \) contains a copy of \( \nN \)" is not "\( X \) is equinumerous with \( \nN \)": \( \nR \) contains \( \nN \), and \( \card{\nN} < \card{\nR} \).
+"Infinite" and "uncountable" are different words. \( \nQ \) is infinite (it contains \( \nN \), which is infinite by @exm-hilbert-hotel, and a subset of a finite set is finite, by @prp-subset-finite) and countable (@thm-integers-rationals-countable). Likewise "\( X \) contains a copy of \( \nN \)" is not "\( X \) is equinumerous with \( \nN \)": \( \nR \) contains \( \nN \), and \( \card{\nN} < \card{\nR} \) (as above).
 :::
 
 ::: {.check}
@@ -73,7 +77,7 @@ A set \( X \) is infinite if and only if \( \card{X} = \card{Y} \) for some prop
 :::
 
 ::: {.idea}
-One direction is already done: Section 8.1 showed that finite sets have no proper subset of their own size. For the other, take the copy \( x_0, x_1, x_2, \dots \) of \( \nN \) inside \( X \) and move every guest one room up, \( x_n \mapsto x_{n+1} \), exactly as in @exm-hilbert-hotel. Room \( x_0 \) is vacated, and every point outside the copy stays where it is.
+One direction is already done: Section 8.1 showed that finite sets have no proper subset of their own size. For the other, take the copy \( x_0, x_1, x_2, \dots \) of \( \nN \) inside \( X \) and move every guest one room up, \( x_n \mapsto x_{n+1} \), as \( n \mapsto n + 1 \) does in the Quick check after @exm-hilbert-hotel. Room \( x_0 \) is vacated, and every point outside the copy stays where it is.
 :::
 
 ::: {.proof}
@@ -163,7 +167,7 @@ Let \( X \) be infinite, and let \( C \) be countable with \( C \cap X = \emptys
 :::
 
 ::: {.solution}
-By @thm-infinite-countable-subset (using @ax-choice) there is a countably infinite \( S \subseteq X \). The set \( S \cup C \) is countable by @prp-union-two-countable, and infinite, because it contains the infinite set \( S \) (a subset of a finite set is finite, @prp-subset-finite). By @thm-countable-characterizations (iii), \( S \cup C \) is countably infinite. So \( \card{S \cup C} = \card{\nN} = \card{S} \), and @prp-equinumerous-properties gives a bijection \( \psi \colon S \cup C \to S \).
+By @thm-infinite-countable-subset (using @ax-choice) there is a countably infinite \( S \subseteq X \). The set \( S \cup C \) is countable by @prp-union-two-countable, and infinite, because it contains \( S \) (a subset of a finite set is finite, @prp-subset-finite), which is infinite: if \( \varphi \colon \{1, \dots, k\} \to S \) were a bijection and \( \beta \colon \nN \to S \) is a bijection given by the theorem, then \( \beta^{-1} \circ \varphi \) would be a bijection \( \{1, \dots, k\} \to \nN \) (@prp-equinumerous-properties, @thm-composition-injective-surjective), against @exm-hilbert-hotel. By @thm-countable-characterizations (iii), \( S \cup C \) is countably infinite. So \( \card{S \cup C} = \card{\nN} = \card{S} \), and @prp-equinumerous-properties gives a bijection \( \psi \colon S \cup C \to S \).
 
 Now \( X \cup C \) is the union of the disjoint sets \( X \setminus S \) and \( S \cup C \) (disjoint because \( C \cap X = \emptyset \)), and \( X \) is the union of the disjoint sets \( X \setminus S \) and \( S \). Define \( h \colon X \cup C \to X \) by \( h(x) \coloneqq x \) for \( x \in X \setminus S \) and \( h(x) \coloneqq \psi(x) \) for \( x \in S \cup C \). It is a bijection on each piece, onto the corresponding piece, so it is a bijection, and \( \card{X \cup C} = \card{X} \).
 :::
@@ -179,7 +183,7 @@ Give an example of an infinite set \( X \) and a proper subset \( Y \subsetneq X
 
 *Example:* \( X = \nN \), \( Y = 2\nN \). (1), (2): \( 2\nN \subseteq \nN \) and \( 1 \notin 2\nN \). (3): \( n \mapsto 2n \) is a bijection \( \nN \to 2\nN \) (@exm-hilbert-hotel). (4): \( \nN \) is infinite (@exm-hilbert-hotel). (5): \( X \setminus Y \) is the set of odd numbers (every \( m \in \nN \) is even or odd, not both, by @thm-division-algorithm), and \( n \mapsto 2n + 1 \) is a bijection from \( \nN \) onto it; if it were finite, \( \nN \) would be finite too (compose with a bijection from \( \{1, \dots, k\} \), @thm-composition-injective-surjective), which it is not.
 
-Another correct answer: \( X = \nR \), \( Y = (0, \infty) \), using @exm-reals-open-interval for (3); \( X \setminus Y = (-\infty, 0] \) contains \( \{ -n : n \in \nN \} \).
+Another correct answer: \( X = \nR \), \( Y = (0, \infty) \). (1), (2): \( (0, \infty) \subseteq \nR \) and \( 0 \notin (0, \infty) \). (3): @exm-reals-open-interval. (4), (5): \( n \mapsto -n \) is a bijection from \( \nN \) onto \( \{ -n : n \in \nN \} \), so this set is infinite, as in (5) above. It lies inside \( X \setminus Y = (-\infty, 0] \subseteq \nR \), so by @prp-subset-finite neither \( (-\infty, 0] \) nor \( \nR \) is finite.
 :::
 
 ### C. Going deeper
@@ -191,9 +195,9 @@ A function \( f \colon \nN \to \nN \) is **strictly increasing** if \( f(m) < f(
 
 Below, the proof is started; the second half is blank. *Name the move, then complete it.*
 
-> Let \( n \mapsto f_n \) be any function from \( \nN \) to \( I \). By @thm-recursion (with the set \( \nN \), base \( 0 \), and a step that depends on \( n \)), there is a function \( g \colon \nN \to \nN \) with
+> Let \( n \mapsto f_n \) be any function from \( \nN \) to \( I \). By @thm-recursion, applied with the set \( \nN \), the starting value \( f_0(0) + 1 \) and the function \( (n, x) \mapsto \max\{ x, f_{n+1}(n + 1) \} + 1 \) from \( \nN \times \nN \) to \( \nN \) (a step that depends on \( n \)), there is a function \( g \colon \nN \to \nN \) with
 > \[
-> g(0) \coloneqq f_0(0) + 1, \qquad g(n + 1) \coloneqq \max\{ g(n), f_{n+1}(n + 1) \} + 1 .
+> g(0) = f_0(0) + 1, \qquad g(n + 1) = \max\{ g(n), f_{n+1}(n + 1) \} + 1 .
 > \]
 > \( \underline{\hspace{8em}} \)
 :::
@@ -218,11 +222,13 @@ The move is **the diagonal**: given any list, build an object that differs from 
 Next, \( g(n) > f_n(n) \) for every \( n \in \nN \): for \( n = 0 \), \( g(0) = f_0(0) + 1 \); for \( n = k + 1 \), \( g(k + 1) \ge f_{k+1}(k + 1) + 1 \). So \( g(n) \ne f_n(n) \), and hence \( g \ne f_n \), for every \( n \in \nN \). So \( g \in I \) is not a value of \( n \mapsto f_n \), and no function \( \nN \to I \) is onto. Since \( I \ne \emptyset \) (it contains \( \id_{\nN} \)), \( I \) is not countable.
 
 **Marking scheme.** (10 points)
-- 2: names the diagonal move and takes an **arbitrary** function \( \nN \to I \).
-- 3: shows \( g \) is strictly increasing, both the step \( g(n) < g(n + 1) \) and the passage to all \( m < n \).
-- 3: shows \( g(n) \ne f_n(n) \) for every \( n \), so \( g \) differs from every \( f_n \).
-- 2: concludes with the "empty or image of \( \nN \)" form of countable, noting \( I \ne \emptyset \).
-Fatal errors (0 for the step): the plain diagonal \( g(n) \coloneqq f_n(n) + 1 \) with no check that it is strictly increasing (it need not be: for \( f_0(n) = 5 + n \) and \( f_1(n) = n \), it gives \( g(0) = 6 > g(1) = 2 \)); checking the construction on one particular list.
+- 1: names the diagonal move.
+- 4: shows \( g \) is strictly increasing: 2 for the step \( g(n) < g(n + 1) \) for every \( n \), and 2 for the passage to all \( m < n \).
+- 3: shows \( g(n) > f_n(n) \) for every \( n \), treating \( n = 0 \) and \( n = k + 1 \) separately, and concludes \( g \ne f_n \).
+- 2: concludes that no function \( \nN \to I \) is onto and, noting \( I \ne \emptyset \) (\( \id_{\nN} \in I \)), that \( I \) is not countable.
+Fatal errors (0 for the part concerned): taking \( g(n) < g(n + 1) \) alone as strict increase, with no passage to all \( m < n \); inferring \( g \ne f_n \) without exhibiting a point where they differ, or exhibiting one only for \( n \ge 1 \).
+
+The max in \( g \) is needed: the plain diagonal \( g(n) \coloneqq f_n(n) + 1 \) need not be strictly increasing (for \( f_0(n) = 5 + n \) and \( f_1(n) = n \), it gives \( g(0) = 6 > g(1) = 2 \)).
 :::
 
 ::: {#exr-infinite-sets-c2}
@@ -274,7 +280,7 @@ Let \( \fM \) have domain \( \nN \) and \( R^{\fM} \coloneqq \{ (d, e) \in \nN \
 
 So \( \fM \) is a counter-model, and \( \forall x\, \exists y\, R(x, y) \not\models \exists y\, \forall x\, R(x, y) \). By the soundness statement of Section 4.11 (the subsection "From counter-models to non-derivability"), a counter-model shows non-derivability: \( \forall x\, \exists y\, R(x, y) \nvdash \exists y\, \forall x\, R(x, y) \).
 
-This is the converse of @prp-exists-forall-swap with the variables renamed, and the counter-model is the one of @exm-counter-model-swap: there the domain was \( \nZ \) and \( R \) was read as \( > \); with the roles of the variables exchanged, \( R \) read as \( < \) and the domain cut down to \( \nN \), the same witnesses work, as checked above. In the premise the larger number \( y \) is chosen after \( x \) and depends on it; the conclusion asks for one \( y \) in advance.
+This is the converse of @prp-exists-forall-swap with the variables renamed and the two places of \( R \) exchanged (read \( R(x, y) \) as \( R(y, x) \)), and the counter-model is the one of @exm-counter-model-swap: there the domain was \( \nZ \) and \( R \) was read as \( > \); with the roles of the variables exchanged, \( R \) read as \( < \) and the domain cut down to \( \nN \), the same witnesses work, as checked above. In the premise the larger number \( y \) is chosen after \( x \) and depends on it; the conclusion asks for one \( y \) in advance.
 :::
 
 ::: {#exr-infinite-sets-r3}
@@ -310,20 +316,21 @@ By @thm-countable-union, \( Z \) is countable. (That theorem uses @ax-choice; he
 :::
 
 <!-- dependency ledger
-thm-infinite-countable-subset (proof): the family (S) indexed by P(X) \ {empty}, union contained in X | def-indexed-family, def-family-union-intersection (Ch 6 Section 6.2), used silently; ax-choice (cited)
+thm-infinite-countable-subset (proof): the family (S) indexed by P(X) \ {empty}, union equal to X | def-indexed-family, def-family-union-intersection (Ch 6 Section 6.2), used silently; ax-choice (cited)
 thm-infinite-countable-subset (proof): a singleton {x} has 1 element | def-finite (cited): the bijection 1 -> x from {1}
 thm-infinite-countable-subset (proof): F_m subset of F_(m+k), induction on k | inline (ax-induction, cited)
 thm-infinite-countable-subset (claim): (remark) Chapter 11's nested-interval proof uses an explicit rule | Ch 11 Section 11.7 (prose pointer; nothing depends on it)
-thm-infinite-countable-subset (claim): (remark) the theorem is not provable without choice | set theory, stated without proof in the remark; nothing depends on it
+thm-infinite-countable-subset (claim): (prose after the remark) the theorem is not provable without choice | set theory, stated without proof; nothing depends on it
 thm-infinite-iff-proper-subset (proof): m + 1 = n + 1 gives m = n; n + 1 != 0 | arithmetic of N (lem-naturals-arithmetic), used silently
 exr-infinite-sets-a1 (solution): the Quick check after the warning (X \ {x} uncountable) | inline in the section (Quick check solution), not an exercise
 exr-infinite-sets-b1 (solution): disjoint pieces, piecewise bijection is a bijection | inline
+exr-infinite-sets-b2 (solution): disjoint pieces, piecewise bijection is a bijection | inline (as in B1)
 exr-infinite-sets-b3 (solution): a set equinumerous with a finite set is finite | inline (compose the bijections, thm-composition-injective-surjective, cited)
-exr-infinite-sets-b3 (solution): (0, infinity) is an interval with more than one point; {-n : n in N} infinite, so a superset of it is infinite | exm-reals-open-interval (cited); prp-subset-finite (Section 8.1), used silently
+exr-infinite-sets-b3 (solution): (0, infinity) is an interval with more than one point; n -> -n a bijection N -> {-n : n in N}, so it is infinite; a superset of it is infinite | exm-reals-open-interval (cited); inline, as in the first answer; prp-subset-finite (cited)
 exr-infinite-sets-c1 (solution): max{a, b} of two naturals exists and is >= each | prp-finite-max (Ch 7 Section 7.3), used silently in the given half
 exr-infinite-sets-c1 (solution): counterexample to the plain diagonal: f_0(n) = 5 + n, f_1(n) = n give g(0) = 6, g(1) = 2 | verify/ch08/exr-infinite-sets-c1.py
 exr-infinite-sets-r1 (solution): 2^(K+1) - 2^K = 2^K; 2^K >= 1 (a positive natural number) | def-power, prp-power-laws (d), (e), lem-naturals-arithmetic (a), used silently; verify/ch08/exr-infinite-sets-r1.py
-exr-infinite-sets-r2 (solution): soundness for predicate logic (counter-model gives non-derivability) | Section 4.11, "From counter-models to non-derivability" (statement; proof in optional Section 4.12); prose pointer, unlabelled statement
+exr-infinite-sets-r2 (solution): soundness for predicate logic (counter-model gives non-derivability) | Section 4.11, subsection #from-counter-models-to-non-derivability (statement; proof in optional Section 4.12); prose pointer, unlabelled statement
 exr-infinite-sets-r3 (solution): row <-> set of T-places and truth function <-> set of T-rows are bijections; equinumerous with an n-element set has n elements | inline; prp-equinumerous-properties via composition; verify/ch08/exr-infinite-sets-r3.py
 exr-infinite-sets-r4 (solution): Z_N -> N^N bijection | characteristic property of tuples (Ch 6 Section 6.3)
 -->

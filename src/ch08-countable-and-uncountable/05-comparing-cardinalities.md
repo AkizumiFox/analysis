@@ -72,7 +72,7 @@ Is \( \card{\{0, 1\}^{\nN}} \le \card{\powerset{\nN}} \)? Give an injection, and
 :::
 
 ::: {.solution}
-Yes. Send a sequence \( a \in \{0, 1\}^{\nN} \) to the set \( \{ n \in \nN : a(n) = 1 \} \). If two sequences give the same set, they take the value \( 1 \) at the same places, and so the value \( 0 \) at the same places too; hence they are equal (@prp-function-equality), and the map is injective. No appeal to @prp-card-le-surjection is needed: the definition asks for an injection, and we wrote one down. (The map is in fact a bijection, with inverse \( S \mapsto \ind_S \); that is the identification of @cor-powerset-naturals-uncountable.)
+Yes. Send a sequence \( a \in \{0, 1\}^{\nN} \) to the set \( \{ n \in \nN : a(n) = 1 \} \). If two sequences give the same set, they take the value \( 1 \) at the same places, and so the value \( 0 \) at the same places too; hence they are equal (@prp-function-equality), and the map is injective. No appeal to @prp-card-le-surjection is needed: the definition asks for an injection, and we wrote one down. (The map is in fact a bijection, with inverse \( S \mapsto \ind_S \); this is the correspondence of Section 6.4, recalled after @cor-powerset-naturals-uncountable.)
 :::
 
 ## The Schröder–Bernstein Theorem
@@ -86,13 +86,13 @@ Let \( A \) and \( B \) be sets. If \( \card{A} \le \card{B} \) and \( \card{B} 
 :::
 
 ::: {.idea}
-Let \( f \colon A \to B \) and \( g \colon B \to A \) be the two injections. We want a bijection \( h \colon A \to B \), and at each \( a \in A \) there are two candidates: go forward, \( h(a) = f(a) \), or go back along \( g \), \( h(a) = g^{-1}(a) \), the unique \( b \) with \( g(b) = a \). Going back is possible only for \( a \in g(B) \). So a point of \( A \) **not hit by \( g \)** must be sent forward by \( f \). Then the point \( f(a) \in B \) is used up, and \( g(f(a)) \) must not go back to it, or \( h \) would collide; so \( g(f(a)) \) must also be sent forward, and then \( g(f(g(f(a)))) \), and so on along the chain. Everything reached this way goes forward; everything else goes back.
+Let \( f \colon A \to B \) and \( g \colon B \to A \) be the two injections. We want a bijection \( h \colon A \to B \), and at each \( a \in A \) there are two candidates: go forward, \( h(a) = f(a) \), or go back along \( g \): let \( h(a) \) be the unique \( b \) with \( g(b) = a \). Going back is possible only for \( a \in g(B) \). So a point of \( A \) **not hit by \( g \)** must be sent forward by \( f \). Then the point \( f(a) \in B \) is used up, and \( g(f(a)) \) must not go back to it, or \( h \) would collide; so \( g(f(a)) \) must also be sent forward, and then \( g(f(g(f(a)))) \), and so on along the chain. Everything reached this way goes forward; everything else goes back.
 
 **Step roadmap.**
 
 ① Build the set \( C \subseteq A \) of points that are forced forward: \( C_0 \coloneqq A \setminus g(B) \), \( C_{n+1} \coloneqq g(f(C_n)) \), \( C \coloneqq \bigcup_{n \in \nN} C_n \).
 
-② Define \( h(a) \coloneqq f(a) \) on \( C \) and \( h(a) \coloneqq g^{-1}(a) \) off \( C \).
+② Define \( h(a) \coloneqq f(a) \) on \( C \), and let \( h(a) \) be the unique \( b \) with \( g(b) = a \) off \( C \).
 
 ③ Show \( h \) is injective; the only case with content is one point of each kind.
 
@@ -168,7 +168,7 @@ Every value of \( h \) is given by a rule, so the proof makes **no use of @ax-ch
 Each hypothesis is used. Without the injection \( g \), the conclusion fails: \( \nN \to \powerset{\nN} \), \( n \mapsto \{n\} \), is an injection, and \( \card{\nN} \ne \card{\powerset{\nN}} \) by @thm-cantor. In the proof, injectivity of \( f \) is used once, in Case 1 of Step 3, and injectivity of \( g \) twice, in (F2) and in Case 2 of Step 4.
 
 ::: {.remark}
-The theorem gives \( \card{A} = \card{B} \) from \( \card{A} \le \card{B} \) and \( \card{B} \le \card{A} \). Are any two sets comparable, that is, is it true that \( \card{A} \le \card{B} \) or \( \card{B} \le \card{A} \) for all \( A \) and \( B \)? The answer is yes, but the proof needs Zorn's lemma, a principle equivalent to @ax-choice: the optional Chapter 9 states it, and Chapter 67 proves it from the axiom. This chapter does not prove comparability, and nothing in it needs it.
+The theorem gives \( \card{A} = \card{B} \) from \( \card{A} \le \card{B} \) and \( \card{B} \le \card{A} \). Are any two sets comparable, that is, is it true that \( \card{A} \le \card{B} \) or \( \card{B} \le \card{A} \) for all \( A \) and \( B \)? The answer is yes, but the proof needs Zorn's lemma, a principle equivalent to @ax-choice; a later chapter devoted to Zorn's lemma states it, and the companion volume on set theory proves it from the axiom. This chapter does not prove comparability, and nothing in it needs it.
 :::
 
 ## Intervals of real numbers
@@ -237,7 +237,7 @@ Give an injection \( \nN \to \nN \times \nN \) and an injection \( \nN \times \n
 :::
 
 ::: {.solution}
-\( n \mapsto (n, 1) \) is injective, by the characteristic property of pairs. \( (m, n) \mapsto 2^m 3^n \) is injective, as shown in the proof of @thm-product-countable. So \( \card{\nN} = \card{\nN \times \nN} \): \( \nN \times \nN \) is countably infinite. We knew this already from Section 8.2; the theorem gets it with no listing at all.
+\( n \mapsto (n, 1) \) is injective, by the characteristic property of pairs (@def-ordered-pair). \( (m, n) \mapsto 2^m 3^n \) is injective, as shown in the proof of @thm-product-countable. So \( \card{\nN} = \card{\nN \times \nN} \), and \( \nN \times \nN \) is countably infinite (@def-countably-infinite). Section 8.2 showed only that \( \nN \times \nN \) is countable; the theorem gives a bijection with \( \nN \) directly, with no listing at all.
 :::
 
 ## Exercises
@@ -290,7 +290,7 @@ Prove each of the following by giving an injection in each direction and applyin
 ::: {.solution}
 (a) The inclusion \( [0, 1] \to \nR \) is injective. In the other direction, \( x \mapsto \bigl(x/(1 + \abs{x}) + 1\bigr)/2 \) is a bijection \( \nR \to (0, 1) \) by @exm-reals-open-interval, so it is an injection \( \nR \to [0, 1] \), as \( (0, 1) \subseteq [0, 1] \).
 
-(b) \( n \mapsto (n, 0) \) is an injection \( \nN \to \nN \times \nZ \), by the characteristic property of pairs. In the other direction, let \( j \colon \nZ \to \nN \) be \( j(k) \coloneqq 2k \) for \( k \ge 0 \) and \( j(k) \coloneqq -2k - 1 \) for \( k < 0 \). Its values are in \( \nN \), even for \( k \ge 0 \) and odd for \( k < 0 \); since no natural number is both even and odd (@thm-division-algorithm, uniqueness), \( j(k) = j(k') \) forces \( k \) and \( k' \) to have the same sign, and then \( k = k' \). So \( j \) is injective, and so is \( (m, k) \mapsto (m, j(k)) \). Following it by the injection \( (m, n) \mapsto 2^m 3^n \) from the proof of @thm-product-countable gives an injection \( \nN \times \nZ \to \nN \) (@thm-composition-injective-surjective (a)).
+(b) \( n \mapsto (n, 0) \) is an injection \( \nN \to \nN \times \nZ \), by the characteristic property of pairs (@def-ordered-pair). In the other direction, let \( j \colon \nZ \to \nN \) be \( j(k) \coloneqq 2k \) for \( k \ge 0 \) and \( j(k) \coloneqq -2k - 1 \) for \( k < 0 \). Its values are in \( \nN \), even for \( k \ge 0 \) and odd for \( k < 0 \); since no natural number is both even and odd (@thm-division-algorithm, uniqueness), \( j(k) = j(k') \) forces \( k \) and \( k' \) to have the same sign, and then \( k = k' \). So \( j \) is injective, and so is \( (m, k) \mapsto (m, j(k)) \). Following it by the injection \( (m, n) \mapsto 2^m 3^n \) from the proof of @thm-product-countable gives an injection \( \nN \times \nZ \to \nN \) (@thm-composition-injective-surjective (a)).
 
 (c) The inclusion \( (0, 1) \to (0, 1) \cup (2, 3) \) is injective. The map \( x \mapsto x/4 \) is injective and sends \( (0, 1) \cup (2, 3) \) into \( (0, \frac14) \cup (\frac12, \frac34) \subseteq (0, 1) \).
 
@@ -324,7 +324,7 @@ Every \( m \in \nN \) is \( 2n \) or \( 2n + 1 \) for exactly one \( n \in \nN \
 \[
 c(2n) \coloneqq a(n), \qquad c(2n + 1) \coloneqq b(n) \qquad (n \in \nN).
 \]
-Define \( \Psi \colon \{0, 1\}^{\nN} \to \{0, 1\}^{\nN} \times \{0, 1\}^{\nN} \) by \( \Psi(c) \coloneqq (a, b) \) with \( a(n) \coloneqq c(2n) \) and \( b(n) \coloneqq c(2n + 1) \). Then \( \Psi(\Phi(a, b)) = (a, b) \), by the definitions and the characteristic property of pairs. And \( \Phi(\Psi(c)) \) agrees with \( c \) at every even place \( 2n \) and every odd place \( 2n + 1 \), which are all the places, so \( \Phi(\Psi(c)) = c \) (@prp-function-equality). By @thm-bijection-iff-inverse, \( \Phi \) is a bijection.
+Define \( \Psi \colon \{0, 1\}^{\nN} \to \{0, 1\}^{\nN} \times \{0, 1\}^{\nN} \) by \( \Psi(c) \coloneqq (a, b) \) with \( a(n) \coloneqq c(2n) \) and \( b(n) \coloneqq c(2n + 1) \). Then \( \Psi(\Phi(a, b)) = (a, b) \): its coordinates \( n \mapsto c(2n) = a(n) \) and \( n \mapsto c(2n + 1) = b(n) \) are \( a \) and \( b \) by @prp-function-equality, so the pairs are equal (@def-ordered-pair). And \( \Phi(\Psi(c)) \) agrees with \( c \) at every even place \( 2n \) and every odd place \( 2n + 1 \), which are all the places, so \( \Phi(\Psi(c)) = c \) (@prp-function-equality). By @thm-bijection-iff-inverse, \( \Phi \) is a bijection.
 :::
 
 ### C. Going deeper
@@ -386,7 +386,7 @@ Is the conclusion true? Does the argument prove it? If not, name the line that f
 ::: {.solution}
 *The conclusion is true*: @exm-closed-open-interval proves it twice.
 
-*The argument does not prove it.* Lines (1)–(4) are correct. Line (5) fails: it infers that a particular injection is a bijection from the existence of injections both ways. Nothing licenses that step, and \( u \) is in fact not onto: \( \frac{9}{10} \in (0, 1) \) is not a value, since every value lies in \( [\frac14, \frac34] \).
+*The argument does not prove it.* Lines (1)–(4) are correct. Line (5) fails: it infers that a particular injection is a bijection from the existence of injections both ways. The step cites a general "fact", that injections both ways make a given injection a bijection. That fact is neither proved nor a school fact, and it is false, so the line cites nothing: entry (N9) of @exm-not-allowed-catalogue. And \( u \) is in fact not onto: \( \frac{9}{10} \in (0, 1) \) is not a value, since every value lies in \( [\frac14, \frac34] \).
 
 *Counterexample to the step.* Take \( A = B = \nN \) and \( f = g = (n \mapsto 2n) \). These are injections both ways, and the step would conclude that \( n \mapsto 2n \) is a bijection \( \nN \to \nN \); but \( 1 \) is not a value.
 
@@ -399,7 +399,7 @@ def-card-le (example): {x1} = {x2} gives x1 = x2 | def-set-equality (Ch 6 Sectio
 prp-card-le-preorder (claim): (after it) 2N is not N, n -> 2n injective | arithmetic (1 is not even: thm-division-algorithm uniqueness)
 thm-schroder-bernstein (proof): case split a in C or a not in C | excluded middle (Ch 5 Section 5.7, prose pointer; classical logic of Ch 2)
 thm-schroder-bernstein (proof): g(f(S)) is a subset of A for S subset of A, so (n, S) -> g(f(S)) is a function N x P(A) -> P(A) | def-image (cited), def-power-set (Ch 6 Section 6.2), used silently
-thm-schroder-bernstein (claim): (remark) any two sets are comparable, via Zorn's lemma; Zorn stated in Ch 9, proved from choice in Ch 67 | Ch 9 (optional), Ch 67 (prose pointers; nothing depends on them)
+thm-schroder-bernstein (claim): (remark) any two sets are comparable, via Zorn's lemma; Zorn stated in F2.4, proved from choice in ST.4 | F2.4, ST.4 (prose pointers; nothing depends on them)
 exm-closed-open-interval (solution): 1/4 <= x/2 + 1/4 <= 3/4; 1/n distinct for distinct n; 0 < 1/(n+2) <= 1/3 < 1/2 | R arithmetic and order, school fact; verify/ch08/exm-closed-open-interval.py
 exm-closed-open-interval (solution): [0,1] \ H = (0,1) \ H' | inline (0 and 1 = 1/1 lie in H; H \ {0, 1} = H')
 exm-reals-open-interval (solution): algebra of |x|/(1 + |x|) and its inverse; |y/(1-|y|)| = |y|/(1-|y|) | R arithmetic with absolute values, school fact (Ch 6 Section 6.5 B3 does the same computation, not cited); verify/ch08/exm-reals-open-interval.py

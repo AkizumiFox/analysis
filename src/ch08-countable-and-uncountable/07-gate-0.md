@@ -9,7 +9,7 @@ Part 0 ends here. Its eight main-line chapters taught one skill in many forms: r
 - Write complete proofs in plain prose, at level 3 of @def-levels-of-proof. Rule tags are allowed where a problem asks for them.
 - Each problem is worth 10 points, 60 in all. Its solution is folded. Open a solution only after the two hours, and **grade before you read it**: apply the marking scheme at the end of the solution to your own script, point by point, and only then read the book's proof.
 - **Pass line: 70% overall (42 of 60 points), and no core problem at 0.** The core problems are marked `core`: P1, P2, P4 and P5. They test what Chapter 11 uses from its first page: quantifiers and their negation, turning a derivation into prose, induction and recursion, sets and functions. P3 and P6 are not core.
-- If you fail, the remediation map at the end names the sections to reread for each problem you lost. Reread them, wait a week, and retake the Gate (the same problems) before starting Part I.
+- If you fail, follow the remediation map, then wait a week and retake the whole Gate (the same problems) before starting Part I.
 :::
 
 The definition drill comes first and is not scored. It is the one retrieval list of Part 0: every major definition of the Part, to be written from memory before the clock starts.
@@ -23,7 +23,7 @@ A proof that reads well is not thereby correct, and grading your own script is w
 ::: {.check}
 State each of the following **in symbols**, with every quantifier and every bound written out, as the book defines it. Allow about fifteen minutes, before the two hours start.
 
-::: {.enumerate options="label=(D\arabic*)"}
+::: {.enumerate options="label=(Q\arabic*)"}
 1. \( \Gamma \vdash \psi \).
 2. \( \Gamma \models \psi \), for formulas of propositional logic.
 3. \( \varphi \) is a tautology.
@@ -47,7 +47,7 @@ State each of the following **in symbols**, with every quantifier and every boun
 ::: {.solution}
 The answers are the definitions as the book states them; the label after each answer is where to look when an answer is wrong.
 
-::: {.enumerate options="label=(D\arabic*)"}
+::: {.enumerate options="label=(Q\arabic*)"}
 1. For a list \( \Gamma = \varphi_1, \dots, \varphi_n \) (\( n \ge 0 \)): \( \Gamma \vdash \psi \) if **there is** a derivation whose premises all belong to \( \Gamma \) and whose last line is \( \psi \) (@def-derivable).
 2. \( \Gamma \models \psi \) if for **every** valuation \( v \): if \( v(\varphi) = \mathrm{T} \) for every \( \varphi \) in \( \Gamma \), then \( v(\psi) = \mathrm{T} \) (@def-valid-argument).
 3. \( v(\varphi) = \mathrm{T} \) for **every** valuation \( v \) (@def-tautology).
@@ -67,7 +67,7 @@ The answers are the definitions as the book states them; the label after each an
 17. For every set \( I \) and every family \( (A_i)_{i \in I} \) of sets with \( \forall i \in I\ A_i \ne \emptyset \), there is \( c \colon I \to \bigcup_{i \in I} A_i \) with \( \forall i \in I\ c(i) \in A_i \) (@ax-choice).
 :::
 
-Count an item right only if every quantifier, every bound and the order of the quantifiers match. The commonest slips are a missing "\( \in X \)" bound in (D9), "\( \exists y \)" for "\( \exists! \, y \)" in (D8), and, in (D12), "\( \forall a \in A\ a \preceq m \)" for maximal, which is the definition of greatest.
+Count an item right only if every quantifier, every bound and the order of the quantifiers match. The commonest slips are a missing "\( \in X \)" bound in (Q9), "\( \exists y \)" for "\( \exists! \, y \)" in (Q8), and, in (Q12), "\( \forall a \in A\ a \preceq m \)" for maximal, which is the definition of greatest.
 :::
 
 ## The problems
@@ -81,7 +81,7 @@ Count an item right only if every quantifier, every bound and the order of the q
 1. Write property L in symbols, with bounded quantifiers.
 2. Write its negation with no \( \neg \) in front of a quantifier, a connective or a parenthesis.
 3. Prove that \( f(x) = x^2 \) does not have property L.
-4. Prove that \( \ind_{(0, \infty)} \) has property L, and that it does **not** have the property obtained from L by moving "there is \( \delta > 0 \)" to the front.
+4. Prove that the function \( f \colon \nR \to \nR \) with \( f(x) = 1 \) for \( x > 0 \) and \( f(x) = 0 \) for \( x \le 0 \) (the indicator of \( (0, \infty) \), with codomain \( \nR \)) has property L, and that it does **not** have the property obtained from L by moving "there is \( \delta > 0 \)" to the front.
 :::
 :::
 
@@ -114,7 +114,7 @@ Since \( 0 < \min\{\delta, 1\} \le 1 \), we have \( \frac12 \le y < 1 \). Then \
 
 The order of the choices is the order of the quantifiers in (b): \( x \) is fixed before \( \delta \), and \( y \) is a function of \( \delta \). The minimum with \( 1 \) is needed: \( y \coloneqq 1 - \delta/2 \) fails for large \( \delta \), since \( \delta = 4 \) gives \( y = -1 \) and \( y^2 = 1 \not< 1 \).
 
-*(d)* Write \( f \coloneqq \ind_{(0, \infty)} \), so \( f(x) = 1 \) for \( x > 0 \) and \( f(x) = 0 \) for \( x \le 0 \). Let \( x \in \nR \).
+*(d)* Let \( f \colon \nR \to \nR \) be the function of (d): \( f(x) = 1 \) for \( x > 0 \) and \( f(x) = 0 \) for \( x \le 0 \). Let \( x \in \nR \).
 
 *Case 1: \( x > 0 \).* Take \( \delta \coloneqq x \), which is positive. If \( \abs{y - x} < x \), then \( y > x - x = 0 \), so \( f(y) = 1 = f(x) \), and \( f(y) \ge f(x) \).
 
@@ -183,11 +183,11 @@ $\begin{nd}
 ::: {.solution}
 *(a)* (i) \( \rulename{\forall E} \) 2, with the term \( y_0 \) for \( y \). (ii) \( \rulename{\exists I} \) 12, with the witness \( x_0 \) for \( x \) in \( H(x, z_0) \). (iii) \( \rulename{\exists E} \) 6, 7–13: the existential of line 6 and the box of \( x_0 \). (iv) \( \rulename{\forall I} \) 4–15: the flagged box of \( z_0 \), whose range runs from its first line, line 4, to its last line, line 15 (@def-rules-universal).
 
-*(b)* Line 12, \( H(x_0, z_0) \), contains both witnesses. A box of \( \rulename{\exists E} \) may close only on a last line in which its own name does not appear (@def-rules-existential). So the box of \( x_0 \) cannot close on line 12; the \( \rulename{\exists I} \) of line 13 replaces \( x_0 \) by a bound variable first, and it must come **before** that box closes, that is, inside it, and therefore inside the box of \( y_0 \) that contains it.
+*(b)* Line 12, \( H(x_0, z_0) \), contains the witness \( x_0 \). A box of \( \rulename{\exists E} \) may close only on a last line in which its own name does not appear (@def-rules-existential). So the box of \( x_0 \) cannot close on line 12; the \( \rulename{\exists I} \) of line 13 replaces \( x_0 \) by a bound variable first, and it must come **before** that box closes, that is, inside it, and therefore inside the box of \( y_0 \) that contains it.
 
 The box of \( x_0 \) closes at line 14. Its name \( x_0 \) does not appear in the last line \( \exists x\, H(x, z_0) \), nor in the existential \( \exists x\, F(x, y_0) \) of line 6, nor in the premises 1–3 (where only the bound variable \( x \) is written), nor in the one open assumption at line 14, \( G(y_0, z_0) \) on line 5. The box of \( y_0 \) closes at line 15. Its name \( y_0 \) does not appear in \( \exists x\, H(x, z_0) \), nor in \( \exists y\, G(y, z_0) \) of line 4, nor in the premises; the only box still open at line 15 is the flagged box of \( z_0 \), which has no assumption. Of the four clauses, the last-line clause is the one that shapes this derivation: the other three hold for any fresh names, while the last line had to be prepared by line 13. The names \( x_0 \) and \( y_0 \) may not leave their boxes because each names one witness, about which only its box's assumption is known; outside, it would be treated as arbitrary, which is error (N3) of @exm-not-allowed-catalogue. The name \( z_0 \) is different: it may appear in lines 14 and 15, because its box is closed by \( \rulename{\forall I} \) at line 16, where it no longer appears.
 
-*(c)* Let \( f \colon X \to Y \) and \( g \colon Y \to Z \) be surjective, and let \( z \in Z \) be arbitrary (the box of \( z_0 \)). Since \( g \) is surjective, there is \( y \in Y \) with \( g(y) = z \); fix one (the box of \( y_0 \), opened on line 4). Since \( f \) is surjective, there is \( x \in X \) with \( f(x) = y \); fix one (the box of \( x_0 \), opened on line 6). Then \( g(f(x)) = g(y) = z \), so \( z \) is a value of \( g \circ f \) (lines 8–13; premise 3 is the substitution of equals that the equation chain performs). Since \( z \) was arbitrary, \( g \circ f \) is surjective, which is the surjectivity half of @thm-composition-injective-surjective. The derivation leaves the bounds \( z \in Z \), \( y \in Y \), \( x \in X \) implicit; the prose restores them.
+*(c)* Let \( f \colon X \to Y \) and \( g \colon Y \to Z \) be surjective, and let \( z \in Z \) be arbitrary (the box of \( z_0 \)). Since \( g \) is surjective, there is \( y \in Y \) with \( g(y) = z \); fix one (the box of \( y_0 \), lines 5–14, eliminating line 4). Since \( f \) is surjective, there is \( x \in X \) with \( f(x) = y \); fix one (the box of \( x_0 \), lines 7–13, eliminating line 6). Then \( g(f(x)) = g(y) = z \), so \( z \) is a value of \( g \circ f \) (lines 8–13; premise 3 is the substitution of equals that the equation chain performs). Since \( z \) was arbitrary, \( g \circ f \) is surjective, which is the surjectivity half of @thm-composition-injective-surjective. The derivation leaves the bounds \( z \in Z \), \( y \in Y \), \( x \in X \) implicit; the prose restores them.
 
 **Marking scheme.** (10 points)
 - 4: (a), one point per blank: the \( \rulename{\forall E} \) with its line and instance term; the \( \rulename{\exists I} \) with its line; the inner \( \rulename{\exists E} \) citing line 6 and the box 7–13; the final \( \rulename{\forall I} \) citing the box 4–15.
@@ -222,7 +222,7 @@ The line before it is not the error. Choosing an upper bound \( M_n \) for every
 
 **Marking scheme.** (10 points)
 - (a), 5 points. 1: says the conclusion is true, with a reason (a proof or a correct induction). 2: points to the line "assume … for all \( n \)". 1: names the error, circularity, (N9). 1: gives a counterexample to the step, not to the conclusion.
-- (b), 5 points. 1: says the conclusion is false, with a witness such as \( A_n = \{n\} \). 2: points to the line "let \( M \) be larger than every \( M_n \)". 1: names the quantifier swap \( \forall n\, \exists M \) to \( \exists M\, \forall n \), or (N2). 1: notes that the step is valid for finitely many \( n \), or gives the counterexample \( M_n = n \) to the step.
+- (b), 5 points. 1: says the conclusion is false, with a witness such as \( A_n = \{n\} \). 2: points to the line "let \( M \) be larger than every \( M_n \)". 1: names the quantifier swap \( \forall n\, \exists M \) to \( \exists M\, \forall n \), or (N2). 1: gives a counterexample to the step, not to the conclusion, such as \( M_n = n \).
 Fatal errors (0 for the part): in (a), calling the argument correct; in (b), locating the error in the choice of the \( M_n \).
 :::
 
@@ -256,7 +256,7 @@ a_{n+2} &= 3a_{n+1} - 2a_n = 3(2^{n+1} - 1) - 2(2^n - 1) \\
 \]
 where \( 2 \cdot 2^n = 2^{n+1} \) and \( 2 \cdot 2^{n+1} = 2^{n+2} \) by @def-power. So \( Q(n + 1) \) holds. By @ax-induction, \( Q(n) \) holds for every \( n \in \nN \), and in particular \( a_n = 2^n - 1 \) for every \( n \in \nN \). This is the pair induction of the two-step example in Section 7.3, after @def-power.
 
-*Alternatively,* by strong induction (@thm-strong-induction): let \( n \in \nN \) and suppose \( a_k = 2^k - 1 \) for every \( k < n \). If \( n = 0 \) or \( n = 1 \), check the value directly. If \( n \ge 2 \), then \( n - 2 \) and \( n - 1 \) are natural numbers smaller than \( n \), so the hypothesis applies to both, and the same computation with \( n - 2 \) in place of \( n \) gives \( a_n = 2^n - 1 \). The two values \( n = 0, 1 \) are exactly where the hypothesis would be used out of range.
+*Alternatively,* by strong induction (@thm-strong-induction): let \( n \in \nN \) and suppose \( a_k = 2^k - 1 \) for every \( k < n \). If \( n = 0 \) or \( n = 1 \), check the value directly. If \( n \ge 2 \), then \( n - 1 \) and \( n - 2 \) are natural numbers (@lem-naturals-arithmetic (c), twice) smaller than \( n \), so the hypothesis applies to both, and the same computation with \( n - 2 \) in place of \( n \) gives \( a_n = 2^n - 1 \). The two values \( n = 0, 1 \) are exactly where the hypothesis would be used out of range.
 
 *(c)* Now \( a_2 = 3 \cdot 2 - 2 \cdot 0 = 6 \) and \( a_3 = 3 \cdot 6 - 2 \cdot 2 = 14 \), while \( 2^2 - 1 = 3 \) and \( 2^3 - 1 = 7 \). The failing line is the base case at \( n = 1 \): in the proof of (b), the half "\( a_1 = 2^1 - 1 \)" of \( Q(0) \), since now \( a_1 = 2 \ne 1 \). The check \( a_0 = 0 \) still holds, and the step is still a valid implication; but every value from \( a_2 \) on is computed from \( a_1 \), so the failure propagates. (The same induction proves \( a_n = 2^{n+1} - 2 \) for the new sequence.)
 
@@ -299,7 +299,7 @@ The first equality is @thm-preimage-operations (c), the second is @thm-preimage-
 
 *(b)* \( (\Leftarrow) \) Suppose \( f \) is injective, and let \( A \subseteq X \) and \( y \in f(X \setminus A) \). By @def-image there is \( x \in X \setminus A \) with \( f(x) = y \); in particular \( y \in Y \). Suppose, for contradiction, that \( y \in f(A) \). Then there is \( a \in A \) with \( f(a) = y \). So \( f(x) = f(a) \), and injectivity gives \( x = a \in A \), contradicting \( x \notin A \). Hence \( y \notin f(A) \), so \( y \in Y \setminus f(A) \). As \( y \) was arbitrary, \( f(X \setminus A) \subseteq Y \setminus f(A) \), and \( A \) was arbitrary.
 
-\( (\Rightarrow) \) By contrapositive, as in @exm-square-even-via-contrapositive. Suppose \( f \) is not injective: by @prp-quantifier-negation and @prp-negated-implication there are \( x_1, x_2 \in X \) with \( f(x_1) = f(x_2) \) and \( x_1 \ne x_2 \). Take \( A \coloneqq \{x_1\} \). Then \( x_2 \in X \setminus A \), so \( f(x_2) \in f(X \setminus A) \). But \( f(x_2) = f(x_1) \in f(A) \), so \( f(x_2) \notin Y \setminus f(A) \). So the inclusion fails for this \( A \), and it does not hold for every \( A \subseteq X \).
+\( (\Rightarrow) \) By contrapositive, as in @exm-square-even-via-contrapositive. Suppose \( f \) is not injective: by @prp-bounded-quantifier-negation (a), twice, and @prp-negated-implication there are \( x_1, x_2 \in X \) with \( f(x_1) = f(x_2) \) and \( x_1 \ne x_2 \). Take \( A \coloneqq \{x_1\} \). Then \( x_2 \in X \setminus A \), so \( f(x_2) \in f(X \setminus A) \). But \( f(x_2) = f(x_1) \in f(A) \), so \( f(x_2) \notin Y \setminus f(A) \). So the inclusion fails for this \( A \), and it does not hold for every \( A \subseteq X \).
 
 The two inclusions hide one witness each: \( y \in f(X \setminus A) \) hands us an \( x \), and \( y \in f(A) \) hands us an \( a \). The proof works by comparing the two, which is what injectivity is for. Compare @thm-image-intersection (b), which characterizes injectivity through intersections in the same way.
 
@@ -307,7 +307,7 @@ The two inclusions hide one witness each: \( y \in f(X \setminus A) \) hands us 
 - 4: (a) by either route. For the first, each cited result must match its use (which part of @thm-preimage-operations, and De Morgan in \( X \)); for the second, each equivalence justified by a definition. A proof of the two inclusions separately earns the same marks.
 - 3: (b) \( (\Leftarrow) \), with the witness \( x \in X \setminus A \) of \( y \in f(X \setminus A) \) and the witness \( a \in A \) of \( y \in f(A) \) both named, and injectivity applied to them.
 - 3: (b) \( (\Rightarrow) \), by contrapositive or contradiction, with a correct set \( A \) built from the two points with the same value.
-Fatal errors (0 for the step): treating \( y \in f(A) \) as "\( x \in A \)" for the \( x \) already in hand (a skipped \( \rulename{\exists E} \)); proving \( (\Rightarrow) \) for one fixed \( A \), or with "for every \( A \)" read as "for some \( A \)".
+Fatal errors (0 for the step): treating \( y \in f(A) \) as "\( x \in A \)" for the \( x \) already in hand (a skipped \( \rulename{\exists E} \)); proving \( (\Rightarrow) \) from the inclusion for one given \( A \) only (the hypothesis "for every \( A \)" dropped; choosing one \( A \) where it fails, as above, is correct), or with "for every \( A \)" read as "for some \( A \)".
 :::
 
 ::: {#exr-gate-0-p6}
@@ -336,9 +336,9 @@ This defines \( g \) on all of \( \nN \), since every natural number is \( 0 \) 
 
 *(b)* For \( N \in \nN \) let \( E_N \) be the set of sequences \( (a_n) \in S \) with \( a_n = a_N \) for every \( n \ge N \). By the definition of eventually constant, \( E = \bigcup_{N \in \nN} E_N \).
 
-*Each \( E_N \) is countable.* For \( N = 0 \), a sequence in \( E_0 \) is constant with value \( a_0 \le 0 \), so \( E_0 \) has one element, the zero sequence; a constant map \( \nN \to E_0 \) is onto, and \( E_0 \) is countable. Let \( N \ge 1 \), and define \( \pi \colon E_N \to \nN^{N+1} \) by \( \pi(a) \coloneqq (a_0, a_1, \dots, a_N) \), an \( (N + 1) \)-tuple. It is injective: if \( \pi(a) = \pi(b) \), then \( a_k = b_k \) for \( k \le N \), by the characteristic property of tuples (@def-ordered-pair), and for \( n \ge N \), \( a_n = a_N = b_N = b_n \); so \( a = b \) (@prp-function-equality). The set \( \nN^{N+1} \) is countable by @cor-product-countable, as \( N + 1 \ge 2 \), so by @thm-countable-characterizations, (i) \( \Rightarrow \) (ii), there is an injection \( j \colon \nN^{N+1} \to \nN \). Then \( j \circ \pi \colon E_N \to \nN \) is injective (@thm-composition-injective-surjective), and \( E_N \) is countable by (ii) \( \Rightarrow \) (i).
+*Each \( E_N \) is countable.* For \( N = 0 \), a sequence in \( E_0 \) is constant with value \( a_0 \le 0 \), so \( E_0 \) has one element, the zero sequence; a constant map \( \nN \to E_0 \) is onto, and \( E_0 \) is countable. Let \( N \ge 1 \), and define \( \pi \colon E_N \to \nN^{N+1} \) by \( \pi(a) \coloneqq (a_0, a_1, \dots, a_N) \), an \( (N + 1) \)-tuple. It is injective: if \( \pi(a) = \pi(b) \), then \( a_k = b_k \) for \( k \le N \), by the characteristic property of tuples (Section 6.3), and for \( n \ge N \), \( a_n = a_N = b_N = b_n \); so \( a = b \) (@prp-function-equality). The set \( \nN^{N+1} \) is countable by @cor-product-countable, as \( N + 1 \ge 2 \), so by @thm-countable-characterizations, (i) \( \Rightarrow \) (ii), there is an injection \( j \colon \nN^{N+1} \to \nN \). Then \( j \circ \pi \colon E_N \to \nN \) is injective (@thm-composition-injective-surjective), and \( E_N \) is countable by (ii) \( \Rightarrow \) (i).
 
-*So \( E \) is countable,* as a union of countably many countable sets, by @thm-countable-union. That theorem uses the axiom of choice once, to pick a list of each \( E_N \). Here the choice can be avoided: the injections \( E_N \to \nN \) can be given by one rule for all \( N \) (apply \( (m, n) \mapsto 2^m 3^n \) repeatedly, coordinate after coordinate), and then each \( E_N \) is listed by least preimages, as in Section 8.2. The solution does not need this; citing @thm-countable-union is a complete proof.
+*So \( E \) is countable,* as a union of countably many countable sets, by @thm-countable-union. That theorem uses the axiom of choice once, to pick a list of each \( E_N \). Here the choice can be avoided (compare @exm-choice-free-unions; see the marking scheme). The solution does not need this; citing @thm-countable-union is a complete proof.
 
 In fact each \( E_N \) is finite: \( a_0, a_1, \dots, a_N \) can take \( 1, 2, \dots, N + 1 \) values, so \( E_N \) has \( (N + 1)! \) elements (@def-sum-product), which is \( 1, 2, 6, 24, 120 \) for \( N = 0, \dots, 4 \). This count rests on @exr-finite-sets-c2 and an induction on the number of factors, and it earns the same marks.
 
@@ -349,14 +349,14 @@ In fact each \( E_N \) is finite: \( a_0, a_1, \dots, a_N \) can take \( 1, 2, \
 - 2: (a) defines a diagonal element that lies in \( S \), with the problem at place \( 0 \) handled.
 - 2: (a) shows that it differs from every \( f_n \), at a named place.
 - 1: (a) concludes, with the form "countable means empty or the image of \( \nN \)" handled (\( S \ne \emptyset \)).
-- 2: (b) writes \( E \) as a countable union of countable sets, with a reason why each piece is countable (an injection into \( \nN \), a surjection from \( \nN \), or finiteness via @exr-finite-sets-c2).
+- 2: (b) writes \( E \) as a countable union of countable sets, with a reason why each piece is countable (an injection into \( \nN \), a surjection from \( \nN \), or finiteness via @exr-finite-sets-c2). Alternative route, same 2 points: an injection of \( E \) into the finite sequences of @exr-countable-unions-and-choice-b2, \( a \mapsto (k \mapsto a_{k-1}) \) on \( \{1, \dots, N + 1\} \) with \( N \) least such that \( a \in E_N \), with injectivity checked and @thm-countable-characterizations cited.
 - 2: (b) explains that the diagonal element of a list of \( E \) lies in \( S \) but not in \( E \), so it contradicts nothing.
 Fatal errors (0 for the step): a diagonal element not in \( S \), such as \( g(n) \coloneqq f_n(n) + 1 \), which already has \( g(0) \ge 1 > 0 \); proving (a) for one particular list.
 :::
 
 ## Remediation map
 
-Add up your points. A pass is 42 of 60 with no core problem (P1, P2, P4, P5) at \( 0 \). For each problem where you lost more than 3 points, reread the sections in its row, redo their A exercises and one C exercise, and then retake the problem. A wrong answer in the definition drill sends you to the label printed after its answer.
+Add up your points. A pass is 42 of 60 with no core problem (P1, P2, P4, P5) at \( 0 \). For each problem where you lost more than 3 points, reread the sections in its row, redo their A exercises and one C exercise. Then retake that problem if you passed, or the whole Gate after a week if you failed. A wrong answer in the definition drill sends you to the label printed after its answer.
 
 | Problem | What it tests | Sections to reread |
 |---|---|---|
@@ -373,7 +373,6 @@ exr-gate-0-p1 (solution): a law may be applied to a part of a formula under quan
 exr-gate-0-p3 (solution): N is not bounded above in R (for every real M some natural number exceeds M) | school fact (Part 0 convention); Chapter 11 proves it, prose pointer only
 exr-gate-0-p3 (solution): (n + 1)^2 + (n + 1) = (n^2 + n) + 2(n + 1); a sum of two even integers is even | school algebra; def-divides with prp-integers-closed, inline
 exr-gate-0-p4 (solution): integer arithmetic 3 * 2^(n+1) - 2^(n+1) = 2 * 2^(n+1) (distributivity) | school algebra; prp-power-laws
-exr-gate-0-p4 (solution): for n >= 2, n - 2 and n - 1 are natural numbers less than n | lem-naturals-arithmetic (c), twice; recalled in prose
 exr-gate-0-p6 (solution): each E_N has (N + 1)! elements (an aside, not used by the proof) | exr-finite-sets-c2 iterated by induction on the number of factors (a solution may cite an earlier exercise)
-exr-gate-0-p6 (solution): the injections E_N -> N can be given by one rule for all N, so choice is avoidable (a remark, not used) | inline sketch; cor-product-countable's coding
+exr-gate-0-p6 (solution): two (N + 1)-tuples are equal exactly when they agree in every place | Section 6.3, "Longer lists" (prose, no label)
 -->

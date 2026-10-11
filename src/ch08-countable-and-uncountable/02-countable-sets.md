@@ -41,7 +41,7 @@ Sometimes we need the stronger statement that a set has exactly the size of \( \
 ::: {#def-countably-infinite}
 [Countably Infinite Set]
 
-A set \( A \) is **countably infinite** if \( \card{A} = \card{\nN} \), that is, if there is a bijection \( \nN \to A \) (equivalently, by @prp-equinumerous-properties (b), a bijection \( A \to \nN \)).
+A set \( A \) is **countably infinite** if \( \card{A} = \card{\nN} \), that is, if there is a bijection \( A \to \nN \) (equivalently, by @prp-equinumerous-properties (b), a bijection \( \nN \to A \)).
 :::
 
 So \( \nN \), \( 2\nN \) and \( \nZ_{>0} \) are countably infinite (Section 8.1), and a countably infinite set is countable, since a bijection is a surjection.
@@ -84,7 +84,7 @@ So \( n \mapsto s_n \), with codomain \( S \), is a bijection \( \nN \to S \), a
 
 ## Three ways to say countable
 
-A surjection from \( \nN \), an injection into \( \nN \), and "finite or the size of \( \nN \)" all describe the same sets. Having the three forms side by side is what makes countability easy to prove: we may use whichever is cheapest for the set in hand.
+Being countable (empty or listable by \( \nN \)), having an injection into \( \nN \), and being finite or the size of \( \nN \) all describe the same sets. Having the three forms side by side is what makes countability easy to prove: we may use whichever is cheapest for the set in hand.
 
 ::: {#thm-countable-characterizations}
 [Characterizations of Countable Sets]
@@ -109,7 +109,7 @@ h(a) \coloneqq \min g^{-1}(\{a\}) .
 \]
 Then \( g(h(a)) = a \) for every \( a \in A \), that is, \( g \circ h = \id_A \), so \( h \) is injective by @thm-left-inverse-iff-injective (a).
 
-(ii) \( \Rightarrow \) (iii). Let \( h \colon A \to \nN \) be injective. With its codomain shrunk to \( h(A) \), it is a bijection \( A \to h(A) \) (Section 8.1), so \( \card{A} = \card{h(A)} \). By @lem-subsets-of-naturals, \( h(A) \subseteq \nN \) is finite or countably infinite. If \( h(A) \) has \( n \) elements, there is a bijection \( \{1, \dots, n\} \to h(A) \), and following it by the inverse of \( A \to h(A) \) gives a bijection \( \{1, \dots, n\} \to A \) (@thm-composition-injective-surjective (c)); so \( A \) has \( n \) elements. If \( \card{h(A)} = \card{\nN} \), then \( \card{A} = \card{\nN} \) by @prp-equinumerous-properties (c).
+(ii) \( \Rightarrow \) (iii). Let \( h \colon A \to \nN \) be injective. With its codomain shrunk to \( h(A) \), it is a bijection \( A \to h(A) \) (Section 8.1), so \( \card{A} = \card{h(A)} \). By @lem-subsets-of-naturals, \( h(A) \subseteq \nN \) is finite or countably infinite. If \( h(A) \) has \( n \) elements, there is a bijection \( \{1, \dots, n\} \to h(A) \), and following it by the inverse of \( A \to h(A) \) gives a bijection \( \{1, \dots, n\} \to A \) (@prp-equinumerous-properties (b) for the inverse, @thm-composition-injective-surjective (c)); so \( A \) has \( n \) elements. If \( \card{h(A)} = \card{\nN} \), then \( \card{A} = \card{\nN} \) by @prp-equinumerous-properties (c).
 
 (iii) \( \Rightarrow \) (i). If \( A \) is countably infinite, a bijection \( \nN \to A \) is a surjection. Let \( A \) be finite with \( n \) elements. If \( n = 0 \), then \( A = \emptyset \), which is countable. If \( n \ge 1 \), let \( \varphi \colon \{1, \dots, n\} \to A \) be a bijection and define \( f \colon \nN \to A \) by
 \[
@@ -252,16 +252,26 @@ For two factors, injections \( A \to \nN \) and \( B \to \nN \) turn \( A \times
 :::
 
 ::: {.proof}
-*(a)* By @thm-countable-characterizations, (i) \( \Rightarrow \) (ii), there are injections \( i \colon A \to \nN \) and \( j \colon B \to \nN \). The map \( A \times B \to \nN \times \nN \), \( (a, b) \mapsto (i(a), j(b)) \), is injective: if \( (i(a), j(b)) = (i(a'), j(b')) \), then \( i(a) = i(a') \) and \( j(b) = j(b') \) by @def-ordered-pair, so \( a = a' \) and \( b = b' \). Following it by the injection \( p \) of @thm-product-countable gives an injection \( A \times B \to \nN \) (@thm-composition-injective-surjective (a)), and (ii) \( \Rightarrow \) (i) concludes. No case split is needed: if \( A = \emptyset \) or \( B = \emptyset \), then \( A \times B = \emptyset \), the maps involved are empty functions, and these are injections.
+*(a)* By @thm-countable-characterizations, (i) \( \Rightarrow \) (ii), there are injections \( i \colon A \to \nN \) and \( j \colon B \to \nN \). The map \( A \times B \to \nN \times \nN \), \( (a, b) \mapsto (i(a), j(b)) \), is injective: if \( (i(a), j(b)) = (i(a'), j(b')) \), then \( i(a) = i(a') \) and \( j(b) = j(b') \) by @def-ordered-pair, so \( a = a' \) and \( b = b' \). Following it by the injection \( p \) of @thm-product-countable gives an injection \( A \times B \to \nN \) (@thm-composition-injective-surjective (a)), and (ii) \( \Rightarrow \) (i) concludes. No case split is needed: if \( A = \emptyset \) or \( B = \emptyset \), then \( A \times B = \emptyset \) (@prp-product-set-laws), so the map \( (a, b) \mapsto (i(a), j(b)) \) and its composite with \( p \) are empty functions (@prp-empty-function (a)), which are injective vacuously.
 
 *(b)* We use @thm-induction with \( n_0 = 2 \) on the statement "for all countable sets \( A_1, \dots, A_k \), the set \( A_1 \times \dots \times A_k \) is countable". *Base case \( k = 2 \).* This is (a). *Step.* Let \( k \ge 2 \), suppose the statement for \( k \), and let \( A_1, \dots, A_{k+1} \) be countable. The map
 \[
 \bigl( (a_1, \dots, a_k), a_{k+1} \bigr) \mapsto (a_1, \dots, a_{k+1})
 \]
-sends \( (A_1 \times \dots \times A_k) \times A_{k+1} \) onto \( A_1 \times \dots \times A_{k+1} \): a \( (k + 1) \)-tuple with \( x_i \in A_i \) is the image of \( ((x_1, \dots, x_k), x_{k+1}) \). By the hypothesis, \( A_1 \times \dots \times A_k \) is countable, so the domain is countable by (a), and the \( (k + 1) \)-fold product is countable by @prp-countable-image. By @thm-induction the statement holds for every \( k \ge 2 \).
+is a function, since a \( k \)-tuple determines its coordinates (Section 6.3), and it sends \( (A_1 \times \dots \times A_k) \times A_{k+1} \) onto \( A_1 \times \dots \times A_{k+1} \): a \( (k + 1) \)-tuple with \( x_i \in A_i \) is the image of \( ((x_1, \dots, x_k), x_{k+1}) \). By the hypothesis, \( A_1 \times \dots \times A_k \) is countable, so the domain is countable by (a), and the \( (k + 1) \)-fold product is countable by @prp-countable-image. By @thm-induction the statement holds for every \( k \ge 2 \).
 :::
 
-The map in the step is in fact a bijection, by the characteristic property of tuples (Section 6.3), but the proof needs only that it is onto. Tuples of different lengths are different objects, and the book has no \( 1 \)-tuples, so the corollary starts at \( k = 2 \); a single countable set needs no corollary.
+The map in the step is in fact a bijection, by the characteristic property of tuples (Section 6.3). The proof uses that property only to see that the map is well defined, and of the map it uses only that it is onto; injectivity is never needed. Tuples of different lengths are different objects, and the book has no \( 1 \)-tuples, so the corollary starts at \( k = 2 \); a single countable set needs no corollary.
+
+::: {.check}
+Let \( L \) be the set of the \( 26 \) letters a–z. Is the set of all strings of exactly \( 5 \) letters, that is \( L^5 \), countable? Which results do you use?
+:::
+
+::: {.solution}
+Yes. The set \( L \) is finite, so it is countable by @thm-countable-characterizations, (iii) \( \Rightarrow \) (i). The strings of length \( 5 \) are the \( 5 \)-tuples of letters, \( L^5 = L \times L \times L \times L \times L \), which is countable by @cor-product-countable (b) with \( k = 5 \). (It is in fact finite, with \( 26^5 \) elements: the map in the step of the proof of @cor-product-countable (b) is a bijection \( L^k \times L \to L^{k+1} \) (the remark above), so Exercise C2 (a) of Section 8.1, applied for \( k = 2, 3, 4 \) after \( L^2 = L \times L \), counts it. Countability needs less than the count.)
+:::
+
+All strings of every finite length together form the union of the sets \( L^k \) over \( k \), a union of infinitely many countable sets. Section 8.3 takes up such unions.
 
 ## The integers and the rationals
 
@@ -289,17 +299,7 @@ which begins \( z(0) = 0 \), \( z(1) = -1 \), \( z(2) = 1 \), \( z(3) = -2 \), \
 *\( \nQ \).* The set \( \nZ_{>0} \subseteq \nN \) is countable by @prp-countable-subset, and \( \nZ \) is countable, so \( \nZ \times \nZ_{>0} \) is countable by @cor-product-countable (a). The map \( (m, n) \mapsto m/n \) from \( \nZ \times \nZ_{>0} \) to \( \nQ \) is defined, since \( n \ge 1 \) is not \( 0 \), and it is surjective by the definition of \( \nQ \). By @prp-countable-image, \( \nQ \) is countable. It is infinite: \( \nN \subseteq \nQ \), since \( n = n/1 \), and \( \nN \) is infinite (@exm-hilbert-hotel), so \( \nQ \) is not finite by @prp-subset-finite. By @thm-countable-characterizations, (i) \( \Rightarrow \) (iii), \( \nQ \) is countably infinite.
 :::
 
-The list of \( \nQ \) that the proof produces repeats every rational infinitely often: \( 1/1 \), \( 2/2 \), \( 3/3 \), … are all \( 1 \). The definition allows it, and that is what made the proof three lines. Every map in the proof is given by a formula, and no line of it picks elements without a rule. This is the fact Chapter 11 quotes when it compares \( \nQ \) with \( \nR \): the rationals, dense as they are, can be listed, while Chapter 11 shows that the reals cannot.
-
-::: {.check}
-Let \( L \) be the set of the \( 26 \) letters a–z. Is the set of all strings of exactly \( 5 \) letters, that is \( L^5 \), countable? Which results do you use?
-:::
-
-::: {.solution}
-Yes. The set \( L \) is finite, so it is countable by @thm-countable-characterizations, (iii) \( \Rightarrow \) (i). The strings of length \( 5 \) are the \( 5 \)-tuples of letters, \( L^5 = L \times L \times L \times L \times L \), which is countable by @cor-product-countable (b) with \( k = 5 \). (It is in fact finite: Exercise C2 of Section 8.1 counts it. Countability needs less than the count.)
-:::
-
-All strings of every finite length together form the union of the sets \( L^k \) over \( k \), a union of infinitely many countable sets. Section 8.3 takes up such unions.
+The list of \( \nQ \) that the proof produces repeats every rational infinitely often: \( 1/1 \), \( 2/2 \), \( 3/3 \), … are all \( 1 \). The definition allows it, and that is what made the proof three lines. No line of the proof, or of the results it cites, uses the axiom of choice of Section 8.3: each surjection or injection it relies on is either given by a formula or named by a single \( \rulename{\exists E} \), and the only selections made for many elements at once are least elements (@thm-well-ordering). That \( \nQ \) can be listed is the fact Chapter 11 quotes when it compares \( \nQ \) with \( \nR \): the rationals, dense as they are, can be listed, while Chapter 11 shows that the reals cannot.
 
 ## Exercises
 
@@ -374,7 +374,7 @@ The order is (ii), (v), (viii), (i), (ix), (iv), (vi). No other order is admissi
 
 Line (iii) reverses the parities. The left side \( 2^{m - m'} 3^n \) has a factor \( 2 \) because \( m - m' \ge 1 \), so it is even; the right side \( 3^{n'} \) is odd. A line asserting the opposite is false: for \( m = 1 \), \( m' = 0 \), \( n = n' = 0 \), the left side is \( 2 \) and the right side is \( 1 \).
 
-Line (vii) would end the proof at once, but it cites a theorem the book has not proved: unique factorization into primes. That is citing a line that is not available, (N9) of @exm-not-allowed-catalogue. The theorem is true, and the conclusion of (vii) is true; the error is in the citation, which is exactly why the proof in the text goes through parity instead.
+Line (vii) would end the proof at once, but it cites unique factorization into primes, which the book has neither proved nor taken as a school fact: Section 7.2 sets it aside as a fact it does not prove or use (after @def-prime), and the idea before @thm-product-countable declines to cite it. So (vii) cites a line that is not available, (N9) of @exm-not-allowed-catalogue. The theorem is true, and the conclusion of (vii) is true; the error is in the citation, which is exactly why the proof in the text goes through parity instead.
 :::
 
 ::: {#exr-countable-sets-b3}
@@ -406,13 +406,13 @@ Let \( \sF \) be the set of all finite subsets of \( \nN \). Prove that \( \sF \
 ::: {.solution}
 [Hint 1]
 
-Inject \( \sF \) into \( \nN \) by sending \( F \) to \( \sum_{k \in F} 2^k \), the number whose binary digits are the indicator of \( F \).
+Inject \( \sF \) into \( \nN \) by sending \( F \) to \( S_N(F) \coloneqq \sum_{k=0}^{N} \ind_F(k) \, 2^k \), for any \( N \) with \( F \subseteq \{0, \dots, N\} \) (the value does not depend on \( N \)): the number whose binary digits are the indicator of \( F \).
 :::
 
 ::: {.solution}
 [Hint 2]
 
-To prove injectivity, compare the largest elements of two different sets \( F \ne G \), and use \( \sum_{k=0}^{N} 2^k = 2^{N+1} - 1 < 2^{N+1} \).
+To prove injectivity, let \( m \) be the largest element at which two different sets \( F \ne G \) differ (the largest element of \( (F \setminus G) \cup (G \setminus F) \), a non-empty finite subset of \( \nN \)). The terms above \( m \) are the same for \( F \) and \( G \). Then use \( \sum_{k=0}^{m-1} 2^k = 2^m - 1 < 2^m \).
 :::
 
 ::: {.solution}
@@ -420,7 +420,7 @@ The set \( \sF \subseteq \powerset{\nN} \) exists by specification. We build an 
 \[
 S_N(F) \coloneqq \sum_{k=0}^{N} \ind_F(k) \, 2^k ,
 \]
-a finite sum as in @def-sum-product (indexed from \( 0 \)), where \( \ind_F \colon \nN \to \{0, 1\} \) is the indicator function of \( F \). Each term is \( 0 \) or \( 2^k \in \nN \), so \( S_N(F) \in \nN \).
+a finite sum as in @def-sum-product (indexed from \( 0 \)), where \( \ind_F \colon \nN \to \{0, 1\} \) is the indicator function of \( F \). Each term is \( 0 \) or \( 2^k \), and \( 2^k \in \nN \) by @prp-power-laws (d). So \( S_N(F) \in \nN \), by induction on \( N \) through the recursive clause of @def-sum-product, using @lem-naturals-arithmetic (b) at each step.
 
 *Step 1: a bound.* Each term is at most \( 2^k \), so
 \[
@@ -447,9 +447,10 @@ For example \( \sigma(\emptyset) = 0 \) (the empty set contributes no terms), \(
 **Marking scheme.** (10 points)
 - 2: defines a map from the finite subsets to \( \nN \) explicitly, including the value at \( \emptyset \), and checks that its values are natural numbers.
 - 2: makes the map well defined, either by a bound-independent definition (as in Step 2) or by summing over the elements of \( F \) listed in increasing order.
-- 4: proves injectivity, by comparing the largest elements of \( F \ne G \) with the bound \( \sum_{k=0}^{N} 2^k < 2^{N+1} \), or by an equivalent uniqueness argument for binary numerals.
+- 4: proves injectivity, either by comparing the terms at the largest element at which \( F \) and \( G \) differ, using \( \sum_{k=0}^{m-1} 2^k < 2^m \), or by an induction on the bound as in Step 3, or by an equivalent proved uniqueness argument for binary numerals.
 - 2: concludes with @thm-countable-characterizations, (ii) \( \Rightarrow \) (i).
-Fatal errors (0 for the step): writing \( \sF \) as the union over \( n \) of the sets of \( n \)-element subsets and citing a result on countable unions (the task excludes it); asserting injectivity "by uniqueness of binary expansions" with no proof.
+- Route by surjection: an explicit map \( \nN \to \sF \) that reads off binary digits (for example, \( D(n) \) is the set of \( k \le n \) for which the quotient of \( n \) by \( 2^k \) in @thm-division-algorithm is odd) earns the same points: 2 for defining the map, 2 for checking that each value is a finite subset of \( \nN \), 4 for a proof that every \( F \in \sF \) is a value, and 2 for concluding by @def-countable.
+Fatal errors (0 for the step): writing \( \sF \) as the union over \( n \) of the sets of \( n \)-element subsets and citing a result on countable unions (the task excludes it); asserting injectivity, or surjectivity on the second route, "by uniqueness of binary expansions" with no proof.
 :::
 
 ::: {#exr-countable-sets-c2}
