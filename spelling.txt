@@ -236,3 +236,15 @@ incomparability
 irreflexive
 maximality
 preorder
+# Chapter 8 (countable and uncountable), S3 2026-10-11
+equinumerous
+equinumerosity
+listable
+countability
+Tychonoff
+Vitali
+entrywise
+unflagged
+truncations
+Schröder
+bijectively

@@ -107,6 +107,7 @@
     "src/ch05-from-derivations-to-prose",
     "src/ch06-sets-and-functions",
     "src/ch07-relations-and-induction",
+    "src/ch08-countable-and-uncountable",
     {
       "dir": "src/ch11-least-upper-bound",
       "part": "Part I · Analysis on the Real Line"
