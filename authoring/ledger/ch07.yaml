@@ -63,12 +63,12 @@ items:
   kind: exm
   file: 01-naturals-and-well-ordering.md
   line: 76
-  hash: 4b179b16004f
+  hash: 45bdb183e861
   verdicts:
   - stage: S5a
     verdict: correct
     by: refereeA
-    hash: 4b179b16004f
+    hash: 45bdb183e861
     date: '2026-10-11'
     model: claude-opus-5-5
     evidence: 01:76-86. The quote matches ch03 02-induction.md:96. The base case and the step implication
@@ -76,7 +76,7 @@ items:
   - stage: S5b
     verdict: correct
     by: refereeB
-    hash: 4b179b16004f
+    hash: 45bdb183e861
     date: '2026-10-11'
     model: claude-opus-5-5
     evidence: 76-86. The Ch3 quote matches ch03 02-induction.md:96, and the proof of (c) at 67 indeed
@@ -993,12 +993,12 @@ items:
   kind: exm
   file: 02-induction-in-practice.md
   line: 220
-  hash: aac80850a327
+  hash: bc4224e40ab3
   verdicts:
   - stage: S5a
     verdict: correct
     by: refereeA
-    hash: aac80850a327
+    hash: bc4224e40ab3
     date: '2026-10-11'
     model: claude-opus-5-5
     evidence: '02:225-253. Line (5) fails at n=1 because the lists x1 and x2 share no entry. Each table
@@ -1008,7 +1008,7 @@ items:
   - stage: S5b
     verdict: correct
     by: refereeB
-    hash: aac80850a327
+    hash: bc4224e40ab3
     date: '2026-10-11'
     model: claude-opus-5-5
     evidence: '02:225-253: line (5) fails exactly at n=1; table rows verified (P(1)=>P(2) false since
@@ -1019,12 +1019,12 @@ items:
   kind: exr
   file: 02-induction-in-practice.md
   line: 272
-  hash: 0b8a04cfbcd2
+  hash: b5f9a4f98b3b
   verdicts:
   - stage: S5a
     verdict: correct
     by: refereeA
-    hash: 0b8a04cfbcd2
+    hash: b5f9a4f98b3b
     date: '2026-10-11'
     model: claude-opus-5-5
     evidence: '02:276-290. (a)(ii): 2^n>n^2 fails at n=2,3,4 (4=4, 8<9, 16=16), and 2n^2 ≥ (n+1)^2 for
@@ -1034,7 +1034,7 @@ items:
   - stage: S5b
     verdict: correct
     by: refereeB
-    hash: 0b8a04cfbcd2
+    hash: b5f9a4f98b3b
     date: '2026-10-11'
     model: claude-opus-5-5
     evidence: '02:284-290: 2^n>n^2 fails exactly at 2,3,4 among 0..4; 2n^2>=(n+1)^2 for n>=3; 11 not 3a+7b;
@@ -1043,7 +1043,7 @@ items:
   - stage: S6
     verdict: correct
     by: verifier
-    hash: 0b8a04cfbcd2
+    hash: b5f9a4f98b3b
     date: '2026-10-11'
     model: claude-opus-5-5
     evidence: '02:283-291. Script: 2^n>n^2 fails exactly at n=2,3,4; 3a+7b fails at 11 and below, so the
@@ -1054,19 +1054,19 @@ items:
   kind: exr
   file: 02-induction-in-practice.md
   line: 295
-  hash: 30da5b2d9310
+  hash: 8c3c14cc3922
   verdicts:
   - stage: S5a
     verdict: correct
     by: refereeA
-    hash: 30da5b2d9310
+    hash: 8c3c14cc3922
     date: '2026-10-11'
     model: claude-opus-5-5
     evidence: 02:302-306. 6(6^n−1)+5 = 6^{n+1}−1 = 5(6k+1), with 6k+1 ∈ ℤ by prp-integers-closed (a).
   - stage: S5b
     verdict: correct
     by: refereeB
-    hash: 30da5b2d9310
+    hash: 8c3c14cc3922
     date: '2026-10-11'
     model: claude-opus-5-5
     evidence: '02:302-306: 6^{n+1}-1=6(6^n-1)+5=5(6k+1); school meaning of 6^n stated in the item; ledger
@@ -1074,7 +1074,7 @@ items:
   - stage: S6
     verdict: correct
     by: verifier
-    hash: 30da5b2d9310
+    hash: 8c3c14cc3922
     date: '2026-10-11'
     model: claude-opus-5-5
     evidence: 02:301-307. 6(6^n-1)+5=5(6k+1). Script confirms 5 | 6^n-1 for n<50. The worked example is
@@ -1083,7 +1083,7 @@ items:
   kind: exr
   file: 02-induction-in-practice.md
   line: 309
-  hash: 42fc5d2d9d59
+  hash: 7a3990a8773d
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1115,7 +1115,7 @@ items:
   - stage: S7r
     verdict: correct
     by: rereferee
-    hash: 42fc5d2d9d59
+    hash: 7a3990a8773d
     date: '2026-10-11'
     model: claude-opus-5-5
     evidence: ':312 now says that p1 p2 ... pk has its school meaning, that multiplying two such products
@@ -1302,12 +1302,12 @@ items:
   kind: proof
   file: 03-recursion.md
   line: 34
-  hash: 89dd96789588
+  hash: 04b839b05713
   verdicts:
   - stage: S5a
     verdict: correct
     by: refereeA
-    hash: 89dd96789588
+    hash: 04b839b05713
     date: '2026-10-11'
     model: claude-opus-5-5
     evidence: '03:34-91. Step 1 (P(n): f(n)=f''(n), ax-induction, prp-function-equality) is valid. Claim
@@ -1318,7 +1318,7 @@ items:
   - stage: S5b
     verdict: correct
     by: refereeB
-    hash: 89dd96789588
+    hash: 04b839b05713
     date: '2026-10-11'
     model: claude-opus-5-5
     evidence: ':34-91. Checked Steps 1-3 against def-function (graph plus codomain, (Fn1)/(Fn2)), restriction
@@ -1875,12 +1875,12 @@ items:
   kind: exr
   file: 03-recursion.md
   line: 436
-  hash: 666009b47a89
+  hash: 302e3c885080
   verdicts:
   - stage: S5a
     verdict: correct
     by: refereeA
-    hash: 666009b47a89
+    hash: 302e3c885080
     date: '2026-10-11'
     model: claude-opus-5-5
     evidence: 03:436-452. Matches the ch03 02-induction warning. 2n^2−(n+1)^2=(n−1)^2−2 ≥ 7 for n ≥ 4.
@@ -1888,7 +1888,7 @@ items:
   - stage: S5b
     verdict: correct
     by: refereeB
-    hash: 666009b47a89
+    hash: 302e3c885080
     date: '2026-10-11'
     model: claude-opus-5-5
     evidence: :436-452. The quote matches ch03 02-induction.md warning ('true again from n = 4 on'). 2n²−(n+1)²
@@ -1896,7 +1896,7 @@ items:
   - stage: S6
     verdict: correct
     by: verifier
-    hash: 666009b47a89
+    hash: 302e3c885080
     date: '2026-10-11'
     model: claude-opus-5-5
     evidence: '03:442-452. Script: 2^n>=n^2 fails only at n=3. 2n^2-(n+1)^2=(n-1)^2-2 is >=7 for n>=4
@@ -1933,7 +1933,7 @@ items:
   kind: exr
   file: 03-recursion.md
   line: 470
-  hash: 401f35ddd186
+  hash: 157e9b8e2728
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1964,7 +1964,7 @@ items:
   - stage: S7r
     verdict: correct
     by: rereferee
-    hash: 401f35ddd186
+    hash: 157e9b8e2728
     date: '2026-10-11'
     model: claude-opus-5-5
     evidence: 'I solved it independently and got the same proof. m is even by the division algorithm,
@@ -2137,7 +2137,7 @@ items:
   kind: exm
   file: 04-relations.md
   line: 103
-  hash: b59614814e88
+  hash: 817ae8899958
   verdicts:
   - stage: S5a
     verdict: correct
@@ -2161,7 +2161,7 @@ items:
   - stage: S7r
     verdict: correct
     by: rereferee
-    hash: b59614814e88
+    hash: 817ae8899958
     date: '2026-10-11'
     model: claude-opus-5-5
     evidence: '04-relations.md:101-124. Line 123 now gives the reflexivity of ≤ (''x = x gives x ≤ x''),
@@ -2250,7 +2250,7 @@ items:
   kind: exr
   file: 04-relations.md
   line: 177
-  hash: add176f6fd50
+  hash: c0325a233d88
   verdicts:
   - stage: S5a
     verdict: minor
@@ -2280,7 +2280,7 @@ items:
   - stage: S7r
     verdict: correct
     by: rereferee
-    hash: add176f6fd50
+    hash: c0325a233d88
     date: '2026-10-11'
     model: claude-opus-5-5
     evidence: '04-relations.md:192-200. Both earlier findings are resolved. (1) Line 192 says ''Chapter
@@ -2409,12 +2409,12 @@ items:
   kind: exr
   file: 04-relations.md
   line: 260
-  hash: 6406414ede56
+  hash: fe819589950c
   verdicts:
   - stage: S5a
     verdict: correct
     by: refereeA
-    hash: 6406414ede56
+    hash: fe819589950c
     date: '2026-10-11'
     model: claude-opus-5-5
     evidence: '04:267-273. R⊆D×D uses symmetry. Reflexivity on D: the ∃E is applied to x∈D, which is the
@@ -2424,7 +2424,7 @@ items:
   - stage: S5b
     verdict: correct
     by: refereeB
-    hash: 6406414ede56
+    hash: fe819589950c
     date: '2026-10-11'
     model: claude-opus-5-5
     evidence: '04:267-280: R ⊆ D×D via symmetry. Reflexivity on D uses ∃E on x ∈ D. The restriction holds.
@@ -2432,7 +2432,7 @@ items:
   - stage: S6
     verdict: correct
     by: verifier
-    hash: 6406414ede56
+    hash: fe819589950c
     date: '2026-10-11'
     model: claude-opus-5-5
     evidence: '04:266-280. It matches my proof: R⊆D×D by symmetry, then ∃E from x∈D, symmetry, transitivity.
@@ -3007,7 +3007,7 @@ items:
   kind: exr
   file: 05-equivalence-relations.md
   line: 424
-  hash: 388f796b8a1a
+  hash: 44dda6538d10
   verdicts:
   - stage: S5a
     verdict: minor
@@ -3037,7 +3037,7 @@ items:
   - stage: S7r
     verdict: correct
     by: rereferee
-    hash: 388f796b8a1a
+    hash: 44dda6538d10
     date: '2026-10-11'
     model: claude-opus-5-5
     evidence: '05:436 and the ledger at 05:553 no longer call Chapter 10 optional. That matches authoring/blueprints/ch10.md:4,
@@ -3217,7 +3217,7 @@ items:
   kind: exm
   file: 06-orders.md
   line: 44
-  hash: 65dcf9732979
+  hash: 2da8c7d1de66
   verdicts:
   - stage: S5a
     verdict: correct
@@ -3246,7 +3246,7 @@ items:
   - stage: S7r
     verdict: correct
     by: rereferee
-    hash: 65dcf9732979
+    hash: 2da8c7d1de66
     date: '2026-10-11'
     model: claude-opus-5-5
     evidence: 06:51-55. (PO2) is @prp-subset-antisymmetric and (PO3) is @prp-subset-transitive; (PO1)
@@ -3631,7 +3631,7 @@ items:
   kind: exr
   file: 06-orders.md
   line: 241
-  hash: a2d9e6bbf304
+  hash: b2042240767a
   verdicts:
   - stage: S5a
     verdict: correct
@@ -3663,7 +3663,7 @@ items:
   - stage: S7r
     verdict: correct
     by: rereferee
-    hash: a2d9e6bbf304
+    hash: b2042240767a
     date: '2026-10-11'
     model: claude-opus-5-5
     evidence: '06:253-261. (a) The negations via de Morgan, prp-bounded-quantifier-negation (a) and double
@@ -3706,7 +3706,7 @@ items:
   kind: exr
   file: 06-orders.md
   line: 282
-  hash: 6ab919dfef1d
+  hash: 8d712238237a
   verdicts:
   - stage: S5a
     verdict: correct
@@ -3737,7 +3737,7 @@ items:
   - stage: S7r
     verdict: correct
     by: rereferee
-    hash: 6ab919dfef1d
+    hash: 8d712238237a
     date: '2026-10-11'
     model: claude-opus-5-5
     evidence: '06:289-297. In the example {∅,{1},{2}}, the least element ∅ now cites Section 6.1 after
@@ -3963,7 +3963,7 @@ items:
   kind: exr
   file: 06-orders.md
   line: 450
-  hash: cf9334c6921d
+  hash: 9b8569786f05
   verdicts:
   - stage: S5a
     verdict: minor
@@ -3992,7 +3992,7 @@ items:
   - stage: S7r
     verdict: correct
     by: rereferee
-    hash: cf9334c6921d
+    hash: 9b8569786f05
     date: '2026-10-11'
     model: claude-opus-5-5
     evidence: 06:457-469. The proof uses thm-induction with n0 = 1, matching ch07-02. The base case uses

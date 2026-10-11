@@ -341,7 +341,7 @@ items:
   kind: proof
   file: 04-rationals-as-classes.md
   line: 200
-  hash: 87b8aba55c6a
+  hash: 4b07c9364a00
   verdicts: []
 - key: check:04-rationals-as-classes:2
   kind: check
@@ -359,7 +359,7 @@ items:
   kind: proof
   file: 04-rationals-as-classes.md
   line: 269
-  hash: 3987df02cdc1
+  hash: ed5f936f3d55
   verdicts: []
 - key: exm-fractions-nonzero-denominators
   kind: exm
@@ -389,7 +389,7 @@ items:
   kind: exr
   file: 04-rationals-as-classes.md
   line: 424
-  hash: b420c9bdb17d
+  hash: ead2c80c7654
   verdicts: []
 - key: exr-rationals-as-classes-c2
   kind: exr
@@ -569,7 +569,7 @@ items:
   kind: exr
   file: 06-gaps-in-the-rationals.md
   line: 222
-  hash: 8fad2da6f5f7
+  hash: 60c3b525ce2f
   verdicts: []
 - key: exr-gaps-in-the-rationals-b2
   kind: exr
@@ -605,7 +605,7 @@ items:
   kind: exr
   file: 06-gaps-in-the-rationals.md
   line: 405
-  hash: 09d5a9ece07f
+  hash: 91d73d9ac0ba
   verdicts: []
 - key: exr-gaps-in-the-rationals-r3
   kind: exr

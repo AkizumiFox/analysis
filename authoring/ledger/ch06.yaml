@@ -93,12 +93,12 @@ items:
   kind: exm
   file: 01-sets-and-subsets.md
   line: 93
-  hash: 25d6e6735e73
+  hash: 8e81f7286b19
   verdicts:
   - stage: S5a
     verdict: correct
     by: refereeA
-    hash: 25d6e6735e73
+    hash: 8e81f7286b19
     date: '2026-10-10'
     model: claude-opus-5-5
     evidence: (a) chains ≤. (b) k is fresh under ∃E, the goal x∈T has no k, ∃I has witness 2k, and k depends
@@ -106,7 +106,7 @@ items:
   - stage: S5b
     verdict: minor
     by: refereeB
-    hash: 25d6e6735e73
+    hash: 8e81f7286b19
     date: '2026-10-10'
     model: claude-opus-5-5
     evidence: 01-sets-and-subsets.md:106 Integer-arithmetic facts are used without ledger lines. STATUS
@@ -114,7 +114,7 @@ items:
   - stage: S7r
     verdict: correct
     by: rereferee
-    hash: 25d6e6735e73
+    hash: 8e81f7286b19
     date: '2026-10-11'
     model: claude-opus-5-5
     evidence: 01:93-111. I solved all three parts myself. (a) 1≤x≤2 ⇒ 0≤x≤3 is fine. (b) ∃E with a fresh
@@ -200,12 +200,12 @@ items:
   kind: proof
   file: 01-sets-and-subsets.md
   line: 173
-  hash: 5e938efa5c46
+  hash: 92d45aa97d0b
   verdicts:
   - stage: S5a
     verdict: correct
     by: refereeA
-    hash: 5e938efa5c46
+    hash: 92d45aa97d0b
     date: '2026-10-10'
     model: claude-opus-5-5
     evidence: 'l.179-191: ∀E at x0 on lines 4 and 6, →E on 5 and 7, →I on 3-7. ∀I on 3-8 follows the ch04
@@ -214,7 +214,7 @@ items:
   - stage: S5b
     verdict: correct
     by: refereeB
-    hash: 5e938efa5c46
+    hash: 92d45aa97d0b
     date: '2026-10-10'
     model: claude-opus-5-5
     evidence: '01:177-199. The Fitch lines check: ∀E 1 and 2, →E (4,3) and (6,5), →I 3-7, ∀I over the
@@ -463,7 +463,7 @@ items:
   kind: exr
   file: 01-sets-and-subsets.md
   line: 387
-  hash: 5ad8b8adcf8b
+  hash: 7879201a79e3
   verdicts:
   - stage: S5a
     verdict: correct
@@ -494,7 +494,7 @@ items:
   - stage: S7r
     verdict: correct
     by: rereferee
-    hash: 5ad8b8adcf8b
+    hash: 7879201a79e3
     date: '2026-10-11'
     model: claude-opus-5-5
     evidence: '01:387-410. I solved all four parts. (a) ∃x(x∈A ∧ x∉B). (b) T, F (witness 1), T, F (witness
@@ -1090,7 +1090,7 @@ items:
   kind: proof
   file: 02-set-operations.md
   line: 321
-  hash: 6ca481731cb0
+  hash: 2c49f9a68e97
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1113,7 +1113,7 @@ items:
   - stage: S7r
     verdict: correct
     by: rereferee
-    hash: 6ca481731cb0
+    hash: 2c49f9a68e97
     date: '2026-10-11'
     model: claude-opus-5-5
     evidence: Lines 321-333. The bounded ∀I step now cites @prp-bounded-quantifier-rules (ch04/08-translation.md:93).
@@ -1124,12 +1124,12 @@ items:
   kind: exr
   file: 02-set-operations.md
   line: 347
-  hash: 930821ae5689
+  hash: 2f2397a00fb4
   verdicts:
   - stage: S5a
     verdict: correct
     by: refereeA
-    hash: 930821ae5689
+    hash: 2f2397a00fb4
     date: '2026-10-10'
     model: claude-opus-5-5
     evidence: (a) matches the blueprint. In (b), 1, 5, -1 and 7 lie in both sides and 3, 4 and 6 lie in
@@ -1137,7 +1137,7 @@ items:
   - stage: S5b
     verdict: minor
     by: refereeB
-    hash: 930821ae5689
+    hash: 2f2397a00fb4
     date: '2026-10-10'
     model: claude-opus-5-5
     evidence: 02-set-operations.md:351 The A1 solution uses the bounded quantifier negation law of Chapter
@@ -1145,7 +1145,7 @@ items:
   - stage: S6
     verdict: correct
     by: verifier
-    hash: 930821ae5689
+    hash: 2f2397a00fb4
     date: '2026-10-10'
     model: claude-opus-5-5
     evidence: '02:344-352. (a) The bounded quantifier negation law; ¬∀→∃¬ is the classical direction.
@@ -1226,7 +1226,7 @@ items:
   kind: exr
   file: 02-set-operations.md
   line: 410
-  hash: fd3230a732b6
+  hash: 5c55cbb08a52
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1255,7 +1255,7 @@ items:
   - stage: S7r
     verdict: correct
     by: rereferee
-    hash: fd3230a732b6
+    hash: 5c55cbb08a52
     date: '2026-10-11'
     model: claude-opus-5-5
     evidence: 'Lines 410-425. The example A={1}, B=∅, C={1} is correct. Both characterizations are correct.
@@ -1313,12 +1313,12 @@ items:
   kind: exr
   file: 02-set-operations.md
   line: 477
-  hash: 8cfb960b333e
+  hash: 7a1ccd5bf30c
   verdicts:
   - stage: S5a
     verdict: correct
     by: refereeA
-    hash: 8cfb960b333e
+    hash: 7a1ccd5bf30c
     date: '2026-10-10'
     model: claude-opus-5-5
     evidence: Line (5) drops the case x∈A, a ∨E missing case (N7 per blueprints/ch05.md:165). The counterexample
@@ -1326,7 +1326,7 @@ items:
   - stage: S5b
     verdict: correct
     by: refereeB
-    hash: 8cfb960b333e
+    hash: 7a1ccd5bf30c
     date: '2026-10-10'
     model: claude-opus-5-5
     evidence: '02:459-482: the conclusion is the (⊇) half of the second distributive law. Line (5) drops
@@ -1335,7 +1335,7 @@ items:
   - stage: S6
     verdict: correct
     by: verifier
-    hash: 8cfb960b333e
+    hash: 7a1ccd5bf30c
     date: '2026-10-10'
     model: claude-opus-5-5
     evidence: '02:464-482. The conclusion is true (brute force confirms it). The only flawed line is (5),
@@ -1701,7 +1701,7 @@ items:
   kind: exr
   file: 03-products-and-relations.md
   line: 297
-  hash: be0495c64fd9
+  hash: e0c7e4dc416b
   verdicts:
   - stage: S5a
     verdict: minor
@@ -1741,7 +1741,7 @@ items:
   - stage: S7r
     verdict: correct
     by: rereferee
-    hash: be0495c64fd9
+    hash: e0c7e4dc416b
     date: '2026-10-11'
     model: claude-opus-5-5
     evidence: 'My own solutions: (a) is the membership condition of @def-cartesian-product. (b) No: by
@@ -2013,7 +2013,7 @@ items:
   kind: exm
   file: 04-functions.md
   line: 78
-  hash: ebe42d4ca845
+  hash: e98c4d306a2c
   verdicts:
   - stage: S5a
     verdict: minor
@@ -2036,7 +2036,7 @@ items:
   - stage: S7r
     verdict: correct
     by: rereferee
-    hash: ebe42d4ca845
+    hash: e98c4d306a2c
     date: '2026-10-11'
     model: claude-opus-5-5
     evidence: 'l.78-93. (a) is right: (Fn2) fails at x=0, (Fn1) fails at x=2, and the repair to the upper
@@ -2187,7 +2187,7 @@ items:
   kind: proof
   file: 04-functions.md
   line: 204
-  hash: d34eb95684fc
+  hash: 1fffb147f163
   verdicts:
   - stage: S5a
     verdict: correct
@@ -2209,7 +2209,7 @@ items:
   - stage: S7r
     verdict: correct
     by: rereferee
-    hash: d34eb95684fc
+    hash: 1fffb147f163
     date: '2026-10-11'
     model: claude-opus-5-5
     evidence: l.204-210. The proof relies on 'empty set is a subset of every set (Section 6.1)', and ch06/01
@@ -2516,7 +2516,7 @@ items:
   kind: exr
   file: 04-functions.md
   line: 484
-  hash: 25ea7d6b0a0e
+  hash: 3606f7a717bd
   verdicts:
   - stage: S5a
     verdict: correct
@@ -2548,7 +2548,7 @@ items:
   - stage: S7r
     verdict: correct
     by: rereferee
-    hash: 25ea7d6b0a0e
+    hash: 3606f7a717bd
     date: '2026-10-11'
     model: claude-opus-5-5
     evidence: l.484-512, solved independently. (a) The definition and its negation agree with def-injective
@@ -2677,12 +2677,12 @@ items:
   kind: exr
   file: 04-functions.md
   line: 604
-  hash: fd8eaf1a8f34
+  hash: 435387122e19
   verdicts:
   - stage: S5a
     verdict: correct
     by: refereeA
-    hash: fd8eaf1a8f34
+    hash: 435387122e19
     date: '2026-10-10'
     model: claude-opus-5-5
     evidence: 'l.616-627: (a) is a valid proof (well-definedness from l.43, def-composition, injectivity
@@ -2691,7 +2691,7 @@ items:
   - stage: S5b
     verdict: correct
     by: refereeB
-    hash: fd8eaf1a8f34
+    hash: 435387122e19
     date: '2026-10-10'
     model: claude-opus-5-5
     evidence: '04:616-627: the proof is valid, the example checks out, and the marking scheme sums to
@@ -2699,7 +2699,7 @@ items:
   - stage: S6
     verdict: correct
     by: verifier
-    hash: fd8eaf1a8f34
+    hash: 435387122e19
     date: '2026-10-10'
     model: claude-opus-5-5
     evidence: 04-functions.md:615-628. (a) is the same direct proof as mine. (b) X={1}, Y={1,2}, Z={1}
@@ -2856,7 +2856,7 @@ items:
   kind: proof
   file: 05-inverses.md
   line: 120
-  hash: 663fe674237f
+  hash: 615fcad1cc9c
   verdicts:
   - stage: S5a
     verdict: correct
@@ -2879,7 +2879,7 @@ items:
   - stage: S7r
     verdict: correct
     by: rereferee
-    hash: 663fe674237f
+    hash: 615fcad1cc9c
     date: '2026-10-11'
     model: claude-opus-5-5
     evidence: '05-inverses.md:120-143. The earlier finding is resolved. Line 134 now cites @prp-unique-existence-use
@@ -3616,12 +3616,12 @@ items:
   kind: exm
   file: 06-images-and-preimages.md
   line: 153
-  hash: aa68f84076d8
+  hash: d37f4e9530c6
   verdicts:
   - stage: S5a
     verdict: minor
     by: refereeA
-    hash: aa68f84076d8
+    hash: d37f4e9530c6
     date: '2026-10-10'
     model: claude-opus-5-5
     evidence: '06-images-and-preimages.md:164 Part (b) unwinds y ∈ A + B as ''∃a∈A ∃b∈B, y = a + b'',
@@ -3631,7 +3631,7 @@ items:
   - stage: S5b
     verdict: correct
     by: refereeB
-    hash: aa68f84076d8
+    hash: d37f4e9530c6
     date: '2026-10-10'
     model: claude-opus-5-5
     evidence: '06:160-170 is correct: {11,21,12,22} and {2,3,4}. The Ch 11 definitions match (03:77; 04:143
@@ -3803,12 +3803,12 @@ items:
   kind: exm
   file: 06-images-and-preimages.md
   line: 321
-  hash: d87cb7715d2a
+  hash: 062f7c78f7c1
   verdicts:
   - stage: S5a
     verdict: correct
     by: refereeA
-    hash: d87cb7715d2a
+    hash: 062f7c78f7c1
     date: '2026-10-10'
     model: claude-opus-5-5
     evidence: 'L326-330: the counterexample A={-1}, B={1} is correct, and the failing line (3) (name reuse,
@@ -3816,7 +3816,7 @@ items:
   - stage: S5b
     verdict: minor
     by: refereeB
-    hash: d87cb7715d2a
+    hash: 062f7c78f7c1
     date: '2026-10-10'
     model: claude-opus-5-5
     evidence: The counterexample and the diagnosis of line (3) at 06:326-330 are correct. Ledger 733 names
@@ -3824,7 +3824,7 @@ items:
   - stage: S7r
     verdict: correct
     by: rereferee
-    hash: d87cb7715d2a
+    hash: 062f7c78f7c1
     date: '2026-10-11'
     model: claude-opus-5-5
     evidence: 06:321-337. The counterexample A={-1}, B={1} under squaring gives {1} against ∅, which is
@@ -4007,7 +4007,7 @@ items:
   kind: exr
   file: 06-images-and-preimages.md
   line: 451
-  hash: 6ca68c931534
+  hash: 6f64a3788ab7
   verdicts:
   - stage: S5a
     verdict: minor
@@ -4040,7 +4040,7 @@ items:
   - stage: S7r
     verdict: minor
     by: rereferee
-    hash: 6ca68c931534
+    hash: 6f64a3788ab7
     date: '2026-10-11'
     model: claude-opus-5-5
     evidence: 's 731 and 752 record this. The sidecar passes. One remaining unledgered step: at 06:464
@@ -4051,7 +4051,7 @@ items:
   - stage: S7r
     verdict: correct
     by: rereferee
-    hash: 6ca68c931534
+    hash: 6f64a3788ab7
     date: '2026-10-11'
     model: claude-opus-5-5
     evidence: 'a positive integer is in N'' and ''m - n = 0 iff m = n'' as school facts. (b) [0,1], R∖[0,1]
@@ -4144,12 +4144,12 @@ items:
   kind: exr
   file: 06-images-and-preimages.md
   line: 504
-  hash: 4d372c90ba20
+  hash: 0652b9507c45
   verdicts:
   - stage: S5a
     verdict: correct
     by: refereeA
-    hash: 4d372c90ba20
+    hash: 0652b9507c45
     date: '2026-10-10'
     model: claude-opus-5-5
     evidence: 'L513-521: (a) ¬I on a∈B, then ∃I. (b) A\B={-1}, image {1} vs ∅. (c) (⇐) uses two names
@@ -4157,7 +4157,7 @@ items:
   - stage: S5b
     verdict: correct
     by: refereeB
-    hash: 4d372c90ba20
+    hash: 0652b9507c45
     date: '2026-10-10'
     model: claude-opus-5-5
     evidence: '06:513-530: (b) gives {1} against ∅. In (c), (⇒) uses RAA as cited. The marking scheme
@@ -4165,7 +4165,7 @@ items:
   - stage: S6
     verdict: correct
     by: verifier
-    hash: 4d372c90ba20
+    hash: 0652b9507c45
     date: '2026-10-10'
     model: claude-opus-5-5
     evidence: 06-images-and-preimages.md:512-531. (a) the completion (¬I on a∈B, then ∃I) is the only
@@ -4176,7 +4176,7 @@ items:
   kind: exr
   file: 06-images-and-preimages.md
   line: 539
-  hash: ab5dd2724093
+  hash: b1d483b067ba
   verdicts:
   - stage: S5a
     verdict: correct
@@ -4206,7 +4206,7 @@ items:
   - stage: S7r
     verdict: correct
     by: rereferee
-    hash: ab5dd2724093
+    hash: b1d483b067ba
     date: '2026-10-11'
     model: claude-opus-5-5
     evidence: '06:539-561. (a) The claim is true; it is the (⇐) half of prp-image-preimage (a). (b) The
@@ -4218,12 +4218,12 @@ items:
   kind: exr
   file: 06-images-and-preimages.md
   line: 563
-  hash: fb4632802fae
+  hash: 408209abbdad
   verdicts:
   - stage: S5a
     verdict: correct
     by: refereeA
-    hash: fb4632802fae
+    hash: 408209abbdad
     date: '2026-10-10'
     model: claude-opus-5-5
     evidence: 'L567-575: both inclusions use arbitrary i and track the ambient clauses. The vacuous I=∅
@@ -4231,7 +4231,7 @@ items:
   - stage: S5b
     verdict: minor
     by: refereeB
-    hash: fb4632802fae
+    hash: 408209abbdad
     date: '2026-10-10'
     model: claude-opus-5-5
     evidence: The math and the marking scheme (1+3+3+1+2=10) are correct. Ledger 743 names `ch05 (promised)`
@@ -4239,7 +4239,7 @@ items:
   - stage: S6
     verdict: correct
     by: verifier
-    hash: fb4632802fae
+    hash: 408209abbdad
     date: '2026-10-10'
     model: claude-opus-5-5
     evidence: 06-images-and-preimages.md:566-586. (a) is a correct two-inclusion proof, including I=∅.
@@ -4249,12 +4249,12 @@ items:
   kind: exr
   file: 06-images-and-preimages.md
   line: 596
-  hash: a1e031d1cb40
+  hash: 3ba4a7cda594
   verdicts:
   - stage: S5a
     verdict: correct
     by: refereeA
-    hash: a1e031d1cb40
+    hash: 3ba4a7cda594
     date: '2026-10-10'
     model: claude-opus-5-5
     evidence: 'L597-627: every rule citation checks. The eigenvariables x_0 and S_0 do not occur in the
@@ -4263,7 +4263,7 @@ items:
   - stage: S5b
     verdict: minor
     by: refereeB
-    hash: a1e031d1cb40
+    hash: 3ba4a7cda594
     date: '2026-10-10'
     model: claude-opus-5-5
     evidence: The prose proof and the five-box map at 06:634-638 match the derivation. Ledger 744-745
@@ -4272,7 +4272,7 @@ items:
   - stage: S6
     verdict: correct
     by: verifier
-    hash: a1e031d1cb40
+    hash: 3ba4a7cda594
     date: '2026-10-10'
     model: claude-opus-5-5
     evidence: 06-images-and-preimages.md:633-639. The prose proof matches mine, and the five boxes (→I
@@ -4283,12 +4283,12 @@ items:
   kind: exr
   file: 06-images-and-preimages.md
   line: 647
-  hash: 87101106f292
+  hash: d105429cce7e
   verdicts:
   - stage: S5a
     verdict: correct
     by: refereeA
-    hash: 87101106f292
+    hash: d105429cce7e
     date: '2026-10-10'
     model: claude-opus-5-5
     evidence: 'L650-663: all 8 rows recomputed. The columns differ exactly in rows TTT and TFT. Both counterexamples
@@ -4296,7 +4296,7 @@ items:
   - stage: S5b
     verdict: correct
     by: refereeB
-    hash: 87101106f292
+    hash: d105429cce7e
     date: '2026-10-10'
     model: claude-opus-5-5
     evidence: 'I recomputed all 8 rows: they differ in rows TTT and TFT, as stated. The counterexamples
@@ -4304,7 +4304,7 @@ items:
   - stage: S6
     verdict: correct
     by: verifier
-    hash: 87101106f292
+    hash: d105429cce7e
     date: '2026-10-10'
     model: claude-opus-5-5
     evidence: 06-images-and-preimages.md:647-666. A script reproduces all 8 rows; the columns differ at

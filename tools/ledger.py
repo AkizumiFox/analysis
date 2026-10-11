@@ -17,6 +17,8 @@ nested in a claim or proof are part of the enclosing proof's text.
 
 Needs PyYAML, which lives in the repo's virtualenv: run it as
 
+    cd fd2                                       # a volume of the series
+    .venv/bin/python ../tools/ledger.py init 3   # or, from the root: tools/ledger.py --book fd2 init 3
     .venv/bin/python tools/ledger.py init 8
     .venv/bin/python tools/ledger.py set 8 thm-sup-unique --stage S5a --verdict correct --by refA
     .venv/bin/python tools/ledger.py set 8 proof:thm-sup-sum --stage S5a --verdict gap \\
@@ -27,11 +29,19 @@ Needs PyYAML, which lives in the repo's virtualenv: run it as
 Hashes are taken after `usage_forms.normalize`, which rewrites the English usage
 forms the series is migrating away from (`non-empty`, `iff`, a missing serial
 comma, a kept heading anchor `{#id}`, ...) to their preferred forms, so a usage-only
-edit leaves a verdict current while a mathematical edit still stales it. Verdicts
-recorded before normalization carry the raw hash; `ledger.py rehash [ch]` moves
-every verdict whose hash is the raw hash of its item's current text to the new
-hash, and leaves any other mismatch stale. (Adding a rule to usage_forms.py
-changes the hash of the items containing that form; their verdicts go stale.)
+edit leaves a verdict current while a mathematical edit still stales it. Then
+`pointers.mask` replaces every chapter or section pointer ("Chapter 6",
+"*Logic and Proof*, Section 4.7", `F2.1 §04`, "Ch 11", `§03`) by one token and reads
+`@fd1:label` as `@label`, so renumbering a volume, splitting the book into volumes or
+moving a label into another book leaves a verdict current too. Verdicts recorded
+before normalization carry the raw hash, and verdicts recorded before pointer masking
+the usage-normalized hash; `ledger.py rehash [ch]` moves every verdict whose hash is
+one of those two hashes of its item's current text to the current hash, and leaves
+any other mismatch stale. (Adding a rule to usage_forms.py or pointers.py changes
+the hash of the items containing that form; their verdicts go stale.)
+
+The ledgers are per volume: run the tool in a volume directory (`cd fd2`), or pass
+`--book fd2`; chapter numbers are the volume's own (`fd2` chapter 1 is atlas F2.1).
 
 `init` is also a refresh: on an existing ledger it keeps every verdict, updates
 hashes and files, adds new items, and keeps (marked `removed`) any item that has
@@ -51,6 +61,8 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import mdblocks  # noqa: E402
+import pointers  # noqa: E402
+import series  # noqa: E402
 import usage_forms  # noqa: E402
 
 SRC = Path("src")
@@ -66,8 +78,13 @@ def _raw_hash(text: str) -> str:
     return hashlib.sha256(norm.encode("utf-8")).hexdigest()[:12]
 
 
-def content_hash(text: str) -> str:
+def _usage_hash(text: str) -> str:
+    """The hash before pointer masking (usage-normalized only). Used only by `rehash`."""
     return _raw_hash(usage_forms.normalize(text))
+
+
+def content_hash(text: str) -> str:
+    return _raw_hash(pointers.mask(usage_forms.normalize(text)))
 
 
 def _block_text(doc, div, with_solution=False):
@@ -82,8 +99,9 @@ def _block_text(doc, div, with_solution=False):
 def extract_items(chapter_dir: Path) -> list:
     """Every ledger item in one chapter directory, in book order.
 
-    Returns dicts {key, kind, file, line, hash, raw_hash}; `raw_hash` is the hash
-    without usage normalization, for `rehash`.
+    Returns dicts {key, kind, file, line, hash, raw_hash, usage_hash}; `raw_hash` is the
+    hash without usage normalization and `usage_hash` the hash without pointer masking,
+    both for `rehash`.
     """
     items, seen = [], {}
     for f in sorted(Path(chapter_dir).glob("*.md")):
@@ -113,7 +131,7 @@ def extract_items(chapter_dir: Path) -> list:
                 seen[key] = 1
             items.append({"key": key, "kind": kind, "file": f.name,
                           "line": div.start + 1, "hash": content_hash(text),
-                          "raw_hash": _raw_hash(text)})
+                          "raw_hash": _raw_hash(text), "usage_hash": _usage_hash(text)})
     return items
 
 
@@ -161,20 +179,24 @@ def stale_items(ledger: dict, items: list) -> list:
 
 
 def rehash(ledger: dict, items: list) -> int:
-    """Carry verdicts over to the normalized hash. A verdict whose recorded hash is the raw
-    (unnormalized) hash of its item's current text was current before normalization, so it is
-    rewritten to the new hash; any other hash is left as it is (stale stays stale). The entry's own
-    `hash` is updated the same way. Returns the number of verdicts rewritten."""
+    """Carry verdicts over to the current hash. A verdict whose recorded hash is the raw
+    (unnormalized) hash, or the usage-normalized but unmasked hash, of its item's current text
+    was current under that older hashing, so it is rewritten to the current hash; any other
+    hash is left as it is (stale stays stale). The entry's own `hash` is updated the same way.
+    Returns the number of verdicts rewritten."""
     current = {it["key"]: it for it in items}
     n = 0
     for entry in ledger.get("items", []):
         it = current.get(entry["key"])
-        if it is None or it["raw_hash"] == it["hash"]:
+        if it is None:
             continue
-        if entry.get("hash") == it["raw_hash"]:
+        older = {it["raw_hash"], it.get("usage_hash", it["raw_hash"])} - {it["hash"]}
+        if not older:
+            continue
+        if entry.get("hash") in older:
             entry["hash"] = it["hash"]
         for v in entry.get("verdicts") or []:
-            if v.get("hash") == it["raw_hash"]:
+            if v.get("hash") in older:
                 v["hash"] = it["hash"]
                 n += 1
     return n
@@ -251,9 +273,12 @@ def save(path: Path, ledger: dict):
 
 
 def main(argv=None) -> int:
+    argv = series.enter_book(argv)
     ap = argparse.ArgumentParser(description="The claim ledger: items with content hashes and "
-                                             "referee verdicts (authoring/ledger/chNN.yaml). "
+                                             "referee verdicts (authoring/ledger/chNN.yaml of a "
+                                             "volume; --book DIR or run in the volume). "
                                              "Needs PyYAML: use .venv/bin/python.")
+    series.add_book_arg(ap)
     ap.add_argument("--src", default=str(SRC), help="source directory (default: src)")
     ap.add_argument("--dir", default=str(LEDGER_DIR), help="ledger directory (default: authoring/ledger)")
     sub = ap.add_subparsers(dest="cmd", required=True)

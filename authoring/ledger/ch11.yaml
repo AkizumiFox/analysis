@@ -100,7 +100,7 @@ items:
   - stage: S8
     verdict: gap
     by: seam
-    hash: 9ce14ad07e60
+    hash: d480b898e872
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: authoring/reviews/ch11-S8-seam.md row 3
@@ -753,20 +753,20 @@ items:
   - stage: S7
     verdict: correct
     by: reviser
-    hash: 98820c86d4c9
+    hash: 3b74cae544c4
     date: '2026-09-28'
     evidence: text unchanged in item; hash moved with section edits
   - stage: S7r
     verdict: correct
     by: rereferee
-    hash: 98820c86d4c9
+    hash: 3b74cae544c4
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: S7 fix checked, ch11-S7-recheck.md
   - stage: S8
     verdict: correct
     by: seam
-    hash: 98820c86d4c9
+    hash: 3b74cae544c4
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: authoring/reviews/ch11-S8-seam.md row 12 (prp-finite-max, ch07)
@@ -1151,13 +1151,13 @@ items:
   - stage: S7
     verdict: correct
     by: reviser
-    hash: 512b75c3ed8e
+    hash: a248947e2284
     date: '2026-09-28'
     evidence: unchanged; hash moved
   - stage: S7r
     verdict: correct
     by: rereferee
-    hash: 512b75c3ed8e
+    hash: a248947e2284
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: S7 fix checked, ch11-S7-recheck.md
@@ -2630,7 +2630,7 @@ items:
   - stage: S7r
     verdict: correct
     by: rereferee
-    hash: 924ec58ca661
+    hash: 8eb8d634bb9f
     date: '2026-10-10'
     model: claude-opus-5-5
     evidence: 'S7r after N-includes-0 edit (diff vs 410a4ee4/earlier reviewed text): 06-density-and-roots.md:98-155.
@@ -2716,7 +2716,7 @@ items:
   - stage: S7r
     verdict: correct
     by: rereferee
-    hash: 132257ab0146
+    hash: 76a9104de543
     date: '2026-10-10'
     model: claude-opus-5-5
     evidence: 'S7r after N-includes-0 edit (diff vs 410a4ee4/earlier reviewed text): 06-density-and-roots.md:195-201.
@@ -3274,7 +3274,7 @@ items:
   - stage: S7r
     verdict: correct
     by: rereferee
-    hash: e93c3759b9df
+    hash: e70c66ea59ec
     date: '2026-10-10'
     model: claude-opus-5-5
     evidence: 'S7r after N-includes-0 edit (diff vs 410a4ee4/earlier reviewed text): 07:107-130. The recursion
@@ -3503,7 +3503,7 @@ items:
   - stage: S7r
     verdict: correct
     by: rereferee
-    hash: f9a03673c6e7
+    hash: 5d740caaa941
     date: '2026-10-10'
     model: claude-opus-5-5
     evidence: 07-nested-intervals.md:289 n>=1 matches indexing of thm-reals-uncountable (line 128)
@@ -3642,7 +3642,7 @@ items:
   - stage: S7r
     verdict: correct
     by: rereferee
-    hash: ed087bdaed0a
+    hash: 35e1e4e9067c
     date: '2026-10-10'
     model: claude-opus-5-5
     evidence: 'S7r after N-includes-0 edit (diff vs 410a4ee4/earlier reviewed text): 07:410. (ii) now
@@ -3677,20 +3677,20 @@ items:
   - stage: S7
     verdict: correct
     by: reviser
-    hash: d61cc22f48e9
+    hash: 8cff931c490b
     date: '2026-09-28'
     evidence: 'ledger: (t^2)^2 = t^4, power laws ch07'
   - stage: S7r
     verdict: correct
     by: rereferee
-    hash: d61cc22f48e9
+    hash: 8cff931c490b
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: S7 fix checked, ch11-S7-recheck.md
   - stage: S8
     verdict: correct
     by: seam
-    hash: d61cc22f48e9
+    hash: 8cff931c490b
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: authoring/reviews/ch11-S8-seam.md row (a) prp-contrapositive; 12 power laws
@@ -3724,20 +3724,20 @@ items:
   - stage: S7
     verdict: correct
     by: reviser
-    hash: 79ab76ea15d4
+    hash: 9e14c0479c10
     date: '2026-09-28'
     evidence: closure of Q now cites @exm-ordered-fields-q-r; ledgered
   - stage: S7r
     verdict: correct
     by: rereferee
-    hash: 79ab76ea15d4
+    hash: 9e14c0479c10
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: S7 fix checked, ch11-S7-recheck.md
   - stage: S8
     verdict: correct
     by: seam
-    hash: 79ab76ea15d4
+    hash: 9e14c0479c10
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: authoring/reviews/ch11-S8-seam.md row (a), 16 (exr-negation-and-contradiction-c1 must survive

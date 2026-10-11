@@ -935,7 +935,7 @@ items:
   kind: proof
   file: 02-countable-sets.md
   line: 105
-  hash: 76f4f5fc97e8
+  hash: c050b3f4d1fb
   verdicts:
   - stage: S5a
     verdict: minor
@@ -956,7 +956,7 @@ items:
   - stage: S7r
     verdict: correct
     by: rereferee
-    hash: 76f4f5fc97e8
+    hash: c050b3f4d1fb
     date: '2026-10-11'
     model: claude-opus-5-5
     evidence: ':106-122. (i)=>(ii): handles the empty set; takes the min of a non-empty preimage (thm-well-ordering);
@@ -1027,12 +1027,12 @@ items:
   kind: proof
   file: 02-countable-sets.md
   line: 149
-  hash: 48bc329a62f5
+  hash: c7bb251cb609
   verdicts:
   - stage: S5a
     verdict: correct
     by: refereeA
-    hash: 48bc329a62f5
+    hash: c7bb251cb609
     date: '2026-10-11'
     model: claude-opus-5-5
     evidence: 02:150. The case A=∅ is handled. Shrinking the codomain (01:100) plus thm-composition-injective-surjective
@@ -1040,7 +1040,7 @@ items:
   - stage: S5b
     verdict: correct
     by: refereeB
-    hash: 48bc329a62f5
+    hash: c7bb251cb609
     date: '2026-10-11'
     model: claude-opus-5-5
     evidence: 02:150; Shrinking the codomain (01:100) and thm-composition-injective-surjective (b) are
@@ -1179,7 +1179,7 @@ items:
   kind: proof
   file: 02-countable-sets.md
   line: 254
-  hash: c43f65de0d9a
+  hash: 9c7b316458c7
   verdicts:
   - stage: S5a
     verdict: minor
@@ -1201,7 +1201,7 @@ items:
   - stage: S7r
     verdict: correct
     by: rereferee
-    hash: c43f65de0d9a
+    hash: 9c7b316458c7
     date: '2026-10-11'
     model: claude-opus-5-5
     evidence: :255. The empty case now cites prp-product-set-laws (A×∅ = ∅ and ∅×A = ∅, ch06/03:130) and
@@ -1213,7 +1213,7 @@ items:
   kind: check
   file: 02-countable-sets.md
   line: 266
-  hash: d8b085c9f823
+  hash: acd73886ae2c
   verdicts:
   - stage: S5a
     verdict: minor
@@ -1234,7 +1234,7 @@ items:
   - stage: S7r
     verdict: correct
     by: rereferee
-    hash: d8b085c9f823
+    hash: acd73886ae2c
     date: '2026-10-11'
     model: claude-opus-5-5
     evidence: 'The check (:266-272) now sits right after cor-product-countable and its remark, as STYLE
@@ -1361,7 +1361,7 @@ items:
   kind: exr
   file: 02-countable-sets.md
   line: 354
-  hash: 30cd77442227
+  hash: ddf878358348
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1406,7 +1406,7 @@ items:
   - stage: S7r
     verdict: correct
     by: rereferee
-    hash: 30cd77442227
+    hash: ddf878358348
     date: '2026-10-11'
     model: claude-opus-5-5
     evidence: 'I solved it myself: the order is (ii),(v),(viii),(i),(ix),(iv),(vi), which agrees with
@@ -1680,12 +1680,12 @@ items:
   kind: proof
   file: 03-countable-unions-and-choice.md
   line: 119
-  hash: 2c3aa9ea93ef
+  hash: 408322484b19
   verdicts:
   - stage: S5a
     verdict: correct
     by: refereeA
-    hash: 2c3aa9ea93ef
+    hash: 408322484b19
     date: '2026-10-11'
     model: claude-opus-5-5
     evidence: 03:120-134. J is a set by specification, and the J=empty case is needed, since otherwise
@@ -1696,7 +1696,7 @@ items:
   - stage: S5b
     verdict: correct
     by: refereeB
-    hash: 2c3aa9ea93ef
+    hash: 408322484b19
     date: '2026-10-11'
     model: claude-opus-5-5
     evidence: '03:120-134: the J/S_n construction, the one choice line, F onto U, J×N countable and non-empty
@@ -2419,7 +2419,7 @@ items:
   - stage: S7r
     verdict: correct
     by: rereferee
-    hash: 0076053d4dd5
+    hash: 11f3faaa5ea2
     date: '2026-10-11'
     model: claude-opus-5-5
     evidence: able by def-countable's first disjunct (02:13), so R∖Alg ≠ ∅. (4) If ∀x ¬(x∈R∖Alg), then
@@ -2762,7 +2762,7 @@ items:
   kind: check
   file: 05-comparing-cardinalities.md
   line: 70
-  hash: 2abd59e99df1
+  hash: 0602df634d03
   verdicts:
   - stage: S5a
     verdict: minor
@@ -2783,7 +2783,7 @@ items:
   - stage: S7r
     verdict: correct
     by: rereferee
-    hash: 2abd59e99df1
+    hash: 0602df634d03
     date: '2026-10-11'
     model: claude-opus-5-5
     evidence: '05-comparing-cardinalities.md:74-75. The injection a -> {n : a(n)=1} is injective: equal
@@ -2935,7 +2935,7 @@ items:
   kind: check
   file: 05-comparing-cardinalities.md
   line: 235
-  hash: 4dffed85fd82
+  hash: 63f7568087b4
   verdicts:
   - stage: S5a
     verdict: minor
@@ -2956,7 +2956,7 @@ items:
   - stage: S7r
     verdict: correct
     by: rereferee
-    hash: 4dffed85fd82
+    hash: 63f7568087b4
     date: '2026-10-11'
     model: claude-opus-5-5
     evidence: 'Line 240. n -> (n,1) is injective by the characteristic property, now cited (@def-ordered-pair,
@@ -3116,12 +3116,12 @@ items:
   kind: exr
   file: 05-comparing-cardinalities.md
   line: 332
-  hash: a9df6851c165
+  hash: b04dcb9849b4
   verdicts:
   - stage: S5a
     verdict: correct
     by: refereeA
-    hash: a9df6851c165
+    hash: b04dcb9849b4
     date: '2026-10-11'
     model: claude-opus-5-5
     evidence: '05:357-365: (a) the expansion is unique by (D1)+(D3) (04:141-145). Digits are read back
@@ -3131,7 +3131,7 @@ items:
   - stage: S5b
     verdict: correct
     by: refereeB
-    hash: a9df6851c165
+    hash: b04dcb9849b4
     date: '2026-10-11'
     model: claude-opus-5-5
     evidence: 05:332-374. (D1)-(D3) are used as stated at 04:142-146, and y_S≤t_1+1/10≤3/10 follows from
@@ -3139,7 +3139,7 @@ items:
   - stage: S6
     verdict: correct
     by: verifier
-    hash: a9df6851c165
+    hash: b04dcb9849b4
     date: '2026-10-11'
     model: claude-opus-5-5
     evidence: '05:332-374. (a) is well defined by (D1)+(D3), and the digits come back out of E(x) by divmod
@@ -3592,7 +3592,7 @@ items:
   kind: exr
   file: 06-infinite-sets.md
   line: 268
-  hash: 5d6f7cce01ad
+  hash: 5a0889682eaf
   verdicts:
   - stage: S5a
     verdict: minor
@@ -3623,7 +3623,7 @@ items:
   - stage: S7r
     verdict: correct
     by: rereferee
-    hash: 5d6f7cce01ad
+    hash: 5a0889682eaf
     date: '2026-10-11'
     model: claude-opus-5-5
     evidence: '06-infinite-sets.md:283 now says ''with the variables renamed and the two places of R exchanged
@@ -3737,7 +3737,7 @@ items:
   kind: exr
   file: 07-gate-0.md
   line: 75
-  hash: 61ce0776575c
+  hash: 043a040fc708
   verdicts:
   - stage: S5a
     verdict: correct
@@ -3772,7 +3772,7 @@ items:
   - stage: S7r
     verdict: correct
     by: rereferee
-    hash: 61ce0776575c
+    hash: 043a040fc708
     date: '2026-10-11'
     model: claude-opus-5-5
     evidence: 'Earlier finding resolved. Line 84 now defines the function explicitly as f: R -> R, with
@@ -3828,7 +3828,7 @@ items:
   kind: exr
   file: 07-gate-0.md
   line: 199
-  hash: 293eea605faa
+  hash: 2ec58d7b8a48
   verdicts:
   - stage: S5a
     verdict: correct
@@ -3860,7 +3860,7 @@ items:
   - stage: S7r
     verdict: correct
     by: rereferee
-    hash: 293eea605faa
+    hash: 2ec58d7b8a48
     date: '2026-10-11'
     model: claude-opus-5-5
     evidence: 'Earlier finding resolved. Line 225, the last point of (b), now reads ''gives a counterexample
@@ -3872,7 +3872,7 @@ items:
   kind: exr
   file: 07-gate-0.md
   line: 229
-  hash: 66f8a4f055c0
+  hash: 78c9c3a75fea
   verdicts:
   - stage: S5a
     verdict: correct
@@ -3907,7 +3907,7 @@ items:
   - stage: S7r
     verdict: correct
     by: rereferee
-    hash: 66f8a4f055c0
+    hash: 78c9c3a75fea
     date: '2026-10-11'
     model: claude-opus-5-5
     evidence: 'Earlier finding resolved. Line 259 now cites ''@lem-naturals-arithmetic (c), twice'' for
@@ -3968,7 +3968,7 @@ items:
   kind: exr
   file: 07-gate-0.md
   line: 313
-  hash: a5c26ca2caa7
+  hash: a7db92c976ad
   verdicts:
   - stage: S5a
     verdict: minor
@@ -4008,7 +4008,7 @@ items:
   - stage: S7r
     verdict: correct
     by: rereferee
-    hash: a5c26ca2caa7
+    hash: a7db92c976ad
     date: '2026-10-11'
     model: claude-opus-5-5
     evidence: All earlier findings resolved. (1) The wrong-direction 'least preimages' sketch is deleted.

@@ -434,12 +434,12 @@ items:
   kind: proof
   file: 02-pairs-as-sets.md
   line: 122
-  hash: f5e79f5a76f4
+  hash: c69694d8705f
   verdicts:
   - stage: S5a
     verdict: correct
     by: refereeA
-    hash: f5e79f5a76f4
+    hash: c69694d8705f
     date: '2026-10-11'
     model: claude-opus-5-5
     evidence: 02:122-130. U=A∪B by (c), and W=P(P(U)) by (Z5). {a},{a,b}⊆U (elements by (b)), so (a,b)∈W.
@@ -448,7 +448,7 @@ items:
   - stage: S5b
     verdict: correct
     by: refereeB
-    hash: f5e79f5a76f4
+    hash: c69694d8705f
     date: '2026-10-11'
     model: claude-opus-5-5
     evidence: 02:123-129. U=A∪B comes from prp-zf-basic-sets (c) and W=𝒫𝒫U from (Z5) twice. (a,b)⊆𝒫U is
@@ -458,7 +458,7 @@ items:
   kind: prp
   file: 02-pairs-as-sets.md
   line: 136
-  hash: f8e5ae1f564b
+  hash: cc2dac91161b
   verdicts:
   - stage: S5a
     verdict: minor
@@ -480,7 +480,7 @@ items:
   - stage: S7r
     verdict: correct
     by: rereferee
-    hash: f8e5ae1f564b
+    hash: cc2dac91161b
     date: '2026-10-11'
     model: claude-opus-5-5
     evidence: ':139-147 against ch06 01:237-242. (W1) is now limited to admissible properties, with a
@@ -743,7 +743,7 @@ items:
   - stage: S7r
     verdict: correct
     by: rereferee
-    hash: a36832f7dbb4
+    hash: 64e1ffcb41d0
     date: '2026-10-11'
     model: claude-opus-5-5
     evidence: 'On line (4): {a,b}={a,d} => b=d follows from prp-zf-basic-sets (d) with c=a. The disjunct
@@ -1758,12 +1758,12 @@ items:
   kind: proof
   file: 05-recursion-and-arithmetic.md
   line: 38
-  hash: 1418c144219d
+  hash: 10d5c158d190
   verdicts:
   - stage: S5a
     verdict: correct
     by: refereeA
-    hash: 1418c144219d
+    hash: 10d5c158d190
     date: '2026-10-11'
     model: claude-opus-5-5
     evidence: 'Checked each step. Step 0: (i) lem-omega-transitive (e) with S(n)≠0 from (P3); (ii) and
@@ -1774,7 +1774,7 @@ items:
   - stage: S5b
     verdict: minor
     by: refereeB
-    hash: 1418c144219d
+    hash: 10d5c158d190
     date: '2026-10-11'
     model: claude-opus-5-5
     evidence: 05-recursion-and-arithmetic.md:33 The Idea calls S(k) 'the part where both are defined'.
@@ -1782,7 +1782,7 @@ items:
   - stage: S7r
     verdict: correct
     by: rereferee
-    hash: 1418c144219d
+    hash: 10d5c158d190
     date: '2026-10-11'
     model: claude-opus-5-5
     evidence: 'The earlier finding is resolved. The Idea at 05:33 now reads ''at each point k where both
@@ -2562,7 +2562,7 @@ items:
   kind: exr
   file: 06-order-on-omega.md
   line: 298
-  hash: 8385b65a320a
+  hash: 1e43a9c442dd
   verdicts:
   - stage: S5a
     verdict: minor
@@ -2594,7 +2594,7 @@ items:
   - stage: S7r
     verdict: correct
     by: rereferee
-    hash: 8385b65a320a
+    hash: 1e43a9c442dd
     date: '2026-10-11'
     model: claude-opus-5-5
     evidence: '06:310-316. I solved it myself and got the same answers: 4 = {0,1,2,3}; true, by lem (a);
@@ -2896,12 +2896,12 @@ items:
   kind: cor
   file: 07-categoricity.md
   line: 163
-  hash: 50edc673b94f
+  hash: 783342e68106
   verdicts:
   - stage: S5a
     verdict: minor
     by: refereeA
-    hash: 50edc673b94f
+    hash: 783342e68106
     date: '2026-10-11'
     model: claude-opus-5-5
     evidence: 07-categoricity.md:220 The dictionary row maps @thm-induction 'a base n_0' to prp-omega-order-arithmetic
@@ -2910,7 +2910,7 @@ items:
   - stage: S5b
     verdict: correct
     by: refereeB
-    hash: 50edc673b94f
+    hash: 783342e68106
     date: '2026-10-11'
     model: claude-opus-5-5
     evidence: '07:163-175. (a), (b) and (c) match the blueprint promise: thm-omega-induction (b), thm-omega-recursion,
@@ -2920,7 +2920,7 @@ items:
   - stage: S8
     verdict: minor
     by: seam
-    hash: 50edc673b94f
+    hash: 783342e68106
     date: '2026-10-11'
     model: claude-opus-5-5
     evidence: 07-categoricity.md:231 The citing rule shuts @cor-product-countable (b) out of group (ii)
@@ -2930,7 +2930,7 @@ items:
   - stage: S7r
     verdict: correct
     by: rereferee
-    hash: 50edc673b94f
+    hash: 783342e68106
     date: '2026-10-11'
     model: claude-opus-5-5
     evidence: The dictionary row (line 220) now reads '@thm-induction with a base n_0 = b in N', and statement
@@ -2941,12 +2941,12 @@ items:
   kind: proof
   file: 07-categoricity.md
   line: 183
-  hash: 8674c7d86e1b
+  hash: be1fc3f4f8dc
   verdicts:
   - stage: S5a
     verdict: correct
     by: refereeA
-    hash: 8674c7d86e1b
+    hash: be1fc3f4f8dc
     date: '2026-10-11'
     model: claude-opus-5-5
     evidence: '07:184-201: (P3) uses lem-naturals-arithmetic (a); (P4) and (P5) use the set form of ax-induction
@@ -2957,7 +2957,7 @@ items:
   - stage: S5b
     verdict: minor
     by: refereeB
-    hash: 8674c7d86e1b
+    hash: be1fc3f4f8dc
     date: '2026-10-11'
     model: claude-opus-5-5
     evidence: 07-categoricity.md:205 The meta-claim that (a)'s proof used school arithmetic 'in (P4) and
@@ -2965,7 +2965,7 @@ items:
   - stage: S7r
     verdict: minor
     by: rereferee
-    hash: 8674c7d86e1b
+    hash: be1fc3f4f8dc
     date: '2026-10-11'
     model: claude-opus-5-5
     evidence: entry at ledger line 416. The rest of the proof checks out. P3 uses lem-naturals-arithmetic
@@ -2976,7 +2976,7 @@ items:
   - stage: S7r
     verdict: correct
     by: rereferee
-    hash: 8674c7d86e1b
+    hash: be1fc3f4f8dc
     date: '2026-10-11'
     model: claude-opus-5-5
     evidence: 'are prp-omega-order-arithmetic (a) with thm-omega-order (d), and clause (e) is thm-omega-order
@@ -3230,7 +3230,7 @@ items:
   kind: exr
   file: 07-categoricity.md
   line: 381
-  hash: 5897dd3843db
+  hash: 3aa6a8753383
   verdicts:
   - stage: S5a
     verdict: correct
@@ -3259,7 +3259,7 @@ items:
   - stage: S7r
     verdict: correct
     by: rereferee
-    hash: 5897dd3843db
+    hash: 3aa6a8753383
     date: '2026-10-11'
     model: claude-opus-5-5
     evidence: 'Line 388 now cites @def-set-successor for n in S(n). def-set-successor (ch09/03:11) defines

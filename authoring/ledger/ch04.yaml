@@ -239,12 +239,12 @@ items:
   kind: exr
   file: 01-predicates-and-quantifiers.md
   line: 335
-  hash: c68a0c564b68
+  hash: 1543c74ea56e
   verdicts:
   - stage: S5a
     verdict: correct
     by: refereeA
-    hash: c68a0c564b68
+    hash: 1543c74ea56e
     date: '2026-10-10'
     model: claude-opus-5-5
     evidence: 'lines 335-353: N and [0,1] have the witness 0. Over Z, y=x-1 defeats each x. Over (0,1],
@@ -253,7 +253,7 @@ items:
   - stage: S5b
     verdict: correct
     by: refereeB
-    hash: c68a0c564b68
+    hash: 1543c74ea56e
     date: '2026-10-10'
     model: claude-opus-5-5
     evidence: 01:335-353. True over N and [0,1] with witness 0. False over Z (y=x-1) and over (0,1] (y=x/2,
@@ -261,7 +261,7 @@ items:
   - stage: S6
     verdict: correct
     by: verifier
-    hash: c68a0c564b68
+    hash: 1543c74ea56e
     date: '2026-10-10'
     model: claude-opus-5-5
     evidence: '01:335-353. N: T (witness 0). Z: F (x-1). [0,1]: T (witness 0). (0,1]: F (x/2). These agree
@@ -477,7 +477,7 @@ items:
   kind: exm
   file: 02-terms-formulas-substitution.md
   line: 187
-  hash: 1a2b3119e3b2
+  hash: 68333c6bbff6
   verdicts:
   - stage: S5a
     verdict: minor
@@ -499,7 +499,7 @@ items:
   - stage: S7r
     verdict: correct
     by: rereferee
-    hash: 1a2b3119e3b2
+    hash: 68333c6bbff6
     date: '2026-10-11'
     model: claude-opus-5-5
     evidence: 'Lines 190-215. The unfolding is correct by def-bounded-quantifier (01:150): epsilon > 0
@@ -566,19 +566,19 @@ items:
   kind: exm
   file: 02-terms-formulas-substitution.md
   line: 268
-  hash: 913c0ce98af9
+  hash: 7e545c54c9b4
   verdicts:
   - stage: S5a
     verdict: correct
     by: refereeA
-    hash: 913c0ce98af9
+    hash: 7e545c54c9b4
     date: '2026-10-10'
     model: claude-opus-5-5
     evidence: '278-288: all four results match def-substitution, and the sidecar passes.'
   - stage: S5b
     verdict: correct
     by: refereeB
-    hash: 913c0ce98af9
+    hash: 7e545c54c9b4
     date: '2026-10-10'
     model: claude-opus-5-5
     evidence: '264-289: (a) P(2)→S(2); (b) y+1<y ∧ ∀x(x≥0); (c) ∀y R(f(z),y); (d) unchanged. All agree
@@ -900,12 +900,12 @@ items:
   kind: check
   file: 03-universal-elimination.md
   line: 57
-  hash: 2f51899caf9f
+  hash: d690c252919a
   verdicts:
   - stage: S5a
     verdict: correct
     by: refereeA
-    hash: 2f51899caf9f
+    hash: d690c252919a
     date: '2026-10-11'
     model: claude-opus-5-5
     evidence: '03:61 The free x in exists z (z>x+y) lies only under exists z, so t is free for x iff z
@@ -915,7 +915,7 @@ items:
   - stage: S5b
     verdict: minor
     by: refereeB
-    hash: 2f51899caf9f
+    hash: d690c252919a
     date: '2026-10-11'
     model: claude-opus-5-5
     evidence: '03:56-62. The mathematics is right: the only quantifier above the free x is ∃z, so t is
@@ -925,7 +925,7 @@ items:
   - stage: S7r
     verdict: correct
     by: rereferee
-    hash: 2f51899caf9f
+    hash: d690c252919a
     date: '2026-10-11'
     model: claude-opus-5-5
     evidence: '03-universal-elimination.md:57-63. The only free x in exists z (z > x + y) lies under exists
@@ -937,7 +937,7 @@ items:
   kind: exm
   file: 03-universal-elimination.md
   line: 69
-  hash: 1d3a1b552b64
+  hash: 88ae0b456d45
   verdicts:
   - stage: S5a
     verdict: correct
@@ -960,7 +960,7 @@ items:
   - stage: S7r
     verdict: correct
     by: rereferee
-    hash: 1d3a1b552b64
+    hash: 88ae0b456d45
     date: '2026-10-11'
     model: claude-opus-5-5
     evidence: '03-universal-elimination.md:69-148. I checked all four derivations line by line: (a) lines
@@ -972,12 +972,12 @@ items:
   kind: exr
   file: 03-universal-elimination.md
   line: 253
-  hash: c4073ef6ce1a
+  hash: cdeb14b898fb
   verdicts:
   - stage: S5a
     verdict: correct
     by: refereeA
-    hash: c4073ef6ce1a
+    hash: cdeb14b898fb
     date: '2026-10-11'
     model: claude-opus-5-5
     evidence: '03:270-282 (i) Capture: over Z, line 1 is true and line 2 is false. (ii) 3*x>=0 is not
@@ -987,7 +987,7 @@ items:
   - stage: S5b
     verdict: minor
     by: refereeB
-    hash: c4073ef6ce1a
+    hash: cdeb14b898fb
     date: '2026-10-11'
     model: claude-opus-5-5
     evidence: 03-universal-elimination.md:257 Part (b) and C2(a) (03:441) refer to 'the clause of @def-rule-universal-elimination',
@@ -996,7 +996,7 @@ items:
   - stage: S6
     verdict: correct
     by: verifier
-    hash: c4073ef6ce1a
+    hash: cdeb14b898fb
     date: '2026-10-11'
     model: claude-opus-5-5
     evidence: '03:268-282. I solved it before reading: (i) capture, clause 4; (ii) only part of the occurrences
@@ -1183,7 +1183,7 @@ items:
   - stage: S7r
     verdict: correct
     by: rereferee
-    hash: 7c3efbd75797
+    hash: b78b404de72e
     date: '2026-10-11'
     model: claude-opus-5-5
     evidence: 'P(x) (11-models.md about line 279, listed at about line 311). The adaptation with l(x)
@@ -1243,7 +1243,7 @@ items:
   kind: exm
   file: 04-universal-introduction.md
   line: 161
-  hash: 9058be869130
+  hash: 9df407d80c92
   verdicts:
   - stage: S5a
     verdict: gap
@@ -1268,7 +1268,7 @@ items:
   - stage: S7r
     verdict: correct
     by: rereferee
-    hash: 9058be869130
+    hash: 9df407d80c92
     date: '2026-10-11'
     model: claude-opus-5-5
     evidence: 'I rechecked :161-236 from scratch. (a): line 4 meets the side condition, x_0 is free for
@@ -1384,12 +1384,12 @@ items:
   kind: exr
   file: 04-universal-introduction.md
   line: 511
-  hash: dff265153fd3
+  hash: 72cb62089ace
   verdicts:
   - stage: S5a
     verdict: correct
     by: refereeA
-    hash: dff265153fd3
+    hash: 72cb62089ace
     date: '2026-10-11'
     model: claude-opus-5-5
     evidence: ':526-544. Line by line: →E 4,3 and 6,5, →I 3-7, ∀I 3-8 (the flagged box immediately contains
@@ -1397,7 +1397,7 @@ items:
   - stage: S5b
     verdict: correct
     by: refereeB
-    hash: dff265153fd3
+    hash: 72cb62089ace
     date: '2026-10-11'
     model: claude-opus-5-5
     evidence: '522-544: the 9-line derivation passes check_fitch, and the side condition at line 9 is
@@ -1405,7 +1405,7 @@ items:
   - stage: S6
     verdict: correct
     by: verifier
-    hash: dff265153fd3
+    hash: 72cb62089ace
     date: '2026-10-11'
     model: claude-opus-5-5
     evidence: 04:521-544. Same 9-line nesting as mine (flagged box around the ->I box). The side condition
@@ -1414,12 +1414,12 @@ items:
   kind: exr
   file: 04-universal-introduction.md
   line: 547
-  hash: d384b98f5fcd
+  hash: a5b02d4a046f
   verdicts:
   - stage: S5a
     verdict: correct
     by: refereeA
-    hash: d384b98f5fcd
+    hash: a5b02d4a046f
     date: '2026-10-11'
     model: claude-opus-5-5
     evidence: '(a) :561-582: ¬E 5,6, ¬I 3-7, ∀I 3-8 and →I 2-9. At line 9 the open assumption ∀x¬Q(x)
@@ -1429,7 +1429,7 @@ items:
   - stage: S5b
     verdict: correct
     by: refereeB
-    hash: d384b98f5fcd
+    hash: a5b02d4a046f
     date: '2026-10-11'
     model: claude-opus-5-5
     evidence: '(a) 559-582: checked, and the side condition at line 9 is right. (b) The converse really
@@ -1438,7 +1438,7 @@ items:
   - stage: S6
     verdict: correct
     by: verifier
-    hash: d384b98f5fcd
+    hash: a5b02d4a046f
     date: '2026-10-11'
     model: claude-opus-5-5
     evidence: '04:557-586. (a) is the same 10 lines as mine; the open ->I assumption does not mention
@@ -1449,12 +1449,12 @@ items:
   kind: exr
   file: 04-universal-introduction.md
   line: 589
-  hash: 6939ed7536d1
+  hash: 1a12524a9827
   verdicts:
   - stage: S5a
     verdict: correct
     by: refereeA
-    hash: 6939ed7536d1
+    hash: 1a12524a9827
     date: '2026-10-11'
     model: claude-opus-5-5
     evidence: :604-631. Lines 7-13 match exm-abs-at-least-x (ch01/07:372-388) with x_0 for x, and premises
@@ -1463,7 +1463,7 @@ items:
   - stage: S5b
     verdict: correct
     by: refereeB
-    hash: 6939ed7536d1
+    hash: 1a12524a9827
     date: '2026-10-11'
     model: claude-opus-5-5
     evidence: '602-631: the 14 lines are correct. Lines 7-13 are exm-abs-at-least-x (Ch1 07:349-381) with
@@ -1471,7 +1471,7 @@ items:
   - stage: S6
     verdict: correct
     by: verifier
-    hash: 6939ed7536d1
+    hash: 1a12524a9827
     date: '2026-10-11'
     model: claude-opus-5-5
     evidence: '04:599-631. My solution is the same: universal premises, forall-E at x0, the vE of exm-abs-at-least-x
@@ -1673,12 +1673,12 @@ items:
   kind: proof
   file: 05-existential-introduction.md
   line: 102
-  hash: db62618ff6cb
+  hash: 80ccd632749f
   verdicts:
   - stage: S5a
     verdict: correct
     by: refereeA
-    hash: db62618ff6cb
+    hash: 80ccd632749f
     date: '2026-10-11'
     model: claude-opus-5-5
     evidence: 'lines 105-115: ∀E at x uses φ[x/x]=φ, and x is free for x (§02 special cases). ∃I uses
@@ -1686,7 +1686,7 @@ items:
   - stage: S5b
     verdict: correct
     by: refereeB
-    hash: db62618ff6cb
+    hash: 80ccd632749f
     date: '2026-10-11'
     model: claude-opus-5-5
     evidence: '05:102-116: forall-E at the variable x and exists-I with witness x. phi[x/x] = phi and
@@ -1696,12 +1696,12 @@ items:
   kind: exm
   file: 05-existential-introduction.md
   line: 136
-  hash: f65e9561d514
+  hash: 2a61a74ac3a8
   verdicts:
   - stage: S5a
     verdict: minor
     by: refereeA
-    hash: f65e9561d514
+    hash: 2a61a74ac3a8
     date: '2026-10-11'
     model: claude-opus-5-5
     evidence: 05-existential-introduction.md:214 The text says postponing 'is necessary' when the witness
@@ -1710,7 +1710,7 @@ items:
   - stage: S5b
     verdict: minor
     by: refereeB
-    hash: f65e9561d514
+    hash: 2a61a74ac3a8
     date: '2026-10-11'
     model: claude-opus-5-5
     evidence: 05-existential-introduction.md:214 The meta-claim 'Postponing costs nothing in the first
@@ -1718,7 +1718,7 @@ items:
   - stage: S7r
     verdict: correct
     by: rereferee
-    hash: f65e9561d514
+    hash: 2a61a74ac3a8
     date: '2026-10-11'
     model: claude-opus-5-5
     evidence: 'Checked derivations (a)-(d) at 05:149-211 line by line. Rule names, line numbers and phi/t
@@ -1793,12 +1793,12 @@ items:
   kind: exr
   file: 05-existential-introduction.md
   line: 322
-  hash: 3b9d6a7ba1db
+  hash: b467dabf9b51
   verdicts:
   - stage: S5a
     verdict: correct
     by: refereeA
-    hash: 3b9d6a7ba1db
+    hash: b467dabf9b51
     date: '2026-10-11'
     model: claude-opus-5-5
     evidence: 'lines 333-346: φ[-x_0/y] = x_0+(-x_0)=0, and there is no quantifier, so free-for holds.
@@ -1806,7 +1806,7 @@ items:
   - stage: S5b
     verdict: correct
     by: refereeB
-    hash: 3b9d6a7ba1db
+    hash: b467dabf9b51
     date: '2026-10-11'
     model: claude-opus-5-5
     evidence: '05:331-346: forall-E at x_0, then exists-I with phi = (x_0 + y = 0) and t = -x_0, then
@@ -1815,7 +1815,7 @@ items:
   - stage: S6
     verdict: correct
     by: verifier
-    hash: 3b9d6a7ba1db
+    hash: b467dabf9b51
     date: '2026-10-11'
     model: claude-opus-5-5
     evidence: '05:328-346. Same 4 lines as mine. The witness -x0 depends on x0, and the side condition
@@ -1899,7 +1899,7 @@ items:
   kind: exr
   file: 05-existential-introduction.md
   line: 425
-  hash: 1e2a479f1e52
+  hash: 10c927be0f94
   verdicts:
   - stage: S5a
     verdict: minor
@@ -1934,7 +1934,7 @@ items:
   - stage: S7r
     verdict: correct
     by: rereferee
-    hash: 1e2a479f1e52
+    hash: 10c927be0f94
     date: '2026-10-11'
     model: claude-opus-5-5
     evidence: Checked against the primitive rule list (ch03 section 05:37) and the rule definitions. The
@@ -1946,12 +1946,12 @@ items:
   kind: def
   file: 06-existential-elimination.md
   line: 26
-  hash: a1bb245862ed
+  hash: d4e5e6370bf8
   verdicts:
   - stage: S5a
     verdict: minor
     by: refereeA
-    hash: a1bb245862ed
+    hash: d4e5e6370bf8
     date: '2026-10-11'
     model: claude-opus-5-5
     evidence: 06-existential-elimination.md:912 The ledger line says 'open the box early' loses nothing,
@@ -1959,7 +1959,7 @@ items:
   - stage: S5b
     verdict: minor
     by: refereeB
-    hash: a1bb245862ed
+    hash: d4e5e6370bf8
     date: '2026-10-11'
     model: claude-opus-5-5
     evidence: 06-existential-elimination.md:15 A text claim cites an exercise as its explanation, which
@@ -1967,7 +1967,7 @@ items:
   - stage: S7r
     verdict: correct
     by: rereferee
-    hash: a1bb245862ed
+    hash: d4e5e6370bf8
     date: '2026-10-11'
     model: claude-opus-5-5
     evidence: '06-existential-elimination.md:26-57 (rule), 61-68 (clauses), 72-131 (three illegal derivations:
@@ -2024,7 +2024,7 @@ items:
   kind: check
   file: 06-existential-elimination.md
   line: 201
-  hash: 532aedef4ecb
+  hash: e700f3caaf5d
   verdicts:
   - stage: S5a
     verdict: minor
@@ -2046,7 +2046,7 @@ items:
   - stage: S7r
     verdict: correct
     by: rereferee
-    hash: 532aedef4ecb
+    hash: e700f3caaf5d
     date: '2026-10-11'
     model: claude-opus-5-5
     evidence: 'l.201-207. The search analysis is right: the second box must take a new name because x_0
@@ -2058,12 +2058,12 @@ items:
   kind: exm
   file: 06-existential-elimination.md
   line: 211
-  hash: a0c4c930eb85
+  hash: 721093953f89
   verdicts:
   - stage: S5a
     verdict: correct
     by: refereeA
-    hash: a0c4c930eb85
+    hash: 721093953f89
     date: '2026-10-11'
     model: claude-opus-5-5
     evidence: '06:228-306. (a ⊢): the ∨E at 9 is a line of the ∃E box, and the side condition at 10 holds.
@@ -2073,7 +2073,7 @@ items:
   - stage: S5b
     verdict: minor
     by: refereeB
-    hash: a0c4c930eb85
+    hash: 721093953f89
     date: '2026-10-11'
     model: claude-opus-5-5
     evidence: 06-existential-elimination.md:209 The meta-claim 'two more derivations' miscounts the example,
@@ -2081,7 +2081,7 @@ items:
   - stage: S7r
     verdict: correct
     by: rereferee
-    hash: a0c4c930eb85
+    hash: 721093953f89
     date: '2026-10-11'
     model: claude-opus-5-5
     evidence: 'l.209 now reads ''three more derivations ... two for part (a), one for each direction,
@@ -2115,12 +2115,12 @@ items:
   kind: proof
   file: 06-existential-elimination.md
   line: 331
-  hash: 7631b6d1eb92
+  hash: 1f5eec7c9977
   verdicts:
   - stage: S5a
     verdict: correct
     by: refereeA
-    hash: 7631b6d1eb92
+    hash: 1f5eec7c9977
     date: '2026-10-11'
     model: claude-opus-5-5
     evidence: '06:337-355. Quantifier order: y_0 is fixed first, and x_0 is obtained inside the y_0 box.
@@ -2131,7 +2131,7 @@ items:
   - stage: S5b
     verdict: correct
     by: refereeB
-    hash: 7631b6d1eb92
+    hash: 1f5eec7c9977
     date: '2026-10-11'
     model: claude-opus-5-5
     evidence: 'Lines 336–355: 6 lines. The range of ∀I{2-5} follows the §04 convention, and every side
@@ -2141,12 +2141,12 @@ items:
   kind: exm
   file: 06-existential-elimination.md
   line: 473
-  hash: 7d23be0f74b7
+  hash: fc8b265a56ea
   verdicts:
   - stage: S5a
     verdict: correct
     by: refereeA
-    hash: 7d23be0f74b7
+    hash: fc8b265a56ea
     date: '2026-10-11'
     model: claude-opus-5-5
     evidence: '06:486-504. The arith line holds: n+m = 2k_0+2l_0 = 2(k_0+l_0). ∃I with witness k_0+l_0,
@@ -2155,7 +2155,7 @@ items:
   - stage: S5b
     verdict: correct
     by: refereeB
-    hash: 7d23be0f74b7
+    hash: fc8b265a56ea
     date: '2026-10-11'
     model: claude-opus-5-5
     evidence: 'Lines 485–504: 8 lines. The arith line (n+m = 2(k_0+l_0)) is correct, the ∃I witness is
@@ -2583,7 +2583,7 @@ items:
   kind: def
   file: 07-equality-and-uniqueness.md
   line: 256
-  hash: 5442c653b7f5
+  hash: 7d79f7771137
   verdicts:
   - stage: S5a
     verdict: correct
@@ -2619,7 +2619,7 @@ items:
   - stage: S7r
     verdict: minor
     by: rereferee
-    hash: 5442c653b7f5
+    hash: 7d79f7771137
     date: '2026-10-11'
     model: claude-opus-5-5
     evidence: 'equals ∀y''(φ[y''/x] → y''=x) only by the identity (φ[y/x])[t/y] = φ[t/x] for y not appearing
@@ -2629,7 +2629,7 @@ items:
   - stage: S7r
     verdict: correct
     by: rereferee
-    hash: 5442c653b7f5
+    hash: 7d79f7771137
     date: '2026-10-11'
     model: claude-opus-5-5
     evidence: 'n is true with x=0. Examples 1-4 and the nonexample are correct (y*y=4 over N forces y=2;
@@ -2824,7 +2824,7 @@ items:
   kind: exr
   file: 07-equality-and-uniqueness.md
   line: 541
-  hash: bee7fc2c015f
+  hash: 5caff50dc78c
   verdicts:
   - stage: S5a
     verdict: correct
@@ -2854,7 +2854,7 @@ items:
   - stage: S7r
     verdict: correct
     by: rereferee
-    hash: bee7fc2c015f
+    hash: 5caff50dc78c
     date: '2026-10-11'
     model: claude-opus-5-5
     evidence: '07:541-559. (a) is correct, and y does not appear in f(x)=x. (b) is the correct formula.
@@ -2950,7 +2950,7 @@ items:
   kind: exm
   file: 08-translation.md
   line: 27
-  hash: cc0cc87a8e58
+  hash: 3a1a9280a65f
   verdicts:
   - stage: S5a
     verdict: minor
@@ -2973,7 +2973,7 @@ items:
   - stage: S7r
     verdict: correct
     by: rereferee
-    hash: cc0cc87a8e58
+    hash: 3a1a9280a65f
     date: '2026-10-11'
     model: claude-opus-5-5
     evidence: '08-translation.md:27-73. I solved (a)-(e) myself and got the same formulas. (a) The free
@@ -3018,7 +3018,7 @@ items:
   kind: prp
   file: 08-translation.md
   line: 93
-  hash: 27884f16b378
+  hash: 2585ba1a362e
   verdicts:
   - stage: S5a
     verdict: correct
@@ -3040,7 +3040,7 @@ items:
   - stage: S7r
     verdict: correct
     by: rereferee
-    hash: 27884f16b378
+    hash: 2585ba1a362e
     date: '2026-10-11'
     model: claude-opus-5-5
     evidence: 08-translation.md:93-143. The statement fixes A so that ∈A is a one-place predicate symbol
@@ -3051,7 +3051,7 @@ items:
   kind: proof
   file: 08-translation.md
   line: 155
-  hash: dce2ec214943
+  hash: 07f7742c8c97
   verdicts:
   - stage: S5a
     verdict: correct
@@ -3075,7 +3075,7 @@ items:
   - stage: S7r
     verdict: correct
     by: rereferee
-    hash: dce2ec214943
+    hash: 07f7742c8c97
     date: '2026-10-11'
     model: claude-opus-5-5
     evidence: '08-translation.md:155-235. ∀E: (x∈A→φ)[t/x] = t∈A→φ[t/x] by the atomic and connective clauses
@@ -3153,7 +3153,7 @@ items:
   kind: exr
   file: 08-translation.md
   line: 363
-  hash: 55131e602472
+  hash: 9e7588bab066
   verdicts:
   - stage: S5a
     verdict: correct
@@ -3183,7 +3183,7 @@ items:
   - stage: S7r
     verdict: correct
     by: rereferee
-    hash: 55131e602472
+    hash: 9e7588bab066
     date: '2026-10-11'
     model: claude-opus-5-5
     evidence: '08-translation.md:363-387. Both earlier findings are resolved. The prompt now lists ''predicate
@@ -3227,7 +3227,7 @@ items:
   kind: exr
   file: 08-translation.md
   line: 426
-  hash: 07175a0bd205
+  hash: e214920a695b
   verdicts:
   - stage: S5a
     verdict: correct
@@ -3257,7 +3257,7 @@ items:
   - stage: S7r
     verdict: correct
     by: rereferee
-    hash: 07175a0bd205
+    hash: e214920a695b
     date: '2026-10-11'
     model: claude-opus-5-5
     evidence: '08-translation.md:426-445. I checked formulas (a) and (b). The only difference is the position
@@ -3268,12 +3268,12 @@ items:
   kind: exr
   file: 08-translation.md
   line: 447
-  hash: f1f1b56b25d8
+  hash: d72964db7f3b
   verdicts:
   - stage: S5a
     verdict: correct
     by: refereeA
-    hash: f1f1b56b25d8
+    hash: d72964db7f3b
     date: '2026-10-10'
     model: claude-opus-5-5
     evidence: 'Lines 469-486: the grouping by the position of ∃y is right. For the pair under ∃y, the
@@ -3284,7 +3284,7 @@ items:
   - stage: S5b
     verdict: minor
     by: refereeB
-    hash: f1f1b56b25d8
+    hash: d72964db7f3b
     date: '2026-10-10'
     model: claude-opus-5-5
     evidence: 08-translation.md:479 The section has no sidecar script for its chosen constants and quoted
@@ -3292,7 +3292,7 @@ items:
   - stage: S6
     verdict: correct
     by: verifier
-    hash: f1f1b56b25d8
+    hash: d72964db7f3b
     date: '2026-10-10'
     model: claude-opus-5-5
     evidence: '08-translation.md:468-501. The grouping is correct, and swapping the two foralls under
@@ -3360,12 +3360,12 @@ items:
   kind: check
   file: 09-quantifier-laws.md
   line: 120
-  hash: 43f8f6284d83
+  hash: 886d5a9d3f3e
   verdicts:
   - stage: S5a
     verdict: correct
     by: refereeA
-    hash: 43f8f6284d83
+    hash: 886d5a9d3f3e
     date: '2026-10-11'
     model: claude-opus-5-5
     evidence: 09:120-126. Over ℤ with P = even, ¬∀xP(x) is true and ¬P(0) is false. Then QN(a) and an
@@ -3373,7 +3373,7 @@ items:
   - stage: S5b
     verdict: correct
     by: refereeB
-    hash: 43f8f6284d83
+    hash: 886d5a9d3f3e
     date: '2026-10-11'
     model: claude-opus-5-5
     evidence: 09:120-126. Over Z with P even and c=0, the premise is true and ¬P(0) is false. The ∃E follow-up
@@ -3555,7 +3555,7 @@ items:
   kind: proof
   file: 09-quantifier-laws.md
   line: 374
-  hash: ba2c97858148
+  hash: 8a07dad24ed9
   verdicts:
   - stage: S5a
     verdict: minor
@@ -3576,7 +3576,7 @@ items:
   - stage: S7r
     verdict: correct
     by: rereferee
-    hash: ba2c97858148
+    hash: 8a07dad24ed9
     date: '2026-10-11'
     model: claude-opus-5-5
     evidence: '09:375 now says x_0 is ''a variable other than x that does not appear in φ or ψ'', which
@@ -3623,7 +3623,7 @@ items:
   kind: exm
   file: 09-quantifier-laws.md
   line: 608
-  hash: f90b697f605c
+  hash: 1997dfb72591
   verdicts:
   - stage: S5a
     verdict: minor
@@ -3644,7 +3644,7 @@ items:
   - stage: S7r
     verdict: minor
     by: rereferee
-    hash: f90b697f605c
+    hash: 1997dfb72591
     date: '2026-10-11'
     model: claude-opus-5-5
     evidence: 'free in ψ, so ψ is unchanged), but the sentence should say so. (3) New, same class as the
@@ -3655,7 +3655,7 @@ items:
   - stage: S7r
     verdict: correct
     by: rereferee
-    hash: f90b697f605c
+    hash: 1997dfb72591
     date: '2026-10-11'
     model: claude-opus-5-5
     evidence: 't. In all three the dashv-vdash chain stops before the order facts, as 09:603 prescribes.
@@ -4391,7 +4391,7 @@ items:
   kind: exr
   file: 10-uniform-continuity-rule-by-rule.md
   line: 403
-  hash: 68d54db692b7
+  hash: 2f1dea37279a
   verdicts:
   - stage: S5a
     verdict: correct
@@ -4423,7 +4423,7 @@ items:
   - stage: S7r
     verdict: correct
     by: rereferee
-    hash: 68d54db692b7
+    hash: 2f1dea37279a
     date: '2026-10-11'
     model: claude-opus-5-5
     evidence: 'Lines 403-453. Every line of the derivation checks: 3 and 4 ∧E, 5 ∀E at y0, 6 ∧I, 7 ∃I
@@ -4643,12 +4643,12 @@ items:
   kind: exm
   file: 11-models.md
   line: 243
-  hash: 7f3ea3eb5877
+  hash: 3268e9d290ba
   verdicts:
   - stage: S5a
     verdict: correct
     by: refereeA
-    hash: 7f3ea3eb5877
+    hash: 3268e9d290ba
     date: '2026-10-10'
     model: claude-opus-5-5
     evidence: '11-models.md:243-261: the ℤ structure with > (premise witness d=e+1; the conclusion fails
@@ -4657,7 +4657,7 @@ items:
   - stage: S5b
     verdict: minor
     by: refereeB
-    hash: 7f3ea3eb5877
+    hash: 3268e9d290ba
     date: '2026-10-10'
     model: claude-opus-5-5
     evidence: 11-models.md:241 The meta-claim 'Each example below is a sequent whose derivation search
@@ -4665,7 +4665,7 @@ items:
   - stage: S7r
     verdict: correct
     by: rereferee
-    hash: 7f3ea3eb5877
+    hash: 3268e9d290ba
     date: '2026-10-11'
     model: claude-opus-5-5
     evidence: '11-models.md:241-301. The Z structure (d=e+1 witness; e=d refutes the conclusion), the
@@ -4814,12 +4814,12 @@ items:
   kind: exr
   file: 11-models.md
   line: 395
-  hash: e70dd4a438a6
+  hash: 9b5a613604bd
   verdicts:
   - stage: S5a
     verdict: correct
     by: refereeA
-    hash: e70dd4a438a6
+    hash: 9b5a613604bd
     date: '2026-10-10'
     model: claude-opus-5-5
     evidence: '11-models.md:404-408: P={a}, Q={b}; the premise is vacuously true (∀x¬Q fails at b) and
@@ -4827,14 +4827,14 @@ items:
   - stage: S5b
     verdict: minor
     by: refereeB
-    hash: e70dd4a438a6
+    hash: 9b5a613604bd
     date: '2026-10-10'
     model: claude-opus-5-5
     evidence: 11-models.md:407 The B3 solution uses the soundness statement without a ledger line.
   - stage: S6
     verdict: correct
     by: verifier
-    hash: e70dd4a438a6
+    hash: 9b5a613604bd
     date: '2026-10-10'
     model: claude-opus-5-5
     evidence: '11-models.md:404-410. P={a}, Q={b}: premise true (vacuous), conclusion false at a. Confirmed
@@ -4919,7 +4919,7 @@ items:
   kind: exr
   file: 11-models.md
   line: 500
-  hash: 82a493c7356b
+  hash: 01a529559084
   verdicts:
   - stage: S5a
     verdict: minor
@@ -4949,7 +4949,7 @@ items:
   - stage: S7r
     verdict: correct
     by: rereferee
-    hash: 82a493c7356b
+    hash: 01a529559084
     date: '2026-10-11'
     model: claude-opus-5-5
     evidence: '11-models.md:500-544. Solved independently. The formalizations (a) and (b) are correct
@@ -4961,12 +4961,12 @@ items:
   kind: exr
   file: 11-models.md
   line: 548
-  hash: 0fe774d731c2
+  hash: f0e963a211c2
   verdicts:
   - stage: S5a
     verdict: correct
     by: refereeA
-    hash: 0fe774d731c2
+    hash: f0e963a211c2
     date: '2026-10-10'
     model: claude-opus-5-5
     evidence: '11-models.md:557-581: the row T,F,F refutes (a); the derivation in (b) is checked line
@@ -4974,7 +4974,7 @@ items:
   - stage: S5b
     verdict: correct
     by: refereeB
-    hash: 0fe774d731c2
+    hash: f0e963a211c2
     date: '2026-10-10'
     model: claude-opus-5-5
     evidence: The row p=T, q=F, r=F refutes (a) by cor-refuting-row. The 7-line derivation for (b) is
@@ -4982,7 +4982,7 @@ items:
   - stage: S6
     verdict: correct
     by: verifier
-    hash: 0fe774d731c2
+    hash: f0e963a211c2
     date: '2026-10-10'
     model: claude-opus-5-5
     evidence: 11-models.md:561-581. My truth table finds exactly one refuting row for (a), p=T, q=F, r=F,
@@ -4992,7 +4992,7 @@ items:
   kind: exr
   file: 11-models.md
   line: 585
-  hash: b231df02d3ac
+  hash: cb88f56fcf8b
   verdicts:
   - stage: S5a
     verdict: correct
@@ -5032,7 +5032,7 @@ items:
   - stage: S7r
     verdict: correct
     by: rereferee
-    hash: b231df02d3ac
+    hash: cb88f56fcf8b
     date: '2026-10-11'
     model: claude-opus-5-5
     evidence: '11-models.md:585-625. I checked the 15-line derivation line by line: lines 4/7/13 use ¬E
@@ -5084,7 +5084,7 @@ items:
   kind: exr
   file: 11-models.md
   line: 674
-  hash: 25e9b4e46aed
+  hash: 99904589c042
   verdicts:
   - stage: S5a
     verdict: correct
@@ -5115,7 +5115,7 @@ items:
   - stage: S7r
     verdict: correct
     by: rereferee
-    hash: 25e9b4e46aed
+    hash: 99904589c042
     date: '2026-10-11'
     model: claude-opus-5-5
     evidence: '11-models.md:674-686. The sentence is false in (N,<): the antecedent holds with d+1, the
@@ -5169,12 +5169,12 @@ items:
   kind: proof
   file: 12-first-order-soundness.md
   line: 70
-  hash: dbdef4ebfaa0
+  hash: f73ee66caac8
   verdicts:
   - stage: S5a
     verdict: correct
     by: refereeA
-    hash: dbdef4ebfaa0
+    hash: f73ee66caac8
     date: '2026-10-10'
     model: claude-opus-5-5
     evidence: '12:68-96. Terms: the four clauses match def-substitution and the value clauses at 11:89-93.
@@ -5185,7 +5185,7 @@ items:
   - stage: S5b
     verdict: correct
     by: refereeB
-    hash: dbdef4ebfaa0
+    hash: f73ee66caac8
     date: '2026-10-10'
     model: claude-opus-5-5
     evidence: '12:68-96. Every case was checked. Terms: matches the def-substitution clauses. Atomic:
@@ -5220,12 +5220,12 @@ items:
   kind: cor
   file: 12-first-order-soundness.md
   line: 112
-  hash: eece6a53a4f0
+  hash: eadd90e54358
   verdicts:
   - stage: S7r
     verdict: correct
     by: rereferee
-    hash: eece6a53a4f0
+    hash: eadd90e54358
     date: '2026-10-11'
     model: claude-opus-5-5
     evidence: 12:112-121. The hypothesis 'z not appearing in phi' and the scope 'anywhere inside' match
@@ -5252,12 +5252,12 @@ items:
   kind: thm
   file: 12-first-order-soundness.md
   line: 135
-  hash: 3f6e41a30be9
+  hash: 1751126663b8
   verdicts:
   - stage: S5a
     verdict: correct
     by: refereeA
-    hash: 3f6e41a30be9
+    hash: 1751126663b8
     date: '2026-10-10'
     model: claude-opus-5-5
     evidence: 12:112-116. Same statement as 11:307. The only hypothesis, Gamma |- psi, is used. Problems
@@ -5266,7 +5266,7 @@ items:
   - stage: S5b
     verdict: minor
     by: refereeB
-    hash: 3f6e41a30be9
+    hash: 1751126663b8
     date: '2026-10-10'
     model: claude-opus-5-5
     evidence: The statement at 12:112-116 is fine. Its Idea at 12:119 says 'The Step roadmap is Chapter
@@ -5276,7 +5276,7 @@ items:
   - stage: S8
     verdict: minor
     by: seam
-    hash: 3f6e41a30be9
+    hash: 1751126663b8
     date: '2026-10-10'
     model: claude-opus-5-5
     evidence: 12-first-order-soundness.md:7 §12 credits the four-step outline, including 'reduce to primitive
@@ -5284,7 +5284,7 @@ items:
   - stage: S7r
     verdict: correct
     by: rereferee
-    hash: 3f6e41a30be9
+    hash: 1751126663b8
     date: '2026-10-11'
     model: claude-opus-5-5
     evidence: '12:135-153. The earlier S8 finding is resolved: lines 7 and 142 now cite ''Steps 1–4 of
@@ -5295,7 +5295,7 @@ items:
   kind: proof
   file: 12-first-order-soundness.md
   line: 155
-  hash: faa7d53a0b5f
+  hash: 93065fa574a9
   verdicts:
   - stage: S5a
     verdict: gap
@@ -5330,7 +5330,7 @@ items:
   - stage: S7r
     verdict: correct
     by: rereferee
-    hash: faa7d53a0b5f
+    hash: 93065fa574a9
     date: '2026-10-11'
     model: claude-opus-5-5
     evidence: 'm-substitution, with conditions (i)-(iii) used where stated). Step 4: the last line lies
@@ -5542,12 +5542,12 @@ items:
   kind: exr
   file: 12-first-order-soundness.md
   line: 342
-  hash: 29afbcfc47b6
+  hash: 754a55a1f8ba
   verdicts:
   - stage: S5a
     verdict: correct
     by: refereeA
-    hash: 29afbcfc47b6
+    hash: 754a55a1f8ba
     date: '2026-10-10'
     model: claude-opus-5-5
     evidence: '12:312-330. (a) is the two-element structure of exm-counter-model-swap (11:243). (b): Q={b}
@@ -5556,7 +5556,7 @@ items:
   - stage: S5b
     verdict: correct
     by: refereeB
-    hash: 29afbcfc47b6
+    hash: 754a55a1f8ba
     date: '2026-10-10'
     model: claude-opus-5-5
     evidence: 12:312-330. All three structures match exm-counter-model-swap (11:258), exr-models-b3 (11:405)
@@ -5564,7 +5564,7 @@ items:
   - stage: S6
     verdict: correct
     by: verifier
-    hash: 29afbcfc47b6
+    hash: 754a55a1f8ba
     date: '2026-10-10'
     model: claude-opus-5-5
     evidence: 12-first-order-soundness.md:326-332. All three counter-models re-checked by script, including
