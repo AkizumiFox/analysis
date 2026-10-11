@@ -248,3 +248,9 @@ unflagged
 truncations
 Schröder
 bijectively
+encodings
+Peano
+von
+Neumann
+categoricity
+isomorphisms

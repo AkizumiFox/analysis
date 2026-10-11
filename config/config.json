@@ -108,6 +108,7 @@
     "src/ch06-sets-and-functions",
     "src/ch07-relations-and-induction",
     "src/ch08-countable-and-uncountable",
+    "src/ch09-zf-and-natural-numbers",
     {
       "dir": "src/ch11-least-upper-bound",
       "part": "Part I · Analysis on the Real Line"
@@ -133,7 +134,7 @@
     "name": "CC BY-NC-SA 4.0",
     "url": "https://creativecommons.org/licenses/by-nc-sa/4.0/"
   },
-  "mention-exempt-titles": [],
+  "mention-exempt-titles": ["Characteristic Property of Pairs"],
   "external-books": {
     "la": {
       "title": "Linear Algebra",
