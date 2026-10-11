@@ -24,6 +24,17 @@ items:
     evidence: Statement 42-54 is correct. The lead-in at 40 says "Each of (a)–(d) is one ordinary induction",
       but the proof of (b) at 65 runs two inductions (P for sums, Q for products). The Idea at 59 also
       gives a false reason for (d); that is reported separately with key "".
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: a447e25421fd
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 01:42-72. I checked (a)-(e) line by line. (a) inducts on the disjunction. (b) fixes m and
+      gets products from sums. (c) is valid without using the hypothesis. In (d), m<m+1<=n gives P(m)
+      at the same n, n-m>=1 so it is not 0, and (c) then gives n-(m+1). (e) follows from (d) and (a).
+      The Idea at 01:59 now correctly says n could be fixed first. The paragraph at 01:88 matches the
+      Ch 3 proof of thm-stro
 - key: proof:lem-naturals-arithmetic
   kind: proof
   file: 01-naturals-and-well-ordering.md
@@ -94,6 +105,16 @@ items:
     evidence: '01-naturals-and-well-ordering.md:95 The Quick check asks why P(m) "has to begin ''for every
       n ∈ ℕ''", and its solution says a hypothesis about one fixed n "would not do". Both are false: the
       step uses P(m) at the same n, so an induction on m with n fixed as a parameter works.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: ca8f7d5de8de
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: '01:90-96. Both earlier findings (S5a, S5b) are resolved. The question now asks whether
+      n could be fixed first. The answer is yes: the step uses P(m) only at the same n with m<=n, so inducting
+      on ''if m<=n then n-m in N'' with n fixed works. The solution''s place for (c), passing from n-m
+      to (n-m)-1 after checking n-m != 0, matches the proof at 01:69.'
 - key: prp-integers-closed
   kind: prp
   file: 01-naturals-and-well-ordering.md
@@ -116,6 +137,16 @@ items:
     evidence: The statement 102-115 is correct. The Idea at 118 says discreteness "reduces to (e) of the
       lemma", but proof (c) at 141 goes through (b) and lemma (a) (ℤ_{>0} elements are ≥ 1) and never
       cites (e).
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: acbd2436516a
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: '01:102-142. (a): closure under negation, the three cases for a-b via lem (d), and the four
+      sign patterns in the table are all right, and m-n=m+(-n). (b): n=-k with k<=0 and k>=0 by lem (a)
+      forces n=0. The three set equalities are justified from lem (a). (c) goes through (a), (b) and Z_{>0}={n
+      in N: n>=1}. The revised Idea at 01:118 now matches this route through (b).'
 - key: proof:prp-integers-closed
   kind: proof
   file: 01-naturals-and-well-ordering.md
@@ -256,6 +287,17 @@ items:
     evidence: 01-naturals-and-well-ordering.md:230 The pointer says Chapter 9 'builds N from sets and
       proves both' induction and well-ordering, and the STATUS row 108 records that promise. Chapter 9's
       blueprint does not plan to prove well-ordering.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 8170c625a62d
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: '01:198-230; all four earlier findings are resolved. (1) 01:230 now takes (N0), (NS), the
+      predecessor property and well-ordering as axioms and proves induction by the (<=) half. This is
+      valid: the (<=) proof uses nothing else. The text also says the predecessor property cannot be dropped
+      (first witness). (2) The prompt at 01:213 now asks ''which two are not used at all''. That is right:
+      0 in X follow'
 - key: proof:thm-induction-iff-well-ordering
   kind: proof
   file: 01-naturals-and-well-ordering.md
@@ -278,6 +320,17 @@ items:
     model: claude-opus-5-5
     evidence: 01-naturals-and-well-ordering.md:219 "Then N \ S is non-empty, since S ⊆ N" uses an unreferenced,
       unledgered set fact.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: d0c36a5d8951
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: '01:216-220. The earlier finding is resolved. X\S being non-empty is now argued explicitly:
+      emptiness would give X⊆S, and with S⊆X, @prp-subset-antisymmetric (ch06/01:137, A=B iff two inclusions)
+      gives S=X. I checked (=>): ax-induction applied to ''n in X'' gives N⊆X, the induction property
+      applied to N gives N=X, then thm-well-ordering. In (<=), m != 0, m-1 is in X by the predecessor
+      property, m-1 i'
 - key: cor-well-ordering-integers
   kind: cor
   file: 01-naturals-and-well-ordering.md
@@ -308,6 +361,16 @@ items:
     model: claude-opus-5-5
     evidence: 01-naturals-and-well-ordering.md:239 'Greatest element' of a set of numbers is used in Section
       7.1 before any section defines it. Section 7.1 defines only 'least element' (01:150).
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 0a66c9ba4eb7
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: '01:236-252. Both earlier findings are resolved. ''Greatest element'' is now defined at
+      01:150, and the pointer to the maximum of Section 4.7 is accurate (ch04/07-equality-and-uniqueness.md:407).
+      The non-Archimedean witness is now given: in R(x), n<x for every n in N (ch11/05:163, exm-nonarchimedean-field,
+      whose naturals are the constants, ch11/05:160). So {-n} is bounded below by -x and has no least'
 - key: proof:cor-well-ordering-integers
   kind: proof
   file: 01-naturals-and-well-ordering.md
@@ -363,6 +426,16 @@ items:
       not in S; (c) the contradiction comes at n=4; (e) checked by script over N = naturals and halves:
       (a) first clause holds, second fails at 1/2; sum closed; product fails (1/2*1/2); (c) fails at 1/2;
       (d) holds in all four cases; (e) fails with 0<1/2<1. All match the book''s solution.'
+  - stage: S7r
+    verdict: minor
+    by: rereferee
+    hash: 6b575a182b36
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 'es (1/2, 1/4, -1/2, 0<1/2<1) all agree. Remaining problem at 01:285: ''@thm-induction-iff-well-ordering
+      then forces the set to be ℕ''. The theorem''s statement gives only the induction property. The equality
+      X = ℕ is argued in the proof of (⇒) (01:217), not stated in the theorem. Fix: ''then X has the induction
+      property by @thm-induction-iff-well-ordering, and, as in the proof of its (⇒) half, X = ℕ''.'
 - key: exr-naturals-and-well-ordering-b1
   kind: exr
   file: 01-naturals-and-well-ordering.md
@@ -423,6 +496,16 @@ items:
     evidence: '01:325-329. Script enumerating the dependency constraints (v<viii<iii<ix<i<vi<iv) finds
       exactly 1 admissible order, which matches the claim ''only admissible one''. Both distractors fail
       as stated: (ii) takes the least element of the wrong set (0 when N=nN); (vii) reverses leastness.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 1c432b883111
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: '01:307-329. The renaming from N to X is consistent throughout. The order (v),(viii),(iii),(ix),(i),(vi),(iv)
+      is a correct proof, and the dependencies given for its uniqueness hold. The reasons for rejecting
+      (ii) and (vii) are right: in the case X=N, the least element of S is 0, which lies in S. Line (vii)
+      reverses minimality.'
 - key: exr-naturals-and-well-ordering-b3
   kind: exr
   file: 01-naturals-and-well-ordering.md
@@ -485,6 +568,17 @@ items:
       requires the RAA route. A direct proof via u-1 ∉ U does not match it. Separately, line 387 gives
       full marks to the shift route, which ignores the method the task requires ('by applying thm-well-ordering
       to U ... not by citing cor').
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: c78721a61a28
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 01:345-388. I solved the exercise independently and it agrees. In the proof, u != 0 follows
+      from 0<=s0<u, u-1 is in N by lem (c), and s<=u-1 by lem (e). In (b), S=N works, and U is then empty.
+      The earlier S6 finding is resolved. The rows (2+2+3+1+2=10) now credit both the direct route (u-1
+      not in U, so some s>u-1, which equals u by discreteness) and the RAA route. The shift route at 01:387
+      is capp
 - key: exr-naturals-and-well-ordering-c2
   kind: exr
   file: 01-naturals-and-well-ordering.md
@@ -515,6 +609,17 @@ items:
     evidence: 01-naturals-and-well-ordering.md:417 The scheme follows only the split route. Rows worth
       9 of 10 points (split T, shift the half part, candidate by cases, check by cases on t ∈ ℕ) give
       no credit to the natural doubling proof, and there is no mapping line as STYLE §11.6 requires.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: e042abbd9129
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 01:390-425. I solved the exercise independently. A and B are subsets of N, at least one
+      is non-empty, the candidate c is defined in every case and lies in T, and the check by cases on
+      t in N is right. The earlier S6 finding is resolved. 01:424 adds the STYLE §11.6 mapping line for
+      the doubling route. That route checks that 2n and 2n+1 are in N (lem (b), with 1 in N), takes the
+      least element 2t0, a
 - key: thm-induction
   kind: thm
   file: 02-induction-in-practice.md
@@ -676,6 +781,17 @@ items:
     model: claude-opus-5-5
     evidence: 02-induction-in-practice.md:112 The meta-claim that unique factorization is 'a fact this
       book neither proves nor needs' cannot be checked on the page and makes a claim about unwritten chapters.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 5f9b6b250ccc
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: '02-induction-in-practice.md:109-112. The definition and the example (2 prime via k>=1 by
+      prp-integers-closed (b), d<=kd=2, discreteness (c)) check out, and so do the non-examples 9 and
+      1. The earlier S5b finding is resolved: the meta-claim now reads ''a fact this chapter does not
+      prove or use''. I grepped src/ch07-* for factori[sz]ation and the only hit is this sentence, so
+      the claim is true and can'
 - key: thm-division-algorithm
   kind: thm
   file: 02-induction-in-practice.md
@@ -750,6 +866,17 @@ items:
       of this section's main move' miscounts. C2's solution, named in the sentence just before, is a fourth
       full appearance (A1(a)(iv)'s solution is another), and the third item it lists is in Section 7.3,
       not in this section.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 362b8d26ca94
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 'The statement at :167 is fine. In the paragraph at :190, the earlier S5b finding is resolved
+      on two points: the ''first of three appearances'' count is gone, and the step-adaptation sentence
+      is accurate (the proof''s third step, :183, uses only the supposition at m; the fourth step, :185,
+      produces m''). 7.3 C1 (03-recursion.md:473) does leave its second half blank. One problem remains.
+      ''two later exer'
 - key: proof:lem-lowest-terms
   kind: proof
   file: 02-induction-in-practice.md
@@ -774,6 +901,17 @@ items:
     evidence: 02-induction-in-practice.md:183 Line 162 promises a proof 'written in the steps of the smallest-counterexample
       method, each step named', but the third step's name differs from the algorithm block, and the algorithm's
       step 'Use the claim below m' is not performed.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 063068aea7a6
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: ':175-187. I checked each step. F is non-empty because Q = {m/n : m in Z, n in Z>0} (ch11
+      05-archimedean-property.md:64). F is a subset of Z>0, which is a subset of N, so thm-well-ordering
+      gives a least element m. The supposition makes p and m both even. m''=m/2>0 is an integer, so m''
+      is in Z>0 by prp-integers-closed (b). r=p''/m'' puts m'' in F, and m''<m''+m''=m. That contradicts
+      the least element, and '
 - key: thm-prime-factor
   kind: thm
   file: 02-induction-in-practice.md
@@ -796,6 +934,17 @@ items:
     model: claude-opus-5-5
     evidence: 02-induction-in-practice.md:192 'a smallest-counterexample version would reach the same
       contradiction' refers to a contradiction that the proof does not contain.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 9c49cfdb0ac2
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 'The lead-in at :192 now spells out the smallest-counterexample version: the least failure
+      m is not prime, so it has a divisor a with 2<=a<m; a is not a failure, so it has a prime factor
+      p, and p | m contradicts m in F. That argument is valid, and ''contradicting the choice of m'' points
+      to the contradiction it actually reaches. The earlier S5b finding is resolved. The statement at
+      :197 is fine.'
 - key: proof:thm-prime-factor
   kind: proof
   file: 02-induction-in-practice.md
@@ -818,6 +967,17 @@ items:
     model: claude-opus-5-5
     evidence: 02-induction-in-practice.md:209 The proof uses kl ∈ ℤ in 'n = ka = (kl)p, so p | n' without
       citation, and the ledger does not list it.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 5a0c4e302a48
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: ':205-211. The hypothesis matches thm-strong-induction-from-base (:45) with n0=2. In the
+      prime case, n=1*n. In the non-prime case, def-prime gives a positive divisor a not in {1,n}. k>0
+      gives k>=1, and a>=1 by prp-integers-closed (b). a<=ka=n, so 1<a<n, and discreteness (c) gives 2<=a<n.
+      The hypothesis then gives a=lp, and n=(kl)p. The S5a/S5b findings are resolved: the proof now says
+      ''with kl in Z'
 - key: exm-all-equal-induction
   kind: exm
   file: 02-induction-in-practice.md
@@ -941,6 +1101,17 @@ items:
     evidence: '02:319-325. The blank has one reasonable completion: concatenate the two prime products,
       giving a contradiction with m in F. The move is named correctly (smallest counterexample). Worked
       in full in lem-lowest-terms, so this is the faded triple''s ''last step blank''.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 42fc5d2d9d59
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: ':312 now says that p1 p2 ... pk has its school meaning, that multiplying two such products
+      gives the product of the joined list, and that @def-sum-product (03-recursion.md:159) is in Section
+      7.3. The earlier S5b finding is resolved, and the ledger line (''said in the item'') is now true.
+      I solved the blank myself: concatenate the factorizations of a and b to get m=ab as a product of
+      primes, which co'
 - key: exr-induction-in-practice-b3
   kind: exr
   file: 02-induction-in-practice.md
@@ -974,6 +1145,16 @@ items:
       8 (k from -100 to 100). 2|n and 3|n imply 6|n (n from -200 to 200). The proofs are complete and
       use the uniqueness clause correctly. Worked examples: the division algorithm and the even/odd aftermath
       at 02:149-154.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 78cc350a7d66
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: The hint at :336 is now '@thm-division-algorithm, dividing by 3'. It names a tool and its
+      divisor, not a sequence of steps, so the STYLE §6 finding is resolved. I checked the solutions myself.
+      (a) 17=5*3+2 and -17=5*(-4)+3, unique by the theorem. (b) x^2=4k(k+1)+1, and k(k+1)=2t in both parity
+      cases, so x^2=8t+1 and uniqueness gives remainder 1. (c) n=2a with a=3q+r gives n=6q+2r; then 2r=3(s-2q),
 - key: exr-induction-in-practice-c1
   kind: exr
   file: 02-induction-in-practice.md
@@ -1011,6 +1192,17 @@ items:
       is not the form of thm-strong-induction-from-base (P(k) for n_0<=k<n gives P(n), with no separate
       base), and line (7) cites that theorem directly. STYLE §11.3 says the rest of the argument is correct,
       so a reader '
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: f6bf800a2112
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 'The earlier findings are resolved. (i) at :374 no longer asserts the unjustified ''plus
+      a multiple of 4'' and points to (vi), which proves n>=22 from n-4>=18. (iii) at :378 adds the reindexing
+      remark for line (7). At N=18 the strong-induction hypothesis (:45) is vacuous and asks for P(18),
+      which is line (2). For N>=19, taking n=N-1, discreteness (c) makes {k : 18<=k<N} equal {k : 18<=k<=n},
+      so lines'
 - key: exr-induction-in-practice-c2
   kind: exr
   file: 02-induction-in-practice.md
@@ -1166,6 +1358,17 @@ items:
     model: claude-opus-5-5
     evidence: 03-recursion.md:114 'n − n_0 is an integer ≥ 0' uses closure of ℤ under subtraction without
       citing it.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 0781898d362e
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 03-recursion.md:114 now says 'n - n_0 is an integer (@prp-integers-closed (a)) and >= 0'.
+      I checked prp-integers-closed (a) at 01:108, and it covers m - n. Membership in N follows from (b).
+      n_0 + k is in D by (a) and lem-naturals-arithmetic (a). Existence (116-119) and uniqueness (121)
+      are fine line by line, using t(n+1) = k+1 and prp-function-equality. Ledger :583 matches. The earlier
+      S5b finding
 - key: cor-two-step-recursion
   kind: cor
   file: 03-recursion.md
@@ -1187,6 +1390,17 @@ items:
     model: claude-opus-5-5
     evidence: 03-recursion.md:129 ℕ × X × X is used, but no product of three different sets is defined,
       and ledger :583 misdescribes the source.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 94a5a231898e
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: '03:129 now types h as N x (X x X) -> X, cites @def-cartesian-product (ch06 03:64, binary
+      product) and gives the abbreviation h(n,x,y) := h(n,(x,y)). So no ternary product is needed. The
+      proof (140-152) uses G : N x (X x X) -> X x X, @thm-recursion on X x X and @def-ordered-pair for
+      the coordinates, and is correct. Ledger :584 now describes the source accurately. The two-step example
+      moved to 202-2'
 - key: proof:cor-two-step-recursion
   kind: proof
   file: 03-recursion.md
@@ -1311,6 +1525,17 @@ items:
       with divisor 2)'' is not justified: the division algorithm gives q in Z, not q in N. The step matters
       twice: (b) of prp-power-laws, used for (-1)^{2k} = ((-1)^2)^k, needs k in N, and this paragraph
       is the payer for Ch 6 04:677 in STATUS. Exercise exr-recursion-c2 (a) also relies on it.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 9f06a81e8072
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: '03:262. The division algorithm (02:116: q, r in Z with 0 <= r < 2) gives n = 2k + r. Then
+      r <= 1 by prp-integers-closed (c), and r in {0,1} by (c) applied once more with m = 0. If k < 0,
+      then k <= -1 by (c), so n <= -2 + 1 < 0, against lem-naturals-arithmetic (a). So k in N by prp-integers-closed
+      (b). This is exactly the k in N that (b) needs for (-1)^{2k} = ((-1)^2)^k, and exr-recursion-c2
+      (a) re'
 - key: proof:prp-power-laws
   kind: proof
   file: 03-recursion.md
@@ -1336,6 +1561,16 @@ items:
     model: claude-opus-5-5
     evidence: 03-recursion.md:259 Induction over 'every integer j ≥ 1' on u^j uses that such j lie in
       ℕ (where def-power applies) without citation.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: dc3eaf2da476
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 03:259 now justifies that an integer j >= 1 lies in N by @prp-integers-closed (b), so u^j
+      is defined. The induction is @thm-induction with base 1. The step gives u^j u > u > 1. j = n - m
+      is in N by lem (d), and j >= 1 by lem (a). (a)-(d) at 247-257 check line by line, including m+n
+      and mn in N by lem (b) and integer closure by prp-integers-closed (a). The earlier finding is resolved.
 - key: prp-sum-first-n
   kind: prp
   file: 03-recursion.md
@@ -1418,6 +1653,16 @@ items:
     date: '2026-10-11'
     model: claude-opus-5-5
     evidence: :289-299. Base 0=0 holds, and the step's algebra checks. The r=1 remark at :301 is right.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 6ff142f87b40
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: '03:290-298. The added sentence that the terms are defined is right: k - 1 is in N by lem-naturals-arithmetic
+      (c) (01:42, ''n != 0 => n - 1 in N''), and the stage n+1 term is r^n. The base case is 0 = (1-1)/(1-r).
+      In the step, (1-r^n)/(1-r) + r^n = (1-r^{n+1})/(1-r), using r^n r = r^{n+1} (def-power). Ledger
+      :592 is updated.'
 - key: thm-bernoulli
   kind: thm
   file: 03-recursion.md
@@ -1504,6 +1749,17 @@ items:
     model: claude-opus-5-5
     evidence: 03-recursion.md:356 The meta-claim 'The proof used only that any two reals are comparable
       (trichotomy)' is false of the page.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 04a389e21bb9
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: '03:340-354: base case, union step via lem (e), the two cases and the passage to the minimum
+      by negation are all valid. The meta-claim at 356 now lists trichotomy, reflexivity (base case x_1
+      <= x_1), transitivity (Case 2: a <= M < x_{n+1}) and that negation reverses <= (minimum half). This
+      matches what the proof uses. It is also consistent with 06-orders.md:140, which says the maximum
+      half needs on'
 - key: exm-strengthen-hypothesis
   kind: exm
   file: 03-recursion.md
@@ -1534,6 +1790,17 @@ items:
     model: claude-opus-5-5
     evidence: index.md:23 The named move 'Strengthen the hypothesis' never appears under that name in
       the sections, so a reader cannot match the index entry to the text.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 53c49b360642
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 'index.md:23 now names the move ''Prove more (strengthen the hypothesis)''. The section
+      uses that name: ''We prove **more**'' (360), the ''*Prove more.*'' paragraph (371), and C3''s ''"prove
+      more" (@exm-strengthen-hypothesis)'' (565). So a reader can match the index entry to the text, and
+      the S8 finding is resolved. The solution checks. The failure witness gives 2 - 1/(2(n+1)^2) + 1/(n+1)^2
+      = 2 + 1/(2(n+1)^'
 - key: exr-recursion-a1
   kind: exr
   file: 03-recursion.md
@@ -1683,6 +1950,17 @@ items:
     evidence: 03-recursion.md:497 The fatal error 'applying the hypothesis to m' without showing m' <
       m or m' >= 1' reads literally as 'showing neither'. So a proof that checks m'<m but never shows
       m'>=1 (the exact gap that lets 0 in) escapes the fatal error.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 401f35ddd186
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 'I solved it independently and got the same proof. m is even by the division algorithm,
+      m'' = m/2 > 0 is in Z_{>0} by prp-integers-closed (b), m'' < m, m'' = 2^k q, so m = 2^{k+1} q. 0
+      is excluded because 2^k > 0 forces q = 0, which is even. The scheme at 491-497 sums to 10 (2+2+3+2+1).
+      It no longer awards points for printed text: the first line now asks for the well-ordering justification
+      of the leas'
 - key: exr-recursion-c2
   kind: exr
   file: 03-recursion.md
@@ -1748,6 +2026,17 @@ items:
     evidence: 03-recursion.md:531 Hint 1 says 'Neither identity can be proved alone by induction on n'.
       That is false for two-step (strong) induction. It is true only for one-step induction, whose hypothesis
       is P(n) alone.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 1a3837a5ff4f
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 'Hint 1 (531) now says ''Neither identity carries its own one-step inductive step''. That
+      is true: going from F_{2n+1} to F_{2n+3} needs F_{2n+2} (or F_{2n-1}), which a one-step hypothesis
+      on one identity does not supply. The prose at 384 and 565 is qualified the same way and notes that
+      a two-step induction works. The solution checks line by line (547-563): F_{2n+3} = F_{n+2}^2 + F_{n+1}^2
+      and F_{2n+'
 - key: def-relation-properties
   kind: def
   file: 04-relations.md
@@ -1772,6 +2061,17 @@ items:
       and @prp-negated-implication. Those give (xRy ∧ yRx) ∧ ¬(x=y), but the display writes xRy ∧ (yRx
       ∧ x≠y). The rebracketing needs @prp-and-associative, which is neither cited nor ledgered. The same
       happens on line 42 and in the A1(a) solution at line 166.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: e88eef2f3db0
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 04-relations.md:14-45. The four definitions match their symbolic forms. The witnesses at
+      lines 39-42 are now exactly what @prp-negated-implication (09-quantifier-laws.md:134, ¬(φ→ψ) ⊣⊢
+      φ ∧ ¬ψ) gives with φ = (xRy ∧ yRx) or (xRy ∧ yRz), so no regrouping and no @prp-and-associative
+      is needed. The quantifiers are pushed through by @prp-bounded-quantifier-negation (a) (09:199).
+      All three earlier S5b f
 - key: prp-divides-partial-order
   kind: prp
   file: 04-relations.md
@@ -1847,6 +2147,17 @@ items:
     evidence: 04-relations.md:123 The meta-claim at line 101 says every 'yes' has a one-line argument
       after the table. The 'yes' for reflexivity of <= on R (row at 113) has none, and the ledger (line
       287) lists only 'antisymmetry and transitivity of <= and <'.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: b59614814e88
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: '04-relations.md:101-124. Line 123 now gives the reflexivity of ≤ (''x = x gives x ≤ x''),
+      so the meta-claim at line 101 (every ''yes'' has a one-line argument) holds. The ledger at line
+      287 adds ''reflexivity of <= (x = x)'', so the earlier finding is resolved. Other checks: ''Section
+      6.1, after @prp-empty-set-unique'' matches 06/01-sets-and-subsets.md:269, which proves ∅ ⊆ A for
+      every A. The step 2∤1 via'
 - key: check:04-relations:1
   kind: check
   file: 04-relations.md
@@ -1871,6 +2182,17 @@ items:
     evidence: '04-relations.md:137 The non-transitivity witness relies on two uncited and unledgered facts:
       ''the only prime dividing 2 is 2'' (from @def-prime with 2 prime, shown after def-prime at 02:112)
       and ''2 ∤ 3''.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: e47d8846f216
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: '04-relations.md:137. The earlier finding is resolved. The text now argues that a prime
+      dividing 2 is a positive divisor ≥ 2, hence 2, citing ''the example after @def-prime''. That example
+      (07/02-induction-in-practice.md:113) proves the positive divisors of 2 lie in {1,2}, and @def-prime
+      requires p ≥ 2. For 2∤3, 3 = 2k gives 1<k<2, which is impossible by @prp-integers-closed (c), since
+      1<k gives k ≥ '
 - key: exr-relations-a1
   kind: exr
   file: 04-relations.md
@@ -1903,6 +2225,16 @@ items:
     evidence: 04:165-172. I solved it first and checked it. (a) The negation is right. (b) False, with
       equality as the witness. (c) Reflexive and symmetric, not antisymmetric (0,1), not transitive (0,1,2).
       (d) Script brute force gives 4.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: d652cfc219d6
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: '04-relations.md:166-172. (a) The negation ∃x∈X ∃y∈X ((xRy ∧ yRx) ∧ x≠y) now matches @prp-negated-implication
+      and @prp-bounded-quantifier-negation directly, with no regrouping. (b) False: equality (and ∅) is
+      both symmetric and antisymmetric. (c) |x−y| ≤ 1: reflexive and symmetric; the witnesses 0,1 and
+      0,1,2 are correct. (d) 2·2 = 4 reflexive relations, and the listing is correct. My own solutions '
 - key: exr-relations-b1
   kind: exr
   file: 04-relations.md
@@ -1934,6 +2266,17 @@ items:
     evidence: '04:191-201. My answers agree on all five. E: R,S,T, not antisymmetric. S: R,S,T, not antisymmetric.
       L: R,A,T, not symmetric. P: S,T, not reflexive at 0, not antisymmetric. N: antisymmetric only, vacuously.
       Every witness checks. The worked example is exm-relation-table.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: add176f6fd50
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: '04-relations.md:192-200. Both earlier findings are resolved. (1) Line 192 says ''Chapter
+      10 builds ℤ from the classes of this relation'' with no ''optional''. authoring/blueprints/ch10.md:4
+      marks Ch 10 MAIN LINE, and :65/:94 confirm that def-integers-as-classes uses (a,b)~(c,d) ⟺ a+d=b+c.
+      (2) In (d), the not-antisymmetric witness now shows 1P2, 2P1 (products 2 > 0) and 1 ≠ 2. I re-solved
+      (a)-(e): (a) '
 - key: exr-relations-b2
   kind: exr
   file: 04-relations.md
@@ -1967,6 +2310,17 @@ items:
     evidence: 04-relations.md:222 The closing paragraph contains a vacuous clause and an unproved count.
       'unless the arrow avoids the pair' can never apply, and 'Listing all the possibilities shows that
       {1,2,3} carries exactly six correct answers' is asserted, not shown.
+  - stage: S7r
+    verdict: minor
+    by: rereferee
+    hash: 0b0a58e7fddb
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 'the pair are relabelings of the example, and those with c below are obtained by reversing
+      every arrow, which keeps loops, two-way pairs, one-way pairs and the shortcuts of two-arrow paths.''
+      (Also optional: the sentence ''such an arrow joins the third element to one element of the pair''
+      assumes a single two-way pair before the next sentences prove it; reordering would remove the forward
+      dependence.)'
 - key: exr-relations-b3
   kind: exr
   file: 04-relations.md
@@ -2084,6 +2438,17 @@ items:
     evidence: 05-equivalence-relations.md:76 'Every number is linked to every other through a chain' (for
       |x - y| <= 1 on R) needs the Archimedean property, a Chapter 11 fact. It has no ledger line and
       no prose pointer.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 4b0f4454faf1
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: '05:76 now says only ''Every integer is linked to every other through a chain of steps of
+      length 1''. That is true. The ledger at 05:534 records it as an uncited ax-induction fact (Ch 3,
+      src/ch03-.../02-induction.md:21) that nothing depends on. So the earlier Archimedean finding is
+      resolved. Rechecked the rest: the 05:70 non-example (lem-naturals-arithmetic (a), (b)), the 05:74-75
+      bullets (empty rela'
 - key: exm-first-equivalences
   kind: exm
   file: 05-equivalence-relations.md
@@ -2195,6 +2560,16 @@ items:
     model: claude-opus-5-5
     evidence: 05-equivalence-relations.md:144 The prose uses thm-classes-partition (b) before it is stated,
       with no @ref and no ledger line.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: c84bf73f4885
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 05:144 no longer makes the injectivity claim before thm-classes-partition. The claim now
+      sits after the theorem (05:189), with (b) cited, so the S5a and S5b findings are resolved. What
+      remains is right. q is a function by def-function, since [a] is a subset of X by specification,
+      so [a] is in P(X) and therefore in X/~. q is surjective straight from the definition of X/~ (def-surjective).
 - key: thm-classes-partition
   kind: thm
   file: 05-equivalence-relations.md
@@ -2218,6 +2593,17 @@ items:
     evidence: 05-equivalence-relations.md:192 The warning says '"a + 1" as a function of the class [a]
       needs a proof, which the section supplies'. As written the rule is integer-valued, so it is never
       well defined and the section proves no such thing.
+  - stage: S7r
+    verdict: minor
+    by: rereferee
+    hash: 11d92d14f24c
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 'f-equivalence-class (05:93) defines classes only for an equivalence relation, and NOTATION.md:180
+      reserves [a] for equivalence classes. Exercise A1(c) at 05:404 is careful to say ''define [a] by
+      the formula of @def-equivalence-class''. Fix: write ''the sets [2] = {1, 2} and [1] = {1} given
+      by the formula of @def-equivalence-class'', or go back to the earlier ''the sets of elements below
+      2 and below 1''.'
 - key: proof:thm-classes-partition
   kind: proof
   file: 05-equivalence-relations.md
@@ -2285,6 +2671,17 @@ items:
     model: claude-opus-5-5
     evidence: '05-equivalence-relations.md:229 False meta-claim: ''The transitivity step in (a) is the
       only place the proof uses (P2) to merge two blocks.'''
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: fca56b77e063
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: '05:222 now gives the reason that [y] contains y: ''@thm-classes-partition (a)''. 05:229
+      now reads ''where (P2) does its real work (the classes part uses it again, the same way)''. That
+      is true, since (P2) is used at 05:216 and again at 05:218. Both earlier findings are resolved. Rechecked
+      the proof: (a) (Eq1) by (P3) and (Eq3) by (P2); [x] = P in both directions; X/~_P = P from the two
+      inclusions, usi'
 - key: def-congruence
   kind: def
   file: 05-equivalence-relations.md
@@ -2447,6 +2844,17 @@ items:
     evidence: 05:70 says an example 'later in this section checks' that x - y in Z is an equivalence relation,
       and 05:318 checks (Eq1)-(Eq3) again. Section 7.4 already proved all three in exm-relation-table
       (04:118 and 04:123), and neither place cites it. [finding refuted by skeptics]
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: ded4296cee17
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 05:326 now gets the strict bounds by contraposition of thm-squares-order (ch02 04:304, the
+      non-strict x <= y iff x^2 <= y^2 for x, y >= 0). sqrt2 <= 1 would give 2 <= 1; 2 <= sqrt2 would
+      give 4 <= 2; sqrt2 <= 1/2 would give 2 <= 1/4; 3/2 <= sqrt2 would give 9/4 <= 2. Each pair has both
+      terms >= 0, and trichotomy turns 'not (s <= t)' into t < s, as the ledger at 05:546 records. So
+      the S5a and S5b f
 - key: prp-congruence-arithmetic
   kind: prp
   file: 05-equivalence-relations.md
@@ -2468,6 +2876,16 @@ items:
     model: claude-opus-5-5
     evidence: '05-equivalence-relations.md:337 The sentence misquotes Section 6.4: it says the failed
       rule was ''write a rational number as p/q, then send it to q''.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 548f6dae0d0f
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: '05:337 now says ''send it to its numerator p''. That matches exm-not-a-function (b) in
+      ch06 04-functions.md:79-84, which is in Section 6.4, so the misquote is fixed. Proof checked: (a+b)-(a''+b'')
+      = (k+l)n, and ab - a''b'' = a(b-b'') + (a-a'')b'' = (al + kb'')n. Integer closure comes from prp-integers-closed
+      (a). Well-definedness goes through thm-classes-partition (b) in both directions. All correct.'
 - key: proof:prp-congruence-arithmetic
   kind: proof
   file: 05-equivalence-relations.md
@@ -2511,6 +2929,16 @@ items:
     model: claude-opus-5-5
     evidence: 05-equivalence-relations.md:387 The fact '2k in Z' is used without @ref and is missing from
       the ledger. The same holds in exr-equivalence-relations-b3 (c) at line 474.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 61b4b8a065b1
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: '05:387 now cites @prp-integers-closed (a) for 2k in Z, and the ledger has a row for it
+      (05:550), so the finding is resolved. Solved it myself. (a): 0 and 6 name the same class mod 6,
+      and [6]_4 = [2]_4 differs from [0]_4 because 2 is not a multiple of 4, so F is not a function. (b):
+      6k = 3(2k), so G is well defined. The text agrees.'
 - key: exr-equivalence-relations-a1
   kind: exr
   file: 05-equivalence-relations.md
@@ -2573,6 +3001,16 @@ items:
     evidence: 05:433-438. The Eq3 cancellation uses the middle d≠0. The class of (1,2) is {(k,2k):k∈Z_{>0}}
       (script agrees on a range). In (b), the script confirms the counterexample (1,1)R(0,0)R(2,1) with
       (1,1) not R (2,1).
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 388f796b8a1a
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: '05:436 and the ledger at 05:553 no longer call Chapter 10 optional. That matches authoring/blueprints/ch10.md:4,
+      which says MAIN LINE. def-rationals-as-classes (ch10.md:148) is the same relation ps = rq on Z x
+      Z>0. Solved myself. (a): (Eq3) via adf = bcf = bde and cancelling d != 0; the class of (1,2) is
+      {(k,2k) : k in Z>0}, with c > 0 by prp-integers-closed (b). (b): (1,1) R (0,0) R (2,1) but not'
 - key: exr-equivalence-relations-b2
   kind: exr
   file: 05-equivalence-relations.md
@@ -2633,6 +3071,16 @@ items:
     model: claude-opus-5-5
     evidence: 05:467-474. (a) yes, (b) no ([0]_5=[5]_5 but [0]_10≠[5]_10), (c) yes. This matches my answers,
       and the worked example is exm-ill-defined-class-map.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: ef8c01fbc4fd
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: '05:474 now cites @prp-integers-closed (a) for 2k in Z, with a ledger row at 05:556. Solved
+      myself. (a): yes, by applying the product clause twice. (b): no, since [0]_5 = [5]_5 but 5 is not
+      a multiple of 10 (0 < 5 < 10, discreteness). (c): yes, since 10k = 5(2k). All three agree with the
+      text.'
 - key: exr-equivalence-relations-c1
   kind: exr
   file: 05-equivalence-relations.md
@@ -2664,6 +3112,17 @@ items:
     evidence: 05-equivalence-relations.md:500 The 4-point line of the marking scheme requires 'symmetry
       to reverse one of them; transitivity to link a and b'. It does not map a second natural correct
       route, and STYLE 11.6 says the scheme must not require the book's route.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 76ce6a2283e7
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 05:504 now maps a second natural route. From c ~ a and c ~ b, applying the (<=) direction
+      of [a]=[b] <=> a~b twice gives [a] = [c] = [b]. The route counts if that equivalence was proved
+      independently and symmetry and transitivity are named. This answers the STYLE 11.6 finding. Points
+      add up to 2+1+4+2+1 = 10. The model solution at 05:486-494 is correct and covers (P1), (P2) and
+      (P3).
 - key: exr-equivalence-relations-c2
   kind: exr
   file: 05-equivalence-relations.md
@@ -2751,6 +3210,17 @@ items:
     model: claude-opus-5-5
     evidence: 06-orders.md:55 The fact that the empty set is a subset of every set is credited to @def-empty-set
       at 06:55 and again in exr-orders-b2 (06:289). That definition only defines an empty set.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 65dcf9732979
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 06:51-55. (PO2) is @prp-subset-antisymmetric and (PO3) is @prp-subset-transitive; (PO1)
+      A ⊆ A is covered by ledger 476. The non-total direction uses {a},{b}; the converse shows every subset
+      is ∅ or X. The empty-set fact now cites 'Section 6.1, after @prp-empty-set-unique'. ch06-01:269
+      does prove ∅ ⊆ A for every A right after that proposition. The earlier S5b/S8 miscitation of def-empty-set
+      is reso
 - key: def-order-bounds
   kind: def
   file: 06-orders.md
@@ -2837,6 +3307,16 @@ items:
     date: '2026-10-11'
     model: claude-opus-5-5
     evidence: 06-orders.md:111 The well-ordering step for q0 omits the non-emptiness hypothesis.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 21a90a32eff5
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: '06:104-108. The proof uses g''∈A, g∈A and (PO2), and is correct. The q0 note at 06:111
+      now gives non-emptiness: r = p/q with q ∈ Z>0, so rq = p ∈ Z. This matches ch06-04:91 (solution
+      of (b), Fn1 sentence), and ledger 480 records it. The earlier finding about the missing non-emptiness
+      hypothesis is resolved.'
 - key: proof:prp-greatest-unique
   kind: proof
   file: 06-orders.md
@@ -2893,6 +3373,17 @@ items:
       on R beyond reflexivity, transitivity and the comparability of any two elements, so it works word
       for word in any totally ordered set'. This is true of the maximum half only. The minimum half applies
       the result to -x_1, ..., -x_n, and a totally ordered set has no negation.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: e8310bfb7a20
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 'Statement 06:118-125 is correct. The meta-claim at 06:140 is now limited to the maximum
+      half of prp-finite-max. Checked against ch07-03 proof (lines ~340-357): the maximum half uses comparability
+      (the trichotomy split x_{n+1} ≤ M or M < x_{n+1}), reflexivity and transitivity, and never antisymmetry
+      or negation. The text now says the minimum half needs negation, which needs an ordered field, and
+      re'
 - key: proof:prp-greatest-maximal
   kind: proof
   file: 06-orders.md
@@ -2917,6 +3408,17 @@ items:
     evidence: 06-orders.md:137 The reduction to ⪰ silently uses that the strict part of ⪰ is the reverse
       of ≺. The proof says only that ⪰ satisfies (PO1)-(PO3), and the ledger line (06:478) claims the
       inline sentence covers everything used.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 89de4b3de5d6
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 06:133-137. (a) uses (PO2), and the contradiction is correct. (b) splits on totality; Case
+      2 uses maximality and (PO1). The reduction paragraph now states that the strict part of ⪰ is the
+      reverse of ≺ (since x≠y is symmetric). It translates 'no a with m ≻ a' into 'no a with a ≺ m' and
+      'a ⪰ l for every a' into 'l ⪯ a for every a'. That is everything the minimal/least transfer needs.
+      Ledger 478 matc
 - key: exm-maximal-not-greatest
   kind: exm
   file: 06-orders.md
@@ -2940,6 +3442,17 @@ items:
     evidence: 06:151-158. The strict divisibilities within A are exactly 2|4, 2|6, 3|6. The maximal elements
       are 4, 5, 6 and the minimal ones 2, 3, 5. 5∤4, 4∤5 and 4∤6 rule out a greatest element. {1,…,6}
       has least element 1 and no greatest. The sidecar passes. [finding refuted by skeptics]
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: bb8b05c0a3ad
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: '06:151-155. The strict divisibilities within A are 2|4, 2|6 and 3|6. For n ∈ {4,5,6}, a
+      positive multiple kn ≠ n gives k>0 (school fact, ledger 482) and k≠1. Then k ≥ 2 follows by applying
+      @prp-integers-closed (c) (discreteness) twice. So kn ≥ 2n ≥ 8 > 6. Restricting to positive multiples
+      deals with the earlier S5a point that 0 is a multiple of everything. For no greatest element: 5∤4,
+      4∤5 and 4∤6'
 - key: check:06-orders:1
   kind: check
   file: 06-orders.md
@@ -2984,6 +3497,17 @@ items:
     model: claude-opus-5-5
     evidence: 06-orders.md:219 'Chapter 11 proves it' points at a different set, and 'the supremum of
       Chapter 11 is @def-order-supremum for the order ≤ on R' misdescribes Chapter 11's definition.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: f497a2cb1fc6
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 'Definition 06:181-188 and uniqueness via @prp-greatest-unique (06:191) are correct. 06:219
+      now uses {x∈Q : x>0, x²<2}. This is exactly the set of ch11 thm-no-rational-sup-sqrt2 (cited at
+      ch11-03:3 and ch11-03:154). It also describes Chapter 11''s def-supremum correctly as ''defined
+      in an ordered field'', i.e. def-order-supremum for that field''s ≤ (ch11-02:85-95). Both S5b points
+      are resolved.'
 - key: exm-divisibility-lcm
   kind: exm
   file: 06-orders.md
@@ -3014,6 +3538,17 @@ items:
     model: claude-opus-5-5
     evidence: 06-orders.md:219 'It has no least upper bound in Q. ... Chapter 11 proves it' points to
       a theorem about a different set.
+  - stage: S7r
+    verdict: minor
+    by: rereferee
+    hash: 3720f4be5032
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: ' ''r = c − qL = a(s − qt), so a | r'' needs s − qt ∈ Z, and nothing cites this. Ledger
+      484 records only the ring identity. The same step in C2(b) at 06:371 does cite @prp-integers-closed
+      (a). Fix: add ''(s − qt ∈ Z by @prp-integers-closed (a))''. The rest checks out: the division algorithm
+      applies with L ∈ Z>0 and any integer c; the case a = 0 is handled; and 6 is the least common multiple
+      of 2 and 3.'
 - key: def-well-ordered-set
   kind: def
   file: 06-orders.md
@@ -3037,6 +3572,17 @@ items:
     model: claude-opus-5-5
     evidence: 06-orders.md:234 The remark rests a claim on an exercise when a result exists, and it exceeds
       STYLE §5's limit of 1-3 sentences.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 119fe7edd8eb
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 06:228-234. The examples for N, Z and the positive rationals are correct. Totality-is-automatic
+      is correct. The claim 'N bounded above has a greatest element' is now in the body text and cites
+      @cor-well-ordering-integers (ch07-01:236). The cited statement applies, because an upper bound in
+      N is an integer, and ledger 490 records this. The remark is now three sentences with one job (outlook)
+      and re
 - key: exr-orders-a1
   kind: exr
   file: 06-orders.md
@@ -3070,6 +3616,17 @@ items:
     evidence: '06:252-261. The negations are correct (de Morgan, double negation). (b) is false, with
       witness {{1},{2}}. (c) Script: the divisibility sup is 12 = lcm, and the ≤ sup is 6. (d) The order
       is total, by trichotomy.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: a2d9e6bbf304
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: '06:253-261. (a) The negations via de Morgan, prp-bounded-quantifier-negation (a) and double
+      negation are correct. (b) The counterexample {{1},{2}} is correct. The passage from a finite set
+      to a list now says this is Chapter 8''s meaning of ''finite'' (ledger 492), which resolves the earlier
+      S5b point, and R4 applies. (c) gives 12 under divisibility (the only multiple of 6 below 12 is 6,
+      and 4∤6) and '
 - key: exr-orders-b1
   kind: exr
   file: 06-orders.md
@@ -3133,6 +3690,17 @@ items:
     evidence: '06:288-297. Script: {∅,{1},{2}} has maximal elements {1},{2}, and ({1,2,3},|) has maximal
       elements 2,3. The necessary properties (incomparable maximal elements, no greatest element, l, m1,
       m2 distinct, at least 3 elements) are each proved.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 6ab919dfef1d
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: '06:289-297. In the example {∅,{1},{2}}, the least element ∅ now cites Section 6.1 after
+      @prp-empty-set-unique (ch06-01:269), which is correct. The two maximal elements and the second example
+      {1,2,3} under divisibility check out. The ''every answer must have'' list is correct: the two maximal
+      elements are incomparable, there is no greatest element, and l, m1, m2 are distinct. It meets STYLE
+      §6''s requ'
 - key: exr-orders-b3
   kind: exr
   file: 06-orders.md
@@ -3196,6 +3764,17 @@ items:
       answers with the elements strictly below k. Under the section's own usage, 'below' means ⪯, and
       the count would then be k+1. The question also asks for a count before Chapter 8, which the drafter's
       deviation 6 meant to avoid.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 36f054bbf494
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 06:324 and 06:329-333. The question now asks which elements lie strictly below k, and the
+      solution answers that exactly. 'Exactly 0,…,k−1 (none when k = 0)' follows from @lem-naturals-arithmetic
+      (a) (n ≥ 0) and (e) (n < k gives n+1 ≤ k). No count is claimed, so the Chapter 8 dependence is gone.
+      This resolves the S5a/S5b/S6 findings. In (a), PO1-PO3 are correct, including mixed a<c≤e. (b) The
+      two-s
 - key: exr-orders-c2
   kind: exr
   file: 06-orders.md
@@ -3294,6 +3873,16 @@ items:
     evidence: 06:420-427. The negation via bounded-quantifier-negation (a), then (b), is correct, and
       totality turns ¬(a<b) into b≤a. N satisfies the statement and {1..5} its negation (a=5). The source
       is cited with @ref.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 503c9042a84f
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 06:421-427. The negation is ¬∀∃ → ∃¬∃ → ∃∀¬ by prp-bounded-quantifier-negation (a) then
+      (b), which matches ch04-09. ¬(a<b) is b≤a by totality. (N11) exists in exm-not-allowed-catalogue
+      (ch05-06). a+1 ∈ N now cites (NS), and a < a+1 is ledgered at 497. Witness a = 5 is correct. The
+      earlier finding is resolved.
 - key: exr-orders-r3
   kind: exr
   file: 06-orders.md
@@ -3356,3 +3945,14 @@ items:
     model: claude-opus-5-5
     evidence: 06-orders.md:461 The identity A' = {x_1,…,x_{n+1}} = A ∪ {x_{n+1}} is used without justification.
       The proof that R4 imitates (prp-finite-max) justifies the same step by citation.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: cf9334c6921d
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 06:457-469. The proof uses thm-induction with n0 = 1, matching ch07-02. The base case uses
+      irreflexivity of the strict part (06:31). The step now defines {x1,…,xn} as in Section 7.3 for elements
+      of X. It derives A' = A ∪ {x_{n+1}} from {1,…,n+1} = {1,…,n} ∪ {n+1} via @lem-naturals-arithmetic
+      (e), as prp-finite-max does, and ledger 500 records this. Case 1 uses m ∈ A ⊆ A' and is correct.
+      Case 2 use
