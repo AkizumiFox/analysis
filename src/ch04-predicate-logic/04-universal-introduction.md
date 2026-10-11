@@ -417,7 +417,7 @@ The table gains a row for \( \rulename{\forall I} \), below the row for \( \rule
 | \( \rulename{\forall E} \) | "In particular, for \( x = t \), …"; "applying the hypothesis to \( t \), …" | `h t` (or `specialize h t`) |
 | \( \rulename{\forall I} \) | "Let \( x \) be arbitrary. … Since \( x \) was arbitrary, …" | `intro x` |
 
-Other forms of the opening phrase are "let \( x \in \nR \)", "fix \( \varepsilon > 0 \)", "take any \( n \in \nN \)"; the closing phrase is often left out, since the reader knows that a proof which began by fixing \( x \) proves a statement about every \( x \). In Lean, `intro x` turns the goal `∀ x, P x` into the goal `P x` with a new name `x` in context, about which nothing is assumed: Lean's version of opening the flagged box. The same tactic opened the \( \rulename{{\to}I} \) box in Section 1.5, and the two boxes are, to Lean, one kind of thing.
+Other forms of the opening phrase are "let \( x \in \nR \)", "fix \( \varepsilon > 0 \)", "take any \( n \in \nN \)"; the closing phrase is often left out, since the reader knows that a proof which began by fixing \( x \) proves a statement about every \( x \). In Lean, `intro x` turns the goal `forall x, P x` into the goal `P x` with a new name `x` in context, about which nothing is assumed: Lean's version of opening the flagged box. The same tactic opened the \( \rulename{{\to}I} \) box in Section 1.5, and the two boxes are, to Lean, one kind of thing.
 
 ## The search method: one more step
 
