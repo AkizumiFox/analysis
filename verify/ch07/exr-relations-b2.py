@@ -32,4 +32,8 @@ for A in answers:
     assert len(set(two)) == 1
     a, b = sorted(two[0]); c = ({1, 2, 3} - {a, b}).pop()
     assert off - {(a, b), (b, a)} in ({(a, c), (b, c)}, {(c, a), (c, b)})
+# sufficiency: the reverse of each answer is an answer (c below the pair from c above)
+for A in answers:
+    assert {(y, x) for (x, y) in A} in answers
+assert {(y, x) for (x, y) in R} in answers
 print("ok")

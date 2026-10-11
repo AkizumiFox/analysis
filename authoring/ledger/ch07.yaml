@@ -436,6 +436,17 @@ items:
       then forces the set to be ℕ''. The theorem''s statement gives only the induction property. The equality
       X = ℕ is argued in the proof of (⇒) (01:217), not stated in the theorem. Fix: ''then X has the induction
       property by @thm-induction-iff-well-ordering, and, as in the proof of its (⇒) half, X = ℕ''.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 72aee7f94bd1
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: hecks out. X lacks the induction property, since ℕ ⊆ X contains 0, is closed and is not
+      X. ℤ ∪ (ℤ+1/2) has 0, closure and the predecessor property but has 1/2 between 0 and 1. With the
+      least-element property, (⇐) of @thm-induction-iff-well-ordering gives the induction property, and
+      the (⇒) proof gives the set = ℕ, so (e) holds. The citation now matches what the theorem states.
+      No remaining issues.
 - key: exr-naturals-and-well-ordering-b1
   kind: exr
   file: 01-naturals-and-well-ordering.md
@@ -2321,6 +2332,17 @@ items:
       (Also optional: the sentence ''such an arrow joins the third element to one element of the pair''
       assumes a single two-way pair before the next sentences prove it; reordering would remove the forward
       dependence.)'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 9cb9db1605a4
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: and the reversal argument (verified) covers the three 'below' cases. So there are exactly
+      six answers. The counterexample {loops,(1,2),(2,1),(3,1)} does fail transitivity (3R1R2, not 3R2).
+      The ledger row at line 294 matches the argument. verify/ch07/exr-relations-b2.py runs, prints ok
+      and finds 6 answers by brute force, and its new assertion checks that the set of answers is closed
+      under reversal.
 - key: exr-relations-b3
   kind: exr
   file: 04-relations.md
@@ -2604,6 +2626,17 @@ items:
       the formula of @def-equivalence-class''. Fix: write ''the sets [2] = {1, 2} and [1] = {1} given
       by the formula of @def-equivalence-class'', or go back to the earlier ''the sets of elements below
       2 and below 1''.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 11d92d14f24c
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: t 05:192 is unchanged and still correct. The cited labels (def-equivalence-class, def-quotient-set,
+      def-partition, prp-subset-antisymmetric) exist and say what the proof uses. The other path in the
+      diff, verify/ch07/exr-relations-b2.py, belongs to the §04 exercise exr-relations-b2, not to this
+      section. I ran it with the .venv Python and it prints 'ok'. Its new reverse-closure assertions are
+      sound.
 - key: proof:thm-classes-partition
   kind: proof
   file: 05-equivalence-relations.md
@@ -3549,6 +3582,17 @@ items:
       (a). Fix: add ''(s − qt ∈ Z by @prp-integers-closed (a))''. The rest checks out: the division algorithm
       applies with L ∈ Z>0 and any integer c; the case a = 0 is handled; and 6 is the least common multiple
       of 2 and 3.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: a147bad75906
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: ' 2 and 4 are not multiples of 3. So L = 6, and 2 | n and 3 | n together give 6 | n for
+      every integer n. The verify script passes. The diff touches only this ledger item in 06-orders.md.
+      Note: the diff against 5df9563 also changes verify/ch07/exr-relations-b2.py (adds reverse-relation
+      sufficiency asserts). That change is outside this packet and the reviser''s report, so I give no
+      verdict on it here.'
 - key: def-well-ordered-set
   kind: def
   file: 06-orders.md
