@@ -49,7 +49,7 @@ Now assume the shrinking hypothesis, and let \( x \in \bigcap_n I_n \). Suppose 
 
 Closedness is what lets \( \alpha \) belong to \( I_n \). The proof gives only \( a_n \le \alpha \le b_n \), with nonstrict inequalities, and \( \alpha \) may well equal an endpoint. An open interval would exclude it.
 
-Now back to the bisection. Its intervals have length \( 1/2^{n-1} \), and \( 2^{n-1} \ge n \) for every \( n \ge 1 \) (by @ax-induction), so \( 1/2^{n-1} \le 1/n \). Given \( \varepsilon > 0 \), @cor-archimedean-epsilon gives \( n \) with \( 1/n < \varepsilon \), and then the \( n \)-th interval is shorter than \( \varepsilon \). The rule keeps \( a_n^2 < 2 < b_n^2 \) at every step, so \( a_n < \sqrt{2} < b_n \) by @thm-ordered-field-rules (g), and every interval contains \( \sqrt{2} \). By @thm-nested-intervals the intersection is exactly \( \{ \sqrt{2} \} \). The bisection traps \( \sqrt{2} \) and nothing else.
+Now back to the bisection. Its intervals have length \( 1/2^{n-1} \), and \( 2^{n-1} \ge n \) for every \( n \ge 1 \) (by @fd1:ax-induction), so \( 1/2^{n-1} \le 1/n \). Given \( \varepsilon > 0 \), @cor-archimedean-epsilon gives \( n \) with \( 1/n < \varepsilon \), and then the \( n \)-th interval is shorter than \( \varepsilon \). The rule keeps \( a_n^2 < 2 < b_n^2 \) at every step, so \( a_n < \sqrt{2} < b_n \) by @thm-ordered-field-rules (g), and every interval contains \( \sqrt{2} \). By @thm-nested-intervals the intersection is exactly \( \{ \sqrt{2} \} \). The bisection traps \( \sqrt{2} \) and nothing else.
 
 ## What each hypothesis does
 
@@ -68,7 +68,7 @@ We check each row.
 - **Closed.** The intervals \( (0, 1/n) \) are nested and bounded. A real \( x \le 0 \) is not in \( (0, 1) \). For \( x > 0 \), @cor-archimedean-epsilon gives \( n \) with \( 1/n < x \), so \( x \notin (0, 1/n) \). Hence no real number is in every interval. Here the supremum of the left endpoints is \( \alpha = 0 \), and it lies in none of the intervals: exactly the step that closedness secured.
 - **Bounded.** The intervals \( [n, \infty) \) are closed and nested. For any \( x \in \nR \), @thm-naturals-unbounded gives \( n > x \), and then \( x \notin [n, \infty) \). The proof breaks earlier here: the left endpoints form \( \nZ_{>0} \), which has no upper bound, so \( \alpha \) does not exist.
 - **Nested.** The intervals \( [n, n + 1] \) are closed and bounded, but \( [1, 2] \cap [3, 4] = \emptyset \) already.
-- **The field is \( \nR \).** In \( \nQ \), a closed interval means \( \{ q \in \nQ : a \le q \le b \} \). Take the bisection intervals \( [a_n, b_n] \) from the start of this section. They are defined by rational arithmetic alone, because each midpoint \( c \) is rational, and \( c^2 \ne 2 \) by @thm-sqrt2-irrational, so the rule "keep the half whose endpoints' squares straddle \( 2 \)" always applies. We showed that the real intervals \( [a_n, b_n] \) have intersection \( \{ \sqrt{2} \} \). So their rational parts have intersection \( \nQ \cap \{ \sqrt{2} \} = \emptyset \).
+- **The field is \( \nR \).** In \( \nQ \), a closed interval means \( \{ q \in \nQ : a \le q \le b \} \). Take the bisection intervals \( [a_n, b_n] \) from the start of this section. They are defined by rational arithmetic alone, because each midpoint \( c \) is rational, and \( c^2 \ne 2 \) by @fd1:thm-sqrt2-irrational, so the rule "keep the half whose endpoints' squares straddle \( 2 \)" always applies. We showed that the real intervals \( [a_n, b_n] \) have intersection \( \{ \sqrt{2} \} \). So their rational parts have intersection \( \nQ \cap \{ \sqrt{2} \} = \emptyset \).
 - **Shrinking.** The intervals \( [-1/n, 1 + 1/n] \) are closed, bounded, and nested, and their intersection is \( [0, 1] \): every point of \( [0, 1] \) lies in all of them, and a point outside \( [0, 1] \) is excluded from some interval by @cor-archimedean-epsilon (@exr-nested-intervals-b2 writes this out). The intersection is nonempty, but it is not a single point. Their lengths \( 1 + 2/n \) never drop below \( 1 \).
 
 ::: {.warning}
@@ -85,7 +85,7 @@ The half-open intervals \( (0, 1/n] \) are nested and bounded, but no real numbe
 
 ## The real numbers cannot be listed
 
-Chapter 8 calls a set **countable** if its elements can be listed as \( x_0, x_1, x_2, \dots \), repetitions allowed; for a nonempty set this means that it is the image of some function from \( \nN \). That chapter shows that \( \nN \), \( \nZ \), and \( \nQ \) are countable. It also shows that \( \nR \) is not, by Cantor's diagonal argument with decimal expansions. Decimal expansions were taken there as a fact from school: every real number has one, and two different expansions such as \( 0.4999\ldots \) and \( 0.5000\ldots \) can name the same number. Neither fact has been proved from our axioms.
+*Sets, Relations, and Cardinality*, Chapter 3 calls a set **countable** if its elements can be listed as \( x_0, x_1, x_2, \dots \), repetitions allowed; for a nonempty set this means that it is the image of some function from \( \nN \). That chapter shows that \( \nN \), \( \nZ \), and \( \nQ \) are countable. It also shows that \( \nR \) is not, by Cantor's diagonal argument with decimal expansions. Decimal expansions were taken there as a fact from school: every real number has one, and two different expansions such as \( 0.4999\ldots \) and \( 0.5000\ldots \) can name the same number. Neither fact has been proved from our axioms.
 
 Here is a proof with no decimals, using only @thm-nested-intervals.
 
@@ -123,7 +123,7 @@ Both are closed intervals of length \( d/3 > 0 \) contained in \( I_n \). They a
 \]
 In the second case \( x_{n+1} \in L \), so \( x_{n+1} \notin R \), since \( L \) and \( R \) are disjoint. In both cases \( x_{n+1} \notin I_{n+1} \), \( I_{n+1} \subseteq I_n \), and \( I_{n+1} \) has positive length.
 
-Each \( I_{n+1} \) is determined by \( I_n \) and \( x_{n+1} \) through an explicit rule, so the family is defined by recursion (Chapter 7); no choice principle is involved.
+Each \( I_{n+1} \) is determined by \( I_n \) and \( x_{n+1} \) through an explicit rule, so the family is defined by recursion (*Sets, Relations, and Cardinality*, Chapter 2); no choice principle is involved.
 
 The intervals \( I_n \) are closed, bounded, and nested. By @thm-nested-intervals, there is \( c \in \bigcap_n I_n \). For each \( n \ge 1 \) we have \( c \in I_n \) and \( x_n \notin I_n \), so \( c \ne x_n \).
 
@@ -135,10 +135,10 @@ The answer to the prompt: halves share their midpoint. If \( x_{n+1} \) were exa
 Only the existence half of @thm-nested-intervals was used; the intervals need not shrink.
 
 ::: {.remark}
-Since \( \nQ \) is countable, and a union of two countable sets is countable (both from Chapter 8), the set \( \nR \setminus \nQ \) of irrational numbers is uncountable. Otherwise \( \nR = \nQ \cup (\nR \setminus \nQ) \) would be countable. In this sense most real numbers are irrational, although so far we have named only a few of them, such as \( \sqrt{2} \) and \( \sqrt2 + q \) for rational \( q \) (the proof of @cor-irrationals-dense).
+Since \( \nQ \) is countable, and a union of two countable sets is countable (both from *Sets, Relations, and Cardinality*, Chapter 3), the set \( \nR \setminus \nQ \) of irrational numbers is uncountable. Otherwise \( \nR = \nQ \cup (\nR \setminus \nQ) \) would be countable. In this sense most real numbers are irrational, although so far we have named only a few of them, such as \( \sqrt{2} \) and \( \sqrt2 + q \) for rational \( q \) (the proof of @cor-irrationals-dense).
 :::
 
-The decimal proof of Chapter 8 is secretly a nested interval proof too: the first \( n \) digits of a number place it in an interval of length \( 10^{-n} \). The version above avoids the digits, and with them the numbers that have two expansions.
+The decimal proof of *Sets, Relations, and Cardinality*, Chapter 3 is secretly a nested interval proof too: the first \( n \) digits of a number place it in an interval of length \( 10^{-n} \). The version above avoids the digits, and with them the numbers that have two expansions.
 
 ## What the axiom bought us
 
@@ -151,13 +151,13 @@ Here is the chapter so far in one table. Each row is a property that \( \nR \) h
 | \( \nQ \) is dense | yes | yes | no: nothing rational in \( (x, x + 1) \) |
 | positive elements have square roots | yes | no: \( 2 \) | no: \( x \) |
 | nested closed intervals meet | yes | no: bisection toward \( \sqrt{2} \) | no: \( [n, x/n] \) |
-| uncountable | yes | no (Chapter 8) | yes: contains \( \nR \) |
+| uncountable | yes | no (*Sets, Relations, and Cardinality*, Chapter 3) | yes: contains \( \nR \) |
 
-The entries for \( \nR \) are this chapter's theorems. For \( \nQ \), the failures come from @thm-no-rational-sup-sqrt2, @thm-sqrt2-irrational, and the bisection above; \( \nQ \) is Archimedean by @exr-archimedean-property-c3; and \( \nQ \) is dense in itself because the average of two rationals is a rational between them. For \( \nR(x) \): every rational \( r \) is below some natural number (@exr-archimedean-property-c3), hence below \( x \), so none lies in \( (x, x + 1) \). If \( (p/q)^2 = x \) for polynomials \( p, q \), then \( p^2 = x q^2 \), whose sides have even and odd degree, which is impossible. That the nested intervals \( [n, x/n] \) have no common point is proved in @exr-nested-intervals-c3. And \( \nR(x) \) contains the constants, a copy of \( \nR \), so it cannot be countable, since a subset of a countable set is countable (Chapter 8).
+The entries for \( \nR \) are this chapter's theorems. For \( \nQ \), the failures come from @thm-no-rational-sup-sqrt2, @fd1:thm-sqrt2-irrational, and the bisection above; \( \nQ \) is Archimedean by @exr-archimedean-property-c3; and \( \nQ \) is dense in itself because the average of two rationals is a rational between them. For \( \nR(x) \): every rational \( r \) is below some natural number (@exr-archimedean-property-c3), hence below \( x \), so none lies in \( (x, x + 1) \). If \( (p/q)^2 = x \) for polynomials \( p, q \), then \( p^2 = x q^2 \), whose sides have even and odd degree, which is impossible. That the nested intervals \( [n, x/n] \) have no common point is proved in @exr-nested-intervals-c3. And \( \nR(x) \) contains the constants, a copy of \( \nR \), so it cannot be countable, since a subset of a countable set is countable (*Sets, Relations, and Cardinality*, Chapter 3).
 
 The \( \nQ \) column shows that the Archimedean property and density are far weaker than the axiom; the \( \nR(x) \) column shows an ordered field where even they fail.
 
-Two questions are left open. Is the least upper bound axiom *equivalent* to some of the other rows? And could a different "no gaps" property serve as the axiom instead? Chapter 21 answers both. Over an arbitrary ordered field, the least upper bound axiom is equivalent to each of: the monotone convergence of bounded monotone sequences; the Bolzano–Weierstrass property; Cauchy completeness together with the Archimedean property; and the nested interval property together with the Archimedean property. You can prove one arrow of that last equivalence now (@exr-nested-intervals-c1).
+Two questions are left open. Is the least upper bound axiom *equivalent* to some of the other rows? And could a different "no gaps" property serve as the axiom instead? Chapter 11 answers both. Over an arbitrary ordered field, the least upper bound axiom is equivalent to each of: the monotone convergence of bounded monotone sequences; the Bolzano–Weierstrass property; Cauchy completeness together with the Archimedean property; and the nested interval property together with the Archimedean property. You can prove one arrow of that last equivalence now (@exr-nested-intervals-c1).
 
 ## Exercises
 
@@ -280,7 +280,7 @@ A proof of (c) that shows \( \sup A = s \) through the backward direction of @th
 
 ::: {.enumerate options="label=(\alph*)"}
 1. Let \( x < y \). Prove that the interval \( (x, y) \) is not countable.
-2. Deduce that \( (x, y) \) contains an irrational number, without using \( \sqrt{2} \) or any other named irrational. You may use the facts from Chapter 8 that \( \nQ \) is countable, and that a subset of a countable set is countable.
+2. Deduce that \( (x, y) \) contains an irrational number, without using \( \sqrt{2} \) or any other named irrational. You may use the facts from *Sets, Relations, and Cardinality*, Chapter 3 that \( \nQ \) is countable, and that a subset of a countable set is countable.
 3. Let \( C \subseteq \nR \) be countable. Show that the real numbers not in \( C \) are dense: every interval \( (x, y) \) with \( x < y \) contains a real number that is not in \( C \).
 :::
 :::
@@ -386,7 +386,7 @@ By trichotomy, \( g(s) = 1 \).
 
 *Uniqueness.* Let \( t \in \nR \) with \( g(t) = 1 \). If \( t < 0 \), then \( t^2 > 0 \) and \( t^3 = t \cdot t^2 < 0 \) by @thm-ordered-field-rules (c), so \( g(t) < 0 \); hence \( t \ge 0 \). On \( [0, \infty) \), \( g \) is strictly increasing, so \( t < s \) or \( t > s \) would give \( g(t) \ne g(s) \). Hence \( t = s \).
 
-This is the intermediate value theorem for one polynomial, proved by the move that proves it in general in Chapter 16.
+This is the intermediate value theorem for one polynomial, proved by the move that proves it in general in Chapter 6.
 
 **Marking scheme.** (10 points)
 - 1: names the move, and records that \( g \) is strictly increasing on \( [0, \infty) \) with a reason.
@@ -413,7 +413,7 @@ Let \( A \subseteq \nR \) be nonempty, and let \( s \) be an upper bound of \( A
 :::
 
 ::: {.solution}
-By @prp-equivalence-cycle it suffices to prove (i) \( \Rightarrow \) (ii) \( \Rightarrow \) (iii) \( \Rightarrow \) (i).
+By @fd1:prp-equivalence-cycle it suffices to prove (i) \( \Rightarrow \) (ii) \( \Rightarrow \) (iii) \( \Rightarrow \) (i).
 
 *(i) \( \Rightarrow \) (ii).* This is @cor-sup-approximation, or @thm-sup-epsilon (\( \Rightarrow \)) with \( \varepsilon = \frac1n \).
 
@@ -421,7 +421,7 @@ By @prp-equivalence-cycle it suffices to prove (i) \( \Rightarrow \) (ii) \( \Ri
 
 *(iii) \( \Rightarrow \) (i).* (S1) holds because \( s \) is an upper bound. For (S2), let \( M \) be an upper bound. By (iii), \( M < s \) is impossible, so \( s \le M \) by trichotomy.
 
-The cycle is the method of Chapter 2 for equivalences (@prp-equivalence-cycle). Here (ii) \( \Rightarrow \) (iii) is the only arrow with content: it is where the Archimedean property turns the special widths \( \frac1n \) into every width.
+The cycle is the method of *Logic and Proof*, Chapter 2 for equivalences (@fd1:prp-equivalence-cycle). Here (ii) \( \Rightarrow \) (iii) is the only arrow with content: it is where the Archimedean property turns the special widths \( \frac1n \) into every width.
 :::
 
 ::: {#exr-nested-intervals-r2}
@@ -434,11 +434,11 @@ The cycle is the method of Chapter 2 for equivalences (@prp-equivalence-cycle). 
 :::
 
 ::: {.solution}
-(a) By @prp-contrapositive it suffices to prove: if \( x \) is rational, then \( x^2 \) is rational. That holds because a product of rationals is rational (@exm-ordered-fields-q-r).
+(a) By @fd1:prp-contrapositive it suffices to prove: if \( x \) is rational, then \( x^2 \) is rational. That holds because a product of rationals is rational (@exm-ordered-fields-q-r).
 
-(b) The number \( t \) exists by @thm-nth-root. Then \( t^2 > 0 \) and \( (t^2)^2 = t^4 = 2 \), so \( t^2 \) is the positive square root of \( 2 \), by the uniqueness in @thm-sqrt2-exists. It is irrational by @thm-sqrt2-irrational. By (a), \( t \) is irrational.
+(b) The number \( t \) exists by @thm-nth-root. Then \( t^2 > 0 \) and \( (t^2)^2 = t^4 = 2 \), so \( t^2 \) is the positive square root of \( 2 \), by the uniqueness in @thm-sqrt2-exists. It is irrational by @fd1:thm-sqrt2-irrational. By (a), \( t \) is irrational.
 
-The direct statement (a) would be awkward to prove as it stands, since "irrational" is a negative property; its contrapositive is one line. That is the reason to reach for the contrapositive (@prp-contrapositive, Chapter 2).
+The direct statement (a) would be awkward to prove as it stands, since "irrational" is a negative property; its contrapositive is one line. That is the reason to reach for the contrapositive (@fd1:prp-contrapositive, *Logic and Proof*, Chapter 2).
 :::
 
 ::: {#exr-nested-intervals-r3}
@@ -454,9 +454,9 @@ Suppose, for a contradiction, that \( r \coloneqq \sqrt2 + \sqrt3 \) is rational
 \[
 r^2 = 2 + 2\sqrt2 \sqrt3 + 3 = 5 + 2\sqrt6 ,
 \]
-so \( \sqrt6 = (r^2 - 5)/2 \) is rational, because the rationals are closed under the field operations (@exm-ordered-fields-q-r). But no rational number has square \( 6 \) (@exr-negation-and-contradiction-c1). Hence \( r \) is irrational \( [\rulename{\neg I}] \).
+so \( \sqrt6 = (r^2 - 5)/2 \) is rational, because the rationals are closed under the field operations (@exm-ordered-fields-q-r). But no rational number has square \( 6 \) (@fd1:exr-negation-and-contradiction-c1). Hence \( r \) is irrational \( [\rulename{\neg I}] \).
 
-Chapter 2 could prove only the negative half: no rational squares to \( 6 \) (@exr-negation-and-contradiction-c1). With @thm-nth-root the number \( \sqrt6 \) exists in \( \nR \), and the negative statement becomes the positive one, "\( \sqrt6 \) is irrational", which is what the argument uses.
+*Logic and Proof*, Chapter 2 could prove only the negative half: no rational squares to \( 6 \) (@fd1:exr-negation-and-contradiction-c1). With @thm-nth-root the number \( \sqrt6 \) exists in \( \nR \), and the negative statement becomes the positive one, "\( \sqrt6 \) is irrational", which is what the argument uses.
 :::
 
 ::: {#exr-nested-intervals-r4}
@@ -472,25 +472,25 @@ The tool is the triangle inequality (@thm-triangle-inequality), applied to a sum
 \]
 using \( \abs{1 - x} = \abs{x - 1} \) (@prp-absolute-value-rules (b)). By @exr-ordered-fields-b2 (b), equality holds exactly when \( (1 - x)(x + 1) \ge 0 \), that is, when \( 1 - x^2 \ge 0 \), that is, when \( -1 \le x \le 1 \) (by @thm-ordered-field-rules (g) and @prp-absolute-value-rules (d), \( x^2 \le 1 \) means \( \abs{x} \le 1 \)). So equality holds exactly on \( [-1, 1] \).
 
-The look-alike tools work less well. Proof by cases, as in @exm-triangle-inequality-cases, succeeds but needs three cases (\( x < -1 \), \( -1 \le x \le 1 \), \( x > 1 \)) and a formula in each. Squaring both sides leaves the cross term \( 2\abs{x^2 - 1} \), which still has an absolute value in it, so it only postpones the case split.
+The look-alike tools work less well. Proof by cases, as in @fd1:exm-triangle-inequality-cases, succeeds but needs three cases (\( x < -1 \), \( -1 \le x \le 1 \), \( x > 1 \)) and a formula in each. Squaring both sides leaves the cross term \( 2\abs{x^2 - 1} \), which still has an absolute value in it, so it only postpones the case split.
 :::
 
 <!-- dependency ledger
 thm-nested-intervals (claim): I_k is contained in I_m for m <= k, from I_(j+1) contained in I_j | inline, by induction on k - m (ax-induction)
 thm-nested-intervals (example): 2^(n-1) >= n for n >= 1 (the bisection intervals shrink) | inline, by induction (ax-induction)
-thm-reals-uncountable (proof): a family defined by recursion from an explicit rule exists | definition by recursion, ch07 (promised); prose pointer in the proof
-thm-reals-uncountable (proof): countable means listable, i.e. the image of a function from N | ch08 (promised); prose pointer before the theorem
-thm-reals-uncountable (example): Q is countable; a union of two countable sets is countable; a subset of a countable set is countable (remark and table) | ch08 (promised); used only in a remark and the table, never in a proof
+thm-reals-uncountable (proof): a family defined by recursion from an explicit rule exists | definition by recursion, F2.2 (promised); prose pointer in the proof
+thm-reals-uncountable (proof): countable means listable, i.e. the image of a function from N | F2.3 (promised); prose pointer before the theorem
+thm-reals-uncountable (example): Q is countable; a union of two countable sets is countable; a subset of a countable set is countable (remark and table) | F2.3 (promised); used only in a remark and the table, never in a proof
 thm-reals-uncountable (example): (p/q)^2 = x is impossible in R(x), since p^2 and x q^2 have degrees of different parity (table) | inline
 exr-nested-intervals-b1 (solution): 14^2 = 196, 15^2 = 225, 141^2 = 19881, 142^2 = 20164; an integer k <= z satisfies k <= floor(z) | arithmetic and lem-integer-part, shown inline
-exr-nested-intervals-b1 (solution): no integer lies strictly between k and k + 1 | ch07 (promised), recalled in the remark on N in 05-archimedean-property
+exr-nested-intervals-b1 (solution): no integer lies strictly between k and k + 1 | F2.2 (promised), recalled in the remark on N in 05-archimedean-property
 exr-nested-intervals-c1 (solution): 2^(n-1) >= n | inline, by induction (ax-induction)
 exr-nested-intervals-c1 (solution): the one induction of (b), in F | inline, by induction (ax-induction)
 exr-nested-intervals-c1 (solution): N inside F; 2 > 0 in F | exr-ordered-fields-c1, thm-ordered-field-rules (h)
-exr-nested-intervals-c2 (solution): Q is countable; a subset of a countable set is countable | ch08 (promised); the item states them as usable facts
+exr-nested-intervals-c2 (solution): Q is countable; a subset of a countable set is countable | F2.3 (promised); the item states them as usable facts
 exr-nested-intervals-c4 (solution): the expansions of (s + h)^3 + (s + h) and (s - h)^3 + (s - h); 0.68^3 = 0.314432 and 0.69^3 = 0.328509 | lem-field-algebra; arithmetic, shown inline
 exr-nested-intervals-r2 (solution): a product of rationals is rational | exm-ordered-fields-q-r
-exr-nested-intervals-r2 (solution): (t^2)^2 = t^4 | power laws, ch07 (promised)
+exr-nested-intervals-r2 (solution): (t^2)^2 = t^4 | power laws, F2.2 (promised)
 exr-nested-intervals-r3 (solution): (r^2 - 5)/2 is rational | exm-ordered-fields-q-r
 exr-nested-intervals-c3 (solution): degree and leading coefficient of sums, differences and products of polynomials | algebra of polynomials, taken as known (exm-nonarchimedean-field)
 exr-nested-intervals-r3 (solution): sqrt(2) sqrt(3) = sqrt(6), by uniqueness of positive square roots | inline, from thm-nth-root

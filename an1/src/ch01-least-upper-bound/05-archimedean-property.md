@@ -40,7 +40,7 @@ Two things are true of \( \nN \), and both follow at once from the definition.
 - \( \nN \) **is inductive.** Every inductive set contains \( 0 \), so \( 0 \in \nN \). If \( x \in \nN \), then \( x \) lies in every inductive set \( S \), and each such \( S \) then contains \( x + 1 \) by (N2); so \( x + 1 \in \nN \).
 - \( \nN \) **is contained in every inductive set**, since it is their intersection.
 
-The second property is the **principle of induction** (@ax-induction) in disguise. To prove that a statement \( P(n) \) holds for every \( n \in \nN \), let \( S \coloneqq \{ n \in \nN : P(n) \} \). If \( P(0) \) holds and \( P(n) \) implies \( P(n + 1) \), then \( S \) is inductive, so \( \nN \subseteq S \), and \( P(n) \) holds for all \( n \in \nN \).
+The second property is the **principle of induction** (@fd1:ax-induction) in disguise. To prove that a statement \( P(n) \) holds for every \( n \in \nN \), let \( S \coloneqq \{ n \in \nN : P(n) \} \). If \( P(0) \) holds and \( P(n) \) implies \( P(n + 1) \), then \( S \) is inductive, so \( \nN \subseteq S \), and \( P(n) \) holds for all \( n \in \nN \).
 
 ::: {#exm-naturals-at-least-one}
 [Every nonzero natural number is at least 1]
@@ -61,7 +61,7 @@ The nonzero natural numbers are the **positive integers**,
 the two descriptions agreeing by @exm-naturals-at-least-one. This is the set \( \{ 1, 2, 3, \dots \} \) that indexed our examples informally before; from here on it is a defined subset of \( \nR \), and \( 1/n \) is defined and positive for every \( n \in \nZ_{>0} \).
 
 ::: {.remark}
-Chapter 3 takes induction as a basic property of \( \nN \) (@ax-induction), and Chapter 7 proves well-ordering and the arithmetic below from it. The set defined here is that same \( \nN \), now located inside \( \nR \); it is also the copy \( 0, 1, 1 + 1, 1 + 1 + 1, \dots \) that every ordered field contains (@exr-ordered-fields-c1), and "\( \nN \) is the smallest inductive set" is exactly the induction principle of Chapter 3, in the form "every inductive subset of \( \nN \) is all of \( \nN \)". From now on we use the familiar arithmetic of \( \nN \), each item proved by induction in Chapter 7: sums and products of natural numbers are natural numbers; if \( n \in \nN \) and \( n \ge 1 \), then \( n - 1 \in \nN \); no natural number lies strictly between \( n \) and \( n + 1 \); and every nonempty subset of \( \nN \) has a least element (**well-ordering**). The integers are \( \nZ \coloneqq \nN \cup \{ -n : n \in \nN \} \), and the rationals are \( \nQ \coloneqq \{ m/n : m \in \nZ, \ n \in \nZ_{>0} \} \), with \( \nZ_{>0} \) the positive integers defined above. We also use, again from Chapter 7, that sums, differences, and products of integers are integers. The integers \( n > 0 \) are exactly the elements of \( \nZ_{>0} \): such an integer is not \( -m \) with \( m \in \nN \), since \( -m \le 0 \), so it is a nonzero natural number; conversely, a nonzero natural number is \( > 0 \) by @exm-naturals-at-least-one. So \( \nZ_{>0} = \{ n \in \nZ : n > 0 \} \).
+*Logic and Proof*, Chapter 3 takes induction as a basic property of \( \nN \) (@fd1:ax-induction), and *Sets, Relations, and Cardinality*, Chapter 2 proves well-ordering and the arithmetic below from it. The set defined here is that same \( \nN \), now located inside \( \nR \); it is also the copy \( 0, 1, 1 + 1, 1 + 1 + 1, \dots \) that every ordered field contains (@exr-ordered-fields-c1), and "\( \nN \) is the smallest inductive set" is exactly the induction principle of *Logic and Proof*, Chapter 3, in the form "every inductive subset of \( \nN \) is all of \( \nN \)". From now on we use the familiar arithmetic of \( \nN \), each item proved by induction in *Sets, Relations, and Cardinality*, Chapter 2: sums and products of natural numbers are natural numbers; if \( n \in \nN \) and \( n \ge 1 \), then \( n - 1 \in \nN \); no natural number lies strictly between \( n \) and \( n + 1 \); and every nonempty subset of \( \nN \) has a least element (**well-ordering**). The integers are \( \nZ \coloneqq \nN \cup \{ -n : n \in \nN \} \), and the rationals are \( \nQ \coloneqq \{ m/n : m \in \nZ, \ n \in \nZ_{>0} \} \), with \( \nZ_{>0} \) the positive integers defined above. We also use, again from *Sets, Relations, and Cardinality*, Chapter 2, that sums, differences, and products of integers are integers. The integers \( n > 0 \) are exactly the elements of \( \nZ_{>0} \): such an integer is not \( -m \) with \( m \in \nN \), since \( -m \le 0 \), so it is a nonzero natural number; conversely, a nonzero natural number is \( > 0 \) by @exm-naturals-at-least-one. So \( \nZ_{>0} = \{ n \in \nZ : n > 0 \} \).
 :::
 
 ## The natural numbers are not bounded
@@ -89,7 +89,7 @@ Therefore \( \nN \) is not bounded above. Unwinding the definition (@def-bounded
 Each hypothesis of the axiom was used and named: "nonempty" through \( 0 \in \nN \), "bounded above" through the assumption for contradiction. The inductive property of \( \nN \) supplied the jump \( n \mapsto n + 1 \).
 
 ::: {.remark}
-The contradiction step is \( \rulename{\neg I} \) (@def-rules-negation), not \( \rulename{RAA} \) (@def-rule-raa), the classical rule of proof by contradiction: we assumed "\( \nN \) is bounded above", reached a contradiction, and concluded its negation. Inside that box every step is direct. The proof shows that \( s - 1 \) **is** an upper bound; it does not argue "\( s - 1 \) is not an upper bound, so some \( n \) exceeds \( s - 1 \)", a step that would itself need the classical law described next. The proof's one classical step comes after the \( \rulename{\neg I} \), in its last paragraph. Passing from "not every \( n \) satisfies \( n \le x \)" to "some \( n \) satisfies \( n > x \)" is the quantifier law "not all" gives "some not" of Chapter 4, and that law is derived there with \( \rulename{RAA} \).
+The contradiction step is \( \rulename{\neg I} \) (@fd1:def-rules-negation), not \( \rulename{RAA} \) (@fd1:def-rule-raa), the classical rule of proof by contradiction: we assumed "\( \nN \) is bounded above", reached a contradiction, and concluded its negation. Inside that box every step is direct. The proof shows that \( s - 1 \) **is** an upper bound; it does not argue "\( s - 1 \) is not an upper bound, so some \( n \) exceeds \( s - 1 \)", a step that would itself need the classical law described next. The proof's one classical step comes after the \( \rulename{\neg I} \), in its last paragraph. Passing from "not every \( n \) satisfies \( n \le x \)" to "some \( n \) satisfies \( n > x \)" is the quantifier law "not all" gives "some not" of *Logic and Proof*, Chapter 4, and that law is derived there with \( \rulename{RAA} \).
 :::
 
 The form we will use most often puts a small number, not a large one, in the role of \( x \).
@@ -108,7 +108,7 @@ Let \( \varepsilon > 0 \). Then \( 1/\varepsilon \) is defined and positive. By 
 
 Read the quantifiers in order. The \( \varepsilon \) is given first and the \( n \) is found afterwards, so **\( n \) depends on \( \varepsilon \)**: the proof chose \( n > 1/\varepsilon \), and a smaller \( \varepsilon \) forces a larger \( n \). Swapping the quantifiers gives a false statement. "There is \( n \in \nZ_{>0} \) such that \( 1/n < \varepsilon \) for every \( \varepsilon > 0 \)" would make \( 1/n \) smaller than every positive number. Since \( 1/n > 0 \) (@exm-naturals-at-least-one), we could take \( \varepsilon = 1/n \) itself and get \( 1/n < 1/n \), which is absurd.
 
-The "moreover" clause says that once one \( n \) works, every later one works too. Chapter 12 turns this "from some point on" into the definition of a limit.
+The "moreover" clause says that once one \( n \) works, every later one works too. Chapter 2 turns this "from some point on" into the definition of a limit.
 
 ::: {.check}
 Find the least \( n \in \nZ_{>0} \) with \( 1/n < 0.003 \). Then do the same for \( \varepsilon = 0.0003 \). What does the comparison say about the dependence of \( n \) on \( \varepsilon \)?
@@ -195,7 +195,7 @@ The Archimedean property is not "obvious", and it is not a consequence of the or
 :::
 
 ::: {.remark}
-The converse fails: an ordered field can be Archimedean without satisfying the axiom. The field \( \nQ \) is one (@exr-archimedean-property-c3), and it fails the axiom by @thm-no-rational-sup-sqrt2. So the Archimedean property is strictly weaker than the axiom. Chapter 21 shows which properties, added to the Archimedean property, bring back the full axiom.
+The converse fails: an ordered field can be Archimedean without satisfying the axiom. The field \( \nQ \) is one (@exr-archimedean-property-c3), and it fails the axiom by @thm-no-rational-sup-sqrt2. So the Archimedean property is strictly weaker than the axiom. Chapter 11 shows which properties, added to the Archimedean property, bring back the full axiom.
 :::
 
 ## Exercises
@@ -387,15 +387,15 @@ Both \( p_1 q_2 \) and \( p_2 q_1 \) have positive leading coefficient. If their
 :::
 
 <!-- dependency ledger
-def-inductive-set (example): N is the intersection of all inductive subsets of R (a set defined from a family of sets) | sets and intersections, ch06 (promised)
+def-inductive-set (example): N is the intersection of all inductive subsets of R (a set defined from a family of sets) | sets and intersections, F2.1 (promised)
 exm-naturals-at-least-one (solution): none beyond def-inductive-set and thm-ordered-field-rules | inline
-thm-naturals-unbounded (proof): "not (n <= x for all n)" gives "n > x for some n" (last paragraph, after the negI; the step inside the box is direct) | quantifier negation, ch04 (promised); the remark after the proof says so
+thm-naturals-unbounded (proof): "not (n <= x for all n)" gives "n > x for some n" (last paragraph, after the negI; the step inside the box is direct) | quantifier negation, F1.4 (promised); the remark after the proof says so
 cor-archimedean-epsilon (proof): none | inline
 exm-nonarchimedean-field (example): R(x) is a field; lc(pq) = lc(p) lc(q) | algebra of polynomials and fractions, taken as known and stated in the text
 exm-nonarchimedean-field (example): the natural numbers of R(x) are the constants 0, 1, 2, 3, ... | inline: the constants form an inductive set, and every inductive set contains them (shown in the paragraph before the example)
 exm-nonarchimedean-field (example): R(x) with this order is an ordered field, so thm-ordered-field-rules (f) applies in it | exr-archimedean-property-c2, stated in the text before the example
 exm-sup-one-minus-reciprocal-finished (solution): 100/101 > 0.99 | arithmetic, shown inline
-exr-archimedean-property-a1 (solution): 3/2 lies strictly between the natural numbers 1 and 2, so it is not in N | arithmetic of N stated in the remark on N, ch07 (promised)
-exr-archimedean-property-c1 (solution): a non-empty set of integers bounded below has a least element (for the ceiling) | well-ordering, ch07 (promised)
+exr-archimedean-property-a1 (solution): 3/2 lies strictly between the natural numbers 1 and 2, so it is not in N | arithmetic of N stated in the remark on N, F2.2 (promised)
+exr-archimedean-property-c1 (solution): a non-empty set of integers bounded below has a least element (for the ceiling) | well-ordering, F2.2 (promised)
 exr-archimedean-property-c3 (solution): every rational is m/k with m in Z, k in Z_{>0} | definition of Q in the remark on N
 -->

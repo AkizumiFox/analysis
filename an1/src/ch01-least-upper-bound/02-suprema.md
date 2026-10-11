@@ -22,7 +22,7 @@ In symbols, \( M \) is an upper bound of \( A \) when
 \]
 The bound is an element of \( F \), and nothing requires it to belong to \( A \).
 
-For the interval \( (0, 1) \) in \( \nR \), the numbers \( 1 \), \( \frac32 \), and \( 2026 \) are all upper bounds, and \( 0 \) and \( -17 \) are lower bounds. Upper bounds are never unique: if \( M \) is one, so is every \( M' \ge M \), by transitivity. A minimal change gives a nonexample: \( \frac12 \) is **not** an upper bound of \( (0, 1) \), because \( \frac34 \in (0, 1) \) and \( \frac34 > \frac12 \). One element above \( M \) is enough to spoil it. Negating the definition quantifier by quantifier (the negation rules are the subject of Chapter 4),
+For the interval \( (0, 1) \) in \( \nR \), the numbers \( 1 \), \( \frac32 \), and \( 2026 \) are all upper bounds, and \( 0 \) and \( -17 \) are lower bounds. Upper bounds are never unique: if \( M \) is one, so is every \( M' \ge M \), by transitivity. A minimal change gives a nonexample: \( \frac12 \) is **not** an upper bound of \( (0, 1) \), because \( \frac34 \in (0, 1) \) and \( \frac34 > \frac12 \). One element above \( M \) is enough to spoil it. Negating the definition quantifier by quantifier (the negation rules are the subject of *Logic and Proof*, Chapter 4),
 \[
 M \text{ is not an upper bound of } A
 \quad\iff\quad
@@ -30,7 +30,7 @@ M \text{ is not an upper bound of } A
 \]
 where we have used trichotomy to rewrite "not \( a \le M \)" as "\( a > M \)".
 
-The empty set is the degenerate case, and it will matter. **Every** \( M \in F \) is an upper bound of \( \emptyset \): the condition "\( a \le M \) for every \( a \in \emptyset \)" has no instances to check, so it holds vacuously. Instance by instance it is the implication "if \( a \in \emptyset \), then \( a \le M \)", whose hypothesis is false, and @prp-vacuous-implication derives an implication from the negation of its hypothesis. Likewise every element of \( F \) is a lower bound of \( \emptyset \).
+The empty set is the degenerate case, and it will matter. **Every** \( M \in F \) is an upper bound of \( \emptyset \): the condition "\( a \le M \) for every \( a \in \emptyset \)" has no instances to check, so it holds vacuously. Instance by instance it is the implication "if \( a \in \emptyset \), then \( a \le M \)", whose hypothesis is false, and @fd1:prp-vacuous-implication derives an implication from the negation of its hypothesis. Likewise every element of \( F \) is a lower bound of \( \emptyset \).
 
 ::: {#def-bounded-above}
 [Bounded Sets]
@@ -142,7 +142,7 @@ For \( A \): the element \( \frac72 \) is an upper bound, as checked above, so (
 
 For \( B \): the same two lines work with \( 1 \) in place of \( \frac72 \). It bounds \( (0, 1] \) from above by the definition of that interval, and it is least because \( 1 \in B \), so every upper bound \( M \) satisfies \( 1 \le M \). So \( \sup B = 1 = \max B \).
 
-The argument used only that the candidate is a maximum. It shows that **a maximum, when it exists, is the supremum** (@exr-suprema-b1). Every nonempty finite set has a maximum, by an induction on the number of elements of the kind practiced in Chapter 7, so for finite sets the supremum is nothing new.
+The argument used only that the candidate is a maximum. It shows that **a maximum, when it exists, is the supremum** (@exr-suprema-b1). Every nonempty finite set has a maximum, by an induction on the number of elements of the kind practiced in *Sets, Relations, and Cardinality*, Chapter 2, so for finite sets the supremum is nothing new.
 :::
 
 ::: {#exm-sup-open-interval}
@@ -204,19 +204,19 @@ Let \( A = \{ x \in \nQ : x > 0 \text{ and } x^2 < 2 \} \). Then \( A \) is none
 :::
 
 ::: {.idea}
-Suppose a rational \( s \) were the supremum. By @thm-sqrt2-irrational, \( s^2 \ne 2 \), so \( s^2 < 2 \) or \( s^2 > 2 \), and each case is a disaster.
+Suppose a rational \( s \) were the supremum. By @fd1:thm-sqrt2-irrational, \( s^2 \ne 2 \), so \( s^2 < 2 \) or \( s^2 > 2 \), and each case is a disaster.
 
 If \( s^2 < 2 \), then \( s \) is too small: there is room to step right to a rational \( s + h \) whose square is still below \( 2 \), and then \( s + h \in A \) beats \( s \). To find \( h \), work backwards from the goal \( (s + h)^2 < 2 \). Expanding, \( (s + h)^2 = s^2 + 2sh + h^2 \). The \( h^2 \) is awkward, so bound it by something simpler: **if \( 0 < h \le 1 \)**, then \( h^2 \le h \), and \( (s + h)^2 \le s^2 + h(2s + 1) \). The room available is \( 2 - s^2 \). Asking \( h(2s + 1) \) to use only half of it, \( h(2s + 1) = \frac{2 - s^2}{2} \), gives \( h = \frac{2 - s^2}{4s + 2} \). We then owe a check of the condition \( h \le 1 \) that we assumed along the way.
 
 If \( s^2 > 2 \), then \( s \) is too big: step left to \( s - h \), still an upper bound, and then \( s \) was not the least one. Now \( (s - h)^2 = s^2 - 2sh + h^2 > s^2 - 2sh \), and the right side equals \( 2 \) exactly when \( h = \frac{s^2 - 2}{2s} \).
 
-In both cases \( h \) depends only on \( s \), and it is rational because \( s \) is. *Before reading on: where does the proof use that \( s \) is rational, and where does it use @thm-sqrt2-irrational?*
+In both cases \( h \) depends only on \( s \), and it is rational because \( s \) is. *Before reading on: where does the proof use that \( s \) is rational, and where does it use @fd1:thm-sqrt2-irrational?*
 :::
 
 ::: {.proof}
 Since \( 1 > 0 \) and \( 1^2 = 1 < 2 \), we have \( 1 \in A \), so \( A \) is nonempty. The rational number \( 2 \) is an upper bound: if some \( x \in A \) had \( x > 2 \), then \( x^2 > 4 \) by @thm-ordered-field-rules (g), contradicting \( x^2 < 2 \), so \( x \le 2 \) by trichotomy.
 
-Suppose, for a contradiction, that \( s \in \nQ \) is a supremum of \( A \) in \( \nQ \). Since \( 1 \in A \), (S1) gives \( s \ge 1 \); in particular \( s > 0 \), and \( s^2 \ge 1 \) by @thm-ordered-field-rules (g). By @thm-sqrt2-irrational, \( s^2 \ne 2 \), so by trichotomy either \( s^2 < 2 \) or \( s^2 > 2 \).
+Suppose, for a contradiction, that \( s \in \nQ \) is a supremum of \( A \) in \( \nQ \). Since \( 1 \in A \), (S1) gives \( s \ge 1 \); in particular \( s > 0 \), and \( s^2 \ge 1 \) by @thm-ordered-field-rules (g). By @fd1:thm-sqrt2-irrational, \( s^2 \ne 2 \), so by trichotomy either \( s^2 < 2 \) or \( s^2 > 2 \).
 
 *Case 1: \( s^2 < 2 \).* Let
 \[
@@ -245,7 +245,7 @@ We claim that \( s - h \) is an upper bound of \( A \). Indeed, if some \( x \in
 Both cases are impossible. Hence \( A \) has no supremum in \( \nQ \). This proves the theorem.
 :::
 
-Rationality of \( s \) was used in exactly two places: to make \( h \), and so \( s \pm h \), rational, which is what membership in \( A \) and "upper bound in \( \nQ \)" require; and to rule out \( s^2 = 2 \) by @thm-sqrt2-irrational. The logical shape is the same as in the irrationality of \( \sqrt2 \): assume the object exists, reach a contradiction, conclude that it does not.
+Rationality of \( s \) was used in exactly two places: to make \( h \), and so \( s \pm h \), rational, which is what membership in \( A \) and "upper bound in \( \nQ \)" require; and to rule out \( s^2 = 2 \) by @fd1:thm-sqrt2-irrational. The logical shape is the same as in the irrationality of \( \sqrt2 \): assume the object exists, reach a contradiction, conclude that it does not.
 
 To see the constants at work, start from the rational upper bound \( s = \frac32 \), whose square \( \frac94 \) exceeds \( 2 \). Case 2 gives \( h = \frac{1}{12} \) and the smaller upper bound \( s - h = \frac{17}{12} \), with \( (\frac{17}{12})^2 = \frac{289}{144} = 2 + \frac{1}{144} \). Starting instead from \( s = 1 \in A \), Case 1 gives \( h = \frac16 \), and \( \frac76 \in A \) because \( \frac{49}{36} < 2 \). Each step can be repeated forever from either side, and no rational number is ever reached at which both processes stop.
 
@@ -287,7 +287,7 @@ s - h = \frac{17}{12} - \frac{1}{408} = \frac{577}{408} .
 \]
 Then \( (s - h)^2 = 2 + h^2 = 2 + \frac{1}{166464} > 2 \), as the proof's display predicts; directly, \( 577^2 = 332929 = 2 \cdot 408^2 + 1 \). So \( \frac{577}{408} \) is a smaller rational upper bound, and the step can be repeated from it.
 
-(f) The step "by @thm-sqrt2-irrational, \( s^2 \ne 2 \)". Over \( \nR \) nothing rules out \( s^2 = 2 \), so after Cases 1 and 2 the possibility \( s^2 = 2 \) remains, and no contradiction is reached. Every other step is algebra valid in any ordered field, \( \nR \) included. This is exactly the opening that the existence proof for \( \sqrt2 \), later in this chapter, walks through.
+(f) The step "by @fd1:thm-sqrt2-irrational, \( s^2 \ne 2 \)". Over \( \nR \) nothing rules out \( s^2 = 2 \), so after Cases 1 and 2 the possibility \( s^2 = 2 \) remains, and no contradiction is reached. Every other step is algebra valid in any ordered field, \( \nR \) included. This is exactly the opening that the existence proof for \( \sqrt2 \), later in this chapter, walks through.
 :::
 
 ### B. Practice
@@ -373,10 +373,10 @@ so \( x > Mx + M = M(x + 1) \), and dividing by \( x + 1 > 0 \) gives \( \frac{x
 ::: {.solution}
 (a) \( A = \{ x \in \nQ : 0 < x < 1 \} \). The argument of @exm-sup-open-interval works in the ordered field \( \nQ \), because the midpoint of two rationals is rational; it shows \( \sup A = 1 \) in \( \nQ \), and \( 1 \notin A \).
 
-(b) (\( \subseteq \)) Let \( u \in U \). Since \( 1 \in B \), we get \( u \ge 1 > 0 \). By @thm-sqrt2-irrational, \( u^2 \ne 2 \). If \( u^2 < 2 \), then \( u \in B \), and Case 1 of the proof of @thm-no-rational-sup-sqrt2, applied to \( s = u \) (which used only \( s \in \nQ \), \( s \ge 1 \), and \( s^2 < 2 \)), produces \( u + h \in B \) with \( u + h > u \), contradicting \( u \in U \). Hence \( u^2 > 2 \).
+(b) (\( \subseteq \)) Let \( u \in U \). Since \( 1 \in B \), we get \( u \ge 1 > 0 \). By @fd1:thm-sqrt2-irrational, \( u^2 \ne 2 \). If \( u^2 < 2 \), then \( u \in B \), and Case 1 of the proof of @thm-no-rational-sup-sqrt2, applied to \( s = u \) (which used only \( s \in \nQ \), \( s \ge 1 \), and \( s^2 < 2 \)), produces \( u + h \in B \) with \( u + h > u \), contradicting \( u \in U \). Hence \( u^2 > 2 \).
 (\( \supseteq \)) Let \( u \in \nQ \) with \( u > 0 \) and \( u^2 > 2 \). If some \( x \in B \) had \( x > u \), then \( x^2 > u^2 > 2 \) by @thm-ordered-field-rules (g), contradicting \( x^2 < 2 \). So \( u \) is an upper bound of \( B \), and \( u \in U \).
 
-(c) Let \( q \in \nQ \) with \( q > 0 \). By @thm-sqrt2-irrational, \( q^2 \ne 2 \), so by trichotomy exactly one of \( q^2 < 2 \) and \( q^2 > 2 \) holds, that is, \( q \) lies in exactly one of \( B \) and \( U \), by (b). If \( B \) had a largest element \( b \), Case 1 of the proof (with \( s = b \), valid since \( b \ge 1 \) when \( b \) is largest, as \( 1 \in B \)) would give a larger element \( b + h \in B \). If \( U \) had a smallest element \( u \), Case 2 of the proof (with \( s = u \), which needs only \( s > 0 \), \( s \in \nQ \), and \( s^2 > 2 \)) would give \( u - h \in U \), smaller. So the positive rationals split into a lower piece with no top and an upper piece with no bottom. Nothing rational sits between the two pieces; that missing point is the gap.
+(c) Let \( q \in \nQ \) with \( q > 0 \). By @fd1:thm-sqrt2-irrational, \( q^2 \ne 2 \), so by trichotomy exactly one of \( q^2 < 2 \) and \( q^2 > 2 \) holds, that is, \( q \) lies in exactly one of \( B \) and \( U \), by (b). If \( B \) had a largest element \( b \), Case 1 of the proof (with \( s = b \), valid since \( b \ge 1 \) when \( b \) is largest, as \( 1 \in B \)) would give a larger element \( b + h \in B \). If \( U \) had a smallest element \( u \), Case 2 of the proof (with \( s = u \), which needs only \( s > 0 \), \( s \in \nQ \), and \( s^2 > 2 \)) would give \( u - h \in U \), smaller. So the positive rationals split into a lower piece with no top and an upper piece with no bottom. Nothing rational sits between the two pieces; that missing point is the gap.
 :::
 
 ::: {#exr-suprema-c2}
@@ -401,9 +401,9 @@ Let \( F \) be an ordered field, \( A \subseteq F \), and let \( U(A) \) be the 
 :::
 
 <!-- dependency ledger
-def-upper-bound (example): negating "for every a in A, a <= M" to "there exists a in A with a > M" | quantifier negation, ch04 (promised); prose pointer in the text
+def-upper-bound (example): negating "for every a in A, a <= M" to "there exists a in A with a > M" | quantifier negation, F1.4 (promised); prose pointer in the text
 def-bounded-above (example): max{M, 0} + 1 > M for every real M | thm-ordered-field-rules and (O3), shown inline
-exm-sup-finite-and-closed (solution): every non-empty finite subset of an ordered field has a maximum | induction on the number of elements, ch07 (promised); prose pointer in the text; not used in any proof
+exm-sup-finite-and-closed (solution): every non-empty finite subset of an ordered field has a maximum | induction on the number of elements, F2.2 (promised); prose pointer in the text; not used in any proof
 exm-sup-one-minus-reciprocal (solution): every n in Z_{>0} is positive | definition of Z_{>0} as the positive integers, stated inline
 thm-no-rational-sup-sqrt2 (proof): Q is closed under the field operations, so h and s + h, s - h are rational | exm-ordered-fields-q-r
 thm-no-rational-sup-sqrt2 (proof): the arithmetic of the two values of h ((s + h)^2 bound, (s - h)^2 = 2 + h^2) | inline; lem-field-algebra

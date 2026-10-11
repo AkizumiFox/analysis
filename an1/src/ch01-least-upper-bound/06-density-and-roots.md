@@ -4,7 +4,7 @@ When we first met suprema, @thm-no-rational-sup-sqrt2 showed that the set of pos
 
 ## Constructing a point as a supremum
 
-Chapter 2 showed that no rational number squares to \( 2 \) (@thm-sqrt2-irrational). Nothing so far says that any real number does. The ordered-field axioms cannot say it, since \( \nQ \) satisfies them all. So if a square root of \( 2 \) exists in \( \nR \), the least upper bound axiom must produce it.
+*Logic and Proof*, Chapter 2 showed that no rational number squares to \( 2 \) (@fd1:thm-sqrt2-irrational). Nothing so far says that any real number does. The ordered-field axioms cannot say it, since \( \nQ \) satisfies them all. So if a square root of \( 2 \) exists in \( \nR \), the least upper bound axiom must produce it.
 
 ::: {#thm-sqrt2-exists}
 [The Square Root of Two Exists]
@@ -53,7 +53,7 @@ We claim that \( s - h \) is an upper bound of \( S \). Let \( x \in S \) and su
 By trichotomy, \( s^2 = 2 \). For uniqueness, let \( t > 0 \) with \( t^2 = 2 \). If \( t < s \), then \( t^2 < s^2 \), and if \( s < t \), then \( s^2 < t^2 \); both contradict \( t^2 = 2 = s^2 \). Hence \( t = s \). This proves the theorem.
 :::
 
-We write \( \sqrt{2} \) for this number. By @thm-sqrt2-irrational it is not rational, so \( \nR \ne \nQ \): irrational numbers exist.
+We write \( \sqrt{2} \) for this number. By @fd1:thm-sqrt2-irrational it is not rational, so \( \nR \ne \nQ \): irrational numbers exist.
 
 Compare this proof with the one of @thm-no-rational-sup-sqrt2. The two computations with \( h \) are the same, word for word: they are ordered-field algebra, and for a rational \( s \) both values of \( h \) are rational. What changed is a single line. In \( \nQ \) there was no \( s \) to start from: the argument showed that no rational number can be the supremum, since its square cannot be less than \( 2 \), more than \( 2 \), or equal to \( 2 \). In \( \nR \) the axiom supplies \( s \), and the very same argument now shows that its square can only be \( 2 \).
 
@@ -61,7 +61,7 @@ The proof is an instance of a move this book uses again and again.
 
 *To construct a point: collect the points where "things are still fine" into a set, take its supremum, and rule out each way the supremum could fail to be the point you want.*
 
-Here "things are still fine" meant \( x^2 < 2 \). The exercises of this section and of the last section of the chapter ask you to run the move yourself, with less and less of the proof given. In Chapter 16 the Intermediate Value Theorem is proved the same way: the point where a continuous function crosses zero is the supremum of the points where it is still negative. In Chapter 14 the Heine–Borel theorem takes the supremum of the points \( x \) for which \( [a, x] \) is still covered by finitely many of the given open sets.
+Here "things are still fine" meant \( x^2 < 2 \). The exercises of this section and of the last section of the chapter ask you to run the move yourself, with less and less of the proof given. In Chapter 6 the Intermediate Value Theorem is proved the same way: the point where a continuous function crosses zero is the supremum of the points where it is still negative. In Chapter 4 the Heine–Borel theorem takes the supremum of the points \( x \) for which \( [a, x] \) is still covered by finitely many of the given open sets.
 
 ## Roots of every order
 
@@ -102,7 +102,7 @@ Let \( 0 \le x < y \) and \( k \in \nZ_{>0} \). Then \( x^k < y^k \): the map \(
 :::
 
 ::: {.proofofclaim}
-Powers are defined by recursion (Chapter 7): \( u^0 \coloneqq 1 \) and \( u^{k+1} \coloneqq u^k u \), so that \( u^1 = u \); here only \( k \ge 1 \) is needed.
+Powers are defined by recursion (*Sets, Relations, and Cardinality*, Chapter 2): \( u^0 \coloneqq 1 \) and \( u^{k+1} \coloneqq u^k u \), so that \( u^1 = u \); here only \( k \ge 1 \) is needed.
 
 We first show \( 0 \le x^k < y^k \) by induction on \( k \). For \( k = 1 \) this is the hypothesis. If \( 0 \le x^k < y^k \), then \( x^{k+1} = x^k x \ge 0 \), and
 \[
@@ -172,7 +172,7 @@ The claim in the proof of @thm-nth-root says that \( x \mapsto x^3 \) is strictl
 :::
 
 ::: {.remark}
-With \( n \)-th roots we can define \( a^{m/n} \coloneqq (a^{1/n})^m \) for \( a > 0 \), and check that the usual exponent laws hold for rational exponents. The powers \( a^x \) with irrational \( x \) wait for the exponential function, which Chapter 20 builds from power series.
+With \( n \)-th roots we can define \( a^{m/n} \coloneqq (a^{1/n})^m \) for \( a > 0 \), and check that the usual exponent laws hold for rational exponents. The powers \( a^x \) with irrational \( x \) wait for the exponential function, which Chapter 10 builds from power series.
 :::
 
 ## The integer part of a real number
@@ -196,7 +196,7 @@ Picture the integers as marks spaced \( 1 \) apart. The Archimedean property put
 \[
     T \coloneqq \{ j \in \nN : j - p > y \}
 \]
-is nonempty. By well-ordering (Chapter 7), \( T \) has a least element \( j_0 \). Let \( m \coloneqq j_0 - p - 1 \), an integer because differences of integers are integers (the remark on \( \nN \) in the previous section). Then \( m + 1 = j_0 - p > y \), since \( j_0 \in T \). It remains to show \( m \le y \). First, \( 0 - p = -p < y \) by the choice of \( p \), so \( 0 \notin T \) and \( j_0 \ne 0 \). Hence \( j_0 \ge 1 \) (@exm-naturals-at-least-one), so \( j_0 - 1 \in \nN \) (again from that remark), and \( j_0 - 1 \notin T \) because it is smaller than the least element of \( T \). So \( (j_0 - 1) - p \le y \), that is, \( m \le y \).
+is nonempty. By well-ordering (*Sets, Relations, and Cardinality*, Chapter 2), \( T \) has a least element \( j_0 \). Let \( m \coloneqq j_0 - p - 1 \), an integer because differences of integers are integers (the remark on \( \nN \) in the previous section). Then \( m + 1 = j_0 - p > y \), since \( j_0 \in T \). It remains to show \( m \le y \). First, \( 0 - p = -p < y \) by the choice of \( p \), so \( 0 \notin T \) and \( j_0 \ne 0 \). Hence \( j_0 \ge 1 \) (@exm-naturals-at-least-one), so \( j_0 - 1 \in \nN \) (again from that remark), and \( j_0 - 1 \notin T \) because it is smaller than the least element of \( T \). So \( (j_0 - 1) - p \le y \), that is, \( m \le y \).
 
 *Uniqueness.* Suppose \( m \) and \( m' \) are integers with \( m \le y < m + 1 \) and \( m' \le y < m' + 1 \), and suppose \( m < m' \). Then \( m' - m \) is a positive integer, hence a nonzero natural number (the remark on \( \nN \) in the previous section), so \( m' - m \ge 1 \) by @exm-naturals-at-least-one; that is, \( m' \ge m + 1 \). Hence \( y \ge m' \ge m + 1 > y \), a contradiction. By symmetry \( m' < m \) is impossible too, so \( m = m' \).
 :::
@@ -258,7 +258,7 @@ Let \( x, y \in \nR \) with \( x < y \). There is an irrational number \( z \) w
 :::
 
 ::: {.proof}
-Since \( x - \sqrt{2} < y - \sqrt{2} \), @thm-rationals-dense gives \( q \in \nQ \) with \( x - \sqrt{2} < q < y - \sqrt{2} \). Let \( z \coloneqq q + \sqrt{2} \). Then \( x < z < y \). If \( z \) were rational, then \( \sqrt{2} = z - q \) would be a difference of rationals, hence rational, contradicting @thm-sqrt2-irrational. So \( z \) is irrational.
+Since \( x - \sqrt{2} < y - \sqrt{2} \), @thm-rationals-dense gives \( q \in \nQ \) with \( x - \sqrt{2} < q < y - \sqrt{2} \). Let \( z \coloneqq q + \sqrt{2} \). Then \( x < z < y \). If \( z \) were rational, then \( \sqrt{2} = z - q \) would be a difference of rationals, hence rational, contradicting @fd1:thm-sqrt2-irrational. So \( z \) is irrational.
 :::
 
 This is why the existence of \( \sqrt{2} \) came first in this section: the proof of @cor-irrationals-dense needs one irrational number to shift by, and @thm-sqrt2-exists supplies it.
@@ -270,7 +270,7 @@ Name a rational number between \( \sqrt{2} \) and \( 1.415 \), and an irrational
 ::: {.solution}
 *Rational:* \( 1.4143 \). Its square is \( 2.00024449 > 2 \), so \( 1.4143 > \sqrt{2} \) by @thm-ordered-field-rules (g), and \( 1.4143 < 1.415 \).
 
-*Irrational:* \( z \coloneqq \sqrt{2} \cdot 10^{-7} \). Since \( 1 < \sqrt{2} < 2 \), we get \( 0 < z < 2 \cdot 10^{-7} < 10^{-6} \). If \( z \) were rational, then \( \sqrt{2} = 10^7 z \) would be rational, contradicting @thm-sqrt2-irrational.
+*Irrational:* \( z \coloneqq \sqrt{2} \cdot 10^{-7} \). Since \( 1 < \sqrt{2} < 2 \), we get \( 0 < z < 2 \cdot 10^{-7} < 10^{-6} \). If \( z \) were rational, then \( \sqrt{2} = 10^7 z \) would be rational, contradicting @fd1:thm-sqrt2-irrational.
 :::
 
 ::: {.warning}
@@ -383,7 +383,7 @@ Exact arithmetic gives \( 1.70^3 = 4.913 < 5 \) and \( 1.71^3 = 5.000211 > 5 \).
 ::: {.solution}
 (a) This is @thm-sqrt2-exists. Let \( S \coloneqq \{ x \in \nR : x > 0, \ x^2 < 2 \} \); it contains \( 1 \) and is bounded above by \( 2 \), so \( s \coloneqq \sup S \) exists by @ax-least-upper-bound, and \( s \ge 1 \). If \( s^2 < 2 \), then \( h \coloneqq (2 - s^2)/(4s + 2) \) satisfies \( 0 < h \le \tfrac16 \), so \( h^2 \le h \) and \( (s + h)^2 \le s^2 + (2s + 1)h = 1 + s^2/2 < 2 \), and \( s + h \in S \) exceeds the upper bound \( s \): impossible. If \( s^2 > 2 \), then \( h \coloneqq (s^2 - 2)/(2s) \) satisfies \( s - h = (s^2 + 2)/(2s) > 0 \) and \( (s - h)^2 = 2 + h^2 > 2 \); every \( x \in S \) then satisfies \( x \le s - h \), since \( x > s - h \) would give \( x^2 > 2 \). So \( s - h < s \) is an upper bound, contradicting (S2). By trichotomy \( s^2 = 2 \).
 
-(b) Let \( A \coloneqq \{ x \in \nQ : x > 0, \ x^2 < 2 \} \), and suppose \( r \in \nQ \) is a supremum of \( A \) in \( \nQ \), that is, a rational upper bound of \( A \) that is at most every rational upper bound. As \( 1 \in A \), \( r \ge 1 \). By @thm-sqrt2-irrational, \( r^2 \ne 2 \).
+(b) Let \( A \coloneqq \{ x \in \nQ : x > 0, \ x^2 < 2 \} \), and suppose \( r \in \nQ \) is a supremum of \( A \) in \( \nQ \), that is, a rational upper bound of \( A \) that is at most every rational upper bound. As \( 1 \in A \), \( r \ge 1 \). By @fd1:thm-sqrt2-irrational, \( r^2 \ne 2 \).
 
 If \( r^2 < 2 \), let \( h \coloneqq (2 - r^2)/(4r + 2) \). This is rational, and the computation of (a) gives \( (r + h)^2 < 2 \). So \( r + h \in A \) and \( r + h > r \), contradicting that \( r \) is an upper bound.
 
@@ -391,13 +391,13 @@ If \( r^2 > 2 \), let \( h \coloneqq (r^2 - 2)/(2r) \). Then \( r - h = (r^2 + 2
 
 Both cases are impossible, so \( A \) has no supremum in \( \nQ \).
 
-(c) The computation shows, in any ordered field, that a supremum of the set cannot have square less than \( 2 \) or greater than \( 2 \). In \( \nR \) the axiom guarantees that a supremum exists, so its square must be \( 2 \): existence. In \( \nQ \) no element has square \( 2 \) (@thm-sqrt2-irrational), so no case is left, and no supremum can exist. For rational \( r \) the values of \( h \) are rational, which is why the argument stays inside \( \nQ \).
+(c) The computation shows, in any ordered field, that a supremum of the set cannot have square less than \( 2 \) or greater than \( 2 \). In \( \nR \) the axiom guarantees that a supremum exists, so its square must be \( 2 \): existence. In \( \nQ \) no element has square \( 2 \) (@fd1:thm-sqrt2-irrational), so no case is left, and no supremum can exist. For rational \( r \) the values of \( h \) are rational, which is why the argument stays inside \( \nQ \).
 
 **Marking scheme.** (10 points)
 - 1: (a) defines \( S \), checks that it is nonempty and bounded above, and takes \( s = \sup S \) from @ax-least-upper-bound.
 - 2: (a) rules out \( s^2 < 2 \) with an explicit \( h > 0 \), verifying \( (s + h)^2 < 2 \) including any side condition such as \( h \le 1 \), and contradicts (S1).
 - 2: (a) rules out \( s^2 > 2 \) with an explicit \( h > 0 \), verifying \( s - h > 0 \) and that \( s - h \) is an upper bound, and contradicts (S2).
-- 1: (b) supposes a rational supremum \( r \) and excludes \( r^2 = 2 \) by @thm-sqrt2-irrational.
+- 1: (b) supposes a rational supremum \( r \) and excludes \( r^2 = 2 \) by @fd1:thm-sqrt2-irrational.
 - 2: (b) in each case checks that the new number is **rational** and derives the contradiction with "upper bound in \( \nQ \)" or "least among rational upper bounds".
 - 2: (c) says that the computation excludes \( s^2 < 2 \) and \( s^2 > 2 \) in any ordered field, that in \( \nR \) the axiom supplies \( s \) so \( s^2 = 2 \) remains, and that in \( \nQ \) nothing remains.
 Fatal errors (0 for the step): using \( \sqrt 2 \) to define \( S \) or \( h \); asserting \( s + h \in S \) or \( (s - h)^2 > 2 \) without the computation; an \( h \) that depends on an element of \( S \) rather than on \( s \) alone.
@@ -413,7 +413,7 @@ A **dyadic rational** is a number of the form \( m/2^k \) with \( m \in \nZ \) a
 :::
 
 ::: {.solution}
-First, \( 2^k > k \) for every \( k \in \nN \), by induction (@ax-induction; @exr-induction-b1 even gives \( 2^k \ge k + 1 \)): \( 2^0 = 1 > 0 \), and if \( 2^k > k \), then \( 2^{k+1} = 2^k + 2^k > k + 1 \), since \( 2^k \ge 1 \).
+First, \( 2^k > k \) for every \( k \in \nN \), by induction (@fd1:ax-induction; @fd1:exr-induction-b1 even gives \( 2^k \ge k + 1 \)): \( 2^0 = 1 > 0 \), and if \( 2^k > k \), then \( 2^{k+1} = 2^k + 2^k > k + 1 \), since \( 2^k \ge 1 \).
 
 Let \( x < y \). By @cor-archimedean-epsilon there is \( k \in \nZ_{>0} \) with \( 1/k < y - x \); the \( k \) depends on \( y - x \). Then \( 1/2^k < 1/k < y - x \). By @lem-integer-part, let \( m \coloneqq \floor{2^k x} + 1 \). Then \( m - 1 \le 2^k x < m \), and
 \[
@@ -450,14 +450,14 @@ Line (2) fails. Well-ordering says that a nonempty subset of \( \nN \) has a lea
 
 <!-- dependency ledger
 thm-sqrt2-exists (proof): the two values of h and their arithmetic | inline, the same computation as thm-no-rational-sup-sqrt2
-thm-nth-root (claim): powers are defined by recursion; the claim is proved by induction on k | recursion, ch07 (promised), and induction, ax-induction; prose pointer in the text
-thm-nth-root (claim): the finite sum Sigma is defined by recursion on its number of terms | definition by recursion, ch07 (promised)
+thm-nth-root (claim): powers are defined by recursion; the claim is proved by induction on k | recursion, F2.2 (promised), and induction, ax-induction; prose pointer in the text
+thm-nth-root (claim): the finite sum Sigma is defined by recursion on its number of terms | definition by recursion, F2.2 (promised)
 thm-nth-root (claim): the telescoping of the two sums in (y - x) * Sigma | inline
 thm-nth-root (proof): x0^n <= x0 for 0 < x0 < 1, and x^n >= x for x >= 1 | inline, by induction on n (ax-induction)
 exm-cube-root-bounds (solution): 1.25^3 = 1.953125 and 1.26^3 = 2.000376 | arithmetic, shown inline
-lem-integer-part (proof): well-ordering of N; differences of integers are integers; j - 1 in N for j >= 1 in N (j_0 != 0 because 0 is not in T) | ch07 (promised), recalled in the remark on N in 05-archimedean-property
+lem-integer-part (proof): well-ordering of N; differences of integers are integers; j - 1 in N for j >= 1 in N (j_0 != 0 because 0 is not in T) | F2.2 (promised), recalled in the remark on N in 05-archimedean-property
 lem-integer-part (proof): a positive integer is a natural number | inline in the remark on N in 05-archimedean-property (pointer in the proof)
-thm-rationals-dense (proof): floor(nx) + 1 is an integer (sums of integers are integers) | ch07 (promised), recalled in the remark on N in 05-archimedean-property
+thm-rationals-dense (proof): floor(nx) + 1 is an integer (sums of integers are integers) | F2.2 (promised), recalled in the remark on N in 05-archimedean-property
 cor-irrationals-dense (proof): the difference of two rationals is rational | exm-ordered-fields-q-r (Q is a field)
 exr-density-and-roots-a1 (solution): if z/2 were rational, z = 2(z/2) would be rational | exm-ordered-fields-q-r
 exr-density-and-roots-a1 (solution): 267^2 = 71289 and 2 * 190^2 = 72200 | arithmetic, shown inline

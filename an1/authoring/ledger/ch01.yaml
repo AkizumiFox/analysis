@@ -1,5 +1,5 @@
-chapter: 11
-dir: ch11-least-upper-bound
+chapter: 1
+dir: ch01-least-upper-bound
 items:
 - key: def-ordered-field
   kind: def
