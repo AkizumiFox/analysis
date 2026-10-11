@@ -277,7 +277,7 @@ Name a rational number between \( \sqrt{2} \) and \( 1.415 \), and an irrational
 "Dense" does not mean "next to each other". There is no smallest positive rational number and no "next rational after \( 0 \)": if \( q > 0 \) is rational, then \( q/2 \) is a smaller positive rational. The same holds for irrationals: if \( z > 0 \) is irrational, so is \( z/2 \), and it is smaller. Between any two distinct rationals there are infinitely many more, and between any two distinct reals there are rationals and irrationals alike.
 :::
 
-Density is what makes decimals, and more generally rational approximation, possible. Every real number can be pinned down by rationals from below as closely as we like (@exr-density-and-roots-b1). In Part II the word **dense** becomes a notion in any metric space: a set that meets every ball. The rationals in the real line are the model example.
+Density is what makes decimals, and more generally rational approximation, possible. Every real number can be pinned down by rationals from below as closely as we like (@exr-density-and-roots-b1). In *Metric and Topological Spaces* the word **dense** becomes a notion in any metric space: a set that meets every ball. The rationals in the real line are the model example.
 
 ## Exercises
 

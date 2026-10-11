@@ -23,7 +23,7 @@ In symbols: for every \( A \subseteq \nR \),
 \exists s \in \nR : s = \sup A .
 \]
 
-**Standing assumption.** From now on, \( \nR \) is an ordered field (@def-ordered-field), containing \( \nQ \), that satisfies @ax-least-upper-bound. Every theorem about real numbers in this book is proved from these assumptions, together with the logic and set theory of Part 0 (including, where it is flagged, a choice principle).
+**Standing assumption.** From now on, \( \nR \) is an ordered field (@def-ordered-field), containing \( \nQ \), that satisfies @ax-least-upper-bound. Every theorem about real numbers in this book is proved from these assumptions, together with the logic and set theory of *Logic and Proof* and *Sets, Relations, and Cardinality* (including, where it is flagged, a choice principle).
 
 In words, the axiom has two hypotheses and one conclusion. The hypotheses are about the set \( A \): it has at least one element, and at least one upper bound. The conclusion is about \( \nR \): among the upper bounds of \( A \) there is a least one, and it is a real number. By @thm-sup-unique it is unique, so the notation \( \sup A \) is justified whenever the two hypotheses hold. The axiom is also called the **completeness axiom**; "complete" will acquire a second, related meaning in Chapter 2, and the two are reconciled in Chapter 11.
 
@@ -35,7 +35,7 @@ Each hypothesis is there because without it the conclusion is false.
 The axiom is a statement about \( \nR \) and not about ordered fields in general. It fails in \( \nQ \): some nonempty subset of \( \nQ \), bounded above in \( \nQ \), has no supremum in \( \nQ \). Which result of the previous section shows this, and whether it needs adapting, is @exr-the-axiom-c1 (a). So the axiom is exactly the property that separates the two fields we have been comparing.
 
 ::: {.remark}
-Why is this an axiom and not a theorem? Because we have not said what a real number is. One can **construct** \( \nR \) from \( \nQ \), for instance by Dedekind cuts, and then prove the least upper bound property as a theorem; the optional *Number Systems: From \(\nN\) to \(\nR\)*, Chapter 7 does this. The optional *Number Systems: From \(\nN\) to \(\nR\)*, Chapter 6 shows that any two ordered fields satisfying the axiom are the same up to relabeling, so the axiom pins \( \nR \) down completely. Nothing else in the book uses those chapters: everything we need follows from the axiom.
+Why is this an axiom and not a theorem? Because we have not said what a real number is. One can **construct** \( \nR \) from \( \nQ \) and then prove the least upper bound property as a theorem. *Number Systems: From \(\nN\) to \(\nR\)*, Chapters 5 and 6 take this route with Cauchy sequences of rationals, and show that any two ordered fields satisfying the axiom are the same up to relabeling, so the axiom pins \( \nR \) down completely; the optional *Number Systems: From \(\nN\) to \(\nR\)*, Chapter 7 builds \( \nR \) by Dedekind cuts instead. This volume does not use those chapters: everything we need follows from the axiom.
 :::
 
 ::: {#exm-lub-first-use}
@@ -131,7 +131,7 @@ So in \( \nR \), suprema and infima exist under mirror-image hypotheses, and eac
 It is sometimes convenient to give \( \sup A \) a meaning even when the axiom does not apply. For a nonempty set \( A \) that is not bounded above one writes \( \sup A = +\infty \), and one sets \( \sup \emptyset = -\infty \); symmetrically, \( \inf A = -\infty \) for a nonempty set not bounded below, and \( \inf \emptyset = +\infty \). The strange-looking value \( \sup \emptyset = -\infty \) is chosen so that "\( A \subseteq B \) implies \( \sup A \le \sup B \)" stays true when \( A = \emptyset \).
 
 ::: {.remark}
-These are conventions of notation, and \( \pm\infty \) are **not** real numbers: they obey none of the field axioms, and no rule of @thm-ordered-field-rules applies to them. The book uses them from Part IV on, where measure theory needs suprema of arbitrary sets, and announces them again there. Until then, whenever we write \( \sup A \), the set \( A \) is nonempty and bounded above, and \( \sup A \) is a real number.
+These are conventions of notation, and \( \pm\infty \) are **not** real numbers: they obey none of the field axioms, and no rule of @thm-ordered-field-rules applies to them. The series uses them from *Measure and Integration* on, where measure theory needs suprema of arbitrary sets, and announces them again there. Until then, whenever we write \( \sup A \), the set \( A \) is nonempty and bounded above, and \( \sup A \) is a real number.
 :::
 
 ## What the axiom will do

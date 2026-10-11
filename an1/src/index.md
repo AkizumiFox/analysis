@@ -1,25 +1,27 @@
 # Preface
 
-This book takes a reader who has never written a proof and brings them, in one continuous sequence, to the analysis a graduate qualifying exam expects: measure and integration, complex analysis, functional analysis, distributions and Sobolev spaces. It ends by solving a partial differential equation, the Dirichlet problem, with the tools the whole book has built.
+This volume is analysis on the real line: sequences and series, limits and continuity, the derivative, the integral, and power series. It starts from a short list of axioms for the real numbers, the axioms of a complete ordered field, and proves everything else from them.
 
-Three convictions shape it.
+**Who it is for.** The reader we have in mind can already read and write proofs: negate a quantified statement, name a witness, run an induction, chase an element through a preimage. *Logic and Proof* and the first three chapters of *Sets, Relations, and Cardinality* teach exactly these skills, and this volume cites them where it uses them. A reader who comes from elsewhere can test their readiness with Gate 0, the examination at the end of *Sets, Relations, and Cardinality*, Chapter 3. *Number Systems: From \(\nN\) to \(\nR\)* builds \( \nR \) from the rationals and proves that the axioms hold for it; this volume does not need that construction, since it takes the axioms as its starting point.
 
-**Proof is learned inside mathematics.** The book opens with logic, but logic taught as the grammar of proof: each rule of inference is introduced beside the sentence a mathematician writes when using it, and every rule is exercised on real analysis within a few pages. After that, proof technique is learned where it is needed, in \( \varepsilon \)–\( N \) and \( \varepsilon \)–\( \delta \) arguments about real numbers.
+**What it covers.**
 
-**The same few ideas return at higher altitude.** Convergence, completeness, compactness and continuity appear first on the real line, then in \( \nR^n \), in metric spaces and spaces of functions, in Banach and Hilbert spaces, and finally in the weak topologies. Each return recalls the earlier version and says what changes. By the fourth visit the reader recognizes an old friend in new clothes.
-
-**Every abstraction is forced by a problem.** Metric spaces and compactness arrive because we want to solve differential equations. The Lebesgue integral arrives because Fourier series need a complete space of functions and the Riemann integral cannot supply one. Hilbert spaces arrive because we want to solve the Dirichlet problem. The problem always comes first.
-
-| Part | What it does |
+| Chapter | Title |
 |---|---|
-| 0 | Logic as the grammar of proof; sets, functions, relations, induction, cardinality. Optional: the ZF axioms and the construction of \( \nN \), \( \nZ \), \( \nQ \) |
-| I | Analysis on the real line, from the least upper bound axiom to power series and the equivalent forms of completeness. Optional: constructing \( \nR \) by Dedekind cuts, and its uniqueness |
-| II | Metric spaces, completion, compactness, differential equations, Arzelà–Ascoli, Stone–Weierstrass, Baire, calculus in \( \nR^n \), topological spaces |
-| III | Fourier analysis with the Riemann integral, ending with what the Riemann integral lacks |
-| IV | Measure and integration: Lebesgue measure, the convergence theorems, Fubini–Tonelli, \( L^p \), differentiation, Radon–Nikodym |
-| V | Complex analysis, through the Riemann mapping theorem, harmonic functions, entire functions and Picard's theorem |
-| VI | Functional analysis, distributions and Sobolev spaces, ending with the Dirichlet problem |
+| 1 | Ordered Fields and the Least Upper Bound Axiom |
+| 2 | Sequences, Subsequences, and Cauchy Sequences |
+| 3 | Infinite Series |
+| 4 | Open, Closed, and Compact Subsets of \( \nR \) |
+| 5 | Limits of Functions and Continuity |
+| 6 | Continuous Functions on Compact Sets and Intervals |
+| 7 | The Derivative and the Mean Value Theorem |
+| 8 | The Riemann–Darboux Integral |
+| 9 | Sequences and Series of Functions |
+| 10 | Power Series, Taylor Series, and the Elementary Functions |
+| 11 | The Forms of Completeness |
 
-**Two routes.** Readers on a two-year schedule read Part 0's main line as a short bridge and skip the optional chapters. Readers with three years read everything, including how the number systems are built. The reading paths linked from the sidebar list exactly which sections each route needs.
+Chapter 1 states the axioms and draws the first consequences of the one that separates \( \nR \) from \( \nQ \), the least upper bound axiom. Chapters 2–10 build the analysis of one real variable on it. Chapter 11 returns to the axiom and shows which other "no gaps" properties could replace it. Only Chapter 1 is written so far; the others will follow in the order of the table.
 
-**What you need.** School algebra, and the willingness to write. Linear algebra is used from Part II on; the companion *Linear Algebra* book covers everything assumed, and is cited by chapter.
+**How to read it.** Read the chapters in order: each uses the ones before it. Every section has Quick checks with folded answers; answer each one before you unfold it. The exercises of a section come in three groups, A to check understanding, B for practice and C to go deeper, and the last section of each chapter adds R items that reach back to earlier chapters. A chapter's opening page lists what it needs, with links, and the time it takes. Results marked optional can be skipped, and nothing outside them depends on them.
+
+**What else you need.** Besides the two volumes named above, only school algebra is assumed. A few facts about fields are quoted from the companion *Linear Algebra* book, each with a link.

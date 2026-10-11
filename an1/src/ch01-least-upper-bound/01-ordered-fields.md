@@ -271,7 +271,7 @@ By @prp-absolute-value-rules (d) with \( r = \abs{x} + \abs{y} \), this says \( 
 (b) By (a) applied to \( x - y \) and \( y \), \( \abs{x} = \abs{(x - y) + y} \le \abs{x - y} + \abs{y} \), so \( \abs{x} - \abs{y} \le \abs{x - y} \). Swapping the roles of \( x \) and \( y \) gives \( \abs{y} - \abs{x} \le \abs{y - x} = \abs{x - y} \), using @prp-absolute-value-rules (b). The two inequalities together say \( -\abs{x - y} \le \abs{x} - \abs{y} \le \abs{x - y} \), which is (b) by @prp-absolute-value-rules (d). This proves the theorem.
 :::
 
-The case-free proof is typical of what the axioms buy: once a fact such as \( -\abs{x} \le x \le \abs{x} \) is proved, it can be added, multiplied, and chained without redoing sign cases. The triangle inequality is the engine of every estimate in Part I. Its standard use is "insert a third point": to bound \( \abs{x - z} \), write \( x - z = (x - y) + (y - z) \) for a well-chosen \( y \), and bound the two pieces separately (@exr-ordered-fields-b2).
+The case-free proof is typical of what the axioms buy: once a fact such as \( -\abs{x} \le x \le \abs{x} \) is proved, it can be added, multiplied, and chained without redoing sign cases. The triangle inequality is the engine of every estimate in this volume. Its standard use is "insert a third point": to bound \( \abs{x - z} \), write \( x - z = (x - y) + (y - z) \) for a well-chosen \( y \), and bound the two pieces separately (@exr-ordered-fields-b2).
 
 ::: {.remark}
 The inequality in (a) can be strict: \( \abs{1 + (-1)} = 0 < 2 = \abs{1} + \abs{-1} \). Equality holds exactly when \( x \) and \( y \) do not have strictly opposite signs, that is, when \( xy \ge 0 \) (@exr-ordered-fields-b2).
