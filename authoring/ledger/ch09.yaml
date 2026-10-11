@@ -740,6 +740,17 @@ items:
       question ''the rule it breaks'', which the solution currently answers only by naming the false rule
       that line (2) uses. Fix: add to :276 or :278 a sentence such as ''This is (N9) of @exm-not-allowed-catalogue:
       line (2) cites a general rule that is false, and for pairs the matching it asserts is the goal itself.'''
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: a36832f7dbb4
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 'On line (4): {a,b}={a,d} => b=d follows from prp-zf-basic-sets (d) with c=a. The disjunct
+      a=a∧b=d gives b=d directly. The disjunct a=d∧b=a gives b=a=d. So no hypothesis b≠a is needed, which
+      is correct. (f) The repair, a case split on a=b, matches the proof. Every cited label resolves:
+      thm-kuratowski-pair, prp-zf-basic-sets, exm-not-allowed-catalogue. check_structure: 0 fatal, nothing
+      for 02-pairs.'
 - key: exr-pairs-as-sets-c3
   kind: exr
   file: 02-pairs-as-sets.md
@@ -1732,6 +1743,17 @@ items:
       cannot be dropped). STYLE §5 says a remark is ''1–3 sentences with one job''. Fix: close the remark
       after 05:132 and put the 05:134 paragraph in its own `::: {.remark}` block, or move it into an A
       or C exercise part.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 7c56918c4ecc
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: ' text names the right failing step: Step 3 at 05:83, the sentence ''because g takes values
+      in X, every pair of G'' lies in S(S(n))xX''. The remark at 05:131-133 (2 sentences, one job) cites
+      ax-zf-fragment (Z6) and prp-cartesian-product-exists correctly, and ledger line 05:451 covers it.
+      The block structure now meets STYLE §5 and §335 (each major theorem has a counterexample for a dropped
+      hypothesis).'
 - key: proof:thm-omega-recursion
   kind: proof
   file: 05-recursion-and-arithmetic.md
@@ -1943,6 +1965,17 @@ items:
       This breaks STYLE §5/§9 (meta-claims must be true of the page). Fix: change 05:3 to ''... one by
       one, most of them by an induction'' or ''... each from the defining equations by induction or from
       laws already proved''.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: a8e11c7acd87
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: ', Def, (c), Def. The no-induction rows are right: n·1 = n·0+n = 0+n = n, and 1·n = (0+1)n
+      = 0·n+n = n by Def, (a) and the first two parts of (e). (n+k)m = nm+km comes from (f) and (d). In
+      (c) in full (05:236-247), each equality uses Def as stated. The Uses column respects row order.
+      The opening meta-claim at 05:3, ''most of them by an induction'', now agrees with the proof''s first
+      sentence (05:234).'
 - key: exr-recursion-and-arithmetic-a1
   kind: exr
   file: 05-recursion-and-arithmetic.md
@@ -2346,6 +2379,17 @@ items:
       list either. Fix: ''Clauses (c), (e), (f) and (g) follow from it, with cancellation (b), the laws
       of @thm-omega-arithmetic-laws, trichotomy, (d) (for (e) and (f)) and induction (for (g)).'' Or cut
       the list of sources.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 5a434764f1cc
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: '(a) gives irreflexivity and trichotomy, (b) gives m<S(n) iff m≤n, and (c) gives n = {m
+      : m<n}. @lem-omega-transitive (d) says a nonzero number is a successor. @cor-omega-successor-cancellation
+      gives k+1=l+1 ⇒ k=l and k+1≠0. Laws (b), (c) and (d), including the right-distributive form (n+k)m
+      = nm+km, are all present in @thm-omega-arithmetic-laws. verify/ch09/prp-omega-order-arithmetic.py
+      prints ok.'
 - key: proof:prp-omega-order-arithmetic
   kind: proof
   file: 06-order-on-omega.md
@@ -2380,6 +2424,17 @@ items:
       164, and ledger line 418 records n + 1 = S(n). That fact is def-omega-arithmetic (c), proved in
       the paragraph after it (05:163-167). Checked line by line. (b) is an induction on k with cor-omega-successor-cancellation.
       (a)⇐ uses thm-omega-order (b) plus transitivity. (a)⇒ is an induction on n. Uniqueness uses '
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 40928c20208f
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: s (c) and (b) into one step, which is acceptable. In (d), n=j+1 gives mn = mj+m, and m=i+1
+      makes mn=(mj+i)+1≠0. In (e), Law (d) gives nk = mk+jk, (d) gives jk≠0, and (a) concludes. (f) uses
+      (e), irreflexivity and trichotomy. In (g), Q(i)=P(b+i), b+i≥b by (a), (b+i)+1=b+(i+1), @thm-omega-induction
+      (b), and n≥b gives n=b+i by (a). There are no gaps and no circularity, since (b) is proved before
+      (a).
 - key: prp-omega-powers-parity
   kind: prp
   file: 06-order-on-omega.md
@@ -2918,6 +2973,16 @@ items:
       from lem-naturals-arithmetic (b). The < step uses (d) and (a). Parts (b) and (c)(a)-(e) cite thm-omega-order
       and prp-omega-order-arithmetic correctly, including the trichotomy and transitivity argument in
       (e).
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 8674c7d86e1b
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 'are prp-omega-order-arithmetic (a) with thm-omega-order (d), and clause (e) is thm-omega-order
+      (b). For the second form of (e): if n < S(m), then n <= m by (b), and n <= m < n would give n <
+      n by transitivity, which irreflexivity (a) rules out. So trichotomy gives S(m) <= n. Every cited
+      statement matches its source, which I checked in 06-order-on-omega.md and ch07 01-naturals-and-well-ordering.md.'
 - key: exr-categoricity-a1
   kind: exr
   file: 07-categoricity.md

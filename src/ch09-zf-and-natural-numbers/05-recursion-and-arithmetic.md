@@ -1,6 +1,6 @@
 # The Recursion Theorem; Addition and Multiplication
 
-The set \( \omega \) now has a zero, a successor map and an induction theorem, and @thm-omega-peano shows that together they satisfy Peano's axioms. It has no addition yet. In Chapter 7 the sum \( m + n \) of two natural numbers came for free, from the real numbers; in \( \omega \) a natural number is a set, and nothing we know about sets adds two of them. This section defines addition and multiplication by recursion, as school does ("\( m + (n + 1) \) is one more than \( m + n \)"), after first proving, from the axioms, that recursion defines something. Then it proves the laws of arithmetic one by one, each by an induction.
+The set \( \omega \) now has a zero, a successor map and an induction theorem, and @thm-omega-peano shows that together they satisfy Peano's axioms. It has no addition yet. In Chapter 7 the sum \( m + n \) of two natural numbers came for free, from the real numbers; in \( \omega \) a natural number is a set, and nothing we know about sets adds two of them. This section defines addition and multiplication by recursion, as school does ("\( m + (n + 1) \) is one more than \( m + n \)"), after first proving, from the axioms, that recursion defines something. Then it proves the laws of arithmetic one by one, most of them by an induction.
 
 ## Recursion on ω
 
@@ -130,7 +130,9 @@ As in Section 7.3, no choice is made: each partial solution is the only one, and
 
 ::: {.remark}
 The functions \( g \) that we feed to the theorem are usually given by a formula, such as \( g(n, x) = \mathrm{S}(x) \). Such a \( g \) is a function as soon as each pair \( (n, x) \) gets exactly one value in \( X \): its graph, the set of pairs \( ((n, x), y) \in (\omega \times X) \times X \) such that \( y \) is the value the formula assigns to \( (n, x) \), is a set by (Z6) of @ax-zf-fragment inside a product (@prp-cartesian-product-exists), and (Fn1), (Fn2) say exactly that the formula gives one value in \( X \) for each pair.
+:::
 
+::: {.warning}
 The hypothesis that \( g \) takes its values in \( X \) cannot be dropped. Let \( X = \{0\} \), \( a = 0 \), and \( g(n, x) \coloneqq \mathrm{S}(0) \) for \( n \in \omega \), \( x \in X \), so that \( g \) maps \( \omega \times X \) into \( \omega \) but not into \( X \). Any \( f \colon \omega \to X \) with the two equations would need \( f(\mathrm{S}(0)) = g(0, f(0)) = \mathrm{S}(0) \), and \( \mathrm{S}(0) \notin X \) since \( \mathrm{S}(0) \ne 0 \) by (P3) of @thm-omega-peano; so no such \( f \) exists. The proof breaks in Step 3, where the added pair \( (\mathrm{S}(n), g(n, f_n(n))) \) must lie in \( \mathrm{S}(\mathrm{S}(n)) \times X \).
 :::
 

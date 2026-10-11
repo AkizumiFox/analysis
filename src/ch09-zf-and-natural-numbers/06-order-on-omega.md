@@ -112,7 +112,7 @@ Yes: \( 3 \in \mathrm{S}(3) = 4 \) and \( 4 \subseteq 4 \cup \{4\} = 5 \), so \(
 
 ## Order and arithmetic
 
-The order was defined by membership and the arithmetic by recursion. They are tied together by clause (a) of the next proposition: \( m \le n \) exactly when \( n \) is reached from \( m \) by adding something. Clauses (c), (e), (f) and (g) follow from it, from cancellation (b), from the laws of @thm-omega-arithmetic-laws and from trichotomy; (d) needs only that a nonzero natural number is a successor and that a successor is never \( 0 \).
+The order was defined by membership and the arithmetic by recursion. They are tied together by clause (a) of the next proposition: \( m \le n \) exactly when \( n \) is reached from \( m \) by adding something. Clauses (c), (e), (f) and (g) follow from it, with cancellation (b), the laws of @thm-omega-arithmetic-laws and trichotomy, together with (d) for (e) and (f) and an induction for (g); (d) itself needs only that a nonzero natural number is a successor and that a successor is never \( 0 \).
 
 ::: {#prp-omega-order-arithmetic}
 [Order and Arithmetic on \( \omega \)]
