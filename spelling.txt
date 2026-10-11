@@ -254,3 +254,5 @@ von
 Neumann
 categoricity
 isomorphisms
+Darboux
+Subsequences
