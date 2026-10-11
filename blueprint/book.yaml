@@ -1323,11 +1323,8 @@ chapters:
   exit_checks:
   - Prove the characteristic property of Kuratowski pairs
   - From the recursive definition of addition, prove a + b = b + a by induction
-  optional: true
-  note: Optional (decisions 4); no main-line proof may cite it. Routine verifications left to exercises, to avoid
-    becoming Landau. The axiom of choice itself is stated on the main line (countable-and-uncountable, ax-choice);
-    here it is placed among the ZF axioms, and Zorn and well-ordering are stated as equivalents with a pointer to
-    Part VI, where Zorn is proved from choice.
+  optional: false
+  note: 'Main line (series decision 2026-10-11, math-atlas spec/06): fd3 chapter F3.1. Was optional (decisions 4).'
 - num: 10
   part: '0'
   slug: integers-and-rationals
@@ -1364,9 +1361,8 @@ chapters:
   exit_checks:
   - Show that (a,b) ~ (c,d) ⟺ a + d = b + c is an equivalence relation and that addition respects it
   - 'Prove that no rational number squares to 2 and that the set {x ∈ ℚ : x² < 2} has no sup in ℚ'
-  optional: true
-  note: Optional (decisions 4). Most field and order axioms are left as exercises. The gaps section is the motivation
-    for the next two chapters and mirrors Part I ch 1's example, which Part I proves independently.
+  optional: false
+  note: 'Main line (series decision 2026-10-11, math-atlas spec/06): fd3 chapter F3.2; hand-written blueprint. Was optional (decisions 4).'
 - num: 11
   part: I
   slug: least-upper-bound
@@ -2077,7 +2073,7 @@ chapters:
     construction appears only as a comparison (it returns in Part II as completion, decisions 5). No main-line result
     may cite this chapter.
 - num: 23
-  part: I
+  part: '0'
   slug: complete-ordered-field
   title: The Complete Ordered Field Is Unique
   pages: 45
@@ -2108,10 +2104,8 @@ chapters:
   - Prove that an order-preserving field isomorphism between complete ordered fields is determined by its values
     on ℚ
   - Show directly that ℝ(x) fails the least upper bound property
-  optional: true
-  note: 'Optional closing chapter of Part I (decisions 4): the bridge between ''assume the axiom'' (ax-least-upper-bound)
-    and ''build a model'' (reals-dedekind-cuts). May cite forms-of-completeness. No main-line result may cite it;
-    Part II''s completion chapter points to it in prose only.'
+  optional: false
+  note: 'Main line (series decision 2026-10-11, math-atlas spec/06): fd3 chapter F3.4, after F3.10 (reals from Cauchy sequences); hand-written blueprint. Was the optional closing chapter of Part I (decisions 4).'
 - num: 24
   part: II
   slug: metric-spaces
