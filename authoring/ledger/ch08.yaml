@@ -1564,6 +1564,17 @@ items:
       proved). Fix: ''...Zorn''s lemma; the companion volume on set theory proves it equivalent to the
       axiom, together with the other equivalents such as the well-ordering theorem, and surveys the independence
       results.'''
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 18b44f911789
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 's F2.4, ST.4 and ST.5. The uses it lists are Section 8.6, Chapter 11 (the remark directly
+      below, a countable index set Z_{>0}), and Chapters 43, 67 and 69. The remark correctly identifies
+      forming (a_n) as a choice function for ({a in A : a > sup A - 1/n})_n. The warning correctly separates
+      least preimages of a surjection already in hand from choosing the surjections themselves. I found
+      no defects.'
 - key: thm-surjection-right-inverse
   kind: thm
   file: 03-countable-unions-and-choice.md
@@ -1727,6 +1738,16 @@ items:
       by recursion from least elements (@thm-well-ordering), a rule''. Alternatively, cite the remark
       after thm-integers-rationals-countable (02-countable-sets.md, the paragraph after the proof), which
       says exactly this.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 7cafc426d932
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: th the reasons checked line by line. z and (m,n) -> m/n are formulas. Each ∃E names finitely
+      many objects. (i) => (ii) uses the least preimage. (ii) => (i), via (iii), uses lem-subsets-of-naturals,
+      a recursion with step min T_x from thm-well-ordering, plus single-bijection ∃E steps. So no selection
+      from infinitely many sets is made without a rule. The citations are correct and earlier in the book.
 - key: thm-algebraic-countable
   kind: thm
   file: 03-countable-unions-and-choice.md
@@ -2349,6 +2370,17 @@ items:
       decomposition, and see ch06 04-functions.md:74 and 02-set-operations.md:170. Fix: write ''its classical
       steps are the split of R into Alg and its complement (excluded middle) and the last one'', or drop
       ''one''.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 497e2826fc68
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 'ical steps: the excluded-middle split and the step through prp-quantifier-negation (a)
+      plus ¬¬E. The proof''s sentence ''This last passage ... is a classical step'' says nothing about
+      how many there are, so it agrees with the remark. thm-irrational-power-rational and prp-log2-9-irrational
+      are optional, and the remark only points to them, as the ledger line notes. The 5042-word count
+      is advisory only.'
 - key: proof:cor-transcendental-exist
   kind: proof
   file: 04-diagonal-arguments.md
@@ -2384,6 +2416,17 @@ items:
       now cites excluded middle for exactly this decomposition, which is the earlier B2 finding. Fix:
       ''By excluded middle (@prp-excluded-middle), every real is in Alg or not, so R = Alg ∪ (R∖Alg)'',
       and add a ledger line.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 0076053d4dd5
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: able by def-countable's first disjunct (02:13), so R∖Alg ≠ ∅. (4) If ∀x ¬(x∈R∖Alg), then
+      R∖Alg would be an empty set, equal to ∅ by def-empty-set and prp-empty-set-unique, which is a contradiction.
+      prp-quantifier-negation (a) (ch04 09:13, uses RAA) then gives ∃x ¬¬(x∈R∖Alg), and ¬¬E gives the
+      element. All cited labels exist and say what the proof uses. The ledger lines at :361-364 cover
+      each step.
 - key: exr-diagonal-arguments-a1
   kind: exr
   file: 04-diagonal-arguments.md
@@ -2791,6 +2834,17 @@ items:
       remark at 1-3 sentences, so the S5b finding stands. Fix: drop the first sentence, which only restates
       the theorem, or merge it into the question (''The theorem needs both inequalities; are any two sets
       comparable, ...?'').'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: be6f47731dda
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 'Case 1) and g-injectivity twice ((F2), Step 4 Case 2) matches the proof text. The no-choice
+      claim is accurate, since Step 1 is a recursion and Step 2 takes a unique preimage. The remark now
+      has 3 sentences (STYLE.md:185). Its mathematics is right: comparability holds via Zorn/AC, and the
+      pointer to a later chapter stating Zorn and to the companion volume proving it is unchanged and
+      matches STATUS.'
 - key: proof:thm-schroder-bernstein
   kind: proof
   file: 05-comparing-cardinalities.md
@@ -2818,6 +2872,17 @@ items:
       and lem-naturals-arithmetic (c) is right. The meta-claim at l.166 names the case split as ''the
       classical step'', but (F2) at l.115 also takes a classical step: from a∉A\g(B) and a∈A to a∈g(B).
       [finding refuted by skeptics]'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: c4396f118b46
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 's in C by (F1), a contradiction, and the symmetric case is noted. Step 4: Case 1 gives
+      h(g(b))=b by uniqueness. In Case 2, g(b) in g(B) gives n != 0, and lem-naturals-arithmetic (c) (n
+      != 0 gives n-1 in N) yields k. def-image (ch06/06) gives b'' in f(C_k) with g(b'')=g(b) and a in
+      C_k with f(a)=b''. g injective gives b=f(a)=h(a). The proof is complete, and every cited label exists
+      with the form used.'
 - key: exm-closed-open-interval
   kind: exm
   file: 05-comparing-cardinalities.md

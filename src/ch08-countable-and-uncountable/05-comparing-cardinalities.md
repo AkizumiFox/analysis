@@ -168,7 +168,7 @@ Every value of \( h \) is given by a rule, so the proof makes **no use of @ax-ch
 Each hypothesis is used. Without the injection \( g \), the conclusion fails: \( \nN \to \powerset{\nN} \), \( n \mapsto \{n\} \), is an injection, and \( \card{\nN} \ne \card{\powerset{\nN}} \) by @thm-cantor. In the proof, injectivity of \( f \) is used once, in Case 1 of Step 3, and injectivity of \( g \) twice, in (F2) and in Case 2 of Step 4.
 
 ::: {.remark}
-The theorem gives \( \card{A} = \card{B} \) from \( \card{A} \le \card{B} \) and \( \card{B} \le \card{A} \). Are any two sets comparable, that is, is it true that \( \card{A} \le \card{B} \) or \( \card{B} \le \card{A} \) for all \( A \) and \( B \)? The answer is yes, but the proof needs Zorn's lemma, a principle equivalent to @ax-choice; a later chapter devoted to Zorn's lemma states it, and the companion volume on set theory proves it from the axiom. This chapter does not prove comparability, and nothing in it needs it.
+The theorem needs both \( \card{A} \le \card{B} \) and \( \card{B} \le \card{A} \); are any two sets comparable, that is, is it true that \( \card{A} \le \card{B} \) or \( \card{B} \le \card{A} \) for all \( A \) and \( B \)? The answer is yes, but the proof needs Zorn's lemma, a principle equivalent to @ax-choice; a later chapter devoted to Zorn's lemma states it, and the companion volume on set theory proves it from the axiom. This chapter does not prove comparability, and nothing in it needs it.
 :::
 
 ## Intervals of real numbers

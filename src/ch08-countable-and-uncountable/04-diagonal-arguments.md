@@ -201,11 +201,11 @@ The set \( \nR \setminus \mathrm{Alg} \) of transcendental numbers is uncountabl
 :::
 
 ::: {.proof}
-Suppose \( \nR \setminus \mathrm{Alg} \) is countable. Since \( \nR = \mathrm{Alg} \cup (\nR \setminus \mathrm{Alg}) \) and \( \mathrm{Alg} \) is countable by @thm-algebraic-countable, \( \nR \) is countable by @prp-union-two-countable, contradicting @thm-reals-uncountable-decimal. So \( \nR \setminus \mathrm{Alg} \) is uncountable. In particular \( \nR \setminus \mathrm{Alg} \ne \emptyset \), since \( \emptyset \) is countable (@def-countable). So not every \( x \) satisfies \( x \notin \nR \setminus \mathrm{Alg} \): otherwise \( \nR \setminus \mathrm{Alg} \) would be an empty set (@def-empty-set), hence equal to \( \emptyset \) (@prp-empty-set-unique). By the classical law @prp-quantifier-negation (a) and \( \rulename{\neg\neg E} \), some \( x \) lies in \( \nR \setminus \mathrm{Alg} \); this \( x \) is a real number that is not algebraic. This last passage, from "not empty" to "has an element", is a classical step (Section 5.7).
+By excluded middle (@prp-excluded-middle), every real number is in \( \mathrm{Alg} \) or not, so \( \nR = \mathrm{Alg} \cup (\nR \setminus \mathrm{Alg}) \). Suppose \( \nR \setminus \mathrm{Alg} \) is countable. Since \( \mathrm{Alg} \) is countable by @thm-algebraic-countable, \( \nR \) is countable by @prp-union-two-countable, contradicting @thm-reals-uncountable-decimal. So \( \nR \setminus \mathrm{Alg} \) is uncountable. In particular \( \nR \setminus \mathrm{Alg} \ne \emptyset \), since \( \emptyset \) is countable (@def-countable). So not every \( x \) satisfies \( x \notin \nR \setminus \mathrm{Alg} \): otherwise \( \nR \setminus \mathrm{Alg} \) would be an empty set (@def-empty-set), hence equal to \( \emptyset \) (@prp-empty-set-unique). By the classical law @prp-quantifier-negation (a) and \( \rulename{\neg\neg E} \), some \( x \) lies in \( \nR \setminus \mathrm{Alg} \); this \( x \) is a real number that is not algebraic. This last passage, from "not empty" to "has an element", is a classical step (Section 5.7).
 :::
 
 ::: {.remark}
-The proof names no transcendental number: it shows that the set of them is too large to be countable, hence not empty, and its one classical step is the last one, from "not empty" to "has an element". Compare the classical proof of @thm-irrational-power-rational in Section 5.7, which also names no witness (unlike @prp-log2-9-irrational, which does). Proving that a particular number, such as \( \pi \), is transcendental is a different and much harder matter.
+The proof names no transcendental number: it shows that the set of them is too large to be countable, hence not empty. Its classical steps are the split of \( \nR \) into \( \mathrm{Alg} \) and its complement (excluded middle) and the last one, from "not empty" to "has an element". Compare the classical proof of @thm-irrational-power-rational in Section 5.7, which also names no witness (unlike @prp-log2-9-irrational, which does). Proving that a particular number, such as \( \pi \), is transcendental is a different and much harder matter.
 :::
 
 ## Exercises
@@ -358,6 +358,7 @@ thm-reals-uncountable-decimal (proof): some y has expansion (e_k), and y lies in
 thm-reals-uncountable-decimal (proof): y = x_n is impossible | the consequence of (D3) stated in this section (a digit sequence with no 0 and no 9 is the only expansion of its number)
 thm-reals-uncountable-decimal (claim): the naive rule gives 0.4999... = 1/2; the 4/5 rule gives 0.4555... = 41/90 | def-decimal-expansion Example 2; school fact (D2); verify/ch08/thm-reals-uncountable-decimal.py
 thm-reals-uncountable-decimal (claim): Chapter 11 reproves it without decimals | ch11 (prose pointer; thm-reals-uncountable exists)
+cor-transcendental-exist (proof): R = Alg u (R \ Alg), every real is algebraic or not | prp-excluded-middle (cited; classical step, flagged in the remark)
 cor-transcendental-exist (proof): the empty set is countable | def-countable (Section 8.2)
 cor-transcendental-exist (proof): a set that is not empty has an element | def-empty-set, prp-empty-set-unique (Ch 6); prp-quantifier-negation (a) and not-not-E (classical step, flagged)
 cor-transcendental-exist (claim): (remark) Section 5.7 comparison | thm-irrational-power-rational, prp-log2-9-irrational (optional; pointer in a remark only)
