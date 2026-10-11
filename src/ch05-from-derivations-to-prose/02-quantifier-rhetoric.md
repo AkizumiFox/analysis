@@ -75,7 +75,7 @@ since then every \( n \in \nZ_{>0} \) with \( n \ge N \) has \( 0 < 1/n \le 1/N 
 
 By the school fact, applied to \( u = 1/\varepsilon \) [\( \rulename{\forall E} \)], there is an integer greater than \( 1/\varepsilon \); choose such an integer \( N \) [\( \rulename{\exists E} \)], which depends on \( \varepsilon \). Since \( \varepsilon > 0 \), we have \( 1/\varepsilon > 0 \), so \( N > 0 \) and \( N \in \nZ_{>0} \). From \( N > 1/\varepsilon > 0 \), taking reciprocals reverses the inequality: \( 1/N < \varepsilon \), which is (\( \ast \)). So this \( N \) will do [\( \rulename{\exists I} \)], and \( 1/n \to 0 \).
 
-Read the proof as a skeleton. The first sentence opens the box of \( \varepsilon \). The second is a cut, in the sense of the row below: it states a simpler claim (\( \ast \)), shows on the spot that (\( \ast \)) is enough, and leaves (\( \ast \)) to be proved. The third proves (\( \ast \)). It contains two different quantifier steps that both concern \( N \): "choose" is the \( \rulename{\exists E} \) on the school fact, which hands over some integer beyond \( 1/\varepsilon \) and calls it \( N \); "will do" is the \( \rulename{\exists I} \) that offers this \( N \) as the witness the definition asks for. Between them, the sentence "so \( N > 0 \)" checks the bound \( N \in \nZ_{>0} \) of the witness, which the bounded \( \rulename{\exists I} \) needs as a line.
+Read the proof as a skeleton. The first sentence opens the box of \( \varepsilon \). The second is a cut, in the sense of the row below: it states a simpler claim (\( \ast \)), shows on the spot that (\( \ast \)) is enough, and leaves (\( \ast \)) to be proved. The next paragraph proves (\( \ast \)). It contains two different quantifier steps that both concern \( N \): "choose" is the \( \rulename{\exists E} \) on the school fact, which hands over some integer beyond \( 1/\varepsilon \) and calls it \( N \); "will do" is the \( \rulename{\exists I} \) that offers this \( N \) as the witness the definition asks for. Between them, the clause "so \( N > 0 \) and \( N \in \nZ_{>0} \)" checks the bound \( N \in \nZ_{>0} \) of the witness, which the bounded \( \rulename{\exists I} \) needs as a line.
 
 The constant \( N \) depends on \( \varepsilon \) only: it came from the school fact at \( 1/\varepsilon \), inside the box of \( \varepsilon \). For instance, \( \varepsilon = 0.03 \) has \( 1/\varepsilon = 33.3\ldots \), and \( N = 34 \) is a choice that works; so is any larger integer.
 :::
@@ -95,13 +95,13 @@ The constant \( N \) depends on \( \varepsilon \) only: it came from the school 
 | \( \rulename{{=}I} \), \( \rulename{{=}E} \) | "substituting"; chains "\( \dots = \dots = \dots \)"; "by (1)" | yes, inside chains |
 | \( \exists! \) | "there is exactly one"; "existence … uniqueness …"; "suppose \( y \) also …" | never either half |
 
-In analysis, \( \rulename{{=}E} \) is every chain of equalities and inequalities, such as
+In analysis, \( \rulename{{=}E} \) is at work in every chain of equalities and inequalities, such as
 \[
 \abs{x^2 - 4} = \abs{x - 2}\, \abs{x + 2} \le 5 \abs{x - 2} \quad \text{for } \abs{x - 2} < 1 ,
 \]
-where each link substitutes equals for equals or applies one inequality. (Here \( \abs{x - 2} < 1 \) gives \( 1 < x < 3 \), so \( 3 < x + 2 < 5 \).) The \( \rulename{{=}I} \) lines \( t = t \) that such chains rest on are never written. Unique existence (@def-unique-existence) has two halves, which @prp-unique-existence-use separates: "\( 2x + 3 = 7 \) has exactly one real solution: \( x = 2 \) is one, and if \( 2y + 3 = 7 \), then \( y = 2 \)". The first clause is existence, by \( \rulename{\exists I} \); the second is uniqueness, a \( \rulename{\forall I} \) and \( \rulename{{\to}I} \) box on a second candidate. Neither half implies the other, so neither may be silent.
+where each \( = \) link substitutes equals for equals and each inequality link applies one fact about order (Section 4.7). (Here \( \abs{x - 2} < 1 \) gives \( 1 < x < 3 \), so \( 3 < x + 2 < 5 \).) The \( \rulename{{=}I} \) lines \( t = t \) that such chains rest on are never written. Unique existence (@def-unique-existence) has two halves, which @prp-unique-existence-use separates: "\( 2x + 3 = 7 \) has exactly one real solution: \( x = 2 \) is one, and if \( 2y + 3 = 7 \), then \( y = 2 \)". The first clause is existence, by \( \rulename{\exists I} \); the second is uniqueness, a \( \rulename{\forall I} \) and \( \rulename{{\to}I} \) box on a second candidate. Neither half implies the other, so neither may be silent.
 
-The uniqueness half often stands alone, when existence is not claimed or is proved elsewhere. Here is the most important case in Part I.
+The uniqueness half often stands alone, when existence is not claimed or is proved elsewhere. Uniqueness of limits is a case of this kind.
 
 ::: {#exm-rhetoric-equality}
 [A sequence has at most one limit]
@@ -132,9 +132,9 @@ The last three rows are not rules of the calculus. Each is a pattern of rules th
 |---|---|---|
 | induction (@ax-induction, @thm-strong-induction) | "we argue by induction on \( n \)"; "base case"; "suppose the claim holds for \( n \)" | never either the base case or the step; the induction hypothesis is stated |
 | cut, lemma (@lem-weakening-cut) | "we first show (Claim)"; "it suffices to show"; "we claim" | never the claim itself; "it suffices" may be dropped if the claim is displayed and then used |
-| symmetry | "without loss of generality"; "similarly"; "by symmetry" | allowed only when the swap is literally exact |
+| symmetry | "without loss of generality"; "similarly"; "by symmetry" | allowed only when the swap turns the statement and the hypotheses into themselves, up to identities such as \( \abs{b - a} = \abs{a - b} \) |
 
-An induction is \( \rulename{{\to}E} \) applied to @ax-induction, whose hypothesis is a conjunction: the base case \( P(0) \), and the step "**for every** \( n \in \nN \), if \( P(n) \) then \( P(n + 1) \)". So the step is a \( \rulename{\forall I} \) box with a \( \rulename{{\to}I} \) box inside it, and the phrase "suppose the claim holds for \( n \)" opens the inner box; its assumption is the **induction hypothesis**, and it must be stated, because the step uses it. A lemma is a cut: @lem-weakening-cut (b) says that once \( \varphi \) is derived, it may be used as a premise. "It suffices to show \( \varphi \)" is the same cut seen from the goal, as Section 1.4 observed: it promises a derivation of the goal from \( \varphi \) and leaves \( \varphi \) to be proved. In analysis, "it suffices to show \( \abs{a_n - L} < \varepsilon \) for \( n \ge N \)" is the cut that reduces a limit to a single estimate; @exm-rhetoric-existential made one with the claim (\( \ast \)). Symmetry is a case split \( \rulename{\vee E} \) whose second box is the first with two letters exchanged; "without loss of generality \( x \le y \)" writes the first box and asks the reader to check that the second is literally the same.
+An induction is \( \rulename{{\to}E} \) applied to @ax-induction, whose hypothesis is a conjunction: the base case \( P(0) \), and the step "**for every** \( n \in \nN \), if \( P(n) \) then \( P(n + 1) \)". So the step is a \( \rulename{\forall I} \) box with a \( \rulename{{\to}I} \) box inside it, and the phrase "suppose the claim holds for \( n \)" opens the inner box; its assumption is the **induction hypothesis**, and it must be stated, because the step uses it. A lemma is a cut: @lem-weakening-cut (b) says that once \( \varphi \) is derived, it may be used as a premise. "It suffices to show \( \varphi \)" is the same cut seen from the goal, as Section 1.4 observed: it promises a derivation of the goal from \( \varphi \) and leaves \( \varphi \) to be proved. In analysis, "it suffices to show \( \abs{a_n - L} < \varepsilon \) for \( n \ge N \)" is the cut that reduces a limit to a single estimate; @exm-rhetoric-existential made one with the claim (\( \ast \)). Symmetry is a case split \( \rulename{\vee E} \) whose second box is the first with two letters exchanged, up to identities such as \( \abs{b - a} = \abs{a - b} \); "without loss of generality \( x \le y \)" writes the first box and leaves that check to the reader.
 
 ::: {#exm-rhetoric-induction}
 [An induction, and a legitimate symmetry]
@@ -160,20 +160,20 @@ The base case is the first hypothesis of @ax-induction, written as its own parag
 \abs{a - b} = \abs{b - a} = b - a = \max\{a, b\} - \min\{a, b\} .
 \]
 
-The phrase abbreviates a \( \rulename{\vee E} \) on "\( a \le b \) or \( b \le a \)", which holds for all real \( a, b \) by trichotomy. The first box is the paragraph above. The second box, on \( b \le a \), reads: then \( \max\{a, b\} = a \) and \( \min\{a, b\} = b \), and since \( a - b \ge 0 \), \( \abs{a - b} = a - b = \max\{a, b\} - \min\{a, b\} \). That is the first box with \( a \) and \( b \) exchanged throughout, read through three identities: \( \abs{b - a} = \abs{a - b} \), \( \max\{b, a\} = \max\{a, b\} \), and \( \min\{b, a\} = \min\{a, b\} \). These say that the **statement** is unchanged when \( a \) and \( b \) are exchanged, and there are no hypotheses to check. This is what makes the swap literally exact, and so what licenses "without loss of generality".
+The phrase abbreviates a \( \rulename{\vee E} \) on "\( a \le b \) or \( b \le a \)", which holds for all real \( a, b \) by trichotomy. The first box is the paragraph above. The second box, on \( b \le a \), reads: then \( \max\{a, b\} = a \) and \( \min\{a, b\} = b \), and since \( a - b \ge 0 \), \( \abs{a - b} = a - b = \max\{a, b\} - \min\{a, b\} \). That is the first box with \( a \) and \( b \) exchanged throughout, read through three identities: \( \abs{b - a} = \abs{a - b} \), \( \max\{b, a\} = \max\{a, b\} \), and \( \min\{b, a\} = \min\{a, b\} \). These say that the **statement** is unchanged when \( a \) and \( b \) are exchanged, and there are no hypotheses to check. This is what makes the swap exact, and so what licenses "without loss of generality".
 :::
 
 ::: {.warning}
-"Without loss of generality" needs a statement and hypotheses that are unchanged by the swap. Here is a false "proof" that \( \max\{a, b\} = b \) for all real \( a, b \): "Without loss of generality \( a \le b \); then \( \max\{a, b\} = b \)." Exchanging \( a \) and \( b \) turns the claim into \( \max\{b, a\} = a \), which is a different claim, so the second case is not the first one in disguise; and indeed \( a = 2 \), \( b = 1 \) gives \( \max\{a, b\} = 2 \ne 1 \). Before writing "without loss of generality", swap the letters in the statement and the hypotheses, and check that nothing changed.
+"Without loss of generality" needs a statement and hypotheses that are unchanged by the swap. Here is a false "proof" that \( \max\{a, b\} = b \) for all real \( a, b \): "Without loss of generality \( a \le b \); then \( \max\{a, b\} = b \)." Exchanging \( a \) and \( b \) turns the claim into \( \max\{b, a\} = a \), which is a different claim, so the second case is not the first one in disguise; and indeed \( a = 2 \), \( b = 1 \) gives \( \max\{a, b\} = 2 \ne 1 \). Before writing "without loss of generality", swap the letters in the statement and the hypotheses, and check that each comes back unchanged, up to identities such as \( \abs{b - a} = \abs{a - b} \).
 :::
 
-## What the sentence does not say
+## What the sentence does not say {#what-the-sentence-does-not-say}
 
 Some quantifiers in mathematical English are not written at all, and some are written where they do not apply. Four habits of mathematical English cover most of them.
 
 **The hidden universal closure.** A theorem stated as "if \( n \) is even, then \( n^2 \) is even" means "for every integer \( n \), if \( n \) is even, then \( n^2 \) is even". Section 4.1 introduced this convention: *a letter that is not introduced anywhere, in the statement of a theorem, is read with a "for every" in front of the whole statement.* It applies to the statement of a theorem, lemma or exercise, not to a line inside a proof: inside a proof every letter has been introduced by a "let" or a "choose", and its box tells the reader which. The proof of such a theorem begins by opening the hidden box: "let \( n \) be an integer".
 
-**"For all large \( n \)"** hides an \( \exists N \) and a bound, as the Quick check above found. "Eventually" means the same. The negation of "\( P(n) \) for all large \( n \)" is "\( P(n) \) fails for infinitely many \( n \)", which hides a \( \forall N \) followed by an \( \exists n \ge N \).
+**"For all large \( n \)"** hides an \( \exists N \) and a bound, as the Quick check above found. "Eventually" means the same. The negation of "\( P(n) \) for all large \( n \)" is "for every \( N \) there is an \( n \ge N \) for which \( P(n) \) fails", usually said "\( P(n) \) fails for infinitely many \( n \)".
 
 **"Any"** can mean "every" or "some", and only the rest of the sentence decides (Section 4.1). "Any \( x \in A \) is positive" means every element of \( A \) is positive. "If any \( x \in A \) is positive, then \( A \) is non-empty" means: if **some** element of \( A \) is positive. When "any" appears, rewrite the sentence once with "every" and once with "some", and keep the one that was meant.
 
@@ -194,7 +194,7 @@ Moving "for all \( x \)" to the end of a sentence can change continuity into uni
 ::: {#exr-quantifier-rhetoric-a1}
 [A1]
 
-Here is a proof that if \( a_n \to L \) and \( L > 0 \), then \( a_n > 0 \) for all large \( n \). Its sentences are numbered.
+Let \( (a_n) \) be a sequence of real numbers and \( L \) a real number. Here is a proof that if \( a_n \to L \) and \( L > 0 \), then \( a_n > 0 \) for all large \( n \). Its sentences are numbered.
 
 > (1) Suppose \( a_n \to L \) and \( L > 0 \). (2) Then \( L/2 > 0 \). (3) Choose \( N \in \nN \) such that \( \abs{a_n - L} < L/2 \) for every \( n \ge N \). (4) Let \( n \in \nN \) with \( n \ge N \). (5) Then \( L - a_n \le \abs{a_n - L} < L/2 \), so \( a_n > L/2 > 0 \). (6) Hence \( a_n > 0 \) for every \( n \ge N \), that is, \( a_n > 0 \) for all large \( n \).
 
@@ -251,7 +251,7 @@ For \( n \in \nN \), let \( P(n) \) be "\( 4 \mid 5^n - 1 \)", that is, "there i
 
 *Base case.* \( 5^0 - 1 = 0 = 4 \cdot 0 \), so \( P(0) \) holds, with the witness \( k = 0 \) [\( \rulename{\exists I} \)]. This is hypothesis (i) of @ax-induction.
 
-*Step.* Let \( n \in \nN \) [\( \rulename{\forall I} \), opening], and suppose \( P(n) \) holds [\( \rulename{{\to}I} \), opening: the induction hypothesis]. By the induction hypothesis there is an integer \( k \) with \( 5^n - 1 = 4k \); choose such a \( k \) [\( \rulename{\exists E} \), fresh name \( k \)]. Then
+*Step.* Let \( n \in \nN \) [\( \rulename{\forall I} \), opening], and suppose \( P(n) \) holds [\( \rulename{{\to}I} \), opening: the induction hypothesis]. By the induction hypothesis there is an integer \( k \) with \( 5^n - 1 = 4k \); choose such a \( k \) (depending on \( n \)) [\( \rulename{\exists E} \), fresh name \( k \)]. Then
 \[
 5^{n+1} - 1 = 5 \cdot 5^n - 1 = 5(5^n - 1) + 4 = 5 \cdot 4k + 4 = 4(5k + 1) ,
 \]
@@ -323,7 +323,7 @@ The first is true: given \( x > 0 \), there is an integer \( n > 1/x \) (the sch
 - moved to the end, "for every \( x \)" can be read as coming after the existential quantifier, so that the witness may no longer depend on \( x \);
 - both readings are written in symbols with all quantifiers in front, and there is a specific interpretation (here \( \nR \) with its usual order) in which one reading is true and the other false, each claim checked;
 - the false reading is refuted by naming, for each candidate witness, a value of \( x \) that defeats it.
-The \( \varepsilon \)–\( \delta \) sentence of the warning before these exercises, with \( f(x) = x^2 \), is another correct answer.
+Another correct answer, for \( f(x) = x^2 \) on \( \nR \), is "for every \( x \), for every \( \varepsilon > 0 \) there is \( \delta > 0 \) such that \( \abs{f(x) - f(y)} < \varepsilon \) whenever \( \abs{x - y} < \delta \)" (continuity, true); with "for every \( x \)" moved to the end, it becomes the sentence of the warning, whose uniform-continuity reading @exm-square-not-uniform refutes.
 :::
 
 <!-- dependency ledger
@@ -339,7 +339,9 @@ exm-rhetoric-induction (solution): products of positives; a^n a <= a^n <= 1; a^0
 exm-rhetoric-induction (claim): the warning's max{2, 1} = 2; the subsection after it: x = y + 1 or x = 0 gives x^2 > y, and y = x^2 refutes exists x forall y | arithmetic; verify/ch05/exm-rhetoric-induction.py
 exr-quantifier-rhetoric-a1 (solution): -u <= |u|; L - L/2 = L/2 > 0 | exm-triangle-inequality-cases (its lemma); verify/ch05/exr-quantifier-rhetoric-a1.py
 exr-quantifier-rhetoric-b1 (solution): the witnesses M + 1, -y, 1 - y, |x - y|; 1 + delta^2/4 | exm-square-not-uniform (cited); school algebra; verify/ch05/exr-quantifier-rhetoric-b1.py
+exr-quantifier-rhetoric-b2 (solution): 5^0 = 1, 5^(n+1) = 5 * 5^n | powers, school meaning; ch07 (promised): def-power
 exr-quantifier-rhetoric-b2 (solution): 5^(n+1) - 1 = 5(5^n - 1) + 4 = 4(5k + 1); integers closed under + and * | school algebra; ch07 (promised): prp-integers-closed; verify/ch05/exr-quantifier-rhetoric-b2.py
 exr-quantifier-rhetoric-c1 (solution): max, min of two reals; x >= y, x >= 0 give x^2 >= xy; x = -1, y = -2 | school algebra; trichotomy; verify/ch05/exr-quantifier-rhetoric-c1.py
 exr-quantifier-rhetoric-c2 (solution): an integer beyond 1/x | school fact of exm-rhetoric-existential; verify/ch05/exr-quantifier-rhetoric-c2.py
+exr-quantifier-rhetoric-c2 (solution): the other answer, x^2 continuous but not uniformly continuous on R | exm-square-not-uniform (cited)
 -->

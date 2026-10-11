@@ -1,13 +1,13 @@
 """exm-sqrt2-four-levels (Section 5.3): the irrationality of sqrt 2 at four levels.
 Arithmetic lines 11, 12, 15 of level 0; the remark that q = 0 forces p = 0; and the line
-counts the text quotes (level 0: 24 lines, level 1: 11 lines; the derivation after
+counts the text quotes (level 0: 24 lines, level 1: 15 lines; the derivation after
 thm-sqrt2-irrational in Section 2.2: 13 lines; exm-uniform-implies-continuous: 11 lines)."""
 import re
 import sys
 from fractions import Fraction as Fr
 from pathlib import Path
 
-QUOTED = {"level 0 lines": 24, "level 1 lines": 11, "ch02 derivation lines": 13,
+QUOTED = {"level 0 lines": 24, "level 1 lines": 15, "ch02 derivation lines": 13,
           "ch04 uniform derivation lines": 11, "silent lines": [5, 10, 13, 16, 19, 21, 22, 24],
           "level 3 sentences": 4}
 

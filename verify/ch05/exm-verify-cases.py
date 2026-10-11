@@ -9,4 +9,6 @@ for k in range(-600, 601):
         assert (x - 1 > 0 and x - 2 < 0) or (x - 1 < 0 and x - 2 > 0)
         assert not (x - 1 < 0 and x - 2 > 0)
         assert 1 < x < 2
+# the second case: x > 2 and x < 1 would give 2 < 1, against not(2 < 1)
+assert not (2 < 1)
 print("exm-verify-cases: all quoted values check")

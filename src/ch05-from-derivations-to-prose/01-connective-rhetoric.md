@@ -48,14 +48,14 @@ The paragraph accounts for every line of the derivation, though some lines have 
 | 11–12 | "Since \( n \) is even or odd, by (E1), \( n \) is even." | \( \rulename{DS} \), citing premise 1 |
 | 13 | nothing | \( \rulename{{\to}I} \), the box closes |
 
-Three features of the table recur through the whole dictionary. The **openings** of boxes always have words, which name what is assumed: "suppose", "if … were". Some lines have **no words**: line 13 closes the box of line 4, and the paragraph simply stops; line 11 only reorders the disjuncts of (E1) for the schema of @prp-disjunctive-syllogism, and prose does not see the order of a disjunction. And a **premise** is never a sentence of its own: it enters through its name, "(E2)" or "by (E1)", at the step that uses it.
+Three features of the table recur through the whole dictionary. The **openings** of boxes always have words, which name what is assumed: "suppose", "if … were". Some lines have **no words**: line 13 closes the box of line 4, and the paragraph simply stops; line 11 only reorders the disjuncts of (E1) for the schema of @prp-disjunctive-syllogism, and prose does not see the order of a disjunction (the convention on silent steps of Section 5.3 lets the exchange be silent). And a **premise** is never a sentence of its own: it enters through its name, "(E2)" or "by (E1)", at the step that uses it.
 
 ::: {.check}
 Which word of the paragraph tells the reader that line 5 is an assumption and not a claim, and what would the sentence assert if that word were replaced by "is"?
 :::
 
 ::: {.solution}
-The word "were" (with "if"): "if \( n^2 \) were odd" supposes something in order to refute it, which is the opening of a \( \rulename{\neg I} \) box. With "is", the sentence "\( n^2 \) is odd, so it is both even and odd" would assert a false line outside any box, and the proof would be wrong.
+The word "were" (with "if"): "if \( n^2 \) were odd" supposes something in order to refute it, which is the opening of a \( \rulename{\neg I} \) box. With "is", the sentence "\( n^2 \) is odd, so it is both even and odd" would assert \( T \) as a claim rather than an assumption: it would sit, unjustified, directly in the box of line 4, where it is in fact false (\( n^2 \) is even there), and the proof would be wrong.
 :::
 
 ## How to read the dictionary
@@ -78,7 +78,7 @@ Each group of rows is followed by a worked example, a short proof annotated phra
 | \( \rulename{\wedge I} \) | "…, and …"; "we show (a) … and (b) …"; "both … hold" | often, when both conjuncts are displayed |
 | \( \rulename{\wedge E} \) | "in particular"; "so \( a > 0 \)"; using one clause of a hypothesis without comment | yes |
 
-In analysis, \( \rulename{\wedge I} \) is the shape of every definition with two clauses. "\( s \) is a least upper bound of \( A \)" will mean that \( s \) is an upper bound of \( A \) **and** no smaller number is an upper bound of \( A \); a proof of it has two parts, labeled (a) and (b), and ends by putting them together. (Chapter 11 states the second clause as "\( s \le M \) for every upper bound \( M \) of \( A \)", which says the same: an upper bound \( M \) with \( M < s \) would be a smaller one.) \( \rulename{\wedge E} \) is the step from a chain to one of its links: "since \( x \in (0, 1) \), in particular \( x > 0 \)" takes the left conjunct of \( 0 < x \wedge x < 1 \).
+In analysis, \( \rulename{\wedge I} \) is the shape of every definition with two clauses. "\( s \) is a least upper bound of \( A \)" will mean that \( s \) is an upper bound of \( A \) **and** no smaller number is an upper bound of \( A \); a proof of it has two parts, labeled (a) and (b), and ends by putting them together. (Chapter 11 states the second clause as "\( s \le M \) for every upper bound \( M \) of \( A \)", which says the same: by trichotomy, \( s \le M \) holds exactly when \( M < s \) fails, and an upper bound \( M \) with \( M < s \) would be a smaller one.) \( \rulename{\wedge E} \) is the step from a chain to one of its links: "since \( x \in (0, 1) \), in particular \( x > 0 \)" takes the left conjunct of \( 0 < x \wedge x < 1 \).
 
 ::: {#exm-rhetoric-conjunction}
 [Two clauses of a least upper bound]
@@ -89,11 +89,11 @@ Let \( A \coloneqq \{ x \in \nR : 0 < x < 2 \} \). Prove that \( 2 \) is an uppe
 ::: {.solution}
 *(a)* Let \( a \in A \) [\( \rulename{\forall I} \)]. Then \( 0 < a < 2 \), by the definition of \( A \); in particular \( a < 2 \) [\( \rulename{\wedge E} \)], so \( a \le 2 \) [\( \rulename{\vee I} \)]. So \( 2 \) is an upper bound of \( A \).
 
-*(b)* Let \( t \) be a real number with \( t < 2 \) [\( \rulename{\forall I} \), \( \rulename{{\to}I} \)], and suppose \( t \) is an upper bound of \( A \) [assumption for \( \rulename{\neg I} \)]. Let \( m \coloneqq \max\{t, 0\} \) and \( a \coloneqq (m + 2)/2 \). Since \( t < 2 \) and \( 0 < 2 \), we have \( 0 \le m < 2 \), so \( 1 \le a < 2 \); thus \( 0 < a \) and \( a < 2 \), that is, \( a \in A \) [\( \rulename{\wedge I} \)]. As \( t \) is an upper bound of \( A \), \( a \le t \) [\( \rulename{\forall E} \) at \( a \)]. But \( a - m = (2 - m)/2 > 0 \), so \( a > m \ge t \), and \( a > t \). This contradicts \( a \le t \) [\( \rulename{\neg E} \)]. Hence \( t \) is not an upper bound of \( A \) [\( \rulename{\neg I} \)].
+*(b)* Let \( t \) be a real number with \( t < 2 \) [\( \rulename{\forall I} \), \( \rulename{{\to}I} \)], and suppose \( t \) is an upper bound of \( A \) [assumption for \( \rulename{\neg I} \)]. Let \( m \coloneqq \max\{t, 0\} \) and \( a \coloneqq (m + 2)/2 \). We have \( t \ge 0 \) or \( t < 0 \), and by the definition of the maximum we consider the two cases [\( \rulename{\vee E} \)]: if \( t \ge 0 \), then \( m = t \), so \( m \ge t \), \( m \ge 0 \) and \( m < 2 \); if \( t < 0 \), then \( m = 0 \), so \( m > t \), \( m \ge 0 \) and \( m < 2 \). So in either case \( m \ge t \) and \( 0 \le m < 2 \). Hence \( 1 \le a < 2 \); thus \( 0 < a \) and \( a < 2 \), that is, \( a \in A \) [\( \rulename{\wedge I} \)]. As \( t \) is an upper bound of \( A \), \( a \le t \) [\( \rulename{\forall E} \) at \( a \)]. But \( a - m = (2 - m)/2 > 0 \), so \( a > m \ge t \), and \( a > t \). This contradicts \( a \le t \) [\( \rulename{\neg E} \)]. Hence \( t \) is not an upper bound of \( A \) [\( \rulename{\neg I} \)].
 
 So \( 2 \) is an upper bound of \( A \), and no smaller number is [\( \rulename{\wedge I} \)].
 
-The \( \rulename{\wedge E} \) of (a) could have been silent ("then \( a < 2 \), so \( a \le 2 \)"); the \( \rulename{\vee I} \) after it weakened a strict inequality, since \( a \le 2 \) means \( a < 2 \vee a = 2 \). In (b), the two conjuncts \( 0 < a \) and \( a < 2 \) were displayed and then merged by "that is, \( a \in A \)". The final sentence is the \( \rulename{\wedge I} \) of the two clauses. And the clashing lines \( a \le t \) and \( a > t \) are both named before "contradicts", as the \( \rulename{\neg E} \) row below requires.
+The \( \rulename{\wedge E} \) of (a) could have been silent ("then \( a < 2 \), so \( a \le 2 \)"); the \( \rulename{\vee I} \) after it weakened a strict inequality, since \( a \le 2 \) means \( a < 2 \vee a = 2 \). In (b), the two conjuncts \( 0 < a \) and \( a < 2 \) were displayed and then merged by "that is, \( a \in A \)". The bound \( m < 2 \) needed the case split hidden in \( \max \), and it is written out, as the warning below requires. The final sentence is the \( \rulename{\wedge I} \) of the two clauses. And the clashing lines \( a \le t \) and \( a > t \) are both named before "contradicts", as the \( \rulename{\neg E} \) row below requires.
 :::
 
 ## Implication
@@ -132,6 +132,7 @@ In (b), "recall" is \( \rulename{R} \), and it could be dropped. "Cannot hold" i
 | \( \rulename{\vee I} \) | "…, so certainly \( P \) or \( Q \)"; "in particular \( x \ne 0 \) or …" | yes |
 | \( \rulename{\vee E} \) | "we consider two cases"; "Case 1 … Case 2 …"; "in either case"; "otherwise" | never the split; the "in either case" may be silent |
 | \( \rulename{DS} \) | "since \( x \ne 0 \), the first case is impossible, so …" | the rule's name, yes; the fact \( x \ne 0 \) it uses, never |
+| "or" and "and" commute (@exm-disjunction-first-derivations, @prp-and-commutes) | "\( P \) or \( Q \)" read as "\( Q \) or \( P \)", with no words of its own | yes |
 
 In analysis, \( \rulename{\vee I} \) hides inside every weakening of a strict inequality: "\( x > 0 \), so \( x \ge 0 \)". \( \rulename{\vee E} \) is the proof of the triangle inequality in Section 1.7 (@exm-triangle-inequality-cases), which splits on the sign of \( x + y \) and reaches \( \abs{x + y} \le \abs{x} + \abs{y} \) in both cases. \( \rulename{DS} \) is the step "\( x^2 = x \), so \( x = 0 \) or \( x = 1 \); since \( x \ne 0 \), \( x = 1 \)".
 
@@ -185,7 +186,7 @@ The last row needs more room. To negate "\( s \) is an upper bound of \( A \)", 
 
 *(c)* Let \( s \) be a real number and \( a \in A \) [\( \rulename{\forall I} \), \( \rulename{{\to}I} \)]. Since \( A \) has no elements, \( a \in A \) is impossible [\( \rulename{\neg E} \), against "\( a \notin A \)"], so there is nothing to prove: \( a \le s \) [\( \rulename{\bot E} \)]. Hence \( s \) is an upper bound of \( A \).
 
-Claim (a) is \( \forall s\, \neg\forall x\; (x \le s) \), and its proof writes the \( \rulename{\neg I} \) box in full: the assumption, the named clash, the conclusion. The positive form (b), \( \forall s\, \exists x\; (x > s) \), says more: it hands over the number that beats \( s \). From (b), (a) follows with no classical step (if \( s \) were an upper bound, \( x = s + 1 \) would satisfy \( x > s \) and \( x \le s \)); from (a), (b) follows only through @prp-quantifier-negation (a), derived with \( \rulename{RAA} \), and trichotomy. So when both forms are within reach, prove the positive one. In (c), once the clash and the empty set are named, the \( \rulename{\bot E} \) line itself may be silent.
+Claim (a) is \( \forall s\, \neg\forall x\; (x \le s) \), and its proof writes the \( \rulename{\neg I} \) box in full: the assumption, the named clash, the conclusion. The positive form (b), \( \forall s\, \exists x\; (x > s) \), says more: it hands over the number that beats \( s \). Given (b) as a premise, (a) follows with no classical step: if \( s \) were an upper bound of \( \nR \), the \( x \) that (b) provides for \( s \) would satisfy \( x > s \) and \( x \le s \). The general passage from the shape of (a) to the shape of (b), with no witness in hand, goes through @prp-quantifier-negation (a), derived with \( \rulename{RAA} \), and trichotomy. So when both forms are within reach, prove the positive one. In (c), once the clash and the empty set are named, the \( \rulename{\bot E} \) line itself may be silent. Part (c) is the prose form of the derivation in Section 4.4 that concludes \( \forall u\, \forall x\; (x \in A \to x \le u) \) from \( \forall x\, \neg(x \in A) \), with its vacuous step unpacked into the \( \rulename{\neg E} \) and \( \rulename{\bot E} \) lines.
 :::
 
 ## Proof by contradiction
@@ -193,7 +194,7 @@ Claim (a) is \( \forall s\, \neg\forall x\; (x \le s) \), and its proof writes t
 | Rule | Phrases | Silent in plain prose? |
 |---|---|---|
 | \( \rulename{RAA} \) | "suppose, for contradiction, that \( \neg P \)"; "suppose not"; "assume the contrary" | never |
-| \( \rulename{\neg\neg E} \), \( \rulename{LEM} \) | "either \( P \) or not"; "\( P \) must hold, since …"; "otherwise" | never: the disjunction is written as a case split |
+| \( \rulename{\neg\neg E} \), \( \rulename{LEM} \) | "either \( P \) or not"; "\( P \) must hold, since …"; "otherwise" | never: written as an explicit case split or an explicit removal of a double negation ("\( P \) must hold, since …") |
 
 In analysis, \( \rulename{RAA} \) is the proof of @prp-arbitrarily-close-equal: "suppose, for a contradiction, that \( a \ne b \); then \( \abs{a - b} > 0 \), so the hypothesis gives \( \abs{a - b} < \abs{a - b} \), a contradiction; hence \( a = b \)". The box assumes \( \neg(a = b) \) and concludes \( a = b \), so it is genuine \( \rulename{RAA} \); \( \rulename{\neg I} \) would give only \( \neg\neg(a = b) \). \( \rulename{LEM} \) is a split such as "either the sequence has infinitely many terms in the left half of the interval, or it does not", the step of the bisection proof of the Bolzano–Weierstrass theorem (Chapter 12 proves the theorem). That split is genuinely non-constructive: nobody can decide in general which case holds. Section 5.7 explains why that matters, and a proof that makes such a step says so in one clause. A split such as "\( x \ge 0 \) or \( x < 0 \)" is also excluded middle in logical form, but it is an instance of the trichotomy of the order of \( \nR \), which Chapter 11 takes as an axiom, and it is never flagged.
 
@@ -208,11 +209,11 @@ Let \( a \) and \( b \) be real numbers with \( a \le b + \varepsilon \) for eve
 
 The box assumes \( a > b \), which is \( \neg(a \le b) \) by the order fact of Section 2.1, and the proof concludes \( a \le b \): a negation goes **out**.
 
-*By \( \rulename{\neg I} \) and \( \rulename{\neg\neg E} \).* Close the same box with "hence \( a > b \) is impossible" [\( \rulename{\neg I} \)], the line \( \neg\neg(a \le b) \); then "so \( a \le b \) must hold" [\( \rulename{\neg\neg E} \)]. The two steps do what \( \rulename{RAA} \) did in one, and show that the box itself uses no classical rule.
+*By \( \rulename{\neg I} \) and \( \rulename{\neg\neg E} \).* Close the same box with "hence \( a > b \) is impossible" [\( \rulename{\neg I} \)], the line \( \neg(a > b) \), which is \( \neg\neg(a \le b) \) under the same reading of \( a > b \) as \( \neg(a \le b) \); then "so \( a \le b \) must hold" [\( \rulename{\neg\neg E} \)]. The two steps do what \( \rulename{RAA} \) did in one, and show that the box itself uses no classical rule.
 
 *By cases.* By trichotomy, \( a \le b \) or \( a > b \) [\( \rulename{\vee E} \)]. In the first case we are done. In the second, the lines of the box above reach \( a \le b \) against \( a > b \), so this case cannot occur, and in it \( a \le b \) [\( \rulename{\neg E} \), \( \rulename{\bot E} \)]. In either case \( a \le b \).
 
-The three proofs share their mathematics, the instance \( \varepsilon = (a - b)/2 \), and differ only in where the excluded middle enters: as \( \rulename{RAA} \), as \( \rulename{\neg\neg E} \), or as the order axiom. Over \( \nR \) the third costs nothing beyond the axiom, so no step here is flagged.
+The three proofs share their mathematics, the instance \( \varepsilon = (a - b)/2 \), and differ only in how the classical step is written: as \( \rulename{RAA} \), as \( \rulename{\neg\neg E} \), or as a case split. All three also read \( a > b \) as \( \neg(a \le b) \) by the order fact of Section 2.1, itself an instance of trichotomy; read the other way, that fact gives \( a \le b \) from \( \neg(a > b) \) directly, so the first two put an excluded-middle step on top of it. Over \( \nR \) trichotomy is an axiom, so no step here is flagged.
 :::
 
 ## The biconditional
@@ -237,12 +238,12 @@ Let \( x \) be a real number with \( x \ge 0 \). Prove that \( x \le 1 \) if and
 
 So \( x \le 1 \) if and only if \( x^2 \le x \) [\( \rulename{{\leftrightarrow}I} \)].
 
-The labels \( (\Rightarrow) \) and \( (\Leftarrow) \) are the two boxes of \( \rulename{{\leftrightarrow}I} \), and "conversely" opens the second. The hypothesis \( x \ge 0 \) does a job in each: it keeps the inequality's direction when we multiply, and it reduces the cases to \( x = 0 \) and \( x > 0 \), by \( \rulename{{\leftrightarrow}E} \) on the definition of \( \ge \). Without it \( (\Leftarrow) \) still holds but \( (\Rightarrow) \) fails: \( x = -1 \) has \( x \le 1 \) and \( x^2 = 1 > x \).
+The labels \( (\Rightarrow) \) and \( (\Leftarrow) \) are the two boxes of \( \rulename{{\leftrightarrow}I} \), and "conversely" opens the second. The hypothesis \( x \ge 0 \) does a job in each: it keeps the inequality's direction when we multiply, and it reduces the cases to \( x = 0 \) and \( x > 0 \), by \( \rulename{{\leftrightarrow}E} \) on the definition of \( \ge \). Without it, \( (\Leftarrow) \) still holds, since a negative \( x \) has \( x^2 \ge 0 > x \), so \( x^2 \le x \) forces \( x \ge 0 \) and the proof above applies; but \( (\Rightarrow) \) fails: \( x = -1 \) has \( x \le 1 \) and \( x^2 = 1 > x \).
 :::
 
 ## The three faces of "by contradiction"
 
-"Proof by contradiction" is used in practice for three different arguments. Each opens a box and finds \( \bot \) inside it; they differ in what the box assumes and what the proof concludes, and only one of them needs a classical rule at its last step.
+"Proof by contradiction" is used in practice for three different arguments. Each opens a box and finds \( \bot \) inside it; they differ in what the box assumes and what the proof concludes, and only face (i) is free of a classical step: face (iii) ends with \( \rulename{RAA} \), and face (ii) ends with @prp-contrapositive-converse, which uses \( \rulename{RAA} \) unless \( Q \) is itself a negation.
 
 | Face | The box assumes | The proof concludes | Last step |
 |---|---|---|---|
@@ -252,11 +253,11 @@ The labels \( (\Rightarrow) \) and \( (\Leftarrow) \) are the two boxes of \( \r
 
 **(i) Refuting a statement.** The claim is negative: irrational, "no largest", \( x \ne 5 \). The box assumes the positive statement, as the proof of @thm-sqrt2-irrational assumes \( r^2 = 2 \), and no classical rule is used.
 
-**(ii) The contrapositive.** The claim is \( P \to Q \), and the proof derives \( \neg P \) from \( \neg Q \), with \( P \) playing no part until the end. The passage back to \( P \to Q \) is @prp-contrapositive-converse, which Section 2.5 derives with \( \rulename{RAA} \) (avoidable when \( Q \) is itself a negation, by the remark after it). Written as "suppose \( P \); suppose, for contradiction, \( \neg Q \); … \( \neg P \), a contradiction", it is that derivation done inline.
+**(ii) The contrapositive.** The claim is \( P \to Q \), and the proof derives \( \neg P \) from \( \neg Q \), with \( P \) playing no part until the end. The passage back to \( P \to Q \) is @prp-contrapositive-converse, which Section 2.5 derives with \( \rulename{RAA} \) (avoidable when \( Q \) is itself a negation, as Section 2.5 notes after the proof). Written as "suppose \( P \); suppose, for contradiction, \( \neg Q \); … \( \neg P \), a contradiction", it is that derivation done inline.
 
 **(iii) Genuine reductio.** The claim \( P \) is positive, and \( \neg P \) is used throughout the box, typically because it hands over an object: \( a \ne b \) makes \( \abs{a - b} \) a positive number to feed to a hypothesis about every \( \varepsilon > 0 \).
 
-*To tell them apart, read the first and the last sentence of the box:* what does it assume, and what does the proof write after it closes? The words "for contradiction" do not decide it; Chapter 11 uses them for a face (i) proof.
+*To tell them apart, read the first sentence of the box and the sentence after it:* what does it assume, and what does the proof write after it closes? The words "for contradiction" do not decide it; Chapter 11 uses them for a face (i) proof.
 
 *The style rule: use the weakest form that works, and say which one you use.* A direct proof, when one exists, beats all three. A negative claim is proved by face (i). Face (ii) is announced as "we prove the contrapositive", which tells the reader the goal \( \neg Q \to \neg P \) at once. Face (iii) is for a positive claim that resists the other routes, with its classical step made visible as in @exm-rhetoric-contradiction.
 
@@ -303,7 +304,7 @@ The rewrite tells the reader at the start what will be shown, and the final clas
 The two tests share one smell: *the clash at the end is with a statement the proof already had, or would have had without the box.* A genuine reductio uses its assumed negation throughout, and the clash comes somewhere the reader did not see coming; in @exm-rhetoric-contradiction, the assumption \( a > b \) was what made \( (a - b)/2 \) positive.
 
 ::: {.warning}
-"Assume \( P \)" means different things at the top of different proofs. At the top of a proof of \( P \to Q \), it is the opening of the \( \rulename{{\to}I} \) box, and it is exactly right. At the top of a proof of \( P \) itself, it assumes the goal, and everything after it is circular: the last line "hence \( P \)" cites a line that is not available outside the box. For instance, "assume \( \sqrt 2 \) is irrational; then … ; hence \( \sqrt 2 \) is irrational" proves nothing, however correct the middle. Section 5.6 lists this error among the citations of lines that are not available.
+"Assume \( P \)" means different things at the top of different proofs. At the top of a proof of \( P \to Q \), it is the opening of the \( \rulename{{\to}I} \) box, and it is exactly right. At the top of a proof of \( P \) itself, it assumes the goal, and everything after it is circular: the last line "hence \( P \)" cites a line that is not available outside the box. For instance, "assume \( \sqrt 2 \) is irrational; then … ; hence \( \sqrt 2 \) is irrational" proves nothing, however correct the middle: it is entry (N9) of the catalogue in Section 5.6.
 :::
 
 ## Exercises
@@ -347,7 +348,7 @@ Here is a proof that \( \frac{a + b}{2} \ge \sqrt{ab} \) for all real \( a > 0 \
 :::
 
 ::: {.solution}
-*(a)* A direct proof in costume (@exm-costume-direct). The assumption \( \frac{a+b}{2} < \sqrt{ab} \) is cited only in "This contradicts our assumption", the line that produces \( \bot \). The two sentences before it prove the goal from \( a, b > 0 \) alone.
+*(a)* A direct proof in costume (@exm-costume-direct). The assumption \( \frac{a+b}{2} < \sqrt{ab} \) is cited only in "This contradicts our assumption", the line that produces \( \bot \). The sentence beginning "Since" proves the goal from \( a, b > 0 \) alone, without using the assumption.
 
 *(b)* Let \( a, b > 0 \), so that \( \sqrt a \) and \( \sqrt b \) are defined and \( \sqrt a \sqrt b = \sqrt{ab} \). Since \( (\sqrt a - \sqrt b)^2 \ge 0 \), expanding gives \( a - 2\sqrt{ab} + b \ge 0 \). Adding \( 2\sqrt{ab} \) to both sides and dividing by \( 2 \) gives \( \frac{a+b}{2} \ge \sqrt{ab} \), as claimed.
 :::
@@ -371,7 +372,7 @@ Here is a proof that if \( x \) is a real number with \( \abs{x} \le \abs{y} \) 
 
 *(b)* Suppose \( \abs{x} \le \abs{y} \) for every real \( y \ne 0 \). If \( x \ne 0 \), then \( x/2 \ne 0 \), so the hypothesis gives \( \abs{x} \le \abs{x}/2 \), that is, \( \abs{x} \le 0 \), against \( \abs{x} > 0 \). Hence \( x \ne 0 \) is impossible [\( \rulename{\neg I} \)], so \( x = 0 \) must hold [\( \rulename{\neg\neg E} \)].
 
-*(c)* The second. It shows that the box uses no classical rule: without one, the argument proves \( \neg\neg(x = 0) \), "\( x \) cannot be non-zero", and the classical rule enters only in the last three words. The first version hides that split inside the single step \( \rulename{RAA} \).
+*(c)* The second. It shows that the box uses no classical rule: without one, the argument proves \( \neg\neg(x = 0) \), "\( x \) cannot be non-zero", and the classical rule enters only in the final step, "so \( x = 0 \) must hold" [\( \rulename{\neg\neg E} \)]. The first version does both steps at once in the single \( \rulename{RAA} \), and so hides where the classical rule enters.
 :::
 
 ### C. Going deeper
@@ -396,9 +397,9 @@ Here is a common proof that there are infinitely many primes. It uses two facts 
 
 *(b)* Once, in "\( p = p_i \) for some \( i \)", where the clash is manufactured. Everything else holds for **any** finite list of primes, complete or not: the smell of a costume.
 
-*(c)* Let \( p_1, \dots, p_k \) be a finite list of primes, \( k \ge 1 \), and let \( N \coloneqq p_1 p_2 \cdots p_k + 1 \). Each \( p_i \ge 2 \), so \( N \ge 3 \), and \( N \) has a prime divisor \( p \). Suppose \( p = p_i \) for some \( i \) [assumption for \( \rulename{\neg I} \)]. Then \( p \) divides \( N \) and \( p_1 p_2 \cdots p_k \), so it divides their difference \( 1 \); but a prime is at least \( 2 \), and a positive divisor of \( 1 \) is at most \( 1 \), a contradiction. Hence \( p \ne p_i \) for every \( i \) [\( \rulename{\neg I} \), inside \( \rulename{\forall I} \)], and \( p \) is a prime not in the list.
+*(c)* Let \( p_1, \dots, p_k \) be a finite list of primes, \( k \ge 1 \), and let \( N \coloneqq p_1 p_2 \cdots p_k + 1 \). Each \( p_i \ge 2 \), so \( N \ge 3 \), and \( N \) has a prime divisor \( p \). Let \( i \) be an index with \( 1 \le i \le k \) [\( \rulename{\forall I} \), opening], and suppose \( p = p_i \) [assumption for \( \rulename{\neg I} \)]. Then \( p \) divides \( N \) and \( p_1 p_2 \cdots p_k \), so it divides their difference \( 1 \), say \( 1 = pm \) with \( m \) an integer. Since \( p > 0 \), \( m > 0 \), so \( m \ge 1 \) and \( 1 = pm \ge p \ge 2 \), a contradiction [\( \rulename{\neg E} \)]. Hence \( p \ne p_i \) [\( \rulename{\neg I} \)]. Since \( i \) was arbitrary, \( p \ne p_i \) for every \( i \) [\( \rulename{\forall I} \), closing], and \( p \) is a prime not in the list.
 
-*(d)* The rewrite proves a stronger statement: given any finite list of primes, it **produces** a prime outside it, any prime divisor of \( N \); the original shows only that a list of all the primes is impossible. Its one \( \rulename{\neg I} \) box, for the negative claim \( p \ne p_i \), is honest, since its assumption is what the clash uses. The original theorem follows at once: a finite list of all the primes would miss a prime by (c).
+*(d)* The rewrite proves a stronger statement: given any finite list of primes, it **produces** a prime outside it, any prime divisor of \( N \); the original shows only that a list of all the primes is impossible. Its one \( \rulename{\neg I} \) box, for the negative claim \( p \ne p_i \), is honest, since its assumption is what the clash uses. The original theorem follows at once: a finite list of all the primes is non-empty, since \( 2 \) is prime, so by (c) it would miss a prime.
 
 **Marking scheme.** (10 points)
 - 2: (a) \( \rulename{\neg I} \), with the reason (the box assumes the positive statement and the proof concludes its negation).
@@ -424,7 +425,7 @@ Here is a proof that if \( x \) is a real number with \( x^2 < \varepsilon \) fo
 ::: {.solution}
 [Hint 1]
 
-The goal \( x = 0 \) is positive. Look for a school fact about \( x^2 \) that is a disjunction, one of whose cases is the goal.
+The goal \( x = 0 \) is positive. Look for a school fact about \( x^2 \) that is a disjunction: one case leads to the goal through another school fact, and the hypothesis rules out the other.
 :::
 
 ::: {.solution}
@@ -440,11 +441,11 @@ Start: "Since \( x^2 \ge 0 \), either \( x^2 > 0 \) or \( x^2 = 0 \)."
 
 *Case \( x^2 > 0 \).* Then the hypothesis applies to \( \varepsilon = x^2 \) [\( \rulename{\forall E} \)] and gives \( x^2 < x^2 \), which contradicts the fact that no number is less than itself [\( \rulename{\neg E} \)]. So this case cannot occur, and in it \( x = 0 \) [\( \rulename{\bot E} \)].
 
-*Case \( x^2 = 0 \).* Then \( x \cdot x = 0 \), so \( x = 0 \), since a product of two real numbers is \( 0 \) only if a factor is.
+*Case \( x^2 = 0 \).* Then \( x \cdot x = 0 \), so \( x = 0 \) [\( \rulename{{\to}E} \)], since a product of two real numbers is \( 0 \) only if a factor is.
 
 In either case \( x = 0 \) [\( \rulename{\vee E} \)].
 
-The logical steps are \( \rulename{{\to}I} \), \( \rulename{\vee E} \), \( \rulename{\forall E} \), \( \rulename{\neg E} \) and \( \rulename{\bot E} \); no classical rule is used. The classical content has moved into the school fact "\( x^2 > 0 \) or \( x^2 = 0 \)", which rests on the trichotomy of the order, an axiom of Chapter 11; Section 5.7 explains why that axiom is where the book makes its classical commitment.
+The logical steps are \( \rulename{{\to}I} \), \( \rulename{\vee E} \), \( \rulename{\forall E} \), \( \rulename{\neg E} \), \( \rulename{{\to}E} \) (citing the second school fact, that a product is \( 0 \) only if a factor is) and \( \rulename{\bot E} \); no classical rule is used. The classical content has moved into the school fact "\( x^2 > 0 \) or \( x^2 = 0 \)", which rests on the trichotomy of the order, an axiom of Chapter 11; Section 5.7 explains why that axiom is where the book makes its classical commitment.
 
 **Marking scheme.** (10 points)
 - 3: (a) identifies \( \rulename{RAA} \) (face (iii)), with the reason: the assumption is a negation and the conclusion is positive.
@@ -457,23 +458,26 @@ Fatal errors (0 for the step): calling (a) face (i) because the word "contradict
 
 <!-- dependency ledger
 exm-square-even-via-contrapositive (example): the derivation reprinted in the hook; (E1)-(E3) | exm-square-even-via-contrapositive (cited); school facts of Section 2.1
-exm-rhetoric-conjunction (solution): max{t, 0} >= t, >= 0, < 2 for t < 2; a = (m + 2)/2 in [1, 2), a - m = (2 - m)/2 > 0 | school algebra; verify/ch05/exm-rhetoric-conjunction.py
+exm-square-even-via-contrapositive (claim): line 11 (or commutes) has no words; the Disjunction table's row: exchanging the members of a disjunction or conjunction may be silent | exm-disjunction-first-derivations, prp-and-commutes (cited); def-silent-steps (Section 5.3, prose pointer)
+exm-rhetoric-conjunction (solution): t >= 0 or t < 0; max{t, 0} = t if t >= 0 and 0 if t < 0, so max{t, 0} >= t, >= 0 and < 2 for t < 2, in each case; a = (m + 2)/2 in [1, 2), a - m = (2 - m)/2 > 0 | trichotomy; max of two numbers, a school notion (max{a, b} is a if a >= b and b otherwise, as Ch 3 05 (the three-valued table before thm-raa-independent) and Ch 11 exr-ordered-fields-a1 (3) treat it; Ch 1 exr-disjunction-and-cases-b2 is a pointer only, nothing rests on it); school algebra; verify/ch05/exm-rhetoric-conjunction.py
 exm-rhetoric-conjunction (claim): Ch 11's (S2) says the same as "no t < s is an upper bound" | trichotomy; prose remark, nothing rests on it
 exm-rhetoric-implication (solution): |u| < r iff -r < u < r; a >= b iff not(a < b) | school fact stated in the solution; order fact of Section 2.1
 exm-rhetoric-implication (claim): the continuity sentence is a theorem of Ch 15 | prose pointer (ch15 blueprint, sequential criterion); sample sentence only
 exm-rhetoric-cases (solution): x >= 0 or x < 0; |x| by cases; ab = 0 implies a = 0 or b = 0; max{a, b} >= (a + b)/2 | school facts; verify/ch05/exm-rhetoric-cases.py
-exm-rhetoric-negation (solution): s + 1 <= s gives 1 <= 0; 0 < 1; claims about every element of the empty set | school algebra; Section 4.4 (prose)
+exm-rhetoric-negation (solution): s + 1 <= s gives 1 <= 0; 0 < 1; claims about every element of the empty set; (c) is the prose form of Section 4.4's upper-bound derivation | school algebra; Section 4.4 (prose)
 exm-rhetoric-negation (claim): Ch 11's unboundedness proof is neg-I, then one classical step | prose pointer (Ch 11 thm-naturals-unbounded and its remark)
-exm-rhetoric-negation (claim): (a) gives (b) only through prp-quantifier-negation (a) and trichotomy | prp-quantifier-negation (cited); trichotomy school fact
+exm-rhetoric-negation (claim): the general passage from the shape of (a) to the shape of (b), with no witness, goes through prp-quantifier-negation (a) and trichotomy | prp-quantifier-negation (cited); trichotomy school fact
 exm-rhetoric-contradiction (solution): (a - b)/2 > 0 for a > b; a <= b + (a - b)/2 iff a <= b; a <= b or a > b | school algebra; trichotomy; verify/ch05/exm-rhetoric-contradiction.py
 exm-rhetoric-contradiction (claim): Bolzano-Weierstrass proved in Ch 12; its bisection split is non-constructive | prose pointers (ch12 blueprint; Section 5.7)
 exm-rhetoric-biconditional (solution): multiply by x >= 0; divide by x > 0; x = -1 | school algebra; verify/ch05/exm-rhetoric-biconditional.py
+exm-rhetoric-biconditional (claim): x < 0 gives x^2 >= 0 > x, so (<=) needs no hypothesis | school algebra; prose remark, nothing rests on it; verify/ch05/exm-rhetoric-biconditional.py
 exm-costume-direct (solution): (x - 3)(x + 1) = x^2 - 2x - 3 > 0 for x > 3 | school algebra; verify/ch05/exm-costume-direct.py
-exm-costume-contrapositive (solution): not even implies odd; (2k + 1)^2 = 2(2k^2 + 2k) + 1 | (E1) of Section 2.1 (ch07 promised, STATUS parity row); inline
-exr-connective-rhetoric-a1 (solution): 3 < 7/2 < 4 | arithmetic; verify/ch05/exr-connective-rhetoric-a1.py
+exm-costume-contrapositive (solution): not even implies odd; odd implies not even; (2k + 1)^2 = 2(2k^2 + 2k) + 1 | (E1), (E2) of Section 2.1 (ch07 promised, STATUS parity row); inline
+exr-connective-rhetoric-a1 (solution): 3 < 7/2 < 4, and no integer lies strictly between 3 and 4 | school arithmetic of Z (ch07 promised in STATUS: "nothing between n and n + 1"); verify/ch05/exr-connective-rhetoric-a1.py
 exr-connective-rhetoric-b1 (solution): sqrt a sqrt b = sqrt(ab); (sqrt a - sqrt b)^2 expanded | school facts (Ch 11 thm-nth-root, prose); verify/ch05/exr-connective-rhetoric-b1.py
 exr-connective-rhetoric-b2 (solution): x != 0 gives x/2 != 0 and |x| > 0; |x/2| = |x|/2; |x| <= |x|/2 gives |x| <= 0 | school algebra; verify/ch05/exr-connective-rhetoric-b2.py
 exr-connective-rhetoric-c1 (solution): every integer m >= 2 has a prime divisor | ch07 (promised): thm-prime-factor; stated in the item
-exr-connective-rhetoric-c1 (solution): d | u, d | v give d | u - v; a positive divisor of 1 is at most 1 | proved in the item; school arithmetic of Z (ch07 promised, STATUS row)
+exr-connective-rhetoric-c1 (solution): d | u, d | v give d | u - v; a positive divisor of 1 is at most 1 | proved in the item, using m > 0 gives m >= 1, i.e. no integer strictly between 0 and 1: school arithmetic of Z (ch07 promised in STATUS: "nothing between n and n + 1")
+exr-connective-rhetoric-c1 (solution): 2 is prime, so a list of all the primes has k >= 1 | arithmetic (its only positive divisors are 1 and 2); inline
 exr-connective-rhetoric-c2 (solution): x^2 >= 0 gives x^2 > 0 or x^2 = 0; xx = 0 gives x = 0; no number is less than itself | school facts; trichotomy (Ch 11 axiom); verify/ch05/exr-connective-rhetoric-c2.py
 -->

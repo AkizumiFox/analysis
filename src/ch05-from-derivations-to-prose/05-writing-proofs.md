@@ -22,7 +22,7 @@ Steps 1–3 involve no mathematics, only logical form, and they fix the first an
 
 **Step 4 as a logical fact.** The search of Section 2.6 opens a box for the goal before it knows how the box will be filled, and it postpones an existential goal until a witness appears; that is why it works backwards. But a derivation is a list in which line \( k \) cites only lines available at \( k \) (@def-derivation), and a written proof is that list in sentences. So the order of the page is forced by the rules, not by taste: "\( \abs{f(x) - f(a)} < \varepsilon \) holds if \( \abs{x - a} < \varepsilon/2 \)" points from a later line to an earlier one. The backward reasoning lives in the Idea block.
 
-**Step 5 as a logical fact.** A chosen constant, such as "let \( \delta \coloneqq \varepsilon/2 \)", is the witness of an \( \rulename{\exists I} \) line. The search finds it last, because only the end of the search shows what it must do. On the page it comes first, right after the names it is built from, because later lines use it. Those names are its dependencies, the record of the boxes open where it is chosen (Section 4.10).
+**Step 5 as a logical fact.** A chosen constant, such as "let \( \delta \coloneqq \varepsilon/2 \)", is the witness of an \( \rulename{\exists I} \) line. The search finds it last, because only the end of the search shows what it must do. On the page it comes first, right after the names it is built from, because later lines use it. Those names are its dependencies; they must be among the names of the boxes open where it is chosen (Section 4.10).
 
 ::: {.check}
 Which step of the procedure produces the sentence "Let \( \varepsilon > 0 \)" at the start of a proof that \( a_n \to L \), and which step keeps it at level 3?
@@ -42,7 +42,7 @@ A handful of conventions make a proof checkable. Each is a rule of Chapters 1–
 - **End with what was shown.** The last sentence of a proof is the last line of the derivation, outside every box. If it is not the statement to be proved, the reader should be told how the two are related.
 - **Label displayed claims that will be cited,** \( (\ast) \) or (1), and cite them by the label. A citation is a line number in prose.
 
-None of these is a matter of style. An object used without being introduced is a line citing nothing, and an announcement that does not match its box (assuming the conclusion of an implication) proves the converse; both are entries of the catalogue in Section 5.6.
+None of these is a matter of style. An object used without being introduced is a line citing nothing, and an announcement that does not match its box (assuming the conclusion of an implication) proves the converse; these are entries (N9) and (N5) of the catalogue in Section 5.6.
 
 ## Matching sentences and rules
 
@@ -72,7 +72,7 @@ Here is a short proof. Label each sentence with the rule it uses.
 
 Sentence (7) uses the assumption made in (1), and it may: that box is still open. The facts of school algebra enter as implications, each used by \( \rulename{{\to}E} \). Sentence (8) closes two boxes, which is normal.
 
-Measured against @def-silent-steps, the proof leaves out nothing that must be written: the split in (2) is on the page, and the disjunction it splits is a school fact (every real number is at least \( 1 \) or below it), so it covers every case; each case box opens with its assumption; and the only silent step is the closing of the \( \rulename{{\to}I} \) box, inside "which proves the claim". Labeling also shows where the work is. The case split exists only because \( \abs{\cdot} \) is defined by cases (Chapter 1); the school fact \( -\abs{u} \le u \), used with \( u = x - 1 \), gives \( -1 < x - 1 \) in one step, and a proof written that way would have no \( \rulename{\vee E} \) at all.
+Measured against @def-silent-steps, the proof leaves out nothing that must be written: the split in (2) is on the page, and the disjunction it splits is a school fact (every real number is at least \( 1 \) or below it), so it covers every case; each case box opens with its assumption; and every step it leaves unwritten is of a kind that may be silent, for instance the \( \rulename{\forall E} \) instances of the school facts at the obvious terms, the conclusion \( x > 0 \) of case 1, which is left to the chain \( x \ge 1 > 0 \) of (4), the \( \rulename{\wedge I} \) behind (4), whose conjuncts are displayed, the \( \rulename{{=}E} \) of (7), and the closing of the \( \rulename{{\to}I} \) box, for which "which proves the claim" stands. Labeling also shows where the work is. The case split exists only because \( \abs{\cdot} \) is defined by cases (Chapter 1); the school fact \( -\abs{u} \le u \), used with \( u = x - 1 \), gives \( -1 < x - 1 \) in one step, and a proof written that way would have no \( \rulename{\vee E} \) at all.
 :::
 
 The second direction starts from a derivation whose premises are facts about integers.
@@ -105,11 +105,11 @@ $\begin{nd}
 :::
 
 ::: {.solution}
-> Every integer is even or odd, so we consider two cases. If \( n \) is even, then \( n(n + 1) \) has an even factor, and so it is even. If \( n \) is odd, then \( n + 1 \) is even, so again \( n(n + 1) \) has an even factor and is even. In either case \( n(n + 1) \) is even.
+> Every integer is even or odd, so we consider two cases. If \( n \) is even, then \( n(n + 1) \) has an even factor, and so it is even. If \( n \) is odd, then \( n + 1 \) is even, since an odd number plus one is even; so again \( n(n + 1) \) has an even factor and is even. In either case \( n(n + 1) \) is even.
 
 Compare the two. The paragraph keeps one sentence for each box and each rule that matters: line 1 becomes "we consider two cases", with its reason; the two boxes become the two "if" sentences; line 10 becomes "in either case". It drops the line numbers and the rule names, and it merges the two \( \rulename{{\to}E} \) steps of lines 8 and 9 into one sentence joined by "so". It never skips a box: the reader still sees both cases and sees them combined.
 
-By @def-silent-steps, the closing "in either case …" could be dropped at level 3; the split of line 1, with the reason it covers every integer, could not. The paragraph leaves the premises unproved. Each is one line of algebra (for instance, \( n = 2k \) gives \( n(n + 1) = 2\bigl(k(n + 1)\bigr) \)), and a careful write-up includes it.
+By @def-silent-steps, the closing "in either case …" could be dropped at level 3; the split of line 1, with the reason it covers every integer, could not. The paragraph leaves the premises unproved. Premises 2–4 are one line of algebra each (for instance, \( n = 2k \) gives \( n(n + 1) = 2\bigl(k(n + 1)\bigr) \)), and a careful write-up includes them; premise 1, that every integer is even or odd, is not, and Chapter 7 proves it.
 :::
 
 ## From the goal to prose
@@ -123,9 +123,9 @@ Let \( A \) and \( B \) be sets of real numbers with \( A \subseteq B \). Prove 
 :::
 
 ::: {.solution}
-*Steps 1 and 2: the goal in symbols, unwound.* Over the domain \( \nR \), "\( B \) is bounded above" is \( \exists M \; \forall b \in B \; (b \le M) \) (Section 4.8), and \( A \subseteq B \) is \( \forall x \in A \; (x \in B) \). The hypotheses are these two formulas; the goal is \( \exists M \; \forall a \in A \; (a \le M) \).
+*Steps 1 and 2: the goal in symbols, unwound.* Over the domain \( \nR \), "\( B \) is bounded above" is \( \exists M \; \forall b \in B \; (b \le M) \) (Section 4.8), and \( A \subseteq B \) is \( \forall x \in A \; (x \in B) \). The statement is an implication, so the derivation below is the inside of a \( \rulename{{\to}I} \) box: its assumption is the first formula (line 2), the hypothesis is the second, and its goal is \( \exists M \; \forall a \in A \; (a \le M) \).
 
-*Step 3: the skeleton.* The goal is an existential, so it is postponed: no witness is in sight yet. The hypothesis "\( B \) is bounded above" is an existential, so its \( \rulename{\exists E} \) box opens at once, with a fresh name \( M_0 \) and the assumption \( \forall b \in B \; (b \le M_0) \); the box's last line is the goal.
+*Step 3: the skeleton.* The goal is an existential, so it is postponed: no witness is in sight yet. The assumption "\( B \) is bounded above" (line 2) is an existential, so its \( \rulename{\exists E} \) box opens at once, with a fresh name \( M_0 \) and the assumption \( \forall b \in B \; (b \le M_0) \); the box's last line is the goal.
 
 *Step 4: filling the box.* Backwards: the goal needs a witness \( M \) and a proof of \( \forall a \in A \; (a \le M) \). The only bound in sight is \( M_0 \), so try it. Then the new goal is a bounded universal: a box "let \( a_0 \in A \)" whose last line is \( a_0 \le M_0 \). That line comes from the bound on \( B \), instantiated at \( a_0 \), which needs \( a_0 \in B \); and \( a_0 \in B \) comes from \( A \subseteq B \) instantiated at \( a_0 \). Forwards, the same lines in the order of the list are the derivation below (with the bounded rules of @prp-bounded-quantifier-rules; each bounded \( \rulename{\forall E} \) abbreviates a \( \rulename{\forall E} \) and a \( \rulename{{\to}E} \), and the bounded \( \rulename{\forall I} \) box a \( \rulename{\forall I} \) box with a \( \rulename{{\to}I} \) box inside).
 
@@ -149,20 +149,20 @@ $\begin{nd}
 \end{center}
 ```
 
-The side conditions hold: \( a_0 \) appears in no premise, not in line 7 and not in the open assumption on line 3; \( M_0 \) appears in no premise and not in line 9, and no assumption is open at line 9.
+The side conditions hold: \( a_0 \) appears in neither line 1 nor line 2, not in line 7 and not in the open assumption on line 3; \( M_0 \) appears in none of lines 1, 2 and 9.
 
-*Step 5: the constant.* The witness for the goal is the bound \( M_0 \). The search found it last (line 8 is where the postponed goal was finally met), and the page writes it first, in the sentence that chooses it. It depends on \( B \) only: its box is opened before the box of \( a_0 \), so it cannot depend on \( a_0 \), and it must not, because a single bound has to serve every element of \( A \).
+*Step 5: the constant.* The witness for the goal is the bound \( M_0 \). The search could choose it only once the \( \rulename{\exists E} \) box supplied \( M_0 \), and confirm it only at line 6; the page writes it first, in the sentence that chooses it. It depends on \( B \) only: its box is opened before the box of \( a_0 \), so it cannot depend on \( a_0 \), and it must not, because a single bound has to serve every element of \( A \).
 
 *Step 6: level 3.*
 
-> Suppose \( B \) is bounded above, and choose an upper bound \( M \) of \( B \). Let \( a \in A \). Since \( A \subseteq B \), we have \( a \in B \), and so \( a \le M \). Hence \( M \) is an upper bound of \( A \), and \( A \) is bounded above.
+> Suppose \( B \) is bounded above, and choose an upper bound \( M \) of \( B \) (depending on \( B \) only). Let \( a \in A \). Since \( A \subseteq B \), we have \( a \in B \), and so \( a \le M \). Hence \( M \) is an upper bound of \( A \), and \( A \) is bounded above.
 
-The two instances of \( \rulename{\forall E} \) (lines 5 and 6) are at the obvious term \( a \), and each appears only as the citation that licenses it ("since \( A \subseteq B \)", "so", which cites the choice of \( M \)). The closing of the \( \rulename{\forall I} \) box, "since \( a \) was arbitrary", is silent. Two steps that are never silent are on the page: the \( \rulename{\exists E} \) with its fresh name ("choose an upper bound \( M \)"), and the \( \rulename{\exists I} \) with its witness ("\( M \) is an upper bound of \( A \)").
+The two instances of \( \rulename{\forall E} \) (lines 5 and 6) are at the obvious term \( a \), and each appears only as the citation that licenses it ("since \( A \subseteq B \)", "so", which cites the choice of \( M \)). The closing of the \( \rulename{\forall I} \) box, "since \( a \) was arbitrary", is silent. Two steps that are never silent are on the page: the \( \rulename{\exists E} \) with its fresh name ("choose an upper bound \( M \)"), and the \( \rulename{\exists I} \) with its witness and dependence ("\( M \) is an upper bound of \( A \)"; "depending on \( B \) only"). "Suppose \( B \) is bounded above" opens the \( \rulename{{\to}I} \) box; its closing is silent.
 
 *Step 7: reread.* The order of the first two sentences matters. With "let \( a \in A \)" first and \( M \) chosen inside, the \( \rulename{\exists I} \) would fall inside the box of \( a_0 \), giving only \( \forall a \in A \; \exists M \; (a \le M) \), which says nothing.
 :::
 
-The example used each hypothesis exactly once: \( A \subseteq B \) at line 5 and the bound on \( B \) at line 6. The two warnings below concern steps 4 and 5.
+The example used \( A \subseteq B \) once, at line 5, and "\( B \) is bounded above" once, at line 9, by \( \rulename{\exists E} \), whose box assumption is used at line 6. The two warnings below concern steps 4 and 5.
 
 ::: {.warning}
 **The search is not the proof.** A page that reads "we want \( x^2 < 4 \); this holds if \( x < 2 \); so let \( x < 2 \)" has copied the search, and each "holds if" points backwards. A backward step can be false, and the page hides it: "\( x < 2 \) implies \( x^2 < 4 \)" fails at \( x = -3 \). In scratch work every backward step must be checked as an implication pointing forwards; on the page only the forward chain appears, each line citing lines above it.
@@ -203,7 +203,7 @@ Here is a proof.
 | (3) | @prp-de-morgan (a), \( \neg(P \vee Q) \vdash \neg P \wedge \neg Q \), applied to (2) |
 | (4) | \( \rulename{\wedge E} \) on (3), twice; \( \rulename{{\to}E} \) with the order fact "\( \neg(a > 1) \) implies \( a \le 1 \)", twice; then \( \rulename{\wedge I} \) |
 | (5) | \( \rulename{\wedge E} \) on (4), then \( \rulename{{\to}E} \) with "\( a \le 1 \) and \( b \le 1 \) imply \( a + b \le 2 \)" |
-| (6) | \( \rulename{\neg E} \) on (1) and (5), since \( x + y \le 2 \) is the negation of \( x + y > 2 \) |
+| (6) | \( \rulename{{\to}E} \) with the order fact "\( a \le 2 \) implies \( \neg(a > 2) \)" on (5), then \( \rulename{\neg E} \) on (1) and the result |
 | (7) | \( \rulename{RAA} \) on the box (2)–(6); then \( \rulename{{\to}I} \) on (1)–(7) |
 
 *(b)* Sentence (7) closes the \( \rulename{RAA} \) box: the box opened with the negation of the goal \( x > 1 \vee y > 1 \) and closes with the goal itself. Sentence (3) uses De Morgan's law (a), a direction derived without \( \rulename{RAA} \).
@@ -355,7 +355,7 @@ The only other admissible order swaps (x) and (ii), which use only \( \varepsilo
 
 Distractor (iii) claims that \( N_1 \) and \( N_2 \) serve every \( \varepsilon \) at once. They were chosen from \( \forall \varepsilon \, \exists N \), inside the box of \( \varepsilon \), so they depend on \( \varepsilon \) and serve only the \( \varepsilon \) they were chosen for; a uniform \( N \) would need \( \exists N \, \forall \varepsilon \), which the hypothesis does not give. This is the error that Section 5.6 catalogues as (N2). For \( a_n = 1/(n + 1) \), \( L = 0 \), no single \( N_1 \) serves every \( \varepsilon > 0 \): at \( \varepsilon = 1/(N_1 + 2) \) the term \( a_{N_1} = 1/(N_1 + 1) \) is too far from \( 0 \).
 
-Distractor (vii) applies the hypothesis at \( \varepsilon \) instead of \( \varepsilon/2 \). It is a legal step, but with it (and the matching \( N_2 \)) sentence (ix) would give \( \abs{(a_n + b_n) - (L + M)} < \varepsilon + \varepsilon = 2\varepsilon \), not \( < \varepsilon \), so (ix) would no longer follow. It is an \( \varepsilon \) of the wrong kind for the goal.
+Distractor (vii) applies the hypothesis at \( \varepsilon \) instead of \( \varepsilon/2 \). It is a legal step, but with it in place of (x), the bound in (ix) becomes \( \abs{(a_n + b_n) - (L + M)} < \varepsilon + \varepsilon/2 \), not \( < \varepsilon \), so (ix) would no longer follow. It is an \( \varepsilon \) of the wrong kind for the goal.
 :::
 
 ::: {#exr-writing-proofs-b3}
@@ -391,7 +391,7 @@ and its level-3 prose, with the closing sentence of the \( \rulename{\neg I} \) 
 :::
 
 ::: {.solution}
-*The move* is \( \rulename{\neg I} \): the box of line 4 assumed "\( x + y \) is rational" and reached \( \bot \) at line 7, so line 8 concludes its negation. It is the first face of "by contradiction" (Section 5.1), proof of a negative statement, and uses no classical rule: "irrational" means "not rational", so the goal of the inner box is a negation.
+*The move* is skeleton first: the blank is line 8, the line written after the \( \rulename{\neg I} \) box of lines 4–7 closes, a line the skeleton fixes before any arithmetic. That box assumed "\( x + y \) is rational" and reached \( \bot \) at line 7, so line 8 concludes its negation. It is the first face of "by contradiction" (Section 5.1), proof of a negative statement, and uses no classical rule: "irrational" means "not rational", so the goal of the outer box, line 8, is a negation, and the inner box is opened on \( x + y \in \nQ \) with goal \( \bot \).
 
 *Completion.* "Hence \( x + y \) is not rational, that is, \( x + y \) is irrational."
 
@@ -470,7 +470,7 @@ The rewrite begins: "Apply the definition of \( a_n \to L \) with \( \varepsilon
 \[
 M \coloneqq \max\{ \abs{a_0}, \abs{a_1}, \dots, \abs{a_{N-1}}, \abs{L} + 1 \},
 \]
-the largest of finitely many numbers, so it exists; it depends on \( N \) (when \( N = 0 \) the list is just \( \abs{L} + 1 \)). Let \( n \in \nN \). Either \( n < N \) or \( n \ge N \). If \( n < N \), then \( \abs{a_n} \) is in the list, so \( \abs{a_n} \le M \). If \( n \ge N \), then by the triangle inequality (@exm-triangle-inequality-cases)
+the largest of finitely many numbers, so it exists; it depends on \( N \) (when \( N = 0 \) the list is just \( \abs{L} + 1 \)). Let \( n \in \nN \). Either \( n < N \) or \( n \ge N \), since every natural number is one or the other. If \( n < N \), then \( \abs{a_n} \) is in the list, so \( \abs{a_n} \le M \). If \( n \ge N \), then by the triangle inequality (@exm-triangle-inequality-cases)
 \[
 \abs{a_n} = \abs{(a_n - L) + L} \le \abs{a_n - L} + \abs{L} < 1 + \abs{L} \le M .
 \]
@@ -481,29 +481,30 @@ The \( \rulename{\forall E} \) instance \( \varepsilon = 1 \) is named, because 
 **Marking scheme.** (10 points)
 - 3: (a) three genuine faults, each tied to a convention or an unwritten step (1 each).
 - 2: (b) applies the hypothesis at a named positive \( \varepsilon \) and chooses \( N \) from it.
-- 2: defines \( M \) as a maximum of finitely many numbers, before using it, covering the early terms and \( \abs{L} + \varepsilon \).
+- 2: defines \( M \) before using it, with its dependence on \( N \), bounding the early terms and \( \abs{L} + \varepsilon \) (a maximum or a sum).
 - 2: the two cases \( n < N \) and \( n \ge N \), the second by the triangle inequality, cited.
 - 1: ends with what was shown.
-Fatal errors (0 for the step): \( M \) chosen before \( N \) or as a maximum of infinitely many numbers; the early terms omitted.
+Fatal errors (0 for the step): \( M \) chosen before \( N \) or as a maximum or sum of infinitely many numbers; the early terms omitted.
 :::
 
 <!-- dependency ledger
-exm-subset-bounded-above (claim): (the procedure, steps 3-4) the search for a derivation is goal-directed and opening the goal's box loses nothing | Section 2.6, "The goal-directed steps lose nothing" (unlabeled; cited as Section 2.6)
-exm-subset-bounded-above (claim): (the procedure, step 5) a constant's dependencies are the names of the boxes open where it is chosen | Section 4.10, "Reading dependence off the boxes" (unlabeled; cited as Section 4.10)
+exm-subset-bounded-above (claim): (the procedure, steps 3-4) the search for a derivation is goal-directed and opening the goal's box loses nothing | Section 2.6, "The goal-directed steps lose nothing" (unlabeled)
+exm-subset-bounded-above (claim): (the procedure, step 5) a constant may depend only on the names of the boxes open where it is chosen, and depends on the names in the line it comes from | Section 4.10, "Reading dependence off the boxes" (unlabeled)
 exm-subset-bounded-above (claim): (the procedure, step 1) a letter not introduced in a theorem is read with "for every" | Section 4.1, "Hidden universal quantifiers" (unlabeled)
 exm-annotate-abs (solution): every real number is >= 1 or < 1; a >= b > c gives a > c; x < 1 gives x - 1 < 0; |a| = -a for a < 0; 1 - x < 1 gives x > 0; -|u| <= u | school algebra of order and absolute value (Chapter 1's allowed facts; ch11 prose pointer, nothing rests on it); checked by verify/ch05/exm-annotate-abs.py
-exm-write-from-derivation (example): every integer is even or odd; an even factor makes a product even; odd plus one is even | entered as premises of the derivation (school arithmetic; ch07 promised in STATUS for even/odd); checked by verify/ch05/exm-write-from-derivation.py
+exm-write-from-derivation (example): every integer is even or odd; an even factor makes a product even; odd plus one is even | entered as premises of the derivation (school arithmetic; even/odd: ch07 (promised; STATUS row 95)); checked by verify/ch05/exm-write-from-derivation.py
 exm-subset-bounded-above (solution): "bounded above" is exists M forall b in B (b <= M); A subseteq B is forall x in A (x in B) | Section 4.8 (exm-translate-limit (b) pattern) and Section 4.1's gloss of subset (prose); sets developed in Ch 6 (prose pointer)
 exm-subset-bounded-above (solution): the derivation with the bounded rules and its side conditions | prp-bounded-quantifier-rules (cited), def-rules-existential (Section 4.6); checked by tools/check_fitch.py
 exm-subset-bounded-above (claim): (the warning "The search is not the proof") x = -3 has x < 2 and x^2 = 9 >= 4 | arithmetic; checked by verify/ch05/exm-subset-bounded-above.py (warning values)
 exm-subset-bounded-above (claim): (the warning "A constant without its dependencies") delta = min(1, eps/(2|x| + 1)) proves only continuity; uniform continuity of x^2 on R is false | exm-square-not-uniform (cited)
-exr-writing-proofs-a1 (solution): not(a > 1) implies a <= 1; a <= 1 and b <= 1 give a + b <= 2 | school order facts (trichotomy, Ch 11 axioms; prose); checked by verify/ch05/exr-writing-proofs-a1.py
-exr-writing-proofs-a1 (solution): the three faces of "by contradiction" and the costume | Section 5.1 (blueprint section 01, the three faces subsection; prose pointer to an earlier section of this chapter)
+exr-writing-proofs-a1 (solution): not(a > 1) implies a <= 1; a <= 2 implies not(a > 2); a <= 1 and b <= 1 give a + b <= 2 | school order facts (trichotomy, Ch 11 axioms; prose); checked by verify/ch05/exr-writing-proofs-a1.py
+exr-writing-proofs-a1 (solution): the three faces of "by contradiction" and the costume | Section 5.1 (prose pointer)
 exr-writing-proofs-b1 (solution): 3(2k + 1) + 5 = 2(3k + 4); x^2 + 1 = 2x - 1 iff (x - 1)^2 + 1 = 0; squares are non-negative; x^3 - x = (x + 1)x(x - 1); a product is zero only if a factor is zero; (-1)^3 = -1 | school algebra (exm-product-zero gives only the converse direction of the product fact; the direction used is a school fact named in the item's hint); checked by verify/ch05/exr-writing-proofs-b1.py
+exr-writing-proofs-b1 (solution): integers closed under + and * (3k + 4 is an integer) | ch07 (promised): prp-integers-closed (STATUS row 95)
 exr-writing-proofs-b2 (solution): triangle inequality | exm-triangle-inequality-cases (cited)
-exr-writing-proofs-b2 (solution): the maximum of two natural numbers exists, and n >= max{N1, N2} gives n >= N1 and n >= N2; eps/2 + eps/2 = eps; for a_n = 1/(n + 1) no N1 serves eps = 1/(N1 + 2) | school arithmetic (finite max: ch07 promised in STATUS, "every non-empty finite set has a maximum"); checked by verify/ch05/exr-writing-proofs-b2.py
-exr-writing-proofs-b2 (solution): the error of distractor (iii) is (N2) of Section 5.6 | prose pointer to the next section; nothing rests on it
+exr-writing-proofs-b2 (solution): the maximum of two natural numbers exists, and n >= max{N1, N2} gives n >= N1 and n >= N2; eps/2 + eps/2 = eps; for a_n = 1/(n + 1) no N1 serves eps = 1/(N1 + 2) | school arithmetic; finite max: ch07 (promised; STATUS row 95); checked by verify/ch05/exr-writing-proofs-b2.py
+exr-writing-proofs-b2 (solution): the error of distractor (iii) is (N2) of Section 5.6 | prose pointer; nothing rests on it
 exr-writing-proofs-b3 (example): a difference of two rational numbers is rational | school algebra, stated in the skeleton as a cited fact
 exr-writing-proofs-c1 (solution): (2x + 3) - (2a + 3) = 2(x - a); |2u| = 2|u| | school algebra; exm-abs-product-cases (Ch 1) for |2u| = |2||u|; checked by verify/ch05/exr-writing-proofs-c1.py
-exr-writing-proofs-c2 (solution): a maximum of finitely many reals exists; every natural number is < N or >= N; |a_n| <= |a_n - L| + |L| | finite max and the order on N (ch07 promised in STATUS: "every non-empty finite set has a maximum"); exm-triangle-inequality-cases (cited); checked by verify/ch05/exr-writing-proofs-c2.py
+exr-writing-proofs-c2 (solution): a maximum of finitely many reals exists; every natural number is < N or >= N; |a_n| <= |a_n - L| + |L| | finite max and the order on N: ch07 (promised; STATUS row 95); exm-triangle-inequality-cases (cited); checked by verify/ch05/exr-writing-proofs-c2.py
 -->

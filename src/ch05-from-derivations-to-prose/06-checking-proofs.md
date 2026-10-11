@@ -4,14 +4,14 @@ A reader working alone must judge proofs, including their own, and is the person
 
 ## Two questions for every line
 
-A proof is correct when every line is licensed: by @def-derivation, each line is a premise (a hypothesis or a known fact), an assumption, or one rule applied to available lines. So checking a proof means asking two questions of every line, with the answers in two columns.
+A proof is correct when every line is licensed: by @def-derivation, each line is a premise (a hypothesis, a proved result or a true school fact), an assumption, or one rule applied to available lines. So checking a proof means asking two questions of every line, with the answers in two columns.
 
 - **Is it true?** Is the line correct whenever the hypotheses and the assumptions of the open boxes are true?
 - **Does it follow, and by which rule?** From which available lines, and by which rule?
 
 *The first column finds where to look; the second decides.*
 
-The two questions are different. A line can be **true and not follow**: a correct fact the proof has not earned. This is the dangerous case, because nothing about the line looks wrong. A line can also **follow and be false**. Then, since the rules never lead from true lines to a false one (@thm-soundness, @thm-first-order-soundness), some line it rests on is false in the same situation. If that line is the assumption of an open \( \rulename{\neg I} \) or \( \rulename{RAA} \) box, there is no error, since that assumption is meant to be false; otherwise, follow the false line back until the second column fails.
+The two questions are different. A line can be **true and not follow**: a correct fact the proof has not earned. This is the dangerous case, because nothing about the line looks wrong. A line can also **follow and be false**: false in a situation where the hypotheses and open assumptions are true. Since the rules never lead from true lines to a false one (@thm-soundness; Section 4.11 for predicate logic), some line it rests on, neither a hypothesis nor an open assumption, is false there too; follow it back until the second column fails. (Proof C's "\( 1 \) is even" is true given its box's assumption.)
 
 ::: {.check}
 A proof that \( n^2 \ge n \) for every integer \( n \) opens with the line "\( n^2 - n = n(n - 1) \ge 0 \)". Is the line true? Does it follow? Would the answers change if \( n \) ranged over the reals?
@@ -36,10 +36,10 @@ Each entry names the error, the rule it breaks and where that rule lives, and a 
 3. **Treating the name from \( \rulename{\exists E} \) as arbitrary.** Breaks the side condition of \( \rulename{\forall I} \): the witness appears in the open assumption of its box (@def-rules-existential, Section 4.6). Instance: "Some element of \( A \) is positive; let \( x \) be such an element. Since \( x \) was arbitrary, every element of \( A \) is positive." **False** for \( A = \{-1, 1\} \).
 4. **Reusing one witness name for two \( \rulename{\exists E} \)'s.** Breaks the fresh-name condition: the second name may not appear in an open assumption, and the first box's assumption mentions it (Section 4.6, @exm-sum-of-evens). Sibling boxes may share a name. Instance: "\( m \) and \( n \) are even, so \( m = 2k \) and \( n = 2k \) for an integer \( k \); hence \( m = n \)". **False:** \( m = 2 \), \( n = 4 \).
 5. **Proving the converse.** Breaks \( \rulename{{\to}I} \), whose box opens with the hypothesis, not the conclusion (@def-rules-implication, Section 1.5). Instance: "If \( x^2 > 1 \), then \( x > 1 \): suppose \( x > 1 \); then \( x^2 > x > 1 \)." **False:** \( x = -2 \). Argument B of Section 1.1 makes the same move with a **true** conclusion.
-6. **Affirming the consequent; denying the antecedent.** Not rules: \( P \to Q \) with \( Q \) gives no \( P \), and with \( \neg P \) gives no \( \neg Q \). Each pattern has a refuting row, so no derivation exists (@cor-refuting-row, Section 3.5): @exm-affirming-the-consequent, and for denying the row \( P \) false, \( Q \) true. Instances: "a multiple of \( 4 \) is even and \( 6 \) is even, so \( 6 \) is a multiple of \( 4 \)"; "… and \( 6 \) is not a multiple of \( 4 \), so \( 6 \) is not even". Both **false**.
+6. **Affirming the consequent; denying the antecedent.** Breaks @def-derivation (Section 1.5), being no rule: \( P \to Q \) with \( Q \) gives no \( P \), and with \( \neg P \) gives no \( \neg Q \). Each pattern has a refuting row, so no derivation exists (@cor-refuting-row, Section 3.5): @exm-affirming-the-consequent, and for denying the row \( P \) false, \( Q \) true. Instances: "a multiple of \( 4 \) is even and \( 6 \) is even, so \( 6 \) is a multiple of \( 4 \)"; "… and \( 6 \) is not a multiple of \( 4 \), so \( 6 \) is not even". Both **false**.
 7. **A missing case.** Breaks \( \rulename{\vee E} \), which needs one box for each disjunct (@def-rules-disjunction, Section 1.7). Instance: "\( \abs{x} > 0 \) for every real \( x \): every real \( x \) has \( x > 0 \), \( x = 0 \) or \( x < 0 \); if \( x > 0 \), \( \abs{x} = x > 0 \); if \( x < 0 \), \( \abs{x} = -x > 0 \)". **False:** the case \( x = 0 \) was dropped, and \( \abs{0} = 0 \).
 8. **Cases that do not exhaust.** Breaks \( \rulename{\vee E} \), whose first input must be a disjunction already derived (Section 1.7). Instance: "\( x^2 \ge x \) for every real \( x \): either \( x \ge 1 \) or \( x \le 0 \); in the first case \( x^2 = x \cdot x \ge x \), in the second \( x^2 \ge 0 \ge x \)". **False:** \( x = 1/2 \) satisfies neither case, and \( 1/4 < 1/2 \).
-9. **Citing a line that is not available:** the goal itself (circular reasoning), a result proved later, or a general "fact" neither proved nor a declared premise. Breaks @def-derivation: every line is a premise, an assumption, or a rule applied to available lines (Section 1.5). Instances: "if \( n^2 \) is even, then \( n \) is even: suppose \( n^2 \) is even; since \( n \) is even, …" (**true**, and circular); "\( x < 1 \), so \( x^2 < 1 \), since squaring preserves \( < \)" (**false:** \( x = -2 \)).
+9. **Citing a line that is not available:** the goal itself (circular reasoning), a result proved later, or a general "fact" neither proved nor a true school fact (a false "fact" never qualifies). Breaks @def-derivation: every line is a premise, an assumption, or a rule applied to available lines (Section 1.5). Instances: "if \( n^2 \) is even, then \( n \) is even: suppose \( n^2 \) is even; since \( n \) is even, …" (**true**, and circular); "\( x < 1 \), so \( x^2 < 1 \), since squaring preserves \( < \)" (**false:** \( x = -2 \)).
 10. **Using an assumption after its box has closed.** Breaks the scope rule of @def-derivation (Section 1.5). Instance: "Suppose \( n \) is even, say \( n = 2k \); then \( n^2 = 4k^2 \). Hence if \( n \) is even, \( 4 \mid n^2 \). Now \( n^2 = 4k^2 \), so \( 4 \mid n^2 \) for every integer \( n \)." **False:** \( n = 1 \). Proof D below makes the same move with a **true** conclusion.
 11. **A wrong negation.** An \( \rulename{RAA} \) box opened with a statement that is not the negation of the goal; a bound negated instead of a quantifier (@prp-bounded-quantifier-negation); the negation of \( \varphi \to \psi \) written as an implication, \( \neg\varphi \to \neg\psi \) or \( \varphi \to \neg\psi \), instead of \( \varphi \wedge \neg\psi \) (@prp-negated-implication). Breaks \( \rulename{RAA} \), which closes only a box opened with \( \neg\varphi \) (Section 2.5), or the laws of Section 4.9. Instances: "if \( x > 2 \), then \( x^2 > 4 \)" is "refuted" because "if \( x \le 2 \), then \( x^2 \le 4 \)" holds at \( x = 0 \) (**false**: both are true at \( x = 0 \), so one is not the negation of the other); "\( a_n = 0 \) does not converge to \( 0 \), since some \( \varepsilon \le 0 \) has \( \abs{a_n - 0} \ge \varepsilon \) for all \( n \)" (**false**).
 :::
@@ -78,7 +78,7 @@ Here are four short proofs as a student might write them; two are correct and tw
 | (2) | yes: \( (x - 1)(x - 2) = x^2 - 3x + 2 \) | \( \rulename{{=}E} \) with the algebraic identity |
 | (3) | yes | \( \rulename{{\to}E} \) with the stated fact about signs; a disjunction of two conjunctions |
 | (4) | yes, in this case | \( \rulename{\vee E} \), case 1: \( \rulename{\wedge E} \) gives \( x > 1 \) and \( x < 2 \) |
-| (5) | the case is impossible | \( \rulename{\vee E} \), case 2: \( x < 1 \) and \( x > 2 \) give \( 2 < x < 1 \), a clash (\( \rulename{\neg E} \)); the case reaches \( 1 < x < 2 \) by \( \rulename{\bot E} \) |
+| (5) | the case is impossible | \( \rulename{\vee E} \), case 2: \( x > 2 \) and \( x < 1 \) give \( 2 < 1 \), which clashes with \( \neg(2 < 1) \) (\( \rulename{\neg E} \)); the case reaches \( 1 < x < 2 \) by \( \rulename{\bot E} \) |
 | (6) | yes | \( \rulename{\vee E} \) on (3), (4), (5); then \( \rulename{{\to}I} \) on (1)–(6) |
 
 **Verdict: correct.** The disjunction of line (3) is derived from a stated fact, so the cases exhaust and (N8) does not apply. Line (5) is the one to look at twice: "which is impossible" is \( \rulename{\bot E} \), which lets a case that cannot occur reach the goal, so that \( \rulename{\vee E} \) can combine the cases. By @def-silent-steps it could be silent, since the clash is stated.
@@ -120,7 +120,7 @@ Here are four short proofs as a student might write them; two are correct and tw
 | (3) | yes, given (2) | \( \rulename{{\to}E} \) with @thm-square-even-implies-even and (2); then \( \rulename{\exists E} \) with a fresh \( m \) |
 | (4) | yes, given (1) and (3) | algebra: subtract \( 4k \), divide by \( 2 \) |
 | (5) | yes, given (4) | \( \rulename{\exists I} \) with witness \( m^2 - k \), an integer |
-| (6) | yes | \( \rulename{\neg E} \): (5) against "\( 1 \) is not even" |
+| (6) | yes | \( \rulename{\wedge I} \) of (5) and "\( 1 \) is odd", then \( \rulename{\neg E} \) against "no integer is both even and odd" |
 | (7) | yes | \( \rulename{\neg I} \) on the box (1)–(6) |
 
 **Verdict: correct.** The goal is a negation, and the \( \rulename{\neg I} \) box opens with the positive statement: a proof "by contradiction" of face (i) of Section 5.1, with no \( \rulename{RAA} \). The witness names \( k \) and \( m \) differ, as (N4) requires.
@@ -179,7 +179,7 @@ Each line below comes from a proof. Name the catalogue entry of @exm-not-allowed
 
 *(c)* (N5): the \( \rulename{{\to}I} \) box opens with the conclusion, so it proves the converse, which every function satisfies.
 
-*(d)* (N11): the negation of \( x \ge 0 \) is \( x < 0 \), not \( x \le 0 \), so \( \rulename{RAA} \) cannot close this box with \( x \ge 0 \). Closed by \( \rulename{\neg I} \) it would give \( x > 0 \), false when \( x = 0 \).
+*(d)* (N11): the negation of \( x \ge 0 \) is \( x < 0 \), not \( x \le 0 \), so \( \rulename{RAA} \) cannot close this box with \( x \ge 0 \). Closed by \( \rulename{\neg I} \) it proves \( x > 0 \), more than the goal, so it closes only if the hypotheses exclude \( x = 0 \).
 
 *(e)* (N6), affirming the consequent; \( n = 4 \) is even and not divisible by \( 6 \).
 
@@ -209,7 +209,7 @@ Check each proof in two columns. For a wrong proof, name the first line that fai
 | (3) | yes | algebra, \( \rulename{{=}E} \) in a chain |
 | (4) | yes | \( \rulename{\exists I} \) with the witness \( k + l + 1 \); then the boxes close, and \( \rulename{{\to}I} \) |
 
-**Verdict: correct.** In (2) the second witness has a new name, as (N4) requires.
+**Verdict: correct.** In (2) the second witness has a new name, as (N4) of @exm-not-allowed-catalogue requires.
 
 *(ii)*
 
@@ -235,7 +235,7 @@ Find the error in the following proof, name its catalogue entry, and decide whet
 :::
 
 ::: {.solution}
-Line (2) fails. Its disjunction is not derived, and it is false when \( x \) and \( y \) have opposite signs, so line (5) combines cases that do not exhaust: entry (N8). (Read as a split on the signs of \( x \) and \( y \), the proof drops the two mixed cases, entry (N7); either diagnosis is correct.) Lines (3) and (4) are correct in their cases.
+Line (2) fails. Its disjunction is not derived, and it is false when \( x \) and \( y \) have opposite signs, so line (5) combines cases that do not exhaust: entry (N8) of @exm-not-allowed-catalogue. Lines (3) and (4) are correct in their cases.
 
 The claim is **false**: for \( x = 1 \), \( y = -1 \), \( \abs{x} + \abs{y} = 2 \) and \( \abs{x + y} = 0 \); this pair satisfies neither case of line (2). What is true is \( \abs{x + y} \le \abs{x} + \abs{y} \) (@exm-triangle-inequality-cases).
 :::
@@ -284,7 +284,7 @@ The rest is blank. *Name the move, then complete it.* Say which skeleton lines y
 ::: {.solution}
 [Hint 1]
 
-The given sentences carry lines 3–6. What is left is the box of \( x_0 \) and the witness.
+What is left is the box of \( x_0 \) and the witness.
 :::
 
 ::: {.solution}
@@ -294,20 +294,21 @@ The given sentences carry lines 3–6. What is left is the box of \( x_0 \) and 
 :::
 
 ::: {.solution}
-*The move:* apply a hypothesis at a constant chosen to fit the goal: \( \rulename{\forall E} \) at the non-obvious instance \( \varepsilon = f(a)/2 \) (line 4), \( \rulename{\exists E} \) on the \( \delta \) it supplies (line 5), and then that same \( \delta \) as the witness of the goal's \( \rulename{\exists I} \) (line 13).
+*The move:* skeleton first: the goal fixes the \( \rulename{\exists I} \) of line 13 and the box of \( x_0 \). Filling it: \( \rulename{\forall E} \) at the non-obvious instance \( \varepsilon = f(a)/2 \) (line 4), \( \rulename{\exists E} \) on its \( \delta \) (line 5), and that \( \delta \) as the witness.
 
 *Completion.*
 
-> Let \( x \) be a real number with \( \abs{x - a} < \delta \). Then \( \abs{f(x) - f(a)} < f(a)/2 \), so \( f(x) - f(a) > -f(a)/2 \), that is, \( f(x) > f(a)/2 > 0 \). So this \( \delta \) is as required.
+> Let \( x \) be a real number with \( \abs{x - a} < \delta \). Then \( \abs{f(x) - f(a)} < f(a)/2 \), so, as \( -\abs{u} \le u \), \( f(x) - f(a) > -f(a)/2 \), that is, \( f(x) > f(a)/2 > 0 \). So this \( \delta \), which depends only on \( a \), is as required.
 
 "Let \( x \) … with \( \abs{x - a} < \delta \)" opens the two boxes at line 7; "then \( \abs{f(x) - f(a)} < f(a)/2 \)" is lines 8–9, the \( \rulename{\forall E} \) at the obvious term \( x \) silent; "so … \( f(x) > f(a)/2 > 0 \)" is line 10, which uses line 2. Lines 11 and 12 are silent closings, and the last sentence is lines 13–14, with the \( \delta \) already chosen as witness. It depends on \( a \) (through \( f(a) \) and the continuity at \( a \)) and on no \( x \): the box of \( \delta_0 \) encloses the box of \( x_0 \).
 
 **Marking scheme.** (10 points)
-- 2: names the move (a hypothesis applied at a chosen \( \varepsilon \), then its \( \delta \) reused as the witness), or the rules \( \rulename{\forall E} \), \( \rulename{\exists E} \), \( \rulename{\exists I} \).
+- 2: names the move (skeleton first; a hypothesis applied at a chosen \( \varepsilon \), then its \( \delta \) reused as the witness), or the rules \( \rulename{\forall E} \), \( \rulename{\exists E} \), \( \rulename{\exists I} \).
 - 3: for an arbitrary \( x \) with \( \abs{x - a} < \delta \), derives \( f(x) > f(a)/2 \), with the step from \( \abs{u} < r \) to \( u > -r \) justified.
 - 2: concludes \( f(x) > 0 \) using \( f(a) > 0 \), and states the conclusion with \( \delta \) before \( x \).
 - 2: matches the sentences to the skeleton's lines.
 - 1: says \( \delta \) depends on \( a \) and not on \( x \).
+Second route: refuting \( f(x) \le 0 \) by \( \abs{f(x) - f(a)} \ge f(a) - f(x) \ge f(a) > f(a)/2 \) earns the second line and the \( f(x) > 0 \) part of the third.
 Fatal errors (0 for the step): choosing \( \delta \) after \( x \); applying continuity at an \( \varepsilon \) not shown to be positive.
 :::
 
@@ -322,7 +323,7 @@ Here is a proof that \( \sqrt 2 + \sqrt 3 \) is irrational, a true conclusion. F
 ::: {.solution}
 [Hint 1]
 
-Run the second column on line (4). Which earlier line, premise or proved result says what it says?
+Run the second column on every line.
 :::
 
 ::: {.solution}
@@ -332,7 +333,7 @@ For a correct proof, isolate \( \sqrt 3 = r - \sqrt 2 \) before squaring.
 :::
 
 ::: {.solution}
-*The failing line is (4).* Its first half is true, \( \sqrt 6 = \sqrt 2 \cdot \sqrt 3 \), but its reason is not available. "A product of two irrational numbers is irrational" is a general "fact" that is neither proved nor a declared premise, so the line cites nothing: entry (N9). Worse, the "fact" is false: \( \sqrt 2 \) is irrational (@thm-sqrt2-irrational), and \( \sqrt 2 \cdot \sqrt 2 = 2 \) is rational. That is a counterexample to the illegal step; there is none to the conclusion, which is true. Lines (1)–(3) and (5), and the \( \rulename{\neg I} \) skeleton, are correct.
+*The failing line is (4).* Its first half is true, \( \sqrt 6 = \sqrt 2 \cdot \sqrt 3 \), but its reason is not available. "A product of two irrational numbers is irrational" is neither proved nor a school fact: it is false, since \( \sqrt 2 \) is irrational (@thm-sqrt2-irrational), and \( \sqrt 2 \cdot \sqrt 2 = 2 \) is rational. So the line cites nothing: entry (N9) of @exm-not-allowed-catalogue. The product \( \sqrt 2 \cdot \sqrt 2 = 2 \) is a counterexample to the illegal step; there is none to the conclusion, which is true. Lines (1)–(3) and (5), and the \( \rulename{\neg I} \) skeleton, are correct.
 
 *A correct proof.* Suppose \( \sqrt 2 + \sqrt 3 = r \) with \( r \) rational. Then \( r > 0 \), since both square roots are positive. Isolating, \( \sqrt 3 = r - \sqrt 2 \), and squaring,
 \[
@@ -344,7 +345,7 @@ where dividing by \( 2r \) is legitimate because \( r > 0 \). The right-hand sid
 - 3: names line (4) as the failing line, and the illegal step as the unproved general "fact", entry (N9).
 - 2: a counterexample to that step (\( \sqrt 2 \cdot \sqrt 2 = 2 \), or another product of two irrationals that is rational).
 - 1: says the conclusion is true, so no counterexample to it exists.
-- 4: a correct proof: the \( \rulename{\neg I} \) box on "\( r \) rational", the algebra, the division justified by \( r \ne 0 \), and the clash with @thm-sqrt2-irrational (or a proof that \( \sqrt 6 \) is irrational).
+- 4: a correct proof: the \( \rulename{\neg I} \) box on "\( r \) rational", the algebra, the division justified by \( r \ne 0 \), and the clash with @thm-sqrt2-irrational (or with \( \sqrt 3 \) or \( \sqrt 6 \), its irrationality proved).
 Fatal errors (0 for the step): "correcting" line (4) by another unproved fact; dividing by \( r \) without \( r \ne 0 \).
 :::
 
@@ -376,11 +377,11 @@ In (1), ask which boxes are open when the second \( k \) is chosen. In (3), ask 
 ::: {.solution}
 *(1)* **Correct.** The skeleton is \( \rulename{\forall I} \) and \( \rulename{{\to}I} \), then \( \rulename{\vee E} \) on the hypothesis itself, so the cases exhaust. The delicate step is the second "choose an integer \( k \)", an \( \rulename{\exists E} \) reusing a name. It is legal: the first box of \( k \) lies inside Case 1, which closed before Case 2 opened, so \( k \) appears in no open assumption, not in the existential and not in the conclusion. Sibling boxes may share a name (Section 4.6); (N4) forbids only a name still in use.
 
-*(2)* **Wrong; line (2) fails; entry (N4).** The second witness is named \( k \) while the box of \( m = 2k \) is open. Counterexample to the step: \( m = 2 \), \( n = 4 \); no integer \( k \) has \( 2 = 2k \) and \( 4 = 2k \). The conclusion is true: with \( m = 2k \) and \( n = 2l \), \( mn = 4kl \).
+*(2)* **Wrong; line (2) fails; entry (N4) of @exm-not-allowed-catalogue.** The second witness is named \( k \) while the box of \( m = 2k \) is open. Counterexample to the step: \( m = 2 \), \( n = 4 \); no integer \( k \) has \( 2 = 2k \) and \( 4 = 2k \). The conclusion is true: with \( m = 2k \) and \( n = 2l \), \( mn = 4kl \).
 
 *(3)* **Wrong; line (1) fails; entry (N8).** "Either \( x \ge 1 \) or \( x \le 0 \)" is not derived, and is false at \( x = 1/2 \), a counterexample to the step. The conclusion is true; the missing case repairs the proof: if \( 0 < x < 1 \), then \( \abs{x - 1} = 1 - x < 1 < \abs{x} + 1 \).
 
-*(4)* **Wrong; line (2) fails; entry (N9); the claim is false.** Canceling uses the "fact" "if \( ax = bx \), then \( a = b \)", which is neither proved nor a premise, and is false: \( a = 1 \), \( b = 2 \), \( x = 0 \). It needs \( x \ne 0 \), which no line provides. The claim fails at \( x = 0 \); what is true is "\( x = 0 \) or \( x = 2 \)", from \( x(x - 2) = 0 \).
+*(4)* **Wrong; line (2) fails; entry (N9); the claim is false.** Canceling uses the "fact" "if \( ax = bx \), then \( a = b \)", which is neither proved nor a school fact, and is false: \( a = 1 \), \( b = 2 \), \( x = 0 \). It needs \( x \ne 0 \), which no line provides. The claim fails at \( x = 0 \); what is true is "\( x = 0 \) or \( x = 2 \)", from \( x(x - 2) = 0 \).
 
 **Marking scheme.** (10 points: 2.5 per proof)
 - For each of (2), (3), (4): the verdict "wrong" (1); the failing line and its entry, (N4), (N8), (N9) (1); a counterexample to the illegal step (0.5).
@@ -389,7 +390,7 @@ For (4), "\( \rulename{{\to}E} \) without its antecedent \( x \ne 0 \)" is also 
 :::
 
 <!-- dependency ledger
-exm-not-allowed-catalogue (claim): (the section's opening, "Two questions") rules never lead from true lines to a false one | thm-soundness, thm-first-order-soundness (cited)
+exm-not-allowed-catalogue (claim): (the section's opening, "Two questions") rules never lead from true lines to a false one | thm-soundness (cited); Section 4.11's statement (from-counter-models-to-non-derivability; its proof in Section 4.12, optional)
 exm-not-allowed-catalogue (claim): (the Quick check after "Two questions") for integers n(n - 1) >= 0 since no integer lies strictly between 0 and 1; at n = 1/2 the product is -1/4 | school arithmetic of Z (ch07 promised in STATUS: "nothing between n and n + 1"); checked by verify/ch05/exm-not-allowed-catalogue.py
 exm-not-allowed-catalogue (example): (N1) n^2 - n + 11 prime for n = 0..10 with the listed values, 121 = 11^2 at n = 11 | arithmetic; checked by verify/ch05/exm-not-allowed-catalogue.py
 exm-not-allowed-catalogue (example): (N2) x^2 not uniformly continuous on R | exm-square-not-uniform (cited)
@@ -398,15 +399,15 @@ exm-not-allowed-catalogue (example): (N4) sibling boxes may share a witness name
 exm-not-allowed-catalogue (example): (N6) the denying-the-antecedent pattern P -> Q, not P |- not Q has a refuting row (P false, Q true) | inline (one row, by def-truth-value); cor-refuting-row (cited); exm-affirming-the-consequent (cited) covers affirming
 exm-not-allowed-catalogue (claim): Argument B of Section 1.1; Section 4.4's list of forall-I errors; the warnings of Section 4.9 | prose pointers to earlier sections (unlabeled passages)
 exm-not-allowed-catalogue (solution): (the Quick check on N2) a finite set of natural numbers has a maximum | ch07 (promised; STATUS row "every non-empty finite set has a maximum")
-exm-verify-cases (solution): (x - 1)(x - 2) = x^2 - 3x + 2; a product of two reals is negative only if the factors have opposite signs; x < 1 and x > 2 clash | school algebra; checked by verify/ch05/exm-verify-cases.py
+exm-verify-cases (solution): (x - 1)(x - 2) = x^2 - 3x + 2; a product of two reals is negative only if the factors have opposite signs; x > 2, x < 1 give 2 < 1, not(2 < 1) | school algebra; checked by verify/ch05/exm-verify-cases.py
 exm-verify-converse (solution): n = 2k gives n^2 = 2(2k^2); the row P false, Q true refutes P -> Q |- Q -> P; x = -2 for the converse of x > 1 -> x^2 > 1 | inline row (def-truth-value); cor-refuting-row (cited); checked by verify/ch05/exm-verify-converse.py
 exm-verify-negation (solution): 1 is odd; no integer is both even and odd; m^2 - k is an integer; 2 != 0 | school arithmetic (ch07 promised in STATUS: even or odd, not both); checked by verify/ch05/exm-verify-negation.py
 exm-verify-scope (solution): multiplying by a positive number keeps >; x^2 - x + 1 = (x - 1/2)^2 + 3/4 > 0; at x = 1/2, x^2 < x | school algebra; checked by verify/ch05/exm-verify-scope.py
-exr-checking-proofs-a1 (solution): 3^n > n^2 for n = 0..4; A = {0, 1}, f(x) = x; n = 4 even, not divisible by 6 | arithmetic; checked by verify/ch05/exr-checking-proofs-a1.py
-exr-checking-proofs-b1 (solution): (2k + 1) + (2l + 1) = 2(k + l + 1); x > 1 gives x^2 > x; x >= 1 gives x^2 >= x >= 1; x = 1 | school algebra; checked by verify/ch05/exr-checking-proofs-b1.py
+exr-checking-proofs-a1 (solution): 3^n > n^2 for n = 0..4; A = {0, 1}, f(x) = x; n = 4 even, not divisible by 6; not(x >= 0) iff x < 0 | arithmetic; trichotomy; checked by verify/ch05/exr-checking-proofs-a1.py
+exr-checking-proofs-b1 (solution): (2k + 1) + (2l + 1) = 2(k + l + 1); x > 1 gives x^2 > x; x >= 1 gives x^2 >= x >= 1; x = 1; not(x < 1) iff x >= 1 | school algebra; trichotomy; checked by verify/ch05/exr-checking-proofs-b1.py
 exr-checking-proofs-b2 (solution): x = 1, y = -1 gives |x| + |y| = 2, |x + y| = 0; lines (3), (4) correct in their cases | arithmetic, school algebra of absolute value; exm-triangle-inequality-cases (cited) for the inequality; checked by verify/ch05/exr-checking-proofs-b2.py
-exr-checking-proofs-c1 (solution): |u| < r gives u > -r; f(a) - f(a)/2 = f(a)/2 > 0 | school algebra of absolute value; checked by verify/ch05/exr-checking-proofs-c1.py
+exr-checking-proofs-c1 (solution): -|u| <= u; |u| < r gives u > -r; f(a) - f(a)/2 = f(a)/2 > 0; f(x) <= 0 gives |f(x) - f(a)| >= f(a) > f(a)/2 | school algebra of absolute value; checked by verify/ch05/exr-checking-proofs-c1.py
 exr-checking-proofs-c1 (example): continuity at a used only as a quantifier pattern | exm-translate-limit (c) (Section 4.8)
 exr-checking-proofs-c2 (solution): (sqrt2 + sqrt3)^2 = 5 + 2 sqrt6; sqrt6 = sqrt2 sqrt3; sqrt2 sqrt2 = 2; 3 = r^2 - 2r sqrt2 + 2 gives sqrt2 = (r^2 - 1)/(2r); r > 0; rationals closed under +, -, x, / by non-zero | school algebra of square roots (a school fact before thm-nth-root, per NOTATION) and of Q; thm-sqrt2-irrational (cited); checked by verify/ch05/exr-checking-proofs-c2.py
-exr-checking-proofs-c3 (solution): n = 4k = 2(2k), n = 6k = 2(3k); m = 2k, n = 2l give mn = 4kl; x = 1/2 for (3) and the case 0 < x < 1; x = 0 for (4); x(x - 2) = 0 | school algebra; Section 4.6 (sibling boxes); checked by verify/ch05/exr-checking-proofs-c3.py
+exr-checking-proofs-c3 (solution): n = 4k = 2(2k), n = 6k = 2(3k); m = 2k, n = 2l give mn = 4kl; x = 1/2 for (3) and the case 0 < x < 1; x = 0 for (4); x(x - 2) = 0 | school algebra; trichotomy; Section 4.6 (sibling boxes); checked by verify/ch05/exr-checking-proofs-c3.py
 -->

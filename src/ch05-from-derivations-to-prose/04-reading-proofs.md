@@ -10,7 +10,7 @@ The first asked, at each line, *what makes this true?* and answered by pointing:
 
 *To self-explain a line is to name its warrant: the earlier lines, definitions and results it comes from, and the rule that gets it from them.*
 
-The answer has the shape of a justification column in a derivation. In Part 0 that column was printed beside every line. In level-3 prose it is gone, and self-explanation is the reader writing it back in, at level 1 or 2 of @def-levels-of-proof, one line at a time.
+The answer has the shape of a justification column in a derivation. In the derivations of Chapters 1–4 that column was printed beside every line. In level-3 prose it is gone, and self-explanation is the reader writing it back in, at level 1 or 2 of @def-levels-of-proof, one line at a time.
 
 ## The training passage
 
@@ -48,7 +48,7 @@ Self-explain each line of the proof.
 - *Line 4:* rearranging gives the answer.
 :::
 
-Both explanations follow the proof faithfully, and the second is not even wrong everywhere; it is shorter, and every sentence in it describes what happened. But compare what each one did with line 3. The first says *why* the inequality survives the division, and in saying it, finds the one place where the hypothesis \( x > 0 \) earns its keep. The second says "it still works", which is a description of the outcome, not a reason.
+Both explanations follow the order of the proof, and the second is not even wrong everywhere; it is shorter, and every sentence after the first describes what happened (the first we return to below). But compare what each one did with line 3. The first says *why* the inequality survives the division, and in saying it, finds the one place where the hypothesis \( x > 0 \) earns its keep. The second says "it still works", which is a description of the outcome, not a reason.
 
 The difference shows as soon as the proof is wrong. Change the claim to "for every real \( x \ne 0 \), \( x + 1/x \ge 2 \)", and keep all four lines. The bad explanation reads the new proof exactly as happily as the old one: we start with a square, multiply out, divide by \( x \) and it still works, rearrange. The good explanation stops at line 3. It needs "the inequality keeps its direction because \( x > 0 \)", and the hypothesis now says only \( x \ne 0 \); for negative \( x \), division by \( x \) reverses the inequality, and line 3 does not follow. The claim is in fact false: at \( x = -1 \), \( x + 1/x = -2 < 2 \). A reader who explains warrants finds the gap; a reader who paraphrases cannot, because a paraphrase of a wrong step reads exactly like a paraphrase of a right one.
 
@@ -68,7 +68,7 @@ For each line, ask four questions, in this order.
 You do not need to write out a derivation; a phrase per line is enough, at the level of the "explained well" column above. When you cannot answer one of the four questions, you have found what to look at: either a step you do not yet understand, or a gap in the proof. Section 5.3 says what to do next: expand that stretch to level 1.
 
 ::: {.warning}
-**Self-explanation is not re-reading, and not summarizing.** Reading a proof twice more makes it familiar, not checked: familiarity is what makes the bad explanation of @exm-self-explanation feel adequate. A summary ("the proof completes the square and divides") is useful afterwards, but it skips exactly the lines where the warrant matters, such as the division by \( x \). Self-explanation is local and backward-looking: each line, against what came before it.
+**Self-explanation is not re-reading, and not summarizing.** Reading a proof twice more makes it familiar, not checked: familiarity is what makes the bad explanation of @exm-self-explanation feel adequate. A summary ("the proof expands a square and divides by \( x \)") is useful afterwards, but it skips exactly the warrants that matter, such as why the division by \( x \) is allowed and keeps the inequality's direction. Self-explanation is local and backward-looking: each line, against what came before it.
 :::
 
 ::: {.check}
@@ -106,11 +106,11 @@ x + y - 2\sqrt{xy} = (\sqrt x - \sqrt y)^2 \ge 0 .
 \]
 Hence \( 2\sqrt{xy} \le x + y \), and dividing by \( 2 \) gives the claim.
 
-1. **Try it first.** Before reading the proof, spend a few minutes on the claim yourself. A natural attempt squares both sides: \( xy \le (x + y)^2/4 \) is \( 4xy \le x^2 + 2xy + y^2 \), that is, \( 0 \le (x - y)^2 \), which is true. Already you know what the difficulty is (the square root) and what any proof must somehow use (that a square is at least \( 0 \)).
-2. **Identify the framework.** Find the skeleton, level 1 of @def-levels-of-proof. Here: a hidden \( \rulename{\forall I} \) on \( x \) and \( y \) with the bounds \( x > 0 \), \( y > 0 \), then a direct chain. There is no case split, no contradiction, and no chosen witness. Knowing that tells you where to look: every line is a computation, so every warrant is an algebraic fact.
-3. **Break it into sub-proofs.** The proof has one claim inside it, the displayed identity, and then a short finish. A claim inside a proof is a cut (@lem-weakening-cut (b)): it is proved once and then used. Read the claim on its own: it needs \( \sqrt{xy} = \sqrt x \sqrt y \) (true for \( x, y \ge 0 \)) and \( (\sqrt x)^2 = x \).
+1. **Try it first.** Before reading the proof, spend a few minutes on the claim yourself. A natural attempt squares both sides: \( xy \le (x + y)^2/4 \) is \( 4xy \le x^2 + 2xy + y^2 \), that is, \( 0 \le (x - y)^2 \), which is true. Already you know what the difficulty is (the square root) and what your attempt rests on (that a square is at least \( 0 \)).
+2. **Identify the framework.** Find the skeleton, level 1 of @def-levels-of-proof. Here: a bounded \( \rulename{\forall I} \) on \( x \) and \( y \) (opened by "Let", closed silently) with the bounds \( x > 0 \), \( y > 0 \), then a direct chain. There is no case split, no contradiction, and no chosen witness. Knowing that tells you where to look: every line is a computation, so every warrant is an algebraic fact.
+3. **Break it into sub-proofs.** The proof has one claim inside it, the displayed identity, and then a short finish. A claim inside a proof is a cut (the cut row of Section 5.2's dictionary): it is proved once and then used. Here the claim is proved inside the box on \( x \) and \( y \), so it is simply a line that later lines of the box may cite (@def-derivation); @lem-weakening-cut (b) is the same move for sequents proved outside every box. Read the claim on its own: it needs \( \sqrt{xy} = \sqrt x \sqrt y \) (true for \( x, y \ge 0 \)) and \( (\sqrt x)^2 = x \).
 4. **Illustrate a hard line with an example.** If the identity is not clear, try numbers. With \( x = 1 \) and \( y = 4 \): the left side is \( 1 + 4 - 2 \cdot 2 = 1 \), the right side \( (1 - 2)^2 = 1 \). An example checks nothing in general, but it shows what the line claims.
-5. **Compare with your own attempt.** Your squaring route proves the claim too, and it hides a warrant the given proof avoids: passing back from \( xy \le (x + y)^2/4 \) to \( \sqrt{xy} \le (x + y)/2 \) needs both sides to be non-negative, since squaring preserves order only for non-negative numbers. Comparing the two routes shows why the given proof introduces \( \sqrt x \) and \( \sqrt y \): it never has to undo a squaring. The comparison also links this claim to @exm-self-explanation: put \( y = 1/x \), and \( \sqrt{xy} = 1 \), so the claim becomes \( x + 1/x \ge 2 \).
+5. **Compare with your own attempt.** Your squaring route proves the claim too, and it hides a warrant the given proof avoids: passing back from \( xy \le (x + y)^2/4 \) to \( \sqrt{xy} \le (x + y)/2 \) uses the converse of "squaring preserves order": from \( a^2 \le b^2 \) conclude \( a \le b \). This holds when \( b \ge 0 \), because then \( \abs{a} \le b \); here \( b = (x + y)/2 > 0 \). Without that hypothesis it fails: \( a = 1 \), \( b = -2 \). Comparing the two routes shows why the given proof introduces \( \sqrt x \) and \( \sqrt y \): it never has to undo a squaring. The comparison also links this claim to @exm-self-explanation: put \( y = 1/x \), and \( \sqrt{xy} = 1 \), so the claim becomes \( x + 1/x \ge 2 \).
 
 The five strategies work at the level of the whole proof and self-explanation at the level of the line, and they support each other. Trying first tells you which line will be the hard one; the framework tells you which boxes are open at each line, which is what the fourth question of self-explanation needs.
 
@@ -172,17 +172,17 @@ Self-explain each line, citing labels where a line uses an earlier result. Say a
 :::
 
 ::: {.solution}
-*(1)* A cut: the goal "\( f \) is not uniformly continuous" is replaced by the displayed formula, and the proof then proves the formula. The formula is the positive form of the negation of uniform continuity, @exm-negating-definitions (c), read with \( A = \nR \); there the two are shown interderivable, by @prp-bounded-quantifier-negation, @prp-negated-implication and the order fact \( \neg(u < \varepsilon) \) iff \( u \ge \varepsilon \). The direction used here is from the displayed formula to the negation. The bounds can be dropped because a bounded quantifier \( \exists x \in \nR \) abbreviates \( \exists x\, (x \in \nR \wedge \dots) \), and over the domain \( \nR \) the conjunct \( x \in \nR \) always holds.
+*(1)* A cut: the goal "\( f \) is not uniformly continuous" is replaced by the displayed formula, and the proof then proves the formula. The formula is the positive form of the negation of uniform continuity, @exm-negating-definitions (c), read with \( A = \nR \); there the two are shown interderivable, by @prp-bounded-quantifier-negation, @prp-negated-implication and the order fact \( \neg(u < \varepsilon) \) iff \( u \ge \varepsilon \). The direction used here is from the displayed formula to the negation. The bounds can be dropped because a bounded quantifier \( \exists x \in \nR \) abbreviates \( \exists x\, (x \in \nR \wedge \dots) \) (@def-bounded-quantifier), and over the domain \( \nR \) the conjunct \( x \in \nR \) always holds.
 
 *(2)* The witness for \( \exists \varepsilon > 0 \): a bounded \( \rulename{\exists I} \) at the term \( 1 \), with its bound \( 1 > 0 \). It is written first, but as a rule it is applied last: the instance it needs, the formula after \( \exists \varepsilon > 0 \) with \( 1 \) for \( \varepsilon \), is what lines (3)–(6) prove.
 
-*(3)* "Let \( \delta > 0 \) be arbitrary" opens a bounded \( \rulename{\forall I} \) box for \( \delta \) with the assumption \( \delta > 0 \). The terms \( 1/\delta \) and \( 1/\delta + \delta/2 \) are the witnesses for \( \exists x \) and \( \exists y \) (two \( \rulename{\exists I} \), applied at the end of the box). They may mention \( \delta \) because \( \delta \)'s box is open; the clause "which depend on \( \delta \)" records this. The term \( 1/\delta \) exists because \( \delta \ne 0 \), from \( \delta > 0 \).
+*(3)* "Let \( \delta > 0 \) be arbitrary" opens a bounded \( \rulename{\forall I} \) box flagged \( \delta_0 \) with the assumption \( \delta_0 > 0 \). As in Section 4.4, the prose uses the letter \( \delta \) both for the flag and for the bound variable; below, \( \delta \) in the arithmetic is the flag \( \delta_0 \). The terms \( 1/\delta \) and \( 1/\delta + \delta/2 \) are the witnesses for \( \exists x \) and \( \exists y \) (two \( \rulename{\exists I} \), applied at the end of the box). They may mention \( \delta \) because \( \delta \)'s box is open; the clause "which depend on \( \delta \)" records this. The term \( 1/\delta \) exists because \( \delta \ne 0 \), from \( \delta > 0 \).
 
 *(4)* Arithmetic: \( y - x = \delta/2 \), which is positive since \( \delta > 0 \), so \( \abs{x - y} = \delta/2 \); and \( \delta/2 < \delta \) since \( \delta > 0 \). This is the first conjunct.
 
 *(5)* Arithmetic. Since \( \delta > 0 \), \( x = 1/\delta > 0 \) and \( y = x + \delta/2 > x \). Then \( x^2 < y^2 \), so \( \abs{x^2 - y^2} = y^2 - x^2 = (y - x)(y + x) \), with \( y - x = \delta/2 \) and \( y + x = 2/\delta + \delta/2 \); multiplying out gives \( 1 + \delta^2/4 \), which is at least \( 1 \) because \( \delta^2/4 \ge 0 \). This is the second conjunct; with (4) it gives the conjunction (\( \rulename{\wedge I} \)), and the two \( \rulename{\exists I} \) of (3) then give \( \exists x\, \exists y\, (\dots) \).
 
-*(6)* The closing line of the \( \rulename{\forall I} \) box of \( \delta \): \( \delta \) does not appear in the conclusion \( \forall \delta > 0\, \exists x\, \exists y\, (\dots) \). With (2) this proves the displayed formula, and by the cut (1) uniform continuity fails.
+*(6)* The closing line of the bounded \( \rulename{\forall I} \) box flagged \( \delta_0 \) (@prp-bounded-quantifier-rules). The side condition holds: the proof has no premises; the only assumption mentioning \( \delta_0 \) is \( \delta_0 > 0 \), the assumption of the box this line closes, and no outer box is open; and \( \delta_0 \) does not appear in the conclusion \( \forall \delta > 0\, \exists x\, \exists y\, (\dots) \), whose \( \delta \) is a bound variable different from the flag. With (2) this proves the displayed formula, and by the cut (1) uniform continuity fails.
 
 \( \delta > 0 \) is used in (3) (so that \( 1/\delta \) exists), in (4) (twice) and in (5) (for \( y > x > 0 \)).
 :::
@@ -194,7 +194,7 @@ Here is a proof that for real numbers \( x < y \), \( x^3 < y^3 \).
 
 (1) Let \( x < y \). (2) Then \( y^3 - x^3 = (y - x)(y^2 + xy + x^2) \). (3) Since \( x < y \), \( y - x > 0 \). (4) Also \( y^2 + xy + x^2 > 0 \). (5) So \( y^3 - x^3 > 0 \), as a product of two positive numbers. (6) Hence \( x^3 < y^3 \).
 
-Every line is true, and one of them has no warrant on the page. Self-explain the proof line by line to find it, and supply a warrant.
+Every line is true. Line 1 opens the box; of the rest, all but one are instances of a routine algebra or order fact, cited or not; one line is not an instance of any fact stated so far, and it needs an argument of its own. Self-explain the proof line by line to find it, and supply that argument as its warrant.
 :::
 
 ::: {.solution}
@@ -218,7 +218,7 @@ Self-explain the proof of @lem-atom-splitting in Section 3.6: for each of its fi
 ::: {.solution}
 [Hint 1]
 
-Keep @def-derivation open beside you: the paragraph after the five steps checks its clauses (D1)–(D4) and the scope rule, one by one.
+Keep @def-derivation open beside you: the paragraph after the five steps checks, in turn, the premises, the scope rule for the transplanted citations, the rule schemas, the last line of each box, and the availability of what the last line cites.
 :::
 
 ::: {.solution}
@@ -228,7 +228,7 @@ Start with step 2. Which result supplies \( p \vee \neg p \), what is substitute
 :::
 
 ::: {.solution}
-*Step 1.* The premises of the new list are the members of \( \Delta \) that \( D \) or \( E \) uses. Clause (D1) of @def-derivation lets premises be any statements, placed first; the conclusion will be \( \Delta \vdash \psi \), so only members of \( \Delta \) may be premises, and the premises \( p \), \( \neg p \) of \( D \) and \( E \) are deliberately left out.
+*Step 1.* The premises of the new list are the members of \( \Delta \) that \( D \) or \( E \) uses. Clause (D1) of @def-derivation places premises first, above every box, and puts no restriction on which statements they are. The conclusion will be \( \Delta \vdash \psi \), so only members of \( \Delta \) are taken. The premises \( p \), \( \neg p \) of \( D \) and \( E \) are therefore left out, unless they also belong to \( \Delta \), which does no harm.
 
 *Step 2.* The line \( p \vee \neg p \) is @prp-excluded-middle with the atom \( p \) for the letter \( P \), used as a derived rule (@def-derived-rule) with no premises, so it cites nothing. This is the one classical step, through \( \rulename{LEM} \).
 
@@ -252,15 +252,16 @@ Fatal errors (0 for the step): explanations that restate the steps without namin
 :::
 
 <!-- dependency ledger
-exm-self-explanation (example): u^2 >= 0 for every real u; (x - 1)^2 = x^2 - 2x + 1; dividing by x > 0 keeps the direction; (x^2 - 2x + 1)/x = x - 2 + 1/x; adding 2 keeps an inequality | school algebra and order facts (ch11 proves them from the axioms); checked by verify/ch05/exm-self-explanation.py
+exm-self-explanation (example): u^2 >= 0 for every real u; (x - 1)^2 = x^2 - 2x + 1; dividing by x > 0 keeps the direction; dividing by x < 0 reverses it (so line 3 fails for negative x); 0/x = 0; (x^2 - 2x + 1)/x = x - 2 + 1/x; adding 2 keeps an inequality | school algebra and order facts (ch11 proves them from the axioms); checked by verify/ch05/exm-self-explanation.py
 exm-self-explanation (claim): x = -1 gives x + 1/x = -2 < 2; equality at x = 1 | arithmetic; checked by verify/ch05/exm-self-explanation.py
 exm-self-explanation (claim): "this is the only place the hypothesis is used" (line 3) | read off the four lines on the page
 exm-self-explanation (claim): [the Quick check after it] de Morgan (a); not (u > 1) iff u <= 1; inequalities add; line 6 by prp-contrapositive-converse | prp-de-morgan, prp-contrapositive-converse (cited); order facts (school)
-exm-self-explanation (claim): [the strategies passage after it] sqrt(xy) = sqrt(x) sqrt(y) and (sqrt x)^2 = x for x, y >= 0; x + y - 2 sqrt(xy) = (sqrt x - sqrt y)^2; squaring preserves order on non-negative numbers; the instance x = 1, y = 4 | school facts about square roots (NOTATION: a school fact before ch11, then thm-nth-root); checked by verify/ch05/exm-self-explanation.py
-exm-self-explanation (claim): [the strategies passage after it] a claim inside a proof is a cut | lem-weakening-cut (b) (cited)
+exm-self-explanation (claim): [the strategies passage after it] sqrt(xy) = sqrt(x) sqrt(y) and (sqrt x)^2 = x for x, y >= 0; x + y - 2 sqrt(xy) = (sqrt x - sqrt y)^2; (x + y)^2 = x^2 + 2xy + y^2; 4xy <= x^2 + 2xy + y^2 iff 0 <= (x - y)^2 (the try-it-first route); a^2 <= b^2 and b >= 0 imply a <= b (via |a| <= b), failing at a = 1, b = -2; the instance x = 1, y = 4 | school facts about square roots (NOTATION: a school fact before ch11, then thm-nth-root); checked by verify/ch05/exm-self-explanation.py
+exm-self-explanation (claim): [the strategies passage after it] a claim inside a proof is a cut; inside a box it is a line later lines may cite | Section 5.2's dictionary (prose pointer); def-derivation, lem-weakening-cut (b) (cited)
 exr-reading-proofs-a1 (solution): u^2 - v^2 = (u - v)(u + v); a product is zero only if a factor is; a sum of positives is positive | school algebra; prp-disjunctive-syllogism (cited); checked by verify/ch05/exr-reading-proofs-a1.py
-exr-reading-proofs-b1 (solution): |x - y| = delta/2 < delta; (delta/2)(2/delta + delta/2) = 1 + delta^2/4 >= 1 | school algebra; checked by verify/ch05/exr-reading-proofs-b1.py
-exr-reading-proofs-b1 (solution): the displayed formula yields the negation of uniform continuity | exm-negating-definitions (c), prp-bounded-quantifier-negation, prp-negated-implication (cited)
+exr-reading-proofs-b1 (solution): |x - y| = delta/2 < delta; (delta/2)(2/delta + delta/2) = 1 + delta^2/4 >= 1; |u| = u for u >= 0 (bars dropped, y - x > 0 and y^2 - x^2 > 0); 0 < x < y implies x^2 < y^2; delta^2/4 >= 0; delta > 0 gives delta != 0, 1/delta > 0, delta/2 < delta | school algebra and order facts (ch11 proves them from the axioms); checked by verify/ch05/exr-reading-proofs-b1.py
+exr-reading-proofs-b1 (solution): the displayed formula yields the negation of uniform continuity | exm-negating-definitions (c), prp-bounded-quantifier-negation, prp-negated-implication, def-bounded-quantifier (cited)
+exr-reading-proofs-b1 (solution): the flag delta_0 meets the side condition of the bounded forall-I; the prose uses one letter for flag and bound variable | prp-bounded-quantifier-rules (cited); Section 4.4 (prose pointer)
 exr-reading-proofs-b2 (solution): y^3 - x^3 = (y - x)(y^2 + xy + x^2); y^2 + xy + x^2 = (y + x/2)^2 + 3x^2/4; zero only at x = y = 0 | school algebra; checked by verify/ch05/exr-reading-proofs-b2.py
 exr-reading-proofs-c1 (solution): reading of the proof of lem-atom-splitting | lem-atom-splitting, def-derivation, prp-excluded-middle, def-derived-rule, def-rules-disjunction, lem-weakening-cut (cited)
 -->
