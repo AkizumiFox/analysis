@@ -36,7 +36,7 @@ Self-explain each line of the proof.
 
 - *The opening.* "Let \( x > 0 \)" opens a box for an arbitrary \( x \) with the assumption \( x > 0 \): the claim is \( \forall x > 0 \; (x + 1/x \ge 2) \), and this is its bounded \( \rulename{\forall I} \). Everything below may use \( x > 0 \); so far nothing has.
 - *Line 1* is an instance of the school fact that the square of every real number is at least \( 0 \), at the term \( x - 1 \) (a \( \rulename{\forall E} \)). It uses no earlier line, and in particular not \( x > 0 \): it holds for every real \( x \).
-- *Line 2* follows from line 1 because \( (x - 1)^2 \) and \( x^2 - 2x + 1 \) are the same number, by expanding the square; one is replaced by the other (\( \rulename{=E} \)).
+- *Line 2* follows from line 1 because \( (x - 1)^2 \) and \( x^2 - 2x + 1 \) are the same number, by expanding the square; one is replaced by the other (\( \rulename{{=}E} \)).
 - *Line 3* follows from line 2 by dividing both sides by \( x \). Two things need \( x > 0 \) here. Dividing by \( x \) needs \( x \ne 0 \), and dividing both sides of an inequality by a number is guaranteed to keep its direction only when that number is positive. Both come from the assumption \( x > 0 \), and this is the **only** place in the proof where the assumption is used. The left side becomes \( (x^2 - 2x + 1)/x = x - 2 + 1/x \), and the right side \( 0/x = 0 \).
 - *Line 4* follows from line 3 by adding \( 2 \) to both sides, which keeps any inequality. It is the claim for this \( x \); since \( x \) was arbitrary, the claim holds for every \( x > 0 \) (the closing \( \rulename{\forall I} \), silent in the proof as written).
 

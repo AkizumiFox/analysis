@@ -53,7 +53,7 @@ In level-3 prose the following steps **may be silent**, that is, left unwritten:
 - \( \rulename{{\leftrightarrow}E} \) with a definition ("that is", "by definition", or nothing);
 - \( \rulename{\forall E} \) at the obvious term;
 - \( \rulename{{\to}E} \) whose implication is a line already in the proof that is neither a hypothesis of the statement, nor a cited result, nor an instance of one (for instance, an instance of the property of a chosen name), when its antecedent is displayed or has just been assumed;
-- \( \rulename{=I} \) and \( \rulename{=E} \) inside a chain of equalities or inequalities;
+- \( \rulename{{=}I} \) and \( \rulename{{=}E} \) inside a chain of equalities or inequalities;
 - the phrase "it suffices to show", when the claim of the cut is displayed and then used;
 - the **closing** lines of \( \rulename{{\to}I} \) ("hence if \( P \) then \( Q \)"), of \( \rulename{\forall I} \) ("since \( x \) was arbitrary"), of \( \rulename{\vee E} \) ("in either case") and of \( \rulename{\exists E} \) (the conclusion repeated outside the box of the chosen name).
 
@@ -145,7 +145,7 @@ $\begin{nd}
 
 The three "arith" lines are facts about integers, each checkable by hand. Line 11: \( p_0 \cdot p_0 = (r_0 q_0)(r_0 q_0) = (r_0 \cdot r_0)(q_0 \cdot q_0) = 2 \cdot (q_0 \cdot q_0) \), by lines 10 and 4. Line 12: \( p_0 \cdot p_0 \) is \( 2 \) times the integer \( q_0 \cdot q_0 \), so it is even. Line 15: by line 14, \( p_0 = 2m \) for an integer \( m \); then line 11 reads \( 4m^2 = 2 q_0^2 \), so \( q_0^2 = 2m^2 \) is even. The side conditions at the flagged lines hold: at line 21 the flag \( q_0 \) is not in \( \bot \), in line 7, in a premise, or in the assumptions still open (lines 3, 4, 6, 7); at line 22 the flag \( p_0 \) is not in \( \bot \), in line 5, in a premise, or in lines 3 and 4; at line 24 the flag \( r_0 \) is in no premise and not in line 24.
 
-**Level 1.** The arithmetic of lines 10–17 is compressed into two lines, each citing @thm-square-even-implies-even as "lemma", and the logical steps of lines 18–20 into one line; every box, every assumption and every closing line is kept.
+**Level 1.** Lines 10–17, the \( \rulename{\wedge E} \) that extracts \( p_0 = r_0 \cdot q_0 \), the arithmetic and the two uses of @thm-square-even-implies-even, cited as "lemma", are compressed into two lines, and the logical steps of lines 18–20 into one line; every box, every assumption and every closing line is kept.
 
 ```{=latex}
 \begin{center}
@@ -162,7 +162,7 @@ $\begin{nd}
   \open[q_0]
   \hypo {7} {q_0 \in \nZ}
   \hypo {8} {p_0 = r_0 \cdot q_0 \wedge \neg(E(p_0) \wedge E(q_0))}
-  \have {9} {E(p_0)} \by{arith; lemma}{3,5,7,8}
+  \have {9} {E(p_0)} \by{$\wedge$E; arith; lemma}{3,5,7,8}
   \have {10} {E(q_0)} \by{arith; lemma}{3,5,7,8,9}
   \have {11} {\bot} \by{$\wedge$E, $\wedge$I, $\neg$E}{8,9,10}
   \close
@@ -190,7 +190,7 @@ Level-1 line 9 is level-0 lines 10–14; line 10 is lines 15–17; line 11 is li
 The answer to the prompt: "By (L), write \( r = p/q \) with integers \( p \), \( q \), not both even" stands for line 5 (\( \rulename{\forall E} \) of premise 1 at \( r_0 \)) and for the openings of the two \( \rulename{\exists E} \) boxes, lines 6–9. It also displays the conjunct, in the form \( r = p/q \), on its own, so the \( \rulename{\wedge E} \) of line 10 that extracts it has nothing left to say and can be silent.
 :::
 
-Look at what the four texts share. Every level has the box of \( r \), the box of the assumption \( r^2 = 2 \), the choice of \( p \) and \( q \), two uses of the lemma, and a contradiction followed by "hence \( r^2 \ne 2 \)". That common part is the proof; the rest is how much of the routine work each reader is trusted to do. The skeleton is the place where you can see it most clearly: fifteen lines, of which only lines 9 and 10 are mathematics; every other line is a decision about logic.
+Look at what the four texts share. Every level has the box of \( r \), the box of the assumption \( r^2 = 2 \), the choice of \( p \) and \( q \), two uses of the lemma, and a contradiction followed by "hence \( r^2 \ne 2 \)". That common part is the proof; the rest is how much of the routine work each reader is trusted to do. The skeleton is the place where you can see it most clearly: fifteen lines, of which only lines 9 and 10 carry the mathematics; every other line is a decision about logic.
 
 ::: {.check}
 Which lines of the level-0 derivation in @exm-sqrt2-four-levels have no counterpart in the level-3 text, and which item of @def-silent-steps lets each go?
@@ -494,7 +494,7 @@ Line 4 is the bounded \( \rulename{\forall E} \) at the term \( \abs{a - b} \), 
 - 2: (a) the \( \rulename{\forall E} \) at \( \abs{a - b} \), citing a line \( \abs{a - b} > 0 \).
 - 2: (b) a level-3 text with the opening of the contradiction, the instance, the clash and "hence \( a = b \)", and no tags.
 - 2: (c) the silent line identified, and the instance \( \varepsilon = \abs{a - b} \) said to be named because it is not the obvious term.
-- Other routes: a \( \rulename{\neg I} \) box on \( a \ne b \) followed by \( \rulename{\neg\neg E} \), or a split on \( \abs{a - b} > 0 \) or \( \abs{a - b} = 0 \) (arith) whose first case reaches \( \bot \) by the same \( \rulename{\forall E} \) and clash and then \( a = b \) by \( \rulename{\bot E} \), while the second gives \( a = b \) by arith, earns the 4 points of the first two lines, provided the \( \rulename{\neg\neg E} \) line or the split is named as the classical step. In the split, the case assumption \( \abs{a - b} > 0 \) is the line the \( \rulename{\forall E} \) cites for the third line, and for (b) and (c) the opening of the \( \rulename{\neg I} \) box or of the split stands in for the opening of the contradiction.
+- Other routes: a \( \rulename{\neg I} \) box on \( a \ne b \) followed by \( \rulename{\neg\neg E} \), or a split on \( \abs{a - b} > 0 \) or \( \abs{a - b} = 0 \) (arith) whose first case reaches \( \bot \) by the same \( \rulename{\forall E} \) and clash and then \( a = b \) by \( \rulename{\bot E} \), while the second gives \( a = b \) by arith, earns the 4 points of the first two lines, provided the \( \rulename{\neg\neg E} \) line is written explicitly, or the disjunction of the split is justified (from \( \abs{a - b} \ge 0 \), or by trichotomy). In the split, the case assumption \( \abs{a - b} > 0 \) is the line the \( \rulename{\forall E} \) cites for the third line, and for (b) and (c) the opening of the \( \rulename{\neg I} \) box or of the split stands in for the opening of the contradiction.
 Fatal errors (0 for the step): the box closed by \( \neg I \) with the conclusion \( a = b \); the hypothesis applied at an \( \varepsilon \) not known to be positive.
 :::
 
@@ -589,6 +589,7 @@ exr-levels-of-abbreviation-b2 (solution): (2k + 1)^2 - 1 = 4k(k + 1); k(k + 1) =
 exr-levels-of-abbreviation-b2 (solution): (E1) every integer is even or odd | (E1) of Section 2.1 (school fact, stated there)
 exr-levels-of-abbreviation-b2 (solution): the claim "it suffices" is a cut | lem-weakening-cut (Ch 3), named in Section 5.2's dictionary
 exr-levels-of-abbreviation-c1 (solution): a != b gives |a - b| > 0; no real number is less than itself | school facts about | . | and <, as in prp-arbitrarily-close-equal's proof (Section 4.9)
+exr-levels-of-abbreviation-c1 (solution): [marking scheme, other routes] |a - b| > 0 or |a - b| = 0 from |a - b| >= 0 or trichotomy, not flagged | trichotomy of the order (school fact); Section 5.1's rule that such a split is never flagged
 exr-levels-of-abbreviation-c2 (solution): eps/|c| > 0 for c != 0, eps > 0; |c a - c L| = |c| |a - L| < eps | school algebra; |uv| = |u||v| exm-abs-product-cases (Ch 1); checked by verify/ch05/exr-levels-of-abbreviation-c2.py
 exr-levels-of-abbreviation-c2 (solution): case c = 0: c a_n = 0 = c L, any N works | school algebra
 -->

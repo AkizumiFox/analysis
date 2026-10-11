@@ -905,6 +905,16 @@ items:
       table row 01:135), which resolves the ''or commutes'' finding. Remaining problem: 03:56 writes \rulename{=I}
       and \rulename{=E} without braces, but NOTATION.md:142 says ''with a relation symbol, brace it'',
       and Chapter 4 writes \rulename{{=}I} (ch04/07:3,42). Fix: change both to \rulename{{=}I} and \rulename{{=}E}.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 25e8ce516095
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 'proof line, and the EXISTS-E closing) are accurate. Rule names are now braced correctly
+      at 03:53, 03:55 and 03:56 (NOTATION.md:142). Cited labels exm-disjunction-first-derivations, prp-and-commutes,
+      prp-double-negation, prp-de-morgan, prp-quantifier-negation and prp-bounded-quantifier-negation
+      are used as stated. Leftover outside this section: ch05/04:39 still has bare \rulename{=I}/\rulename{=E}.'
 - key: exm-sqrt2-four-levels
   kind: exm
   file: 03-levels-of-abbreviation.md
@@ -948,6 +958,17 @@ items:
       chosen not both even''. Fix: ''..., contradicting the choice of p and q not both even''. The idea
       box''s pointer to Sections 5.5 and 5.6 is accurate: 05:386-394 and 06:248-297 each have a skeleton-first
       item with a blank.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 8932f3ccfb32
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 3:148 describes the stretch accurately. Level 2 tags are all correct. Level 3 names the
+      clash through 'not both even', as the book allows (03:200, 01:96). The prompt answer at 03:190 (lines
+      5, 6-9, silent AND-E at 10) is correct. The check at 03:200 lists eight lines (5, 10, 19, 13, 16,
+      21, 22, 24), which I confirmed. 03:193 says 15 lines with lines 9-10 carrying the mathematics, which
+      is correct.
 - key: check:03-levels-of-abbreviation:1
   kind: check
   file: 03-levels-of-abbreviation.md
@@ -1176,6 +1197,17 @@ items:
       of the trichotomy of the order ... and it is never flagged''. The scheme therefore requires a student
       to label as classical a step the book says not to flag. Fix: require naming as classical only for
       the ->E route through NOT-NOT-E; for the split route, require the disjunction to be justified (trichotomy/arith).'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: f25f5bf79640
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: and 'hence a = b', with no tags. In (c) the only silent line is line 8, and line 5 is named
+      as a clash member. The marking scheme totals 10. The other-routes line now asks for an explicit
+      NOT-NOT-E line (matching def-silent-steps 03:64), or a justified split disjunction (matching 01:452
+      and the no-flag rule at 01:199 and 07:229). The fatal errors are correct. The ledger line at 03:592
+      is accurate.
 - key: exr-levels-of-abbreviation-c2
   kind: exr
   file: 03-levels-of-abbreviation.md
@@ -1251,6 +1283,14 @@ items:
       Quick check and the strategies passage) and all 8 earlier findings are resolved. (1) L111 now cites
       the cut row of 5.2's dictionary (02-quantifier-rhetoric.md:134) and @def-derivation for a line inside
       the box. It names lem-weakening-cut (b) only as the same move outside every box, which matches 06-completene
+  - stage: S7
+    verdict: correct
+    by: coordinator
+    hash: fba472fc7ee8
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: '04:39 typesetting only: \rulename{=I}/{=E} braced as \rulename{{=}I}/{{=}E} per NOTATION.md:142;
+      text otherwise identical to the S7r-correct version'
 - key: check:04-reading-proofs:1
   kind: check
   file: 04-reading-proofs.md
@@ -1790,6 +1830,16 @@ items:
       (cited) or an equivalent estimate from |a_n - L| < eps''. Everything else checks out: the rewrite
       is correct with N=0 allowed (ℕ includes 0), M is defined before use with its dependence, and the
       eps=1 instance is named.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: b7195da4e415
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 'it accepts a maximum or a sum, and the second-case route now admits the sign-split estimate,
+      which I checked is correct. The fatal errors are appropriate. Note: the diff also changes verify/ch05/exr-checking-proofs-b1.py,
+      which belongs to another section (5.6), not this file. It adds an assert that not(x^2 < 1) when
+      x > 1, which matches its docstring, and it runs clean (''all quoted values check'').'
 - key: check:06-checking-proofs:1
   kind: check
   file: 06-checking-proofs.md
@@ -2042,6 +2092,17 @@ items:
       but the solution to (e) (06:184) names only ''(N6), affirming the consequent'' and gives no rule.
       Fix: add ''no rule licenses it: it breaks @def-derivation, since P → Q with Q gives no P'', matching
       the wording of (N6).'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 207dbc8fe398
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: ' < 0. The box with x ≤ 0 closes only by ¬I, giving x > 0. (e) N6, affirming the consequent:
+      no rule licenses it, so it breaks def-derivation, matching the (N6) entry. n = 4 is even and not
+      divisible by 6. (f) N8: the disjunction is underived and false at x = 0, so ∨E has no valid first
+      input. Every part now names an entry and a rule, and the cited labels match the catalogue. The a1
+      sidecar passes.'
 - key: exr-checking-proofs-b1
   kind: exr
   file: 06-checking-proofs.md
@@ -2086,6 +2147,27 @@ items:
       and (3)'', but (1) is x^2 < 1 and (3) is x^2 > 1, which are not a pair φ, ¬φ. This is the same defect
       the revision fixed in Proof A, row (5). Fix: ''(3) gives ¬(x^2 < 1) by order facts; ¬E on (1) and
       that line''.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 49f3fbcfa1ac
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 'The diff also touches verify/ch05/exr-checking-proofs-b1.py (Section 5.6, not this section).
+      It adds the assertion not(x*x < 1) for x > 1 and updates the docstring to match ledger line 06:407
+      (''x^2 > 1 gives not(x^2 < 1)''). The assertion is mathematically true, and the script runs cleanly:
+      ''all quoted values check'', rc=0.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 49f3fbcfa1ac
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 'that line, a valid clash. (5) fails under N11: the box assumed x > 1, which is not ¬(x
+      < 1), so ¬I gives only x ≤ 1. x = 1 is the counterexample to the step. The claim is true, and the
+      repair is valid: x ≥ 1 gives x^2 ≥ x ≥ 1, contradicting x^2 < 1. The ledger lists trichotomy and
+      the new order fact. The b1 sidecar passes. check_structure, check_fitch and check_numbers report
+      0 fatal and 0 errors.'
 - key: exr-checking-proofs-b2
   kind: exr
   file: 06-checking-proofs.md

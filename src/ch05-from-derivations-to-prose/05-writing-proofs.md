@@ -482,7 +482,7 @@ The \( \rulename{\forall E} \) instance \( \varepsilon = 1 \) is named, because 
 - 3: (a) three genuine faults, each tied to a convention or an unwritten step (1 each).
 - 2: (b) applies the hypothesis at a named positive \( \varepsilon \) and chooses \( N \) from it.
 - 2: defines \( M \) before using it, with its dependence on \( N \), bounding the early terms and \( \abs{L} + \varepsilon \) (a maximum or a sum).
-- 2: the two cases \( n < N \) and \( n \ge N \), the second by the triangle inequality, cited.
+- 2: the two cases \( n < N \) and \( n \ge N \), the second by the triangle inequality (cited) or an equivalent estimate from \( \abs{a_n - L} < \varepsilon \), such as \( L - \varepsilon < a_n < L + \varepsilon \) and a split on the sign of \( a_n \).
 - 1: ends with what was shown.
 Fatal errors (0 for the step): \( M \) chosen before \( N \) or as a maximum or sum of infinitely many numbers; the early terms omitted.
 :::

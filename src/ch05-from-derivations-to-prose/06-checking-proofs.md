@@ -181,7 +181,7 @@ Each line below comes from a proof. Name the catalogue entry of @exm-not-allowed
 
 *(d)* (N11): the negation of \( x \ge 0 \) is \( x < 0 \), not \( x \le 0 \), so \( \rulename{RAA} \) cannot close this box with \( x \ge 0 \). Closed by \( \rulename{\neg I} \) it proves \( x > 0 \), more than the goal, so it closes only if the hypotheses exclude \( x = 0 \).
 
-*(e)* (N6), affirming the consequent; \( n = 4 \) is even and not divisible by \( 6 \).
+*(e)* (N6), affirming the consequent. No rule licenses it, so it breaks @def-derivation: \( P \to Q \) with \( Q \) gives no \( P \). Here \( n = 4 \) is even and not divisible by \( 6 \).
 
 *(f)* (N8): the disjunction is not derived, and it is false at \( x = 0 \), so \( \rulename{\vee E} \) has no valid first input.
 :::
@@ -218,7 +218,7 @@ Check each proof in two columns. For a wrong proof, name the first line that fai
 | (1) | assumption | opens the \( \rulename{{\to}I} \) box |
 | (2) | assumption | opens a box with "\( x > 1 \)", announced as \( \rulename{RAA} \) |
 | (3) | yes, given (2) | \( \rulename{{\to}E} \) with order facts |
-| (4) | yes | \( \rulename{\neg E} \) on (1) and (3) |
+| (4) | yes | (3) gives \( \neg(x^2 < 1) \) by order facts; \( \rulename{\neg E} \) on (1) and that line |
 | (5) | true, given (1), but … | **does not follow**: the box assumed \( x > 1 \), which is not the negation of \( x < 1 \); \( \rulename{\neg I} \) on it gives only \( \neg(x > 1) \), that is, \( x \le 1 \) |
 
 **Verdict: wrong; line (5) fails, because the box of line (2) opened with the wrong statement; entry (N11).** The negation of \( x < 1 \) is \( x \ge 1 \), and the case \( x = 1 \) is never examined: \( x = 1 \) has \( \neg(x > 1) \) and not \( x < 1 \), a counterexample to the step. The claim is true. Repair: suppose, for a contradiction, that \( x \ge 1 \); then \( x^2 = x \cdot x \ge x \ge 1 \), which contradicts \( x^2 < 1 \); hence \( x < 1 \).
@@ -403,8 +403,8 @@ exm-verify-cases (solution): (x - 1)(x - 2) = x^2 - 3x + 2; a product of two rea
 exm-verify-converse (solution): n = 2k gives n^2 = 2(2k^2); the row P false, Q true refutes P -> Q |- Q -> P; x = -2 for the converse of x > 1 -> x^2 > 1 | inline row (def-truth-value); cor-refuting-row (cited); checked by verify/ch05/exm-verify-converse.py
 exm-verify-negation (solution): 1 is odd; no integer is both even and odd; m^2 - k is an integer; 2 != 0 | school arithmetic (ch07 promised in STATUS: even or odd, not both); checked by verify/ch05/exm-verify-negation.py
 exm-verify-scope (solution): multiplying by a positive number keeps >; x^2 - x + 1 = (x - 1/2)^2 + 3/4 > 0; at x = 1/2, x^2 < x | school algebra; checked by verify/ch05/exm-verify-scope.py
-exr-checking-proofs-a1 (solution): 3^n > n^2 for n = 0..4; A = {0, 1}, f(x) = x; n = 4 even, not divisible by 6; not(x >= 0) iff x < 0 | arithmetic; trichotomy; checked by verify/ch05/exr-checking-proofs-a1.py
-exr-checking-proofs-b1 (solution): (2k + 1) + (2l + 1) = 2(k + l + 1); x > 1 gives x^2 > x; x >= 1 gives x^2 >= x >= 1; x = 1; not(x < 1) iff x >= 1 | school algebra; trichotomy; checked by verify/ch05/exr-checking-proofs-b1.py
+exr-checking-proofs-a1 (solution): 3^n > n^2 for n = 0..4; A = {0, 1}, f(x) = x; n = 4 even, not divisible by 6; not(x >= 0) iff x < 0; P -> Q with Q gives no P | arithmetic; trichotomy; def-derivation (cited); checked by verify/ch05/exr-checking-proofs-a1.py
+exr-checking-proofs-b1 (solution): (2k + 1) + (2l + 1) = 2(k + l + 1); x > 1 gives x^2 > x; x^2 > 1 gives not(x^2 < 1); x >= 1 gives x^2 >= x >= 1; x = 1; not(x < 1) iff x >= 1 | school algebra; trichotomy; checked by verify/ch05/exr-checking-proofs-b1.py
 exr-checking-proofs-b2 (solution): x = 1, y = -1 gives |x| + |y| = 2, |x + y| = 0; lines (3), (4) correct in their cases | arithmetic, school algebra of absolute value; exm-triangle-inequality-cases (cited) for the inequality; checked by verify/ch05/exr-checking-proofs-b2.py
 exr-checking-proofs-c1 (solution): -|u| <= u; |u| < r gives u > -r; f(a) - f(a)/2 = f(a)/2 > 0; f(x) <= 0 gives |f(x) - f(a)| >= f(a) > f(a)/2 | school algebra of absolute value; checked by verify/ch05/exr-checking-proofs-c1.py
 exr-checking-proofs-c1 (example): continuity at a used only as a quantifier pattern | exm-translate-limit (c) (Section 4.8)
