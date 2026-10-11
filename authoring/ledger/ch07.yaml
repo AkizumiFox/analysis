@@ -74,7 +74,7 @@ items:
   kind: check
   file: 01-naturals-and-well-ordering.md
   line: 90
-  hash: 9092b617bc79
+  hash: ca8f7d5de8de
   verdicts:
   - stage: S5a
     verdict: error
@@ -227,7 +227,7 @@ items:
   kind: thm
   file: 01-naturals-and-well-ordering.md
   line: 206
-  hash: 32fd63ae2664
+  hash: 8170c625a62d
   verdicts:
   - stage: S5a
     verdict: correct
@@ -260,7 +260,7 @@ items:
   kind: proof
   file: 01-naturals-and-well-ordering.md
   line: 216
-  hash: 2899f7b2eb85
+  hash: d0c36a5d8951
   verdicts:
   - stage: S5a
     verdict: correct
@@ -334,7 +334,7 @@ items:
   kind: exr
   file: 01-naturals-and-well-ordering.md
   line: 258
-  hash: da55caa2478c
+  hash: 6b575a182b36
   verdicts:
   - stage: S5a
     verdict: correct
@@ -396,7 +396,7 @@ items:
   kind: exr
   file: 01-naturals-and-well-ordering.md
   line: 307
-  hash: e1f369797c13
+  hash: 1c432b883111
   verdicts:
   - stage: S5a
     verdict: correct
@@ -489,7 +489,7 @@ items:
   kind: exr
   file: 01-naturals-and-well-ordering.md
   line: 390
-  hash: ac41c1ace567
+  hash: e042abbd9129
   verdicts:
   - stage: S5a
     verdict: correct
@@ -800,7 +800,7 @@ items:
   kind: proof
   file: 02-induction-in-practice.md
   line: 204
-  hash: 19d15dc577a4
+  hash: 5a0c4e302a48
   verdicts:
   - stage: S5a
     verdict: minor
@@ -912,7 +912,7 @@ items:
   kind: exr
   file: 02-induction-in-practice.md
   line: 309
-  hash: d28f98b4504b
+  hash: 42fc5d2d9d59
   verdicts:
   - stage: S5a
     verdict: correct
@@ -945,7 +945,7 @@ items:
   kind: exr
   file: 02-induction-in-practice.md
   line: 327
-  hash: a89de9a34343
+  hash: 78cc350a7d66
   verdicts:
   - stage: S5a
     verdict: correct
@@ -978,7 +978,7 @@ items:
   kind: exr
   file: 02-induction-in-practice.md
   line: 349
-  hash: 1c3dcc54425a
+  hash: f6bf800a2112
   verdicts:
   - stage: S5a
     verdict: minor
@@ -1147,7 +1147,7 @@ items:
   kind: proof
   file: 03-recursion.md
   line: 113
-  hash: fc8c706ce06f
+  hash: 0781898d362e
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1170,7 +1170,7 @@ items:
   kind: cor
   file: 03-recursion.md
   line: 126
-  hash: e2bcda8f2002
+  hash: 94a5a231898e
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1214,7 +1214,7 @@ items:
 - key: def-sum-product
   kind: def
   file: 03-recursion.md
-  line: 165
+  line: 159
   hash: af4211c6cb19
   verdicts:
   - stage: S5a
@@ -1239,7 +1239,7 @@ items:
 - key: def-power
   kind: def
   file: 03-recursion.md
-  line: 191
+  line: 185
   hash: e98dc686b972
   verdicts:
   - stage: S5a
@@ -1315,7 +1315,7 @@ items:
   kind: proof
   file: 03-recursion.md
   line: 246
-  hash: add110aa7a75
+  hash: dc3eaf2da476
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1401,7 +1401,7 @@ items:
   kind: proof
   file: 03-recursion.md
   line: 289
-  hash: d2b01bf71365
+  hash: 6ff142f87b40
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1655,7 +1655,7 @@ items:
   kind: exr
   file: 03-recursion.md
   line: 470
-  hash: fd2a473e4d8f
+  hash: 401f35ddd186
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1720,7 +1720,7 @@ items:
   kind: exr
   file: 03-recursion.md
   line: 518
-  hash: aeab724c1cfd
+  hash: 1a3837a5ff4f
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1826,7 +1826,7 @@ items:
   kind: exm
   file: 04-relations.md
   line: 103
-  hash: 8b9e8710fdaa
+  hash: b59614814e88
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1851,7 +1851,7 @@ items:
   kind: check
   file: 04-relations.md
   line: 132
-  hash: a33a3a5fc554
+  hash: e47d8846f216
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1875,7 +1875,7 @@ items:
   kind: exr
   file: 04-relations.md
   line: 154
-  hash: 0ca6afcde3c1
+  hash: d652cfc219d6
   verdicts:
   - stage: S5a
     verdict: minor
@@ -1907,7 +1907,7 @@ items:
   kind: exr
   file: 04-relations.md
   line: 177
-  hash: 386aa4f857de
+  hash: add176f6fd50
   verdicts:
   - stage: S5a
     verdict: minor
@@ -1938,7 +1938,7 @@ items:
   kind: exr
   file: 04-relations.md
   line: 203
-  hash: c6328287f5d3
+  hash: 0b0a58e7fddb
   verdicts:
   - stage: S5a
     verdict: correct
@@ -2267,7 +2267,7 @@ items:
   kind: proof
   file: 05-equivalence-relations.md
   line: 215
-  hash: 9aa9360ca3bf
+  hash: fca56b77e063
   verdicts:
   - stage: S5a
     verdict: correct
@@ -2420,7 +2420,7 @@ items:
   kind: exm
   file: 05-equivalence-relations.md
   line: 311
-  hash: 2dca192c0afc
+  hash: ded4296cee17
   verdicts:
   - stage: S5a
     verdict: minor
@@ -2494,7 +2494,7 @@ items:
   kind: exm
   file: 05-equivalence-relations.md
   line: 378
-  hash: 80f98dba8cae
+  hash: 61b4b8a065b1
   verdicts:
   - stage: S5a
     verdict: correct
@@ -2546,7 +2546,7 @@ items:
   kind: exr
   file: 05-equivalence-relations.md
   line: 424
-  hash: becc9ded0597
+  hash: 388f796b8a1a
   verdicts:
   - stage: S5a
     verdict: minor
@@ -2607,7 +2607,7 @@ items:
   kind: exr
   file: 05-equivalence-relations.md
   line: 455
-  hash: d0a6bcb33a62
+  hash: ef8c01fbc4fd
   verdicts:
   - stage: S5a
     verdict: correct
@@ -2637,7 +2637,7 @@ items:
   kind: exr
   file: 05-equivalence-relations.md
   line: 479
-  hash: 2ac0af56fd14
+  hash: 76ce6a2283e7
   verdicts:
   - stage: S5a
     verdict: correct
@@ -2725,7 +2725,7 @@ items:
   kind: exm
   file: 06-orders.md
   line: 44
-  hash: c1e2d6ec748a
+  hash: 65dcf9732979
   verdicts:
   - stage: S5a
     verdict: correct
@@ -2897,7 +2897,7 @@ items:
   kind: proof
   file: 06-orders.md
   line: 132
-  hash: 116ee1f54873
+  hash: 89de4b3de5d6
   verdicts:
   - stage: S5a
     verdict: correct
@@ -2921,7 +2921,7 @@ items:
   kind: exm
   file: 06-orders.md
   line: 144
-  hash: eee9548a07e3
+  hash: bb8b05c0a3ad
   verdicts:
   - stage: S5a
     verdict: minor
@@ -3041,7 +3041,7 @@ items:
   kind: exr
   file: 06-orders.md
   line: 241
-  hash: 3474d21dd0f2
+  hash: a2d9e6bbf304
   verdicts:
   - stage: S5a
     verdict: correct
@@ -3105,7 +3105,7 @@ items:
   kind: exr
   file: 06-orders.md
   line: 282
-  hash: ca2d9f4d979e
+  hash: 6ab919dfef1d
   verdicts:
   - stage: S5a
     verdict: correct
@@ -3167,7 +3167,7 @@ items:
   kind: exr
   file: 06-orders.md
   line: 316
-  hash: 3f6db7cba953
+  hash: 36f054bbf494
   verdicts:
   - stage: S5a
     verdict: minor
@@ -3266,7 +3266,7 @@ items:
   kind: exr
   file: 06-orders.md
   line: 414
-  hash: 2013841a6836
+  hash: 503c9042a84f
   verdicts:
   - stage: S5a
     verdict: correct
@@ -3330,7 +3330,7 @@ items:
   kind: exr
   file: 06-orders.md
   line: 450
-  hash: 3559761c05fc
+  hash: cf9334c6921d
   verdicts:
   - stage: S5a
     verdict: minor

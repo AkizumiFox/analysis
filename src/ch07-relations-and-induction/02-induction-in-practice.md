@@ -109,7 +109,7 @@ and \( 4k + 1 \in \nZ \). By @ax-induction, the claim holds for every \( n \in \
 An integer \( p \) is **prime** if \( p \ge 2 \) and the only **positive** divisors of \( p \) are \( 1 \) and \( p \). A **prime factor** of an integer \( n \) is a prime \( p \) with \( p \mid n \).
 :::
 
-For example, \( 2 \) is prime. Let \( d > 0 \) divide \( 2 \), say \( 2 = kd \) with \( k \in \nZ \). Then \( k > 0 \), so \( k \ge 1 \) by @prp-integers-closed (b), and \( d \le kd = 2 \); by discreteness \( d \in \{1, 2\} \). The same argument shows that \( 3 \) and \( 7 \) are prime, once the candidates \( d = 2 \) (and \( d = 2, \dots, 6 \) for \( 7 \)) are ruled out as \( 3 \nmid 14 \) was. Non-examples: \( 9 \) is not prime, since \( 9 = 3 \cdot 3 \) gives the positive divisor \( 3 \notin \{1, 9\} \); and \( 1 \) is not prime, though its only positive divisor is \( 1 \), because the definition demands \( p \ge 2 \). The clause \( p \ge 2 \) keeps \( 1 \) out so that factorizations into primes can be unique, a fact this book neither proves nor needs; Exercise B2 below is about existence only.
+For example, \( 2 \) is prime. Let \( d > 0 \) divide \( 2 \), say \( 2 = kd \) with \( k \in \nZ \). Then \( k > 0 \), so \( k \ge 1 \) by @prp-integers-closed (b), and \( d \le kd = 2 \); by discreteness \( d \in \{1, 2\} \). The same argument shows that \( 3 \) and \( 7 \) are prime, once the candidates \( d = 2 \) (and \( d = 2, \dots, 6 \) for \( 7 \)) are ruled out as \( 3 \nmid 14 \) was. Non-examples: \( 9 \) is not prime, since \( 9 = 3 \cdot 3 \) gives the positive divisor \( 3 \notin \{1, 9\} \); and \( 1 \) is not prime, though its only positive divisor is \( 1 \), because the definition demands \( p \ge 2 \). The clause \( p \ge 2 \) keeps \( 1 \) out so that factorizations into primes can be unique, a fact this chapter does not prove or use: Exercise B2 below is about existence only.
 
 Every integer, divided by a positive integer \( n \), leaves a remainder between \( 0 \) and \( n - 1 \). This is school arithmetic, and it is the tool behind "even or odd".
 
@@ -187,9 +187,9 @@ Under the supposition, every \( q \in F \) is the denominator of a failing repre
 Hence \( r \) has a representation of the required kind. As \( r \in \nQ \) was arbitrary, this proves the lemma.
 :::
 
-This is (L), with more: the denominator can be taken positive, not merely non-zero. The proof of @thm-sqrt2-irrational now rests on a proved lemma. The same argument with "not both even" replaced by "no common divisor \( d \ge 2 \)" puts every fraction in lowest terms in the full sense; that is Exercise C2. The proof is also the first of three appearances of this section's main move: Exercise B2 below ends with its last step left blank, and Exercise C1 of Section 7.3 leaves the last half blank.
+This is (L), with more: the denominator can be taken positive, not merely non-zero. The proof of @thm-sqrt2-irrational now rests on a proved lemma. The same argument with "not both even" replaced by "no common divisor \( d \ge 2 \)" puts every fraction in lowest terms in the full sense; that is Exercise C2. Two of the proof's steps adapt those of the smallest-counterexample method above: the failures are the denominators in \( F \), and the supposition makes every element of \( F \) one, so the third step needs only the supposition at \( m \), not the claim below \( m \), and the contradiction of the fourth step is the smaller failure \( m' \). This proof is written out in full; two later exercises use the same move with less given: Exercise B2 below leaves its last step blank, and Exercise C1 of Section 7.3 leaves the last half blank.
 
-The next result is the prime-factor fact that Chapter 5 used. Its proof is a strong induction from base \( 2 \); a smallest-counterexample version would reach the same contradiction.
+The next result is the prime-factor fact that Chapter 5 used. Its proof is a strong induction from base \( 2 \); the same argument inside an \( \rulename{RAA} \) box is a smallest-counterexample proof, in which the least failure \( m \) gets a prime factor from its divisor \( a \), contradicting the choice of \( m \) (compare Exercise B2).
 
 ::: {#thm-prime-factor}
 [Every Integer at Least Two Has a Prime Factor]
@@ -206,7 +206,7 @@ We use @thm-strong-induction-from-base with \( n_0 = 2 \). Let \( n \ge 2 \) be 
 
 If \( n \) is prime, then \( n \) is a prime factor of itself, since \( n = 1 \cdot n \).
 
-If \( n \) is not prime, then, as \( n \ge 2 \), it has a positive divisor \( a \notin \{1, n\} \) (@def-prime). Write \( n = ka \) with \( k \in \nZ \). Since \( n > 0 \) and \( a > 0 \), also \( k > 0 \), so \( k \ge 1 \) and \( a \ge 1 \) by @prp-integers-closed (b). Hence \( a \le ka = n \). With \( a \ne 1 \) and \( a \ne n \) this gives \( 1 < a < n \), and so \( 2 \le a < n \) by the discreteness clause of @prp-integers-closed. By the hypothesis, \( a \) has a prime factor \( p \), say \( a = lp \) with \( l \in \nZ \). Then \( n = ka = (kl)p \), so \( p \mid n \).
+If \( n \) is not prime, then, as \( n \ge 2 \), it has a positive divisor \( a \notin \{1, n\} \) (@def-prime). Write \( n = ka \) with \( k \in \nZ \). Since \( n > 0 \) and \( a > 0 \), also \( k > 0 \), so \( k \ge 1 \) and \( a \ge 1 \) by @prp-integers-closed (b). Hence \( a \le ka = n \). With \( a \ne 1 \) and \( a \ne n \) this gives \( 1 < a < n \), and so \( 2 \le a < n \) by the discreteness clause of @prp-integers-closed. By the hypothesis, \( a \) has a prime factor \( p \), say \( a = lp \) with \( l \in \nZ \). Then \( n = ka = (kl)p \), with \( kl \in \nZ \) by @prp-integers-closed (a), so \( p \mid n \).
 
 In both cases \( n \) has a prime factor. By @thm-strong-induction-from-base, every integer \( n \ge 2 \) has one. This proves the theorem.
 :::
@@ -262,7 +262,7 @@ The other failures are quicker to state.
 **The claim too weak to carry its own step.** Sometimes the statement is true and the base case holds, but the inductive step cannot be completed, because the hypothesis gives too little. The repair is to prove **more**. Section 7.3 shows a sum bounded by \( 2 \) whose own step will not go through, and which a stronger bound carries.
 
 ::: {.warning}
-The induction hypothesis is "\( P(n) \)" for one fixed but arbitrary \( n \): the assumption of the \( \rulename{{\to}I} \) box inside the \( \rulename{\forall I} \) box of the step (@def-rules-universal). A step that begins "assume that \( P(n) \) holds for every \( n \)" assumes the conclusion of the theorem, and whatever follows is circular: entry (N9) of @exm-not-allowed-catalogue. The witness is the form "for every \( n \)" inside the assumption; it should not be there.
+The induction hypothesis is "\( P(n) \)" for one fixed but arbitrary \( n \): the assumption of the \( \rulename{{\to}I} \) box inside the \( \rulename{\forall I} \) box of the step (@def-rules-universal). A step that begins "assume that \( P(n) \) holds for every \( n \)" assumes the conclusion of the theorem, and whatever follows is circular: entry (N9) of @exm-not-allowed-catalogue. The witness is a "for every \( n \)" in the assumption that binds the induction variable \( n \) itself; it should not be there. A quantifier over another variable is part of the statement and may stay: "for every \( k \) with \( n_0 \le k < n \)" in strong induction, or the "for every \( n \)" inside \( P(m) \) in the proof of @lem-naturals-arithmetic (d), where the induction is on \( m \).
 :::
 
 ## Exercises
@@ -309,7 +309,7 @@ and \( 6k + 1 \in \nZ \) by @prp-integers-closed (a). So \( P(n + 1) \) holds. B
 ::: {#exr-induction-in-practice-b2}
 [B2: Products of primes]
 
-An integer is a **product of primes** if it equals \( p_1 p_2 \cdots p_k \) for some \( k \ge 1 \) and primes \( p_1, \dots, p_k \) (a single prime counts, with \( k = 1 \)). Here is a proof that every integer \( n \ge 2 \) is a product of primes, with its last step blank. *Name the move, then complete it.*
+An integer is a **product of primes** if it equals \( p_1 p_2 \cdots p_k \) for some \( k \ge 1 \) and primes \( p_1, \dots, p_k \) (a single prime counts, with \( k = 1 \)). Here \( p_1 p_2 \cdots p_k \) has its school meaning, and multiplying two such products gives the product of the joined list; Section 7.3 defines finite products (@def-sum-product). Here is a proof that every integer \( n \ge 2 \) is a product of primes, with its last step blank. *Name the move, then complete it.*
 
 Suppose not. Then the set \( F \) of integers \( n \ge 2 \) that are not products of primes is non-empty and has the integer lower bound \( 2 \), so it has a least element \( m \) by @cor-well-ordering-integers. Since a prime is a product of primes, \( m \) is not prime; as \( m \ge 2 \), it has a positive divisor \( a \notin \{1, m\} \), and \( m = ab \) with \( b \in \nZ \). As in the proof of @thm-prime-factor, \( b > 0 \) and \( 2 \le a < m \). Since \( a < m = ab \) and \( a > 0 \), we get \( b > 1 \), so \( b \ge 2 \) by discreteness; and since \( a \ge 2 \), \( b < 2b \le ab = m \). So \( 2 \le a < m \) and \( 2 \le b < m \), and as \( m \) is the least element of \( F \), neither \( a \) nor \( b \) lies in \( F \): both are products of primes.
 
@@ -333,7 +333,7 @@ is a product of primes, which contradicts \( m \in F \). Hence \( F \) is empty,
 3. Prove that if \( 2 \mid n \) and \( 3 \mid n \), then \( 6 \mid n \), for every integer \( n \).
 :::
 
-*Hint for (c): write \( n = 2a \), and divide \( a \) by \( 3 \).*
+*Hint for (c): @thm-division-algorithm, dividing by \( 3 \).*
 :::
 
 ::: {.solution}
@@ -371,11 +371,11 @@ Answer each question. (i) Is the claim true? (ii) Does the argument prove it? (i
 \[
 18 = 4 \cdot 1 + 7 \cdot 2 , \quad 19 = 4 \cdot 3 + 7 , \quad 20 = 4 \cdot 5 , \quad 21 = 7 \cdot 3 ,
 \]
-and every larger integer is one of these plus a multiple of \( 4 \).
+and from these four the repaired induction in (vi) reaches every larger integer.
 
 *(ii)* The argument does **not** prove it, although its conclusion is true.
 
-*(iii)* Line (5) fails for \( n = 18 \), \( 19 \) and \( 20 \). There \( n - 3 \) is \( 15 \), \( 16 \), \( 17 \), all below \( 18 \), and the induction hypothesis says nothing about them. For \( n \ge 21 \), \( 18 \le n - 3 < n \), and line (5) is correct. Lines (1)–(4), (6) and (7) are correct.
+*(iii)* Line (5) fails for \( n = 18 \), \( 19 \) and \( 20 \). There \( n - 3 \) is \( 15 \), \( 16 \), \( 17 \), all below \( 18 \), and the induction hypothesis says nothing about them. For \( n \ge 21 \), \( 18 \le n - 3 < n \), and line (5) is correct. Lines (1)–(4), (6) and (7) are correct. Line (7) needs one remark, because the step is written from \( n \) to \( n + 1 \) and not in the theorem's own form. At \( N = 18 \) the theorem's hypothesis has a vacuous "if" part, so it asks for \( P(18) \) outright, which is line (2). At an integer \( N \ge 19 \), put \( n = N - 1 \ge 18 \). By the discreteness clause of @prp-integers-closed, the integers \( k \) with \( 18 \le k < N \) are exactly those with \( 18 \le k \le n \), so lines (3)–(6), were they valid for every \( n \ge 18 \), would prove the hypothesis at \( N \).
 
 *(iv)* Line (5) applies \( \rulename{\forall E} \) to the hypothesis "for every integer \( k \) with \( 18 \le k \le n \), \( P(k) \)" at \( k = n - 3 \). That is a bounded quantifier, and its elimination needs the line "\( 18 \le n - 3 \)" (@prp-bounded-quantifier-rules); for \( n \le 20 \) that line is false. The proof checked only half of the bound, \( n - 3 < n \).
 
@@ -457,8 +457,8 @@ lem-lowest-terms (proof): m' = m/2 > 0; m' < m' + m' = m; 2p'/(2m') = p'/m' | R 
 thm-prime-factor (proof): k > 0 from n = ka, n > 0, a > 0; a <= ka for k >= 1, a > 0 | R arithmetic and order, school fact
 exr-induction-in-practice-a1 (solution): (a)(ii) 2n^2 >= (n + 1)^2 for n >= 3; (d) a^(n+1) = a^n a^n / a^(n-1) for n >= 1, a^(-1) = 1/a | powers, school meaning (negative exponents outside def-power, said in the item); R arithmetic
 exr-induction-in-practice-b1 (solution): 6^(n+1) = 6 * 6^n, 6^n an integer | powers, school meaning; def-power and prp-power-laws (d) in Section 7.3 (said in the item)
-exr-induction-in-practice-b2 (solution): a product of two products of primes is a product of primes (concatenating the lists) | inline; products of finite lists defined in Section 7.3 (def-sum-product), used here in their school meaning
+exr-induction-in-practice-b2 (solution): a product of two products of primes is a product of primes (concatenating the lists) | inline; products of finite lists defined in Section 7.3 (def-sum-product), used here in their school meaning (said in the item)
 exr-induction-in-practice-b3 (solution): (b) x^2 = 4k(k + 1) + 1; (c) n = 6q + 2r | R arithmetic, school fact
-exr-induction-in-practice-c1 (solution): representability of 13, 15, 16, 17, 18-21 | arithmetic; checked in the solution
+exr-induction-in-practice-c1 (solution): representability of 13, 15, 16, 17, 18-21 | arithmetic; checked in the solution. (i) every n >= 22 representable | the repaired induction in (vi) (cited inline)
 exr-induction-in-practice-c2 (solution): m' = m/d > 0; dm' >= 2m' > m' | R arithmetic and order, school fact
 -->

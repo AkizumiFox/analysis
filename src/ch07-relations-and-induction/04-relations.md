@@ -33,13 +33,13 @@ Let \( X \) be a set and \( R \) a relation on \( X \). Then \( R \) is
 
 In words: reflexive says every element is related to itself. Symmetric says the relation can be read backwards: whenever it relates \( x \) to \( y \), it also relates \( y \) to \( x \). Antisymmetric says it can be read both ways only between an element and itself. Transitive says two steps can always be replaced by one.
 
-Three of the four are implications, so a relation has them unless a pair (or a triple) of related elements forces something the relation lacks. Negating with @prp-bounded-quantifier-negation and @prp-negated-implication turns each failure into a **witness**:
+Three of the four are implications, so a relation has them unless some related pair (or triple) makes the conclusion false: for symmetry and transitivity a pair is missing from \( R \), and for antisymmetry two different elements are related both ways. Negating with @prp-bounded-quantifier-negation and @prp-negated-implication turns each failure into a **witness**:
 \[
 \begin{aligned}
 \text{not reflexive:} \quad & \exists x \in X \ \ \neg (x \mathrel{R} x) , \\
 \text{not symmetric:} \quad & \exists x \in X \ \exists y \in X \ \ \bigl( x \mathrel{R} y \wedge \neg (y \mathrel{R} x) \bigr) , \\
-\text{not antisymmetric:} \quad & \exists x \in X \ \exists y \in X \ \ \bigl( x \mathrel{R} y \wedge (y \mathrel{R} x \wedge x \ne y) \bigr) , \\
-\text{not transitive:} \quad & \exists x, y, z \in X \ \ \bigl( x \mathrel{R} y \wedge (y \mathrel{R} z \wedge \neg (x \mathrel{R} z)) \bigr) .
+\text{not antisymmetric:} \quad & \exists x \in X \ \exists y \in X \ \ \bigl( (x \mathrel{R} y \wedge y \mathrel{R} x) \wedge x \ne y \bigr) , \\
+\text{not transitive:} \quad & \exists x \in X \ \exists y \in X \ \exists z \in X \ \ \bigl( (x \mathrel{R} y \wedge y \mathrel{R} z) \wedge \neg (x \mathrel{R} z) \bigr) .
 \end{aligned}
 \]
 So "not symmetric" is shown by **one** pair related in one direction only, and "not transitive" by one triple. A single witness settles a failure; a success needs an argument for all elements.
@@ -66,7 +66,7 @@ Reflexive means a loop at every point. Symmetric means every arrow has a return 
 
 ## Divisibility
 
-Divisibility is the example in which antisymmetry depends on the set. Recall @def-divides: for integers \( a, b \), \( a \mid b \) means \( b = ka \) for some \( k \in \nZ \).
+Divisibility shows that the same rule can give an antisymmetric relation on one set and not on a larger one, because the larger set brings in more pairs: \( \mid \) on \( \nZ \) contains both \( (2, -2) \) and \( (-2, 2) \), which \( \mid \) on \( \nN \) does not. Recall @def-divides: for integers \( a, b \), \( a \mid b \) means \( b = ka \) for some \( k \in \nZ \).
 
 ::: {#prp-divides-partial-order}
 [Divisibility on the Natural Numbers]
@@ -120,7 +120,7 @@ Decide which of the four properties each relation has: \( = \), \( \le \) and \(
 
 The witnesses. \( 0 \le 1 \) and not \( 1 \le 0 \); \( 0 < 1 \) and not \( 1 < 0 \); not \( 0 < 0 \). \( \emptyset \subseteq X \), since the empty set is a subset of every set (Section 6.1, after @prp-empty-set-unique), and \( X \not\subseteq \emptyset \), since \( X \) has an element and \( \emptyset \) has none. \( 1 \mid 2 \), and \( 2 \nmid 1 \): \( 1 = 2k \) would give \( 0 < k < 1 \), and no integer lies there (@prp-integers-closed (c)). The pair \( 2, -2 \) is from @prp-divides-partial-order. For \( x - y \in \nZ \): \( 0 - 1 = -1 \) and \( 1 - 0 = 1 \) are integers, and \( 0 \ne 1 \). For \( \emptyset \): no \( x \) has \( (x, x) \in \emptyset \).
 
-The "yes" entries. Equality is reflexive by \( \rulename{{=}I} \) (@def-rules-equality), symmetric and transitive by @prp-equality-symmetric-transitive, and antisymmetric because its conclusion \( x = y \) is one of its hypotheses. For \( \le \) and \( < \), antisymmetry and transitivity are order facts about \( \nR \); for \( < \), antisymmetry holds **vacuously**, since \( x < y \) and \( y < x \) never hold together. For \( \subseteq \), reflexivity is immediate from @def-subset, transitivity is @prp-subset-transitive, and antisymmetry is @prp-subset-antisymmetric. For \( \mid \), see @prp-divides-partial-order. For \( x - y \in \nZ \): \( x - x = 0 \in \nZ \); \( y - x = -(x - y) \); and \( x - z = (x - y) + (y - z) \); these are integers by @prp-integers-closed (a). The empty relation is symmetric, antisymmetric and transitive vacuously: each property is an implication whose hypothesis requires a pair in \( \emptyset \).
+The "yes" entries. Equality is reflexive by \( \rulename{{=}I} \) (@def-rules-equality), symmetric and transitive by @prp-equality-symmetric-transitive, and antisymmetric because its conclusion \( x = y \) is one of its hypotheses. For \( \le \) and \( < \), antisymmetry and transitivity are order facts about \( \nR \), and \( \le \) is reflexive because \( x = x \) gives \( x \le x \); for \( < \), antisymmetry holds **vacuously**, since \( x < y \) and \( y < x \) never hold together. For \( \subseteq \), reflexivity is immediate from @def-subset, transitivity is @prp-subset-transitive, and antisymmetry is @prp-subset-antisymmetric. For \( \mid \), see @prp-divides-partial-order. For \( x - y \in \nZ \): \( x - x = 0 \in \nZ \); \( y - x = -(x - y) \); and \( x - z = (x - y) + (y - z) \); these are integers by @prp-integers-closed (a). The empty relation is symmetric, antisymmetric and transitive vacuously: each property is an implication whose hypothesis requires a pair in \( \emptyset \).
 :::
 
 Three degenerate cases are worth a sentence each, because each shows a property holding for a reason other than the one we expect.
@@ -134,18 +134,18 @@ On the set \( \{2, 3, 4, \dots\} \) of integers \( \ge 2 \), let \( x \mathrel{C
 :::
 
 ::: {.solution}
-Reflexive: every integer \( x \ge 2 \) has a prime factor \( p \) (@thm-prime-factor), and \( p \) divides \( x \) and \( x \). Symmetric: the condition "\( p \mid x \) and \( p \mid y \)" does not depend on the order of \( x \) and \( y \). Not antisymmetric: \( 2 \mathrel{C} 4 \) and \( 4 \mathrel{C} 2 \) (both divisible by \( 2 \)), and \( 2 \ne 4 \). Not transitive: \( 2 \mathrel{C} 6 \) (common factor \( 2 \)) and \( 6 \mathrel{C} 3 \) (common factor \( 3 \)), but \( 2 \) and \( 3 \) have no common prime factor, since the only prime dividing \( 2 \) is \( 2 \), and \( 2 \nmid 3 \). Sharing a factor with a middle element does not pass along, because the shared factor may change.
+Reflexive: every integer \( x \ge 2 \) has a prime factor \( p \) (@thm-prime-factor), and \( p \) divides \( x \) and \( x \). Symmetric: the condition "\( p \mid x \) and \( p \mid y \)" does not depend on the order of \( x \) and \( y \). Not antisymmetric: \( 2 \mathrel{C} 4 \) and \( 4 \mathrel{C} 2 \) (both divisible by \( 2 \)), and \( 2 \ne 4 \). Not transitive: \( 2 \mathrel{C} 6 \) (common factor \( 2 \)) and \( 6 \mathrel{C} 3 \) (common factor \( 3 \)), but \( 2 \) and \( 3 \) have no common prime factor, since a prime dividing \( 2 \) is a positive divisor of \( 2 \) that is at least \( 2 \), hence is \( 2 \) (the example after @def-prime), and \( 2 \nmid 3 \): \( 3 = 2k \) would give \( 1 < k < 2 \), and no integer lies there (@prp-integers-closed (c)). Sharing a factor with a middle element does not pass along, because the shared factor may change.
 :::
 
 ::: {.warning}
-**A false theorem: "symmetric and transitive imply reflexive."** The "proof": let \( x \in X \), and take \( y \) with \( x \mathrel{R} y \); by symmetry \( y \mathrel{R} x \), and by transitivity \( x \mathrel{R} x \). The conclusion is false: the empty relation on \( \{1\} \) is symmetric and transitive (vacuously) and not reflexive, with witness \( 1 \). The illegal step is the second clause, "take \( y \) with \( x \mathrel{R} y \)". It is an \( \rulename{\exists E} \) (@def-rules-existential) on the statement \( \exists y \in X \ x \mathrel{R} y \), which was never derived and need not be true; citing it is (N9) of @exm-not-allowed-catalogue. The argument does prove something: every \( x \) that is related to **some** \( y \) is related to itself (Exercise C2).
+**A false theorem: "symmetric and transitive imply reflexive."** The "proof": let \( x \in X \), and take \( y \) with \( x \mathrel{R} y \); by symmetry \( y \mathrel{R} x \), and by transitivity \( x \mathrel{R} x \). The conclusion is false: the empty relation on \( \{1\} \) is symmetric and transitive (vacuously) and not reflexive, with witness \( 1 \). The illegal step, "take \( y \) with \( x \mathrel{R} y \)", is an \( \rulename{\exists E} \) (@def-rules-existential) on \( \exists y \in X \ x \mathrel{R} y \), which was never derived and need not be true: (N9) of @exm-not-allowed-catalogue (Exercise C2 gives the correct version).
 :::
 
 ::: {.remark}
 "Antisymmetric" is not "not symmetric". Equality is both symmetric and antisymmetric. And \( \{ (1, 2), (2, 1), (2, 3) \} \) on \( \{1, 2, 3\} \) is neither: it is not symmetric, since \( 2 \mathrel{R} 3 \) and not \( 3 \mathrel{R} 2 \); and it is not antisymmetric, since \( 1 \mathrel{R} 2 \), \( 2 \mathrel{R} 1 \) and \( 1 \ne 2 \).
 :::
 
-Two combinations of the properties organize the rest of the chapter. A relation that is reflexive, symmetric and transitive behaves like equality; Section 7.5 calls it an **equivalence relation** and shows that it cuts \( X \) into classes. A relation that is reflexive, antisymmetric and transitive behaves like \( \le \); Section 7.6 calls it a **partial order**, and divisibility on \( \nN \) is the first example that is not a comparison of sizes.
+Two combinations of the properties organize the rest of the chapter. A relation that is reflexive, symmetric and transitive behaves like equality; Section 7.5 calls it an **equivalence relation** and shows that it cuts \( X \) into classes. A relation that is reflexive, antisymmetric and transitive behaves like \( \le \); Section 7.6 calls it a **partial order**; inclusion on \( \powerset{X} \) and divisibility on \( \nN \) are examples that are not comparisons of sizes.
 
 ## Exercises
 
@@ -163,7 +163,7 @@ Two combinations of the properties organize the rest of the chapter. A relation 
 :::
 
 ::: {.solution}
-(a) \( \forall x \in X \ \forall y \in X \ ((x \mathrel{R} y \wedge y \mathrel{R} x) \to x = y) \). Its negation, by @prp-bounded-quantifier-negation and @prp-negated-implication: \( \exists x \in X \ \exists y \in X \ (x \mathrel{R} y \wedge (y \mathrel{R} x \wedge x \ne y)) \).
+(a) \( \forall x \in X \ \forall y \in X \ ((x \mathrel{R} y \wedge y \mathrel{R} x) \to x = y) \). Its negation, by @prp-bounded-quantifier-negation and @prp-negated-implication: \( \exists x \in X \ \exists y \in X \ ((x \mathrel{R} y \wedge y \mathrel{R} x) \wedge x \ne y) \).
 
 (b) False. Equality on any set is antisymmetric and symmetric. So is the empty relation (vacuously).
 
@@ -189,13 +189,13 @@ For each relation, determine which of the four properties it has. Justify your a
 :::
 
 ::: {.solution}
-(a) Reflexive: \( a + b = b + a \). Symmetric: \( a + d = b + c \) gives \( c + b = d + a \). Transitive: from \( a + d = b + c \) and \( c + f = d + e \), adding gives \( a + d + c + f = b + c + d + e \), and canceling \( c + d \) gives \( a + f = b + e \). Not antisymmetric: \( (0, 0) \mathrel{E} (1, 1) \) both ways, and \( (0, 0) \ne (1, 1) \). (The pairs \( (a, b) \) and \( (c, d) \) are related exactly when \( a - b = c - d \); the optional Chapter 10 builds \( \nZ \) from the classes of this relation.)
+(a) Reflexive: \( a + b = b + a \). Symmetric: \( a + d = b + c \) gives \( c + b = d + a \). Transitive: from \( a + d = b + c \) and \( c + f = d + e \), adding gives \( a + d + c + f = b + c + d + e \), and canceling \( c + d \) gives \( a + f = b + e \). Not antisymmetric: \( (0, 0) \mathrel{E} (1, 1) \) both ways, and \( (0, 0) \ne (1, 1) \). (The pairs \( (a, b) \) and \( (c, d) \) are related exactly when \( a - b = c - d \); Chapter 10 builds \( \nZ \) from the classes of this relation.)
 
 (b) Reflexive, symmetric and transitive, because "\( x^2 = y^2 \)" is equality of the values \( x^2 \) and \( y^2 \), and equality has those three properties. Not antisymmetric: \( 1^2 = (-1)^2 \) and \( 1 \ne -1 \).
 
 (c) Reflexive: \( f(x) \le f(x) \). Transitive: \( f(x) \le g(x) \le h(x) \) at each \( x \). Antisymmetric: if \( f \mathrel{L} g \) and \( g \mathrel{L} f \), then \( f(x) = g(x) \) for every \( x \), and \( f = g \) by @prp-function-equality (same domain and codomain). Not symmetric: the constant functions \( 0 \) and \( 1 \) satisfy \( 0 \mathrel{L} 1 \) and not \( 1 \mathrel{L} 0 \). In addition, two functions need not be comparable: for \( f(x) = x \) and the constant \( 0 \), neither \( f \mathrel{L} 0 \) (fails at \( x = 1 \)) nor \( 0 \mathrel{L} f \) (fails at \( x = -1 \)).
 
-(d) Symmetric: \( xy = yx \). Transitive: if \( xy > 0 \) and \( yz > 0 \), then \( (xy)(yz) = xz \, y^2 > 0 \), and \( y^2 > 0 \) (since \( y \ne 0 \), as \( xy \ne 0 \)), so \( xz > 0 \). **Not reflexive:** \( 0 \cdot 0 = 0 \), so \( 0 \) is not related to itself. Not antisymmetric: \( 1 \cdot 2 > 0 \) and \( 1 \ne 2 \). This is the planted case: \( P \) is symmetric and transitive, yet not reflexive on \( \nR \), exactly at the one element related to nothing. On \( \nR \setminus \{0\} \) it is reflexive. Compare the warning before these exercises.
+(d) Symmetric: \( xy = yx \). Transitive: if \( xy > 0 \) and \( yz > 0 \), then \( (xy)(yz) = xz \, y^2 > 0 \), and \( y^2 > 0 \) (since \( y \ne 0 \), as \( xy \ne 0 \)), so \( xz > 0 \). **Not reflexive:** \( 0 \cdot 0 = 0 \), so \( 0 \) is not related to itself. Not antisymmetric: \( 1 \mathrel{P} 2 \) and \( 2 \mathrel{P} 1 \) (both products are \( 2 > 0 \)), and \( 1 \ne 2 \). This is the planted case: \( P \) is symmetric and transitive, yet not reflexive on \( \nR \), exactly at the one element related to nothing. On \( \nR \setminus \{0\} \) it is reflexive. Compare the warning before these exercises.
 
 (e) Not reflexive: \( 0 \ne 0 + 1 \). Not symmetric: \( 0 \mathrel{N} 1 \) and not \( 1 \mathrel{N} 0 \) (\( 0 \ne 2 \)). Not transitive: \( 0 \mathrel{N} 1 \) and \( 1 \mathrel{N} 2 \), and not \( 0 \mathrel{N} 2 \). Antisymmetric, vacuously: \( x \mathrel{N} y \) and \( y \mathrel{N} x \) would give \( y = x + 1 \) and \( x = y + 1 = x + 2 \), which is impossible, so no pair satisfies the hypothesis.
 :::
@@ -219,7 +219,7 @@ Every correct answer must:
 - contain a pair related **one** way only (to fail symmetry);
 - contain the shortcut of every two-arrow path.
 
-The second and fourth items together force more: if \( a \mathrel{R} b \), \( b \mathrel{R} a \) and \( b \mathrel{R} c \), transitivity puts \( a \mathrel{R} c \) in. So an answer cannot simply be "the three loops, one two-way pair, one one-way arrow" unless the arrow avoids the pair; for example, \( \{(1, 1), (2, 2), (3, 3), (1, 2), (2, 1), (3, 1)\} \) fails transitivity, since \( 3 \mathrel{R} 1 \mathrel{R} 2 \) and not \( 3 \mathrel{R} 2 \). Listing all the possibilities shows that \( \{1, 2, 3\} \) carries exactly six correct answers: one for each choice of the two-way pair (three choices) and of whether the third element lies above the pair or below it (two choices); the answer above has \( 3 \) above the pair \( \{1, 2\} \).
+The second and fourth items together force more: if \( a \mathrel{R} b \), \( b \mathrel{R} a \) and \( b \mathrel{R} c \), transitivity puts \( a \mathrel{R} c \) in. So one one-way arrow is never enough: on \( \{1, 2, 3\} \) such an arrow joins the third element to one element of the pair, and transitivity then relates it to the other element too, in the same direction. For example, \( \{(1, 1), (2, 2), (3, 3), (1, 2), (2, 1), (3, 1)\} \) fails transitivity, since \( 3 \mathrel{R} 1 \mathrel{R} 2 \) and not \( 3 \mathrel{R} 2 \). In fact there is only one two-way pair: two of them, say \( \{a, b\} \) and \( \{b, c\} \), give \( a \mathrel{R} c \) and \( c \mathrel{R} a \) by transitivity, so \( R \) is the full relation, which is symmetric. Call the two-way pair \( \{a, b\} \) and the third element \( c \). A one-way arrow must have \( c \) at one end. If \( c \mathrel{R} a \), then \( c \mathrel{R} a \mathrel{R} b \) gives \( c \mathrel{R} b \), and neither \( a \mathrel{R} c \) nor \( b \mathrel{R} c \) can hold, since that would make a second two-way pair; so both arrows point out of \( c \). Likewise \( a \mathrel{R} c \) forces \( b \mathrel{R} c \), and both arrows point into \( c \). So \( \{1, 2, 3\} \) carries exactly six correct answers: one for each choice of the two-way pair (three choices) and of whether the third element lies above the pair or below it (two choices); the answer above has \( 3 \) above the pair \( \{1, 2\} \).
 :::
 
 ::: {#exr-relations-b3}
@@ -284,12 +284,13 @@ Fatal errors (0 for the step): taking \( y \) with \( x \mathrel{R} y \) for an 
 def-relation-properties (claim): (the paragraph "Why reflexive on X") symmetric, antisymmetric, transitive depend only on the set R, since x R y forces x, y in X | def-relation (cited)
 prp-divides-partial-order (proof): if k <= 0 and a > 0 then ka <= 0; multiplying k > 1 by l > 0 | R order, school fact; axioms in Ch 11
 prp-divides-partial-order (proof): cancelling a != 0 from a = lka | R arithmetic, school fact
-exm-relation-table (solution): antisymmetry and transitivity of <= and < on R; not 0 < 0; not 1 <= 0 | R order, school fact; axioms in Ch 11
+exm-relation-table (solution): reflexivity of <= (x = x); antisymmetry and transitivity of <= and < on R; not 0 < 0; not 1 <= 0 | R order, school fact; axioms in Ch 11
 exm-relation-table (solution): reflexivity and transitivity of subset | def-subset (cited); transitivity of inclusion, Ch 6 Section 6.1
 exm-relation-table (solution): 2 does not divide 1 (no integer strictly between 0 and 1) | prp-integers-closed (c) (cited)
 exm-relation-table (claim): (the degenerate cases) the full relation X x X is antisymmetric only if X has at most one element | inline (two different elements are related both ways)
 exr-relations-b1 (solution): cancellation in R; y^2 > 0 for y != 0; product of positives is positive | R arithmetic and order, school fact
 exr-relations-b1 (solution): x = x + 2 is impossible | R arithmetic, school fact
 exr-relations-b2 (solution): the list of two-step paths in R is complete | inline, by listing the pairs of R
+exr-relations-b2 (solution): exactly six correct answers | inline (one two-way pair; the third element above or below it)
 exr-relations-c1 (solution): (x, y) in Delta_X iff x = y | def-ordered-pair (cited)
 -->

@@ -111,7 +111,7 @@ Rename the index: \( k = n - n_0 \) turns \( D \) into \( \nN \) and the recursi
 :::
 
 ::: {.proof}
-For \( k \in \nN \), the number \( n_0 + k \) is an integer (@prp-integers-closed (a)) and \( n_0 + k \ge n_0 \) (@lem-naturals-arithmetic (a)), so it lies in \( D \). Conversely, for \( n \in D \), \( n - n_0 \) is an integer \( \ge 0 \), so \( n - n_0 \in \nN \) by @prp-integers-closed (b). Define \( g' \colon \nN \times X \to X \) by \( g'(k, x) \coloneqq g(n_0 + k, x) \). By @thm-recursion there is exactly one \( f' \colon \nN \to X \) with \( f'(0) = a \) and \( f'(k + 1) = g(n_0 + k, f'(k)) \) for every \( k \in \nN \).
+For \( k \in \nN \), the number \( n_0 + k \) is an integer (@prp-integers-closed (a)) and \( n_0 + k \ge n_0 \) (@lem-naturals-arithmetic (a)), so it lies in \( D \). Conversely, for \( n \in D \), \( n - n_0 \) is an integer (@prp-integers-closed (a)) and \( \ge 0 \), so \( n - n_0 \in \nN \) by @prp-integers-closed (b). Define \( g' \colon \nN \times X \to X \) by \( g'(k, x) \coloneqq g(n_0 + k, x) \). By @thm-recursion there is exactly one \( f' \colon \nN \to X \) with \( f'(0) = a \) and \( f'(k + 1) = g(n_0 + k, f'(k)) \) for every \( k \in \nN \).
 
 *Existence.* Let \( t \colon D \to \nN \), \( t(n) \coloneqq n - n_0 \), and \( f \coloneqq f' \circ t \) (@def-composition). Then \( f(n_0) = f'(0) = a \), and for \( n \in D \), with \( k = n - n_0 \),
 \[
@@ -126,7 +126,7 @@ The renaming is the move that gave induction from a base (@thm-induction). The c
 ::: {#cor-two-step-recursion}
 [Two-Step Recursion]
 
-Let \( X \) be a set, \( a, b \in X \), and \( h \colon \nN \times X \times X \to X \) a function. Then there is exactly one function \( f \colon \nN \to X \) with
+Let \( X \) be a set, \( a, b \in X \), and \( h \colon \nN \times (X \times X) \to X \) a function (@def-cartesian-product); write \( h(n, x, y) \) for \( h(n, (x, y)) \). Then there is exactly one function \( f \colon \nN \to X \) with
 \[
 f(0) = a, \quad f(1) = b, \quad f(n + 2) = h\bigl(n, f(n), f(n + 1)\bigr) \ \text{ for every } n \in \nN .
 \]
@@ -151,12 +151,6 @@ p'(n + 1) = \bigl(f'(n + 1), \ h(n, f'(n), f'(n + 1))\bigr) = G\bigl(n, p'(n)\bi
 \]
 so \( p' = p \) by the uniqueness in @thm-recursion, and \( f'(n) = p_1(n) = f(n) \) for every \( n \). By @prp-function-equality, \( f' = f \).
 :::
-
-For instance, \( a_0 = 2 \), \( a_1 = 3 \) and \( a_{n+2} = 3a_{n+1} - 2a_n \) define a unique sequence of reals (\( X = \nR \), \( h(n, x, y) = 3y - 2x \)), and its first values are \( 2, 3, 5, 9, 17 \). These are \( 2^n + 1 \). To prove it, induct on the **pair** statement \( Q(n) \): "\( a_n = 2^n + 1 \) and \( a_{n+1} = 2^{n+1} + 1 \)". \( Q(0) \) is \( 2 = 1 + 1 \) and \( 3 = 2 + 1 \). If \( Q(n) \) holds, its second half is the first half of \( Q(n + 1) \), and
-\[
-a_{n+2} = 3\bigl(2^{n+1} + 1\bigr) - 2\bigl(2^n + 1\bigr) = 2 \cdot 2^{n+1} + 1 = 2^{n+2} + 1 .
-\]
-So @ax-induction gives \( Q(n) \) for every \( n \), and in particular \( a_n = 2^n + 1 \). The induction carries a pair because the recursion does: the proof follows the clauses of the definition. (Powers are used here in their school sense; the next subsection makes them official.)
 
 ## Sums, products and powers
 
@@ -204,6 +198,12 @@ This is @thm-recursion with \( X = \nR \), \( a = 1 \) and \( g(n, x) = xu \). S
 a_0 = 2, \qquad a_1 = \tfrac12 (2 + 1) = \tfrac32, \qquad a_2 = \tfrac12 \Bigl(\tfrac32 + \tfrac43\Bigr) = \tfrac{17}{12} ,
 \]
 and \( (17/12)^2 = 289/144 \), which exceeds \( 2 \) by \( 1/144 \). That the sequence converges to \( \sqrt 2 \) is a question for Chapter 12, where recursively defined sequences become objects of study.
+
+**A two-step example.** By @cor-two-step-recursion, \( a_0 = 2 \), \( a_1 = 3 \) and \( a_{n+2} = 3a_{n+1} - 2a_n \) define a unique sequence of reals (\( X = \nR \), \( h(n, x, y) = 3y - 2x \)), and its first values are \( 2, 3, 5, 9, 17 \). These are \( 2^n + 1 \). To prove it, induct on the **pair** statement \( Q(n) \): "\( a_n = 2^n + 1 \) and \( a_{n+1} = 2^{n+1} + 1 \)". \( Q(0) \) is \( 2 = 1 + 1 \) and \( 3 = 2 + 1 \). If \( Q(n) \) holds, its second half is the first half of \( Q(n + 1) \), and
+\[
+a_{n+2} = 3\bigl(2^{n+1} + 1\bigr) - 2\bigl(2^n + 1\bigr) = 2 \cdot 2^{n+1} + 1 = 2^{n+2} + 1 ,
+\]
+where \( 2 \cdot 2^n = 2^n \cdot 2 = 2^{n+1} \) and \( 2 \cdot 2^{n+1} = 2^{n+1} \cdot 2 = 2^{n+2} \) by @def-power (and commutativity). So @ax-induction gives \( Q(n) \) for every \( n \), and in particular \( a_n = 2^n + 1 \). The induction carries a pair because the recursion does: the proof follows the clauses of the definition.
 
 ::: {.warning}
 A recursion needs its starting values, and its rule must stay inside \( X \). "\( a_{n+2} = a_{n+1} + a_n \)" alone defines nothing: \( 0, 1, 1, 2, \dots \) and \( 2, 1, 3, 4, \dots \) both obey it, and @cor-two-step-recursion asks for \( a_0 \) and \( a_1 \). And "\( a_0 = 2 \), \( a_{n+1} = 1/(a_n - 1) \)" is not a definition by recursion: \( a_1 = 1 \), and then \( a_2 \) would be \( 1/0 \). The rule \( x \mapsto 1/(x - 1) \) is not a function from any set \( X \) containing \( 2 \) into \( X \), since \( X \) would have to contain its value \( 1 \), where the rule is undefined.
@@ -256,10 +256,10 @@ where the third equation is the induction hypothesis and the last is @def-power.
 
 (d) \( u^0 = 1 = 0 + 1 \) lies in \( \nN \) by (\( \nN \)0) and (\( \nN \)S), and \( \nN \subseteq \nZ \). If \( u^n \in \nZ \) and \( u \in \nZ \), then \( u^{n+1} = u^n u \in \nZ \) by @prp-integers-closed (a). For \( u \in \nN \) the same induction works with @lem-naturals-arithmetic (b) in place of @prp-integers-closed.
 
-(e) Let \( u > 0 \). Then \( u^0 = 1 > 0 \), and if \( u^n > 0 \), then \( u^{n+1} = u^n u > 0 \) as a product of positive numbers. Now let \( u > 1 \). First, \( u^j > 1 \) for every integer \( j \ge 1 \), by @thm-induction with base \( 1 \): \( u^1 = u > 1 \), and if \( u^j > 1 \), then \( u^{j+1} = u^j u > 1 \cdot u > 1 \), multiplying \( u^j > 1 \) by \( u > 0 \). Let \( m < n \). Then \( j \coloneqq n - m \in \nN \) by @lem-naturals-arithmetic (d), and \( j \ne 0 \), so \( j \ge 1 \) by @lem-naturals-arithmetic (a). By (a), \( u^n = u^{m+j} = u^m u^j > u^m \), multiplying \( u^j > 1 \) by \( u^m > 0 \).
+(e) Let \( u > 0 \). Then \( u^0 = 1 > 0 \), and if \( u^n > 0 \), then \( u^{n+1} = u^n u > 0 \) as a product of positive numbers. Now let \( u > 1 \). First, \( u^j > 1 \) for every integer \( j \ge 1 \) (such \( j \) lies in \( \nN \) by @prp-integers-closed (b), so \( u^j \) is defined), by @thm-induction with base \( 1 \): \( u^1 = u > 1 \), and if \( u^j > 1 \), then \( u^{j+1} = u^j u > 1 \cdot u > 1 \), multiplying \( u^j > 1 \) by \( u > 0 \). Let \( m < n \). Then \( j \coloneqq n - m \in \nN \) by @lem-naturals-arithmetic (d), and \( j \ne 0 \), so \( j \ge 1 \) by @lem-naturals-arithmetic (a). By (a), \( u^n = u^{m+j} = u^m u^j > u^m \), multiplying \( u^j > 1 \) by \( u^m > 0 \).
 :::
 
-Some instances that earlier chapters used on trust: \( (t^2)^2 = t^4 \) is (b) with \( m = n = 2 \); \( 2^{s+t} = 2^s 2^t \) is (a); \( n \mapsto 2^n \) is strictly increasing on \( \nN \) by (e); and an integer power of an integer is an integer by (d). For \( (-1)^n \): by (b), \( (-1)^{2k} = ((-1)^2)^k = 1^k = 1 \), where \( 1^k = 1 \) by the induction \( 1^{k+1} = 1^k \cdot 1 \); and \( (-1)^{2k+1} = (-1)^{2k}(-1) = -1 \). Every \( n \in \nN \) is \( 2k \) or \( 2k + 1 \) with \( k \in \nN \) (@thm-division-algorithm with divisor \( 2 \)), so \( (-1)^n \) is \( 1 \) for even \( n \) and \( -1 \) for odd \( n \).
+Some instances that earlier chapters used on trust: \( (t^2)^2 = t^4 \) is (b) with \( m = n = 2 \); \( 2^{s+t} = 2^s 2^t \) is (a); \( n \mapsto 2^n \) is strictly increasing on \( \nN \) by (e); and an integer power of an integer is an integer by (d). For \( (-1)^n \): by (b), \( (-1)^{2k} = ((-1)^2)^k = 1^k = 1 \), where \( 1^k = 1 \) by the induction \( 1^{k+1} = 1^k \cdot 1 \); and \( (-1)^{2k+1} = (-1)^{2k}(-1) = -1 \). Every \( n \in \nN \) is \( 2k + r \) with \( k \in \nZ \) and \( r \in \{0, 1\} \) (@thm-division-algorithm with divisor \( 2 \), and @prp-integers-closed (c) for \( r \le 1 \)), and \( k \ge 0 \): if \( k < 0 \), then \( k \le -1 \) (@prp-integers-closed (c)), so \( n = 2k + r \le -2 + 1 < 0 \), contradicting \( n \ge 0 \) (@lem-naturals-arithmetic (a)). So \( k \in \nN \) by @prp-integers-closed (b), \( n \) is \( 2k \) or \( 2k + 1 \), and \( (-1)^n \) is \( 1 \) for even \( n \) and \( -1 \) for odd \( n \).
 
 The next two formulas are proved the same way; each is a recursion (the sum) followed by an induction whose step splits off the last term.
 
@@ -287,7 +287,7 @@ Let \( r \in \nR \) with \( r \ne 1 \). For every \( n \in \nN \),
 :::
 
 ::: {.proof}
-The right side is defined because \( 1 - r \ne 0 \). For \( n = 0 \), both sides are \( 0 \), since \( r^0 = 1 \). If the formula holds for \( n \), then, by @def-sum-product and the induction hypothesis,
+The terms are defined: for \( k \ge 1 \), \( k - 1 \in \nN \) by @lem-naturals-arithmetic (c), so \( r^{k-1} \) is given by @def-power, and the term added at stage \( n + 1 \) is \( r^{(n+1)-1} = r^n \). The right side is defined because \( 1 - r \ne 0 \). For \( n = 0 \), both sides are \( 0 \), since \( r^0 = 1 \). If the formula holds for \( n \), then, by @def-sum-product and the induction hypothesis,
 \[
 \begin{aligned}
 \sum_{k=1}^{n+1} r^{k-1} &= \frac{1 - r^n}{1 - r} + r^n
@@ -353,7 +353,7 @@ In both cases \( P(n + 1) \) holds. By @thm-induction, \( P(n) \) holds for ever
 For the minimum, apply the result to \( -x_1, \dots, -x_n \): if \( -x_j \) is a maximum of \( \{-x_1, \dots, -x_n\} \), then \( -x_k \le -x_j \), that is \( x_j \le x_k \), for every \( k \), so \( x_j \) is a minimum of \( \{x_1, \dots, x_n\} \).
 :::
 
-The base is \( 1 \), not \( 0 \): for \( n = 0 \) the set is \( \emptyset \), which has neither a maximum nor a minimum, since both must be elements. The proof used only that any two reals are comparable (trichotomy), so it works word for word in any ordered field; that is the setting in which Chapter 11 uses it. Passing from a finite **set** to a list \( x_1, \dots, x_n \) that enumerates it is what "finite" will mean in Chapter 8.
+The base is \( 1 \), not \( 0 \): for \( n = 0 \) the set is \( \emptyset \), which has neither a maximum nor a minimum, since both must be elements. The proof used only order properties of \( \le \): any two elements are comparable (trichotomy), \( \le \) is reflexive and transitive, and \( x \mapsto -x \) reverses \( \le \). All of these hold in any ordered field, so the proof works word for word there; that is the setting in which Chapter 11 uses it. Passing from a finite **set** to a list \( x_1, \dots, x_n \) that enumerates it is what "finite" will mean in Chapter 8.
 
 ## When the claim is too weak to carry its step
 
@@ -381,7 +381,7 @@ It remains to show \( -\frac1n + \frac{1}{(n + 1)^2} \le -\frac{1}{n + 1} \), th
 By @thm-induction, \( S_n \le 2 - \frac1n < 2 \) for every \( n \ge 1 \).
 :::
 
-The stronger statement carries its own step because its hypothesis says **how far** below \( 2 \) the sum is, and that margin pays for the next term. When a step fails, ask what the hypothesis would need to say, and prove that instead. Exercise C3 below uses it twice over, proving two identities together because neither carries its own step.
+The stronger statement carries its own step because its hypothesis says **how far** below \( 2 \) the sum is, and that margin pays for the next term. When a step fails, ask what the hypothesis would need to say, and prove that instead. Exercise C3 below uses it twice over, proving two identities together because neither carries its own one-step induction.
 
 ## Exercises
 
@@ -489,12 +489,12 @@ by @def-power, and \( k + 1 \in \nN \) by (\( \nN \)S). So \( m \) has the requi
 The restriction to \( n \ge 1 \) is needed: \( 0 = 2^k q \) forces \( q = 0 \), since \( 2^k > 0 \) (@prp-power-laws (e)), and \( 0 = 2 \cdot 0 \) is even, not odd (@thm-division-algorithm: not both). So \( 0 \) is a genuine counterexample, and in the proof it is excluded by taking \( m \in \nZ_{>0} \), which is what makes \( m' > 0 \).
 
 **Marking scheme.** (10 points)
-- 2: names the move (smallest counterexample) and states that \( F \) has a least element by well-ordering, with \( F \) non-empty and contained in \( \nN \).
+- 2: names the move (smallest counterexample) and says that the least element \( m \) exists by well-ordering (@thm-well-ordering).
 - 2: from "\( m \) is not odd" concludes \( m = 2m' \) with \( m' \in \nZ \), citing even-or-odd.
 - 3: shows \( m' \in \nZ_{>0} \) and \( m' < m \), so \( m' \notin F \).
 - 2: writes \( m = 2^{k+1} q \) with \( k + 1 \in \nN \) and reaches the contradiction.
 - 1: explains why \( n = 0 \) is excluded.
-Fatal errors (0 for the step): applying the hypothesis to \( m' \) without showing \( m' < m \) or \( m' \ge 1 \); taking the least element of a set not shown to be non-empty. A proof by @thm-strong-induction-from-base with base \( 1 \), in place of the smallest counterexample, earns full marks with the same steps: the induction hypothesis at \( m' \) replaces "\( m' \notin F \)".
+Fatal errors (0 for the step): concluding \( m' \notin F \) (or applying the induction hypothesis to \( m' \)) without having shown both \( m' < m \) and \( m' \ge 1 \); missing either one is fatal. A reader who restarts by @thm-strong-induction-from-base with base \( 1 \) earns the points for the other steps (the induction hypothesis at \( m' \) replaces "\( m' \notin F \)"), but not the 2 points for naming the move.
 :::
 
 ::: {#exr-recursion-c2}
@@ -528,7 +528,7 @@ Check \( P(0) \), \( P(1) \) and \( P(2) \) numerically first.
 ::: {.solution}
 [Hint 1]
 
-Neither identity can be proved alone by induction on \( n \): passing from \( F_{2n+1} \) to \( F_{2n+3} \) needs \( F_{2n+2} \), which is the other identity. Prove both together, and use \( F_n + F_{n+1} = F_{n+2} \) to merge terms.
+Neither identity carries its own one-step inductive step: passing from \( F_{2n+1} \) to \( F_{2n+3} \) needs \( F_{2n+2} \), which is the other identity. Prove both together, and use \( F_n + F_{n+1} = F_{n+2} \) to merge terms.
 :::
 
 ::: {.solution}
@@ -562,14 +562,15 @@ F_{2n+4} &= F_{2n+3} + F_{2n+2} \\
 \]
 using the first half of \( P(n + 1) \) just proved, the second half of \( P(n) \), \( F_{n+1} + F_n = F_{n+2} \), and finally \( F_{n+1} + F_{n+2} = F_{n+3} \). So \( P(n + 1) \) holds, and by @ax-induction \( P(n) \) holds for every \( n \in \nN \).
 
-The second identity is written with \( F_{n+2} \) rather than in the form \( F_{2n} = F_n (F_{n-1} + F_{n+1}) \), so that both identities make sense on all of \( \nN \) and no \( F_{-1} \) is needed. The two identities hold together, and only together do they carry the step: this is "prove more" (@exm-strengthen-hypothesis) in the form of a pair, as in the two-step example after @cor-two-step-recursion.
+The second identity is written with \( F_{n+2} \) rather than in the form \( F_{2n} = F_n (F_{n-1} + F_{n+1}) \), so that both identities make sense on all of \( \nN \) and no \( F_{-1} \) is needed. The two identities hold together, and together they carry a one-step induction that neither carries alone: this is "prove more" (@exm-strengthen-hypothesis) in the form of a pair, as in the two-step example after @def-power. (A two-step induction can prove the first identity alone; see the marking scheme.)
 
 **Marking scheme.** (10 points)
 - 2: defines the sequence by @cor-two-step-recursion, naming \( X \), \( a \), \( b \) and \( h \).
 - 1: checks the base case \( P(0) \), both halves.
-- 3: derives \( F_{2n+3} = F_{n+1}^2 + F_{n+2}^2 \), using both halves of \( P(n) \) and the recursion.
-- 3: derives \( F_{2n+4} = F_{n+2}(F_{n+1} + F_{n+3}) \), using the half just proved.
-- 1: concludes by induction, stating that the two identities are proved together.
+- 3: proves the first identity at \( n + 1 \) (or for all \( n \)): \( F_{2n+3} = F_{n+1}^2 + F_{n+2}^2 \).
+- 3: proves the second identity at \( n + 1 \) (or for all \( n \)): \( F_{2n+4} = F_{n+2}(F_{n+1} + F_{n+3}) \).
+- 1: concludes by induction (one-step or two-step), with a hypothesis that covers every value the step uses.
+Alternative route: 3 for proving \( F_{2n+1} = F_n^2 + F_{n+1}^2 \) alone by a two-step induction (via \( F_{k+2} = 3F_k - F_{k-2} \) for \( k \ge 2 \) and the matching recursion for \( F_n^2 + F_{n+1}^2 \), with both bases \( n = 0, 1 \) checked), and 3 for deriving the second identity as \( F_{2n+2} = F_{2n+3} - F_{2n+1} = F_{n+2}^2 - F_n^2 = F_{n+1}(F_n + F_{n+2}) \).
 Fatal errors (0 for the step): inducting on one identity alone while using the other at \( n \) unproved; using the identities at \( n + 1 \) to prove themselves.
 :::
 
@@ -580,20 +581,21 @@ thm-recursion (proof): the notation {0, ..., n} = {k in N : k <= n} | Section 7.
 thm-recursion (proof): n + 1 > n; k + 1 >= 1 > 0; trichotomy of < on N subset R | R arithmetic and order, school fact; axioms in Ch 11
 thm-recursion (claim): (the remark after it) A_n = {k in N : k >= n}; {k : k >= n} minus {n} = {k : k > n} | inline, with lem-naturals-arithmetic (a), (e) (cited)
 cor-recursion-from-base (proof): n_0 + k >= n_0 for k >= 0 | R order, school fact; with lem-naturals-arithmetic (a) (cited)
-cor-two-step-recursion (proof): h is a function on triples N x X x X | def-cartesian-product (cited in prose via def-ordered-pair); triples as in Ch 6 Section 6.3
-cor-two-step-recursion (example): 3(2^(n+1) + 1) - 2(2^n + 1) = 2^(n+2) + 1 | R arithmetic with 2 * 2^(n+1) = 2^(n+2) by def-power (stated after)
+cor-two-step-recursion (proof): domain N x (X x X) of h, and X x X as the recursion set | def-cartesian-product (cited); h(n, x, y) abbreviates h(n, (x, y))
+def-power (example): (the two-step example, placed after def-power) 3(2^(n+1) + 1) - 2(2^n + 1) = 2 * 2^(n+1) + 1 | R arithmetic, school fact; 2 * 2^n = 2^(n+1) and 2 * 2^(n+1) = 2^(n+2) by def-power (cited)
 def-sum-product (claim): n + 1 >= 1, so a_(n+1) is defined | lem-naturals-arithmetic (a) and (NS) (cited)
 def-sum-product (claim): finite lists, index shift, splitting off the last term | inline (induction and unfolding the definition)
 def-power (example): (17/12)^2 = 289/144 = 2 + 1/144; values 2, 3/2, 17/12 | arithmetic, checked by hand in the text
 prp-power-laws (proof): R arithmetic (associativity, commutativity of multiplication; product of positives is positive; multiplying an inequality by a positive number) | R arithmetic and order, school fact; axioms in Ch 11
 prp-power-laws (claim): (the paragraph after it) 1^k = 1 | inline one-line induction
 prp-sum-first-n (proof): algebra n(n+1)/2 + (n+1) = (n+1)(n+2)/2 | R arithmetic, school fact
-prp-geometric-sum (proof): algebra of fractions with 1 - r != 0 | R arithmetic, school fact
+prp-geometric-sum (proof): algebra of fractions with 1 - r != 0; (n+1) - 1 = n | R arithmetic, school fact
 thm-bernoulli (proof): x^2 >= 0; multiplying by a non-negative number keeps <= | R order, school fact; axioms in Ch 11
-prp-finite-max (proof): trichotomy (totality) of <= on R; {1, ..., n+1} = {1, ..., n} u {n+1} | R order, school fact; lem-naturals-arithmetic (e) (cited)
+prp-finite-max (proof): trichotomy (totality), reflexivity and transitivity of <= on R; -x_k <= -x_j iff x_j <= x_k; {1, ..., n+1} = {1, ..., n} u {n+1} | R order, school fact; lem-naturals-arithmetic (e) (cited)
 prp-finite-max (claim): finite set -> list x_1, ..., x_n is Chapter 8's definition of finite | ch08 (prose pointer; nothing depends on it)
 exm-strengthen-hypothesis (solution): n(n+1) <= (n+1)^2 and reciprocals reverse <= for positives | R order, school fact
 exr-recursion-b2 (solution): (n-1)^2 >= 9 for n >= 4 | R order, school fact
 exr-recursion-c1 (solution): m' = m/2 > 0; 2^k > 0 | R order; prp-power-laws (e) (cited)
-exr-recursion-c2 (solution): (-1)^n is 1 or -1 | the paragraph after prp-power-laws (inline, with thm-division-algorithm)
+exr-recursion-c2 (solution): (-1)^n is 1 or -1 | the paragraph after prp-power-laws (inline, with thm-division-algorithm, prp-integers-closed (b), (c) and lem-naturals-arithmetic (a) for k in N)
+prp-power-laws (claim): (the paragraph after it) 2k + r <= -2 + 1 < 0 for k <= -1, r <= 1 | R arithmetic and order, school fact
 -->
