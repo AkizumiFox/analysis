@@ -1,5 +1,5 @@
 """exr-pairs-as-sets-b2 (Section 9.2): ((0, 0), 0) != (0, (0, 0)) with 0 = emptyset,
-and the triple property of nested pairs on a small universe."""
+and the characteristic property of nested pairs on a small universe."""
 from itertools import combinations, product
 
 E = frozenset()

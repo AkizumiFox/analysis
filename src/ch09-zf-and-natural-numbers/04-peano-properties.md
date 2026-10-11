@@ -1,6 +1,6 @@
 # The Natural Numbers Satisfy Peano's Axioms
 
-The previous section built \( \omega \) and proved induction on it (@thm-omega-induction). Chapter 7 used two further facts about the natural numbers without a second thought: \( 0 \) is not of the form \( n + 1 \), and \( m + 1 = n + 1 \) forces \( m = n \). For the sets of this chapter neither is automatic, and the obvious argument for the second fails, as we shall see. This section proves both for natural numbers, using one property of their membership structure; it then names the list of properties we have reached, Peano's axioms, and shows that each axiom on the list does a job that the others cannot do.
+The previous section built \( \omega \) and proved induction on it (@thm-omega-induction). Chapter 7 used two further facts about the natural numbers without a second thought: \( 0 \) is not of the form \( n + 1 \), and \( m + 1 = n + 1 \) forces \( m = n \). For the sets of this chapter neither is automatic, and the obvious argument for the second fails, as we shall see. This section proves both for natural numbers, using one property of their membership structure; it then names the list of properties we have reached, Peano's axioms, and shows that each of its last three items, (P3), (P4) and (P5), does a job that the other two cannot do.
 
 ## Transitive sets
 
@@ -98,7 +98,7 @@ Moreover, \( \{ (n, \mathrm{S}(n)) : n \in \omega \} \) is a set, and with codom
 ::: {.proof}
 (P1) and (P2) say that \( \omega \) is inductive, which is @thm-omega-least-inductive (a). (P5) is @thm-omega-induction (a).
 
-(P3) Let \( n \in \omega \). Then \( n \in \mathrm{S}(n) \), while \( 0 = \emptyset \) has no elements. So \( \mathrm{S}(n) \ne 0 \) by Extensionality (Z1).
+(P3) Let \( n \in \omega \). Then \( n \in \mathrm{S}(n) \). If \( \mathrm{S}(n) = 0 \), then \( n \in 0 \) by \( \rulename{{=}E} \) (@def-rules-equality), which is impossible, since \( 0 = \emptyset \) has no elements. So \( \mathrm{S}(n) \ne 0 \), by \( \rulename{\neg I} \) (@def-rules-negation).
 
 (P4) Let \( m, n \in \omega \) with \( \mathrm{S}(m) = \mathrm{S}(n) \). Since \( m \in \mathrm{S}(m) = \mathrm{S}(n) \), we have \( m \in n \) or \( m = n \); likewise, since \( n \in \mathrm{S}(n) = \mathrm{S}(m) \), we have \( n \in m \) or \( n = m \). Suppose \( m \ne n \). Then \( m \in n \) and \( n \in m \). Since \( m \) is transitive (@lem-omega-transitive (a)) and \( n \in m \), we get \( n \subseteq m \); so \( m \in n \subseteq m \), that is, \( m \in m \). This contradicts @lem-omega-transitive (c). Hence \( m = n \), by \( \rulename{RAA} \) (@def-rule-raa).
 
@@ -128,14 +128,14 @@ Chapter 7 worked with a set \( \nN \) of real numbers, and this chapter with a s
 ::: {#def-peano-system}
 [Peano system]
 
-A **Peano system** is a triple \( (M, e, s) \) of a set \( M \), an element \( e \in M \), and a function \( s \colon M \to M \), such that:
+A **Peano system** \( (M, e, s) \) consists of a set \( M \), an element \( e \in M \), and a function \( s \colon M \to M \), such that:
 
 - (P3) \( s(x) \ne e \) for **every** \( x \in M \);
 - (P4) \( s \) is injective;
 - (P5) **every** subset \( A \subseteq M \) with \( e \in A \) and \( s(x) \in A \) for every \( x \in A \) is equal to \( M \).
 :::
 
-In words: (P1) and (P2) are built into the data, since \( e \in M \) and \( s \) maps \( M \) into \( M \). (P3) says the step never leads back to the start. (P4) says two different elements never step to the same element. (P5) is induction for \( M \): a subset that contains the start and is closed under the step is everything, so every element of \( M \) is reached from \( e \) by steps. We write \( (M, e, s) \) and not \( (N, e, s) \), so that the letter never suggests \( \nN \).
+In words: (P1) and (P2) are built into the data, since \( e \in M \) and \( s \) maps \( M \) into \( M \). (P3) says the step never leads back to the start. (P4) says two different elements never step to the same element. (P5) is induction for \( M \): a subset that contains the start and is closed under the step is everything, so every element of \( M \) is reached from \( e \) by steps. We write \( (M, e, s) \) and not \( (N, e, s) \), so that the letter never suggests \( \nN \). The notation \( (M, e, s) \) lists the three pieces of data; it is not a set built from them (if one object is wanted, take the pair \( ((M, e), s) \) of @def-kuratowski-pair).
 
 The first example is the one we have, and the second shows that the elements need not be numbers.
 
@@ -147,7 +147,7 @@ Why these three clauses and no others? Each one does work that the other two can
 ::: {#exm-peano-axioms-independent}
 [Each axiom is needed]
 
-Show that each of the following triples \( (M, e, s) \), with \( s \colon M \to M \), satisfies two of (P3), (P4), (P5) and fails the third.
+Show that each of the following structures \( (M, e, s) \), with \( s \colon M \to M \), satisfies two of (P3), (P4), (P5) and fails the third.
 
 ::: {.enumerate options="label=(\roman*)"}
 1. \( M \coloneqq \{0\} \), \( e \coloneqq 0 \), \( s(0) \coloneqq 0 \).
@@ -242,14 +242,14 @@ Every natural number other than \( 0 \) has \( \emptyset \) as an element, by @l
 Let \( a, b \) be sets, and suppose \( (a, b) = \{\{a\}, \{a, b\}\} \in \omega \) (@def-kuratowski-pair). The pair has the element \( \{a\} \), so \( (a, b) \ne \emptyset = 0 \). By @lem-omega-transitive (e), \( 0 = \emptyset \in (a, b) \), so \( \emptyset = \{a\} \) or \( \emptyset = \{a, b\} \). Both are impossible, since \( a \in \{a\} \) and \( a \in \{a, b\} \), while \( \emptyset \) has no elements. This contradiction shows \( (a, b) \notin \omega \).
 :::
 
-So, for instance, the tagged numbers \( (n, 0) \) in the second example of a Peano system above are never natural numbers, and Chapter 6's answer that \( ((1, 2), 3) \ne (1, (2, 3)) \) because "a pair is not a number" now rests on @prp-pair-not-natural. The same statement for \( n \)-tuples with \( n \ge 3 \) needs a definition of \( n \)-tuples, which comes later in this chapter, together with the order on \( \omega \).
+So, for instance, the tagged numbers \( (n, 0) \) in the second example of a Peano system above are never natural numbers, and Chapter 6's answer that \( ((1, 2), 3) \ne (1, (2, 3)) \) because "a pair is not a number" is borne out by @prp-pair-not-natural once the numbers \( 1 \), \( 2 \), \( 3 \) are read as elements of \( \omega \), as the later chapters of this volume read \( \nN \) (Section 9.7). The same statement for \( n \)-tuples with \( n \ge 3 \) needs a definition of \( n \)-tuples, which comes later in this chapter, together with the order on \( \omega \).
 
 ::: {.warning}
 The encoding produces true statements that sound absurd. Since \( \{0\} = 1 \) and \( \{0, 1\} = 2 \),
 \[
 (0, 1) = \{\{0\}, \{0, 1\}\} = \{1, 2\} ,
 \]
-so "\( 1 \in (0, 1) \)" is **true** of the pair \( (0, 1) \), although \( 1 \) is not in the open interval \( (0, 1) \) of real numbers, and "\( 0 \in (0, 1) \)" is **false** of the pair. Such a statement is a fact about how pairs were encoded as sets, not about pairs: with Wiener's encoding \( \{\{\{a\}, \emptyset\}, \{\{b\}\}\} \), met in the exercises of the previous section, the pair of \( 0 \) and \( 1 \) is \( \{2, \{\{1\}\}\} \), which does not have \( 1 \) as an element. A proof about pairs should use only their characteristic property, @thm-kuratowski-pair. The two places in this section that look inside a pair, @prp-pair-not-natural and the remark after @thm-omega-peano that the operation \( x \mapsto \mathrm{S}(x) \) has no graph, are about the encoding itself.
+so "\( 1 \in (0, 1) \)" is **true** of the pair \( (0, 1) \), although \( 1 \) is not in the open interval \( (0, 1) \) of real numbers, and "\( 0 \in (0, 1) \)" is **false** of the pair. Such a statement is a fact about how pairs were encoded as sets, not about pairs: with Wiener's encoding \( \{\{\{a\}, \emptyset\}, \{\{b\}\}\} \), met in Section 9.2 (@exr-pairs-as-sets-c3), the pair of \( 0 \) and \( 1 \) is \( \{2, \{\{1\}\}\} \), which does not have \( 1 \) as an element. A proof about pairs should use only their characteristic property, @thm-kuratowski-pair. The places in this section that look inside a pair (the remark after @thm-omega-peano that the operation \( x \mapsto \mathrm{S}(x) \) has no graph, the closing remark of the tagged-numbers example that \( (0, 0) = \{\{0\}\} \) is not \( \emptyset \), @prp-pair-not-natural, and this warning) are about the encoding itself.
 :::
 
 With Peano's axioms in hand, the next section proves the recursion theorem on \( \omega \) and uses it to define addition and multiplication.
@@ -292,7 +292,7 @@ Let \( m, n \in \omega \). The following lines contain a proof that **if \( \mat
 
 (iii) We have \( m \cup \{m\} = n \cup \{n\} \), so \( m = n \) by canceling \( {\cup}\{\cdot\} \) on both sides.
 
-(iv) Likewise \( n \in \mathrm{S}(n) = \mathrm{S}(m) \), so \( n \in m \) or \( n = m \).
+(iv) Since \( n \in \mathrm{S}(n) = \mathrm{S}(m) \), we have \( n \in m \) or \( n = m \).
 
 (v) Suppose \( m \ne n \); then \( m \in n \) and \( n \in m \).
 
@@ -308,7 +308,7 @@ Let \( m, n \in \omega \). The following lines contain a proof that **if \( \mat
 ::: {.solution}
 An admissible order is (ii), (ix), (iv), (v), (viii), (i), (vi):
 
-> Suppose \( \mathrm{S}(m) = \mathrm{S}(n) \). Since \( m \in \mathrm{S}(m) = \mathrm{S}(n) \), we have \( m \in n \) or \( m = n \). Likewise \( n \in \mathrm{S}(n) = \mathrm{S}(m) \), so \( n \in m \) or \( n = m \). Suppose \( m \ne n \); then \( m \in n \) and \( n \in m \). Since \( m \) is transitive and \( n \in m \), we have \( n \subseteq m \). So \( m \in n \subseteq m \), that is, \( m \in m \). This contradicts \( m \notin m \); so \( m = n \).
+> Suppose \( \mathrm{S}(m) = \mathrm{S}(n) \). Since \( m \in \mathrm{S}(m) = \mathrm{S}(n) \), we have \( m \in n \) or \( m = n \). Since \( n \in \mathrm{S}(n) = \mathrm{S}(m) \), we have \( n \in m \) or \( n = m \). Suppose \( m \ne n \); then \( m \in n \) and \( n \in m \). Since \( m \) is transitive and \( n \in m \), we have \( n \subseteq m \). So \( m \in n \subseteq m \), that is, \( m \in m \). This contradicts \( m \notin m \); so \( m = n \).
 
 The only other admissible order exchanges (ix) and (iv), which use only (ii) and not each other. Everything else is forced: (v) needs both (ix) and (iv) to reduce each disjunction to its first alternative; (viii) needs the \( n \in m \) of (v); (i) needs the \( m \in n \) of (v) and the inclusion of (viii); (vi) closes the \( \rulename{RAA} \) box opened by (v), whose assumption is \( m \ne n \), the negation of the goal (@def-rule-raa).
 
@@ -346,7 +346,7 @@ Any correct answer has: a set \( M \subseteq \omega \); an element \( e \in M \)
 
 Take \( M \coloneqq \omega \setminus \{0\} \), \( e \coloneqq 1 \), and \( s(n) \coloneqq \mathrm{S}(n) \) for \( n \in M \).
 
-- **The data.** \( 1 \in M \), since \( 1 \in \omega \) and \( 1 \ne 0 \). For \( n \in M \), \( \mathrm{S}(n) \in \omega \) by (P2) and \( \mathrm{S}(n) \ne 0 \) by (P3) of @thm-omega-peano, so \( \mathrm{S}(n) \in M \). The graph \( \{ (n, \mathrm{S}(n)) : n \in M \} \) is a set by (Z6) inside \( M \times M \), so \( s \colon M \to M \) is a function.
+- **The data.** \( 1 \in M \), since \( 1 \in \omega \) and \( 1 \ne 0 \). For \( n \in M \), \( \mathrm{S}(n) \in \omega \) by (P2) and \( \mathrm{S}(n) \ne 0 \) by (P3) of @thm-omega-peano, so \( \mathrm{S}(n) \in M \). The graph \( \{ (n, \mathrm{S}(n)) : n \in M \} \) is a set by (Z6) inside \( M \times M \). (Fn1) holds, since \( (n, \mathrm{S}(n)) \) is in the graph for each \( n \in M \); (Fn2) holds as in the proof of @thm-omega-peano, by @thm-kuratowski-pair. So \( s \colon M \to M \) is a function (@def-function).
 - **(P3).** If \( s(n) = 1 \) for some \( n \in M \), then \( \mathrm{S}(n) = \mathrm{S}(0) \), so \( n = 0 \) by (P4) for \( \omega \); but \( 0 \notin M \).
 - **(P4).** If \( \mathrm{S}(m) = \mathrm{S}(n) \) with \( m, n \in M \), then \( m = n \) by (P4) for \( \omega \).
 - **(P5).** Let \( A \subseteq M \) with \( 1 \in A \) and \( \mathrm{S}(n) \in A \) for every \( n \in A \). The set \( A' \coloneqq A \cup \{0\} \subseteq \omega \) is inductive: \( 0 \in A' \); \( \mathrm{S}(0) = 1 \in A \subseteq A' \); and for \( n \in A \), \( \mathrm{S}(n) \in A \subseteq A' \). By @thm-omega-induction (a), \( A' = \omega \). Every \( n \in M \) lies in \( A' \) and is not \( 0 \), so \( n \in A \). Hence \( A = M \).
@@ -393,11 +393,11 @@ For (c), prove by induction on \( k \in \omega \) the property: "for every good 
 - \( G_0 \): \( s(n, 0) = (\mathrm{S}(n), 0) \in G_0 \).
 - \( G_\infty = M \): \( s \) maps \( M \) into \( M \).
 - \( R_m \): elements of \( G_0 \) are handled as before. If \( (n, 1) \in R_m \) with \( m \in \mathrm{S}(n) \), then \( s(n, 1) = (\mathrm{S}(n), 1) \), and \( m \in \mathrm{S}(n) \subseteq \mathrm{S}(\mathrm{S}(n)) \); so \( s(n, 1) \in R_m \).
-- \( L_k \): elements of \( G_0 \) as before; \( s(n, 1) = (\mathrm{S}(n), 1) \in \omega \times \{1\} \). For \( (j, 2) \) with \( j \in \mathrm{S}(k) \): if \( j = 0 \), then \( s(0, 2) = (0, 1) \in L_k \); if \( j = \mathrm{S}(i) \) with \( i \in \omega \) (@lem-omega-transitive (d)), then \( s(j, 2) = (i, 2) \), and \( i \in \mathrm{S}(i) = j \in \mathrm{S}(k) \), so \( i \in \mathrm{S}(k) \) because \( \mathrm{S}(k) \) is transitive (@lem-omega-transitive (a)); hence \( (i, 2) \in L_k \).
+- \( L_k \): elements of \( G_0 \) as before; \( s(n, 1) = (\mathrm{S}(n), 1) \in \omega \times \{1\} \). Every \( j \in \mathrm{S}(k) \) lies in \( \omega \), since \( \mathrm{S}(k) \in \omega \) by (P2) of @thm-omega-peano and \( \omega \) is transitive (@lem-omega-transitive (b)); so \( L_k \subseteq M \). For \( (j, 2) \) with \( j \in \mathrm{S}(k) \): if \( j = 0 \), then \( s(0, 2) = (0, 1) \in L_k \); if \( j = \mathrm{S}(i) \) with \( i \in \omega \) (@lem-omega-transitive (d)), then \( s(j, 2) = (i, 2) \), and \( i \in \mathrm{S}(i) = j \in \mathrm{S}(k) \), so \( i \in \mathrm{S}(k) \) because \( \mathrm{S}(k) \) is transitive (@lem-omega-transitive (a)); hence \( (i, 2) \in L_k \).
 
 (c) We prove by @thm-omega-induction (b) the property \( P(k) \): "for every good \( A \), if \( (k, 2) \in A \), then \( L_k \subseteq A \)".
 
-*Base.* Let \( A \) be good with \( (0, 2) \in A \). Then \( (0, 1) = s(0, 2) \in A \). The set \( \{ n \in \omega : (n, 1) \in A \} \) has \( 0 \) as an element and is closed under \( \mathrm{S} \), since \( s(n, 1) = (\mathrm{S}(n), 1) \); so it is \( \omega \), and \( \omega \times \{1\} \subseteq A \). With (a) and \( \mathrm{S}(0) = \{0\} \), this gives \( L_0 \subseteq A \).
+*Base.* Let \( A \) be good with \( (0, 2) \in A \). Then \( (0, 1) = s(0, 2) \in A \). The set \( \{ n \in \omega : (n, 1) \in A \} \) has \( 0 \) as an element and is closed under \( \mathrm{S} \), since \( s(n, 1) = (\mathrm{S}(n), 1) \); so it is \( \omega \) by @thm-omega-induction (a), and \( \omega \times \{1\} \subseteq A \). With (a) and \( \mathrm{S}(0) = \{0\} \), this gives \( L_0 \subseteq A \).
 
 *Step.* Let \( k \in \omega \) with \( P(k) \), and let \( A \) be good with \( (\mathrm{S}(k), 2) \in A \). Then \( (k, 2) = s(\mathrm{S}(k), 2) \in A \), so \( L_k \subseteq A \) by \( P(k) \). Now \( L_{\mathrm{S}(k)} = L_k \cup \{ (\mathrm{S}(k), 2) \} \), because \( j \in \mathrm{S}(\mathrm{S}(k)) \) means \( j \in \mathrm{S}(k) \) or \( j = \mathrm{S}(k) \). Both parts lie in \( A \), so \( L_{\mathrm{S}(k)} \subseteq A \), which is \( P(\mathrm{S}(k)) \).
 
@@ -408,14 +408,15 @@ So the good sets include \( G_0 \), the sets \( R_m \) (whose part in the bottom
 def-transitive-set (example): 0, 1, 2 are distinct; 1 = {0}, 2 = {0, 1}, 3 = {0, 1, 2} | exm-von-neumann-numerals (cited)
 lem-omega-transitive (proof): y in S(n) iff y in n or y = n; n subset of S(n) | def-set-successor and the paragraph after it (inline)
 lem-omega-transitive (proof): (d) the move "step without using the hypothesis" is valid | exm-predecessor-no-hypothesis (cited, Chapter 7)
-thm-omega-peano (proof): (P3) a set with an element differs from the empty set | Extensionality (Z1) of ax-zf-fragment (cited by name)
+thm-omega-peano (proof): (P3) a set with an element differs from the empty set | inline: =E of def-rules-equality and not-I of def-rules-negation (cited)
 thm-omega-peano (claim): (the paragraph after it) a set containing (x, S(x)) for every x gives, after two unions, a set containing every set | inline: x in {x, S(x)} in (x, S(x)); thm-russell (cited)
 def-peano-system (example): (tagged numbers) the graph of s is a set by (Z6) inside M x M | prp-cartesian-product-exists (cited)
 exm-peano-axioms-independent (solution): 0, 1, 2 are three different sets, and 3 = {0, 1, 2} | exm-von-neumann-numerals (cited)
 exm-peano-axioms-independent (claim): (the paragraph after the picture) reading (k, 2) as -(k + 1) | prose reading only; no integer arithmetic is used in any proof
 prp-pair-not-natural (claim): (the paragraph after it) the n-tuple version, n >= 3 | prp-tuples-as-sets (e), later in this chapter (prose pointer; nothing in this section depends on it)
+prp-pair-not-natural (claim): (the paragraph after it) Chapter 6's 1, 2, 3 read as elements of omega, as the later chapters read N | cor-omega-identification, Section 9.7 (prose pointer, this chapter; nothing in this section depends on it)
 prp-pair-not-natural (claim): (the warning after it) {0} = 1 and {0, 1} = 2, so (0, 1) = {1, 2} | def-kuratowski-pair and exm-von-neumann-numerals (cited)
-prp-pair-not-natural (claim): (the warning after it) Wiener's pair of 0 and 1 is {2, {{1}}}, and 1 is not an element of it | inline ({0} = 1, {0, emptyset} = 2; 1 != 2 and 1 != {{1}} since 0 in 1 and 0 not in {{1}}); the encoding itself is the previous section's exercise (prose pointer)
+prp-pair-not-natural (claim): (the warning after it) Wiener's pair of 0 and 1 is {2, {{1}}}, and 1 is not an element of it | inline ({0} = 1, {0, emptyset} = 2; 1 != 2 and 1 != {{1}} since 0 in 1 and 0 not in {{1}}); the encoding itself is Section 9.2's exercise C3 (exr-pairs-as-sets-c3, cited only as a pointer; nothing here depends on it)
 exr-peano-properties-a1 (solution): (d) 0 not in {1} since 0 != 1 | exm-von-neumann-numerals (cited)
 exr-peano-properties-c2 (solution): every good set is one of G_0, R_m, L_k, M | needs thm-omega-well-ordering, later in this chapter (stated, not proved here; nothing depends on it)
 -->

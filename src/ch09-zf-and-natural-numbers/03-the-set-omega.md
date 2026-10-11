@@ -1,12 +1,12 @@
 # Successors, Inductive Sets and the Natural Numbers
 
-Chapter 7 described the natural numbers as what we reach from \( 0 \) by adding \( 1 \), again and again, and nothing else; induction (@ax-induction) was the precise form of "nothing else". In this chapter every object is a set, so we need a set to play \( 0 \) and an operation on sets to play "add \( 1 \)". This section chooses both, adds the one axiom that lets the repetition be completed into a set, and proves induction as a theorem about the set it produces.
+Chapter 3 described the natural numbers as what we reach from \( 0 \) by adding \( 1 \), again and again, and nothing else; induction (@ax-induction) was the precise form of "nothing else". In this chapter every object is a set, so we need a set to play \( 0 \) and an operation on sets to play "add \( 1 \)". This section chooses both, adds the one axiom that lets the repetition be completed into a set, and proves induction as a theorem about the set it produces.
 
 ## Going one step further
 
-The empty set is the only set we can name without first having another one, so it will be \( 0 \). For "add one" we want an operation that turns a set into a new set, never returning to one already met. Putting a set inside itself as a new element does that.
+The empty set is the only set we can name without first having another one, so it will be \( 0 \). For "add one" we want an operation that, started from \( \emptyset \), keeps producing new sets, never returning to one already met. Putting a set inside itself as an element does that, as we shall see.
 
-*The successor of a set is the set with one more element: the set itself.*
+*The successor of a set adds the set itself as an element.*
 
 ::: {#def-set-successor}
 [Successor of a set]
@@ -21,7 +21,7 @@ In words: the elements of \( \mathrm{S}(x) \) are the elements of \( x \), toget
 \[
 y \in \mathrm{S}(x) \iff y \in x \ \text{ or } \ y = x .
 \]
-The set \( \mathrm{S}(x) \) exists and is unique: \( \{x\} \) is the set \( \{x, x\} \) of Pairing (Z3), and \( x \cup \{x\} = \bigcup \{x, \{x\}\} \) comes from Union (Z4), both by @prp-zf-basic-sets (b), (c). Two facts are visible at once. First, \( x \in \mathrm{S}(x) \) for every \( x \). Second, \( x \subseteq \mathrm{S}(x) \): the successor keeps every old element and adds one.
+The set \( \mathrm{S}(x) \) exists and is unique: \( \{x\} \) is the set \( \{x, x\} \) of Pairing (Z3), and \( x \cup \{x\} = \bigcup \{x, \{x\}\} \) comes from Union (Z4), both by @prp-zf-basic-sets (b), (c). Two facts are visible at once. First, \( x \in \mathrm{S}(x) \) for every \( x \). Second, \( x \subseteq \mathrm{S}(x) \): the successor keeps every old element and adds \( x \) itself, which is a new element whenever \( x \notin x \). The next section proves \( n \notin n \) for every natural number \( n \).
 
 The letter is an upright \( \mathrm{S} \). Chapter 6 used an italic \( S \) for a set in @prp-smallest-closed-set, and we are about to use that proposition with this operation as its step; the two letters never stand for the same thing.
 
@@ -47,10 +47,10 @@ Each step adds the previous set as a new element:
 1 &= \emptyset \cup \{0\} = \{0\} = \{\emptyset\} , \\
 2 &= 1 \cup \{1\} = \{0, 1\} = \{\emptyset, \{\emptyset\}\} , \\
 3 &= 2 \cup \{2\} = \{0, 1, 2\} = \bigl\{\emptyset, \{\emptyset\}, \{\emptyset, \{\emptyset\}\}\bigr\} , \\
-4 &= 3 \cup \{3\} = \{0, 1, 2, 3\} .
+4 &= 3 \cup \{3\} = \{0, 1, 2, 3\} = \bigl\{\emptyset, \{\emptyset\}, \{\emptyset, \{\emptyset\}\}, \{\emptyset, \{\emptyset\}, \{\emptyset, \{\emptyset\}\}\}\bigr\} .
 \end{aligned}
 \]
-Written with \( \emptyset \) and braces only, \( 4 \) already needs eight pairs of braces around eight copies of \( \emptyset \), which is why the numerals are worth having.
+Written with \( \emptyset \) and braces only, \( 4 \) already needs eight pairs of braces and eight copies of \( \emptyset \), which is why the numerals are worth having.
 
 The four sets differ, by Extensionality (Z1): two sets are equal only if they have the same elements, so it is enough to find an element of one that is not an element of the other. The set \( 0 \) has no elements, while \( 1 \), \( 2 \) and \( 3 \) all have the element \( 0 \); so \( 0 \) differs from each of them. Next, \( 1 \in 2 \) and \( 1 \in 3 \), but \( 1 \notin 1 \): the only element of \( 1 = \{0\} \) is \( 0 \), and \( 1 \ne 0 \). So \( 1 \) differs from \( 2 \) and from \( 3 \). Finally \( 2 \in 3 \), but \( 2 \notin 2 \): the elements of \( 2 \) are \( 0 \) and \( 1 \), and \( 2 \) differs from both, as just shown. So \( 2 \ne 3 \).
 :::
@@ -87,7 +87,7 @@ The box for \( 3 \) holds three boxes, which are copies of the boxes for \( 0 \)
 
 From here to the end of the chapter, the numerals \( 0, 1, 2, 3, \dots \) name these sets. They are not real numbers; where the chapter compares the two pictures, it says so.
 
-Other choices of "add one" are possible. The rule \( x \mapsto \{x\} \) also starts a list of different sets, \( \emptyset, \{\emptyset\}, \{\{\emptyset\}\}, \dots \), and it would serve for everything in the next section. What it loses is the pattern above: under it, the set playing \( 3 \) has one element, not three, and it does not contain the sets playing \( 0 \) and \( 1 \). The choice \( x \cup \{x\} \) makes the order of the numbers into membership, which the chapter uses repeatedly.
+Other choices of "add one" are possible. The rule \( x \mapsto \{x\} \) also starts a list of different sets, \( \emptyset, \{\emptyset\}, \{\{\emptyset\}\}, \dots \). With an axiom of infinity stated for that rule, it too would give a set satisfying Peano's axioms, but not by the proofs of the next section. What it loses is the pattern above: under it, the set playing \( 3 \) has one element, not three, and it does not contain the sets playing \( 0 \) and \( 1 \). The next section's proofs rest on that pattern, and one of its results fails outright: under \( x \mapsto \{x\} \) the set playing \( 2 \) is \( \{\{\emptyset\}\} \), which is the pair \( (\emptyset, \emptyset) \) of @def-kuratowski-pair, while the next section shows that no pair is a natural number in our sense. The choice \( x \cup \{x\} \) makes the order of the numbers into membership, which the chapter uses repeatedly.
 
 ::: {.warning}
 The successor is defined for **every** set, not only for numerals, and its result need not look like a number. For \( x = \{1\} = \{\{\emptyset\}\} \), the successor is \( \mathrm{S}(x) = \{1, \{1\}\} \). It does not contain \( 0 \), while every numeral after \( 0 \) computed above does. A statement about \( \mathrm{S}(x) \) that holds for the numerals may fail for other sets; this is why the results below are stated for elements of one particular set.
@@ -114,7 +114,7 @@ The word "inductive" has another use in the analysis volume of this series, for 
 
 An inductive set contains all the numerals: \( 0 = \emptyset \) by the first clause, then \( 1 = \mathrm{S}(0) \) by the second, then \( 2 = \mathrm{S}(1) \), and so on, one application of the second clause per numeral. So an inductive set cannot be finite in any naive sense, and nothing we have so far produces one.
 
-Non-examples by minimal change come cheaply. The set \( 4 = \{0, 1, 2, 3\} \) contains \( \emptyset \) and the successors of \( 0 \), \( 1 \) and \( 2 \); only the last successor is missing, since \( \mathrm{S}(3) = 4 \notin 4 \). And \( \{1, 2, 3, \dots\} \), if we had it, would be closed under \( \mathrm{S} \) but would miss the starting point. Both clauses do work.
+Non-examples by minimal change come cheaply. The set \( 4 = \{0, 1, 2, 3\} \) contains \( \emptyset \) and the successors of \( 0 \), \( 1 \) and \( 2 \); only the last successor is missing, since \( \mathrm{S}(3) = 4 \notin 4 \): the set \( 4 \) has the element \( 3 \), and none of \( 0, 1, 2, 3 \) does (\( 0 \) has no elements, and the elements of \( 1 \), \( 2 \) and \( 3 \) are among \( 0, 1, 2 \), each different from \( 3 \) by @exm-von-neumann-numerals). And \( \{1, 2, 3, \dots\} \), if we had it, would be closed under \( \mathrm{S} \) but would miss the starting point. Both clauses do work.
 
 ::: {.check}
 Is \( \{\emptyset\} \) inductive? Is \( \{0, 1, 2\} \)?
@@ -144,7 +144,7 @@ An inductive set contains the numerals, and perhaps more. To remove anything ext
 
 *The natural numbers are what every inductive set is forced to contain.*
 
-There is one obstacle. "Every inductive set" ranges over all sets, and there is no set of all sets (@thm-russell). So we fix one inductive set first and look only at inductive sets inside it; the theorem below shows that the choice does not matter.
+There is one obstacle. Separation (Z6) can only cut a set out of a set already given, so we need an ambient set for the natural numbers; and the smallest-closed-set construction of Chapter 6 (@prp-smallest-closed-set) intersects a set of subsets, but the inductive sets are not handed to us as the elements of any set. So we fix one inductive set \( I \) and look only at the inductive subsets of \( I \), which do form a set, by Power set and Separation; the theorem below shows that the choice of \( I \) does not matter.
 
 ::: {#def-omega}
 [The set of natural numbers]
@@ -158,15 +158,15 @@ The elements of \( \omega \) are the **natural numbers**.
 
 In words: a natural number is an element of the fixed inductive set \( I \) that survives every attempt to shrink \( I \) to a smaller inductive set.
 
-The set \( \omega \) exists by Separation (Z6), with ambient set \( I \), once the condition is a property in the sense of (Z6): a formula of Chapter 4's first-order language with \( \in \) and \( = \) (@def-first-order-formula), with \( I \) as a parameter. The condition is "for every \( J \), if \( J \subseteq I \) and \( J \) is inductive, then \( x \in J \)", and the only part that is not already in that language is "\( J \) is inductive". Written out with no abbreviations it is
+The set \( \omega \) exists by Separation (Z6), with ambient set \( I \), once the condition is a property in the sense of (Z6): a formula of Chapter 4's first-order language with \( \in \) and \( = \) (@def-first-order-formula), with \( I \) as a parameter. The condition is "for every \( J \), if \( J \subseteq I \) and \( J \) is inductive, then \( x \in J \)", and, since \( J \subseteq I \) abbreviates \( \forall y \, (y \in J \to y \in I) \) as in (Z5) (@def-subset), the only part not yet written in that language is "\( J \) is inductive". Written out with no abbreviations it is
 \[
 \begin{aligned}
 &\exists e \, \bigl( e \in J \wedge \forall y \, \neg (y \in e) \bigr) \\
-&\wedge \forall x \, \Bigl( x \in J \to \exists z \, \bigl( z \in J \wedge
-  \forall w \, ( w \in z \leftrightarrow ( w \in x \vee w = x ) ) \bigr) \Bigr) .
+&\wedge \forall u \, \Bigl( u \in J \to \exists z \, \bigl( z \in J \wedge
+  \forall w \, ( w \in z \leftrightarrow ( w \in u \vee w = u ) ) \bigr) \Bigr) .
 \end{aligned}
 \]
-The first line says that \( J \) has an element with no elements, which is \( \emptyset \in J \), because \( \emptyset \) is the only set with no elements (@prp-zf-basic-sets (a)). The second says that for each \( x \in J \) some element \( z \) of \( J \) has exactly the elements of \( x \cup \{x\} \), which is \( \mathrm{S}(x) \in J \) by (Z1).
+The first line says that \( J \) has an element with no elements, which is \( \emptyset \in J \), because \( \emptyset \) is the only set with no elements (@prp-zf-basic-sets (a)). The second says that for each \( u \in J \) some element \( z \) of \( J \) has exactly the elements of \( u \cup \{u\} \), which is \( \mathrm{S}(u) \in J \) by (Z1).
 
 Here is what "least" means, and why the choice of \( I \) is harmless.
 
@@ -221,13 +221,13 @@ Leastness has an immediate consequence. To show that every natural number belong
 *(b)* Let \( A \coloneqq \{ n \in \omega : P(n) \} \), a set by (Z6). Then \( 0 \in A \), because \( 0 \in \omega \) by @thm-omega-least-inductive (a) and \( P(0) \) holds. Let \( n \in A \). Then \( n \in \omega \) and \( P(n) \), so \( P(\mathrm{S}(n)) \) by hypothesis, and \( \mathrm{S}(n) \in \omega \) because \( \omega \) is inductive; hence \( \mathrm{S}(n) \in A \). By (a), \( A = \omega \), which says that \( P(n) \) holds for every \( n \in \omega \).
 :::
 
-Compare part (b) with the principle of induction, @ax-induction. Read with \( \omega \) in place of \( \nN \), and with \( \mathrm{S}(n) \) in place of \( n + 1 \), the two statements are the same; and once addition is defined, later in this chapter, \( n + 1 \) will be \( \mathrm{S}(n) \). The difference lies in their status. In Chapter 3, induction was an axiom about a set \( \nN \) of real numbers taken on trust. Here it is a **theorem**, proved from the seven axioms (Z1)–(Z7) about sets, and the proof is three lines long because all the work went into the definition of \( \omega \): the natural numbers were defined as what every inductive set contains, and induction says exactly that.
+Compare part (b) with the principle of induction, @ax-induction. Read with \( \omega \) in place of \( \nN \), and with \( \mathrm{S}(n) \) in place of \( n + 1 \), the two statements are the same; and once addition is defined, later in this chapter, \( n + 1 \) will be \( \mathrm{S}(n) \). The difference lies in their status. In Chapter 3, induction was an axiom, a basic property of \( \nN \) taken on trust. Here it is a **theorem**, proved from the seven axioms (Z1)–(Z7) about sets, and the proof is three lines long because all the work went into the definition of \( \omega \): the natural numbers were defined as what every inductive set contains, and induction says exactly that.
 
 The proof of (b) is the model for the inductions in the rest of this chapter.
 
 **Show the set is inductive.** To prove \( P(n) \) for every \( n \in \omega \), form \( \{ n \in \omega : P(n) \} \) and show that it has \( 0 \) as an element and is closed under \( \mathrm{S} \).
 
-Here is the move once, on a statement about the shape of natural numbers: **every \( n \in \omega \) is \( 0 \), or is \( 1 \), or has \( 1 \) as an element**. Let \( A \coloneqq \{ n \in \omega : n = 0 \text{ or } n = 1 \text{ or } 1 \in n \} \). Then \( 0 \in A \) by the first alternative. Let \( n \in A \); there are three cases. If \( n = 0 \), then \( \mathrm{S}(n) = 1 \), which satisfies the second alternative. If \( n = 1 \), then \( \mathrm{S}(n) = 2 = \{0, 1\} \), which has \( 1 \) as an element. If \( 1 \in n \), then \( 1 \in n \subseteq \mathrm{S}(n) \). In every case \( \mathrm{S}(n) \in A \), since \( \mathrm{S}(n) \in \omega \). By @thm-omega-induction (a), \( A = \omega \).
+Here is the move once, on a statement about the shape of natural numbers: **every \( n \in \omega \) is \( 0 \), or is \( 1 \), or has \( 1 \) as an element**. Let \( A \coloneqq \{ n \in \omega : n = 0 \text{ or } n = 1 \text{ or } 1 \in n \} \), a set by (Z6). Then \( 0 \in A \) by the first alternative. Let \( n \in A \); there are three cases. If \( n = 0 \), then \( \mathrm{S}(n) = 1 \), which satisfies the second alternative. If \( n = 1 \), then \( \mathrm{S}(n) = 2 = \{0, 1\} \), which has \( 1 \) as an element. If \( 1 \in n \), then \( 1 \in n \subseteq \mathrm{S}(n) \). In every case \( \mathrm{S}(n) \in A \), since also \( \mathrm{S}(n) \in \omega \) because \( \omega \) is inductive (@thm-omega-least-inductive (a)). By @thm-omega-induction (a), \( A = \omega \).
 
 Two features of this small proof recur. The property carried along is a disjunction, because "\( 1 \in n \)" alone is false at \( n = 0 \) and \( n = 1 \), and an induction can only carry a property that holds at the start. And the step is a case split along the disjunction, with one case for each alternative; dropping a case would be the error (N7) of @exm-not-allowed-catalogue.
 
@@ -251,7 +251,7 @@ The next section uses the move five times in a row, to show that \( \omega \) sa
 ::: {.enumerate options="label=(\alph*)"}
 1. List the elements of \( 3 \) and of \( 4 \) as sets of numerals.
 2. Is \( 2 \subseteq 3 \)? Is \( 2 \in 3 \)?
-3. True or false, with a reason: every inductive set has \( 5 \) as an element.
+3. True or false, with a reason: every inductive set has \( 5 \coloneqq \mathrm{S}(4) \) as an element.
 4. Write "\( J \) is not inductive" in symbols, with the negation moved inward until it stands only in front of a membership statement.
 :::
 :::
@@ -322,20 +322,24 @@ A \coloneqq \{ n \in \omega : n = 0 \text{ or } n = 1 \text{ or } n = \mathrm{S}
 \]
 a set by (Z6). Then \( 0 \in A \) by the first alternative. Let \( n \in A \); we show \( \mathrm{S}(n) \in A \), in three cases along the disjunction. If \( n = 0 \), then \( \mathrm{S}(n) = 1 \), the second alternative. If \( n = 1 \), then \( \mathrm{S}(n) = \mathrm{S}(\mathrm{S}(0)) \), the third alternative with \( k \coloneqq 0 \in \omega \). If \( n = \mathrm{S}(\mathrm{S}(k)) \) with \( k \in \omega \), then \( \mathrm{S}(n) = \mathrm{S}(\mathrm{S}(\mathrm{S}(k))) \), the third alternative with \( \mathrm{S}(k) \) in place of \( k \), and \( \mathrm{S}(k) \in \omega \) because \( \omega \) is inductive. In each case \( \mathrm{S}(n) \in \omega \), so \( \mathrm{S}(n) \in A \). By @thm-omega-induction (a), \( A = \omega \).
 
-(b) Call the set \( A_I \). The same three cases show that \( A_I \) has \( 0 \) as an element and is closed under \( \mathrm{S} \), so \( A_I \) is inductive; by @thm-omega-least-inductive (b), \( \omega \subseteq A_I \). That says again that every **natural number** has the stated form. It does not say that every element of \( I \) has it. The set form of induction concludes \( A = \omega \) only because \( A \subseteq \omega \) was given; for \( A_I \subseteq I \) the most we get is \( \omega \subseteq A_I \subseteq I \), and the elements of \( I \) outside \( \omega \), if any, are not reached. Induction proves statements about \( \omega \), not about arbitrary inductive sets.
+(b) Call the set \( A_I \). The same three cases show that \( A_I \) has \( 0 \) as an element and is closed under \( \mathrm{S} \), so \( A_I \) is inductive; by @thm-omega-least-inductive (b), \( \omega \subseteq A_I \). That says only that every **natural number** is \( 0 \), \( 1 \) or \( \mathrm{S}(\mathrm{S}(k)) \) for some \( k \in I \), which is weaker than (a), whose \( k \) lies in \( \omega \). It does not say that every element of \( I \) is \( 0 \), \( 1 \) or \( \mathrm{S}(\mathrm{S}(k)) \) for some \( k \in I \). The set form of induction concludes \( A = \omega \) only because \( A \subseteq \omega \) was given; for \( A_I \subseteq I \) the most we get is \( \omega \subseteq A_I \subseteq I \), and the elements of \( I \) outside \( \omega \), if any, are not reached. Induction proves statements about \( \omega \), not about arbitrary inductive sets.
 :::
 
 <!-- dependency ledger
 def-set-successor (claim): x in S(x) and x subset of S(x) | inline, from y in S(x) iff y in x or y = x (prp-zf-basic-sets (b), (c), cited)
+def-set-successor (claim): (the paragraph after it) n not in n for every natural number n | lem-omega-transitive (c), next section (prose pointer; nothing in this section depends on it)
 exm-von-neumann-numerals (solution): 0, 1, 2, 3 are distinct, by comparing elements | inline, Extensionality (Z1) of ax-zf-fragment (cited)
 exm-von-neumann-numerals (claim): (the paragraph after it) n = {m in omega : m < n}, so n = {0, ..., n - 1} for n != 0 | thm-omega-order (c), later in this chapter (prose pointer; nothing in this section depends on it)
-exm-von-neumann-numerals (claim): (the paragraph on other choices) x -> {x} would also give Peano's axioms | not proved here; prose only, nothing depends on it
+exm-von-neumann-numerals (claim): (the paragraph on other choices) x -> {x} (with infinity stated for it) would also give Peano's axioms, by other proofs | not proved here; prose only, nothing depends on it
+exm-von-neumann-numerals (claim): (the paragraph on other choices) {{emptyset}} = (emptyset, emptyset), and no pair is a natural number | def-kuratowski-pair (cited); prp-pair-not-natural, next section (prose pointer; nothing in this section depends on it)
+def-zf-inductive-set (claim): (the paragraph of non-examples) 4 not in 4 | inline, from 3 in 4 and 3 != 0, 1, 2 (exm-von-neumann-numerals, cited)
 ax-infinity (claim): (the paragraph before it) no inductive set can be shown to exist from (Z1)-(Z6) | set theory proper (the set-theory volume, ST.1; stated without proof, nothing depends on it)
 def-omega (claim): "J is inductive" is a first-order formula with in and = | inline (displayed), with prp-zf-basic-sets (a) (cited) and Extensionality (Z1)
 thm-omega-least-inductive (proof): prp-smallest-closed-set, proved in Ch 6 under the working rules, uses only the power set, Separation and the intersection of a non-empty set of subsets of X | ax-zf-fragment (Z5), (Z6) and prp-zf-basic-sets (c) (cited at the step)
 thm-omega-least-inductive (claim): (the warning after it) Replacement yields the inductive set omega u {omega, S(omega), ...}; omega not in omega | the set-theory volume (ST.1, prose pointer, nothing depends on it); omega not in omega is the Quick check of the next section (lem-omega-transitive (c))
-thm-omega-induction (claim): (the remark after it) n + 1 = S(n) once addition is defined | def-omega-arithmetic (c), later in this chapter (prose pointer; nothing in this section depends on it)
+thm-omega-induction (claim): (the remark after it) n + 1 = S(n) once addition is defined | def-omega-arithmetic (a), with 1 := S(0) from (c); the paragraph "The successor is plus one" after it, later in this chapter (prose pointer; nothing in this section depends on it)
 thm-omega-induction (example): (the worked move) 2 = {0, 1}, 1 != 0 | exm-von-neumann-numerals (cited)
+thm-omega-induction (example): (the worked move) S(n) in omega | thm-omega-least-inductive (a) (cited)
 exr-the-set-omega-a1 (solution): five applications of the closure clause | inline
 exr-the-set-omega-b1 (solution): S(x) != emptyset since x in S(x) | inline (def-set-successor)
 -->

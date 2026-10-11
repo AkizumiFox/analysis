@@ -35,8 +35,8 @@ items:
 - key: prp-zf-basic-sets
   kind: prp
   file: 01-sets-from-axioms.md
-  line: 93
-  hash: a87fe8b79fef
+  line: 94
+  hash: 0253f483d87a
   verdicts:
   - stage: S5a
     verdict: minor
@@ -67,8 +67,8 @@ items:
 - key: proof:prp-zf-basic-sets
   kind: proof
   file: 01-sets-from-axioms.md
-  line: 116
-  hash: 35289ded0656
+  line: 117
+  hash: 7d2d6c428c4a
   verdicts:
   - stage: S5a
     verdict: correct
@@ -94,7 +94,7 @@ items:
 - key: check:01-sets-from-axioms:1
   kind: check
   file: 01-sets-from-axioms.md
-  line: 146
+  line: 147
   hash: 267d56a78101
   verdicts:
   - stage: S5a
@@ -117,7 +117,7 @@ items:
 - key: exr-sets-from-axioms-a1
   kind: exr
   file: 01-sets-from-axioms.md
-  line: 160
+  line: 161
   hash: 0a3fca4a95c9
   verdicts:
   - stage: S5a
@@ -152,7 +152,7 @@ items:
 - key: exr-sets-from-axioms-b1
   kind: exr
   file: 01-sets-from-axioms.md
-  line: 183
+  line: 184
   hash: b5f2475eac5a
   verdicts:
   - stage: S5a
@@ -184,7 +184,7 @@ items:
 - key: exr-sets-from-axioms-b2
   kind: exr
   file: 01-sets-from-axioms.md
-  line: 202
+  line: 203
   hash: cc746d9bae9f
   verdicts:
   - stage: S5a
@@ -216,7 +216,7 @@ items:
 - key: exr-sets-from-axioms-c1
   kind: exr
   file: 01-sets-from-axioms.md
-  line: 222
+  line: 223
   hash: abbfdbe58be9
   verdicts:
   - stage: S5a
@@ -274,7 +274,7 @@ items:
   kind: exm
   file: 02-pairs-as-sets.md
   line: 31
-  hash: 47afec9485d9
+  hash: a05cb049c547
   verdicts:
   - stage: S5a
     verdict: correct
@@ -392,7 +392,7 @@ items:
   kind: prp
   file: 02-pairs-as-sets.md
   line: 136
-  hash: c7ec843dee50
+  hash: f8e5ae1f564b
   verdicts:
   - stage: S5a
     verdict: minor
@@ -415,7 +415,7 @@ items:
   kind: proof
   file: 02-pairs-as-sets.md
   line: 154
-  hash: cbb1cb5a5d91
+  hash: ef65fc41f7ba
   verdicts:
   - stage: S5a
     verdict: correct
@@ -529,7 +529,7 @@ items:
   kind: exr
   file: 02-pairs-as-sets.md
   line: 221
-  hash: 7138394f3447
+  hash: e91e2b0a5e0f
   verdicts:
   - stage: S5a
     verdict: correct
@@ -560,7 +560,7 @@ items:
   kind: exr
   file: 02-pairs-as-sets.md
   line: 240
-  hash: 0fbb24fa6527
+  hash: 1baaaa8b2d14
   verdicts:
   - stage: S5a
     verdict: correct
@@ -589,8 +589,8 @@ items:
 - key: exr-pairs-as-sets-c2
   kind: exr
   file: 02-pairs-as-sets.md
-  line: 261
-  hash: 525bf3537f6a
+  line: 263
+  hash: b76798e2d7dd
   verdicts:
   - stage: S5a
     verdict: correct
@@ -623,7 +623,7 @@ items:
 - key: exr-pairs-as-sets-c3
   kind: exr
   file: 02-pairs-as-sets.md
-  line: 281
+  line: 285
   hash: 86435d94257e
   verdicts:
   - stage: S5a
@@ -683,7 +683,7 @@ items:
   kind: exm
   file: 03-the-set-omega.md
   line: 30
-  hash: 9efe9683321a
+  hash: 289290d2f96b
   verdicts:
   - stage: S5a
     verdict: error
@@ -912,7 +912,7 @@ items:
   kind: exr
   file: 03-the-set-omega.md
   line: 248
-  hash: 8c07f6d2f657
+  hash: 9dc322f921a2
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1004,7 +1004,7 @@ items:
   kind: exr
   file: 03-the-set-omega.md
   line: 309
-  hash: e65f2ffc16f4
+  hash: 252efec8b207
   verdicts:
   - stage: S5a
     verdict: minor
@@ -1127,7 +1127,7 @@ items:
   kind: proof
   file: 04-peano-properties.md
   line: 98
-  hash: 5d045c326b66
+  hash: ebb17550ecc2
   verdicts:
   - stage: S5a
     verdict: minor
@@ -1172,7 +1172,7 @@ items:
   kind: def
   file: 04-peano-properties.md
   line: 128
-  hash: 3f4f77edeb31
+  hash: bb07ce838a54
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1195,7 +1195,7 @@ items:
   kind: exm
   file: 04-peano-properties.md
   line: 147
-  hash: df45b87ce1f9
+  hash: 0e8a1f8fda0e
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1298,7 +1298,7 @@ items:
   kind: exr
   file: 04-peano-properties.md
   line: 284
-  hash: 347cdfc00a6c
+  hash: 061f0fb872e0
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1362,7 +1362,7 @@ items:
   kind: exr
   file: 04-peano-properties.md
   line: 338
-  hash: e0a3439ab7a4
+  hash: 22320cb26a30
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1477,8 +1477,8 @@ items:
 - key: def-omega-arithmetic
   kind: def
   file: 05-recursion-and-arithmetic.md
-  line: 141
-  hash: 1b39f09ec8bf
+  line: 143
+  hash: fcf971e634ba
   verdicts:
   - stage: S5a
     verdict: minor
@@ -1510,7 +1510,7 @@ items:
 - key: cor-omega-successor-cancellation
   kind: cor
   file: 05-recursion-and-arithmetic.md
-  line: 179
+  line: 183
   hash: 02bd0a070857
   verdicts:
   - stage: S5a
@@ -1532,8 +1532,8 @@ items:
 - key: proof:cor-omega-successor-cancellation
   kind: proof
   file: 05-recursion-and-arithmetic.md
-  line: 185
-  hash: dc3228110074
+  line: 189
+  hash: 2465ad2d4e9a
   verdicts:
   - stage: S5a
     verdict: minor
@@ -1554,7 +1554,7 @@ items:
 - key: check:05-recursion-and-arithmetic:1
   kind: check
   file: 05-recursion-and-arithmetic.md
-  line: 189
+  line: 193
   hash: d3652b946e49
   verdicts:
   - stage: S5a
@@ -1576,7 +1576,7 @@ items:
 - key: thm-omega-arithmetic-laws
   kind: thm
   file: 05-recursion-and-arithmetic.md
-  line: 209
+  line: 213
   hash: cb2a23d4af04
   verdicts:
   - stage: S5a
@@ -1598,8 +1598,8 @@ items:
 - key: proof:thm-omega-arithmetic-laws
   kind: proof
   file: 05-recursion-and-arithmetic.md
-  line: 229
-  hash: 1c34f1391871
+  line: 233
+  hash: a8e11c7acd87
   verdicts:
   - stage: S5a
     verdict: minor
@@ -1620,8 +1620,8 @@ items:
 - key: exr-recursion-and-arithmetic-a1
   kind: exr
   file: 05-recursion-and-arithmetic.md
-  line: 276
-  hash: b1b71b36fea2
+  line: 280
+  hash: f32cc3d1bb72
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1651,7 +1651,7 @@ items:
 - key: exr-recursion-and-arithmetic-b1
   kind: exr
   file: 05-recursion-and-arithmetic.md
-  line: 301
+  line: 305
   hash: d73344b1c169
   verdicts:
   - stage: S5a
@@ -1682,7 +1682,7 @@ items:
 - key: exr-recursion-and-arithmetic-b2
   kind: exr
   file: 05-recursion-and-arithmetic.md
-  line: 325
+  line: 329
   hash: 50ec43f3f819
   verdicts:
   - stage: S5a
@@ -1713,7 +1713,7 @@ items:
 - key: exr-recursion-and-arithmetic-c1
   kind: exr
   file: 05-recursion-and-arithmetic.md
-  line: 350
+  line: 354
   hash: 3bcd07bc7f45
   verdicts:
   - stage: S5a
@@ -1745,7 +1745,7 @@ items:
 - key: exr-recursion-and-arithmetic-c2
   kind: exr
   file: 05-recursion-and-arithmetic.md
-  line: 394
+  line: 398
   hash: e7c6209db773
   verdicts:
   - stage: S5a
@@ -1776,7 +1776,7 @@ items:
 - key: exr-recursion-and-arithmetic-c3
   kind: exr
   file: 05-recursion-and-arithmetic.md
-  line: 419
+  line: 423
   hash: 1f000bcee885
   verdicts:
   - stage: S5a
@@ -1853,7 +1853,7 @@ items:
   kind: proof
   file: 06-order-on-omega.md
   line: 37
-  hash: e02be577a1c2
+  hash: f5617b96b0c3
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1923,7 +1923,7 @@ items:
 - key: check:06-order-on-omega:1
   kind: check
   file: 06-order-on-omega.md
-  line: 103
+  line: 105
   hash: d9843455a150
   verdicts:
   - stage: S5a
@@ -1946,7 +1946,7 @@ items:
 - key: prp-omega-order-arithmetic
   kind: prp
   file: 06-order-on-omega.md
-  line: 115
+  line: 117
   hash: 5a434764f1cc
   verdicts:
   - stage: S5a
@@ -1968,8 +1968,8 @@ items:
 - key: proof:prp-omega-order-arithmetic
   kind: proof
   file: 06-order-on-omega.md
-  line: 135
-  hash: 3b5743d9874c
+  line: 137
+  hash: 40928c20208f
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1992,7 +1992,7 @@ items:
 - key: prp-omega-powers-parity
   kind: prp
   file: 06-order-on-omega.md
-  line: 183
+  line: 185
   hash: 68d61cd22073
   verdicts:
   - stage: S5a
@@ -2018,7 +2018,7 @@ items:
 - key: proof:prp-omega-powers-parity
   kind: proof
   file: 06-order-on-omega.md
-  line: 200
+  line: 202
   hash: 433afc6e4138
   verdicts:
   - stage: S5a
@@ -2043,8 +2043,8 @@ items:
 - key: prp-tuples-as-sets
   kind: prp
   file: 06-order-on-omega.md
-  line: 241
-  hash: 3889395f4110
+  line: 243
+  hash: 83cd916d3daa
   verdicts:
   - stage: S5a
     verdict: minor
@@ -2067,8 +2067,8 @@ items:
 - key: proof:prp-tuples-as-sets
   kind: proof
   file: 06-order-on-omega.md
-  line: 268
-  hash: 9f2d2342769b
+  line: 272
+  hash: ff29b8708e6d
   verdicts:
   - stage: S5a
     verdict: correct
@@ -2093,8 +2093,8 @@ items:
 - key: exr-order-on-omega-a1
   kind: exr
   file: 06-order-on-omega.md
-  line: 294
-  hash: 7f2b8a03f086
+  line: 298
+  hash: 8385b65a320a
   verdicts:
   - stage: S5a
     verdict: minor
@@ -2126,8 +2126,8 @@ items:
 - key: exr-order-on-omega-b1
   kind: exr
   file: 06-order-on-omega.md
-  line: 317
-  hash: 46cece3c30bb
+  line: 321
+  hash: 8454254a9d6d
   verdicts:
   - stage: S5a
     verdict: minor
@@ -2158,7 +2158,7 @@ items:
 - key: exr-order-on-omega-b2
   kind: exr
   file: 06-order-on-omega.md
-  line: 331
+  line: 335
   hash: a2039035aa3c
   verdicts:
   - stage: S5a
@@ -2188,7 +2188,7 @@ items:
 - key: exr-order-on-omega-c1
   kind: exr
   file: 06-order-on-omega.md
-  line: 349
+  line: 353
   hash: a4b59f787fb7
   verdicts:
   - stage: S5a
@@ -2222,8 +2222,8 @@ items:
 - key: exr-order-on-omega-c2
   kind: exr
   file: 06-order-on-omega.md
-  line: 380
-  hash: e40f318b9755
+  line: 384
+  hash: a49735e1d7e6
   verdicts:
   - stage: S5a
     verdict: correct
@@ -2284,7 +2284,7 @@ items:
   kind: proof
   file: 07-categoricity.md
   line: 57
-  hash: 1152cc16d151
+  hash: 77f41a35a6e9
   verdicts:
   - stage: S5a
     verdict: minor
@@ -2593,7 +2593,7 @@ items:
   kind: exr
   file: 07-categoricity.md
   line: 353
-  hash: b22eb477454c
+  hash: 5db8d74f1166
   verdicts:
   - stage: S5a
     verdict: correct
@@ -2656,7 +2656,7 @@ items:
   kind: exr
   file: 07-categoricity.md
   line: 381
-  hash: c1fa0680c2ff
+  hash: 5897dd3843db
   verdicts:
   - stage: S5a
     verdict: correct
@@ -2686,7 +2686,7 @@ items:
   kind: exr
   file: 07-categoricity.md
   line: 393
-  hash: 3fd94fa29f6b
+  hash: 55ac60b4f551
   verdicts:
   - stage: S5a
     verdict: correct

@@ -1,4 +1,4 @@
-# The Recursion Theorem on ω; Addition and Multiplication
+# The Recursion Theorem; Addition and Multiplication
 
 The set \( \omega \) now has a zero, a successor map and an induction theorem, and @thm-omega-peano shows that together they satisfy Peano's axioms. It has no addition yet. In Chapter 7 the sum \( m + n \) of two natural numbers came for free, from the real numbers; in \( \omega \) a natural number is a set, and nothing we know about sets adds two of them. This section defines addition and multiplication by recursion, as school does ("\( m + (n + 1) \) is one more than \( m + n \)"), after first proving, from the axioms, that recursion defines something. Then it proves the laws of arithmetic one by one, each by an induction.
 
@@ -30,7 +30,7 @@ Uniqueness is an induction. For existence, induction cannot build \( f \), so we
 
 ④ **Glue:** the union of all their graphs is the graph of \( f \).
 
-The glue step of Section 7.3 compared two indices: if \( m \le n \), the piece up to \( m \) lies inside the piece up to \( n \). We have no order on \( \omega \) yet, so we compare the two pieces only on the part where both are defined, \( \mathrm{S}(k) \), using ②.
+The glue step of Section 7.3 compared two indices: if \( m \le n \), the piece up to \( m \) lies inside the piece up to \( n \). We have no order on \( \omega \) yet, so at each point \( k \) where both pieces are defined we cut both down to \( \mathrm{S}(k) \): by ② and ③, each restriction is the unique partial solution up to \( k \).
 
 *Before reading on: where is \( \mathrm{S}(n) \notin \mathrm{S}(n) \) used?*
 :::
@@ -130,6 +130,8 @@ As in Section 7.3, no choice is made: each partial solution is the only one, and
 
 ::: {.remark}
 The functions \( g \) that we feed to the theorem are usually given by a formula, such as \( g(n, x) = \mathrm{S}(x) \). Such a \( g \) is a function as soon as each pair \( (n, x) \) gets exactly one value in \( X \): its graph, the set of pairs \( ((n, x), y) \in (\omega \times X) \times X \) such that \( y \) is the value the formula assigns to \( (n, x) \), is a set by (Z6) of @ax-zf-fragment inside a product (@prp-cartesian-product-exists), and (Fn1), (Fn2) say exactly that the formula gives one value in \( X \) for each pair.
+
+The hypothesis that \( g \) takes its values in \( X \) cannot be dropped. Let \( X = \{0\} \), \( a = 0 \), and \( g(n, x) \coloneqq \mathrm{S}(0) \) for \( n \in \omega \), \( x \in X \), so that \( g \) maps \( \omega \times X \) into \( \omega \) but not into \( X \). Any \( f \colon \omega \to X \) with the two equations would need \( f(\mathrm{S}(0)) = g(0, f(0)) = \mathrm{S}(0) \), and \( \mathrm{S}(0) \notin X \) since \( \mathrm{S}(0) \ne 0 \) by (P3) of @thm-omega-peano; so no such \( f \) exists. The proof breaks in Step 3, where the added pair \( (\mathrm{S}(n), g(n, f_n(n))) \) must lie in \( \mathrm{S}(\mathrm{S}(n)) \times X \).
 :::
 
 ## Addition and multiplication
@@ -150,7 +152,7 @@ m + 0 = m, \qquad m + \mathrm{S}(n) = \mathrm{S}(m + n) .
 \[
 m \cdot 0 = 0, \qquad m \cdot \mathrm{S}(n) = m \cdot n + m .
 \]
-3. The **numerals** are \( 0 \coloneqq \emptyset \) and \( 1 \coloneqq \mathrm{S}(0) \), \( 2 \coloneqq \mathrm{S}(1) \), \( 3 \coloneqq \mathrm{S}(2) \), and so on, as in @exm-von-neumann-numerals.
+3. The **numerals** are \( 0 \coloneqq \emptyset \) and \( 1 \coloneqq \mathrm{S}(0) \), \( 2 \coloneqq \mathrm{S}(1) \), \( 3 \coloneqq \mathrm{S}(2) \), and so on, as in @exm-von-neumann-numerals. For every \( n \in \omega \), \( n + 1 = \mathrm{S}(n) \); in particular \( 1 + 1 = 2 \) and \( k + 2 = (k + 1) + 1 \) for every \( k \in \omega \).
 :::
 :::
 
@@ -158,11 +160,11 @@ In words: (a) and (b) are the two clauses we would write for a school definition
 
 **Well-definedness.** Three things need checking. First, each \( g \) is a function \( \omega \times \omega \to \omega \) (the remark above): \( \mathrm{S}(x) \in \omega \) for \( x \in \omega \) by (P2) of @thm-omega-peano, and \( x + m \in \omega \) because \( A_x \) maps into \( \omega \). So (b) uses (a), and (a) uses nothing but the successor. Second, \( + \) is a function \( \omega \times \omega \to \omega \): its graph is the set of \( ((m, n), k) \in (\omega \times \omega) \times \omega \) such that \( k = A(n) \) for some function \( A \colon \omega \to \omega \) with \( A(0) = m \) and \( A(\mathrm{S}(j)) = \mathrm{S}(A(j)) \) for every \( j \in \omega \); this is a set by (Z6) of @ax-zf-fragment, and each \( (m, n) \) gets exactly one \( k \) because \( A_m \) exists and is unique. The same holds for \( \cdot \). Third, nothing was chosen: each \( A_m \) and \( M_m \) is the only function with its property.
 
-**The successor is "plus one".** For every \( n \in \omega \),
+**The successor is "plus one".** Proof of the last sentence of (c): for every \( n \in \omega \),
 \[
 n + 1 = n + \mathrm{S}(0) = \mathrm{S}(n + 0) = \mathrm{S}(n) ,
 \]
-by the two equations of (a). From now on we write \( n + 1 \) for \( \mathrm{S}(n) \) whenever \( n \in \omega \); the defining equations then read as in school:
+by (c) and the two equations of (a). From now on we write \( n + 1 \) for \( \mathrm{S}(n) \) whenever \( n \in \omega \); the defining equations then read as in school:
 \[
 \begin{aligned}
 m + 0 &= m, & m + (n + 1) &= (m + n) + 1, \\
@@ -174,6 +176,8 @@ Two small computations are used repeatedly later: \( 1 + 1 = \mathrm{S}(1) = 2 \
 k + 2 = k + \mathrm{S}(1) = \mathrm{S}(k + 1) = (k + 1) + 1 .
 \]
 
+A non-example by minimal change: keep \( a = m \) in (a), but replace \( g(n, x) = \mathrm{S}(x) \) by \( g(n, x) = \mathrm{S}(n) \), which ignores the current value. This \( g \) is still a function \( \omega \times \omega \to \omega \), so @thm-omega-recursion gives exactly one \( f \colon \omega \to \omega \) with \( f(0) = m \) and \( f(\mathrm{S}(n)) = \mathrm{S}(n) \). The first equation \( m + 0 = m \) still holds for this "sum", but the second, \( m + \mathrm{S}(n) = \mathrm{S}(m + n) \), fails: with \( m = 2 \), \( f(1) = \mathrm{S}(0) = 1 \), while \( \mathrm{S}(f(0)) = \mathrm{S}(2) = 3 \). So it would give \( 2 + 1 = 1 \), and it is not addition.
+
 The defining equations immediately give the two Peano facts in the "plus one" notation.
 
 ::: {#cor-omega-successor-cancellation}
@@ -183,7 +187,7 @@ For all \( k, l \in \omega \): if \( k + 1 = l + 1 \), then \( k = l \); and \( 
 :::
 
 ::: {.proof}
-By (a) of @def-omega-arithmetic, \( k + 1 = \mathrm{S}(k) \) and \( l + 1 = \mathrm{S}(l) \). So the first claim is (P4) of @thm-omega-peano, and the second is (P3).
+By (c) of @def-omega-arithmetic, \( k + 1 = \mathrm{S}(k) \) and \( l + 1 = \mathrm{S}(l) \). So the first claim is (P4) of @thm-omega-peano, and the second is (P3).
 :::
 
 ::: {.check}
@@ -204,7 +208,7 @@ and \( 0 + 2 = \mathrm{S}(0 + 1) = \mathrm{S}(\mathrm{S}(0 + 0)) = \mathrm{S}(\m
 
 ## The laws of arithmetic
 
-Every law of arithmetic that Chapter 7 took from the real numbers must now be proved, and the only tools are the four defining equations and induction. The equations are lopsided: they say what happens when the **second** argument goes up by one, and nothing about the first. So in every proof below we fix all variables but one and induct on the variable that the recursion runs on, the second argument of \( + \) or \( \cdot \).
+Every law of arithmetic that Chapter 7 took from the real numbers must now be proved, and the only tools are the four defining equations and induction. The equations are lopsided: they say what happens when the **second** argument goes up by one, and nothing about the first. So in every induction below we fix all variables but one and induct on the variable that the recursion runs on, the second argument of \( + \) or \( \cdot \).
 
 ::: {#thm-omega-arithmetic-laws}
 [Laws of Arithmetic on \( \omega \)]
@@ -227,7 +231,7 @@ The move is **fix the others, induct on the recursion variable**: in \( m + n \)
 :::
 
 ::: {.proof}
-Each clause is proved by @thm-omega-induction (b), applied to the property of \( n \) stated in the clause, with the other variables fixed; for the first half of (d) the variable is \( k \), the recursion variable of \( m(n + k) \). "Def" refers to the equations of @def-omega-arithmetic, "IH" to the induction hypothesis.
+Each clause except the second half of (d) and the last part of (e), which the table derives from earlier clauses without induction, is proved by @thm-omega-induction (b), applied to the property of \( n \) stated in the clause, with the other variables fixed; for the first half of (d) the variable is \( k \), the recursion variable of \( m(n + k) \). "Def" refers to the equations of @def-omega-arithmetic, "IH" to the induction hypothesis.
 
 We prove (c), associativity of addition, in full. Fix \( k, m \in \omega \), and let \( P(n) \) be "\( (k + m) + n = k + (m + n) \)". *Base case:* by the first equation of (a) of @def-omega-arithmetic, applied twice,
 \[
@@ -293,7 +297,7 @@ These questions are about the proof of @thm-omega-recursion.
 
 (c) Uniqueness compares two functions that are **given**, value by value, and comparing values at \( n + 1 \) through the values at \( n \) is exactly an induction on \( n \). Existence asks for a function that is not given; induction proves statements and builds nothing. So the proof proves by induction a statement (the claim of Step 3) about finite pieces, and builds \( f \) from them as a union, using (Z4).
 
-(d) For each \( n \), induction shows that there is exactly one function on \( \mathrm{S}(n) \) obeying the equations, and any two of these agree wherever both are defined, because each restricts to the unique one on the overlap \( \mathrm{S}(k) \). Their union is the required function, and an induction shows there is no other.
+(d) For each \( n \), induction shows that there is exactly one function on \( \mathrm{S}(n) \) obeying the equations, and any two of these agree at every point \( k \) where both are defined, because on \( \mathrm{S}(k) \) each restricts to the unique one up to \( k \). Their union is the required function, and an induction shows there is no other.
 :::
 
 ### B. Practice
@@ -384,11 +388,11 @@ by the second equation, the hypothesis, and Lemma 2 (with \( n \) in the role of
 
 **Marking scheme.** (10 points)
 - 2: proves \( 0 + n = n \) by induction on \( n \), from the first equation (base) and the second (step).
-- 3: proves \( (m + 1) + n = (m + n) + 1 \) by induction on \( n \) with \( m \) fixed, base and step both justified.
+- 3: proves, by an induction with the other variable fixed, a lemma that moves a successor out of the first argument (the book's \( (m + 1) + n = (m + n) + 1 \), or \( 1 + n = n + 1 \) together with associativity of addition), base and step both justified.
 - 2: in the main induction, the base case \( m + 0 = 0 + m \), using the first lemma.
-- 2: in the main induction, the step, using the second equation, the hypothesis and the second lemma.
+- 2: in the main induction, the step, using the second equation, the hypothesis and that lemma.
 - 1: names the variable inducted on in each induction and fixes the other.
-Fatal errors (0 for the step): using commutativity (or any law of @thm-omega-arithmetic-laws) inside its own proof; treating \( 0 + n = n \) as if it were a defining equation. A second route inducts on \( m \) in the main induction with \( n \) fixed; it needs the same two lemmas, and its base and step map to the same 2 + 2 points.
+Fatal errors (0 for the step): citing commutativity, or any law of @thm-omega-arithmetic-laws, without proving it from the two equations; treating \( 0 + n = n \) as if it were a defining equation. A second route inducts on \( m \) in the main induction with \( n \) fixed; it needs the same two lemmas, and its base and step map to the same 2 + 2 points. A third route proves associativity and \( 1 + n = n + 1 \) (each by induction on \( n \), from the equations and \( 0 + n = n \)) and then closes the step as \( m + (n + 1) = (m + n) + 1 = (n + m) + 1 = n + (m + 1) = n + (1 + m) = (n + 1) + m \); those two lemmas together earn the 3 points.
 :::
 
 ::: {#exr-recursion-and-arithmetic-c2}

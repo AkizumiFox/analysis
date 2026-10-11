@@ -36,28 +36,29 @@ In symbols, with \( S \subseteq X \) as an abbreviation of \( \forall y\, (y \in
 \begin{aligned}
 &(\mathrm{Z1}) && \forall A\, \forall B\, \bigl(\forall x\, (x \in A \leftrightarrow x \in B) \to A = B\bigr), \\
 &(\mathrm{Z2}) && \exists E\, \forall x\, \neg(x \in E), \\
-&(\mathrm{Z3}) && \forall a\, \forall b\, \exists P\, \forall x\, \bigl(x \in P \leftrightarrow (x = a \vee x = b)\bigr), \\
+&(\mathrm{Z3}) && \forall a\, \forall b\, \exists C\, \forall x\, \bigl(x \in C \leftrightarrow (x = a \vee x = b)\bigr), \\
 &(\mathrm{Z4}) && \forall \sS\, \exists U\, \forall x\, \bigl(x \in U \leftrightarrow \exists S\, (S \in \sS \wedge x \in S)\bigr), \\
-&(\mathrm{Z5}) && \forall X\, \exists P\, \forall S\, (S \in P \leftrightarrow S \subseteq X).
+&(\mathrm{Z5}) && \forall X\, \exists Q\, \forall S\, (S \in Q \leftrightarrow S \subseteq X).
 \end{aligned}
 \]
 (Z6) is not one axiom but one for each property, an **axiom schema**. For every formula \( \varphi \) whose free variables are among \( x, p_1, \dots, p_k \) and in which the letter \( B \) does not appear,
 \[
 \forall p_1 \cdots \forall p_k\, \forall A\, \exists B\, \forall x\, \bigl(x \in B \leftrightarrow (x \in A \wedge \varphi)\bigr). \tag{Z6}
 \]
+The letter \( B \) here is bound, and may be renamed (Section 4.2) to any letter that appears nowhere else in (Z6) (not in \( \varphi \), and neither \( x \) nor \( A \)). So a property may mention a given set called \( B \), as \( A \setminus B \) below does, once the new set is given another letter, say \( D \): \( \forall B\, \forall A\, \exists D\, \forall x\, \bigl(x \in D \leftrightarrow (x \in A \wedge x \notin B)\bigr) \).
 
 In words, clause by clause, with what each one licenses.
 
-- *(Z1)* is the only axiom that proves two sets **equal**. Section 6.1 stated it as the meaning of equality of sets (@def-set-equality); here it is an axiom, and only its direction "same elements, hence equal" needs to be assumed. The other direction, from \( A = B \) to \( x \in A \leftrightarrow x \in B \), is the equality rule \( \rulename{{=}E} \) of @def-rules-equality, a rule of logic.
-- *(Z2)* gives the one set we start from. Every other axiom makes a set out of sets already given.
+- *(Z1)* is the only axiom that proves two sets **equal** by comparing their elements: it turns "same elements" into \( A = B \). Section 6.1 stated it as the meaning of equality of sets (@def-set-equality); here it is an axiom, and only its direction "same elements, hence equal" needs to be assumed. The other direction, from \( A = B \) to \( x \in A \leftrightarrow x \in B \), is the equality rule \( \rulename{{=}E} \) of @def-rules-equality, a rule of logic.
+- *(Z2)* gives the one set we start from. Each of (Z3)–(Z6) makes a set out of sets already given.
 - *(Z3)* makes a set out of two given sets \( a \), \( b \). The two need not differ: with \( b = a \) its set has the single element \( a \).
 - *(Z4)* flattens one level: from a set \( \sS \) of sets it makes the set of what lies **inside** the members of \( \sS \). With (Z3) it gives the union of two sets (below).
 - *(Z5)* collects **all** subsets of \( X \) into one set; it is the working rule (W4).
-- *(Z6)* cuts a set out of a set \( A \) already given, by a property. It is specification (@def-set-builder), now an axiom. The letter \( B \) must not appear in \( \varphi \), or the property could refer to the set being made: with \( \varphi \) the formula \( x \notin B \), (Z6) would say \( x \in B \leftrightarrow (x \in A \wedge x \notin B) \), which no set \( B \) satisfies when \( A \) has an element.
+- *(Z6)* cuts a set out of a set \( A \) already given, by a property. It is specification (@def-set-builder), now an axiom. The letter \( B \) must not appear in \( \varphi \), or the property could refer to the set being made: with \( \varphi \) the formula \( x \notin B \), and \( B \) the very set that (Z6) produces, it would say \( x \in B \leftrightarrow (x \in A \wedge x \notin B) \), which no set \( B \) satisfies when \( A \) has an element.
 
 **Properties written with defined symbols.** The formulas of (Z6) contain only \( \in \) and \( = \). We shall write properties with defined symbols as well (\( \subseteq \), \( \emptyset \), \( \{a, b\} \), and later \( \cup \), pairs and functions), and that is harmless: each defined symbol is shorthand that unwinds into \( \in \) and \( = \). For instance "\( x = \emptyset \)" unwinds to \( \forall y\, \neg(y \in x) \), and "\( x = \{a, b\} \)" to \( \forall y\, \bigl(y \in x \leftrightarrow (y = a \vee y = b)\bigr) \). A property is admissible in (Z6) when its unwinding is a formula of the language, which is the case for every property in this chapter.
 
-**One way to tell sets apart, and one way to make them unique.** Each of (Z2)–(Z6) says that **there is** a set with a certain membership condition. By (Z1) there is then **exactly one**: two sets with the same membership condition have the same elements, so they are equal. We use this move so often that it gets a name.
+**One way to tell sets apart, and one way to make them unique.** Each of (Z2)–(Z6) says that **there is** a set with a certain membership condition. By (Z1) there is then **exactly one**: two sets with the same membership condition have the same elements, so they are equal. We use this move so often that we state it once:
 
 *To show that a set is unique, show that any two sets with its membership condition have the same elements, and apply (Z1).*
 
@@ -70,7 +71,7 @@ In words, clause by clause, with what each one licenses.
 - *A power set.* (Z5) with \( X = \{\emptyset\} \) gives the set of subsets of \( \{\emptyset\} \). There are two, \( \emptyset \) and \( \{\emptyset\} \) itself (the argument of @exm-power-set-small, which uses only extensionality and excluded middle, applies word for word). So \( \powerset{\{\emptyset\}} = \{\emptyset, \{\emptyset\}\} \), the set of the third item.
 - *A separation.* (Z6) with \( A = \{\emptyset, \{\emptyset\}\} \) and the property \( x \ne \emptyset \) gives \( \{\{\emptyset\}\} \): of the two elements of \( A \), only \( \{\emptyset\} \) differs from \( \emptyset \).
 
-The degenerate case is the empty set itself, and it matters: every set in this chapter, the natural numbers included, will be built from \( \emptyset \) by the axioms. There is nothing else to build from.
+The degenerate case is the empty set itself, and it matters: each natural number will be built from \( \emptyset \) by these axioms, one at a time. The set of all of them needs one more starting point, the Axiom of Infinity (Section 9.3).
 
 **A non-example by minimal change.** Delete the ambient set from (Z6): "for every property \( P(x) \) there is a set whose elements are exactly the \( x \) with \( P(x) \)". This is the naive rule of Section 6.1, and it fails at once. With \( P(x) \) the property \( x \notin x \) it gives a set \( R \) with \( R \in R \leftrightarrow R \notin R \), a contradiction; and even with the harmless-looking property \( x = x \) it gives a set of which every set is an element, which @thm-russell rules out. What fails is exactly the clause "\( x \in A \)" that was deleted. Every other part of (Z6) survives the change; the ambient set is what makes it safe.
 
@@ -80,7 +81,7 @@ The degenerate case is the empty set itself, and it matters: every set in this c
 - **Replacement** and **Foundation** are not needed to build the natural numbers, and are left to the volume on set theory, which revisits this chapter.
 - **Choice** is @ax-choice of Chapter 8. Nothing in this chapter uses it.
 
-We do not ask whether the axioms are consistent, or whether one of them follows from the others. Those are questions about the axioms, and this chapter only uses them.
+We do not ask whether the axioms are consistent, or (apart from exercise C1) whether one of them follows from the others. Those are questions about the axioms, and this chapter only uses them.
 
 ::: {.warning}
 **Two traps in the list.** First, (Z3) gives an **unordered** pair: \( \{a, b\} = \{b, a\} \), since \( x = a \vee x = b \) and \( x = b \vee x = a \) say the same thing. So \( \{a, b\} \) cannot record which of \( a \), \( b \) came first, and Section 9.2 needs a different construction for the ordered pair. Second, (Z6) needs the ambient set \( A \): the rule without it is exactly the one @thm-russell refutes.
@@ -88,7 +89,7 @@ We do not ask whether the axioms are consistent, or whether one of them follows 
 
 ## The first consequences
 
-The existence axioms say "there is a set"; the first proposition says "there is exactly one", and so lets us give each such set a name. It also rebuilds the operations of Section 6.2 (@def-set-operations, @def-family-union-intersection) from the axioms.
+The existence axioms say "there is a set"; the first proposition says "there is exactly one", and so lets us give each such set a name. It also rebuilds from the axioms the operations of @def-set-operations and, for a set of sets \( \sS \), the \( \bigcup \sS \) and \( \bigcap \sS \) of @def-family-union-intersection; indexed families wait for Section 9.2.
 
 ::: {#prp-zf-basic-sets}
 [The Sets Named by the Axioms]
@@ -96,11 +97,11 @@ The existence axioms say "there is a set"; the first proposition says "there is 
 ::: {.enumerate options="label=(\alph*)"}
 1. There is **exactly one** set with no elements. It is written \( \emptyset \).
 2. For all sets \( a \) and \( b \) the set of (Z3) is unique. It is written \( \{a, b\} \), and \( \{a\} \coloneqq \{a, a\} \), the set whose only element is \( a \).
-3. For every set \( \sS \) the set of (Z4) is unique. It is written \( \bigcup \sS \), and \( A \cup B \coloneqq \bigcup \{A, B\} \) for sets \( A \), \( B \). The sets \( A \cap B \coloneqq \{ x \in A : x \in B \} \) and \( A \setminus B \coloneqq \{ x \in A : x \notin B \} \) exist by (Z6). For a **non-empty** set \( \sS \), the set
+3. For every set \( \sS \) the set of (Z4) is unique. It is written \( \bigcup \sS \), and \( A \cup B \coloneqq \bigcup \{A, B\} \) for sets \( A \), \( B \), so that \( x \in A \cup B \) if and only if \( x \in A \) or \( x \in B \). The sets \( A \cap B \coloneqq \{ x \in A : x \in B \} \) and \( A \setminus B \coloneqq \{ x \in A : x \notin B \} \) exist by (Z6). For a **non-empty** set \( \sS \), the set
 \[
 \bigcap \sS \coloneqq \{ x \in A_0 : x \in S \text{ for every } S \in \sS \}
 \]
-exists by (Z6) for any \( A_0 \in \sS \), and it **does not depend** on \( A_0 \).
+exists by (Z6) for any \( A_0 \in \sS \), it **does not depend** on \( A_0 \), and \( x \in \bigcap \sS \) if and only if \( x \in S \) for every \( S \in \sS \).
 4. For all sets \( a, b, c, d \),
 \[
 \{a, b\} = \{c, d\} \iff (a = c \wedge b = d) \vee (a = d \wedge b = c).
@@ -116,9 +117,9 @@ Parts (a)–(c) are the uniqueness move three times: the axiom named gives a set
 ::: {.proof}
 (a) A set with no elements exists by (Z2). If \( E \) and \( E' \) both have no elements, then for every \( x \), both \( x \in E \) and \( x \in E' \) are false, so \( x \in E \leftrightarrow x \in E' \); hence \( E = E' \) by (Z1). This is the argument of @prp-empty-set-unique, with (Z1) in place of @def-set-equality.
 
-(b) Let \( P \) and \( P' \) be sets as in (Z3) for the same \( a \), \( b \). For every \( x \), \( x \in P \) and \( x \in P' \) are each equivalent to \( x = a \vee x = b \), so \( P = P' \) by (Z1). With \( b = a \) the condition is \( x = a \vee x = a \), which is equivalent to \( x = a \); so the only element of \( \{a\} \) is \( a \).
+(b) Let \( C \) and \( C' \) be sets as in (Z3) for the same \( a \), \( b \). For every \( x \), \( x \in C \) and \( x \in C' \) are each equivalent to \( x = a \vee x = b \), so \( C = C' \) by (Z1). With \( b = a \) the condition is \( x = a \vee x = a \), which is equivalent to \( x = a \); so the only element of \( \{a\} \) is \( a \).
 
-(c) The set of (Z4) is unique by the same argument, its condition being \( \exists S\, (S \in \sS \wedge x \in S) \). For \( \sS = \{A, B\} \), an \( S \in \{A, B\} \) is \( A \) or \( B \), by (b); so \( x \in A \cup B \) if and only if \( x \in A \) or \( x \in B \). The sets \( A \cap B \) and \( A \setminus B \) are instances of (Z6), with ambient set \( A \) and parameter \( B \), and are unique by (Z1).
+(c) The set of (Z4) is unique by the same argument, its condition being \( \exists S\, (S \in \sS \wedge x \in S) \). For \( \sS = \{A, B\} \), an \( S \in \{A, B\} \) is \( A \) or \( B \), by (b); so \( x \in A \cup B \) if and only if \( x \in A \) or \( x \in B \). The sets \( A \cap B \) and \( A \setminus B \) are instances of (Z6), with ambient set \( A \) and parameter \( B \) (after renaming the bound letter of (Z6)), and are unique by (Z1).
 
 Now let \( \sS \) be non-empty, and let \( A_0 \in \sS \). By (Z6) with ambient set \( A_0 \) and parameter \( \sS \), the set \( \bigcap \sS \) above exists. Its membership condition simplifies:
 \[
@@ -151,7 +152,7 @@ Compute \( \bigcup \emptyset \), \( \bigcup \{\emptyset\} \) and \( \bigcup \{\{
 \( \bigcup \emptyset = \emptyset \): an element would have to lie in some member of \( \emptyset \), and \( \emptyset \) has no members. \( \bigcup \{\emptyset\} = \emptyset \): the only member is \( \emptyset \), which has no elements. \( \bigcup \{\{\emptyset\}, \{\emptyset, \{\emptyset\}\}\} = \{\emptyset, \{\emptyset\}\} \): the first member contributes \( \emptyset \), the second contributes \( \emptyset \) and \( \{\emptyset\} \), and repeats do not count.
 :::
 
-With @prp-zf-basic-sets every set we have named so far is a set of the axioms, and every construction of Section 6.2 that is cut out of a given set is one too. What is not yet built is an **ordered** pair; the warning above says why \( \{a, b\} \) will not do, and Section 9.2 builds one.
+With @prp-zf-basic-sets every set we have named so far is a set of the axioms, and so are the operations of Section 6.2 on sets and on sets of sets: \( \cup \), \( \cap \), \( \setminus \), the power set (Z5), \( \bigcup \sS \), and \( \bigcap \sS \) for non-empty \( \sS \). Unions and intersections of an indexed family \( (A_i)_{i \in I} \) need the family as a function, which needs ordered pairs; Section 9.2 returns to them. What is not yet built is an **ordered** pair; the warning above says why \( \{a, b\} \) will not do, and Section 9.2 builds one.
 
 ## Exercises
 
@@ -247,7 +248,7 @@ For (a): consider \( \{ x \in A : x \ne x \} \). For (b): let \( x \in \bigcap \
 
 Now let \( C \) be a set with \( C \subseteq S \) for every \( S \in \sS \), and let \( x \in C \). Then \( x \in S \) for every \( S \in \sS \). Choose \( A_0 \in \sS \) (possible, as \( \sS \) is non-empty); then \( x \in A_0 \) as well, and so \( x \) satisfies the defining condition of \( \bigcap \sS \). Hence \( C \subseteq \bigcap \sS \).
 
-For \( \sS = \{A, B\} \), which is non-empty: an object lies in every member of \( \{A, B\} \) if and only if it lies in \( A \) and in \( B \), because the members are exactly \( A \) and \( B \) (@prp-zf-basic-sets (b)). That is the membership condition of \( A \cap B \), so \( \bigcap \{A, B\} = A \cap B \) by (Z1).
+For \( \sS = \{A, B\} \), which is non-empty, the members are exactly \( A \) and \( B \) (@prp-zf-basic-sets (b)). By the first part with \( S = A \) and with \( S = B \), \( \bigcap \{A, B\} \subseteq A \) and \( \bigcap \{A, B\} \subseteq B \), so \( \bigcap \{A, B\} \subseteq A \cap B \). Conversely, \( A \cap B \subseteq A \) and \( A \cap B \subseteq B \), so \( A \cap B \subseteq S \) for every \( S \in \{A, B\} \), and the second part gives \( A \cap B \subseteq \bigcap \{A, B\} \). Hence \( \bigcap \{A, B\} = A \cap B \) (@prp-subset-antisymmetric).
 
 In words, (b) says that \( \bigcap \sS \) is the **largest** set contained in every member of \( \sS \): it is contained in each of them, and it contains every other set that is.
 
@@ -255,7 +256,7 @@ In words, (b) says that \( \bigcap \sS \) is the **largest** set contained in ev
 - 3: (a) produces a set with no elements by (Z6) from a given set, with a property that no set has, and proves it has no elements.
 - 2: (b) shows \( \bigcap \sS \subseteq S \) from the membership condition, at the given \( S \).
 - 3: (b) shows \( C \subseteq \bigcap \sS \), placing \( x \) in the ambient member \( A_0 \) as well as in every \( S \).
-- 2: deduces \( \bigcap \{A, B\} = A \cap B \) by comparing membership conditions, using that the members of \( \{A, B\} \) are exactly \( A \) and \( B \).
+- 2: deduces \( \bigcap \{A, B\} = A \cap B \) using that the members of \( \{A, B\} \) are exactly \( A \) and \( B \): by double inclusion, \( \bigcap \{A, B\} \subseteq A \cap B \) from the first half of (b) at \( S = A \) and \( S = B \), and \( A \cap B \subseteq \bigcap \{A, B\} \) from the second half with \( C = A \cap B \), then @prp-subset-antisymmetric (or (Z1)). A solution that compares membership conditions directly earns the same 2.
 
 Fatal errors (0 for the step): using a set of all sets, or \( \bigcap \emptyset \); in (a), assuming \( \emptyset \) exists in order to prove (Z2).
 :::

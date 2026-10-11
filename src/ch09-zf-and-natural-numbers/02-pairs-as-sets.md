@@ -1,6 +1,6 @@
 # Ordered Pairs Built from Sets
 
-Section 6.3 introduced the ordered pair (@def-ordered-pair) as an object with one property, the characteristic property, and said that such an object could be built from sets. Section 9.1 has only sets to build with, and its pair \( \{a, b\} \) forgets which element came first. This section repairs that with one idea: mark the first coordinate by putting it in a set of its own. It proves that the result has the characteristic property, so that every pair of Chapters 6 to 8 can be read as a set, and then recovers the product \( A \times B \) and the working rules (W1)–(W5) of Section 6.1 from the axioms.
+Section 6.3 introduced the ordered pair (@def-ordered-pair) as an object with one property, the characteristic property, and said that such an object could be built from sets. Section 9.1 has only sets to build with, and its pair \( \{a, b\} \) forgets which element came first. This section repairs that with one idea: mark the first coordinate by putting it in a set of its own. It proves that the result has the characteristic property, so that every pair of Chapters 6 to 8 can be read as a set, and then recovers the product \( A \times B \) and the working rules (W1)–(W5) of Section 6.1 from the axioms, in the form proved here: (W2) for lists written out in the text, (W3) for families of subsets of a given set, and (W5) for pairs. The rest of (W2) and (W5) comes in Section 9.6; (W3) for families with no ambient set needs the axiom of Replacement.
 
 ## Order from sets
 
@@ -18,7 +18,7 @@ For sets \( a \) and \( b \), the **ordered pair** of \( a \) and \( b \) is the
 Its **first coordinate** is \( a \) and its **second coordinate** is \( b \).
 :::
 
-The pair is a set of the axioms: (Z3) gives \( \{a\} = \{a, a\} \) and \( \{a, b\} \), and (Z3) once more gives the set whose elements are these two (@prp-zf-basic-sets (b)). In words: the members of \( (a, b) \) are the sets \( \{a\} \) and \( \{a, b\} \), which coincide when \( a = b \). The definition is Kuratowski's, and sets of this form are often called **Kuratowski pairs**. The first coordinate lies in both members; the second lies in the member \( \{a, b\} \), and in \( \{a\} \) only if it equals \( a \).
+The pair is a set of the axioms: (Z3) gives \( \{a\} = \{a, a\} \) and \( \{a, b\} \), and (Z3) once more gives the set whose elements are these two (@prp-zf-basic-sets (b)). In words: the members of \( (a, b) \) are the sets \( \{a\} \) and \( \{a, b\} \), which coincide when \( a = b \). Sets of this form are called **Kuratowski pairs**. The first coordinate lies in both members; the second lies in the member \( \{a, b\} \), and in \( \{a\} \) only if it equals \( a \).
 
 Examples, simplest first.
 
@@ -50,7 +50,7 @@ The claim is **false**, and each encoding has its own counterexample.
 \]
 the same set, by (Z1). But \( a \ne c \): the only element of \( a = \{\{\emptyset\}\} \) is \( \{\emptyset\} \), which is not \( \emptyset \), so \( \emptyset \in c \) and \( \emptyset \notin a \). So equal encodings do not force equal first coordinates. The trouble is that \( \{b\} \) can coincide with a first coordinate, and the encoding cannot tell which of its elements was meant as "\( a \)".
 
-The definition avoids both failures. Both of its members are built from \( a \), so neither can be mistaken for a lone coordinate, and the member \( \{a\} \) singles out \( a \). An older encoding that also works, Wiener's, uses \( \emptyset \) as a marker; it is the subject of exercise C3.
+The definition avoids both failures. Both of its members are built from \( a \), so neither can be mistaken for a lone coordinate, and the member \( \{a\} \) singles out \( a \). Another encoding, often called the Wiener pair, uses \( \emptyset \) as a marker; exercise C3 asks you to show that it has the characteristic property.
 :::
 
 The lesson of (iii) is a habit: a proposed encoding is tested against the characteristic property with **all** inputs, including inputs that are themselves made of the sets being encoded.
@@ -98,9 +98,9 @@ In both cases \( a = c \) and \( b = d \). This proves the theorem.
 
 So \( a \ne b \) is used twice in Case 2: to exclude \( c = d \), and to exclude \( \{a, b\} = \{c\} \). Once both are excluded, each side has exactly two different members, and they can be matched.
 
-**Alternatively**, the coordinates can be read off a pair \( p = (a, b) \) by two set operations. Since \( \{a\} \subseteq \{a, b\} \), we have \( \bigcap p = \{a\} \cap \{a, b\} = \{a\} \) and \( \bigcup p = \{a\} \cup \{a, b\} = \{a, b\} \). So \( a \) is the unique element of \( \bigcap p \). And \( \bigcup p \setminus \bigcap p = \{a, b\} \setminus \{a\} \) is \( \{b\} \) if \( b \ne a \), and \( \emptyset \) if \( b = a \); so \( b \) is the unique element of \( \bigcup p \setminus \bigcap p \) when that set is non-empty, and \( b = a \) when it is empty. Both coordinates are thus determined by the set \( p \) alone, which is the characteristic property again. The case split has not gone away: it is the empty and non-empty cases of \( \bigcup p \setminus \bigcap p \).
+**Alternatively**, the coordinates can be read off a pair \( p = (a, b) \) by two set operations. The members of \( p \) are \( \{a\} \) and \( \{a, b\} \) (@prp-zf-basic-sets (b)). An object lies in both if and only if it equals \( a \), since it must lie in \( \{a\} \), and \( a \in \{a, b\} \); so \( \bigcap p = \{a\} \) (@prp-zf-basic-sets (c)). And \( \bigcup p = \{a\} \cup \{a, b\} = \{a, b\} \). So \( a \) is the unique element of \( \bigcap p \). And \( \bigcup p \setminus \bigcap p = \{a, b\} \setminus \{a\} \) is \( \{b\} \) if \( b \ne a \), and \( \emptyset \) if \( b = a \); so \( b \) is the unique element of \( \bigcup p \setminus \bigcap p \) when that set is non-empty, and \( b = a \) when it is empty. Both coordinates are thus determined by the set \( p \) alone, which is the characteristic property again. The case split has not gone away here: it is the empty and non-empty cases of \( \bigcup p \setminus \bigcap p \). Comparing the unions of two pairs directly avoids it: from \( \{a, b\} = \{c, d\} \) with \( c = a \), @prp-zf-basic-sets (d) gives \( b = d \) in both of its disjuncts.
 
-**What this pays.** Section 6.3 took the ordered pair as given, with the characteristic property, and said after @def-ordered-pair that nothing else about pairs is used there, apart from one working convention about pairs and numbers. From here on, the pair \( (a, b) \) of @def-ordered-pair **is** the set of @def-kuratowski-pair, and the property it was assumed to have is @thm-kuratowski-pair. Everything built on pairs becomes a set built by the axioms: a relation from \( A \) to \( B \) is a subset of \( A \times B \) (@def-relation), and a function \( X \to Y \) is the pair \( (G, Y) \) of its graph and codomain (@def-function), now a Kuratowski pair of two sets. The working convention said that **a pair is not a number**. In the picture of this chapter numbers will be sets too, so the convention becomes a statement to be checked once numbers exist; Section 9.4 checks it.
+**What this pays.** Section 6.3 took the ordered pair as given, with the characteristic property, and said after @def-ordered-pair that nothing else about pairs is used in Chapter 6, apart from one working convention. From here on, the pair \( (a, b) \) of @def-ordered-pair **is** the set of @def-kuratowski-pair, and the property it was assumed to have is @thm-kuratowski-pair. Everything built on pairs becomes a set built by the axioms: a relation from \( A \) to \( B \) is a subset of \( A \times B \) (@def-relation), and a function \( X \to Y \) is the pair \( (G, Y) \) of its graph and codomain (@def-function), now a Kuratowski pair of two sets. The working convention said that **a pair is not a number**, and that a triple is not a pair. In the picture of this chapter numbers and tuples will be sets too, so both clauses become statements to be checked: Section 9.4 checks the first for the natural numbers (@prp-pair-not-natural), and Section 9.6 checks the second (@prp-tuples-as-sets (c)).
 
 ## Products, and the working rules recovered
 
@@ -139,7 +139,7 @@ The working rules of Section 6.1 can now be checked against the axioms one by on
 The axioms (Z1)–(Z6) give the working rules (W1)–(W5) of Section 6.1 in the following form.
 
 ::: {.enumerate options="label=(W\arabic*)"}
-1. For every set \( A \) and every property \( P(x) \), \( \{ x \in A : P(x) \} \) is a set.
+1. For every set \( A \) and every admissible property \( P(x) \) (one whose unwinding is a formula of the language, Section 9.1), \( \{ x \in A : P(x) \} \) is a set.
 2. For each list \( a_1, \dots, a_n \) written out in the text, entry by entry, there is a set \( \{a_1, \dots, a_n\} \) whose elements are exactly \( a_1, \dots, a_n \).
 3. For sets \( A \) and \( B \), \( A \cup B \) is a set. For a set \( X \) and a family \( (A_i)_{i \in I} \) of subsets of \( X \), given as a function \( I \to \powerset{X} \) (@def-indexed-family), the union \( \bigcup_{i \in I} A_i \) and the intersection \( \bigcap_{i \in I} A_i \) of @def-family-union-intersection are sets.
 4. For every set \( X \), \( \powerset{X} \) is a set.
@@ -152,7 +152,7 @@ Three of the rules are already in hand. For a written list, add one entry at a t
 :::
 
 ::: {.proof}
-(W1) is (Z6), (W4) is (Z5), and (W5) is @prp-cartesian-product-exists.
+(W1) is (Z6), applied to the unwinding of \( P(x) \), with the sets \( P \) mentions as parameters; (W4) is (Z5), and (W5) is @prp-cartesian-product-exists.
 
 (W2) We build the set one entry at a time. The first set is \( \{a_1\} \), by (Z3). If \( \{a_1, \dots, a_k\} \) has been built and the list has a further entry \( a_{k+1} \), let
 \[
@@ -219,7 +219,7 @@ Now let \( a \ne b \). Then \( x \in \bigcup p \setminus \bigcap p \) if and onl
 :::
 
 ::: {#exr-pairs-as-sets-b2}
-[B2: Triples as nested pairs]
+[B2: Nested pairs]
 
 Write \( ((a, b), c) \) for the pair whose first coordinate is the pair \( (a, b) \).
 
@@ -232,7 +232,7 @@ Write \( ((a, b), c) \) for the pair whose first coordinate is the pair \( (a, b
 ::: {.solution}
 (a) \( (\Leftarrow) \) by \( \rulename{{=}E} \). \( (\Rightarrow) \) By @thm-kuratowski-pair applied to the outer pairs, \( (a, b) = (a', b') \) and \( c = c' \). By @thm-kuratowski-pair again, \( (a, b) = (a', b') \) gives \( a = a' \) and \( b = b' \).
 
-(b) No. Both sides are pairs, so by @thm-kuratowski-pair they are equal only if their first coordinates are equal. The first coordinates are \( (\emptyset, \emptyset) = \{\{\emptyset\}\} \) and \( \emptyset \), and \( \{\{\emptyset\}\} \ne \emptyset \), since \( \{\emptyset\} \in \{\{\emptyset\}\} \). Hence the two triples are different.
+(b) No. Both sides are pairs, so by @thm-kuratowski-pair they are equal only if their first coordinates are equal. The first coordinates are \( (\emptyset, \emptyset) = \{\{\emptyset\}\} \) and \( \emptyset \), and \( \{\{\emptyset\}\} \ne \emptyset \), since \( \{\emptyset\} \in \{\{\emptyset\}\} \). Hence the two pairs are different.
 :::
 
 ### C. Going deeper
@@ -253,9 +253,11 @@ This is @thm-kuratowski-pair; its proof above is a complete answer. In outline: 
 - 3: obtains \( b = d \) from the remaining members, excluding \( \{a, b\} = \{c\} \) and justifying \( \{a, b\} = \{a, d\} \Rightarrow b = d \).
 - 1: joins the two cases into the conclusion.
 
-Fatal errors (0 for the step): treating \( \{a, b\} \) as ordered, or matching "smaller with smaller and larger with larger" without justification; omitting the case \( a = b \).
+Fatal errors (0 for the step): treating \( \{a, b\} \) as ordered, or matching "smaller with smaller and larger with larger" without justification; omitting the case \( a = b \) in an argument that matches the members of the two pairs (or reads \( b \) off \( \bigcup p \setminus \bigcap p \)).
 
 Second route (through \( \bigcap p \) and \( \bigcup p \), as in the "Alternatively" paragraph): reading \( a \) off \( \bigcap p = \{a\} \) earns the 3 points for \( a = c \); reading \( b \) off \( \bigcup p \setminus \bigcap p \), with its empty case \( a = b \) treated separately, earns the 3 points for \( b = d \) and the 2 points of the case \( a = b \).
+
+Third route (comparing \( \bigcap \) and \( \bigcup \) of the two pairs): showing \( \bigcap (x, y) = \{x\} \) and \( \bigcup (x, y) = \{x, y\} \) for every pair (no case split is needed), then getting \( a = c \) from \( \{a\} = \{c\} \) and \( b = d \) from \( \{a, b\} = \{c, d\} = \{a, d\} \) by @prp-zf-basic-sets (d), earns the 3 + 3 points and also the 2 + 1 points of the case structure; with \( (\Leftarrow) \) this is 10.
 :::
 
 ::: {#exr-pairs-as-sets-c2}
@@ -263,7 +265,7 @@ Second route (through \( \bigcap p \) and \( \bigcup p \), as in the "Alternativ
 
 Here is an argument for @thm-kuratowski-pair, direction \( (\Rightarrow) \).
 
-> (1) Let \( (a, b) = (c, d) \). (2) The smaller members agree, \( \{a\} = \{c\} \), and the larger members agree, \( \{a, b\} = \{c, d\} \). (3) From \( \{a\} = \{c\} \), \( a = c \). (4) Then \( \{a, b\} = \{a, d\} \), and so \( b = d \).
+> (1) Let \( (a, b) = (c, d) \). (2) Matching the members of \( \{\{a\}, \{a, b\}\} \) and \( \{\{c\}, \{c, d\}\} \) in the order written, \( \{a\} = \{c\} \) and \( \{a, b\} = \{c, d\} \). (3) From \( \{a\} = \{c\} \), \( a = c \). (4) Then \( \{a, b\} = \{a, d\} \), and so \( b = d \).
 
 Is the conclusion true? Does the argument prove it? If not, name the first line that fails, the rule it breaks, and give a counterexample to that step.
 :::
@@ -271,7 +273,9 @@ Is the conclusion true? Does the argument prove it? If not, name the first line 
 ::: {.solution}
 The conclusion is **true**: it is @thm-kuratowski-pair.
 
-The argument does not prove it. The first failing line is (2). It assumes that \( (a, b) \) has a smaller and a larger member. When \( a = b \), \( (a, b) = \{\{a\}\} \) has a single member, and "the larger member" names nothing. The case \( a = b \) has been dropped: this is (N7) of @exm-not-allowed-catalogue, a missing case in \( \rulename{\vee E} \). A counterexample to the step: \( (\emptyset, \emptyset) = \{\{\emptyset\}\} \) has one member only, so the claim "the smaller members agree, and the larger members agree" cannot even be stated for it. Even when \( a \ne b \), line (2) asserts a matching of members without proof; the matching is exactly what the theorem's Case 2 has to establish, by ruling out \( c = d \) and \( \{a, b\} = \{c\} \).
+The argument does not prove it. The first failing line is (2). It uses the rule "if \( \{P, Q\} = \{P', Q'\} \), then \( P = P' \) and \( Q = Q' \)", which treats a set with two members as if it were ordered. No result of Section 9.1 gives this rule: @prp-zf-basic-sets (d) allows the crossed matching \( P = Q' \) and \( Q = P' \) as well. A counterexample to the step: take \( P = Q' = \emptyset \) and \( Q = P' = \{\emptyset\} \). Then \( \{P, Q\} = \{\emptyset, \{\emptyset\}\} = \{P', Q'\} \) by (Z1), but \( P \ne P' \), since \( \emptyset \in \{\emptyset\} \) and \( \emptyset \notin \emptyset \).
+
+For pairs the two equations of line (2) happen to be true, since they follow from the theorem. But showing that the members of \( (a, b) \) and \( (c, d) \) match in this way is the work of the proof: Case 1 handles \( a = b \), where \( (a, b) = \{\{a\}\} \) has a single member, and Case 2 rules out \( c = d \) and \( \{a, b\} = \{c\} \) before matching. So line (2) assumes what is to be proved.
 
 A second, lesser point concerns line (4). "\( \{a, b\} = \{a, d\} \), so \( b = d \)" is true for all \( a, b, d \), but it needs a reason: @prp-zf-basic-sets (d) with \( c = a \). The disjunct \( a = a \wedge b = d \) gives \( b = d \) directly, and the disjunct \( a = d \wedge b = a \) gives \( b = a = d \). No hypothesis \( b \ne a \) is needed, and an answer saying so is correct.
 
@@ -320,8 +324,10 @@ Fatal errors (0 for the step): assuming the members match in the order written; 
 def-kuratowski-pair (example): {emptyset} differs from {{emptyset}}; emptyset differs from {emptyset} | inline (compare elements, Z1)
 exm-failed-pair-encodings (example): {{emptyset}} differs from {emptyset}; the two encodings in (iii) are the same set | inline (elements compared; Z1)
 thm-kuratowski-pair (proof): either a = b or a != b | excluded middle (prp-excluded-middle, Ch 2)
-thm-kuratowski-pair (claim): Section 6.3 uses nothing about pairs but the characteristic property and one working convention | the paragraph after def-ordered-pair (Section 6.3), which says so
-thm-kuratowski-pair (claim): Section 9.4 checks that a pair is not a number | Section 9.4 (prose pointer, this chapter; prp-pair-not-natural; nothing here depends on it)
+thm-kuratowski-pair (claim): Chapter 6 uses nothing about pairs but the characteristic property and one working convention (a pair is not a number; a triple is not a pair) | the paragraph after def-ordered-pair (Section 6.3), which says so
+thm-kuratowski-pair (claim): Section 9.4 checks that a pair is not a natural number; Section 9.6 checks that a triple is not a pair | Sections 9.4 and 9.6 (prose pointers, this chapter; prp-pair-not-natural, prp-tuples-as-sets (c); nothing here depends on them)
+thm-kuratowski-pair (claim): bigcap p = {a} for p = (a, b); comparing unions gives b = d with no case split | inline (members of p by prp-zf-basic-sets (b), bigcap by (c)); prp-zf-basic-sets (d) with c = a (cited)
+exr-pairs-as-sets-c2 (solution): {emptyset, {emptyset}} = {{emptyset}, emptyset}; emptyset differs from {emptyset} | inline (Z1; compare elements)
 prp-cartesian-product-exists (proof): "p = (a, b)" unwinds into in and = | Section 9.1, paragraph "Properties written with defined symbols"
 prp-working-rules-from-axioms (claim): the variable-n half of (W2) and (W5) for n-tuples are paid in Section 9.6 | Section 9.6 (prose pointer, this chapter; prp-tuples-as-sets; nothing here depends on it)
 prp-working-rules-from-axioms (claim): families with no ambient set need Replacement | the set-theory volume (prose pointer outside this book; nothing depends on it)
