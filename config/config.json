@@ -104,6 +104,7 @@
     "src/ch02-negation-and-classical-logic",
     "src/ch03-semantics-soundness-completeness",
     "src/ch04-predicate-logic",
+    "src/ch05-from-derivations-to-prose",
     "src/ch06-sets-and-functions",
     {
       "dir": "src/ch11-least-upper-bound",
