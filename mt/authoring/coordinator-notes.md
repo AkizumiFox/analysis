@@ -117,3 +117,43 @@
 - authoring/NOTATION.md rows: ‖f‖_p, ‖f‖_∞ (ess sup); p′ (conjugate exponent); ℒᵖ(μ) vs Lᵖ(μ); τ_h f(x) = f(x − h); K_ε(x) = ε^{−d}K(x/ε); η, η_ε (standard mollifier); L¹_loc; C_c^k, C_c^∞, C₀; sgn z = z/|z| (0 at 0).
 - authoring/STATUS.md: MT.7 row → "S1 blueprint (mt/authoring/blueprints/ch11.md), D4 layout; MT ch11".
 - exam-targets: no change; ch11 serves mira "MIRA 7" (with MT.8), real-ntu "Lᵖ、Hölder、Minkowski、Riesz–Fischer", apostol-ma / pma deferred_cover (Apostol 10, PMA 11 L² part).
+
+## MT.3 (ch04, S1 blueprint 2026-10-25)
+
+- Old `ch03.md` (MT.3) was `git mv`ed to `ch04.md` and rewritten; the ch03 slot is free for MT.2.
+- Directory slug: `mt/src/ch04-abstract-measure/`.
+- authoring/STATUS.md: MT.3 row → "S1 blueprint (mt/authoring/blueprints/ch04.md), D4 layout; MT ch04".
+- registry/plan-edges.yaml: `MT.3: {s: [MT.2]}` → add `see: [AN2.10]` (§05 hook and §06 `thm-stieltjes-agrees` compare with the Riemann–Stieltjes integral). AN2.1, AN1.4, F2.3 are used directly; confirm they are in the s-closure of MT.2 (via MT.1/HA.9), else add see edges.
+- registry/statements.yaml (suggested): `thm-caratheodory` (MT.3, thm), `thm-caratheodory-extension` (MT.3, thm), `thm-pi-lambda` (MT.3, thm), `thm-uniqueness-pi` (MT.3, thm), `thm-metric-outer-borel` (MT.3, thm), `thm-lebesgue-stieltjes` (MT.3, thm), `thm-translation-invariant-unique` (MT.3, thm); edges `thm-caratheodory-extension uses thm-caratheodory`, `thm-uniqueness-pi uses thm-pi-lambda`, `thm-lebesgue-stieltjes uses thm-caratheodory-extension, thm-uniqueness-pi`.
+- **Division of labour with MT.4 (ch05):** MT.3 proves π-λ (`thm-pi-lambda`, `thm-uniqueness-pi`); MT.4 keeps `thm-monotone-class` (MT.3 only forward-points). MT.3 adds `lem-completion-measurable-function` which MT.4 asked for, and supplies abstract MCT/DCT, ∫Σ = Σ∫ (`thm-additivity-abstract`), `thm-simple-approximation-abstract`, `def-algebra-of-sets`, `def-sigma-finite`, `thm-completion`, `thm-lebesgue-completes-borel`. MT.5 can cite `thm-translation-invariant-unique` for m(TE) = |det T| m(E).
+- **Division of labour with MT.1 (ch02), to settle before S2a:**
+  - Equivalence "Lebesgue measurable ⇔ Carathéodory measurable for m*": the old MT.1 stub had it; MT.3 §03 proves it as `thm-lebesgue-caratheodory` unless MT.1 keeps it (then it becomes a recall).
+  - Non-Borel Lebesgue set (subset of the Cantor set): MT.4's notes expect it from MT.1; MT.3 §05 builds it as `exm-lebesgue-not-borel` via φ(x) = x + F(x) (needs the Cantor function, which MT.3 defines as `lem-cantor-function` if MT.1/AN2.9 do not). Pick one home; if MT.1 keeps it, MT.3 §05 cites it and keeps only the composition consequence.
+  - `lem-nonmeasurable-inside` (every positive-measure set has a non-measurable subset): MT.3 §05 proves it unless MT.1 does.
+  - Label clash check: MT.1 may use `def-outer-measure` for Lebesgue exterior measure; then MT.3's abstract one is `def-abstract-outer-measure`.
+- authoring/NOTATION.md rows: 𝓐 (`\sA`) algebra of sets; σ(𝓔) generated σ-algebra; 𝓑(X) Borel σ-algebra — `\sB` is taken (LA basis), propose new macro `\Bor`; μ* outer measure; μ̄, 𝓜̄ completion; δₓ Dirac; # counting measure; T_*μ pushforward; μ_F Lebesgue–Stieltjes measure; μ|_E restriction; H^s Hausdorff outer measure (example only).
+
+## MT.2 (ch03, S1 blueprint 2026-10-25)
+
+- Old blueprint `mt/authoring/blueprints/ch02.md` (MT.2) was git-moved to `ch03.md` and rewritten (MIRA 3 skeleton on Lebesgue measure on ℝᵈ, per D4 "ℝᵈ first"). The MT.1 author (new ch02) starts from an empty slot or from old ch01.
+- registry/plan-edges.yaml: `MT.2: {s: [MT.1, AN1.8, AN2.2], revisits: [AN2.10]}` → add **revisits HA.9** (§4 proves HA.9's stated Arzelà theorem, §6 closes HA.9's list; HA.9 is an s-ancestor via MT.1 but the blueprint cites its labels) and **see AN2.11** (continuity/differentiation under the integral sign revisit AN2.11's parameter integrals). Optional see AN3.4 (one remark: Riemann ⇒ Lebesgue on boxes).
+- registry/statements.yaml: add MT.2 `thm-monotone-convergence-integral`, `thm-fatou-lemma`, `thm-dominated-convergence`, `thm-riemann-is-lebesgue`, `thm-lebesgue-criterion-measure`, `thm-arzela-bounded-convergence`, `thm-riesz-fischer-l1`, `thm-l1-density`, `thm-l1-translation-continuous`; edges `thm-fatou-lemma uses thm-monotone-convergence-integral`, `thm-dominated-convergence uses thm-fatou-lemma`, `thm-riesz-fischer-l1 uses thm-dominated-convergence`, `thm-arzela-bounded-convergence uses thm-riemann-is-lebesgue`.
+- MT.1 (ch02) blueprint should create labels for the interface MT.2 cites in prose: countable additivity, continuity from below/above, m(box) = volume, completeness of m, outer regularity, open sets as countable unions of almost disjoint closed cubes, m(E+h), m(δE), m(−E), closure of measurable functions under limits, the simple approximation theorem (increasing non-negative form; |φₖ| ≤ |f| form), a.e., Egorov.
+- MT.3 (ch04) blueprint: cite MT.2's "What these proofs used of m" box (§3) and restate MCT/Fatou/DCT/Riesz–Fischer for (X, 𝓜, μ) "with the same proof"; Lebesgue–Stieltjes measures pay AN2.10's Riemann–Stieltjes pointer.
+- STATUS.md promises: paid by MT.2: HA.9 "Arzelà proved in MT" (`thm-arzela-bounded-convergence`), HA.9 list items "limits" and "complete L¹". Opened: typewriter/Vitali → MT.8; L² completeness → MT.7; iterated integrals → MT.4; FTC for Volterra-type F → MT.9/MT.10; transfer → MT.3; dual of L¹ → FA.1b.
+- authoring/NOTATION.md rows: [0, ∞] arithmetic with 0 · ∞ = 0; ∫ f, ∫ f dm, ∫ f(x) dx, ∫_E f ≔ ∫ f 1_E; f⁺, f⁻; ℒ¹(E) vs L¹(E), class [f]; τ_h f(x) ≔ f(x − h); C_c(ℝᵈ).
+- authoring/STATUS.md: MT.2 row → "S1 blueprint (mt/authoring/blueprints/ch03.md), D4 layout; MT ch03".
+- Directory slug: `mt/src/ch03-lebesgue-integral/`.
+
+## MT.8 (ch12, S1 blueprint 2026-10-25)
+
+- Old `mt/authoring/blueprints/ch08.md` (MT.8) was git-moved to `ch12.md` (commit 90c2403) and rewritten there. Directory slug: `mt/src/ch12-modes-of-convergence/`.
+- registry/plan-edges.yaml MT.8: keep `s: [MT.7]`. The blueprint also uses MT.4 (Tonelli, layer cake) and MT.5 (m(B(0,r)) = v_d r^d) — both in the closure via MT.7 s MT.4 (check MT.5; if not in closure add `see: [MT.5]`). R2 uses FA.4 (Baire) in a review exercise only: optional `see: [FA.4]`.
+- Agrees with the MT.9 note above: add **MT.9 s MT.8**. Labels MT.9 should cite: `thm-markov-inequality`, `def-distribution-function`, `thm-layer-cake`, `def-weak-lp`, `prp-lp-in-weak-lp`, `thm-weak-lp-sandwich`, `thm-riesz-subsequence`. MT.9 writes the level variable as λ; MT.8 uses t and d_f(t) = μ({|f| > t}) — harmonise in NOTATION (proposal: d_f, level variable t or λ, never λ for Lebesgue measure, which is m).
+- Vitali *convergence* theorem labels are `thm-vitali-convergence-*` to stay distinct from MT.9's Vitali *covering* lemma (`lem-vitali-finite`).
+- Possible label collisions to settle when MT.2/MT.3/AN1 are re-blueprinted: `thm-markov-inequality` (MT.8 owns it unless MT.2 takes it; MIRA has it in ch 4 = MT.9, which comes later), `lem-borel-cantelli` (MT.8 unless MT.3 takes it; PR.1 cites whichever), `lem-subsubsequence` (recall from AN1 if it exists there).
+- MT.3's blueprint should state that MCT/Fatou/DCT hold on an arbitrary measure space (MT.8 §1 relies on it).
+- authoring/NOTATION.md rows to add: d_f (distribution function), ‖f‖_{p,∞} and L^{p,∞} (weak Lᵖ quasi-norm), "UI", "tight".
+- authoring/STATUS.md: MT.8 row → "S1 blueprint (mt/authoring/blueprints/ch12.md), D4 layout; old ch08.md moved there". Promises opened: `sec-weak-lp` → MT.9 weak (1,1); `thm-weak-lp-sandwich` → MT.9 Marcinkiewicz; `exm-typewriter` → PR.1 (in probability, not a.s.).
+- PR.1 (branch, s [MT.4, MT.8]): may cite `def-convergence-in-measure`, `lem-borel-cantelli`, `thm-vitali-convergence-finite`, `cor-lp-by-tails` (E|X| = ∫ P(|X| > t) dt).
+- mt/README.md still says "MT: Measure and Integration"; volume renamed to *Measure, Integration, and Real Analysis* (spec/08 D4). Not edited here to avoid conflicting with parallel MT workflows.
