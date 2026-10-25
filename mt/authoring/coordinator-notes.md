@@ -169,4 +169,18 @@
 - authoring/STATUS.md: MT.1 row → "S1 blueprint (mt/authoring/blueprints/ch02.md), D4 layout; MT ch02"; promise to pay: HA.9's list items "countable additivity" and "length of the fat Cantor set" (paid in MT.1), "Arzelà / bounded convergence" (paid in MT.2 via `thm-egorov`).
 - Directory slug: `mt/src/ch02-lebesgue-measure/`.
 - ST.6a (side, s MT.1) revisits `thm-vitali-nonmeasurable`; MT.1 keeps the Vitali set (plan-edges comment already says so).
+
+## HA.9 (ch01, S1 blueprint 2026-10-25)
+
+- Old blueprint `ha/authoring/blueprints/ch09.md` was **copied** into `mt/authoring/blueprints/ch01.md` and rewritten (ha/ is another volume's directory, so not moved). The coordinator may `git rm` it or leave a pointer stub when ha/ is reorganized. Title is now "Riemann Integration and Its Failures" (registry already has it).
+- registry/plan-edges.yaml HA.9: s [AN1.8, AN1.9, AN2.6, AN1.4] (spec/08 D4) is what the blueprint uses. Add **revisits [AN2.10, AN3.4]** (pays both "what the Riemann integral lacks" hooks, spec/08 C4) and **see [AN2.11, AN2.14, HA.3]** (inventory row; gauge integral for conditionally convergent improper integrals; Fourier remark). Confirm MT.1 see HA.9 → s HA.9 and HA.3 see HA.9 (D4).
+- registry/statements.yaml: add `lem-fat-cantor-cover`, `lem-oscillation-fat-set`, `thm-monotone-limit-not-riemann`, `prp-fat-cantor-not-integrable`, `prp-continuous-decreasing-to-fat-cantor`, `thm-arzela-bounded-convergence` (statement in HA.9, proof in MT.2), `thm-riemann-l1-incomplete`, `cor-riemann-l2-incomplete`, `thm-volterra`, `prp-countable-additivity-fails`, `prp-null-comeager-split`, `rem-the-list` (cited by MT.1, MT.2).
+- Fat Cantor set: HA.9 fixes K with gaps 4^{−n} (|K| = 1/2) as `def-fat-cantor-set`; MT.1 (ch02) uses a general parameter α. Compatible; MT.1 should note K is its α = 1/2 case.
+- Jordan content: HA.9 defines it on ℝ only (`def-jordan-content-line`), with an ℝᵈ remark pointing to AN3.4. MT.1 (ch02) §1 recalls "c(E) via finite covers by rectangles" — that is AN3.4's (an s-edge of MT.1), not HA.9's; adjust the citation.
+- MT.4 (ch05) asks for Lebesgue's criterion on boxes of ℝᵈ from "HA.9 or MT.2": HA.9 does **not** provide it (ℝ only, stated from AN1.8, never a proof step). Route it to MT.2 (`thm-lebesgue-criterion-measure`) or AN3.4.
+- AN2.15 (optional gallery) also lists Volterra's function: HA.9 proves it independently (no s-edge to optional chapters). AN2.15 may point forward to HA.9 (prose) and should not duplicate the full proof.
+- AN1.9 §8 question ("continuous functions converging pointwise to a non-integrable function?") is paid by `prp-continuous-decreasing-to-fat-cantor`; AN1.8's "Volterra; statement only" by `thm-volterra`.
+- authoring/NOTATION.md rows: ℛ[a,b] (`\mathcal{R}[a,b]`); d₁, d₂ on ℛ[a,b]; c*(E), c_*(E), c(E) (Jordan content on ℝ); K, K_n (fat Cantor set and stages, MT-wide).
+- authoring/STATUS.md: HA.9 row → "S1 blueprint (mt/authoring/blueprints/ch01.md), MT ch01, D4 layout; Gate III dropped (Gate system retired)". Directory slug `mt/src/ch01-riemann-integration-and-its-failures/`.
+- exam-targets: no change; serves mira "MIRA 1", motivation for apostol-ma/pma/pugh deferred_cover.
 - MT.7 addendum: ch11 now cites FA.1a (ch08) labels `@thm-banach-iff-absolute-series`, `@def-dual-exponent`, `@lem-young`, `@thm-holder-lp`, `@thm-minkowski-lp`, `@exm-p-less-than-one`, `@thm-dual-lp`, `@exm-l1-norm-c01-incomplete` instead of re-creating them, and pays FA.1a's promise (completion of (C[0,1], ‖·‖₁) is L¹) in `cor-l2-completion` (b). ch08 lacks the `<!-- hand-written -->` marker, so `blueprint/check_blueprint.py --blueprints mt/authoring/blueprints` reports these 17 cites as undefined until ch08 adds it.
