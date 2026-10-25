@@ -35,7 +35,7 @@ into `src/ch01-connectives-and-derivations/` and `src/ch02-negation-and-classica
 | AN1.4 | AN1 ch02: `open-closed-compact-subsets` | not started. Blueprint an1 ch02.md (was an1 ch04); renamed to ℝⁿ. Old-layout body; re-blueprint against spec/08 C2, C5 |
 | AN2.1 | AN1 ch03: `metric-spaces` | not started. Blueprint an1 ch03.md (was an2 ch01); moved AN2 → AN1, renamed *Metric Spaces and Their Topology*. Old-layout body; re-blueprint against spec/08 C2, C5 |
 | AN1.2 | AN1 ch04: `sequences-and-cauchy-sequences` | not started. Blueprint an1 ch04.md (was an1 ch02). Old-layout body; re-blueprint against spec/08 C2, C5 |
-| AN2.2 | AN1 ch05: `completeness-and-completion` | not started. Blueprint an1 ch05.md (was an2 ch02); moved AN2 → AN1, + Banach fixed point. Old-layout body; re-blueprint against spec/08 C2, C5 |
+| AN2.2 | AN1 ch05: `completeness-and-completion` | S1 blueprint written 2026-10-25 (an1 ch05.md, deepen format, spec/08 C2, C5): 6 sections, + Banach fixed point, no continuity used; next S2 |
 | AN1.5 | AN1 ch06: `limits-and-continuity` | not started. Blueprint an1 ch06.md (was an1 ch05); + classification of discontinuities. Old-layout body; re-blueprint against spec/08 C2, C5 |
 | AN1.6 | AN1 ch07: `continuity-on-compact-sets` | not started. Blueprint an1 ch07.md (was an1 ch06). Old-layout body; re-blueprint against spec/08 C2, C5 |
 | AN2.3 | AN1 ch08: `compactness-and-connectedness` | not started. Blueprint an1 ch08.md (was an2 ch03); moved AN2 → AN1. Old-layout body; re-blueprint against spec/08 C2, C5 |
