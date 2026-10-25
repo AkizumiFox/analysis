@@ -112,3 +112,20 @@
 - **STATUS.md promise rows:** AN1.10 pays F4.7 (E1)–(E4), F4.1 `ax-cosine-sine` (T1)–(T5), F4.10 (rotation by E(iθ)), F4.6 (real powers), AN2.12's log box, AN1.2/AN1.3 e and provisional sin/log, LA2.10 (A1), (A2), (A5). AN1.10 opens promises to AN2.13 (Abel's theorem, binomial endpoints), AN2.4 (exp via Picard), AN2.11 (Γ), AN2.15 and AM (bump function), CA (principal Log branch cut), CA.1 (radius = distance to nearest singularity).
 - **NOTATION.md rows:** E (the exponential series during its construction), Log, Arg (principal branches, Arg ∈ (−π, π]), \binom{\alpha}{n} for real α, z^w ≔ E(w Log z).
 - **F4.1 wording (foundations repo):** F4.1 §1.5 says the box is "proved in *Analysis on the Real Line*, Chapter 10"; after the re-cut this is AN2 *Integration, Series, and Function Spaces*, Chapter 7 (atlas id AN1.10). Same for any F4.7 pointer once written.
+
+## ch01 — AN2.9 Functions of Bounded Variation and Rectifiable Curves (S1, 2026-10-25)
+
+Blueprint: `an2/authoring/blueprints/ch01.md`. Requested changes to shared files and other volumes (not made here):
+
+1. **STATUS.md**: AN2 row 1 (AN2.9) → "blueprint written (S1); next S2a". Promises opened: AN2.10 (V = ∫|f'| and L = ∫‖γ'‖ for C¹ data; Stieltjes with BV integrators; ∫ dκ = 1), AN1.8 (BV ⇒ Riemann integrable remark), CA.1 (contour integrals over rectifiable paths, ML estimate), HA (Dirichlet–Jordan test), MT.9–MT.10 (a.e. differentiability of BV; absolute continuity; κ), AN2.15 (gallery rows), AM.1 (arc-length parametrization). Promise paid: AN1.4 Cantor-set hook (spec/08 C5).
+2. **NOTATION.md** new rows: partition P, 𝒫[a,b], mesh ‖P‖; Var(f;P); V_a^b(f); v_f, v_f^±; BV[a,b]; Λ(γ;P), L(γ), L(γ;[c,d]), s_γ; κ (Cantor function).
+3. **AN1 labels needed** (AN1 re-blueprints in progress; the AN2.9 blueprint names facts, S3 swaps in `@ref`s):
+   - AN1.4: Cantor set construction (C_n, C = ⋂C_n, gap endpoints in C, C contains no interval).
+   - AN1.5: one-sided limits of monotone functions; discontinuities of monotone functions are jumps, countably many; classification of discontinuities (first kind = removable or jump).
+   - AN1.6: IVT; continuous strictly monotone function on an interval has continuous inverse; Heine–Cantor on [a,b].
+   - AN1.7: MVT; derivatives have the intermediate value property (Darboux). If AN1.7 also proves the vector mean value inequality ‖γ(t)−γ(s)‖ ≤ K|t−s|, AN2.9 §05 B2 will cite it instead of proving it.
+   - AN1.2: unboundedness of harmonic partial sums (if absent, AN2.9 §01 proves it in a Brief Review box).
+   - AN1.11: nested intervals (used by an R exercise only).
+4. **Shared definitions with AN1.8** (same book `an2`, labels unique book-wide): AN2.9 defines `def-partition`, `def-refinement`, `def-mesh`. The AN1.8 re-blueprint should cite them rather than redefine. spec/08 C3 lists AN1.8 → AN2.9 as "see"; citing definition labels makes it a `b` edge (atlas registry: AN1.8 `b: AN2.9`). Alternative if the coordinator prefers AN1.8 self-contained: AN1.8 owns the labels and AN2.9 §01 says "partition (defined again in AN1.8)" — this would need AN2.9 to define them under different labels. Recommend the `b` edge.
+5. **spec/08 C3 discrepancy**: row AN2.9 cites "Pugh 3 習題", but Pugh's bounded-variation material is §6.10 (Lebesgue's last theorem) and Appendix-H exercises *67–*68; Pugh ch. 3 has only Cantor-set and zero-set exercises. Suggest "Pugh §6.10、附錄習題" in C3 and the layout table.
+6. **Pathological-functions table** (F4.7 → AN2.15): AN2.9 contributes eight rows (listed in the blueprint §06); AN2.15's blueprint should pick them up.
