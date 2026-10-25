@@ -63,3 +63,11 @@ Changes to shared files or to math-atlas that AM blueprint work needs. Not appli
 - **Differentiation under the integral sign:** ch05 cites AN2.11 (Integrals with a Parameter, spec/08 C6); ch03 does too. If AN2.11's blueprint only treats a parameter in ℝ, that suffices (one partial derivative at a time).
 - **NOTATION.md rows:** Zᵏ(U), Bᵏ(U), Hᵏ(U), [ω]; K (cone/homotopy operator); ι_v (if not AN3.6's); σₙ (solid-angle form; σ₃ = AN3.7's σ); ω_c (angle form centred at c). Clashes: (1) the existing row "Ω: an open set in ℂ or ℝⁿ" versus Ωᵏ(U) for forms in AM; (2) Hᵏ for cohomology versus the half-space Hᵏ/ℍᵏ of AN3.5/AN3.7 (ch02 writes ℍ, ch04 writes H). Proposal: the half-space is ℍᵏ everywhere in AM, cohomology is Hᵏ. (3) ∧ is logical "and" in the series NOTATION row; AN3.6 decides the wedge row.
 - **Weird-examples table:** ch05's nine rows (§06) join `tbl-weird-multivariable-am` (opened in ch01).
+
+## From ch03 (AN3.6) S2, 2026-10-25
+
+- **STATUS.md:** AN3.6 row → "blueprint frozen after S2 (2026-10-25)".
+- **math-atlas registry (edges):** request `b AN2.11` on AN3.6, scoped to §04 C1 (find-the-error, differentiation under the integral sign; also §03 C1's sufficiency pointer). No proof in AN3.6 uses integration: `thm-angle-form-not-exact` now uses the one-variable MVT (AN1.7, an s-ancestor). s edges unchanged (AN3.1, LA4.15).
+- **New label:** `lem-d-any-multi-index` (§04). `exm-angle-form` now carries the explicit primitive θ = 2 arctan(y/(x + |p|)); `exm-angle-form-polar` is a consistency check only (AM.2 may still cite it). Solid-angle form σ = σ₃ is defined in §04 B3 as the s = 3 member of |p|^{−s}(x dy∧dz + …).
+- **Answer to ch05's question:** AN3.6 does not define the interior product ι_v; ch05 §02 defines `def-interior-product`.
+- **exam-targets.yaml:** the `pma` item note for AN3.6 should read "algebraic and differential content of PMA 10.11–10.25; integral statements via AN3.7".
