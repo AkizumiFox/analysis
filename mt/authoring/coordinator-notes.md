@@ -93,3 +93,27 @@
 - authoring/NOTATION.md rows to add: σ_M / σ (surface measure), J_φ (area element √det(DφᵀDφ)), ν (outward unit normal), ∂_ν u = ∇u·ν, C¹(Ω̄) = restrictions of C¹ functions on an open neighbourhood of Ω̄, ⨍ (average), Φ (fundamental solution of Laplace), ∮_{∂Ω}(P dx + Q dy) := ∫_{∂Ω}(P, Q)·τ dσ with τ = (−ν₂, ν₁).
 - authoring/STATUS.md: MT.6 row → "S1 blueprint (mt/authoring/blueprints/ch07.md), D4 layout; directory `mt/src/ch07-surfaces-divergence-theorem/`". Promises paid: AN3.4 → Green (`thm-green`); MT.5 → surface measure (`def-surface-measure`, `thm-sphere-measure-agrees`). Promises opened: PDE.1 (−ΔΦ = δ), PDE.5 (traces on C¹ domains).
 - an3/authoring/blueprints/ch04.md still says "Green's theorem has moved to surfaces-divergence-theorem in Part IV": update the pointer to MT.6 (MT chapter 7) when an3 is re-blueprinted.
+
+## MT.11 (ch16, S1 blueprint 2026-10-25)
+
+- registry/plan-edges.yaml: MT.11 is s [MT.3, MT.7], see [MT.10]. The blueprint needs **s [MT.3, MT.7, FA.6, MT.9, MT.10]**: FA.6 `thm-riesz-representation` for von Neumann's proof (the old in-chapter L² toolkit is dropped, since FA.6 now precedes MT.11 in the D4 order); MT.9 `lem-vitali-finite`, `thm-differentiation-regular-families` for differentiation of measures; MT.10 `thm-ac-iff-measure-ac`, `thm-decomposition-increasing`, `thm-jordan-decomposition-recalled`, `thm-ftc-lebesgue` for the NBV section. Also uses MT.2 (MCT/DCT) and AN1.3 (rearrangements), both in the s-closure.
+- registry/exam-targets.yaml: the Axler MIRA target currently carries `id: algebra-harvard` (looks like a mis-paste; spec/08 §E1 calls it `mira`). Please check.
+- Old design note decisions.md 9 ("L² facts proved concretely in MT.11, recalled in Part VI") is superseded by the D4 order; mark it superseded.
+- MT.3 (old ch03, not yet rewritten): MT.11 §6 needs outer regularity of locally finite Borel measures on ℝᵈ (not only Lebesgue–Stieltjes measures on ℝ). If MT.3's rewrite does not prove it, MT.11 states outer regularity as a hypothesis (as now written); flag to the MT.3 S1 author.
+- MT.10 (ch14): `lem-variation-right-continuous` (T_F right-continuous when F is) and "F AC ⇒ T_F AC" are used by MT.11 §6; if MT.10 does not prove them, MT.11 proves them in a paragraph each (already allowed for in the blueprint).
+- MT.1/MT.2: Borel–Cantelli is proved inline in MT.11 §4 unless an earlier chapter labels it.
+- authoring/NOTATION.md rows to add: ν⁺, ν⁻, |ν|; ν ≪ μ, ν ⊥ μ; dν/dμ, dν = f dμ; M(X), ‖ν‖ = |ν|(X); NBV; μ_F for F ∈ NBV (extends MT.3's increasing case); F_ac, F_sc, F_pp.
+- authoring/STATUS.md: MT.11 row → "S1 blueprint (mt/authoring/blueprints/ch16.md), D4 layout; old ch11.md moved there".
+- Directory slug: `mt/src/ch16-signed-measures-radon-nikodym/`.
+
+## MT.7 (ch11, S1 blueprint 2026-10-25)
+
+- Old `ch07.md` (MT.7) was `git mv`ed to `ch11.md` (commit bf11c1d) and rewritten. Directory slug `mt/src/ch11-lp-spaces/`.
+- registry/plan-edges.yaml: `MT.7: {s: [MT.2, MT.4], see: [HA.2, LA3.11]}` → add **s FA.1a** (absolutely-summable-series test for completeness, ℓᵖ and (ℓᵖ)* ≅ ℓ^{p′}, dual norm) and **see FA.3** (one remark). MT.5 is used only in two flagged exercises (`exr-approximate-identities-c2`, `-r2`); no edge needed (MT.5 precedes in D4 order; optionally see MT.5).
+- registry/statements.yaml: split row `thm-holder-minkowski` (MT.7) into `thm-holder` and `thm-minkowski`; `def-lp`, `thm-riesz-fischer` keep their labels. Suggested new rows: `thm-norming-formula`, `thm-minkowski-integral`, `thm-young-convolution`, `thm-approximate-identity-lp`, `thm-cc-infinity-dense`.
+- Scope moved out: old §7 (L²(𝕋) completes ℛ(𝕋), Parseval for all of L²(𝕋), Fejér in L¹, uniqueness for L¹(𝕋)) goes to **HA.10** (side; main line may not depend on it). MT.7 adds `cor-periodic-continuous-dense` (continuous periodic functions dense in Lᵖ[−π, π]) so that **FA.6 `thm-trig-onb` must prove completeness of the trigonometric system itself** (AN2.6 trigonometric Weierstrass + this corollary); ch15's "revisits MT.7 … L²(𝕋) and the trigonometric system complete" should be reworded accordingly.
+- Labels agreed with neighbours: `def-approximate-identity` and K_ε are created here (ch13 item 7 confirmed); `@def-convolution`, `@thm-convolution-l1`, `@lem-convolution-measurable`, `@thm-tonelli`, `@thm-fubini` are ch05's and are cited, not re-created. MT.9 pays `rem-pointwise-later`; FA.1b pays `rem-duality-later`; FA.6 pays `rem-l2-inner-product`; MT.8 pays the weak-Lᵖ hook (x^{−1/p}) and reuses `exm-typewriter-lp`, `exm-escaping-bump`.
+- Needs from earlier rewritten blueprints (S2a will check): MT.1 inner regularity by compacts, dyadic-cube decomposition of open sets, dilation invariance m(λE) = λᵈm(E); MT.2 absolute continuity of the integral, simple-function approximation, L¹ density/translation facts; HA.9 the L²-Cauchy step-function sequence with no Riemann limit; FA.1a the series test (label); whether AN1/AN2 already prove e^{−1/t} is C^∞ (`lem-smooth-cutoff-function` becomes a recall if so).
+- authoring/NOTATION.md rows: ‖f‖_p, ‖f‖_∞ (ess sup); p′ (conjugate exponent); ℒᵖ(μ) vs Lᵖ(μ); τ_h f(x) = f(x − h); K_ε(x) = ε^{−d}K(x/ε); η, η_ε (standard mollifier); L¹_loc; C_c^k, C_c^∞, C₀; sgn z = z/|z| (0 at 0).
+- authoring/STATUS.md: MT.7 row → "S1 blueprint (mt/authoring/blueprints/ch11.md), D4 layout; MT ch11".
+- exam-targets: no change; ch11 serves mira "MIRA 7" (with MT.8), real-ntu "Lᵖ、Hölder、Minkowski、Riesz–Fischer", apostol-ma / pma deferred_cover (Apostol 10, PMA 11 L² part).
