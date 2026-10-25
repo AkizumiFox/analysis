@@ -1,12 +1,15 @@
+# AM coordinator notes
 
-## ch03 (AN3.6 Differential Forms and the Exterior Derivative), S1, 2026-10-25
+Changes to shared files or to math-atlas that AM blueprint work needs. Not applied by the volume workflows (parallel run); the coordinator applies them.
 
-Shared-file changes needed (not made by the ch03 agent):
+## From ch06 (AM.3) S1, 2026-10-25
 
-- `authoring/STATUS.md`: add row AM ch03 / AN3.6, state "S1 blueprint written; awaiting S2a", directory `am/src/ch03-differential-forms/`.
-- `authoring/NOTATION.md`: rows for 𝒜ᵏ(V) (`\mathcal{A}^k(V)`), increasing multi-index I and dx_I, φ_I, T_pℝⁿ = {p} × ℝⁿ with (p; v), ω_p, Ωᵏ_r(U) / Ωᵏ(U), α* (pullback). Note on ∧: exterior product in AM, logic connective in F1; the two never meet.
-- Forward promises to AN3.1 (no labels yet): chain rule, product rule, Schwarz symmetry and its C¹ counterexample, mean value inequality, Df = 0 on connected open set ⇒ constant. Turn into `@ref` when AN3.1 is labelled.
-- Cross-series citations into linear-algebra ch15 (LA4.15): def-multilinear-map, def-alternating-multilinear-map, lem-alternating-map-properties, def-exterior-power, thm-exterior-power-basis, def-exterior-algebra, thm-exterior-algebra-graded-commutative, def-exterior-power-of-map, thm-exterior-power-functorial, thm-det-is-top-exterior, thm-wedge-coordinates-are-minors, thm-wedge-nonzero-iff-independent, cor-laplace-from-wedge. All exist today; the series needs a cross-book reference convention if `@ref` is wanted.
-- Multivariable weird-examples table (spec/08 §C5): ch03 adds rows W1–W6 plus ω_θ; whoever owns the table should merge them.
-- Hooks opened for AN3.7 (∫_{S¹} ω_θ = 2π; det vs |det| via orientation) and AM.2 (H¹(ℝ²∖0) spanned by ω_θ; solid-angle form not exact). Their blueprints should list them as paid.
-- No README change: `am/README.md` was already present (created by another AM agent, uncommitted at the time); ch03 did not commit it.
+- **STATUS.md:** add the AM volume and the row "AM.3 — ch06 — blueprint (S1), not frozen — `am/authoring/blueprints/ch06.md`".
+- **math-atlas registry (edges):** AM.3 keeps s AN3.5, AN2.7, AN3.3 (spec/08 D3). Proposed additions:
+  - `b AM.2` and `b AN3.7`: used only in §6.4 (hairy ball: the closed non-exact form on ℝⁿ⁺¹ ∖ {0} and Stokes on [0,1] × Sⁿ). Both are earlier chapters of AM, so reading order is unaffected.
+  - `b AM.1`: smooth bumps and partitions of unity on ℝⁿ, transplanted in §2.
+  - see-edges (prose only, no s-edge): PDE → AM.3 (flows, straightening for characteristics); CA2 → AM.3 (charts and atlases as the model for Riemann surfaces).
+- **exam-targets:** AM.3 serves no E1 target (seg B). If a graduate manifolds target (Lee ISM 1–9) is ever added, AM.3 is its first item.
+- **NOTATION.md rows** (series file): (U, φ) chart and ψ ∘ φ⁻¹ transition; TₚM (derivations); ∂/∂xⁱ|ₚ; dFₚ (vs AN3's DF(a): they agree on open subsets of Euclidean space); TM, π; 𝔛(M); C^∞(M); γ′(t); flow θ: 𝒟 → M, θₜ, θ⁽ᵖ⁾; F_*X; [X, Y]; ℒ_X Y. Upper indices on coordinates and components; no summation convention.
+- **Label reconciliation:** ch06 cites AN3.5, AM.1, AN3.7, AM.2, AN2.4, AN3.3 by prose description because those blueprints are being written in parallel. S2a list item 1 in ch06 replaces them with the frozen labels.
+- **AN2.7:** ch06 does not depend on AN2.7's optional quotient section (§1 restates the quotient topology). It uses `second countable`, which AN2.7 does not define; ch06 defines it (`def-second-countable`). If AN2.7 later adds it, ch06 should cite it instead.
