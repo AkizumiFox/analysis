@@ -45,3 +45,25 @@
 - authoring/NOTATION.md rows: 𝒮 ⊗ 𝒯; μ × ν; sections E_x, E^y, f_x, f^y; completion (μ × ν)‾; f ∗ g.
 - authoring/STATUS.md: MT.4 row → "S1 blueprint (mt/authoring/blueprints/ch05.md), D4 layout; old ch04.md moved there". Directory slug `mt/src/ch05-product-measures-fubini/`.
 - exam-targets: no change; ch05 serves mira "MIRA 5", real-ntu "Fubini–Tonelli", apostol-ma/pugh deferred_cover.
+
+## FA.3 (ch10, S1 blueprint 2026-10-25)
+
+- Old blueprint `fa/authoring/blueprints/ch04.md` was **copied** into `mt/authoring/blueprints/ch10.md` and rewritten (outside `mt/`, so not moved); the coordinator may `git rm` it when fa/ is reorganized.
+- Zorn is **cited** from F2.4 (`thm-zorn`), no longer proved here (old stub's "prove Zorn just in time" dropped; matches registry `b: [F2.4]`).
+- registry/plan-edges.yaml FA.3 (now `{s: [FA.1a], b: [F2.4], revisits: [MA.18], …}`): add **b FA.4** (scope `thm-ubp`, for `cor-weakly-bounded` in §03), **b MT.2** and **see MT.1** (§05 invariant mean on the circle extends the Lebesgue integral; contrast with MT.1's non-measurable set), **see AN2.9, AN2.10** (optional §06, Riesz on C[a,b] via Stieltjes). All precede FA.3 in the D4 order.
+- Weakly bounded ⇒ bounded: FA.4's blueprint promises it to FA.5 and FA.6 has `prop-weak-bounded`; FA.3 (ch10) now proves it as `cor-weakly-bounded`, so FA.5/FA.6 can cite it instead (FA.6 then needs b FA.3 or keeps its own proof).
+- registry/statements.yaml: add `thm-hb-complex`, `thm-hb-normed`, `cor-hb-distance`, `thm-dense-criterion`, `thm-bidual-isometry`, `thm-adjoint-norm`, `prp-adjoint-kernel-range`, `thm-hb-geometric-strict`, `cor-closed-convex-halfspaces`, `thm-banach-limit`, `cor-linfty-dual-not-l1`, `thm-invariant-mean-circle`, `cor-finitely-additive-measure` (FA.3); edges `thm-hb-geometric uses thm-hb-analytic`, `cor-hb-norming uses thm-hb-normed`, `thm-banach-limit uses thm-hb-analytic`, `cor-weakly-bounded uses thm-ubp`.
+- authoring/NOTATION.md rows: X* (dual; reconcile with FA.1a), X**, J_X, M^⊥ and ⊥N (annihilators; FA.6 reuses M^⊥ for the orthogonal complement), T' (Banach adjoint; T* kept for FA.9), p_C (Minkowski gauge), S (left shift on ℓ^∞), f_a (translate).
+- Promises opened: (L^∞)* ≠ L¹ → MT.7 (ch11) or FA.1b; Mazur → FA.5; Hilbert uniqueness of norm-preserving extension → FA.6; X* separable ⇒ X separable → FA.10; normalization of the representing g → FA.2. Paid: FA.1a's "(ℓ^∞)* needs Hahn–Banach".
+- FA.1a (ch08) blueprint should label: X* is Banach; (ℓᵖ)* = ℓ^q, c₀* = ℓ¹, (ℓ¹)* = ℓ^∞; quotient norm and completeness of X/M; BLT extension; Hölder for ℓ². FA.3 cites these descriptively until the labels exist.
+- authoring/STATUS.md: FA.3 row → "S1 blueprint (mt/authoring/blueprints/ch10.md), D4 layout; MT ch10". Directory slug `mt/src/ch10-hahn-banach/`.
+
+## ch08 (FA.1a Banach Spaces, Bounded Operators, and Dual Spaces), S1 2026-10-25
+
+- Blueprint: mt/authoring/blueprints/ch08.md (new file). The old FA.1a blueprint fa/authoring/blueprints/ch01.md is superseded (copied, not moved: fa/ is outside this workflow); retire it. Its L^p-duality sections belong to FA.1b (mt ch17).
+- registry/plan-edges.yaml FA.1a (currently `s: [AN2.2, AN2.3, LA1.2], see: [AN3.1]`): add `see: [F2.4]` (Hamel basis, only prp-discontinuous-functional-exists, off every later proof path) and `see: [HA.9]` (step-function integral example). Confirm AN1.8, AN1.9, AN1.10, AN2.11 are in the s-closure (used in examples and Young's inequality); if not, add them as see. AN2.9/AN2.10 are used only in one example (Stieltjes functionals): see at most.
+- AN2.2/AN2.3 have no labels yet (old-layout blueprints). ch08 writes expected names in brackets ([AN2.2 thm-cauchy-subsequence-converges], [AN2.3 thm-norms-equivalent], AN2.3 metric Tietze with bound, AN2.2 completion); S2a/S3 must replace them once those chapters are re-blueprinted.
+- authoring/NOTATION.md rows: \nK (scalar field ℝ or ℂ); c_0, c, c_{00}, e_n (from n = 1); p' dual exponent (MT.7 and FA.1b should use p' too); \mathcal B(X,Y), \mathcal B(X); X^*, X^{**}; J canonical embedding; X/M, π, ‖x + M‖; T^* Banach adjoint (FA.9 relates it to the Hilbert adjoint); R, L shifts; M_a multiplication operator; V, V_k Volterra operators; sgn z = z/|z|.
+- authoring/STATUS.md: MT ch08 FA.1a row → "S1 blueprint (mt/authoring/blueprints/ch08.md), D4 layout".
+- Directory slug: `mt/src/ch08-banach-spaces/`.
+- Promises opened for other chapters: FA.3 ((ℓ^∞)* ≠ ℓ¹; J isometric; ‖T*‖ = ‖T‖), FA.1b ((L^p)* = L^{p'}), FA.2 (Riesz on C[a,b]), MT.7 (completion of (C[0,1], ‖·‖₁) is L¹), FA.4 (no countable Hamel basis), FA.6 (θ = 1 in Riesz's lemma).
