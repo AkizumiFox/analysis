@@ -69,3 +69,19 @@
 - ch08 proves `lem-integral-cauchy-schwarz` itself; if AN1.8 proves Cauchy–Schwarz for integrals in the main line, S2a may replace the lemma by a citation.
 - `NOTATION.md` rows: {x} fractional part; P₁, P₂, P₃ periodic sawtooth (this series' names); γ Euler's constant; Γ, B(x,y); F_R(t) truncated parameter integral; "f ~ g" (f/g → 1) if AN1.3/AN1.10 do not define it.
 - AN2.15 weird-examples table: five entries from ch08 (listed in its "Weird-examples table").
+
+## AN2.15 (ch16, A Gallery of Pathological Functions) — S1, 2026-10-25
+
+- **Registry edges.** spec/08 C3 lists AN2.15's s-edges as "—". The blueprint uses, as hard prerequisites, AN2.10 (Lebesgue criterion, R–S), AN2.9 (BV, length), AN1.9 (M-test, C[0,1] complete, term-by-term differentiation), AN1.10 (e^{-1/x}), AN2.2 (Banach fixed point). Proposed: `s: [AN2.10, AN2.9, AN1.9, AN1.10, AN2.2]`, `b: [AN2.6, AN2.3]`, `revisits: [AN1.4, AN1.5, AN1.7, AN1.8, F4.7]`. Nothing may depend on AN2.15 (unchanged).
+- **Soft edges into AN2.15 (optional, prose only):** MT.10 see AN2.15 (Cantor function); AM.1 see AN2.15 (bump functions); AN2.6 see AN2.15 (Takagi as explicit nowhere-differentiable).
+- **exam-targets.yaml:** Apostol §9.7 (space-filling curve) is fully proved only in AN2.15. Decide: map the apostol-ma 9.7 item to AN1.9 with AN2.15 as optional cover, or mark the item optional. Also pma Ex. 7.14 and pugh "Peano curves" are optional cover here.
+- **Upstream blueprints (other workflows):**
+  - AN1.9 (an2 ch06): prove only the continuity of Takagi's T = Σ 2^{-n} dist(2^n x, ℤ) (M-test); the full nowhere-differentiability proof is AN2.15 §04 (pays the AN1.7 hook per spec/08 C5). If AN1.9 uses a different function, AN2.15 §04 keeps Takagi and the recall box changes.
+  - AN1.5 (an1 ch06): "no function continuous exactly on ℚ" (old blueprint: optional, via Baire) is proved in AN2.15 §01; AN1.5 should point forward in prose instead.
+  - AN2.3 (an1 ch08): the old blueprint had "the Peano curve as a uniform limit"; spec/08 puts the space-filling curve in AN2.15 §06. AN2.3 should drop it or keep a prose pointer.
+  - AN1.8 (an2 ch02): keeps Volterra as statement only, pointing to AN2.15 §03.
+  - F4.7 (fd4): the weird-examples table's row format must match AN2.15's closing table `tbl-weird-examples-closed` (columns: Exhibit | First met | Belief it breaks | Settled in).
+  - AN2.10 (an2 ch03): AN2.15 cites its oscillation ω_f(x), the covering lemma for finitely many open intervals, and R–S change of variable / integration by parts. If AN2.10 omits any, AN2.15 proves it locally.
+  - AN2.6 (an2 ch12): if AN2.6 defines G_δ, AN2.15 cites it instead of `def-g-delta-set`.
+- **NOTATION.md rows:** s(x) = dist(x, ℤ) (chapter-local), C_f (set of continuity points of f).
+- **STATUS.md:** AN2.15 row → "S1 blueprint written (an2/authoring/blueprints/ch16.md); S2a next".
