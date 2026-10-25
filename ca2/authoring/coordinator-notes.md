@@ -30,3 +30,16 @@ Changes to shared files and other volumes requested by CA2 workflow agents. Agen
 - **NOTATION.md:** new rows Λ, Λ*, ω₃ = ω₁ + ω₂, τ = ω₂/ω₁ with Im τ > 0; P_a (period parallelogram); ℘ (`\wp`), G_k(Λ), g₂ = 60G₄, g₃ = 140G₆, e_j = ℘(ω_j/2), Δ = g₂³ − 27g₃²; **ζ_Λ** for the Weierstrass zeta (never bare ζ: CA.13 owns ζ for Riemann zeta); σ_Λ; η_j quasi-periods; λ(τ), Γ(2).
 - **exam-targets.yaml:** no change; CA.15 is the sole cover of `ahlfors` item "Ahlfors 7 橢圓函數". Coverage note: the blueprint also uses Stein–Shakarchi II ch. 9 (outside the S&S ch. 5–6, 8 named for CA2) for coverage.
 - **CA.8b (ch08):** may point at CA.15 `def-modular-lambda` / `thm-lambda-mapping` in prose only; CA.15 is optional, so CA.8b must not prove anything from it.
+
+## ch03 (CA.12), S1, 2026-10-25
+
+1. **STATUS.md:** add the row CA.12 → `ca2/authoring/blueprints/ch03.md`, state "S1 done, awaiting S2a" (new chapter; the old `ca/authoring/blueprints/ch07.md` §7 Runge section is superseded, as the CA.7 note already says).
+2. **plan-edges.yaml (math-atlas):** `CA.12: {s: [CA.4, CA.7]}` → `{s: [CA.4, CA.7, CA.5]}`. CA.5 (Riemann mapping theorem, for condition (i)) and, through it, CA.6 (harmonic conjugates, for condition (j)) are used in `thm-simply-connected-equivalences`; neither is an ancestor via CA.4 or CA.7. If the edge is refused, (i) and (j) become a stated remark and the theorem keeps (a)–(h).
+3. **CA workflow (owner of ca/), requests:**
+   - CA.5: state the Riemann mapping theorem (or a remark after it) under the hypothesis "every non-vanishing holomorphic function on G has a holomorphic square root", since its proof uses simple connectivity only there. CA.12 (h)⇒(i) needs that statement, not an inspection of the proof (S2a item 9).
+   - CA.4: confirm (i) simple connectivity is defined by closed-path homotopy (CA.8a asks the same); (ii) CA.4 proves log and √ of non-vanishing functions on simply connected regions, the open mapping theorem, and the global Cauchy integral formula for cycles with n(Γ, a) = 0 off the region; give the labels.
+   - CA.2: labels for the maximum modulus principle on bounded regions, Cauchy's formula on convex open sets, the Weierstrass convergence theorem, the identity theorem.
+4. **CA.7 (ca2 ch02):** CA.12 owns the proof of `thm-weierstrass-region` (no new label; §6 restates it) and pays the interpolation pointer of CA.7 §06 C1 (`thm-interpolation`). Because Mittag-Leffler in ℂ left CA.7, CA.12 §5 proves `thm-mittag-leffler-plane` first (Taylor corrections) and introduces the telescoping-correction move there. To avoid a duplicate label CA.12 uses `cor-meromorphic-quotient-region` (CA.7 keeps `cor-meromorphic-quotient` for ℂ).
+5. **CA.8a (ca2 ch05):** `exm-every-region-natural-domain` may cite CA.12 `thm-no-extension` (proved, with the construction of the accumulating sequence) instead of resting on a stated theorem; needs `see: [CA.12]` or `b: [CA.12]` in plan-edges.
+6. **NOTATION.md:** new rows R(E) (rational functions with all poles in E ⊂ ℂ∞); "hole" of a compact K (bounded component of ℂ∖K); K_n = {|z| ≤ n, dist(z, ℂ∖G) ≥ 1/n} as the book's standard exhaustion; H(G) as in CA.5.
+7. **exam-targets.yaml:** no change. CA.12 serves `complex` "Runge、Mittag-Leffler" (sole cover) and `ahlfors` items 4 (simply connected regions, with CA.4) and 5 (with CA.7, CA.13).
