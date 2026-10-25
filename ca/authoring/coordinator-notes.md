@@ -53,3 +53,24 @@ Changes to shared files (STATUS.md, NOTATION.md, ...) requested by CA blueprint 
 - **CA.4 interface:** ch07 cites `cor-hurwitz-injective`, `cor-simply-connected-roots`, `thm-inverse-holomorphic`, `thm-open-mapping` and `thm-local-mapping` (no duplicate proofs in CA.5).
 - **math-atlas registry (for whoever edits it):** no edge change needed; `CA.5: {s: [CA.4, AN2.5, CA.6]}` matches. Proposed `exam-targets.yaml` touch-ups for the `ahlfors` target: add CA.5 to the "Ahlfors 4" item (4.6.5 reflection principle now lives in CA.5) and to the "Ahlfors 5" item (5.5 normal families). Optionally add CA.5 to "Ahlfors 3" (3.2 conformality, alongside CA.10).
 - **Hooks opened for CA2 runs** (prose pointers in ch07): CA.11, Green's function g = −log|f| from the Riemann map; CA.12, "RMT uses simple connectivity only through square roots"; CA.14, normality of families that omit two values (into Ĉ).
+
+## CA.3 (ch04) — S1, 2026-10-25
+
+- **File slot.** CA.3 now lives at `ca/authoring/blueprints/ch04.md` (spec/08 §D1 position 4). This commit overwrites the old CA.4 body that the CA.4 run left in ch04.md; the CA.4 run already wrote ch05.md. The old CA.3 body (formerly ch03.md) is recoverable from git history before commit 1532e6b; what was still valid is carried over.
+- **STATUS.md:** CA.3 row → CA chapter 4, title "Laurent Series, Singularities, and Residues", directory `ca/src/ch04-laurent-singularities-residues/`, state S1 done, next S2a.
+- **NOTATION.md:** add A(a; r, R) (annulus), D*(a; R) (punctured disc), Res(f, a) and Res(f, ∞), p.v. ∫ (principal value). C(a; ρ) is shared with CA.2's C(a, r): one entry, with the separator CA.2 fixes.
+- **math-atlas registry/plan-edges.yaml (proposed, coordinator decides):** `CA.3: see [CA.10]`. §3 treats ∞ through w = 1/z, so it reads without the sphere, and it pays CA.10's hook "meromorphic on Ĉ ⇔ rational". CA.10's notes propose `s += CA.10` instead; the blueprint works with either. With `s`, §3 may `@ref` `def-extended-plane`.
+- **CA.2 interface (resolved in this blueprint):** CA.2 has no toy-contour theorem, so CA.3 §1 adds `def-toy-contour`, `thm-cauchy-toy` (from `cor-cauchy-convex`), `lem-annulus-circles` (thin annular sectors) and `lem-convex-index`. Labels cited from CA.2: `thm-cauchy-disc`, `cor-cauchy-convex`, `lem-circle-kernel`, `thm-cauchy-formula-disc`, `thm-holomorphic-analytic`, `thm-cauchy-estimates`, `thm-liouville`, `thm-zeros-isolated`, `def-zero-order`, `thm-identity`, `thm-weierstrass-limits`, `cor-series-holomorphic`. From CA.1 (expected names): `def-contour-integral`, `thm-ml-inequality`, `thm-primitive-closed-curve`, `thm-power-series-holomorphic`, `exm-circle-one-over-z`, a branch-of-log label.
+- **Labels other runs should use** (CA.3 S1 names):
+  - `thm-laurent-expansion`, `thm-laurent-unique`, `lem-annulus-circles`;
+  - `def-toy-contour`, `thm-cauchy-toy`;
+  - `def-isolated-singularity`, `def-principal-part`, `def-removable`, `def-pole`, `def-essential`;
+  - `thm-riemann-removable`, `thm-pole-characterization`, `thm-casorati-weierstrass`, `cor-singularity-by-limits`;
+  - `def-singularity-at-infinity`, `def-meromorphic`, `thm-entire-pole-at-infinity`, `cor-transcendental-essential`, `thm-partial-fractions`, `thm-meromorphic-extended-rational`;
+  - `def-residue`, `thm-residue-theorem`, `prp-residue-simple-pole`, `prp-residue-quotient`, `prp-residue-higher-order`, `def-residue-at-infinity`, `prp-residues-sum-zero`;
+  - `def-principal-value`, `lem-jordan`, `lem-small-arc`;
+  - `thm-trig-integrals`, `thm-rational-integrals`, `thm-fourier-integrals`;
+  - `lem-cot-bounded-squares`, `thm-cot-summation`, `cor-csc-summation`.
+  - CA.4 (ch05) and CA.5 (ch07) should replace their bracketed CA.3 citations with these names.
+- **For the CA.4 run:** `thm-residue-theorem` is stated as ∮_γ f = Σ Res(f, aₖ) ∮_γ dz/(z − aₖ) for toy contours, so `thm-residue-general` only has to replace that factor by 2πi·n(γ, aₖ). The hook "Res(f′/f, a) = ord_a f" (§4 Quick check) is paid by `thm-argument-principle`.
+- **Promises opened for STATUS:** Casorati–Weierstrass → CA.14 (great Picard); Res(f′/f) → CA.4; residue theorem → CA.4 `thm-residue-general`; π cot πz partial fractions (§6 C3) → CA.12 (Mittag-Leffler); ∫ x^{α−1}/(1 + x) = Γ(α)Γ(1 − α) → CA.13. **Promises paid:** CA.1's e^{1/z} preview (§2); CA.10's "meromorphic on Ĉ ⇔ rational" (§3).
