@@ -21,3 +21,12 @@ Changes to shared files and other volumes requested by CA2 workflow agents. Agen
 5. **Promises opened:** to CA.13, apply `prp-functional-equation-continuation` to Γ and answer the ζ(−1) hook; to CA.14, cite `cor-roots-and-logs-by-monodromy` / `thm-monodromy-simply-connected` for branches and point to the lifting route in prose; to CA.8b, use `thm-lift-local-homeomorphism` with the modular function.
 6. **NOTATION.md:** new rows: function element (f, D); germ [f]ₐ; continuation along γ as (f_t, D_t)_{t∈[0,1]}; γ·σ (concatenation), γ⁻ (reverse path).
 7. **Volume order:** spec/08 §D2 numbers CA.13 as ch04 before CA.8a (ch05), but CA.13 s-depends on CA.8a; the file numbering ch04/ch05 should be swapped when the book is set up (README already notes the swap).
+
+## ch07 (CA.15, optional), S1, 2026-10-25
+
+- **STATUS.md:** add the row CA.15 → `ca2/authoring/blueprints/ch07.md`, state "S1 done, awaiting S2a" (new chapter; no old stub in ca/).
+- **Promise from CA.7 paid:** σ as the genus-2 canonical product (`thm-sigma-entire`, CA.15 §05), citing CA.7 `lem-elementary-factor-bound`, `thm-holomorphic-product`, `thm-product-log-derivative`.
+- **plan-edges.yaml (math-atlas):** currently `CA.15: {s: [CA.7], see: [CA.13]}`. The blueprint also cites CA.2, CA.3, CA.4, CA.10 (ancestors through CA.7, no change needed) and, in §06–§07 only, CA.5 (Schwarz reflection), CA.8a (continuation along paths, path lifting) and CA.14 (prose comparison, R1). Proposed: add `b: [CA.8a]` (or `s` if the coordinator prefers, since `thm-elliptic-integral-inversion` and `cor-picard-via-lambda` use it), and `see: [CA.14]`. CA.5 is an ancestor of CA.7 via CA.11? check; if not, add `b: [CA.5]`.
+- **NOTATION.md:** new rows Λ, Λ*, ω₃ = ω₁ + ω₂, τ = ω₂/ω₁ with Im τ > 0; P_a (period parallelogram); ℘ (`\wp`), G_k(Λ), g₂ = 60G₄, g₃ = 140G₆, e_j = ℘(ω_j/2), Δ = g₂³ − 27g₃²; **ζ_Λ** for the Weierstrass zeta (never bare ζ: CA.13 owns ζ for Riemann zeta); σ_Λ; η_j quasi-periods; λ(τ), Γ(2).
+- **exam-targets.yaml:** no change; CA.15 is the sole cover of `ahlfors` item "Ahlfors 7 橢圓函數". Coverage note: the blueprint also uses Stein–Shakarchi II ch. 9 (outside the S&S ch. 5–6, 8 named for CA2) for coverage.
+- **CA.8b (ch08):** may point at CA.15 `def-modular-lambda` / `thm-lambda-mapping` in prose only; CA.15 is optional, so CA.8b must not prove anything from it.
