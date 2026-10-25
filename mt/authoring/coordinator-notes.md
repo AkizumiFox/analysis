@@ -28,3 +28,20 @@
 - authoring/STATUS.md: FA.4 row → "S1 blueprint (mt/authoring/blueprints/ch09.md), D4 layout; MT ch09".
 - Directory slug: `mt/src/ch09-baire-category-operators/`.
 - FA.1a's (ch08) blueprint should provide, with labels: completeness by absolutely convergent series, B(X,Y) complete, finite-dimensional subspaces closed, Hölder for ℓᵖ with the equality case on finitely supported vectors, and (if possible) the Neumann series; FA.4 cites these.
+
+## MT.4 (ch05, S1 blueprint 2026-10-25)
+
+- Old `ch04.md` (MT.4) was `git mv`ed to `ch05.md` and rewritten; the ch04 slot is free for MT.3.
+- Labels of ch02–ch04 (MT.1–MT.3) are cited **in prose by chapter** only; convert to `@ref` once those blueprints freeze. Facts ch05 needs, with labels, from:
+  - MT.1: Lebesgue measure on ℝᵈ for all d; translation **and reflection** invariance m(−E) = m(E); regularity (Lebesgue set = Borel set up to a null set; Borel f̃ = f a.e.); a non-measurable set; a non-Borel Lebesgue set (non-Borel subset of the Cantor set).
+  - MT.2: Riemann ⇒ Lebesgue with equal integral on boxes of ℝᵈ; translation invariance of the integral.
+  - HA.9 or MT.2: **Lebesgue's criterion on boxes of ℝᵈ** (not only ℝ), used by `thm-riemann-fubini-recovered`.
+  - MT.3: algebra of sets (definition), σ-finite (definition), abstract MCT/DCT, simple-function approximation, ∫Σ = Σ∫ for g_k ≥ 0, completion and the lemma "completion-measurable f = measurable g a.e.", Carathéodory extension (named in one remark only). If MT.3 introduces π–λ or monotone classes, tell ch05 (it creates `thm-monotone-class` in §2).
+- registry/plan-edges.yaml: `MT.4: {s: [MT.3, AN3.4], see: [HA.5]}` stays; optionally add `revisits: [AN2.12]` (double series as Fubini for counting measure) and `see: [HA.10]` (Fourier inversion moved there from the old §7; HA.10 should list it, s MT.4 via MT.7 is already in its closure).
+- MT.5 (ch06): ch05 no longer does |x|^{−α} or the ball volume (left to MT.5); ch05 §7 B1 computes ∫e^{−x²} without polar coordinates — MT.5 may cite it as the first route.
+- MT.8 (ch12) and MT.9 (ch13): `thm-layer-cake` is proved in ch05 §7 (MT.9's note says it uses MT.8's layer-cake formula — cite ch05's instead, or MT.8 recalls it).
+- MT.7 (ch11): `thm-convolution-l1`, `lem-convolution-measurable` are in ch05 §7; MT.7 starts from them.
+- MT.10 (ch14): ch05 §4 C1 proves integration by parts for F = ∫f, G = ∫g (exercise; promote if MT.10 needs it as a theorem).
+- authoring/NOTATION.md rows: 𝒮 ⊗ 𝒯; μ × ν; sections E_x, E^y, f_x, f^y; completion (μ × ν)‾; f ∗ g.
+- authoring/STATUS.md: MT.4 row → "S1 blueprint (mt/authoring/blueprints/ch05.md), D4 layout; old ch04.md moved there". Directory slug `mt/src/ch05-product-measures-fubini/`.
+- exam-targets: no change; ch05 serves mira "MIRA 5", real-ntu "Fubini–Tonelli", apostol-ma/pugh deferred_cover.
