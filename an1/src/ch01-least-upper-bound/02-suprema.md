@@ -22,7 +22,7 @@ In symbols, \( M \) is an upper bound of \( A \) when
 \]
 The bound is an element of \( F \), and nothing requires it to belong to \( A \).
 
-For the interval \( (0, 1) \) in \( \nR \), the numbers \( 1 \), \( \frac32 \), and \( 2026 \) are all upper bounds, and \( 0 \) and \( -17 \) are lower bounds. Upper bounds are never unique: if \( M \) is one, so is every \( M' \ge M \), by transitivity. A minimal change gives a nonexample: \( \frac12 \) is **not** an upper bound of \( (0, 1) \), because \( \frac34 \in (0, 1) \) and \( \frac34 > \frac12 \). One element above \( M \) is enough to spoil it. Negating the definition quantifier by quantifier (the negation rules are the subject of *Logic and Proof*, Chapter 4),
+For the interval \( (0, 1) \) in \( \nR \), the numbers \( 1 \), \( \frac32 \), and \( 2026 \) are all upper bounds, and \( 0 \) and \( -17 \) are lower bounds. Upper bounds are never unique: if \( M \) is one, so is every \( M' \ge M \), by transitivity. A minimal change gives a nonexample: \( \frac12 \) is **not** an upper bound of \( (0, 1) \), because \( \frac34 \in (0, 1) \) and \( \frac34 > \frac12 \). One element above \( M \) is enough to spoil it. Negating the definition quantifier by quantifier (the negation rules are the subject of *Logic and Proof*, Chapter 6),
 \[
 M \text{ is not an upper bound of } A
 \quad\iff\quad
