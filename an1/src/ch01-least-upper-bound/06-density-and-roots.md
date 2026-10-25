@@ -102,7 +102,7 @@ Let \( 0 \le x < y \) and \( k \in \nZ_{>0} \). Then \( x^k < y^k \): the map \(
 :::
 
 ::: {.proofofclaim}
-Powers are defined by recursion (*Sets and Functions*, Chapter 2): \( u^0 \coloneqq 1 \) and \( u^{k+1} \coloneqq u^k u \), so that \( u^1 = u \); here only \( k \ge 1 \) is needed.
+Powers are defined by recursion (*Sets and Functions*, Chapter 3): \( u^0 \coloneqq 1 \) and \( u^{k+1} \coloneqq u^k u \), so that \( u^1 = u \); here only \( k \ge 1 \) is needed.
 
 We first show \( 0 \le x^k < y^k \) by induction on \( k \). For \( k = 1 \) this is the hypothesis. If \( 0 \le x^k < y^k \), then \( x^{k+1} = x^k x \ge 0 \), and
 \[
@@ -196,7 +196,7 @@ Picture the integers as marks spaced \( 1 \) apart. The Archimedean property put
 \[
     T \coloneqq \{ j \in \nN : j - p > y \}
 \]
-is nonempty. By well-ordering (*Sets and Functions*, Chapter 2), \( T \) has a least element \( j_0 \). Let \( m \coloneqq j_0 - p - 1 \), an integer because differences of integers are integers (the remark on \( \nN \) in the previous section). Then \( m + 1 = j_0 - p > y \), since \( j_0 \in T \). It remains to show \( m \le y \). First, \( 0 - p = -p < y \) by the choice of \( p \), so \( 0 \notin T \) and \( j_0 \ne 0 \). Hence \( j_0 \ge 1 \) (@exm-naturals-at-least-one), so \( j_0 - 1 \in \nN \) (again from that remark), and \( j_0 - 1 \notin T \) because it is smaller than the least element of \( T \). So \( (j_0 - 1) - p \le y \), that is, \( m \le y \).
+is nonempty. By well-ordering (*Sets and Functions*, Chapter 3), \( T \) has a least element \( j_0 \). Let \( m \coloneqq j_0 - p - 1 \), an integer because differences of integers are integers (the remark on \( \nN \) in the previous section). Then \( m + 1 = j_0 - p > y \), since \( j_0 \in T \). It remains to show \( m \le y \). First, \( 0 - p = -p < y \) by the choice of \( p \), so \( 0 \notin T \) and \( j_0 \ne 0 \). Hence \( j_0 \ge 1 \) (@exm-naturals-at-least-one), so \( j_0 - 1 \in \nN \) (again from that remark), and \( j_0 - 1 \notin T \) because it is smaller than the least element of \( T \). So \( (j_0 - 1) - p \le y \), that is, \( m \le y \).
 
 *Uniqueness.* Suppose \( m \) and \( m' \) are integers with \( m \le y < m + 1 \) and \( m' \le y < m' + 1 \), and suppose \( m < m' \). Then \( m' - m \) is a positive integer, hence a nonzero natural number (the remark on \( \nN \) in the previous section), so \( m' - m \ge 1 \) by @exm-naturals-at-least-one; that is, \( m' \ge m + 1 \). Hence \( y \ge m' \ge m + 1 > y \), a contradiction. By symmetry \( m' < m \) is impossible too, so \( m = m' \).
 :::

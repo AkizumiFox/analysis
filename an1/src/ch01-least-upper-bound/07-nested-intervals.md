@@ -85,7 +85,7 @@ The half-open intervals \( (0, 1/n] \) are nested and bounded, but no real numbe
 
 ## The real numbers cannot be listed
 
-*Sets and Functions*, Chapter 3 calls a set **countable** if its elements can be listed as \( x_0, x_1, x_2, \dots \), repetitions allowed; for a nonempty set this means that it is the image of some function from \( \nN \). That chapter shows that \( \nN \), \( \nZ \), and \( \nQ \) are countable. It also shows that \( \nR \) is not, by Cantor's diagonal argument with decimal expansions. Decimal expansions were taken there as a fact from school: every real number has one, and two different expansions such as \( 0.4999\ldots \) and \( 0.5000\ldots \) can name the same number. Neither fact has been proved from our axioms.
+*Sets and Functions*, Chapter 4 calls a set **countable** if its elements can be listed as \( x_0, x_1, x_2, \dots \), repetitions allowed; for a nonempty set this means that it is the image of some function from \( \nN \). That chapter shows that \( \nN \), \( \nZ \), and \( \nQ \) are countable. It also shows that \( \nR \) is not, by Cantor's diagonal argument with decimal expansions. Decimal expansions were taken there as a fact from school: every real number has one, and two different expansions such as \( 0.4999\ldots \) and \( 0.5000\ldots \) can name the same number. Neither fact has been proved from our axioms.
 
 Here is a proof with no decimals, using only @thm-nested-intervals.
 
@@ -123,7 +123,7 @@ Both are closed intervals of length \( d/3 > 0 \) contained in \( I_n \). They a
 \]
 In the second case \( x_{n+1} \in L \), so \( x_{n+1} \notin R \), since \( L \) and \( R \) are disjoint. In both cases \( x_{n+1} \notin I_{n+1} \), \( I_{n+1} \subseteq I_n \), and \( I_{n+1} \) has positive length.
 
-Each \( I_{n+1} \) is determined by \( I_n \) and \( x_{n+1} \) through an explicit rule, so the family is defined by recursion (*Sets and Functions*, Chapter 2); no choice principle is involved.
+Each \( I_{n+1} \) is determined by \( I_n \) and \( x_{n+1} \) through an explicit rule, so the family is defined by recursion (*Sets and Functions*, Chapter 3); no choice principle is involved.
 
 The intervals \( I_n \) are closed, bounded, and nested. By @thm-nested-intervals, there is \( c \in \bigcap_n I_n \). For each \( n \ge 1 \) we have \( c \in I_n \) and \( x_n \notin I_n \), so \( c \ne x_n \).
 
@@ -135,10 +135,10 @@ The answer to the prompt: halves share their midpoint. If \( x_{n+1} \) were exa
 Only the existence half of @thm-nested-intervals was used; the intervals need not shrink.
 
 ::: {.remark}
-Since \( \nQ \) is countable, and a union of two countable sets is countable (both from *Sets and Functions*, Chapter 3), the set \( \nR \setminus \nQ \) of irrational numbers is uncountable. Otherwise \( \nR = \nQ \cup (\nR \setminus \nQ) \) would be countable. In this sense most real numbers are irrational, although so far we have named only a few of them, such as \( \sqrt{2} \) and \( \sqrt2 + q \) for rational \( q \) (the proof of @cor-irrationals-dense).
+Since \( \nQ \) is countable, and a union of two countable sets is countable (both from *Sets and Functions*, Chapter 4), the set \( \nR \setminus \nQ \) of irrational numbers is uncountable. Otherwise \( \nR = \nQ \cup (\nR \setminus \nQ) \) would be countable. In this sense most real numbers are irrational, although so far we have named only a few of them, such as \( \sqrt{2} \) and \( \sqrt2 + q \) for rational \( q \) (the proof of @cor-irrationals-dense).
 :::
 
-The decimal proof of *Sets and Functions*, Chapter 3 is secretly a nested interval proof too: the first \( n \) digits of a number place it in an interval of length \( 10^{-n} \). The version above avoids the digits, and with them the numbers that have two expansions.
+The decimal proof of *Sets and Functions*, Chapter 4 is secretly a nested interval proof too: the first \( n \) digits of a number place it in an interval of length \( 10^{-n} \). The version above avoids the digits, and with them the numbers that have two expansions.
 
 ## What the axiom bought us
 
@@ -151,9 +151,9 @@ Here is the chapter so far in one table. Each row is a property that \( \nR \) h
 | \( \nQ \) is dense | yes | yes | no: nothing rational in \( (x, x + 1) \) |
 | positive elements have square roots | yes | no: \( 2 \) | no: \( x \) |
 | nested closed intervals meet | yes | no: bisection toward \( \sqrt{2} \) | no: \( [n, x/n] \) |
-| uncountable | yes | no (*Sets and Functions*, Chapter 3) | yes: contains \( \nR \) |
+| uncountable | yes | no (*Sets and Functions*, Chapter 4) | yes: contains \( \nR \) |
 
-The entries for \( \nR \) are this chapter's theorems. For \( \nQ \), the failures come from @thm-no-rational-sup-sqrt2, @fd1:thm-sqrt2-irrational, and the bisection above; \( \nQ \) is Archimedean by @exr-archimedean-property-c3; and \( \nQ \) is dense in itself because the average of two rationals is a rational between them. For \( \nR(x) \): every rational \( r \) is below some natural number (@exr-archimedean-property-c3), hence below \( x \), so none lies in \( (x, x + 1) \). If \( (p/q)^2 = x \) for polynomials \( p, q \), then \( p^2 = x q^2 \), whose sides have even and odd degree, which is impossible. That the nested intervals \( [n, x/n] \) have no common point is proved in @exr-nested-intervals-c3. And \( \nR(x) \) contains the constants, a copy of \( \nR \), so it cannot be countable, since a subset of a countable set is countable (*Sets and Functions*, Chapter 3).
+The entries for \( \nR \) are this chapter's theorems. For \( \nQ \), the failures come from @thm-no-rational-sup-sqrt2, @fd1:thm-sqrt2-irrational, and the bisection above; \( \nQ \) is Archimedean by @exr-archimedean-property-c3; and \( \nQ \) is dense in itself because the average of two rationals is a rational between them. For \( \nR(x) \): every rational \( r \) is below some natural number (@exr-archimedean-property-c3), hence below \( x \), so none lies in \( (x, x + 1) \). If \( (p/q)^2 = x \) for polynomials \( p, q \), then \( p^2 = x q^2 \), whose sides have even and odd degree, which is impossible. That the nested intervals \( [n, x/n] \) have no common point is proved in @exr-nested-intervals-c3. And \( \nR(x) \) contains the constants, a copy of \( \nR \), so it cannot be countable, since a subset of a countable set is countable (*Sets and Functions*, Chapter 4).
 
 The \( \nQ \) column shows that the Archimedean property and density are far weaker than the axiom; the \( \nR(x) \) column shows an ordered field where even they fail.
 
@@ -280,7 +280,7 @@ A proof of (c) that shows \( \sup A = s \) through the backward direction of @th
 
 ::: {.enumerate options="label=(\alph*)"}
 1. Let \( x < y \). Prove that the interval \( (x, y) \) is not countable.
-2. Deduce that \( (x, y) \) contains an irrational number, without using \( \sqrt{2} \) or any other named irrational. You may use the facts from *Sets and Functions*, Chapter 3 that \( \nQ \) is countable, and that a subset of a countable set is countable.
+2. Deduce that \( (x, y) \) contains an irrational number, without using \( \sqrt{2} \) or any other named irrational. You may use the facts from *Sets and Functions*, Chapter 4 that \( \nQ \) is countable, and that a subset of a countable set is countable.
 3. Let \( C \subseteq \nR \) be countable. Show that the real numbers not in \( C \) are dense: every interval \( (x, y) \) with \( x < y \) contains a real number that is not in \( C \).
 :::
 :::

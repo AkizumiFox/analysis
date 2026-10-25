@@ -142,7 +142,7 @@ For \( A \): the element \( \frac72 \) is an upper bound, as checked above, so (
 
 For \( B \): the same two lines work with \( 1 \) in place of \( \frac72 \). It bounds \( (0, 1] \) from above by the definition of that interval, and it is least because \( 1 \in B \), so every upper bound \( M \) satisfies \( 1 \le M \). So \( \sup B = 1 = \max B \).
 
-The argument used only that the candidate is a maximum. It shows that **a maximum, when it exists, is the supremum** (@exr-suprema-b1). Every nonempty finite set has a maximum, by an induction on the number of elements of the kind practiced in *Sets and Functions*, Chapter 2, so for finite sets the supremum is nothing new.
+The argument used only that the candidate is a maximum. It shows that **a maximum, when it exists, is the supremum** (@exr-suprema-b1). Every nonempty finite set has a maximum, by an induction on the number of elements of the kind practiced in *Sets and Functions*, Chapters 3 and 4, so for finite sets the supremum is nothing new.
 :::
 
 ::: {#exm-sup-open-interval}
