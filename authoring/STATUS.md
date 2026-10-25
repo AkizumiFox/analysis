@@ -33,7 +33,7 @@ into `src/ch01-connectives-and-derivations/` and `src/ch02-negation-and-classica
 |---|---|---|
 | AN1.1 | least-upper-bound | pilot drafted 2026-09-27; renumbered and retrofitted to STYLE §11 2026-09-28; **passed S2–S8 2026-09-28** (S5–S7 re-run after the retrofit; seam `an1/authoring/reviews/ch01-S8-seam.md`: src rows 3–5 applied, optional rows 2 and 6 not); induction now cites `@ax-induction` (cross-chapter cleanup); **awaiting author review (S9)** — candidate exemplar for Parts I–VI |
 | AN1.4 | AN1 ch02: `open-closed-compact-subsets` | not started. Blueprint an1 ch02.md (was an1 ch04); renamed to ℝⁿ. Old-layout body; re-blueprint against spec/08 C2, C5 |
-| AN2.1 | AN1 ch03: `metric-spaces` | not started. Blueprint an1 ch03.md (was an2 ch01); moved AN2 → AN1, renamed *Metric Spaces and Their Topology*. Old-layout body; re-blueprint against spec/08 C2, C5 |
+| AN2.1 | AN1 ch03: `metric-spaces` | S1 written 2026-10-25 (an1 ch03.md, hand-written; Apostol 3.13, 3.14, 3.16; 3.15 deferred to AN2.3, S2a item 12). Five sections; `-metric` label suffix where AN1.4 has the plain name. Next: S2a |
 | AN1.2 | AN1 ch04: `sequences-and-cauchy-sequences` | not started. Blueprint an1 ch04.md (was an1 ch02). Old-layout body; re-blueprint against spec/08 C2, C5 |
 | AN2.2 | AN1 ch05: `completeness-and-completion` | S1 blueprint written 2026-10-25 (an1 ch05.md, deepen format, spec/08 C2, C5): 6 sections, + Banach fixed point, no continuity used; next S2 |
 | AN1.5 | AN1 ch06: `limits-and-continuity` | not started. Blueprint an1 ch06.md (was an1 ch05); + classification of discontinuities. Old-layout body; re-blueprint against spec/08 C2, C5 |
