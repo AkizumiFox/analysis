@@ -169,3 +169,4 @@
 - authoring/STATUS.md: MT.1 row → "S1 blueprint (mt/authoring/blueprints/ch02.md), D4 layout; MT ch02"; promise to pay: HA.9's list items "countable additivity" and "length of the fat Cantor set" (paid in MT.1), "Arzelà / bounded convergence" (paid in MT.2 via `thm-egorov`).
 - Directory slug: `mt/src/ch02-lebesgue-measure/`.
 - ST.6a (side, s MT.1) revisits `thm-vitali-nonmeasurable`; MT.1 keeps the Vitali set (plan-edges comment already says so).
+- MT.7 addendum: ch11 now cites FA.1a (ch08) labels `@thm-banach-iff-absolute-series`, `@def-dual-exponent`, `@lem-young`, `@thm-holder-lp`, `@thm-minkowski-lp`, `@exm-p-less-than-one`, `@thm-dual-lp`, `@exm-l1-norm-c01-incomplete` instead of re-creating them, and pays FA.1a's promise (completion of (C[0,1], ‖·‖₁) is L¹) in `cor-l2-completion` (b). ch08 lacks the `<!-- hand-written -->` marker, so `blueprint/check_blueprint.py --blueprints mt/authoring/blueprints` reports these 17 cites as undefined until ch08 adds it.
