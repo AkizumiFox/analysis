@@ -157,3 +157,15 @@
 - authoring/STATUS.md: MT.8 row → "S1 blueprint (mt/authoring/blueprints/ch12.md), D4 layout; old ch08.md moved there". Promises opened: `sec-weak-lp` → MT.9 weak (1,1); `thm-weak-lp-sandwich` → MT.9 Marcinkiewicz; `exm-typewriter` → PR.1 (in probability, not a.s.).
 - PR.1 (branch, s [MT.4, MT.8]): may cite `def-convergence-in-measure`, `lem-borel-cantelli`, `thm-vitali-convergence-finite`, `cor-lp-by-tails` (E|X| = ∫ P(|X| > t) dt).
 - mt/README.md still says "MT: Measure and Integration"; volume renamed to *Measure, Integration, and Real Analysis* (spec/08 D4). Not edited here to avoid conflicting with parallel MT workflows.
+
+## MT.1 (ch02, S1 blueprint 2026-10-25)
+
+- Old `mt/authoring/blueprints/ch01.md` (the Part IV MT.1 stub) was `git mv`ed to `ch02.md` and rewritten; ch01.md is free for HA.9 (Riemann Integration and Its Failures).
+- registry/plan-edges.yaml: `MT.1: {s: [AN3.4, AN1.4, F2.3, HA.9]}` is right as it stands. Optional `see: [AN2.8, AN2.10, AN2.15]` (Tietze in general, Lebesgue's criterion, Cantor function gallery); none is used as a dependency: the blueprint proves Urysohn/Tietze on ℝᵈ (`lem-urysohn-rd`, `thm-tietze-rd`) and the Cantor function (`lem-cantor-function`) itself because AN2.8 is seg B and AN2.15 is optional.
+- MT.2 (ch03) blueprint should cite from MT.1: `thm-simple-approximation`, `thm-measure-continuity`, `thm-measurable-limits`, `def-almost-everywhere`, `thm-egorov` (bounded convergence theorem, which pays HA.9's Arzelà), `thm-countable-additivity`. MT.3 (ch04): `thm-caratheodory-criterion` (becomes the definition), `def-exterior-measure`, `def-sigma-algebra`, `thm-regularity`. MT.7 (ch11): `thm-step-approximation`, `thm-luzin`. PR.1: `thm-borel-cantelli`. MT.10 (ch14): `lem-cantor-function`, `exm-measurable-not-borel`.
+- HA.9 (ch01) blueprint must end with the "what an integral must provide" list and state Arzelà without proof; MT.1's index.md quotes the list and the 1_ℚ example. HA.9 should give the fat Cantor set a label MT.1 can cite (`exm-fat-cantor-measure` in MT.1 builds on it).
+- registry/statements.yaml: add `thm-egorov` (MT.1), `thm-luzin` (MT.1), `thm-vitali-nonmeasurable` (MT.1), `thm-caratheodory-criterion` (MT.1), `thm-borel-cantelli` (MT.1); edges `thm-luzin uses thm-egorov`, `thm-luzin uses thm-step-approximation`, `cor-outer-not-additive uses thm-caratheodory-criterion`.
+- authoring/NOTATION.md rows: m_* (exterior measure); |R| (volume of a closed rectangle); 𝓛(ℝᵈ), 𝓑(ℝᵈ) (Lebesgue and Borel σ-algebras); E △ F; d(E, F); "a.e."; f_k ↑ f; the extended-real arithmetic conventions (0·∞ = 0; ∞ − ∞ undefined) move from "flagged" to "in use".
+- authoring/STATUS.md: MT.1 row → "S1 blueprint (mt/authoring/blueprints/ch02.md), D4 layout; MT ch02"; promise to pay: HA.9's list items "countable additivity" and "length of the fat Cantor set" (paid in MT.1), "Arzelà / bounded convergence" (paid in MT.2 via `thm-egorov`).
+- Directory slug: `mt/src/ch02-lebesgue-measure/`.
+- ST.6a (side, s MT.1) revisits `thm-vitali-nonmeasurable`; MT.1 keeps the Vitali set (plan-edges comment already says so).
