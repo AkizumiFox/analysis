@@ -25,3 +25,26 @@
 - **AN2.9 dependency (soft):** §03 warning uses the Cantor function (continuous, increasing, φ′ = 0 off C); ask AN2.9 to build it or the warning states the properties.
 - **NOTATION.md rows:** gauge δ: [a, b] → (0, ∞); "δ-fine"; δ₁ ∧ δ₂ (pointwise min of gauges); (R)∫ vs (G)∫ when compared.
 - **STATUS.md:** AN2.14 row → "S1 blueprint written (ch15.md); S2a next".
+
+## ch13 (AN2.7 Topological Spaces, Products, and Compactness), S1 2026-10-25
+
+- STATUS.md: AN2 ch13 row → "S1 written (deepen blueprint, Apostol layout); next S2".
+- NOTATION.md new rows: 𝒯 / (X, 𝒯), 𝒯_d, cl / int / ∂ in topological spaces, ℝ_ℓ (Sorgenfrey line), ∏ X_α with π_α, Y^I (product topology), X/∼ with q.
+- registry (math-atlas): AN2.7 s-edges unchanged {AN2.3, F2.5}; suggest soft edges `revisits: [AN2.1]` (open sets as axioms; equivalent-metrics preview paid) and `see: [AN1.9]` (pointwise convergence = product topology).
+- AL3.9 (s AN2.7) needs Tychonoff for products of finite discrete spaces (profinite groups); AN2.7 only states Tychonoff (proof in FA.5). AL3.9 should add b FA.5 or prove the finite-discrete case itself.
+- FA.5 blueprint: cite thm-hilbert-cube-compact (countable Tychonoff by diagonal), thm-compact-fip, def-initial-topology, def-net / prp-closure-nets from AN2.7.
+- AN2.8 blueprint: continue exm-weird-spaces-table (regular / normal / locally compact columns) and prove "Sorgenfrey line not metrizable" (entry marked "(AN2.8)" in AN2.7).
+- AM.3: def-second-countable and exm-line-two-origins live in AN2.7.
+- Coverage sources: the AN2 reference list has no general topology; AN2.7 checks coverage against Munkres Topology, Sutherland, Willard, Steen–Seebach (topology shelf).
+- AN1 ch03 (AN2.1) and ch08 (AN2.3) labels do not exist yet; AN2.7 cites their results in prose until re-blueprinted.
+
+## ch02 (AN1.8, The Riemann–Darboux Integral), S1 2026-10-25
+
+- **STATUS.md:** AN1.8 row: S1 done (deepen blueprint `an2/authoring/blueprints/ch02.md`), next S2a.
+- **NOTATION.md, new rows:** U(f, P), L(f, P); lower/upper integral (`\underline{\int}`, `\overline{\int}`; agree macros); ℛ[a, b]; ‖P‖ (mesh); S(f, P, t) (Riemann sum); ω_f(x) under the existing `\osc` row; orientation convention ∫ᵦᵃ = −∫ₐᵇ.
+- **Label coordination:** AN1.8 owns `def-partition-of-interval`, `def-mesh`, `def-darboux-sums`, `def-measure-zero`, `def-oscillation`, `def-improper-integral` (`def-partition` is F2.2's set partition). AN2.9 (bounded variation, read first) should use its own partition wording or cite this label by prose pointer only, since AN1.8 has no s-edge to AN2.9 and AN2.9 none to AN1.8; if AN2.9 needs a labelled partition definition, give it `def-partition-bv` or move ownership to AN2.9 and have AN1.8 restate unlabelled.
+- **Series-free measure zero:** `def-measure-zero` uses partial sums (AN1.3 comes after AN1.8). AN1.3's blueprint should restate it as Σ|Iₙ| ≤ ε and note the equivalence.
+- **Integral test** moves from AN1.8 to AN1.3 (series now come after the integral); AN1.3 cites `def-improper-integral`, `thm-improper-comparison`, `exm-power-integrals`.
+- **Promises opened** (for STATUS's promise table): `thm-lebesgue-criterion` proof → AN2.10 closing section; mesh vs refinement for Stieltjes → AN2.10; ∫lim vs lim∫ (χ_{q₁..qₙ} ↑ χ_ℚ) → AN1.9, MT/HA.9; L(x) = ∫₁ˣ dt/t identified with log → AN1.10; Bonnet's second MVT → AN2.10; Volterra → AN2.15 (optional, prose only).
+- **AN1.4–AN1.7 labels needed** (cited by name until their S1 fixes labels): Heine–Cantor, EVT, IVT (AN1.6); MVT, chain rule, derivatives of rational powers, Lagrange-remainder Taylor (AN1.7); limits at ∞, one-sided limits of monotone functions, Thomae continuity example (AN1.5); Cantor set construction Cₙ, Heine–Borel (AN1.4).
+- **spec/08 section numbers (math-atlas, for the coordinator):** in Apostol 2e the Riemann case of AN1.8 is 7.1–7.7, 7.11–7.14, 7.18–7.21 (7.26 statement), not "7.1–7.10"; 7.8–7.10 (step integrators, Euler summation) are Stieltjes. Parameter integrals are Apostol 7.23–7.25, not 7.17–7.20 as C3 gives for AN2.11. Suggest correcting spec/08 C3 and the `apostol-ma` items.
