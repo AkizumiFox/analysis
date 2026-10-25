@@ -67,3 +67,16 @@
 - authoring/STATUS.md: MT ch08 FA.1a row → "S1 blueprint (mt/authoring/blueprints/ch08.md), D4 layout".
 - Directory slug: `mt/src/ch08-banach-spaces/`.
 - Promises opened for other chapters: FA.3 ((ℓ^∞)* ≠ ℓ¹; J isometric; ‖T*‖ = ‖T‖), FA.1b ((L^p)* = L^{p'}), FA.2 (Riesz on C[a,b]), MT.7 (completion of (C[0,1], ‖·‖₁) is L¹), FA.4 (no countable Hamel basis), FA.6 (θ = 1 in Riesz's lemma).
+
+## MT.10 (ch14, S1 blueprint 2026-10-25)
+
+- Old `mt/authoring/blueprints/ch10.md` (ab:52 stub) was `git mv`'d to ch14.md (commit f195786) and rewritten.
+- registry/plan-edges.yaml: `MT.10: {s: [MT.9], revisits: [AN2.9]}` is sufficient. The chapter uses MT.3 (Lebesgue–Stieltjes μ_F, §5) and MT.2/MT.1, all in MT.9's s-closure. If MT.9 gains s MT.8 (see MT.9 note), nothing changes here. Optional: add `see: [HA.9]` (the Volterra hook is paid in §4, `exm-volterra-paid`; HA.9 is already an s-ancestor via MT.1).
+- MT.9 (ch13) lists `thm-vitali-covering-fine` as used by MT.10 for Lebesgue's monotone theorem. MT.10's main route is rising sun + saltus split + `lem-vitali-finite`; the fine-cover theorem appears in an "Alternatively" paragraph and in §3 C3. MT.9's wording "(MT.10, which uses this chapter's fine-cover theorem)" stays true but could say "as an alternative route".
+- AN2.9 is a revisit, not an s-ancestor: §1 restates BV / total variation / Jordan decomposition and re-proves Jordan in one paragraph. If the AN2.9 blueprint fixes label names, MT.10 prose-points to them only.
+- MT.11 (ch16): pays MT.10's hook (decomposition of increasing F ↔ Lebesgue decomposition of μ_F; density F′). Suggest MT.11 cite `thm-decomposition-increasing`, `thm-ac-iff-measure-ac`, `thm-singular-iff-concentrated` (edge MT.11 see MT.10 already registered).
+- PDE.4 (s MT.10): cites `def-absolutely-continuous`, `thm-ftc-lebesgue`, `thm-ac-parts`.
+- registry/statements.yaml candidates: `thm-lebesgue-monotone`, `thm-ftc-lebesgue`, `thm-banach-zarecki`, `thm-ftc-everywhere-differentiable`, `thm-decomposition-increasing`, `thm-arc-length-ac` (MT.10); edges `thm-ftc-lebesgue uses cor-indefinite-integral-derivative`, `thm-jump-derivative-zero uses lem-vitali-finite`.
+- authoring/NOTATION.md rows: D⁺F, D₊F, D⁻F, D₋F (Dini derivatives); Mν (maximal function of a finite measure on ℝ); AC[a,b]; c (the Cantor function) and μ_c (Cantor measure) if not fixed earlier; T_a^b(F) if AN2.9 does not add it.
+- authoring/STATUS.md: MT.10 row → "S1 blueprint (mt/authoring/blueprints/ch14.md), D4 layout; MT ch14".
+- Directory slug: `mt/src/ch14-bv-absolute-continuity/`.
