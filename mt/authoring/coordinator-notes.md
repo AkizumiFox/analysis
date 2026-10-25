@@ -80,3 +80,16 @@
 - authoring/NOTATION.md rows: D⁺F, D₊F, D⁻F, D₋F (Dini derivatives); Mν (maximal function of a finite measure on ℝ); AC[a,b]; c (the Cantor function) and μ_c (Cantor measure) if not fixed earlier; T_a^b(F) if AN2.9 does not add it.
 - authoring/STATUS.md: MT.10 row → "S1 blueprint (mt/authoring/blueprints/ch14.md), D4 layout; MT ch14".
 - Directory slug: `mt/src/ch14-bv-absolute-continuity/`.
+
+## ch07 (MT.6 Surfaces, Surface Measure, and the Divergence Theorem), S1 2026-10-25
+
+- Old mt/authoring/blueprints/ch06.md (MT.6) was git-mv'd to ch07.md (commit f22c80e) and rewritten there.
+- Exam targets: no item in registry/exam-targets.yaml lists MT.6 (`mira` omits it; spec/08 D4 keeps it in place). Its consumers are PDE.1 (s), PDE.5 (s), CA.2 see, CA.6 see. No registry change needed; record in report.md if a "main-line chapter with no exam-target item" list exists.
+- registry/plan-edges.yaml MT.6 = s [MT.5, AN3.2, LA2.7, LA3.11], revisits [AN3.7]: unchanged. Optional: add `see: [AM.1]` (§04 re-proves a compact-case smooth partition of unity that AM.1 also proves; no proof cites AM).
+- Label coordination across books: MT.6 keeps `thm-green` (moved from AN3.4) and creates `thm-smooth-partition-compact`, `lem-smooth-bump`; AM's AN3.7/AM.1 S1 should use different labels (e.g. derive Green as a Stokes corollary under its own label, or cite MT forward only in prose).
+- MT.5 (ch06) S1 must: define σ on S^{d−1} by σ(E) = d·m({rω : 0 < r ≤ 1, ω ∈ E}) (or tell ch07, whose `thm-sphere-measure-agrees` depends on that normalization); state the polar formula, |B₁|, ∫e^{−|x|²} = π^{d/2}, and |x|^{−α} ∈ L¹(B₁) iff α < d.
+- MT.2 (ch03) S1: if it creates differentiation under the integral sign (DCT corollary), ch07 §06 cites it; otherwise ch07 proves the case it needs (`lem-differentiate-sphere-average`).
+- MT.7 (ch11) may cite `lem-smooth-bump` (MT.6 §04) for mollifiers instead of rebuilding e^{−1/t}.
+- authoring/NOTATION.md rows to add: σ_M / σ (surface measure), J_φ (area element √det(DφᵀDφ)), ν (outward unit normal), ∂_ν u = ∇u·ν, C¹(Ω̄) = restrictions of C¹ functions on an open neighbourhood of Ω̄, ⨍ (average), Φ (fundamental solution of Laplace), ∮_{∂Ω}(P dx + Q dy) := ∫_{∂Ω}(P, Q)·τ dσ with τ = (−ν₂, ν₁).
+- authoring/STATUS.md: MT.6 row → "S1 blueprint (mt/authoring/blueprints/ch07.md), D4 layout; directory `mt/src/ch07-surfaces-divergence-theorem/`". Promises paid: AN3.4 → Green (`thm-green`); MT.5 → surface measure (`def-surface-measure`, `thm-sphere-measure-agrees`). Promises opened: PDE.1 (−ΔΦ = δ), PDE.5 (traces on C¹ domains).
+- an3/authoring/blueprints/ch04.md still says "Green's theorem has moved to surfaces-divergence-theorem in Part IV": update the pointer to MT.6 (MT chapter 7) when an3 is re-blueprinted.
