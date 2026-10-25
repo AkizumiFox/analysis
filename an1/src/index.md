@@ -2,7 +2,7 @@
 
 This volume is analysis on the real line: sequences and series, limits and continuity, the derivative, the integral, and power series. It starts from a short list of axioms for the real numbers, the axioms of a complete ordered field, and proves everything else from them.
 
-**Who it is for.** The reader we have in mind can already read and write proofs: negate a quantified statement, name a witness, run an induction, chase an element through a preimage. *Logic and Proof* and the first three chapters of *Sets, Relations, and Cardinality* teach exactly these skills, and this volume cites them where it uses them. *Number Systems: From \(\nN\) to \(\nR\)* builds \( \nR \) from the rationals and proves that the axioms hold for it; this volume does not need that construction, since it takes the axioms as its starting point.
+**Who it is for.** The reader we have in mind can already read and write proofs: negate a quantified statement, name a witness, run an induction, chase an element through a preimage. *Logic and Proof* and the first three chapters of *Sets and Functions* teach exactly these skills, and this volume cites them where it uses them. *Number Systems: From \(\nN\) to \(\nR\)* builds \( \nR \) from the rationals and proves that the axioms hold for it; this volume does not need that construction, since it takes the axioms as its starting point.
 
 **What it covers.**
 

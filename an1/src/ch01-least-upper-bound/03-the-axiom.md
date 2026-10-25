@@ -23,7 +23,7 @@ In symbols: for every \( A \subseteq \nR \),
 \exists s \in \nR : s = \sup A .
 \]
 
-**Standing assumption.** From now on, \( \nR \) is an ordered field (@def-ordered-field), containing \( \nQ \), that satisfies @ax-least-upper-bound. Every theorem about real numbers in this book is proved from these assumptions, together with the logic and set theory of *Logic and Proof* and *Sets, Relations, and Cardinality* (including, where it is flagged, a choice principle).
+**Standing assumption.** From now on, \( \nR \) is an ordered field (@def-ordered-field), containing \( \nQ \), that satisfies @ax-least-upper-bound. Every theorem about real numbers in this book is proved from these assumptions, together with the logic and set theory of *Logic and Proof* and *Sets and Functions* (including, where it is flagged, a choice principle).
 
 In words, the axiom has two hypotheses and one conclusion. The hypotheses are about the set \( A \): it has at least one element, and at least one upper bound. The conclusion is about \( \nR \): among the upper bounds of \( A \) there is a least one, and it is a real number. By @thm-sup-unique it is unique, so the notation \( \sup A \) is justified whenever the two hypotheses hold. The axiom is also called the **completeness axiom**; "complete" will acquire a second, related meaning in Chapter 2, and the two are reconciled in Chapter 11.
 
@@ -65,7 +65,7 @@ Let \( A = \{ n \in \nZ : n \le 3.5 \} = \{ \dots, 1, 2, 3 \} \). Does \( A \) s
 :::
 
 ::: {.solution}
-Yes: \( 3 \in A \), so \( A \) is nonempty, and \( 3.5 \) is an upper bound by definition of \( A \). So \( \sup A \) exists. It is \( 3 \), not \( 3.5 \): the element \( 3 \) is an upper bound, because an integer greater than \( 3 \) is at least \( 4 \), which exceeds \( 3.5 \) (arithmetic of the integers, *Sets, Relations, and Cardinality*, Chapter 2), and it belongs to \( A \), so it is the maximum, and a maximum is the supremum (@exr-suprema-b1). The bound used to check the hypothesis was not the supremum.
+Yes: \( 3 \in A \), so \( A \) is nonempty, and \( 3.5 \) is an upper bound by definition of \( A \). So \( \sup A \) exists. It is \( 3 \), not \( 3.5 \): the element \( 3 \) is an upper bound, because an integer greater than \( 3 \) is at least \( 4 \), which exceeds \( 3.5 \) (arithmetic of the integers, *Sets and Functions*, Chapter 2), and it belongs to \( A \), so it is the maximum, and a maximum is the supremum (@exr-suprema-b1). The bound used to check the hypothesis was not the supremum.
 :::
 
 ## Infima come free

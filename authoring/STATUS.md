@@ -86,7 +86,7 @@ The split of 2026-10-12 left pointers in AN1.1 that it had made wrong: the const
 |---|---|---|
 | `an1/src/ch01-least-upper-bound/03-the-axiom.md:38` | "the optional *Number Systems*, Chapter 7 does this [Dedekind cuts]. The optional … Chapter 6 shows …; nothing else in the book uses those chapters" | "*Number Systems*, Chapters 5 and 6 take this route with Cauchy sequences of rationals, and show …; the optional *Number Systems*, Chapter 7 builds ℝ by Dedekind cuts instead. This volume does not use those chapters" |
 | `an1/src/ch01-least-upper-bound/index.md:5` | "The optional *Number Systems*, Chapter 7 builds it from ℚ …, and Chapter 11 shows" | "*Number Systems*, Chapter 5 builds it from ℚ by Cauchy sequences …, as the optional *Number Systems*, Chapter 7 does by Dedekind cuts; Chapter 11 of this volume shows" |
-| `an1/src/ch01-least-upper-bound/03-the-axiom.md:26` | "the logic and set theory of Part 0" | "the logic and set theory of *Logic and Proof* and *Sets, Relations, and Cardinality*" |
+| `an1/src/ch01-least-upper-bound/03-the-axiom.md:26` | "the logic and set theory of Part 0" | "the logic and set theory of *Logic and Proof* and *Sets and Functions*" |
 | `an1/src/ch01-least-upper-bound/03-the-axiom.md:134` | "The book uses them from Part IV on" | "The series uses them from *Measure and Integration* on" |
 | `an1/src/ch01-least-upper-bound/01-ordered-fields.md:274` | "every estimate in Part I" | "every estimate in this volume" |
 | `an1/src/ch01-least-upper-bound/06-density-and-roots.md:280` | "In Part II the word **dense**" | "In *Metric and Topological Spaces* the word **dense**" |
