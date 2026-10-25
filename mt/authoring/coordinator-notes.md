@@ -17,3 +17,14 @@
 - Old blueprint fa/authoring/blueprints/ch07.md is superseded by mt/authoring/blueprints/ch15.md (not deleted; fa/ is another workflow's directory).
 - NOTATION.md: confirm inner-product slot convention (blueprint assumes linear in the first slot); add ⇀, P_C/P_M, ℓ²(Γ), unordered sum.
 - STATUS.md: row for MT ch15 FA.6 → "blueprint (S1)".
+
+## FA.4 (ch09, S1 blueprint 2026-10-25)
+
+- Old blueprint `fa/authoring/blueprints/ch05.md` was **copied** into `mt/authoring/blueprints/ch09.md` and rewritten (it lives outside `mt/`, so not moved). The coordinator may `git rm fa/authoring/blueprints/ch05.md` (or leave a pointer stub) when the fa/ directory is reorganized.
+- registry/plan-edges.yaml: `FA.4: {s: [FA.1a, AN2.6], see: [HA.1]}` → add **s AN1.10** (trigonometric functions and eⁱᵗ for the Dirichlet kernel in §3; AN1.10 is not an s-ancestor via FA.1a or AN2.6). Optionally add see [FA.6, FA.13] (Hellinger–Toeplitz pointer).
+- registry/statements.yaml: add `thm-open-mapping` (FA.4, thm), `thm-closed-graph` (FA.4, thm), `thm-divergent-fourier-series` (FA.4, thm), `cor-bounded-inverse` (FA.4, cor); edges `thm-open-mapping uses thm-baire`, `thm-closed-graph uses cor-bounded-inverse`, `thm-divergent-fourier-series uses thm-ubp`.
+- Scope changes vs the old blueprint (no registry change needed, but record in chapter-constraints if wanted): dropped "Fourier coefficients of L¹ do not exhaust c₀" (needs MT.7 completeness of L¹; could go to HA.10 or FA.1b as an exercise) and Grothendieck's theorem on closed subspaces of Lᵖ (needs MT.7; could go to FA.10/FA.14 as optional). Weakly bounded ⇒ bounded (needs Hahn–Banach) is promised to FA.5.
+- authoring/NOTATION.md rows: B_X (open unit ball), Γ(T) (graph), C(𝕋), D_N (Dirichlet kernel), L_N (Lebesgue constants).
+- authoring/STATUS.md: FA.4 row → "S1 blueprint (mt/authoring/blueprints/ch09.md), D4 layout; MT ch09".
+- Directory slug: `mt/src/ch09-baire-category-operators/`.
+- FA.1a's (ch08) blueprint should provide, with labels: completeness by absolutely convergent series, B(X,Y) complete, finite-dimensional subspaces closed, Hölder for ℓᵖ with the equality case on finitely supported vectors, and (if possible) the Neumann series; FA.4 cites these.
