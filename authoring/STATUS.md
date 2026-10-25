@@ -27,10 +27,37 @@ into `src/ch01-connectives-and-derivations/` and `src/ch02-negation-and-classica
 
 ## Chapters
 
+**Apostol layout of 2026-10-25** (math-atlas spec/08 §C). AN1 is now *Real Numbers, Metric Spaces, and Derivatives* (Apostol 1–5, 10 chapters), and AN2 is *Integration, Series, and Function Spaces* (Apostol 6–9 and function spaces). Atlas ids travel with their chapters. The "Slug" column gives the volume and local position. Orders, file moves and label migration are in `an1/authoring/design/layout-apostol.md` and `an2/authoring/design/layout-apostol.md`. The forward promises below name atlas ids, so they are unchanged. Their local chapter numbers in AN1.1's prose are seam items listed in the an1 layout file.
+
 | Chapter | Slug | State |
 |---|---|---|
 | AN1.1 | least-upper-bound | pilot drafted 2026-09-27; renumbered and retrofitted to STYLE §11 2026-09-28; **passed S2–S8 2026-09-28** (S5–S7 re-run after the retrofit; seam `an1/authoring/reviews/ch01-S8-seam.md`: src rows 3–5 applied, optional rows 2 and 6 not); induction now cites `@ax-induction` (cross-chapter cleanup); **awaiting author review (S9)** — candidate exemplar for Parts I–VI |
-| all others | see `blueprint/book.yaml` | generated blueprints; not started |
+| AN1.4 | AN1 ch02: `open-closed-compact-subsets` | not started. Blueprint an1 ch02.md (was an1 ch04); renamed to ℝⁿ. Old-layout body; re-blueprint against spec/08 C2, C5 |
+| AN2.1 | AN1 ch03: `metric-spaces` | not started. Blueprint an1 ch03.md (was an2 ch01); moved AN2 → AN1, renamed *Metric Spaces and Their Topology*. Old-layout body; re-blueprint against spec/08 C2, C5 |
+| AN1.2 | AN1 ch04: `sequences-and-cauchy-sequences` | not started. Blueprint an1 ch04.md (was an1 ch02). Old-layout body; re-blueprint against spec/08 C2, C5 |
+| AN2.2 | AN1 ch05: `completeness-and-completion` | not started. Blueprint an1 ch05.md (was an2 ch02); moved AN2 → AN1, + Banach fixed point. Old-layout body; re-blueprint against spec/08 C2, C5 |
+| AN1.5 | AN1 ch06: `limits-and-continuity` | not started. Blueprint an1 ch06.md (was an1 ch05); + classification of discontinuities. Old-layout body; re-blueprint against spec/08 C2, C5 |
+| AN1.6 | AN1 ch07: `continuity-on-compact-sets` | not started. Blueprint an1 ch07.md (was an1 ch06). Old-layout body; re-blueprint against spec/08 C2, C5 |
+| AN2.3 | AN1 ch08: `compactness-and-connectedness` | not started. Blueprint an1 ch08.md (was an2 ch03); moved AN2 → AN1. Old-layout body; re-blueprint against spec/08 C2, C5 |
+| AN1.7 | AN1 ch09: `derivative-and-mean-value` | not started. Blueprint an1 ch09.md (was an1 ch07); + vector-valued and complex derivatives. Old-layout body; re-blueprint against spec/08 C2, C5 |
+| AN1.11 | AN1 ch10: `forms-of-completeness` | not started. Blueprint an1 ch10.md (was an1 ch11); closes AN1. Old-layout body; re-blueprint against spec/08 C2, C5 |
+| AN2.9 | AN2 ch01: `bounded-variation` | not started. New id (CL.1); no blueprint yet |
+| AN1.8 | AN2 ch02: `riemann-darboux-integral` | not started. Blueprint an2 ch02.md (was an1 ch08); moved AN1 → AN2. Old-layout body, not rewritten |
+| AN2.10 | AN2 ch03: `riemann-stieltjes-integral` | not started. New id (CL.2); no blueprint yet |
+| AN1.3 | AN2 ch04: `infinite-series` | not started. Blueprint an2 ch04.md (was an1 ch03); moved AN1 → AN2. Old-layout body, not rewritten |
+| AN2.12 | AN2 ch05: `double-series-and-products` | not started. New id (CL.4); no blueprint yet |
+| AN1.9 | AN2 ch06: `sequences-of-functions` | not started. Blueprint an2 ch06.md (was an1 ch09); moved AN1 → AN2. Old-layout body, not rewritten |
+| AN1.10 | AN2 ch07: `power-series` | not started. Blueprint an2 ch07.md (was an1 ch10); moved AN1 → AN2. Old-layout body, not rewritten |
+| AN2.11 | AN2 ch08: `parameter-integrals-and-gamma` | not started. New id (CL.3); no blueprint yet |
+| AN2.13 | AN2 ch09: `summability-and-tauberian` | not started. New id (CL.5); no blueprint yet |
+| AN2.4 | AN2 ch10: `contraction-picard` | not started. Blueprint an2 ch10.md (was an2 ch04). Old-layout body, not rewritten |
+| AN2.5 | AN2 ch11: `arzela-ascoli-peano` | not started. Blueprint an2 ch11.md (was an2 ch05). Old-layout body, not rewritten |
+| AN2.6 | AN2 ch12: `stone-weierstrass-baire` | not started. Blueprint an2 ch12.md (was an2 ch06). Old-layout body, not rewritten |
+| AN2.7 | AN2 ch13: `topological-spaces-compactness` | not started. Blueprint an2 ch13.md (was an2 ch07); seg B. Old-layout body, not rewritten |
+| AN2.8 | AN2 ch14: `separation-urysohn-lch` | not started. Blueprint an2 ch14.md (was an2 ch08); seg B. Old-layout body, not rewritten |
+| AN2.14 | AN2 ch15: `gauge-integral` | not started. New id (CL.6), optional; no blueprint yet |
+| AN2.15 | AN2 ch16: `pathological-functions` | not started. New id (AN1.12 in the spec/08 draft), optional; no blueprint yet |
+| AN3, MT, … | see `blueprint/book.yaml` | generated blueprints; not started |
 
 ## Forward promises
 
