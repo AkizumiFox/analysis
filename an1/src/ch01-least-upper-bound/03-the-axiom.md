@@ -35,7 +35,7 @@ Each hypothesis is there because without it the conclusion is false.
 The axiom is a statement about \( \nR \) and not about ordered fields in general. It fails in \( \nQ \): some nonempty subset of \( \nQ \), bounded above in \( \nQ \), has no supremum in \( \nQ \). Which result of the previous section shows this, and whether it needs adapting, is @exr-the-axiom-c1 (a). So the axiom is exactly the property that separates the two fields we have been comparing.
 
 ::: {.remark}
-Why is this an axiom and not a theorem? Because we have not said what a real number is. One can **construct** \( \nR \) from \( \nQ \) and then prove the least upper bound property as a theorem. *Number Systems: From \(\nN\) to \(\nR\)*, Chapters 5 and 6 take this route with Cauchy sequences of rationals, and show that any two ordered fields satisfying the axiom are the same up to relabeling, so the axiom pins \( \nR \) down completely; the optional *Number Systems: From \(\nN\) to \(\nR\)*, Chapter 7 builds \( \nR \) by Dedekind cuts instead. This volume does not use those chapters: everything we need follows from the axiom.
+Why is this an axiom and not a theorem? Because we have not said what a real number is. One can **construct** \( \nR \) from \( \nQ \) and then prove the least upper bound property as a theorem. *Number Systems: From \(\nN\) to \(\nR\)*, Chapters 5 and 6 take this route with Cauchy sequences of rationals, and show that any two ordered fields satisfying the axiom are the same up to relabeling, so the axiom pins \( \nR \) down completely; *Axiomatic Set Theory* builds \( \nR \) by Dedekind cuts instead. This volume does not use those chapters: everything we need follows from the axiom.
 :::
 
 ::: {#exm-lub-first-use}
